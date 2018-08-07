@@ -2,10 +2,15 @@
 
 Spring Boot Application Template
 
-- Actuator
 - Logger (Console, File, Mail)
 - Web Service
 - HTML and CSS
+
+### spring-boot-actuator
+Actuator endpoints let you monitor and interact with your application.
+Spring Boot Actuator provides the infrastructure required for actuator endpoints. It contains
+annotation support for actuator endpoints. Out of the box, this module provides a number of endpoints
+including the `HealthEndpoint`, `EnvironmentEndpoint`, `BeansEndpoints` and many more.
 
 ## Built With
 
