@@ -44,27 +44,34 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ```
 .
 ├── Spring Elements
-├── src/main/java
-│   ├── com.arc.application
-│   ├── com.arc.application.controller
-│   ├── com.arc.application.model
-│   └── com.arc.application.repository
-├── src/main/resources
-│   └── static
-│   │    ├── css
-│   │    ├── images
-│   │    ├── js
-│   │    ├── favicon.ico
-│   │    └── index.html
-│   ├── templates
-│   ├── application.properties
-│   ├── banner.txt
-│   └── log4j2.xml
-├── src/test/java
+├── src
+│   └── main
+│       └── java
+│            ├── com.arc.application
+│            ├── com.arc.application.controller
+│            ├── com.arc.application.model
+│            └── com.arc.application.repository
+├── src
+│   └── main
+│        └── resources
+│             └── static
+│             │    ├── css
+│             │    ├── images
+│             │    ├── js
+│             │    ├── favicon.ico
+│             │    └── index.html
+│             ├── templates
+│             ├── application.properties
+│             ├── banner.txt
+│             └── log4j2.xml
+├── src
+│    └── test
+│         └── java
 ├── JRE System Library
 ├── Maven Dependencies
 ├── bin
 ├── logs
+│    └── application.log
 ├── src
 ├── target
 ├── mvnw
