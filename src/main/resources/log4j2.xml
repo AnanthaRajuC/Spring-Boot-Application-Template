@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    
+	<Properties>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+        </Property>		
+        
+        <!-- <Property name="LOG_PATTERN_COLOR">
+            %d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} %highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue} %style{${sys:PID}}{magenta} [%15.15t] %style{%-40.40C{1.}}{cyan} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
+        </Property> -->	
+    </Properties>
+	
+    <Appenders>      
+		
+		<!-- Console Appender -->
+		<Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+		
+		<!-- Rolling File Appender -->
+		<!-- fileName specifies the path and file name of log file -->
+		<!-- filePattern stores the old log files with names matching the pattern specified -->
+        <RollingFile name="FileAppender" fileName="logs/SBtemplate.log" filePattern="logs/SBtemplate-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" /> <!-- will roll files over every day (1 = 1 day) -->
+                <SizeBasedTriggeringPolicy size="10MB" /> <!-- will roll files over when the size reaches 10MB -->
+            </Policies>
+            <DefaultRolloverStrategy max="10"/> <!-- maximum number of log files that will be kept -->
+        </RollingFile>
+		
+		<!-- SMTP Appender -->
+		<!-- <SMTP name="MailAppender"
+			  subject="Log4j2 Demo [PROD]"
+			  to="youremail@example.com"
+			  from="log4j2-demo-alerts@example.com"
+			  smtpHost="yourSMTPHost"
+			  smtpPort="587"
+			  smtpUsername="yourSMTPUsername"
+			  smtpPassword="yourSMTPPassword"
+			  bufferSize="1">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout>
+				<Pattern>${LOG_PATTERN}</Pattern>
+			</PatternLayout>
+		</SMTP> -->		
+		
+    </Appenders>
+    
+	<Loggers> 
+	     
+		<AsyncLogger name="com.example.log4j2demo" level="debug" additivity="false">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
+        </AsyncLogger>
+
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="FileAppender" />
+        </Root>	
+        	
+    </Loggers>	
+    	
+</Configuration>
