@@ -1,0 +1,32 @@
+body 
+{
+    background: #43cea2;
+    background: -webkit-linear-gradient(to right, #185a9d, #43cea2); 
+    background: linear-gradient(to right, #185a9d, #43cea2);
+    color: #fff;
+    text-align: center;
+}
+
+.page-content 
+{
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 35%;
+    bottom: 0;
+}
+
+h1 
+{
+    font-size: 46px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 
+{
+    font-size: 34px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
