@@ -3,7 +3,7 @@
 Spring Boot Application Template
 
 - Logger (Console, File, Mail)
-- Web Service
+- RESTful Web Service (CRUD)
 - HTML and CSS
 
 ### spring-boot-actuator
@@ -47,33 +47,34 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── main
 │       └── java
-│            ├── com.arc.application
-│            ├── com.arc.application.controller
-│            ├── com.arc.application.model
-│            └── com.arc.application.repository
+│           ├── com.arc.application
+│           ├── com.arc.application.controller
+│           ├── com.arc.application.model
+│           └── com.arc.application.repository
 ├── src
 │   └── main
-│        └── resources
-│             └── static
-│             │    ├── css
-│             │    ├── images
-│             │    ├── js
-│             │    ├── favicon.ico
-│             │    └── index.html
-│             ├── templates
-│             ├── application.properties
-│             ├── banner.txt
-│             └── log4j2.xml
+│       └── resources
+│           └── static
+│           │   ├── css
+│           │   ├── images
+│           │   ├── js
+│           │   ├── favicon.ico
+│           │   └── index.html
+│           ├── templates
+│           ├── application.properties
+│           ├── banner.txt
+│           └── log4j2.xml
 ├── src
-│    └── test
-│         └── java
+│   └── test
+│       └── java
 ├── JRE System Library
 ├── Maven Dependencies
 ├── bin
 ├── logs
-│    └── application.log
+│   └── application.log
 ├── src
 ├── target
+│   └──application-0.0.1-SNAPSHOT
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
