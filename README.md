@@ -6,6 +6,7 @@ Spring Boot Application Template
 - [x] RESTful Web Service (CRUD)
 - [x] HTML and CSS
 - [x] Actuator
+- [x] Postman collection (Online & Offline)
 - [ ] Swagger API Documentation
 - [ ] HATEOS
 - [ ] NoSQL (MongoDB)
