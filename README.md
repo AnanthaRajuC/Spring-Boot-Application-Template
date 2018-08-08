@@ -25,6 +25,7 @@ including the `HealthEndpoint`, `EnvironmentEndpoint`, `BeansEndpoints` and many
 * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit 
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
 * [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
+* [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 
 ## Running the application locally
@@ -48,7 +49,7 @@ mvn spring-boot:run
 
 ## Documentation
 
-* [Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online
+* [Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
 * [Postman Collection](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/Spring%20Boot%20Template.postman_collection.json) - offline
 
 ## Files and Directories
