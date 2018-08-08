@@ -72,6 +72,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │       └── resources
 │           └── static
 │           │   ├── css
+│           │   │   └── main.css
 │           │   ├── images
 │           │   ├── js
 │           │   ├── favicon.ico
