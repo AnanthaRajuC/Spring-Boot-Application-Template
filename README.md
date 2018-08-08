@@ -1,7 +1,5 @@
 # Spring Boot Application Template
 
-Spring Boot Application Template
-
 - [x] Logger (Console, File, Mail)
 - [x] RESTful Web Service (CRUD)
 - [x] HTML and CSS
@@ -26,7 +24,8 @@ including the `HealthEndpoint`, `EnvironmentEndpoint`, `BeansEndpoints` and many
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit 
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
-* [Postman](https://www.getpostman.com/) - API Development Environment
+* [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
+* [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 
 ## Running the application locally
 
@@ -97,6 +96,16 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 └── README.md
 ```
 
+## Reporting Issues
+
+This Project uses GitHub's integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:
+
+* Before you log a bug, please https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/search?type=Issues[search the issue tracker]
+  to see if someone has already reported the problem.
+* If the issue doesn't already exist, https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new[create a new issue]. 
+* Please provide as much information as possible with the issue report.
+* If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text. 
+  
 ## Resources
 
 * [My API Lifecycle Checklist and Scorecard](https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard)
