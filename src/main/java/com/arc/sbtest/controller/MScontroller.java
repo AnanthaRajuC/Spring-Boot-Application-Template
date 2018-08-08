@@ -50,6 +50,8 @@ public class MScontroller
 		Person person = personRepository.findById(personId).orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
 		
 		person.setName(personeDetails.getName());
+		person.setGender(personeDetails.getGender());
+		person.setAge(personeDetails.getAge());
 
 		return personRepository.save(person);		
 	}

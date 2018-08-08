@@ -6,7 +6,8 @@ Spring Boot Application Template
 - [x] RESTful Web Service (CRUD)
 - [x] HTML and CSS
 - [x] Actuator
-- [ ] Swagger Documentation
+- [ ] Swagger API Documentation
+- [ ] HATEOS
 - [ ] NoSQL (MongoDB)
 - [ ] Micrometer
 - [ ] Grafna
@@ -44,6 +45,11 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 ```shell
 mvn spring-boot:run
 ```
+
+## Documentation
+
+* [Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online
+* [Postman Collection]() - offline
 
 ## Files and Directories
 
@@ -89,3 +95,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── pom.xml
 └── README.md
 ```
+
+## Resources
+
+* [My API Lifecycle Checklist and Scorecard](https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard)

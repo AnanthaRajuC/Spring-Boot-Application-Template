@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "30371948-92fa-492f-8082-f08e23f2aafc",
+		"name": "Spring Boot Template",
+		"description": "Spring Boot Template",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "3c5b326c-7ace-4564-99eb-a0ebd4f0bd69",
+			"name": "http://localhost:8088/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088"
+				},
+				"description": "http://localhost:8088/"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b6c759b5-7804-464e-b842-4c9d63ec95c0",
+			"name": "http://localhost:8088/api/generic-hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/api/personalized-hello?name=springboot%20application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"personalized-hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "springboot%20application"
+						}
+					]
+				},
+				"description": "Returns a \"hello\" string as response"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1ed4ce2a-7ddb-4de3-822e-2f40e72e2e6e",
+			"name": "http://localhost:8088/api/personalized-hello?name=springboot%20application",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/api/personalized-hello?name=springboot%20application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"personalized-hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "springboot%20application"
+						}
+					]
+				},
+				"description": "Returns a \"hello\" message with the name parameter as response. If name parameter is not passed, \"world\" is taken as default name."
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "701b2f96-c7c7-42bf-8f5f-f7e042a45104",
+			"name": "http://localhost:8088/actuator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/actuator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"actuator"
+					]
+				},
+				"description": "Spring Boot Actuator End Point"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "5926f552-5a69-4adf-bbbb-7d96cba3aa3d",
+			"name": "http://localhost:8088/actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"actuator",
+						"health"
+					]
+				},
+				"description": "Spring Boot Actuator Health End Point"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a8ff49ab-eac9-4c03-ba6e-8927a2485b2d",
+			"name": "http://localhost:8088/actuator/info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"actuator",
+						"info"
+					]
+				},
+				"description": "Spring Boot Actuator Info Endpoint"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3a9f9b5e-136d-4829-b8e1-0320fb479f0c",
+			"name": "http://localhost:8088/actuator/httptrace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/actuator/httptrace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"actuator",
+						"httptrace"
+					]
+				},
+				"description": "Apring Boot Actuator HttpTrace Endpoint"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ae5fa4f4-f858-4f6a-a8b2-7637d35422c6",
+			"name": "http://localhost:8088/api/loggers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/api/loggers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"loggers"
+					]
+				},
+				"description": "Endpoint to invoke log statements debug, info, warn, error, fatal"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "828609a1-bd47-4cb3-9596-277bd7dcf157",
+			"name": "http://localhost:8088/api/persons",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Ronnie James Dio\",\n\t\"gender\":\"male\",\n\t\"age\":67\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"persons"
+					]
+				},
+				"description": "Add a person"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "53efb91c-1dbc-44f4-8258-bb620a83eede",
+			"name": "http://localhost:8088/api/persons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/api/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"persons"
+					]
+				},
+				"description": "Get all Persons"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8a9018d3-8a26-4cfe-97b9-425b555e19c6",
+			"name": "http://localhost:8088/api/persons/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/api/persons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				},
+				"description": "Get Person by Id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ef536b85-e413-4d99-9034-b00b688a2c48",
+			"name": "http://localhost:8088/api/persons/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Floor Jansen\",\n\t\"gender\":\"female\",\n\t\"age\":37\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/persons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				},
+				"description": "Update Person by Id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "43b5ab5b-2e87-4fca-8f84-f375a049ef0f",
+			"name": "http://localhost:8088/api/persons/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/api/persons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				},
+				"description": "DELETE Person by Id"
+			},
+			"response": []
+		}
+	]
+}
