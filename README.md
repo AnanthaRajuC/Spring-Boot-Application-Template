@@ -49,7 +49,7 @@ mvn spring-boot:run
 ## Documentation
 
 * [Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online
-* [Postman Collection]() - offline
+* [Postman Collection](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/Spring%20Boot%20Template.postman_collection.json) - offline
 
 ## Files and Directories
 
