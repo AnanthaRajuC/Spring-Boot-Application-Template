@@ -2,9 +2,16 @@
 
 Spring Boot Application Template
 
-- Logger (Console, File, Mail)
-- RESTful Web Service (CRUD)
-- HTML and CSS
+- [x] Logger (Console, File, Mail)
+- [x] RESTful Web Service (CRUD)
+- [x] HTML and CSS
+- [x] Actuator
+- [ ] Swagger Documentation
+- [ ] NoSQL (MongoDB)
+- [ ] Micrometer
+- [ ] Grafna
+- [ ] Prometheous
+- [ ] Security
 
 ### spring-boot-actuator
 Actuator endpoints let you monitor and interact with your application.
