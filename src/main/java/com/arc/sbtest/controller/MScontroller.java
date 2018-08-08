@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,12 +38,6 @@ public class MScontroller
 		return  personRepository.findAll();
 	}
 	
-	@PostMapping("/persons")
-	public Person createPerson(@Valid @RequestBody Person person)
-	{
-		return personRepository.save(person);		
-	}
-	 
 	@GetMapping("/persons/{id}")
 	public Person getPersonById(@PathVariable(value = "id") Long personId)
 	{
@@ -59,12 +54,28 @@ public class MScontroller
 		return personRepository.save(person);		
 	}
 	
+	@PostMapping("/persons")
+	public Person createPerson(@Valid @RequestBody Person person)
+	{
+		return personRepository.save(person);		
+	}	
+	
+	@DeleteMapping("/persons/{id}")
+	public ResponseEntity<?> deletePerson(@PathVariable(value = "id") Long personId) 
+	{
+		Person person = personRepository.findById(personId).orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
+		personRepository.delete(person);
+		return ResponseEntity.ok().build();
+	}
+	
 	@GetMapping("/generic-hello")
 	public ResponseEntity<String> noReqestParameter() 
 	{
 		HttpHeaders responseHeaders = new HttpHeaders();
+		
 		responseHeaders.set("CustomResponseHeader1", "CustomResponseHeaderValue1");
 		responseHeaders.set("Custom-ResponseHeader-2", "Custom-Response-Header-Value-2");
+		
 		return new ResponseEntity<>("Welcome to generic greetings", responseHeaders, HttpStatus.OK);
 	}
 	

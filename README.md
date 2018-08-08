@@ -49,6 +49,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │       └── java
 │           ├── com.arc.application
 │           ├── com.arc.application.controller
+│           ├── com.arc.application.exception
 │           ├── com.arc.application.model
 │           └── com.arc.application.repository
 ├── src
