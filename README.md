@@ -5,7 +5,7 @@
 - [x] Web - HTML, CSS (Bootstrap), JavaScript (jQuery)
 - [x] Actuator
 - [x] Postman collection (Online & Offline)
-- [ ] Swagger API Documentation
+- [x] Swagger API Documentation (http://localhost:8088/swagger-ui.html)
 - [ ] HATEOS
 - [ ] NoSQL (MongoDB)
 - [ ] Micrometer
