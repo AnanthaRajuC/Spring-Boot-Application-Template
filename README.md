@@ -2,15 +2,17 @@
 
 - [x] Logger (Console, File, Mail)
 - [x] RESTful Web Service (CRUD)
-- [x] Web - HTML, CSS (Bootstrap), JavaScript (jQuery)
+- [x] Bootstrap - CSS
+- [x] Web - HTML, JavaScript (jQuery)
 - [x] Actuator
 - [x] Postman collection (Online & Offline)
-- [x] Swagger API Documentation (http://localhost:8088/swagger-ui.html)
+- [x] Swagger API Documentation
+- [x] Prometheous
+- [ ] Material Design for Bootstrap
 - [ ] HATEOS
 - [ ] NoSQL (MongoDB)
 - [ ] Micrometer
 - [ ] Grafna
-- [ ] Prometheous
 - [ ] Security
 
 ### spring-boot-actuator
@@ -26,6 +28,7 @@ including the `HealthEndpoint`, `EnvironmentEndpoint`, `BeansEndpoints` and many
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
 * [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
 * [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
+* [Prometheus](https://prometheus.io/) - Monitoring system and time series database
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
@@ -65,6 +68,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │   └── main
 │       └── java
 │           ├── com.arc.application
+│           ├── com.arc.application.config
 │           ├── com.arc.application.controller
 │           ├── com.arc.application.exception
 │           ├── com.arc.application.model
