@@ -2,7 +2,7 @@
 
 - [x] Logger (Console, File, Mail)
 - [x] RESTful Web Service (CRUD)
-- [x] HTML and CSS
+- [x] Web - HTML, CSS (Bootstrap), JavaScript (jQuery)
 - [x] Actuator
 - [x] Postman collection (Online & Offline)
 - [ ] Swagger API Documentation
@@ -72,7 +72,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │       └── resources
 │           └── static
 │           │   ├── css
-│           │   │   └── main.css
+│           │   │   └── bootstrap.css
 │           │   ├── images
 │           │   ├── js
 │           │   ├── favicon.ico
@@ -111,3 +111,5 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 ## Resources
 
 * [My API Lifecycle Checklist and Scorecard](https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard)
+* [HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
+* [Bootstrap w3schools](https://www.w3schools.com/bootstrap/)
