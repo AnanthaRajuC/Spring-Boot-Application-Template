@@ -27,6 +27,7 @@ including the `HealthEndpoint`, `EnvironmentEndpoint`, `BeansEndpoints` and many
 * [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
 * [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
+* [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
 ## Running the application locally
 
@@ -51,6 +52,7 @@ mvn spring-boot:run
 
 * [Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
 * [Postman Collection](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/Spring%20Boot%20Template.postman_collection.json) - offline
+* [Swagger](http://localhost:8088/swagger-ui.html) - Documentation & Testing
 
 ## Files and Directories
 
