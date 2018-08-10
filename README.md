@@ -129,3 +129,4 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 * [My API Lifecycle Checklist and Scorecard](https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard)
 * [HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
 * [Bootstrap w3schools](https://www.w3schools.com/bootstrap/)
+* [Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
