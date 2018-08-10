@@ -15,12 +15,6 @@
 - [ ] Grafna
 - [ ] Security
 
-### spring-boot-actuator
-Actuator endpoints let you monitor and interact with your application.
-Spring Boot Actuator provides the infrastructure required for actuator endpoints. It contains
-annotation support for actuator endpoints. Out of the box, this module provides a number of endpoints
-including the `HealthEndpoint`, `EnvironmentEndpoint`, `BeansEndpoints` and many more.
-
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
@@ -104,6 +98,22 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 └── README.md
 ```
 
+## packages
+
+- `models` — to hold our entities;
+- `repositories` — to communicate with the database;
+- `services` — to hold our business logic;
+- `controllers` — to listen to the client;
+
+- `resources/` - Contains all the static resources, templates and property files.
+- `resources/static` - contains static resources such as css, js and images.
+- `resources/templates` - contains server-side templates which are rendered by Spring.
+- `resources/application.properties` - It contains application-wide properties. Spring reads the properties defined in this file to configure your application. You can define server’s default port, server’s context path, database URLs etc, in this file.
+
+- `test/` - contains unit and integration tests
+
+- `pom.xml` - contains all the project dependencies
+ 
 ## Reporting Issues
 
 This Project uses GitHub's integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:
