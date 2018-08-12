@@ -78,6 +78,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   ├── favicon.ico
 │           │   └── index.html
 │           ├── templates
+│           │   └── view.html
 │           ├── application.properties
 │           ├── banner.txt
 │           └── log4j2.xml

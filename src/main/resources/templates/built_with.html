@@ -2,8 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
+
 <link rel="stylesheet" href="/css/bootstrap.css" />
-<title>BuiltWith</title>
+
+<title>Built With</title>
 </head>
 <body>
 	<div class="container">
@@ -26,6 +28,15 @@
 					</tr>
 				</tbody>
 			</table>
+			<hr/>
+			<ul class="nav nav-pills">
+
+			<li class="nav-item" 
+			th:each="i : ${#numbers.sequence(0,data.totalPages-1)}">
+			<a th:href="@{/bw/tech-stack/(page=${i})}" th:text="${i}" class="nav-link"></a>
+			</li>		
+				
+			</ul>
 		</div>
 	</div>
 	</div>
