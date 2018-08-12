@@ -1,13 +1,12 @@
 # Spring Boot Application Template
 
+## To-Do
+
 - [x] Logger (Console, File, Mail)
 - [x] RESTful Web Service (CRUD)
 - [x] Bootstrap - CSS
 - [x] Web - HTML, JavaScript (jQuery)
 - [x] Actuator
-- [x] Postman collection (Online & Offline)
-- [x] Swagger API Documentation
-- [x] Prometheous
 - [ ] Material Design for Bootstrap
 - [ ] HATEOS
 - [ ] NoSQL (MongoDB)
@@ -22,6 +21,7 @@
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
 * [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
 * [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
+* [Thymeleaf](https://www.thymeleaf.org/) - Modern server-side Java template engine for both web and standalone environments.
 * [Prometheus](https://prometheus.io/) - Monitoring system and time series database
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.

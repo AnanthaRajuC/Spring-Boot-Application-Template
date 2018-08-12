@@ -21,23 +21,23 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "person")
+@Table(name = "built_with")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-public class Person implements Serializable
+public class BuiltWith implements Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	private Integer id;
 	
 	@NotBlank
-    private String name;
+	private String name;
 	
-	private String gender;
-
-	private int age;
+	private String version;
+	private String description;
+	private String link;
 	
 	@Column(name="created_on", nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -49,12 +49,12 @@ public class Person implements Serializable
     @LastModifiedDate
     private Date updatedAt;
 
-	public Long getId() 
+	public Integer getId() 
 	{
 		return id;
 	}
 
-	public void setId(Long id) 
+	public void setId(Integer id) 
 	{
 		this.id = id;
 	}
@@ -68,25 +68,35 @@ public class Person implements Serializable
 	{
 		this.name = name;
 	}
-	
-	public String getGender() 
+
+	public String getVersion() 
 	{
-		return gender;
+		return version;
 	}
 
-	public void setGender(String gender) 
+	public void setVersion(String version) 
 	{
-		this.gender = gender;
-	}
-	
-	public int getAge() 
-	{
-		return age;
+		this.version = version;
 	}
 
-	public void setAge(int age) 
+	public String getDescription() 
 	{
-		this.age = age;
+		return description;
+	}
+
+	public void setDescription(String description) 
+	{
+		this.description = description;
+	}
+
+	public String getLink() 
+	{
+		return link;
+	}
+
+	public void setLink(String link) 
+	{
+		this.link = link;
 	}
 
 	public Date getCreatedAt() 
@@ -107,5 +117,32 @@ public class Person implements Serializable
 	public void setUpdatedAt(Date updatedAt) 
 	{
 		this.updatedAt = updatedAt;
+	}
+	
+	public BuiltWith(@NotBlank String name, String version, String description, String link, Date createdAt, Date updatedAt) 
+	{
+		this.name = name;
+		this.version = version;
+		this.description = description;
+		this.link = link;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
+
+	public BuiltWith() 
+	{
+		
+	}
+
+	@Override
+	public String toString() 
+	{
+		return "BuiltWith [id=" + id + ", "
+						+ "name=" + name + ", "
+						+ "version=" + version + ", "
+						+ "description=" + description + ", "
+						+ "link=" + link + ", "
+						+ "createdAt=" + createdAt + ", "
+						+ "updatedAt=" + updatedAt + "]";
 	}
 }

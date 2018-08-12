@@ -1,0 +1,585 @@
+2018-08-12 09:23:02.987  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Starting SBtemplateApplication on AnanthaRajuCdesktop with PID 10840 (G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate\target\classes started by Anantha Raju C in G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate)
+2018-08-12 09:23:03.078  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : The following profiles are active: mvnpackage,mvn package
+2018-08-12 09:23:03.657  INFO AnanthaRajuCdesktop --- [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2b88e4db: startup date [Sun Aug 12 09:23:03 IST 2018]; root of context hierarchy
+2018-08-12 09:23:09.803  INFO AnanthaRajuCdesktop --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$711ccab6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-12 09:23:12.118  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8088 (http)
+2018-08-12 09:23:12.187  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:23:12.257  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2018-08-12 09:23:12.258  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-12 09:23:12.287  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.AprLifecycleListener             : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_112\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_112/bin/server;C:/Program Files/Java/jre1.8.0_112/bin;C:/Program Files/Java/jre1.8.0_112/lib/amd64;C:\ProgramData\Oracle\Java\javapath;E:\Oracle12c_SE_64-Bit\oracleClient\app\product\11.2.0\client_1\bin;E:\Oracle12c_SE_64-Bit\app\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_112\bin;C:\Program Files\Git\cmd;C:\code_2018\apache-maven-3.5.2\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\dotnet\;C:\Mule\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\CMake\bin;C:\code_2018\apache-activemq-5.14.3\bin\win64;C:\Program Files (x86)\scala\bin;C:\code_2018\spark-2.3.0-bin-hadoop2.7\bin;C:\code_2018\gradle-4.6\bin;C:\Program Files (x86)\sbt\bin;C:\code_2018\curl-7.59.0\src;C:\code_2018\hadoop-2.7.3\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Docker Toolbox;C:\Users\Anantha Raju C\AppData\Roaming\npm;C:\Users\Anantha Raju C\AppData\Local\Yarn\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Programs\Fiddler;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Users\Anantha Raju C\Desktop\Development;;.]
+2018-08-12 09:23:12.935  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2018-08-12 09:23:12.935  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 9353 ms
+2018-08-12 09:23:15.263  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-12 09:23:15.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-08-12 09:23:15.265  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-12 09:23:15.265  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-12 09:23:15.266  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-12 09:23:15.266  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-08-12 09:23:15.267  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Servlet dispatcherServlet mapped to [/]
+2018-08-12 09:23:15.703  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2018-08-12 09:23:16.582  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2018-08-12 09:23:16.822  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:23:16.919  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-08-12 09:23:17.261  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.Version                              : HHH000412: Hibernate Core {5.2.17.Final}
+2018-08-12 09:23:17.274  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2018-08-12 09:23:17.518  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-12 09:23:17.918  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-08-12 09:23:19.786  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:23:21.404  WARN AnanthaRajuCdesktop --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-08-12 09:23:21.607  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/delete/{id}],methods=[GET]}" onto public long com.arc.sbtest.controller.BuiltWithController.deleteBuiltWith(java.lang.Integer)
+2018-08-12 09:23:21.607  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/builtwith],methods=[POST]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.saveBuiltWith(com.arc.sbtest.model.BuiltWith)
+2018-08-12 09:23:21.607  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/tech-stack]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.BuiltWith(org.springframework.ui.Model,int)
+2018-08-12 09:23:21.607  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/findOne],methods=[GET]}" onto public java.util.Optional<com.arc.sbtest.model.BuiltWith> com.arc.sbtest.controller.BuiltWithController.findBuiltWith(java.lang.Integer)
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/personalized-hello],methods=[GET]}" onto public java.lang.String com.arc.sbtest.controller.MScontroller.singleReqestParameter(java.lang.String)
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/generic-hello],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.noReqestParameter()
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[GET]}" onto public java.util.List<com.arc.sbtest.model.Person> com.arc.sbtest.controller.MScontroller.getAllPersons()
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/loggers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.logMethod()
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> com.arc.sbtest.controller.MScontroller.deletePerson(java.lang.Long)
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[PUT]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.updatePerson(java.lang.Long,com.arc.sbtest.model.Person)
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[POST]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.createPerson(com.arc.sbtest.model.Person)
+2018-08-12 09:23:21.623  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[GET]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.getPersonById(java.lang.Long)
+2018-08-12 09:23:21.640  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-08-12 09:23:21.642  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-08-12 09:23:21.643  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-08-12 09:23:21.648  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-12 09:23:21.649  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:23:22.003  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 4 endpoint(s) beneath base path '/actuator'
+2018-08-12 09:23:22.034  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:23:22.040  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:23:22.041  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/prometheus],methods=[GET],produces=[text/plain;version=0.0.4;charset=utf-8]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:23:22.041  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/httptrace],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:23:22.044  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:23:22.518  INFO AnanthaRajuCdesktop --- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-08-12 09:23:22.766  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:23:23.219  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2b88e4db: startup date [Sun Aug 12 09:23:03 IST 2018]; root of context hierarchy
+2018-08-12 09:23:23.334  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:23:23.334  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:23:23.687  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-08-12 09:23:24.650  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-08-12 09:23:24.766  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-08-12 09:23:24.773  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-12 09:23:24.789  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-12 09:23:24.834  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.c.s.DefaultLifecycleProcessor        : Starting beans in phase 2147483647
+2018-08-12 09:23:24.835  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-08-12 09:23:24.903  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-08-12 09:23:25.079  INFO AnanthaRajuCdesktop --- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-08-12 09:23:25.692  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:23:25.824  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.t.u.n.NioSelectorPool                : Using a shared selector for servlet write/read
+2018-08-12 09:23:25.938  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8088 (http) with context path ''
+2018-08-12 09:23:25.982  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Started SBtemplateApplication in 25.645 seconds (JVM running for 37.897)
+2018-08-12 09:23:39.093  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-12 09:23:39.093  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-12 09:23:39.139  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 46 ms
+2018-08-12 09:25:56.360  INFO AnanthaRajuCdesktop --- [nio-8088-exec-9] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-08-12 09:26:20.826  WARN AnanthaRajuCdesktop --- [nio-8088-exec-2] o.s.w.s.PageNotFound                     : Request method 'GET' not supported
+2018-08-12 09:26:20.827  WARN AnanthaRajuCdesktop --- [nio-8088-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+2018-08-12 09:26:54.953 ERROR AnanthaRajuCdesktop --- [nio-8088-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Unknown return value type: java.lang.Long] with root cause
+java.lang.IllegalArgumentException: Unknown return value type: java.lang.Long
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:80)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:119)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:155)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:123)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2018-08-12 09:27:38.968  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-08-12 09:27:38.972  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2b88e4db: startup date [Sun Aug 12 09:23:03 IST 2018]; root of context hierarchy
+2018-08-12 09:27:39.021  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] o.s.c.s.DefaultLifecycleProcessor        : Stopping beans in phase 2147483647
+2018-08-12 09:27:39.037  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-08-12 09:27:39.037  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-08-12 09:27:39.037  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:27:39.052  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2018-08-12 09:27:39.084  INFO AnanthaRajuCdesktop --- [n(15)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2018-08-12 09:27:52.359  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Starting SBtemplateApplication on AnanthaRajuCdesktop with PID 6616 (G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate\target\classes started by Anantha Raju C in G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate)
+2018-08-12 09:27:52.359  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : The following profiles are active: mvnpackage,mvn package
+2018-08-12 09:27:52.574  INFO AnanthaRajuCdesktop --- [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61126a26: startup date [Sun Aug 12 09:27:52 IST 2018]; root of context hierarchy
+2018-08-12 09:27:56.658  INFO AnanthaRajuCdesktop --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b2488b71] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-12 09:27:57.639  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8088 (http)
+2018-08-12 09:27:57.654  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:27:57.670  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2018-08-12 09:27:57.684  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-12 09:27:57.686  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.AprLifecycleListener             : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_112\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_112/bin/server;C:/Program Files/Java/jre1.8.0_112/bin;C:/Program Files/Java/jre1.8.0_112/lib/amd64;C:\ProgramData\Oracle\Java\javapath;E:\Oracle12c_SE_64-Bit\oracleClient\app\product\11.2.0\client_1\bin;E:\Oracle12c_SE_64-Bit\app\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_112\bin;C:\Program Files\Git\cmd;C:\code_2018\apache-maven-3.5.2\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\dotnet\;C:\Mule\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\CMake\bin;C:\code_2018\apache-activemq-5.14.3\bin\win64;C:\Program Files (x86)\scala\bin;C:\code_2018\spark-2.3.0-bin-hadoop2.7\bin;C:\code_2018\gradle-4.6\bin;C:\Program Files (x86)\sbt\bin;C:\code_2018\curl-7.59.0\src;C:\code_2018\hadoop-2.7.3\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Docker Toolbox;C:\Users\Anantha Raju C\AppData\Roaming\npm;C:\Users\Anantha Raju C\AppData\Local\Yarn\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Programs\Fiddler;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Users\Anantha Raju C\Desktop\Development;;.]
+2018-08-12 09:27:58.295  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2018-08-12 09:27:58.295  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 5721 ms
+2018-08-12 09:28:00.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-12 09:28:00.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-08-12 09:28:00.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-12 09:28:00.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-12 09:28:00.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-12 09:28:00.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-08-12 09:28:00.264  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Servlet dispatcherServlet mapped to [/]
+2018-08-12 09:28:00.457  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2018-08-12 09:28:00.816  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2018-08-12 09:28:00.879  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:28:00.910  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-08-12 09:28:01.097  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.Version                              : HHH000412: Hibernate Core {5.2.17.Final}
+2018-08-12 09:28:01.099  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2018-08-12 09:28:01.157  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-12 09:28:01.391  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-08-12 09:28:02.257  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:28:03.616  WARN AnanthaRajuCdesktop --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-08-12 09:28:03.747  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/findOne],methods=[GET]}" onto public java.util.Optional<com.arc.sbtest.model.BuiltWith> com.arc.sbtest.controller.BuiltWithController.findBuiltWith(java.lang.Integer)
+2018-08-12 09:28:03.747  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/builtwith],methods=[POST]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.saveBuiltWith(com.arc.sbtest.model.BuiltWith)
+2018-08-12 09:28:03.747  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/tech-stack]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.BuiltWith(org.springframework.ui.Model,int)
+2018-08-12 09:28:03.747  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/delete/{id}],methods=[GET]}" onto public long com.arc.sbtest.controller.BuiltWithController.deleteBuiltWith(java.lang.Integer)
+2018-08-12 09:28:03.747  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/personalized-hello],methods=[GET]}" onto public java.lang.String com.arc.sbtest.controller.MScontroller.singleReqestParameter(java.lang.String)
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/generic-hello],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.noReqestParameter()
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[GET]}" onto public java.util.List<com.arc.sbtest.model.Person> com.arc.sbtest.controller.MScontroller.getAllPersons()
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[POST]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.createPerson(com.arc.sbtest.model.Person)
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> com.arc.sbtest.controller.MScontroller.deletePerson(java.lang.Long)
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/loggers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.logMethod()
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[GET]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.getPersonById(java.lang.Long)
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[PUT]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.updatePerson(java.lang.Long,com.arc.sbtest.model.Person)
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-08-12 09:28:03.763  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-08-12 09:28:03.778  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-12 09:28:03.778  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:28:03.966  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 4 endpoint(s) beneath base path '/actuator'
+2018-08-12 09:28:03.997  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:28:03.997  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:28:03.997  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/prometheus],methods=[GET],produces=[text/plain;version=0.0.4;charset=utf-8]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:28:03.997  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/httptrace],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:28:03.997  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:28:04.325  INFO AnanthaRajuCdesktop --- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-08-12 09:28:04.622  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:28:04.926  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61126a26: startup date [Sun Aug 12 09:27:52 IST 2018]; root of context hierarchy
+2018-08-12 09:28:05.033  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:28:05.033  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:28:05.252  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-08-12 09:28:05.877  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-08-12 09:28:05.977  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-08-12 09:28:05.977  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-12 09:28:05.993  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-12 09:28:06.024  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.c.s.DefaultLifecycleProcessor        : Starting beans in phase 2147483647
+2018-08-12 09:28:06.024  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-08-12 09:28:06.055  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-08-12 09:28:06.212  INFO AnanthaRajuCdesktop --- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-08-12 09:28:06.743  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:28:06.759  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.t.u.n.NioSelectorPool                : Using a shared selector for servlet write/read
+2018-08-12 09:28:06.821  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8088 (http) with context path ''
+2018-08-12 09:28:06.821  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Started SBtemplateApplication in 15.243 seconds (JVM running for 18.121)
+2018-08-12 09:28:59.341  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-12 09:28:59.342  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-12 09:28:59.397  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 55 ms
+2018-08-12 09:28:59.726  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-08-12 09:29:26.232  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-08-12 09:29:26.232  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61126a26: startup date [Sun Aug 12 09:27:52 IST 2018]; root of context hierarchy
+2018-08-12 09:29:26.251  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] o.s.c.s.DefaultLifecycleProcessor        : Stopping beans in phase 2147483647
+2018-08-12 09:29:26.251  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-08-12 09:29:26.251  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-08-12 09:29:26.251  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:29:26.266  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2018-08-12 09:29:26.282  INFO AnanthaRajuCdesktop --- [on(5)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2018-08-12 09:29:35.976  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Starting SBtemplateApplication on AnanthaRajuCdesktop with PID 8076 (G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate\target\classes started by Anantha Raju C in G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate)
+2018-08-12 09:29:35.992  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : The following profiles are active: mvnpackage,mvn package
+2018-08-12 09:29:36.226  INFO AnanthaRajuCdesktop --- [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4f7c9b48: startup date [Sun Aug 12 09:29:36 IST 2018]; root of context hierarchy
+2018-08-12 09:29:43.969  INFO AnanthaRajuCdesktop --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$83dd8e04] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-12 09:29:45.692  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8088 (http)
+2018-08-12 09:29:45.739  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:29:45.763  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2018-08-12 09:29:45.763  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-12 09:29:45.778  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.AprLifecycleListener             : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_112\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_112/bin/server;C:/Program Files/Java/jre1.8.0_112/bin;C:/Program Files/Java/jre1.8.0_112/lib/amd64;C:\ProgramData\Oracle\Java\javapath;E:\Oracle12c_SE_64-Bit\oracleClient\app\product\11.2.0\client_1\bin;E:\Oracle12c_SE_64-Bit\app\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_112\bin;C:\Program Files\Git\cmd;C:\code_2018\apache-maven-3.5.2\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\dotnet\;C:\Mule\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\CMake\bin;C:\code_2018\apache-activemq-5.14.3\bin\win64;C:\Program Files (x86)\scala\bin;C:\code_2018\spark-2.3.0-bin-hadoop2.7\bin;C:\code_2018\gradle-4.6\bin;C:\Program Files (x86)\sbt\bin;C:\code_2018\curl-7.59.0\src;C:\code_2018\hadoop-2.7.3\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Docker Toolbox;C:\Users\Anantha Raju C\AppData\Roaming\npm;C:\Users\Anantha Raju C\AppData\Local\Yarn\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Programs\Fiddler;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Users\Anantha Raju C\Desktop\Development;;.]
+2018-08-12 09:29:46.653  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2018-08-12 09:29:46.653  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 10427 ms
+2018-08-12 09:29:49.762  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-12 09:29:49.762  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-08-12 09:29:49.762  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-12 09:29:49.762  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-12 09:29:49.762  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-12 09:29:49.762  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-08-12 09:29:49.762  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Servlet dispatcherServlet mapped to [/]
+2018-08-12 09:29:50.272  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2018-08-12 09:29:50.944  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2018-08-12 09:29:51.189  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:29:51.220  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-08-12 09:29:51.610  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.Version                              : HHH000412: Hibernate Core {5.2.17.Final}
+2018-08-12 09:29:51.610  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2018-08-12 09:29:51.704  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-12 09:29:52.298  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-08-12 09:29:53.161  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:29:54.255  WARN AnanthaRajuCdesktop --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-08-12 09:29:54.424  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/delete/{id}],methods=[GET]}" onto public long com.arc.sbtest.controller.BuiltWithController.deleteBuiltWith(java.lang.Integer)
+2018-08-12 09:29:54.424  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/tech-stack]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.BuiltWith(org.springframework.ui.Model,int)
+2018-08-12 09:29:54.424  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/findOne],methods=[GET]}" onto public java.util.Optional<com.arc.sbtest.model.BuiltWith> com.arc.sbtest.controller.BuiltWithController.findBuiltWith(java.lang.Integer)
+2018-08-12 09:29:54.424  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/builtwith],methods=[POST]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.saveBuiltWith(com.arc.sbtest.model.BuiltWith)
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[GET]}" onto public java.util.List<com.arc.sbtest.model.Person> com.arc.sbtest.controller.MScontroller.getAllPersons()
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[GET]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.getPersonById(java.lang.Long)
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[POST]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.createPerson(com.arc.sbtest.model.Person)
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[PUT]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.updatePerson(java.lang.Long,com.arc.sbtest.model.Person)
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> com.arc.sbtest.controller.MScontroller.deletePerson(java.lang.Long)
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/loggers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.logMethod()
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/generic-hello],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.noReqestParameter()
+2018-08-12 09:29:54.440  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/personalized-hello],methods=[GET]}" onto public java.lang.String com.arc.sbtest.controller.MScontroller.singleReqestParameter(java.lang.String)
+2018-08-12 09:29:54.456  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-08-12 09:29:54.456  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-08-12 09:29:54.456  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-08-12 09:29:54.471  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-12 09:29:54.471  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:29:54.721  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 4 endpoint(s) beneath base path '/actuator'
+2018-08-12 09:29:54.752  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:29:54.752  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:29:54.752  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/prometheus],methods=[GET],produces=[text/plain;version=0.0.4;charset=utf-8]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:29:54.752  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/httptrace],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:29:54.752  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:29:55.081  INFO AnanthaRajuCdesktop --- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-08-12 09:29:55.331  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:29:55.634  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4f7c9b48: startup date [Sun Aug 12 09:29:36 IST 2018]; root of context hierarchy
+2018-08-12 09:29:55.728  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:29:55.728  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:29:56.081  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-08-12 09:29:56.885  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-08-12 09:29:56.980  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-08-12 09:29:56.995  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-12 09:29:57.011  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-12 09:29:57.026  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.c.s.DefaultLifecycleProcessor        : Starting beans in phase 2147483647
+2018-08-12 09:29:57.026  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-08-12 09:29:57.073  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-08-12 09:29:57.214  INFO AnanthaRajuCdesktop --- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-08-12 09:29:57.573  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:29:57.604  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.t.u.n.NioSelectorPool                : Using a shared selector for servlet write/read
+2018-08-12 09:29:57.734  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8088 (http) with context path ''
+2018-08-12 09:29:57.743  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Started SBtemplateApplication in 22.833 seconds (JVM running for 26.118)
+2018-08-12 09:30:26.044  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-12 09:30:26.044  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-12 09:30:26.105  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 60 ms
+2018-08-12 09:30:26.404  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-08-12 09:31:06.321 ERROR AnanthaRajuCdesktop --- [nio-8088-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
+java.lang.IllegalArgumentException: The given id must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:193)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:223)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:377)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:629)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:593)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:578)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy140.findById(Unknown Source)
+	at com.arc.sbtest.controller.BuiltWithController.findBuiltWith(BuiltWithController.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:155)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:123)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2018-08-12 09:31:35.829  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-08-12 09:31:35.832  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4f7c9b48: startup date [Sun Aug 12 09:29:36 IST 2018]; root of context hierarchy
+2018-08-12 09:31:35.833  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] o.s.c.s.DefaultLifecycleProcessor        : Stopping beans in phase 2147483647
+2018-08-12 09:31:35.843  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-08-12 09:31:35.843  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-08-12 09:31:35.848  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:31:35.853  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2018-08-12 09:31:35.863  INFO AnanthaRajuCdesktop --- [on(7)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2018-08-12 09:31:57.973  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Starting SBtemplateApplication on AnanthaRajuCdesktop with PID 10736 (G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate\target\classes started by Anantha Raju C in G:\WS_Eclipse\Framework_Spring_Boot\SBtemplate)
+2018-08-12 09:31:58.218  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : The following profiles are active: mvnpackage,mvn package
+2018-08-12 09:31:58.800  INFO AnanthaRajuCdesktop --- [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1b3987bb: startup date [Sun Aug 12 09:31:58 IST 2018]; root of context hierarchy
+2018-08-12 09:32:07.281  INFO AnanthaRajuCdesktop --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$563ea15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-12 09:32:08.917  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8088 (http)
+2018-08-12 09:32:08.988  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:32:09.038  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2018-08-12 09:32:09.038  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-12 09:32:09.116  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.AprLifecycleListener             : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_112\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_112/bin/server;C:/Program Files/Java/jre1.8.0_112/bin;C:/Program Files/Java/jre1.8.0_112/lib/amd64;C:\ProgramData\Oracle\Java\javapath;E:\Oracle12c_SE_64-Bit\oracleClient\app\product\11.2.0\client_1\bin;E:\Oracle12c_SE_64-Bit\app\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_112\bin;C:\Program Files\Git\cmd;C:\code_2018\apache-maven-3.5.2\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\dotnet\;C:\Mule\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\CMake\bin;C:\code_2018\apache-activemq-5.14.3\bin\win64;C:\Program Files (x86)\scala\bin;C:\code_2018\spark-2.3.0-bin-hadoop2.7\bin;C:\code_2018\gradle-4.6\bin;C:\Program Files (x86)\sbt\bin;C:\code_2018\curl-7.59.0\src;C:\code_2018\hadoop-2.7.3\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Docker Toolbox;C:\Users\Anantha Raju C\AppData\Roaming\npm;C:\Users\Anantha Raju C\AppData\Local\Yarn\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Anantha Raju C\AppData\Local\Programs\Fiddler;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;C:\Users\Anantha Raju C\Desktop\Development;;.]
+2018-08-12 09:32:10.178  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2018-08-12 09:32:10.211  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 11421 ms
+2018-08-12 09:32:13.713  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-12 09:32:13.713  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-08-12 09:32:13.713  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-12 09:32:13.718  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-12 09:32:13.718  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-12 09:32:13.718  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-08-12 09:32:13.718  INFO AnanthaRajuCdesktop --- [ost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Servlet dispatcherServlet mapped to [/]
+2018-08-12 09:32:14.016  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2018-08-12 09:32:14.516  INFO AnanthaRajuCdesktop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2018-08-12 09:32:14.693  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:32:14.763  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-08-12 09:32:15.043  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.Version                              : HHH000412: Hibernate Core {5.2.17.Final}
+2018-08-12 09:32:15.051  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2018-08-12 09:32:15.153  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-12 09:32:15.463  INFO AnanthaRajuCdesktop --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-08-12 09:32:16.673  INFO AnanthaRajuCdesktop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:32:18.717  WARN AnanthaRajuCdesktop --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-08-12 09:32:18.948  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/findOne/{id}],methods=[GET]}" onto public java.util.Optional<com.arc.sbtest.model.BuiltWith> com.arc.sbtest.controller.BuiltWithController.findBuiltWith(java.lang.Integer)
+2018-08-12 09:32:18.948  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/tech-stack]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.BuiltWith(org.springframework.ui.Model,int)
+2018-08-12 09:32:18.948  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/builtwith],methods=[POST]}" onto public java.lang.String com.arc.sbtest.controller.BuiltWithController.saveBuiltWith(com.arc.sbtest.model.BuiltWith)
+2018-08-12 09:32:18.953  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bw/delete/{id}],methods=[GET]}" onto public long com.arc.sbtest.controller.BuiltWithController.deleteBuiltWith(java.lang.Integer)
+2018-08-12 09:32:18.968  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/generic-hello],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.noReqestParameter()
+2018-08-12 09:32:18.968  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/personalized-hello],methods=[GET]}" onto public java.lang.String com.arc.sbtest.controller.MScontroller.singleReqestParameter(java.lang.String)
+2018-08-12 09:32:18.968  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[GET]}" onto public java.util.List<com.arc.sbtest.model.Person> com.arc.sbtest.controller.MScontroller.getAllPersons()
+2018-08-12 09:32:18.968  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[GET]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.getPersonById(java.lang.Long)
+2018-08-12 09:32:18.968  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[PUT]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.updatePerson(java.lang.Long,com.arc.sbtest.model.Person)
+2018-08-12 09:32:18.973  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons],methods=[POST]}" onto public com.arc.sbtest.model.Person com.arc.sbtest.controller.MScontroller.createPerson(com.arc.sbtest.model.Person)
+2018-08-12 09:32:18.973  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/persons/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> com.arc.sbtest.controller.MScontroller.deletePerson(java.lang.Long)
+2018-08-12 09:32:18.973  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/loggers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.arc.sbtest.controller.MScontroller.logMethod()
+2018-08-12 09:32:18.986  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-08-12 09:32:18.986  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-08-12 09:32:18.986  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-08-12 09:32:19.003  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-12 09:32:19.003  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:32:19.311  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 4 endpoint(s) beneath base path '/actuator'
+2018-08-12 09:32:19.349  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:32:19.349  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:32:19.349  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/prometheus],methods=[GET],produces=[text/plain;version=0.0.4;charset=utf-8]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:32:19.349  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/httptrace],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-08-12 09:32:19.353  INFO AnanthaRajuCdesktop --- [  restartedMain] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-12 09:32:19.721  INFO AnanthaRajuCdesktop --- [  restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-08-12 09:32:20.128  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:32:21.036  INFO AnanthaRajuCdesktop --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1b3987bb: startup date [Sun Aug 12 09:31:58 IST 2018]; root of context hierarchy
+2018-08-12 09:32:21.302  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:32:21.322  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-12 09:32:21.932  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-08-12 09:32:23.678  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-08-12 09:32:23.860  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-08-12 09:32:23.896  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-12 09:32:23.923  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-12 09:32:23.941  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.c.s.DefaultLifecycleProcessor        : Starting beans in phase 2147483647
+2018-08-12 09:32:23.946  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-08-12 09:32:24.028  INFO AnanthaRajuCdesktop --- [  restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-08-12 09:32:25.262  INFO AnanthaRajuCdesktop --- [  restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-08-12 09:32:25.948  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8088"]
+2018-08-12 09:32:25.988  INFO AnanthaRajuCdesktop --- [  restartedMain] o.a.t.u.n.NioSelectorPool                : Using a shared selector for servlet write/read
+2018-08-12 09:32:26.038  INFO AnanthaRajuCdesktop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8088 (http) with context path ''
+2018-08-12 09:32:26.063  INFO AnanthaRajuCdesktop --- [  restartedMain] c.a.s.SBtemplateApplication              : Started SBtemplateApplication in 29.485 seconds (JVM running for 33.629)
+2018-08-12 09:32:37.982  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-12 09:32:37.982  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-12 09:32:38.059  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.s.w.s.DispatcherServlet                : FrameworkServlet 'dispatcherServlet': initialization completed in 75 ms
+2018-08-12 09:32:38.334  INFO AnanthaRajuCdesktop --- [nio-8088-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-08-12 09:32:47.676 ERROR AnanthaRajuCdesktop --- [nio-8088-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
+java.lang.IllegalArgumentException: The given id must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:193)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:223)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:377)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:629)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:593)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:578)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy140.findById(Unknown Source)
+	at com.arc.sbtest.controller.BuiltWithController.findBuiltWith(BuiltWithController.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:155)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:123)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2018-08-12 09:35:25.582  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-08-12 09:35:25.594  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1b3987bb: startup date [Sun Aug 12 09:31:58 IST 2018]; root of context hierarchy
+2018-08-12 09:35:25.594  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] o.s.c.s.DefaultLifecycleProcessor        : Stopping beans in phase 2147483647
+2018-08-12 09:35:25.594  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-08-12 09:35:25.610  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-08-12 09:35:25.610  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-08-12 09:35:25.610  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2018-08-12 09:35:25.657  INFO AnanthaRajuCdesktop --- [n(12)-127.0.0.1] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
