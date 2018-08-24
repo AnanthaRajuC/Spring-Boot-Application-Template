@@ -1,4 +1,20 @@
-# Spring Boot Application Template
+# Spring Boot Application Template/Starter-Project
+
+The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code. 
+
+Delete the sample code, replace with your own and you’re good to go.
+
+## Built With
+
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit 
+* [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
+* [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
+* [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
+* [Thymeleaf](https://www.thymeleaf.org/) - Modern server-side Java template engine for both web and standalone environments.
+* [Prometheus](https://prometheus.io/) - Monitoring system and time series database
+* [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
+* [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
 ## To-Do
 
@@ -13,18 +29,6 @@
 - [ ] Micrometer
 - [ ] Grafna
 - [ ] Security
-
-## Built With
-
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit 
-* [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
-* [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
-* [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
-* [Thymeleaf](https://www.thymeleaf.org/) - Modern server-side Java template engine for both web and standalone environments.
-* [Prometheus](https://prometheus.io/) - Monitoring system and time series database
-* [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
-* [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
 ## Running the application locally
 
