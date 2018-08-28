@@ -25,6 +25,7 @@ Delete the sample code, replace with your own and you’re good to go.
 - [x] Actuator
 - [ ] Material Design for Bootstrap
 - [ ] HATEOS
+- [ ] Spring Boot Admin
 - [ ] NoSQL (MongoDB)
 - [ ] Micrometer
 - [ ] Grafna
