@@ -30,7 +30,7 @@ Delete the sample code, replace with your own and you’re good to go.
 - [ ] NoSQL (MongoDB)
 - [ ] Micrometer
 - [ ] Grafna
-- [ ] Content Negotiation
+- [x] Content Negotiation
 - [ ] Security
 
 ## Running the application locally
