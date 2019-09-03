@@ -7,9 +7,14 @@ import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "person")
 @EntityListeners(AuditingEntityListener.class)
+@Getter
+@Setter
 public class Person extends BaseEntity
 {
 	private static final long serialVersionUID = 1L;
@@ -18,34 +23,4 @@ public class Person extends BaseEntity
     private String name;	
 	private String gender;
 	private int age;
-
-	public String getName() 
-	{
-		return name;
-	}
-
-	public void setName(String name) 
-	{
-		this.name = name;
-	}
-	
-	public String getGender() 
-	{
-		return gender;
-	}
-
-	public void setGender(String gender) 
-	{
-		this.gender = gender;
-	}
-	
-	public int getAge() 
-	{
-		return age;
-	}
-
-	public void setAge(int age) 
-	{
-		this.age = age;
-	}
 }

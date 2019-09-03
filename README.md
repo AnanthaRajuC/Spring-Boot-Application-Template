@@ -74,7 +74,8 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           ├── com.arc.application.exception
 │           ├── com.arc.application.model
 │           ├── com.arc.application.util
-│           └── com.arc.application.repository
+│           ├── com.arc.application.repository
+│           └── com.arc.application.service
 ├── src
 │   └── main
 │       └── resources
