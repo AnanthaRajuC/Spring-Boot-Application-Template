@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Spring Boot Microservice Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/css/bootstrap.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>
+				<mark>Spring Boot</mark>
+				<small>Application Template</small>
+			</h1>
+		</div>
+		<a href="/api/generic-hello" class="btn btn-info" role="button">generic
+			greetings</a> <br>
+
+		<form action="/api/personalized-hello" method="get">
+			Name: <input class="form-control" type="text"
+				placeholder="Enter name" name="name"><br>
+			<button class="btn btn-info" type="submit">personalized
+				greetings</button>
+			<br> <br>
+
+
+			<div class="table-responsive">
+				<input class="form-control" id="myInput" type="text" placeholder="Search.."> <br>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Version</th>
+							<th>Description</th>
+							<th>Link</th>
+						</tr>
+					</thead>
+					<tbody id="myTable">
+						<tr>
+							<td>1</td>
+							<td>Maven</td>
+							<td>3.5.2</td>
+							<td>Dependency Management</td>
+							<td><a href="https://maven.apache.org/">https://maven.apache.org/</a></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>JDK</td>
+							<td>9.0.1</td>
+							<td>Java™ Platform, Standard Edition Development Kit</td>
+							<td><a
+								href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Spring Boot</td>
+							<td>2.0.4</td>
+							<td>Framework to ease the bootstrapping and development of
+								new Spring Applications</td>
+							<td><a href="https://spring.io/projects/spring-boot">https://spring.io/projects/spring-boot</a></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>MySQL</td>
+							<td>5.7.21</td>
+							<td>Open-Source Relational Database Management System</td>
+							<td><a href="https://www.mysql.com/">https://www.mysql.com/</a></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>git</td>
+							<td>2.9.0.windows.1</td>
+							<td>Free and Open-Source distributed version control system</td>
+							<td><a href="https://git-scm.com/">https://git-scm.com/</a></td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>Postman</td>
+							<td>v6.2.3</td>
+							<td>API Development Environment (ADE)</td>
+							<td><a href="https://www.getpostman.com/">https://www.getpostman.com/</a></td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>Swagger</td>
+							<td>2.7.0</td>
+							<td>API Design, Development, Documentation, Testing & Governance</td>
+							<td><a href="https://swagger.io/">https://swagger.io/</a></td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>Prometheus</td>
+							<td>2.3.2</td>
+							<td>Monitoring system and time series database</td>
+							<td><a href="https://prometheus.io/">https://prometheus.io/</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+	<script>
+		$(document)
+				.ready(
+						function() {
+							$("#myInput")
+									.on(
+											"keyup",
+											function() {
+												var value = $(this).val()
+														.toLowerCase();
+												$("#myTable tr")
+														.filter(
+																function() {
+																	$(this)
+																			.toggle(
+																					$(
+																							this)
+																							.text()
+																							.toLowerCase()
+																							.indexOf(
+																									value) > -1)
+																});
+											});
+						});
+	</script>
+</body>
+</html>

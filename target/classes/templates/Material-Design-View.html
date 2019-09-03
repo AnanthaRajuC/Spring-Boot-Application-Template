@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/material-components-web.min.css" />
+<title>Material Design View</title>
+</head>
+<body>
+<div class="mdc-tab-bar" role="tablist">
+  <div class="mdc-tab-scroller">
+    <div class="mdc-tab-scroller__scroll-area">
+      <div class="mdc-tab-scroller__scroll-content">
+        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+          <div class="mdc-tab__content">
+            <span class="mdc-tab__icon">heart</div>
+            <span class="mdc-tab__text-label">Favorites</div>
+          </div>
+          <span class="mdc-tab-indicator mdc-tab-indicator--active">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+          </span>
+          <div class="mdc-tab__ripple"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</button>
+</hr>
+<button class="foo-button mdc-button"><span th:text="${appName}"></span></button>
+
+<ul class="mdc-list" aria-orientation="vertical">
+  <li class="mdc-list-item">Single-line item</li>
+  <li class="mdc-list-item">Single-line item</li>
+  <li class="mdc-list-item">Single-line item</li>
+</ul>
+
+<ul class="mdc-list mdc-list--two-line" aria-orientation="vertical">
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">
+      <span class="mdc-list-item__primary-text">First-line text</span>
+      <span class="mdc-list-item__secondary-text">Second-line text</span>
+    </span>
+  </li>
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">
+      <span class="mdc-list-item__primary-text">First-line text</span>
+      <span class="mdc-list-item__secondary-text">Second-line text</span>
+    </span>
+  </li>
+  <li class="mdc-list-item">
+    <span class="mdc-list-item__text">
+      <span class="mdc-list-item__primary-text">First-line text</span>
+      <span class="mdc-list-item__secondary-text">Second-line text</span>
+    </span>
+  </li>
+</ul>
+
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader">List 1</h3>
+  <ul class="mdc-list" aria-orientation="vertical">
+    <li class="mdc-list-item">line item</li>
+    <li class="mdc-list-item">line item</li>
+    <li class="mdc-list-item">line item</li>
+  </ul>
+
+  <h3 class="mdc-list-group__subheader">List 2</h3>
+  <ul class="mdc-list" aria-orientation="vertical">
+    <li class="mdc-list-item">line item</li>
+    <li class="mdc-list-item">line item</li>
+    <li class="mdc-list-item">line item</li>
+  </ul>
+</div>
+
+<ul class="mdc-list" aria-orientation="vertical">
+  <li class="mdc-list-item">Item 1 - Division 1</li>
+  <li class="mdc-list-item">Item 2 - Division 1</li>
+  <li role="separator" class="mdc-list-divider"></li>
+  <li class="mdc-list-item">Item 1 - Division 2</li>
+  <li class="mdc-list-item">Item 2 - Division 2</li>
+</ul>
+
+</body>
+</html>
