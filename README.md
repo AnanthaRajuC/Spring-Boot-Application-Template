@@ -68,7 +68,11 @@ Automated dependency updates done via [Dependabot](https://dependabot.com/)
 
 ### URLs
 
-URL: `localhost:8080/bw/tech-stack`
+- `localhost:8080/bw/tech-stack`
+- `http://localhost:8080/api/generic-hello`
+- `http://localhost:8080/api/personalized-hello/`
+- `http://localhost:8080/api/personalized-hello?name=spring-boot`
+- `http://localhost:8080/api/loggers`
 
 
 ## Documentation
