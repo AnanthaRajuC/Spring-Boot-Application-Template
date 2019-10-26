@@ -25,6 +25,7 @@ Delete the sample code, replace with your own and you’re good to go.
 - [x] Web - HTML, JavaScript (jQuery)
 - [x] Actuator
 - [ ] Material Design for Bootstrap
+- [ ] Docker
 - [ ] HATEOS
 - [ ] Spring Boot Admin
 - [ ] NoSQL (MongoDB)
@@ -51,6 +52,17 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 ```shell
 mvn spring-boot:run
 ```
+
+### Security
+
+```
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+```
+
+Spring Boot Starter Security default username is `user` and a generated security password is printed in the console like `Using generated security password: 0423bec1-6759-4ed2-8e3e-e8196effadf9`
 
 ## Documentation
 
