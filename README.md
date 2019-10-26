@@ -64,6 +64,13 @@ mvn spring-boot:run
 
 Spring Boot Starter Security default username is `user` and a generated security password is printed in the console like `Using generated security password: 0423bec1-6759-4ed2-8e3e-e8196effadf9`
 
+Automated dependency updates done via [Dependabot](https://dependabot.com/)
+
+### URLs
+
+URL: `localhost:8080/bw/tech-stack`
+
+
 ## Documentation
 
 * [Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages

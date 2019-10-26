@@ -20,10 +20,19 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "built_with")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class BuiltWith implements Serializable
 {
 	private static final long serialVersionUID = 1L;
@@ -49,76 +58,6 @@ public class BuiltWith implements Serializable
     @LastModifiedDate
     private Date updatedAt;
 
-	public Integer getId() 
-	{
-		return id;
-	}
-
-	public void setId(Integer id) 
-	{
-		this.id = id;
-	}
-
-	public String getName() 
-	{
-		return name;
-	}
-
-	public void setName(String name) 
-	{
-		this.name = name;
-	}
-
-	public String getVersion() 
-	{
-		return version;
-	}
-
-	public void setVersion(String version) 
-	{
-		this.version = version;
-	}
-
-	public String getDescription() 
-	{
-		return description;
-	}
-
-	public void setDescription(String description) 
-	{
-		this.description = description;
-	}
-
-	public String getLink() 
-	{
-		return link;
-	}
-
-	public void setLink(String link) 
-	{
-		this.link = link;
-	}
-
-	public Date getCreatedAt() 
-	{
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) 
-	{
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() 
-	{
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) 
-	{
-		this.updatedAt = updatedAt;
-	}
-	
 	public BuiltWith(@NotBlank String name, String version, String description, String link, Date createdAt, Date updatedAt) 
 	{
 		this.name = name;
@@ -127,11 +66,6 @@ public class BuiltWith implements Serializable
 		this.link = link;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-	}
-
-	public BuiltWith() 
-	{
-		
 	}
 
 	@Override
