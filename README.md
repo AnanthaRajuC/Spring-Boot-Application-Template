@@ -73,19 +73,23 @@ Automated dependency updates done via [Dependabot](https://dependabot.com/)
 
 To monitor and manage your application
 
-- `http://localhost:8080/actuator/actuator`
-- `http://localhost:8080/actuator/health`
-- `http://localhost:8080/actuator/info`
-- `http://localhost:8080/actuator/prometheus`
-- `http://localhost:8080/actuator/httptrace`
+|  URL |  Method |
+|----------|--------------|
+|`http://localhost:8080/actuator/actuator`  | GET |
+|`http://localhost:8080/actuator/health`    | GET |
+|`http://localhost:8080/actuator/info`      | GET |
+|`http://localhost:8080/actuator/prometheus`| GET |
+|`http://localhost:8080/actuator/httptrace` | GET |
 
 ### URLs
 
-- `localhost:8080/bw/tech-stack` - Custom Response Headers
-- `http://localhost:8080/api/generic-hello`
-- `http://localhost:8080/api/personalized-hello/`
-- `http://localhost:8080/api/personalized-hello?name=spring-boot`
-- `http://localhost:8080/api/loggers`
+|  URL |  Method | Remarks |
+|----------|--------------|--------------|
+|`http://localhost:8080/bw/tech-stack`                           | GET | Custom Response Headers|
+|`http://localhost:8080/api/generic-hello`                       | GET | |
+|`http://localhost:8080/api/personalized-hello/`                 | GET | |
+|`http://localhost:8080/api/personalized-hello?name=spring-boot` | GET | |
+|`http://localhost:8080/api/loggers`                             | GET | |
 
 
 ## Documentation
