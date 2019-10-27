@@ -69,6 +69,16 @@ Spring Boot Starter Security default username is `user` and a generated security
 
 Automated dependency updates done via [Dependabot](https://dependabot.com/)
 
+### Actuator
+
+To monitor and manage your application
+
+- `http://localhost:8080/actuator/actuator`
+- `http://localhost:8080/actuator/health`
+- `http://localhost:8080/actuator/info`
+- `http://localhost:8080/actuator/prometheus`
+- `http://localhost:8080/actuator/httptrace`
+
 ### URLs
 
 - `localhost:8080/bw/tech-stack` - Custom Response Headers
