@@ -13,9 +13,12 @@ Delete the sample code, replace with your own and you’re good to go.
 * [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
 * [Thymeleaf](https://www.thymeleaf.org/) - Modern server-side Java template engine for both web and standalone environments.
 * [Prometheus](https://prometheus.io/) - Monitoring system and time series database
-* [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * [Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
 * [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
+
+## External Tools Used
+
+* [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 
 ## To-Do
 
@@ -24,6 +27,7 @@ Delete the sample code, replace with your own and you’re good to go.
 - [x] Bootstrap - CSS
 - [x] Web - HTML, JavaScript (jQuery)
 - [x] Actuator
+- [x] Content Negotiation
 - [ ] Material Design for Bootstrap
 - [ ] Docker
 - [ ] HATEOS
@@ -31,7 +35,6 @@ Delete the sample code, replace with your own and you’re good to go.
 - [ ] NoSQL (MongoDB)
 - [ ] Micrometer
 - [ ] Grafna
-- [x] Content Negotiation
 - [ ] Security
 
 ## Running the application locally
@@ -68,7 +71,7 @@ Automated dependency updates done via [Dependabot](https://dependabot.com/)
 
 ### URLs
 
-- `localhost:8080/bw/tech-stack`
+- `localhost:8080/bw/tech-stack` - Custom Response Headers
 - `http://localhost:8080/api/generic-hello`
 - `http://localhost:8080/api/personalized-hello/`
 - `http://localhost:8080/api/personalized-hello?name=spring-boot`
