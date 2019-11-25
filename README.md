@@ -1,4 +1,6 @@
 # Spring Boot Application Template/Starter-Project
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
+
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code. 
 
@@ -180,3 +182,7 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 * [HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
 * [Bootstrap w3schools](https://www.w3schools.com/bootstrap/)
 * [Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_large)
