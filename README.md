@@ -26,8 +26,8 @@ Delete the sample code, replace with your own and you’re good to go.
 - [x] RESTful Web Service (CRUD)
 - [x] Bootstrap - CSS
 - [x] Web - HTML, JavaScript (jQuery)
-- [x] Actuator
 - [x] Content Negotiation
+- [ ] Flyway - Version control for database
 - [ ] Material Design for Bootstrap
 - [ ] Docker
 - [ ] HATEOS
