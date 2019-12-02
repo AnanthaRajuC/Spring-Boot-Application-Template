@@ -3,6 +3,18 @@
  * Version: 0.0.1
  * Description: Initial database structure
  */
+
+ /*
+ * Structure
+ */
+CREATE TABLE `application_log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `details` varchar(255) NOT NULL,
+  `event` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
  
  /*
  * Structure
@@ -10,11 +22,11 @@
  CREATE TABLE `built_with` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `version` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
@@ -29,3 +41,4 @@ INSERT INTO `built_with` (`id`,`description`,`link`,`name`,`version`) VALUES (5,
 INSERT INTO `built_with` (`id`,`description`,`link`,`name`,`version`) VALUES (6,'API Development Environment (ADE)','https://www.getpostman.com/','Postman','v6.2.3');
 INSERT INTO `built_with` (`id`,`description`,`link`,`name`,`version`) VALUES (7,'API Design, Development, Documentation, Testing & Governance','https://swagger.io/','Swagger','2.7.0');
 INSERT INTO `built_with` (`id`,`description`,`link`,`name`,`version`) VALUES (8,'Monitoring system and time series database','https://prometheus.io/','Prometheus','2.3.2');
+

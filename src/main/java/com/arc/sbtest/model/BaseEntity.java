@@ -36,7 +36,7 @@ public class BaseEntity implements Serializable
     @CreatedDate
     private Date createdAt;
 		
-	@Column(name="updated_at",nullable = true, updatable = true)
+	@Column(name="updated_on",nullable = true, updatable = true)
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
     private Date updatedAt;

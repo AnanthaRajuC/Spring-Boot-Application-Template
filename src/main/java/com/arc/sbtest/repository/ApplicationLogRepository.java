@@ -3,10 +3,10 @@ package com.arc.sbtest.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.arc.sbtest.model.BuiltWith;
+import com.arc.sbtest.model.ApplicationLog;
 
 @Repository
-public interface BuiltWithRepository extends JpaRepository<BuiltWith, Integer>
+public interface ApplicationLogRepository extends JpaRepository<ApplicationLog, Long>
 {
 
 }

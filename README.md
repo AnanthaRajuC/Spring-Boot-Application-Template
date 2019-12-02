@@ -9,6 +9,7 @@ Delete the sample code, replace with your own and you’re good to go.
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Flyway](https://flywaydb.org/) - Version control for database
 * [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit 
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
 * [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
@@ -29,7 +30,6 @@ Delete the sample code, replace with your own and you’re good to go.
 - [x] Bootstrap - CSS
 - [x] Web - HTML, JavaScript (jQuery)
 - [x] Content Negotiation
-- [ ] Flyway - Version control for database
 - [ ] Material Design for Bootstrap
 - [ ] Docker
 - [ ] HATEOS
