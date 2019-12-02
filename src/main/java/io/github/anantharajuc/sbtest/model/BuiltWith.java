@@ -1,4 +1,4 @@
-package com.arc.sbtest.model;
+package io.github.anantharajuc.sbtest.model;
 
 import java.io.Serializable;
 import java.util.Date;

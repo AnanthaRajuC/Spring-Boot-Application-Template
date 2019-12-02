@@ -1,4 +1,4 @@
-package com.arc.sbtest.config;
+package io.github.anantharajuc.sbtest.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

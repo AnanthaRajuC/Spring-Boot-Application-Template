@@ -1,4 +1,4 @@
-package com.arc.sbtest.exception;
+package io.github.anantharajuc.sbtest.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

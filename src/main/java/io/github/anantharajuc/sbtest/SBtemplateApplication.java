@@ -1,4 +1,4 @@
-package com.arc.sbtest;
+package io.github.anantharajuc.sbtest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -8,10 +8,9 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-import com.arc.sbtest.enums.ApplicationLogEnum;
-import com.arc.sbtest.model.ApplicationLog;
-import com.arc.sbtest.repository.ApplicationLogRepository;
-
+import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
+import io.github.anantharajuc.sbtest.model.ApplicationLog;
+import io.github.anantharajuc.sbtest.repository.ApplicationLogRepository;
 import lombok.extern.log4j.Log4j2;
 
 @SpringBootApplication

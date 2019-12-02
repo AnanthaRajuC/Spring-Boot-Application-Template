@@ -1,4 +1,4 @@
-package com.arc.sbtest.controller;
+package io.github.anantharajuc.sbtest.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

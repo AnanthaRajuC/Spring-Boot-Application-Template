@@ -1,9 +1,9 @@
-package com.arc.sbtest.repository;
+package io.github.anantharajuc.sbtest.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.arc.sbtest.model.ApplicationLog;
+import io.github.anantharajuc.sbtest.model.ApplicationLog;
 
 @Repository
 public interface ApplicationLogRepository extends JpaRepository<ApplicationLog, Long>

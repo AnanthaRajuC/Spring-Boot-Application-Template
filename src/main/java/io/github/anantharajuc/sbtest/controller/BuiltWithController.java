@@ -1,4 +1,4 @@
-package com.arc.sbtest.controller;
+package io.github.anantharajuc.sbtest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -7,7 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.arc.sbtest.repository.BuiltWithRepository;
+
+import io.github.anantharajuc.sbtest.repository.BuiltWithRepository;
 
 @Controller
 @RequestMapping("/bw")

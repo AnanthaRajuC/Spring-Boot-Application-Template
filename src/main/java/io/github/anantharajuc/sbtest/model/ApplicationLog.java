@@ -1,4 +1,4 @@
-package com.arc.sbtest.model;
+package io.github.anantharajuc.sbtest.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,8 +9,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.arc.sbtest.enums.ApplicationLogEnum;
-
+import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

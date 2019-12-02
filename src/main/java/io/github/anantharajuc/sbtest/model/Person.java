@@ -1,4 +1,4 @@
-package com.arc.sbtest.model;
+package io.github.anantharajuc.sbtest.model;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;

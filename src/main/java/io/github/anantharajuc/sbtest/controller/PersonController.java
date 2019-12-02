@@ -1,4 +1,4 @@
-package com.arc.sbtest.controller;
+package io.github.anantharajuc.sbtest.controller;
 
 import java.util.List;
 
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.arc.sbtest.exception.ResourceNotFoundException;
-import com.arc.sbtest.model.Person;
-import com.arc.sbtest.repository.PersonRepository;
+import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
+import io.github.anantharajuc.sbtest.model.Person;
+import io.github.anantharajuc.sbtest.repository.PersonRepository;
 
 @RestController
 @RequestMapping("/api/")

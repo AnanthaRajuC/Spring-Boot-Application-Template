@@ -1,4 +1,4 @@
-package com.arc.sbtest.enums;
+package io.github.anantharajuc.sbtest.enums;
 
 public enum ApplicationLogEnum 
 {
