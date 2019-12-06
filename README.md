@@ -1,23 +1,22 @@
 # Spring Boot Application Template/Starter-Project
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
 
-
 The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code. 
 
 Delete the sample code, replace with your own and you’re good to go.
 
 ## Built With
 
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [Flyway](https://flywaydb.org/) - Version control for database
-* [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit 
-* [Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
-* [MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
-* [git](https://git-scm.com/) - Free and Open-Source distributed version control system 
-* [Thymeleaf](https://www.thymeleaf.org/) - Modern server-side Java template engine for both web and standalone environments.
-* [Prometheus](https://prometheus.io/) - Monitoring system and time series database
-* [Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
-* [Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
+* 	[Maven](https://maven.apache.org/) - Dependency Management
+* 	[Flyway](https://flywaydb.org/) - Version control for database
+* 	[JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit 
+* 	[Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
+* 	[MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
+* 	[git](https://git-scm.com/) - Free and Open-Source distributed version control system 
+* 	[Thymeleaf](https://www.thymeleaf.org/) - Modern server-side Java template engine for both web and standalone environments.
+* 	[Prometheus](https://prometheus.io/) - Monitoring system and time series database
+* 	[Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
+* 	[Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 
 ## External Tools Used
 
@@ -77,9 +76,10 @@ To monitor and manage your application
 
 |  URL |  Method |
 |----------|--------------|
+|`http://localhost:8080`  						| GET |
 |`http://localhost:8080/actuator/actuator`  | GET |
-|`http://localhost:8080/actuator/health`    | GET |
-|`http://localhost:8080/actuator/info`      | GET |
+|`http://localhost:8080/actuator/health`    	| GET |
+|`http://localhost:8080/actuator/info`      	| GET |
 |`http://localhost:8080/actuator/prometheus`| GET |
 |`http://localhost:8080/actuator/httptrace` | GET |
 

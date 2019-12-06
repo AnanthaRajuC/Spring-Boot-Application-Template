@@ -53,7 +53,7 @@ public class BuiltWith implements Serializable
     @CreatedDate
     private Date createdAt;
 	
-	@Column(nullable = false)
+	@Column(name="updated_on", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
     private Date updatedAt;

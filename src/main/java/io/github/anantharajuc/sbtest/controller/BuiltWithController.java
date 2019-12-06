@@ -21,6 +21,7 @@ public class BuiltWithController
 	public String builtWith(Model model, @RequestParam(defaultValue="0") int page)
 	{ 
 		model.addAttribute("data", builtWithRepository.findAll(new PageRequest(page, 5)));
+		System.out.println(model.toString()); 
 		return "built_with";
 	}
 }

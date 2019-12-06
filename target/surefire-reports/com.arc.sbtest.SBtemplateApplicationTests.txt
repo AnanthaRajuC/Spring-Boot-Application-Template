@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.arc.sbtest.SBtemplateApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.478 s <<< FAILURE! - in com.arc.sbtest.SBtemplateApplicationTests
+initializationError(com.arc.sbtest.SBtemplateApplicationTests)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+

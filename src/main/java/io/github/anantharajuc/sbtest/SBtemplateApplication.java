@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j2;
 
 @SpringBootApplication
 @EnableJpaAuditing
-@ComponentScan({"com.arc.sbtest","com.arc.sbtest.controller"})
+//@ComponentScan({"com.arc.sbtest","com.arc.sbtest.controller"})
 @EnableCaching
 @Log4j2
 public class SBtemplateApplication implements CommandLineRunner
