@@ -20,7 +20,7 @@ public class BuiltWithController
 	@GetMapping("/tech-stack")
 	public String builtWith(Model model, @RequestParam(defaultValue="0") int page)
 	{ 
-		model.addAttribute("data", builtWithRepository.findAll(new PageRequest(page, 5)));
+		model.addAttribute("data", builtWithRepository.findAll());
 		System.out.println(model.toString()); 
 		return "built_with";
 	}

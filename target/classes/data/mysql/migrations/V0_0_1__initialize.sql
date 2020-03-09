@@ -30,6 +30,19 @@ CREATE TABLE `application_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
+ /*
+ * Structure
+ */
+create table `person` (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `age` integer DEFAULT NULL,
+   `gender` varchar(255) DEFAULT NULL,
+   `name` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+
 /*
  * Data
  */
@@ -42,3 +55,8 @@ INSERT INTO `built_with` (`id`,`description`,`link`,`name`,`version`) VALUES (6,
 INSERT INTO `built_with` (`id`,`description`,`link`,`name`,`version`) VALUES (7,'API Design, Development, Documentation, Testing & Governance','https://swagger.io/','Swagger','2.7.0');
 INSERT INTO `built_with` (`id`,`description`,`link`,`name`,`version`) VALUES (8,'Monitoring system and time series database','https://prometheus.io/','Prometheus','2.3.2');
 
+/*
+ * Data
+ */
+INSERT INTO `sbat`.`person`(`age`,`gender`,`name`)VALUES(67,'male','Ronnie James Dio');
+INSERT INTO `sbat`.`person`(`age`,`gender`,`name`)VALUES(37,'female','Floor Jansen');

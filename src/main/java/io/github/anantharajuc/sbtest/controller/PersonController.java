@@ -32,7 +32,7 @@ public class PersonController
 		return  personRepository.findAll();
 	}
 	
-	@GetMapping("/person/{id}")
+	@GetMapping(value="/person/{id}")
 	public Person getPersonById(@PathVariable(value = "id") Long personId)
 	{
 		return personRepository.findById(personId).orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
