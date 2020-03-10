@@ -93,6 +93,12 @@ To monitor and manage your application
 |`http://localhost:8080/api/personalized-hello?name=spring-boot` | GET | |
 |`http://localhost:8080/api/loggers`                             | GET | |
 
+### Person URLs
+
+|  URL |  Method | Remarks |
+|----------|--------------|--------------|
+|`http://localhost:8080/api/person`                           | GET | Header Accept:application/json or Accept:application/xml for content negotiation|
+|`http://localhost:8080/api/person/1`                       | GET | |
 
 ## Documentation
 

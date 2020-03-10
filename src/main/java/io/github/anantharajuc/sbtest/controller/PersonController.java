@@ -29,27 +29,37 @@ public class PersonController
 	@GetMapping("/person")
 	public List<Person> getAllPersons() 
 	{
-		return  personRepository.findAll();
+		return  personRepository
+				.findAll();
 	}
 	
 	@GetMapping(value="/person/{id}")
 	public Person getPersonById(@PathVariable(value = "id") Long personId)
 	{
-		return personRepository.findById(personId).orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
+		return personRepository
+				.findById(personId)
+				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
 	}
 	
 	@PostMapping("/person")
 	public Person createPerson(@Valid @RequestBody Person person)
 	{
-		return personRepository.save(person);		
+		return personRepository
+				.save(person);		
 	}
 	
 	@DeleteMapping("/person/{id}")
 	public ResponseEntity<?> deletePerson(@PathVariable(value = "id") Long personId) 
 	{
-		Person person = personRepository.findById(personId).orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
+		Person person = personRepository
+				.findById(personId)
+				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
+		
 		personRepository.delete(person);
-		return ResponseEntity.ok().build();
+		
+		return ResponseEntity
+				.ok()
+				.build();
 	}
 	
 	@PutMapping("/person/{id}")
