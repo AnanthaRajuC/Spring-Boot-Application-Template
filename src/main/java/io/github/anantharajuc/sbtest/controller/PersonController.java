@@ -26,7 +26,7 @@ public class PersonController
 	@Autowired
 	PersonRepository personRepository;
 	
-	@GetMapping("/person")
+	@GetMapping(value="/person")	
 	public List<Person> getAllPersons() 
 	{
 		return  personRepository
