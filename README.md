@@ -161,6 +161,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 - `models` — to hold our entities;
 - `repositories` — to communicate with the database;
 - `services` — to hold our business logic;
+- `security` — security configuration;
 - `controllers` — to listen to the client;
 
 - `resources/` - Contains all the static resources, templates and property files.
