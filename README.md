@@ -29,14 +29,16 @@ Delete the sample code, replace with your own and you’re good to go.
 - [x] Bootstrap - CSS
 - [x] Web - HTML, JavaScript (jQuery)
 - [x] Content Negotiation
+- [x] Security (Basic Authentication)
 - [ ] Material Design for Bootstrap
 - [ ] Docker
 - [ ] HATEOS
 - [ ] Spring Boot Admin
 - [ ] NoSQL (MongoDB)
+- [ ] MySQL (Connect to Multiple Schemas)
 - [ ] Micrometer
 - [ ] Grafna
-- [ ] Security
+
 
 ## Running the application locally
 
