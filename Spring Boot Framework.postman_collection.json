@@ -1,0 +1,622 @@
+{
+	"info": {
+		"_postman_id": "dadf3e2f-6ad7-4e0c-a0ac-3dcdc80148ce",
+		"name": "Spring Boot Framework",
+		"description": "Postman collection for the Spring Boot Application Template\n\nhttps://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				},
+				"description": "http://localhost:8080\nHome Page. \nNo Login Required."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person XML",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person"
+					]
+				},
+				"description": "API - Get a JSON array of all Persons\nhttp://localhost:8080/api/person"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person/1 XML",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/person/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person",
+						"1"
+					]
+				},
+				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person/1 JSON",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/person/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person",
+						"1"
+					]
+				},
+				"description": "GET user by id in JSON format\nhttp://localhost:8080/api/person/1"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person JSON",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person"
+					]
+				},
+				"description": "GET all users in JSON data format\nhttp://localhost:8080/api/person"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Tom Araya\",\r\n    \"gender\": \"male\",\r\n    \"age\": 58\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person"
+					]
+				},
+				"description": "POST  a person\nhttp://localhost:8080/api/person"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person/1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Ronnie James Dio\",\r\n    \"gender\": \"male\",\r\n    \"age\": 68\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/person/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person",
+						"1"
+					]
+				},
+				"description": "Update a person by ID\nhttp://localhost:8080/api/person/1"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/generic-hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/personalized-hello?name=springboot%20application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"personalized-hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "springboot%20application"
+						}
+					]
+				},
+				"description": "http://localhost:8088/api/generic-hello"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/personalized-hello?name=springboot%20application",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/personalized-hello?name=springboot%20application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"personalized-hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "springboot%20application"
+						}
+					]
+				},
+				"description": "http://localhost:8088/api/personalized-hello?name=springboot%20application"
+			},
+			"response": []
+		},
+		{
+			"name": "/view/bootstrap",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/view/bootstrap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"view",
+						"bootstrap"
+					]
+				},
+				"description": "/view/bootstrap\r\nhttp://localhost:8080/view/bootstrap"
+			},
+			"response": []
+		},
+		{
+			"name": "/view/angular",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/view/angular",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"view",
+						"angular"
+					]
+				},
+				"description": "/view/angular\r\nhttp://localhost:8080/view/angular"
+			},
+			"response": []
+		},
+		{
+			"name": "/view/material-design",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/view/material-design",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"view",
+						"material-design"
+					]
+				},
+				"description": "http://localhost:8080/view/material-design\r\n/view/material-design"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						""
+					]
+				},
+				"description": "http://localhost:8080/actuator/"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health\r\n/actuator/health"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"info"
+					]
+				},
+				"description": "http://localhost:8080/actuator/info\r\n/actuator/info"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/prometheus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/prometheus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"prometheus"
+					]
+				},
+				"description": "http://localhost:8080/actuator/prometheus\r\n/actuator/prometheus"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health/diskSpace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health/diskSpace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health",
+						"diskSpace"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health/diskSpace"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health/ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health",
+						"ping"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health/ping"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health/db",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health/db",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health",
+						"db"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health/db"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/loggers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/loggers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loggers"
+					]
+				},
+				"description": "http://localhost:8080/api/loggers"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "johnDoe",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "password",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
