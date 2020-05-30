@@ -68,7 +68,15 @@ mvn spring-boot:run
 </dependency>
 ```
 
-Spring Boot Starter Security default username is `user` and a generated security password is printed in the console like `Using generated security password: 0423bec1-6759-4ed2-8e3e-e8196effadf9`
+~~Spring Boot Starter Security default username is `user` and a generated security password is printed in the console like `Using generated security password: 0423bec1-6759-4ed2-8e3e-e8196effadf9`~~
+
+Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security` package to modify the preconfigured users.
+
+|  Username     |  Password |
+|---------------|-----------|
+|`johnDoe`   | password  |
+|`AdminUser` | password  |
+
 
 Automated dependency updates done via [Dependabot](https://dependabot.com/)
 
@@ -99,8 +107,16 @@ To monitor and manage your application
 
 |  URL |  Method | Remarks |
 |----------|--------------|--------------|
-|`http://localhost:8080/api/person`                           | GET | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|
-|`http://localhost:8080/api/person/1`                       | GET | |
+|`http://localhost:8080/api/person`                         | GET | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|
+|`http://localhost:8080/api/person/1`                       | GET |                                                                                     |
+
+### Web Page URLs
+
+|  URL |  Method | Remarks |
+|----------|--------------|--------------|
+|`http://localhost:8080/view/bootstrap`       | GET ||
+|`http://localhost:8080/view/angular`         | GET ||
+|`http://localhost:8080/view/material-design` | GET ||
 
 ## Documentation
 

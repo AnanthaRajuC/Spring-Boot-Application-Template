@@ -4,7 +4,7 @@ import java.util.Set;
 
 public enum ApplicationUserRole 
 {
-	PERSON(permission),
+	/*PERSON(permission),
 	ADMIN(permission);
 	
 	private final Set<ApplicationUserPermission> permissions;
@@ -12,5 +12,5 @@ public enum ApplicationUserRole
 	ApplicationUserRole(Set<ApplicationUserPermission> permissions)
 	{
 		this.permissions = permissions;
-	}
+	}*/
 }

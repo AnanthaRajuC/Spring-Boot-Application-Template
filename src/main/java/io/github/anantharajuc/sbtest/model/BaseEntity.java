@@ -20,7 +20,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @MappedSuperclass
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = false)
+@JsonIgnoreProperties(value = {"createdOn", "updatedOn"}, allowGetters = false)
 @Getter
 @Setter
 public class BaseEntity implements Serializable
@@ -34,10 +34,10 @@ public class BaseEntity implements Serializable
 	@Column(name="created_on", nullable = true, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
-    private Date createdAt;
+    private Date createdOn;
 		
 	@Column(name="updated_on",nullable = true, updatable = true)
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
-    private Date updatedAt;
+    private Date updatedOn;
 }

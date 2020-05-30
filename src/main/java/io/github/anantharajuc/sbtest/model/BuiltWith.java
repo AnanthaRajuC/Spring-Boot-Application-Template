@@ -1,21 +1,11 @@
 package io.github.anantharajuc.sbtest.model;
 
-import java.io.Serializable;
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -33,50 +23,21 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BuiltWith implements Serializable
+public class BuiltWith extends BaseEntity
 {
+	//Default Serial Version ID
 	private static final long serialVersionUID = 1L;
-
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 	
 	@NotBlank
+	@Column(name="name", nullable = false)
 	private String name;
 	
+	@Column(name="version", nullable = true)
 	private String version;
+	
+	@Column(name="description", nullable = true)
 	private String description;
+	
+	@Column(name="link", nullable = true)
 	private String link;
-	
-	@Column(name="created_on", nullable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate
-    private Date createdAt;
-	
-	@Column(name="updated_on", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate
-    private Date updatedAt;
-
-	public BuiltWith(@NotBlank String name, String version, String description, String link, Date createdAt, Date updatedAt) 
-	{
-		this.name = name;
-		this.version = version;
-		this.description = description;
-		this.link = link;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-
-	@Override
-	public String toString() 
-	{
-		return "BuiltWith [id=" + id + ", "
-						+ "name=" + name + ", "
-						+ "version=" + version + ", "
-						+ "description=" + description + ", "
-						+ "link=" + link + ", "
-						+ "createdAt=" + createdAt + ", "
-						+ "updatedAt=" + updatedAt + "]";
-	}
 }
