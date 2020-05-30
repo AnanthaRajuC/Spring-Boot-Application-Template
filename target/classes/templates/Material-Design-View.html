@@ -3,9 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/css/material-components-web.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <title>Material Design View</title>
 </head>
 <body>
+
+<header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+      <span class="mdc-top-app-bar__title">Page title</span>
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+    </section>
+  </div>
+</header>
+
+<button class="mdc-fab" aria-label="Favorite">
+  <div class="mdc-fab__ripple"></div>
+  <span class="mdc-fab__icon material-icons">favorite</span>
+</button>
+
 <div class="mdc-tab-bar" role="tablist">
   <div class="mdc-tab-scroller">
     <div class="mdc-tab-scroller__scroll-area">
