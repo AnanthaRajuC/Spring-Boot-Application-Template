@@ -34,12 +34,13 @@ public class SwaggerConfig
 	
 	private ApiInfo apiInfo() 
 	{
-		return new ApiInfoBuilder().title("Spring Boot Template")
-				.description("Spring Boot Template for Web Applications")
-				.termsOfServiceUrl("None")
-				.license("None")
-				.licenseUrl("None")
-				.version("1.0")
-				.build();
+		return new ApiInfoBuilder()
+						.title("Spring Boot Template")
+						.description("Spring Boot Template for Web Applications")
+						.termsOfServiceUrl("None")
+						.license("None")
+						.licenseUrl("None")
+						.version("1.0")
+						.build();
 	}
 } 
