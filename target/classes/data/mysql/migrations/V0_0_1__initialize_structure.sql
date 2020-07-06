@@ -30,6 +30,15 @@ CREATE TABLE `application_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
+CREATE TABLE `application_settings` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `appKey` varchar(255) NOT NULL,
+  `appValue` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+
  /*
  * Structure
  */

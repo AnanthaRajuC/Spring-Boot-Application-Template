@@ -19,5 +19,11 @@ INSERT INTO `built_with` (`description`,`link`,`name`,`version`) VALUES ('Monito
 /*
  * Data
  */
+INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('applicationName','sbat');
+INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('applicationVersion','1.0');
+
+/*
+ * Data
+ */
 INSERT INTO `person`(`age`,`gender`,`name`)VALUES(67,'male','Ronnie James Dio');
 INSERT INTO `person`(`age`,`gender`,`name`)VALUES(37,'female','Floor Jansen');

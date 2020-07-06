@@ -1,0 +1,33 @@
+package io.github.anantharajuc.sbtest.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "application_settings")
+@EntityListeners(AuditingEntityListener.class)
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class ApplicationSetings extends BaseEntity
+{
+	private static final long serialVersionUID = 1L;
+
+	@Column(name="appKey", nullable = false)
+	String appKey;
+	
+	@Column(name="appValue", nullable = false)
+	String appValue;
+}

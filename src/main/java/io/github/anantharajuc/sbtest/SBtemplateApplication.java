@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
 import io.github.anantharajuc.sbtest.model.ApplicationLog;
 import io.github.anantharajuc.sbtest.repository.ApplicationLogRepository;
+import io.github.anantharajuc.sbtest.service.OtherServicesImpl;
 import lombok.extern.log4j.Log4j2;
 
 @SpringBootApplication
@@ -21,6 +22,9 @@ public class SBtemplateApplication implements CommandLineRunner
 	@Autowired
 	private ApplicationLogRepository applicationLogRepository;
 	
+	@Autowired
+	private OtherServicesImpl otherServicesImpl;
+	
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(SBtemplateApplication.class, args);
@@ -31,7 +35,13 @@ public class SBtemplateApplication implements CommandLineRunner
 	{
 		log.info("Hello SB template");	
 		
+		log.info("-----> Initial Application Settings Key Value Load.");	
+		otherServicesImpl.loadApplicationSettings();
+		
 		applicationLogRepository.save(new ApplicationLog(ApplicationLogEnum.APPLICATION_START,"application started."));
+		
+		log.info("-----> Application Name    : "+otherServicesImpl.getApplicationName());	
+		log.info("-----> Application Version : "+otherServicesImpl.getApplicationVersion());	
 	}
 }
  
