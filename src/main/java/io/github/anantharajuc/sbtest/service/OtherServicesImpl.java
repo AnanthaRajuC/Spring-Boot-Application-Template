@@ -21,6 +21,7 @@ public class OtherServicesImpl implements OtherServices
 	//Application Settings
 	private String applicationName;
 	private String applicationVersion;
+	private String postmanEchoGETurl;
 	
 	@Autowired
 	private ApplicationSettingsRepository applicationSettingsRepository;
@@ -41,5 +42,6 @@ public class OtherServicesImpl implements OtherServices
 		
 		setApplicationName(applicationSettingsHashMap.get("applicationName"));
 		setApplicationVersion(applicationSettingsHashMap.get("applicationVersion"));
+		setPostmanEchoGETurl(applicationSettingsHashMap.get("postmanEchoGETurl"));
 	}
 }

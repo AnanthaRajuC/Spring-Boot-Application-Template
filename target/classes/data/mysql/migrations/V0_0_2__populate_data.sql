@@ -21,6 +21,7 @@ INSERT INTO `built_with` (`description`,`link`,`name`,`version`) VALUES ('Monito
  */
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('applicationName','sbat');
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('applicationVersion','1.0');
+INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get');
 
 /*
  * Data
