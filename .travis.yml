@@ -24,3 +24,8 @@ install:
 # The 'language: java' directive sets up sane defaults to test common java applications
 # We use the defaults for installing dependencies, compiling and testing maven applications
 # In our case it will be 'mvn install' followed by 'mvn test'
+
+# This is to enable CodeCov's coverage
+# If a build is successful, the code is submitted for coverage analysis
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
