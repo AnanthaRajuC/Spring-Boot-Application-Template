@@ -24,6 +24,7 @@ Delete the sample code, replace with your own and you’re good to go.
 ## External Tools Used
 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
+* [Postman Echo](https://docs.postman-echo.com/?version=latest) - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.
 
 ## To-Do
 
