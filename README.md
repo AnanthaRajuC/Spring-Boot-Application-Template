@@ -27,6 +27,8 @@ Delete the sample code, replace with your own and you’re good to go.
 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * [Postman Echo](https://docs.postman-echo.com/?version=latest) - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.
+* [Travis CI](https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket. 
+* [Codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted tool that is used to measure the test coverage of your codebase.
 
 ## To-Do
 
@@ -44,7 +46,6 @@ Delete the sample code, replace with your own and you’re good to go.
 - [ ] MySQL (Connect to Multiple Schemas)
 - [ ] Micrometer
 - [ ] Grafna
-
 
 ## Running the application locally
 
