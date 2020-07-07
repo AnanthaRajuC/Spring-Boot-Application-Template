@@ -25,6 +25,9 @@ install:
 # We use the defaults for installing dependencies, compiling and testing maven applications
 # In our case it will be 'mvn install' followed by 'mvn test'
 
+# https://github.com/codecov/example-java-maven
+script: "mvn cobertura:cobertura"
+
 # This is to enable CodeCov's coverage
 # If a build is successful, the code is submitted for coverage analysis
 after_success:
