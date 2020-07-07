@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbtest.util.OkHttpSingleton;
 import lombok.extern.log4j.Log4j2;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 @Log4j2
@@ -49,5 +51,36 @@ public class PostmanEchoServiceImpl implements PostmanEchoService
 		{
 			e.printStackTrace();
 		}			    
+	}
+
+	@Override
+	public void postFormData() 
+	{
+		log.info("-----> /PostmanEcho postFormData");	
+		
+		RequestBody formBody = new FormBody.Builder()
+									       .add("username", "test")
+									       .add("passwordf", "test")
+									       .build();
+		
+		Request request = new Request.Builder()
+									 .url(otherServicesImpl.getPostmanEchoBaseUrl()+otherServicesImpl.getPostmanEchoPOSTpath())
+									 .post(formBody)
+								     .build();
+		
+		Response response;
+		
+		try 
+		{
+			response = client.newCall(request).execute();
+			
+			String getPOSTformDataResponse = response.body().string();
+			
+			log.info(getPOSTformDataResponse);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 }
