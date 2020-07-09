@@ -64,6 +64,9 @@ local.properties
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+.project
+.settings/
+target/
 
 # Annotation Processing
 .apt_generated
