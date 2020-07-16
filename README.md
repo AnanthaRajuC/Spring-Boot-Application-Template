@@ -68,6 +68,24 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
+## Running the application via docker container
+
+Ensure you build a jar of the application before building a docker image.  
+
+```text
+mvn package -Dmaven.test.skip=true
+```
+
+|  Command |  Description |
+|----------|--------------| 
+|docker images                                       | take a look at the container images. |
+|docker ps                                           | list all the running containers.     |
+|docker ps -a                                        | list all the containers, including the ones that have finished executing.|
+|docker build -t spring-boot-application-template .  | Build docker image of the project    |
+|docker run spring-boot-application-template         | run the project's docker container   |
+|docker stop [container_id]                          | stop a container                     |
+|docker rm $(docker ps -aq)                          | stop and remove all containers       |
+
 ### Security
 
 ```xml
