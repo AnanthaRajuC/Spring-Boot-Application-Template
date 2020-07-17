@@ -8,6 +8,4 @@ ${Ansi.GREEN}        | |                  __/ |                                 
 ${Ansi.GREEN}        |_|                 |___/                                                                                                       |_|                    
 ${Ansi.RED} :: Spring Boot ${app.name}                       ${Ansi.DEFAULT}      
 ${Ansi.RED} :: Spring Boot ${spring-boot.version}            ${Ansi.DEFAULT}   
-${Ansi.RED} :: Spring Boot ${spring-boot.formatted-version}  ${Ansi.DEFAULT}  
-${Ansi.RED} :: Spring Boot ${application.version}            ${Ansi.DEFAULT}   
-${Ansi.RED} :: Spring Boot ${application.formatted-version}  ${Ansi.DEFAULT}                    
+${Ansi.RED} :: Spring Boot ${spring-boot.formatted-version}  ${Ansi.DEFAULT}                 

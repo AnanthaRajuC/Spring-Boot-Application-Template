@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbtest.model.Person;
-import io.github.anantharajuc.sbtest.repository.PersonRepository;
 import io.github.anantharajuc.sbtest.service.PersonServiceImpl;
 
 @RestController
@@ -25,58 +23,35 @@ import io.github.anantharajuc.sbtest.service.PersonServiceImpl;
 public class PersonController 
 {
 	@Autowired
-	private PersonRepository personRepository;
-	
-	@Autowired
 	private PersonServiceImpl personServiceImpl;
 	
 	@GetMapping(value="/person")	
 	public List<Person> getAllPersons() 
-	{
-		/*return  personRepository
-				.findAll();*/
-		
+	{		
 		return personServiceImpl.getAllPersons();
 	}
 	
 	@GetMapping(value="/person/{id}")
 	public Person getPersonById(@PathVariable(value = "id") Long personId)
-	{
-		return personRepository
-				.findById(personId)
-				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
+	{		
+		return personServiceImpl.getPersonById(personId);
 	}
 	
 	@PostMapping("/person")
 	public Person createPerson(@Valid @RequestBody Person person)
-	{
-		return personRepository
-				.save(person);		
+	{		
+		return personServiceImpl.createPerson(person);
 	}
 	
 	@DeleteMapping("/person/{id}")
 	public ResponseEntity<?> deletePerson(@PathVariable(value = "id") Long personId) 
-	{
-		Person person = personRepository
-				.findById(personId)
-				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
-		
-		personRepository.delete(person);
-		
-		return ResponseEntity
-				.ok()
-				.build();
+	{		
+		return personServiceImpl.deletePerson(personId);
 	}
 	
 	@PutMapping("/person/{id}")
-	public Person updatePerson(@PathVariable(value = "id") Long personId,@Valid @RequestBody Person personeDetails)
-	{
-		Person person = personRepository.findById(personId).orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
-		
-		person.setName(personeDetails.getName());
-		person.setGender(personeDetails.getGender());
-		person.setAge(personeDetails.getAge());
-
-		return personRepository.save(person);		
+	public Person updatePerson(@PathVariable(value = "id") Long personId,@Valid @RequestBody Person personDetails)
+	{		
+		return personServiceImpl.updatePerson(personId, personDetails);
 	}
 }

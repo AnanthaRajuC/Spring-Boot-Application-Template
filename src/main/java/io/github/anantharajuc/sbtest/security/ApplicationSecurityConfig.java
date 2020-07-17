@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security;
+/*package io.github.anantharajuc.sbtest.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -57,3 +57,4 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		return new InMemoryUserDetailsManager(johnDoeUser,AdminUser1);
 	}
 }
+*/

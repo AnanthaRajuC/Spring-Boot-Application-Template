@@ -1,9 +1,12 @@
 package io.github.anantharajuc.sbtest.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,12 +30,87 @@ public class PersonServiceImplTest
 	private PersonRepository personRepository;
 	
 	@Test
+	public void createPersonTest()
+	{
+		Date date = new Date();
+		
+		Person person  = new Person();
+		
+		person.setId((long) 1);
+		person.setAge(29);
+		person.setGender("Female");
+		person.setName("Stevie Nicks");
+		person.setCreatedOn(date);
+		
+		Mockito.when(personRepository.save(person)).thenReturn(person);
+		
+		assertThat(personServiceImpl.createPerson(person)).isEqualTo(person);
+	}
+	
+	@Test
+	public void deletePersonTest()
+	{
+		Date date = new Date();
+		
+		Person person  = new Person();
+		
+		person.setId((long) 1);
+		person.setAge(29);
+		person.setGender("Female");
+		person.setName("Stevie Nicks");
+		person.setCreatedOn(date);
+		
+		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person));
+		Mockito.when(personRepository.existsById(person.getId())).thenReturn(false);
+		assertFalse(personRepository.existsById(person.getId())); 
+	}
+	
+	@Test
+	public void updatePersonTest()
+	{
+		Date date = new Date();
+		
+		Person person  = new Person();
+		
+		person.setId((long) 1);
+		person.setAge(29);
+		person.setGender("Female");
+		person.setName("Stevie Nicks");
+		person.setCreatedOn(date);
+		
+		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person));
+		
+		person.setName("Stevie Nicks Updated Name");
+		Mockito.when(personRepository.save(person)).thenReturn(person);
+		
+		assertThat(personServiceImpl.updatePerson((long) 1, person)).isEqualTo(person);
+	}
+	
+	@Test
+	public void getPersonByIdTest()
+	{
+		Date date = new Date();
+		
+		Person person  = new Person();
+		
+		person.setId((long) 1);
+		person.setAge(55);
+		person.setGender("Male");
+		person.setName("Michael Jackson");
+		person.setCreatedOn(date);
+		
+		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person)); 
+		assertThat(personServiceImpl.getPersonById(1L)).isEqualTo(person);
+	}
+	
+	@Test
 	public void getAllPersonsTest()
 	{
 		Date date = new Date();
 				
 		Person person1  = new Person();
 		
+		person1.setId((long) 1);
 		person1.setAge(29);
 		person1.setGender("Female");
 		person1.setName("Stevie Nicks");
@@ -40,12 +118,12 @@ public class PersonServiceImplTest
 		
 		Person person2  = new Person();
 		
+		person2.setId((long) 2);
 		person2.setAge(30);
 		person2.setGender("Male");
 		person2.setName("Mac");
 		person2.setCreatedOn(date);
-		
-		
+
 		List<Person> personList = new ArrayList<>();
 		personList.add(person1);
 		personList.add(person2);
