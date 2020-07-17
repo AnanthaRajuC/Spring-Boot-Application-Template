@@ -18,19 +18,25 @@ import org.springframework.web.bind.annotation.RestController;
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbtest.model.Person;
 import io.github.anantharajuc.sbtest.repository.PersonRepository;
+import io.github.anantharajuc.sbtest.service.PersonServiceImpl;
 
 @RestController
 @RequestMapping("/api/")
 public class PersonController 
 {
 	@Autowired
-	PersonRepository personRepository;
+	private PersonRepository personRepository;
+	
+	@Autowired
+	private PersonServiceImpl personServiceImpl;
 	
 	@GetMapping(value="/person")	
 	public List<Person> getAllPersons() 
 	{
-		return  personRepository
-				.findAll();
+		/*return  personRepository
+				.findAll();*/
+		
+		return personServiceImpl.getAllPersons();
 	}
 	
 	@GetMapping(value="/person/{id}")
