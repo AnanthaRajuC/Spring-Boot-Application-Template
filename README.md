@@ -7,9 +7,9 @@
 [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)
-(https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)
 [![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
 [![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code.
 
@@ -34,6 +34,7 @@ Delete the sample code, replace with your own and you’re good to go.
 * 	[Postman Echo](https://docs.postman-echo.com/?version=latest) - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.
 * 	[Travis CI](https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.
 * 	[Codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted tool that is used to measure the test coverage of your codebase.
+*	[Dependabot](https://dependabot.com/) - Automated dependency updates.
 
 ## To-Do
 
@@ -84,7 +85,11 @@ docker pull anantha/spring-boot-application-template
 Ensure you build a jar of the application before building a docker image.  
 
 ```text
-mvn package -Dmaven.test.skip=true
+mvn package -Dmaven.test.skip=true     //skip all tests and build
+```
+
+```text
+mvn clean package					   //run all tests and build
 ```
 
 |  Command |  Description |
@@ -114,8 +119,6 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 |---------------|-----------|
 |`johnDoe`   | password  |
 |`AdminUser` | password  |
-
-Automated dependency updates done via [Dependabot](https://dependabot.com/)
 
 ### Actuator
 

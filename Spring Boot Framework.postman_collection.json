@@ -30,13 +30,13 @@
 					"type": "basic",
 					"basic": [
 						{
-							"key": "username",
-							"value": "johnDoe",
+							"key": "password",
+							"value": "bf22bff7-9960-48b6-ba1e-6c8c85f9e58f",
 							"type": "string"
 						},
 						{
-							"key": "password",
-							"value": "password",
+							"key": "username",
+							"value": "user",
 							"type": "string"
 						}
 					]
@@ -97,19 +97,7 @@
 			"name": "/api/person/1 JSON",
 			"request": {
 				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "johnDoe",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [
@@ -120,7 +108,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/person/1",
+					"raw": "http://localhost:8080/api/person/6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -129,7 +117,7 @@
 					"path": [
 						"api",
 						"person",
-						"1"
+						"6"
 					]
 				},
 				"description": "GET user by id in JSON format\nhttp://localhost:8080/api/person/1"
@@ -140,19 +128,7 @@
 			"name": "/api/person JSON",
 			"request": {
 				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "johnDoe",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [
@@ -182,25 +158,13 @@
 			"name": "/api/person",
 			"request": {
 				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "johnDoe",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Tom Araya\",\r\n    \"gender\": \"male\",\r\n    \"age\": 58\r\n}",
+					"raw": "{\r\n    \"name\": \"eee\",\r\n    \"gender\": \"male\",\r\n    \"age\": 55\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,25 +191,13 @@
 			"name": "/api/person/1",
 			"request": {
 				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "johnDoe",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Ronnie James Dio\",\r\n    \"gender\": \"male\",\r\n    \"age\": 68\r\n}",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"R Dioeee\",\r\n    \"gender\": \"male\",\r\n    \"age\": 68\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -366,13 +318,13 @@
 					"type": "basic",
 					"basic": [
 						{
-							"key": "username",
-							"value": "johnDoe",
+							"key": "password",
+							"value": "http://localhost:8080/bw/tech-stack",
 							"type": "string"
 						},
 						{
-							"key": "password",
-							"value": "password",
+							"key": "username",
+							"value": "user",
 							"type": "string"
 						}
 					]
@@ -599,6 +551,42 @@
 					]
 				},
 				"description": "http://localhost:8080/api/loggers"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person/pageable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/person/pageable?page=0&size=3&sort=createdOn,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person",
+						"pageable"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "3"
+						},
+						{
+							"key": "sort",
+							"value": "createdOn,desc"
+						}
+					]
+				},
+				"description": "http://localhost:8080/api/personPageable?page=0&size=2&sort=createdOn,desc"
 			},
 			"response": []
 		}

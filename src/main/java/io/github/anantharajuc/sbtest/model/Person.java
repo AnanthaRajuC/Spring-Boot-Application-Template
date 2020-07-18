@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -26,6 +27,7 @@ public class Person extends BaseEntity
 	private static final long serialVersionUID = 1L;
 	
 	@NotBlank
+	@Size(min=3, max=15, message="Name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
     private String name;
 	
