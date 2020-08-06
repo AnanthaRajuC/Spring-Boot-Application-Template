@@ -1,8 +1,12 @@
 package io.github.anantharajuc.sbtest.repository;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import io.github.anantharajuc.sbtest.model.Person;
@@ -11,5 +15,11 @@ import io.github.anantharajuc.sbtest.model.Person;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long>
 {
-
+	//Refer: https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html
+	
+	@Query(value = "SELECT * FROM person WHERE gender = :gender", nativeQuery = true) 
+    List<Person> getPersonByGender(@Param("gender") String gender);
+	
+	@Query(value = "SELECT * FROM person WHERE name = :name", nativeQuery = true) 
+	Person getPersonByName(@Param("name") String name);
 }

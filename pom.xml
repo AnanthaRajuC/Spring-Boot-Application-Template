@@ -22,6 +22,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<thymeleaf-layout-dialect.version>2.4.1</thymeleaf-layout-dialect.version>
+    	<thymeleaf-with-dialect.version>3.0.1</thymeleaf-with-dialect.version>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -137,6 +139,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency> -->
+		
+		<dependency>
+	      	 <groupId>nz.net.ultraq.thymeleaf</groupId>
+	      	 <artifactId>thymeleaf-layout-dialect</artifactId>
+	      	 <version>${thymeleaf-layout-dialect.version}</version>
+	    </dependency>
+	    <dependency>
+	         <groupId>ch.mfrey.thymeleaf.extras.with</groupId>
+	         <artifactId>thymeleaf-with-dialect</artifactId>
+	         <version>${thymeleaf-with-dialect.version}</version>
+	    </dependency>
 
 		<!-- Swagger -->
 		<dependency>

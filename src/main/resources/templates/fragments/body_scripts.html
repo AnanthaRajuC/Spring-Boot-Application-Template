@@ -1,0 +1,79 @@
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:fragment="end">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->	
+	<script src="/js/jquery-3.5.1.slim.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+	<script src="/js/jquery-ui.js"></script>
+
+	<script src="/js/dark-mode-switch.min.js"></script>
+	
+	<script src="/js/jspdf.min.js"></script>
+	<script src="/js/jspdf.plugin.autotable.js"></script>
+
+	<script src="/js/tableExport.min.js"></script>
+	<script src="/js/bootstrap-table-export.min.js"></script>
+	<script src="/js/bootstrap-table.min.js"></script>
+	<script src="/js/bootstrap-table-toolbar.min.js"></script>
+	<script src="/js/bootstrap-table-filter-control.min.js"></script>
+	<script src="/js/bootstrap-table-resizable.min.js"></script>
+	
+	<script src="/js/jquery.resizableColumns.min.js"></script>
+	<script src="/js/jquery.resizableColumns.js"></script>
+
+	<script src="/js/store.js"></script>
+	
+	<!-- MDB -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0-alpha4/mdb.min.js"></script>
+	
+	<!-- chart.js -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	
+	<!-- chart.js -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+	<script>
+		$(function(){
+		  $("table").resizableColumns({
+			store: window.store
+		  });
+		});
+	</script>
+
+	<!-- Fullscreen Button -->
+	<script>
+		var $table = $('#table')
+		var $button = $('#button')
+
+		$(function() {
+			$button.click(function () {
+			  $table.bootstrapTable('toggleFullscreen')
+			})
+		  })
+	</script>
+	
+	<script>
+	  $(function() {
+		$('#table').bootstrapTable()
+	  })
+	</script>
+	
+	<script>
+		$('#table').on('click-cell.bs.table', onClickCell);
+
+		/* Hide a Columns */
+		$('#table').bootstrapTable('hideColumn', 'one');
+
+		/* Displey what we get */
+		function onClickCell(event, field, value, row, $element) {
+		  $('.clicked-text').text($element.text());
+		  $('.clicked-field').text(field);
+		  $('.clicked-value').text(value);
+		  $('.alert').removeClass('hidden');
+		}
+	</script>
+  
+	<script th:src="@{/script.js}"></script>
+  
+</th:block>

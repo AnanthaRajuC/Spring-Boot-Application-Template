@@ -1,31 +1,37 @@
-<!doctype html>
-<html lang="en">
-<head>
-<title>Spring Boot Microservice Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="/css/bootstrap.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+				 with:title="'Home'">
+				 
+				 
+	  
+	<th:block layout:fragment="content">
+	
 <body>
+
 	<div class="container">
+	
 		<div class="jumbotron">
 			<h1>
 				<mark>Spring Boot</mark>
 				<small>Application Template</small>
 			</h1>
 		</div>
-		<a href="/api/generic-hello" class="btn btn-info" role="button">generic
-			greetings</a> <br>
+		
+		<a href="/api/generic-hello" class="btn btn-info" role="button">generic greetings</a> 
+		
+		<br>
 
-		<form action="/api/personalized-hello" method="get">
-			Name: <input class="form-control" type="text"
-				placeholder="Enter name" name="name"><br>
-			<button class="btn btn-info" type="submit">personalized
-				greetings</button>
-			<br> <br>
-
+		<form action="/api/personalized-hello" method="get">Name: <input class="form-control" type="text" placeholder="Enter name" name="name">
+		
+		</br>
+		
+		<button class="btn btn-info" type="submit">personalized greetings</button>
+		
+		</br> 
+		</br>
 
 			<div class="table-responsive">
 				<input class="form-control" id="myInput" type="text" placeholder="Search.."> <br>
@@ -102,6 +108,7 @@
 				</table>
 			</div>
 	</div>
+	
 	<script>
 		$(document)
 				.ready(
@@ -127,5 +134,9 @@
 											});
 						});
 	</script>
+	
 </body>
+
+</th:block>
+	
 </html>

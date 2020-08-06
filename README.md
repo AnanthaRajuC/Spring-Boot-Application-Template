@@ -17,7 +17,7 @@ Delete the sample code, replace with your own and you’re good to go.
 
 ## Built With
 
-* 	[Maven](https://maven.apache.org/) - Dependency Management
+* 	[Bootstrap](https://getbootstrap.com/) - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
 * 	[Flyway](https://flywaydb.org/) - Version control for database
 * 	[JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit
 * 	[Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
@@ -27,6 +27,7 @@ Delete the sample code, replace with your own and you’re good to go.
 * 	[Prometheus](https://prometheus.io/) - Monitoring system and time series database
 * 	[Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
 * 	[Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
+* 	[Maven](https://maven.apache.org/) - Dependency Management
 
 ## External Tools Used
 
@@ -44,6 +45,8 @@ Delete the sample code, replace with your own and you’re good to go.
 * 	[x] Web - HTML, JavaScript (jQuery)
 * 	[x] Content Negotiation
 * 	[x] Security (Basic Authentication)
+* 	[x] Dark Mode
+* 	[x] Shut down app on button click via actuator url
 * 	[ ] Material Design for Bootstrap
 * 	[ ] Docker
 * 	[ ] HATEOS
@@ -120,20 +123,22 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 |`johnDoe`   | password  |
 |`AdminUser` | password  |
 
-### Actuator
-
-To monitor and manage your application
-
-|  URL |  Method |
-|----------|--------------|
-|`http://localhost:8080`| GET |
-|`http://localhost:8080/actuator/`| GET |
-|`http://localhost:8080/actuator/health`| GET |
-|`http://localhost:8080/actuator/info`| GET |
-|`http://localhost:8080/actuator/prometheus`| GET |
-|`http://localhost:8080/actuator/httptrace`| GET |
-
 ### URLs
+
+|  URL |  Method | Remarks |
+|----------|--------------|--------------|
+|`http://localhost:8080/index`                                   | GET | Home Page              |
+|`http://localhost:8080/about`                                   | GET | About Page             |
+
+### Web Page URLs
+
+|  URL |  Method | Remarks |
+|----------|--------------|--------------|
+|`http://localhost:8080/view/bootstrap`       | GET ||
+|`http://localhost:8080/view/angular`         | GET ||
+|`http://localhost:8080/view/material-design` | GET ||
+
+### Other URLs
 
 |  URL |  Method | Remarks |
 |----------|--------------|--------------|
@@ -143,20 +148,24 @@ To monitor and manage your application
 |`http://localhost:8080/api/personalized-hello?name=spring-boot` | GET | |
 |`http://localhost:8080/api/loggers`                             | GET | |
 
+### Actuator
+
+To monitor and manage your application
+
+|  URL |  Method |
+|----------|--------------|
+|`http://localhost:8080/actuator/`| GET |
+|`http://localhost:8080/actuator/health`| GET |
+|`http://localhost:8080/actuator/info`| GET |
+|`http://localhost:8080/actuator/prometheus`| GET |
+|`http://localhost:8080/actuator/httptrace`| GET |
+
 ### Person URLs
 
 |  URL |  Method | Remarks |
 |----------|--------------|--------------|
 |`http://localhost:8080/api/person`                         | GET | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|
 |`http://localhost:8080/api/person/1`                       | GET |                                                                                     |
-
-### Web Page URLs
-
-|  URL |  Method | Remarks |
-|----------|--------------|--------------|
-|`http://localhost:8080/view/bootstrap`       | GET ||
-|`http://localhost:8080/view/angular`         | GET ||
-|`http://localhost:8080/view/material-design` | GET ||
 
 ## Documentation
 
@@ -174,26 +183,46 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── main
 │       └── java
-│           ├── com.arc.application
-│           ├── com.arc.application.config
-│           ├── com.arc.application.controller
-│           ├── com.arc.application.exception
-│           ├── com.arc.application.model
-│           ├── com.arc.application.util
-│           ├── com.arc.application.repository
-│           └── com.arc.application.service
+│           ├── io.github.anantharajuc.sbtest
+│           ├── io.github.anantharajuc.config
+│           ├── io.github.anantharajuc.controller
+│           ├── io.github.anantharajuc.enums
+│           ├── io.github.anantharajuc.exception
+│           ├── io.github.anantharajuc.model
+│           ├── io.github.anantharajuc.repository
+│           ├── io.github.anantharajuc.security
+│           ├── io.github.anantharajuc.service
+│           └── io.github.anantharajuc.util
 ├── src
 │   └── main
 │       └── resources
-│           └── static
+│           ├── data
+│           │   └── mysql
+│           │       └── migrations
+│           │           ├── V0_0_1__initialize_structure.sql
+│           │           └── V0_0_2__populate_data.sql
+│           ├── static
 │           │   ├── css
-│           │   │   └── bootstrap.css
+│           │   ├── fonts
 │           │   ├── images
 │           │   ├── js
-│           │   ├── favicon.ico
-│           │   └── index.html
+│           │   └── favicon.ico
 │           ├── templates
-│           │   └── view.html
+│           │   ├── fragments
+│           │   │   ├── body_scripts.html
+│           │   │   ├── footer.html
+│           │   │   ├── htmlhead.html
+│           │   │   ├── navigation.html
+│           │   │   └── pagetitle.html
+│           │   │   
+│           │   ├── pages
+│           │   │   ├── about.html
+│           │   │   ├── close.html
+│           │   │   └── index.html
+│           │   │   
+│           │   ├── error.html
+│           │   └── layout.html
+│           │   
 │           ├── application.properties
 │           ├── banner.txt
 │           └── log4j2.xml
@@ -244,7 +273,6 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 
 * 	[My API Lifecycle Checklist and Scorecard](https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard)
 * 	[HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
-* 	[Bootstrap w3schools](https://www.w3schools.com/bootstrap/)
 * 	[Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
 
 ## License

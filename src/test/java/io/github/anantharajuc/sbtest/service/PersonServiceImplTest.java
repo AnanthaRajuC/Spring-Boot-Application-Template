@@ -16,6 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import io.github.anantharajuc.sbtest.enums.GenderEnum;
 import io.github.anantharajuc.sbtest.model.Person;
 import io.github.anantharajuc.sbtest.repository.PersonRepository;
 
@@ -38,7 +39,7 @@ public class PersonServiceImplTest
 		
 		person.setId((long) 1);
 		person.setAge(29);
-		person.setGender("Female");
+		person.setGender(GenderEnum.FEMALE);
 		person.setName("Stevie Nicks");
 		person.setCreatedOn(date);
 		
@@ -56,7 +57,7 @@ public class PersonServiceImplTest
 		
 		person.setId((long) 1);
 		person.setAge(29);
-		person.setGender("Female");
+		person.setGender(GenderEnum.FEMALE);
 		person.setName("Stevie Nicks");
 		person.setCreatedOn(date);
 		
@@ -74,7 +75,7 @@ public class PersonServiceImplTest
 		
 		person.setId((long) 1);
 		person.setAge(29);
-		person.setGender("Female");
+		person.setGender(GenderEnum.FEMALE);
 		person.setName("Stevie Nicks");
 		person.setCreatedOn(date);
 		
@@ -95,7 +96,7 @@ public class PersonServiceImplTest
 		
 		person.setId((long) 1);
 		person.setAge(55);
-		person.setGender("Male");
+		person.setGender(GenderEnum.MALE);
 		person.setName("Michael Jackson");
 		person.setCreatedOn(date);
 		
@@ -112,7 +113,7 @@ public class PersonServiceImplTest
 		
 		person1.setId((long) 1);
 		person1.setAge(29);
-		person1.setGender("Female");
+		person1.setGender(GenderEnum.FEMALE);
 		person1.setName("Stevie Nicks");
 		person1.setCreatedOn(date);
 		
@@ -120,7 +121,7 @@ public class PersonServiceImplTest
 		
 		person2.setId((long) 2);
 		person2.setAge(30);
-		person2.setGender("Male");
+		person2.setGender(GenderEnum.MALE);
 		person2.setName("Mac");
 		person2.setCreatedOn(date);
 

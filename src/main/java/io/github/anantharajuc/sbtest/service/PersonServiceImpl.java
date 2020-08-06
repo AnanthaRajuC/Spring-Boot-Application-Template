@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbtest.model.Person;
+import io.github.anantharajuc.sbtest.model.Quote;
 import io.github.anantharajuc.sbtest.repository.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
@@ -41,6 +42,10 @@ public class PersonServiceImpl implements PersonService
 	@Override
 	public Person getPersonById(Long personId) 
 	{
+		log.info("-----> getPersonById service");	
+		
+		
+		
 		return personRepository
 				.findById(personId)
 				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
@@ -49,6 +54,8 @@ public class PersonServiceImpl implements PersonService
 	@Override
 	public Person createPerson(Person person) 
 	{
+		log.info("-----> createPerson service");	
+		
 		return personRepository
 				.save(person);
 	}
@@ -56,6 +63,8 @@ public class PersonServiceImpl implements PersonService
 	@Override
 	public ResponseEntity<?> deletePerson(Long personId) 
 	{
+		log.info("-----> deletePerson service");
+		
 		Person person = personRepository
 				.findById(personId)
 				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
@@ -70,6 +79,8 @@ public class PersonServiceImpl implements PersonService
 	@Override
 	public Person updatePerson(Long personId, Person personDetails) 
 	{
+		log.info("-----> updatePerson service");
+		
 		Person person = personRepository
 						.findById(personId)
 						.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
@@ -79,5 +90,13 @@ public class PersonServiceImpl implements PersonService
 		person.setAge(personDetails.getAge());
 
 		return personRepository.save(person);
+	}
+
+	@Override
+	public List<Person> getPersonsByGender(String gender) 
+	{
+		log.info("-----> getPersonsByGender service");
+		
+		return personRepository.getPersonByGender(gender);
 	}
 }

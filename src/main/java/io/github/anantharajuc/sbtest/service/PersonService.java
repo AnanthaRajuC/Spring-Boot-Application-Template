@@ -11,6 +11,8 @@ public interface PersonService
 {
 	List<Person> getAllPersons();
 	
+	List<Person> getPersonsByGender(String gender);
+	
 	Person getPersonById(Long personId);
 	
 	Person createPerson(Person person);

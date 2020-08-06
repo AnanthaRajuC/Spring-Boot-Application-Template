@@ -39,6 +39,12 @@ public class PersonController
 		return personServiceImpl.getAllPersonsPageable(pageable);
 	}
 	
+	@GetMapping(value="/person/gender/{gender}")
+	public List<Person> getPersonByGender(@PathVariable(value = "gender") String gender)
+	{
+		return personServiceImpl.getPersonsByGender(gender);  
+	}
+	
 	@GetMapping(value="/person/{id}")
 	public Person getPersonById(@PathVariable(value = "id") Long personId)
 	{		
