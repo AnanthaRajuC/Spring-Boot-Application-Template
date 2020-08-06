@@ -5,9 +5,12 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import io.github.anantharajuc.sbtest.repository.BuiltWithRepository;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -17,6 +20,9 @@ public class SpringBootApplicationTemplateController
 {
 	@Autowired
 	private Environment environment;
+	
+	@Autowired
+	BuiltWithRepository builtWithRepository;
 	
 	@GetMapping("/index")
     public String index() 
@@ -29,6 +35,16 @@ public class SpringBootApplicationTemplateController
 	{
 		return "pages/about";
     }
+	
+	@GetMapping("/tech-stack")
+	public String builtWith(Model model, @RequestParam(defaultValue="0") int page)
+	{ 
+		model.addAttribute("data", builtWithRepository.findAll());
+		
+		log.info(model.toString()); 
+		
+		return "pages/built_with";
+	}
 	
 	@GetMapping("/close")
 	public String close()

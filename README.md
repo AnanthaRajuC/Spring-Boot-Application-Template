@@ -88,11 +88,11 @@ docker pull anantha/spring-boot-application-template
 Ensure you build a jar of the application before building a docker image.  
 
 ```text
-mvn package -Dmaven.test.skip=true     //skip all tests and build
+mvn package -Dmaven.test.skip=true    //skip all tests and build
 ```
 
 ```text
-mvn clean package					   //run all tests and build
+mvn clean package                     //run all tests and build
 ```
 
 |  Command |  Description |
@@ -128,21 +128,14 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 |  URL |  Method | Remarks |
 |----------|--------------|--------------|
 |`http://localhost:8080/index`                                   | GET | Home Page              |
-|`http://localhost:8080/about`                                   | GET | About Page             |
-
-### Web Page URLs
-
-|  URL |  Method | Remarks |
-|----------|--------------|--------------|
-|`http://localhost:8080/view/bootstrap`       | GET ||
-|`http://localhost:8080/view/angular`         | GET ||
-|`http://localhost:8080/view/material-design` | GET ||
+|`http://localhost:8080/sbat/index`                              | GET | Home Page              |
+|`http://localhost:8080/sbat/about`                              | GET | About Page             |
+|`http://localhost:8080/sbat/tech-stack`                         | GET | About Page             |
 
 ### Other URLs
 
 |  URL |  Method | Remarks |
 |----------|--------------|--------------|
-|`http://localhost:8080/bw/tech-stack`                           | GET | Custom Response Headers|
 |`http://localhost:8080/api/generic-hello`                       | GET | |
 |`http://localhost:8080/api/personalized-hello/`                 | GET | |
 |`http://localhost:8080/api/personalized-hello?name=spring-boot` | GET | |
