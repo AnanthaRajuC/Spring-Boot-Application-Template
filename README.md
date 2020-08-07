@@ -1,8 +1,9 @@
 # Spring Boot Application Template/Starter-Project
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
 ![GitHub last commit](https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/anantharajuc/Spring-Boot-Application-Template)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
 [![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)
 [![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)
@@ -44,13 +45,10 @@ Delete the sample code, replace with your own and you’re good to go.
 
 * 	[x] Logger (Console, File, Mail)
 * 	[x] RESTful Web Service (CRUD)
-* 	[x] Bootstrap - CSS
-* 	[x] Web - HTML, JavaScript (jQuery)
 * 	[x] Content Negotiation
-* 	[x] Security (Basic Authentication)
 * 	[x] Dark Mode
 * 	[x] Shut down app on button click via actuator url
-* 	[ ] Material Design for Bootstrap
+* 	[ ] Security (Basic Authentication)
 * 	[ ] Docker
 * 	[ ] HATEOS
 * 	[ ] Spring Boot Admin
