@@ -1,5 +1,7 @@
 # Spring Boot Application Template/Starter-Project
 
+![GitHub last commit](https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/anantharajuc/Spring-Boot-Application-Template)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
 [![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)
@@ -28,6 +30,7 @@ Delete the sample code, replace with your own and you’re good to go.
 * 	[Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
 * 	[Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
 * 	[Maven](https://maven.apache.org/) - Dependency Management
+* 	[Bootstrap Table](https://bootstrap-table.com/) - An extended table to the integration with some of the most widely used CSS frameworks.
 
 ## External Tools Used
 

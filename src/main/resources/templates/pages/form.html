@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+				 with:title="'Form'">
+	  
+<th:block layout:fragment="content">
+
+	<p th:text="'Hello, Bud! Please fill out the form.'" />    
+    
+    <form action="#" th:action="@{/sbat/form}" th:object="${command}" method="post">
+	
+		<p>Simple Text Field: <input type="text" placeholder="enter some text" th:field="*{textField}" /></p>
+
+		<p>Text Area Field: <textarea th:field="*{textareaField}" ></textarea></p>
+
+		<p>Date Field: <input type="datetime-local" th:field="*{datetimeField}" /></p>
+		
+		<p>Color Field: <input type="color" th:field="*{colorField}" /></p>
+				
+		<div>
+			<label th:for="singleCheckboxField" th:text="'Single Checkbox Field:'"></label>
+			<input type="checkbox" th:field="*{singleCheckboxField}" />
+		</div>
+				
+		<p>Multi Checkbox Fields:</p>
+		<ul>
+			<li th:each="checkboxValue: ${multiCheckboxAllValues}">
+				<input type="checkbox" th:field="*{multiCheckboxSelectedValues}" th:value="${checkboxValue}" />
+				<label th:for="${#ids.prev('multiCheckboxSelectedValues')}" th:text="${checkboxValue}"></label>
+			</li>
+		</ul>
+				
+		<p>Radio Button Fields:</p>
+		<ul>
+			<li th:each="radioValue: ${singleSelectAllValues}">
+				<input type="radio" th:field="*{radioButtonSelectedValue}" th:value="${radioValue}" />
+				<label th:for="${#ids.prev('radioButtonSelectedValue')}" th:text="${radioValue}"></label>
+			</li>
+		</ul>
+				
+		<p>Dropdown Field:</p>
+		<select th:field="*{dropdownSelectedValue}">
+			<option th:each="dropdownValue: ${singleSelectAllValues}"
+					th:value="${dropdownValue}"
+					th:text="${dropdownValue}" ></option>
+		</select>    		
+				
+		<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+	
+    </form>
+
+</th:block>
+	
+</html>
