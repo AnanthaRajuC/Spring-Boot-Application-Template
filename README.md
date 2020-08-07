@@ -1,5 +1,6 @@
 # Spring Boot Application Template/Starter-Project
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90dd899ee438f2b960dc)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
@@ -93,6 +94,8 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
+The app will start running at <http://localhost:8080>
+
 ## Running the application via docker container
 
 * 	[anantha/spring-boot-application-template](https://hub.docker.com/repository/docker/anantha/spring-boot-application-template) - DockerHub Image
@@ -141,6 +144,10 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 |`johnDoe`   | `password`  |
 |`AdminUser` | `password`  |
 
+## Explore Rest APIs
+
+The app defines following CRUD APIs.
+
 ### URLs
 
 |  URL |  Method | Remarks |
@@ -175,10 +182,41 @@ To monitor and manage your application
 
 ### Person URLs
 
-|  URL |  Method | Remarks |
-|----------|--------------|--------------|
-|`http://localhost:8080/api/person`                         | GET | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|
-|`http://localhost:8080/api/person/1`                       | GET |                                                                                     |
+|  URL |  Method | Remarks | Sample Valid Request Body |
+|----------|--------------|--------------|--------------|
+|`http://localhost:8080/api/person`      | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
+|`http://localhost:8080/api/person`      | POST    | Add a person                                                                        |[JSON](#personcreate)|
+|`http://localhost:8080/api/person/{id}` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
+|`http://localhost:8080/api/person/{id}` | PUT     | Update a person                                                                     ||
+|`http://localhost:8080/api/person/{id}` | DELETE  | Delete a person                                                                     ||
+
+## Sample Valid JSON Request Bodys
+
+##### <a id="personcreate">Create Person -> /api/person</a>
+```json
+{
+	"name": "Jane",
+	"username": "janejane",
+	"emailPrimary": "jane1.howell@gmail.com",
+    "emailSecondary": "jane2.howell@gmail.com",
+    "phone":9191919191,
+	"gender": "FEMALE",
+	"age": 25,
+	"password": "password",
+	"dob":"25-12-2005",
+	"isAdult":true,
+	"address": {
+		"street": "Jane Plains",
+		"suite": "Suite 779",
+		"city": "Wisokyburghh",
+		"zipcode": "90565-7771",
+		"geo": {
+			"lat": "-43.9589",
+			"lng": "-34.4628"
+		}
+	}
+}
+```
 
 ## Documentation
 

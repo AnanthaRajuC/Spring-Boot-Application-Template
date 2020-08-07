@@ -1,9 +1,6 @@
 package io.github.anantharajuc.sbtest.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,10 +8,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
@@ -34,7 +29,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "person", uniqueConstraints = {@UniqueConstraint(columnNames={"username"}), @UniqueConstraint(columnNames={"email_primary"})})
+@Table(name = "person")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
@@ -51,13 +46,13 @@ public class Person extends BaseEntity
     private String name;
 	
 	@NotBlank
-	@Column(name = "username")
+	@Column(name = "username", unique=true)
 	@Size(max = 15)
 	private String username;
 	
 	@Email
 	@Size(max=255, message="Must be a valid email id")
-	@Column(name="email_primary", nullable = false)
+	@Column(name="email_primary", unique=true, nullable = false)
 	private String emailPrimary;
 	
 	@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
@@ -92,10 +87,4 @@ public class Person extends BaseEntity
 	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "address_id")
 	private Address address;
-	
-	/*@OneToMany(mappedBy="person",cascade ={CascadeType.ALL})
-	private List<Quote> quotes;*/
-	
-	/*@OneToMany(mappedBy="person",cascade=CascadeType.ALL,orphanRemoval=true)
-	private List<Quote> quotes = new ArrayList<>();*/
 }

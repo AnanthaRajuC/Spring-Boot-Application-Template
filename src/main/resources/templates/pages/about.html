@@ -27,7 +27,9 @@
 	<!-- README.ms start -->
 	
 	<h1 id="spring-boot-application-template-starter-project">Spring Boot Application Template/Starter-Project</h1>
-<p><a href="code_of_conduct.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant"></a>
+<p><a href="https://app.getpostman.com/run-collection/90dd899ee438f2b960dc"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman"></a>
+   <a href="https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template"><img src="https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&amp;metric=alert_status" alt="Quality Gate Status"></a>
+   <a href="code_of_conduct.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant"></a>
    <a href="https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield" alt="FOSSA Status"></a>
    <img src="https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template" alt="GitHub last commit">
    <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues"><img src="https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template" alt="GitHub issues"></a>
@@ -63,6 +65,7 @@
 <h3 id="libraries-and-plugins">Libraries and Plugins</h3>
 <ul>
    <li><a href="https://afeld.github.io/bootstrap-toc/">Bootstrap ToC</a> - Table of Contents plugin for Bootstrap</li>
+   <li><a href="https://github.com/Antibrumm/thymeleaf-extras-with-dialect">Thymeleaf With Dialect</a> - A dialect for Thymeleaf that allows you to use attributes with a &quot;with&quot; prefix to avoid having long &quot;th:with&quot;-expressions.</li>
    <li><a href="https://github.com/ultraq/thymeleaf-layout-dialect">Thymeleaf Layout Dialect</a> - A dialect for Thymeleaf that lets you build layouts and reusable templates in order to improve code reuse.</li>
    <li><a href="https://projectlombok.org/">Lombok</a> - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</li>
    <li><a href="https://swagger.io/">Swagger</a> - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.</li>
@@ -115,6 +118,7 @@
 <p>Alternatively you can use the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html">Spring Boot Maven plugin</a> like so:</p>
 <pre><code class="lang-shell">mvn spring-boot:<span class="hljs-keyword">run</span><span class="bash"></span>
 </code></pre>
+<p>The app will start running at <a href="http://localhost:8080">http://localhost:8080</a></p>
 <h2 id="running-the-application-via-docker-container">Running the application via docker container</h2>
 <ul>
    <li><a href="https://hub.docker.com/repository/docker/anantha/spring-boot-application-template">anantha/spring-boot-application-template</a> - DockerHub Image</li>
@@ -191,6 +195,8 @@
       </tr>
    </tbody>
 </table>
+<h2 id="explore-rest-apis">Explore Rest APIs</h2>
+<p>The app defines following CRUD APIs.</p>
 <h3 id="urls">URLs</h3>
 <table>
    <thead>
@@ -303,6 +309,7 @@
          <th>URL</th>
          <th>Method</th>
          <th>Remarks</th>
+         <th>Sample Valid Request Body</th>
       </tr>
    </thead>
    <tbody>
@@ -310,13 +317,58 @@
          <td><code>http://localhost:8080/api/person</code></td>
          <td>GET</td>
          <td>Header <code>Accept:application/json</code> or <code>Accept:application/xml</code> for content negotiation</td>
+         <td></td>
       </tr>
       <tr>
-         <td><code>http://localhost:8080/api/person/1</code></td>
+         <td><code>http://localhost:8080/api/person</code></td>
+         <td>POST</td>
+         <td>Add a person</td>
+         <td><a href="#personcreate">JSON</a></td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/api/person/{id}</code></td>
          <td>GET</td>
+         <td>Header <code>Accept:application/json</code> or <code>Accept:application/xml</code> for content negotiation</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/api/person/{id}</code></td>
+         <td>PUT</td>
+         <td>Update a person</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/api/person/{id}</code></td>
+         <td>DELETE</td>
+         <td>Delete a person</td>
       </tr>
    </tbody>
 </table>
+<h2 id="sample-valid-json-request-bodys">Sample Valid JSON Request Bodys</h2>
+<h5 id="-a-id-personcreate-create-person-api-person-a-"><a id="personcreate">Create Person -&gt; /api/person</a></h5>
+<pre><code class="lang-json">{
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jane"</span>,
+    <span class="hljs-attr">"username"</span>: <span class="hljs-string">"janejane"</span>,
+    <span class="hljs-attr">"emailPrimary"</span>: <span class="hljs-string">"jane1.howell@gmail.com"</span>,
+    <span class="hljs-attr">"emailSecondary"</span>: <span class="hljs-string">"jane2.howell@gmail.com"</span>,
+    <span class="hljs-attr">"phone"</span>:<span class="hljs-number">9191919191</span>,
+    <span class="hljs-attr">"gender"</span>: <span class="hljs-string">"FEMALE"</span>,
+    <span class="hljs-attr">"age"</span>: <span class="hljs-number">25</span>,
+    <span class="hljs-attr">"password"</span>: <span class="hljs-string">"password"</span>,
+    <span class="hljs-attr">"dob"</span>:<span class="hljs-string">"25-12-2005"</span>,
+    <span class="hljs-attr">"isAdult"</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"address"</span>: {
+        <span class="hljs-attr">"street"</span>: <span class="hljs-string">"Jane Plains"</span>,
+        <span class="hljs-attr">"suite"</span>: <span class="hljs-string">"Suite 779"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Wisokyburghh"</span>,
+        <span class="hljs-attr">"zipcode"</span>: <span class="hljs-string">"90565-7771"</span>,
+        <span class="hljs-attr">"geo"</span>: {
+            <span class="hljs-attr">"lat"</span>: <span class="hljs-string">"-43.9589"</span>,
+            <span class="hljs-attr">"lng"</span>: <span class="hljs-string">"-34.4628"</span>
+        }
+    }
+}
+</code></pre>
 <h2 id="documentation">Documentation</h2>
 <ul>
    <li><a href="https://documenter.getpostman.com/view/2449187/RWTiwzb2">Postman Collection</a> - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages</li>

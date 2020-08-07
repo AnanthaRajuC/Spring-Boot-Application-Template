@@ -35,5 +35,4 @@ public class Geo extends BaseEntity
 	@JsonBackReference
 	@OneToOne(mappedBy = "geo")
 	private Address address;
-
 }
