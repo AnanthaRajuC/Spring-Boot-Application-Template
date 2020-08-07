@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.model;
+/*package io.github.anantharajuc.sbtest.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -29,9 +29,9 @@ public class Quote extends BaseEntity
 {
 	private static final long serialVersionUID = 1L;
 	
-	/*@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id",referencedColumnName = "id")
-    private Person person;*/
+    private Person person;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "person_id")
@@ -42,3 +42,4 @@ public class Quote extends BaseEntity
 	@Column(name="quote", nullable = false)
     private String quotes; 
 }
+*/

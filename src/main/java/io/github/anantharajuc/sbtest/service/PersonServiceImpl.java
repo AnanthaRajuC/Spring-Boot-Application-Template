@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbtest.model.Person;
-import io.github.anantharajuc.sbtest.model.Quote;
+//import io.github.anantharajuc.sbtest.model.Quote;
 import io.github.anantharajuc.sbtest.repository.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 

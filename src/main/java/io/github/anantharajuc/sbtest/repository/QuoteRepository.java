@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.repository;
+/*package io.github.anantharajuc.sbtest.repository;
 
 import java.util.List;
 
@@ -12,3 +12,4 @@ public interface QuoteRepository extends JpaRepository<Quote, Long>
 {
 	List<Quote> findByPersonName(String name);
 }
+*/

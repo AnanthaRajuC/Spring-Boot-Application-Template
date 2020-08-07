@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.controller;
+/*package io.github.anantharajuc.sbtest.controller;
 
 import java.util.List;
 
@@ -39,3 +39,4 @@ public class QuoteController
 		
 	}
 }
+*/
