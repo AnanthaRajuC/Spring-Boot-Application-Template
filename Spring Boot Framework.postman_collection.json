@@ -108,7 +108,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/person/6",
+					"raw": "http://localhost:8080/api/person/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -117,7 +117,7 @@
 					"path": [
 						"api",
 						"person",
-						"6"
+						"1"
 					]
 				},
 				"description": "GET user by id in JSON format\nhttp://localhost:8080/api/person/1"
@@ -164,7 +164,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"eee\",\r\n    \"gender\": \"male\",\r\n    \"age\": 55\r\n}",
+					"raw": "{\r\n\t\"name\": \"Jane3\",\r\n\t\"username\": \"jane3\",\r\n\t\"emailPrimary\": \"jane3.howell@gmail.com\",\r\n    \"emailSecondary\": \"jane1.howell@gmail.com\",\r\n    \"phone\":9191919195,\r\n\t\"gender\": \"MALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2006\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -197,7 +197,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"R Dioeee\",\r\n    \"gender\": \"male\",\r\n    \"age\": 68\r\n}",
+					"raw": "{\r\n\t\"name\": \"abc\",\r\n\t\"username\": \"ervin\",\r\n\t\"emailPrimary\": \"ervin.howell@gmail.com\",\r\n    \"emailSecondary\": \"ervin.howell@gmail.com\",\r\n    \"phone\":9191919192,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,20 +227,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8088/api/personalized-hello?name=springboot%20application",
+					"raw": "http://localhost:8080/api/personalized-hello?",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"api",
 						"personalized-hello"
 					],
 					"query": [
 						{
-							"key": "name",
-							"value": "springboot%20application"
+							"key": "",
+							"value": null
 						}
 					]
 				},
@@ -254,12 +254,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8088/api/personalized-hello?name=springboot%20application",
+					"raw": "http://localhost:8080/api/personalized-hello?name=springboot%20application",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"api",
 						"personalized-hello"
@@ -272,114 +272,6 @@
 					]
 				},
 				"description": "http://localhost:8088/api/personalized-hello?name=springboot%20application"
-			},
-			"response": []
-		},
-		{
-			"name": "/view/bootstrap",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "johnDoe",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/view/bootstrap",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"view",
-						"bootstrap"
-					]
-				},
-				"description": "/view/bootstrap\r\nhttp://localhost:8080/view/bootstrap"
-			},
-			"response": []
-		},
-		{
-			"name": "/view/angular",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "http://localhost:8080/bw/tech-stack",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "user",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/view/angular",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"view",
-						"angular"
-					]
-				},
-				"description": "/view/angular\r\nhttp://localhost:8080/view/angular"
-			},
-			"response": []
-		},
-		{
-			"name": "/view/material-design",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
-							"value": "johnDoe",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/view/material-design",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"view",
-						"material-design"
-					]
-				},
-				"description": "http://localhost:8080/view/material-design\r\n/view/material-design"
 			},
 			"response": []
 		},
@@ -560,7 +452,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/person/pageable?page=0&size=3&sort=createdOn,desc",
+					"raw": "http://localhost:8080/api/person/pageable?page=0&size=2&sort=createdOn,desc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -578,7 +470,7 @@
 						},
 						{
 							"key": "size",
-							"value": "3"
+							"value": "2"
 						},
 						{
 							"key": "sort",
@@ -587,6 +479,28 @@
 					]
 				},
 				"description": "http://localhost:8080/api/personPageable?page=0&size=2&sort=createdOn,desc"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person/3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/person/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"person",
+						"3"
+					]
+				},
+				"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
 			},
 			"response": []
 		}
