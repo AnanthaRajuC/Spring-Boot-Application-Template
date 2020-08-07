@@ -8,8 +8,7 @@
 <th:block layout:fragment="content">
 
 <body data-spy="scroll" data-target="#toc">
-	
-	<div class="container"> 
+
 		<div class="row">	
 			<!-- sidebar, which will move to the top on a small screen -->
 			<div class="col-sm-3">
@@ -27,130 +26,144 @@
 
 	<!-- README.ms start -->
 	
-	<p>Spring Boot Application Template/Starter-Project</p>
-	
-<p><a href="https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield" alt="FOSSA Status"></a>
-	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues"><img src="https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template" alt="GitHub issues"></a>
-	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network"><img src="https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template" alt="GitHub forks"></a>
-	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers"><img src="https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template" alt="GitHub stars"></a>
-	<a href="https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template"><img src="https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master" alt="Build Status"></a>
-	<a href="https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template"><img src="https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg" alt="codecov"></a>
-	<a href="https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b" alt="Codacy Badge"></a>
-	<a href="https://microbadger.com/images/anantha/spring-boot-application-template"><img src="https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg" alt=""></a>
-	<a href="https://microbadger.com/images/anantha/spring-boot-application-template"><img src="https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg" alt=""></a>
-	<img src="https://img.shields.io/docker/image-size/anantha/spring-boot-application-template" alt="Docker Image Size (latest by date)">
+	<h1 id="spring-boot-application-template-starter-project">Spring Boot Application Template/Starter-Project</h1>
+<p><a href="code_of_conduct.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant"></a>
+   <a href="https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield" alt="FOSSA Status"></a>
+   <img src="https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template" alt="GitHub last commit">
+   <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues"><img src="https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template" alt="GitHub issues"></a>
+   <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network"><img src="https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template" alt="GitHub forks"></a>
+   <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers"><img src="https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template" alt="GitHub stars"></a>
+   <a href="https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template"><img src="https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master" alt="Build Status"></a>
+   <a href="https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template"><img src="https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg" alt="codecov"></a>
+   <a href="https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b" alt="Codacy Badge"></a>
+   <a href="https://microbadger.com/images/anantha/spring-boot-application-template"><img src="https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg" alt=""></a>
+   <a href="https://microbadger.com/images/anantha/spring-boot-application-template"><img src="https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg" alt=""></a>
+   <img src="https://img.shields.io/docker/image-size/anantha/spring-boot-application-template" alt="Docker Image Size (latest by date)">
 </p>
 <p>The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code.</p>
 <p>Delete the sample code, replace with your own and you’re good to go.</p>
 <h2 id="built-with">Built With</h2>
+<h3 id="data">Data</h3>
 <ul>
-	<li><a href="https://getbootstrap.com/">Bootstrap</a> - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.</li>
-	<li><a href="https://flywaydb.org/">Flyway</a> - Version control for database</li>
-	<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a> - Java™ Platform, Standard Edition Development Kit</li>
-	<li><a href="https://spring.io/projects/spring-boot">Spring Boot</a> - Framework to ease the bootstrapping and development of new Spring Applications</li>
-	<li><a href="https://www.mysql.com/">MySQL</a> - Open-Source Relational Database Management System</li>
-	<li><a href="https://git-scm.com/">git</a> - Free and Open-Source distributed version control system</li>
-	<li><a href="https://www.thymeleaf.org/">Thymeleaf</a> - Modern server-side Java template engine for both web and standalone environments.</li>
-	<li><a href="https://prometheus.io/">Prometheus</a> - Monitoring system and time series database</li>
-	<li><a href="https://projectlombok.org/">Lombok</a> - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</li>
-	<li><a href="https://swagger.io/">Swagger</a> - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.</li>
-	<li><a href="https://maven.apache.org/">Maven</a> - Dependency Management</li>
+   <li><a href="https://flywaydb.org/">Flyway</a> - Version control for database</li>
+   <li><a href="https://www.mysql.com/">MySQL</a> - Open-Source Relational Database Management System</li>
+</ul>
+<h3 id="client-frontend-ui">Client - Frontend/UI</h3>
+<ul>
+   <li><a href="https://getbootstrap.com/">Bootstrap</a> - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.</li>
+   <li><a href="https://bootstrap-table.com/">Bootstrap Table</a> - An extended table to the integration with some of the most widely used CSS frameworks.</li>
+   <li><a href="https://www.thymeleaf.org/">Thymeleaf</a> - Modern server-side Java template engine for both web and standalone environments.</li>
+</ul>
+<h3 id="server-backend">Server - Backend</h3>
+<ul>
+   <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a> - Java™ Platform, Standard Edition Development Kit</li>
+   <li><a href="https://spring.io/projects/spring-boot">Spring Boot</a> - Framework to ease the bootstrapping and development of new Spring Applications</li>
+   <li><a href="https://maven.apache.org/">Maven</a> - Dependency Management</li>
+</ul>
+<h3 id="libraries-and-plugins">Libraries and Plugins</h3>
+<ul>
+   <li><a href="https://afeld.github.io/bootstrap-toc/">Bootstrap ToC</a> - Table of Contents plugin for Bootstrap</li>
+   <li><a href="https://github.com/ultraq/thymeleaf-layout-dialect">Thymeleaf Layout Dialect</a> - A dialect for Thymeleaf that lets you build layouts and reusable templates in order to improve code reuse.</li>
+   <li><a href="https://projectlombok.org/">Lombok</a> - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</li>
+   <li><a href="https://swagger.io/">Swagger</a> - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.</li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+   <li><a href="https://git-scm.com/">git</a> - Free and Open-Source distributed version control system</li>
+   <li><a href="https://prometheus.io/">Prometheus</a> - Monitoring system and time series database</li>
 </ul>
 <h2 id="external-tools-used">External Tools Used</h2>
 <ul>
-	<li><a href="https://www.getpostman.com/">Postman</a> - API Development Environment (Testing Docmentation)</li>
-	<li><a href="https://docs.postman-echo.com/?version=latest">Postman Echo</a> - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.</li>
-	<li><a href="https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template">Travis CI</a> - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.</li>
-	<li><a href="https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template">Codecov</a> - A hosted tool that is used to measure the test coverage of your codebase.</li>
-	<li><a href="https://dependabot.com/">Dependabot</a> - Automated dependency updates.</li>
+   <li><a href="https://www.getpostman.com/">Postman</a> - API Development Environment (Testing Docmentation)</li>
+   <li><a href="https://docs.postman-echo.com/?version=latest">Postman Echo</a> - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.</li>
+   <li><a href="https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template">Travis CI</a> - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.</li>
+   <li><a href="https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template">Codecov</a> - A hosted tool that is used to measure the test coverage of your codebase.</li>
+   <li><a href="https://dependabot.com/">Dependabot</a> - Automated dependency updates.</li>
 </ul>
 <h2 id="to-do">To-Do</h2>
 <ul>
-	<li>[x] Logger (Console, File, Mail)</li>
-	<li>[x] RESTful Web Service (CRUD)</li>
-	<li>[x] Bootstrap - CSS</li>
-	<li>[x] Web - HTML, JavaScript (jQuery)</li>
-	<li>[x] Content Negotiation</li>
-	<li>[x] Security (Basic Authentication)</li>
-	<li>[x] Dark Mode</li>
-	<li>[x] Shut down app on button click via actuator url</li>
-	<li>[ ] Material Design for Bootstrap</li>
-	<li>[ ] Docker</li>
-	<li>[ ] HATEOS</li>
-	<li>[ ] Spring Boot Admin</li>
-	<li>[ ] NoSQL (MongoDB)</li>
-	<li>[ ] MySQL (Connect to Multiple Schemas)</li>
-	<li>[ ] Micrometer</li>
-	<li>[ ] Grafna</li>
+   <li>[x] Logger (Console, File, Mail)</li>
+   <li>[x] RESTful Web Service (CRUD)</li>
+   <li>[x] Content Negotiation</li>
+   <li>[x] Dark Mode</li>
+   <li>[x] Shut down app on button click via actuator url</li>
+   <li>[ ] Security (Basic Authentication)</li>
+   <li>[ ] Docker</li>
+   <li>[ ] HATEOS</li>
+   <li>[ ] Spring Boot Admin</li>
+   <li>[ ] NoSQL (MongoDB)</li>
+   <li>[ ] MySQL (Connect to Multiple Schemas)</li>
+   <li>[ ] Micrometer</li>
+   <li>[ ] Grafna</li>
 </ul>
 <h2 id="running-the-application-locally">Running the application locally</h2>
 <p>There are several ways to run a Spring Boot application on your local machine. One way is to execute the <code>main</code> method in the <code>com.arc.sbtest.SBtemplateApplication</code> class from your IDE.</p>
 <ul>
-	<li>Download the zip or clone the Git repository.</li>
-	<li>Unzip the zip file (if you downloaded one)</li>
-	<li>Open Command Prompt and Change directory (cd) to folder containing pom.xml</li>
-	<li>
-		Open Eclipse
-		<ul>
-			<li>File -&gt; Import -&gt; Existing Maven Project -&gt; Navigate to the folder where you unzipped the zip</li>
-			<li>Select the project</li>
-		</ul>
-	</li>
-	<li>Choose the Spring Boot Application file (search for @SpringBootApplication)</li>
-	<li>Right Click on the file and Run as Java Application</li>
+   <li>Download the zip or clone the Git repository.</li>
+   <li>Unzip the zip file (if you downloaded one)</li>
+   <li>Open Command Prompt and Change directory (cd) to folder containing pom.xml</li>
+   <li>
+      Open Eclipse
+      <ul>
+         <li>File -&gt; Import -&gt; Existing Maven Project -&gt; Navigate to the folder where you unzipped the zip</li>
+         <li>Select the project</li>
+      </ul>
+   </li>
+   <li>Choose the Spring Boot Application file (search for @SpringBootApplication)</li>
+   <li>Right Click on the file and Run as Java Application</li>
 </ul>
 <p>Alternatively you can use the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html">Spring Boot Maven plugin</a> like so:</p>
 <pre><code class="lang-shell">mvn spring-boot:<span class="hljs-keyword">run</span><span class="bash"></span>
 </code></pre>
 <h2 id="running-the-application-via-docker-container">Running the application via docker container</h2>
 <ul>
-	<li><a href="https://hub.docker.com/repository/docker/anantha/spring-boot-application-template">anantha/spring-boot-application-template</a> - DockerHub Image</li>
+   <li><a href="https://hub.docker.com/repository/docker/anantha/spring-boot-application-template">anantha/spring-boot-application-template</a> - DockerHub Image</li>
 </ul>
 <p>DockerHub Pull Command</p>
 <pre><code class="lang-text">docker pull anantha/spring-boot-<span class="hljs-built_in">application</span>-template
 </code></pre>
 <p>Ensure you build a jar of the application before building a docker image.  </p>
-<pre><code class="lang-text">mvn package -Dmaven<span class="hljs-selector-class">.test</span><span class="hljs-selector-class">.skip</span>=true     <span class="hljs-comment">//skip all tests and build</span>
+<pre><code class="lang-text">`mvn package -Dmaven.test.skip=<span class="hljs-literal">true</span>`    //skip all tests <span class="hljs-literal">and</span> build
 </code></pre>
-<pre><code class="lang-text">mvn clean <span class="hljs-keyword">package</span>                       //run <span class="hljs-keyword">all</span> tests <span class="hljs-keyword">and</span> build
+<pre><code class="lang-text">`mvn clean <span class="hljs-keyword">package</span>`                     //run <span class="hljs-keyword">all</span> tests <span class="hljs-keyword">and</span> build
 </code></pre>
 <table>
-	<thead>
-		<tr>
-			<th>Command</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>docker images</td>
-			<td>take a look at the container images.</td>
-		</tr>
-		<tr>
-			<td>docker ps</td>
-			<td>list all the running containers.</td>
-		</tr>
-		<tr>
-			<td>docker ps -a</td>
-			<td>list all the containers, including the ones that have finished executing.</td>
-		</tr>
-		<tr>
-			<td>docker build -t spring-boot-application-template .</td>
-			<td>Build docker image of the project</td>
-		</tr>
-		<tr>
-			<td>docker run spring-boot-application-template</td>
-			<td>run the project&#39;s docker container</td>
-		</tr>
-		<tr>
-			<td>docker stop [container_id]</td>
-			<td>stop a container</td>
-		</tr>
-		<tr>
-			<td>docker rm $(docker ps -aq)</td>
-			<td>stop and remove all containers</td>
-		</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th>Command</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>docker images</code></td>
+         <td>take a look at the container images.</td>
+      </tr>
+      <tr>
+         <td><code>docker ps</code></td>
+         <td>list all the running containers.</td>
+      </tr>
+      <tr>
+         <td><code>docker ps -a</code></td>
+         <td>list all the containers, including the ones that have finished executing.</td>
+      </tr>
+      <tr>
+         <td><code>docker build -t spring-boot-application-template .</code></td>
+         <td>Build docker image of the project</td>
+      </tr>
+      <tr>
+         <td><code>docker run spring-boot-application-template</code></td>
+         <td>run the project&#39;s docker container</td>
+      </tr>
+      <tr>
+         <td><code>docker stop [container_id]</code></td>
+         <td>stop a container</td>
+      </tr>
+      <tr>
+         <td><code>docker rm $(docker ps -aq)</code></td>
+         <td>stop and remove all containers</td>
+      </tr>
+   </tbody>
 </table>
 <h3 id="security">Security</h3>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
@@ -161,139 +174,154 @@
 <p><del>Spring Boot Starter Security default username is <code>user</code> and a generated security password is printed in the console like <code>Using generated security password: 0423bec1-6759-4ed2-8e3e-e8196effadf9</code></del></p>
 <p>Refer to the <code>ApplicationSecurityConfig</code> class in <code>io.github.anantharajuc.sbtest.security</code> package to modify the preconfigured users.</p>
 <table>
-	<thead>
-		<tr>
-			<th>Username</th>
-			<th>Password</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>johnDoe</code></td>
-			<td>password</td>
-		</tr>
-		<tr>
-			<td><code>AdminUser</code></td>
-			<td>password</td>
-		</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th>Username</th>
+         <th>Password</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>johnDoe</code></td>
+         <td><code>password</code></td>
+      </tr>
+      <tr>
+         <td><code>AdminUser</code></td>
+         <td><code>password</code></td>
+      </tr>
+   </tbody>
 </table>
 <h3 id="urls">URLs</h3>
 <table>
-	<thead>
-		<tr>
-			<th>URL</th>
-			<th>Method</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>http://localhost:8080/index</code></td>
-			<td>GET</td>
-			<td>Home Page</td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/about</code></td>
-			<td>GET</td>
-			<td>About Page</td>
-		</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th>URL</th>
+         <th>Method</th>
+         <th>Remarks</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>http://localhost:8080/index</code></td>
+         <td>GET</td>
+         <td>Home Page</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/sbat/index</code></td>
+         <td>GET</td>
+         <td>Home Page</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/sbat/about</code></td>
+         <td>GET</td>
+         <td>About Page</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/sbat/tech-stack</code></td>
+         <td>GET</td>
+         <td>Technology Stack Table</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/sbat/close</code></td>
+         <td>GET</td>
+         <td>Close App via Actuator</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/sbat/error</code></td>
+         <td>GET</td>
+         <td>Custom Error Page</td>
+      </tr>
+   </tbody>
 </table>
 <h3 id="other-urls">Other URLs</h3>
 <table>
-	<thead>
-		<tr>
-			<th>URL</th>
-			<th>Method</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>http://localhost:8080/bw/tech-stack</code></td>
-			<td>GET</td>
-			<td>Custom Response Headers</td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/api/generic-hello</code></td>
-			<td>GET</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/api/personalized-hello/</code></td>
-			<td>GET</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/api/personalized-hello?name=spring-boot</code></td>
-			<td>GET</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/api/loggers</code></td>
-			<td>GET</td>
-		</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th>URL</th>
+         <th>Method</th>
+         <th>Remarks</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>http://localhost:8080/api/generic-hello</code></td>
+         <td>GET</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/api/personalized-hello/</code></td>
+         <td>GET</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/api/personalized-hello?name=spring-boot</code></td>
+         <td>GET</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/api/loggers</code></td>
+         <td>GET</td>
+      </tr>
+   </tbody>
 </table>
 <h3 id="actuator">Actuator</h3>
 <p>To monitor and manage your application</p>
 <table>
-	<thead>
-		<tr>
-			<th>URL</th>
-			<th>Method</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>http://localhost:8080/actuator/</code></td>
-			<td>GET</td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/actuator/health</code></td>
-			<td>GET</td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/actuator/info</code></td>
-			<td>GET</td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/actuator/prometheus</code></td>
-			<td>GET</td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/actuator/httptrace</code></td>
-			<td>GET</td>
-		</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th>URL</th>
+         <th>Method</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>http://localhost:8080/actuator/</code></td>
+         <td>GET</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/actuator/health</code></td>
+         <td>GET</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/actuator/info</code></td>
+         <td>GET</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/actuator/prometheus</code></td>
+         <td>GET</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/actuator/httptrace</code></td>
+         <td>GET</td>
+      </tr>
+   </tbody>
 </table>
 <h3 id="person-urls">Person URLs</h3>
 <table>
-	<thead>
-		<tr>
-			<th>URL</th>
-			<th>Method</th>
-			<th>Remarks</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code>http://localhost:8080/api/person</code></td>
-			<td>GET</td>
-			<td>Header <code>Accept:application/json</code> or <code>Accept:application/xml</code> for content negotiation</td>
-		</tr>
-		<tr>
-			<td><code>http://localhost:8080/api/person/1</code></td>
-			<td>GET</td>
-		</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th>URL</th>
+         <th>Method</th>
+         <th>Remarks</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>http://localhost:8080/api/person</code></td>
+         <td>GET</td>
+         <td>Header <code>Accept:application/json</code> or <code>Accept:application/xml</code> for content negotiation</td>
+      </tr>
+      <tr>
+         <td><code>http://localhost:8080/api/person/1</code></td>
+         <td>GET</td>
+      </tr>
+   </tbody>
 </table>
 <h2 id="documentation">Documentation</h2>
 <ul>
-	<li><a href="https://documenter.getpostman.com/view/2449187/RWTiwzb2">Postman Collection</a> - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages</li>
-	<li><a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/Spring%20Boot%20Template.postman_collection.json">Postman Collection</a> - offline</li>
-	<li><a href="http://localhost:8080/swagger-ui.html">Swagger</a> - <code>http://localhost:8080/swagger-ui.html</code>- Documentation &amp; Testing</li>
+   <li><a href="https://documenter.getpostman.com/view/2449187/RWTiwzb2">Postman Collection</a> - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages</li>
+   <li><a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/Spring%20Boot%20Template.postman_collection.json">Postman Collection</a> - offline</li>
+   <li><a href="http://localhost:8080/swagger-ui.html">Swagger</a> - <code>http://localhost:8080/swagger-ui.html</code>- Documentation &amp; Testing</li>
 </ul>
 <h2 id="files-and-directories">Files and Directories</h2>
 <p>The project (a.k.a. project directory) has a particular directory structure. A representative project is shown below:</p>
@@ -363,41 +391,48 @@
 </code></pre>
 <h2 id="packages">packages</h2>
 <ul>
-	<li><code>models</code> — to hold our entities;</li>
-	<li><code>repositories</code> — to communicate with the database;</li>
-	<li><code>services</code> — to hold our business logic;</li>
-	<li><code>security</code> — security configuration;</li>
-	<li>
-		<p><code>controllers</code> — to listen to the client;</p>
-	</li>
-	<li>
-		<p><code>resources/</code> - Contains all the static resources, templates and property files.</p>
-	</li>
-	<li><code>resources/static</code> - contains static resources such as css, js and images.</li>
-	<li><code>resources/templates</code> - contains server-side templates which are rendered by Spring.</li>
-	<li>
-		<p><code>resources/application.properties</code> - It contains application-wide properties. Spring reads the properties defined in this file to configure your application. You can define server’s default port, server’s context path, database URLs etc, in this file.</p>
-	</li>
-	<li>
-		<p><code>test/</code> - contains unit and integration tests</p>
-	</li>
-	<li>
-		<p><code>pom.xml</code> - contains all the project dependencies</p>
-	</li>
+   <li><code>config</code> - app configurations;</li>
+   <li><code>controllers</code> - to listen to the client;</li>
+   <li><code>exception</code> - to hold custom exception handling;</li>
+   <li><code>models</code> - to hold our entities;</li>
+   <li><code>repository</code> - to communicate with the database;</li>
+   <li><code>security</code> - security configuration;</li>
+   <li><code>service</code> - to hold our business logic;</li>
+   <li>
+      <p><code>util</code> - to hold our utility classes;</p>
+   </li>
+   <li>
+      <p><code>resources/</code> - Contains all the static resources, templates and property files.</p>
+   </li>
+   <li><code>resources/data/mysql.migrations/V0_0_1__initialize_structure.sql</code> - Contains initial table structure - used by flyway.</li>
+   <li><code>resources/data/mysql.migrations/V0_0_2__populate_data.sql</code> - Contains initial table data - used by flyway.</li>
+   <li><code>resources/static</code> - contains static resources such as css, js and images.</li>
+   <li><code>resources/templates</code> - contains server-side templates which are rendered by Spring.</li>
+   <li><code>resources/templates/fragments</code> - contains reusable code fragments.</li>
+   <li><code>resources/templates/pages</code> - contains server-side templates built using fragments.</li>
+   <li>
+      <p><code>resources/application.properties</code> - It contains application-wide properties. Spring reads the properties defined in this file to configure your application. You can define server’s default port, server’s context path, database URLs etc, in this file.</p>
+   </li>
+   <li>
+      <p><code>test/</code> - contains unit and integration tests</p>
+   </li>
+   <li>
+      <p><code>pom.xml</code> - contains all the project dependencies</p>
+   </li>
 </ul>
 <h2 id="reporting-issues">Reporting Issues</h2>
 <p>This Project uses GitHub&#39;s integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:</p>
 <ul>
-	<li>Before you log a bug, please <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/search?type=Issues">search the issue tracker</a> to see if someone has already reported the problem.</li>
-	<li>If the issue doesn&#39;t already exist, <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new">create a new issue</a></li>
-	<li>Please provide as much information as possible with the issue report.</li>
-	<li>If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.</li>
+   <li>Before you log a bug, please <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/search?type=Issues">search the issue tracker</a> to see if someone has already reported the problem.</li>
+   <li>If the issue doesn&#39;t already exist, <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new">create a new issue</a></li>
+   <li>Please provide as much information as possible with the issue report.</li>
+   <li>If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.</li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
-	<li><a href="https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard">My API Lifecycle Checklist and Scorecard</a></li>
-	<li><a href="https://www.restapitutorial.com/httpstatuscodes.html">HTTP Status Codes</a></li>
-	<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">Common application properties</a></li>
+   <li><a href="https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard">My API Lifecycle Checklist and Scorecard</a></li>
+   <li><a href="https://www.restapitutorial.com/httpstatuscodes.html">HTTP Status Codes</a></li>
+   <li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">Common application properties</a></li>
 </ul>
 <h2 id="license">License</h2>
 <p><a href="https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_large"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=large" alt="FOSSA Status"></a></p>

@@ -6,7 +6,7 @@
 				 with:title="'Form'">
 	  
 <th:block layout:fragment="content">
-
+<div class="container">
 	<p th:text="'Hello, Bud! Please fill out the form.'" />    
     
     <form action="#" th:action="@{/sbat/form}" th:object="${command}" method="post">
@@ -50,7 +50,7 @@
 		<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 	
     </form>
-
+</div>
 </th:block>
 	
 </html>

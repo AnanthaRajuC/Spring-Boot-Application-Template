@@ -40,11 +40,11 @@
 		data-pagination-next-text="Next"
 		data-page-list="[5, 10, 25, All]">
 			<thead  class="black white-text">
-				<th data-sortable="true" data-filter-control="select" data-visible="false">id</th>
-				<th data-sortable="true" data-filter-control="select">name</th>
-				<th data-sortable="true" data-filter-control="select">version</th>
-				<th data-sortable="true" data-filter-control="input">description</th>
-				<th data-sortable="true" data-filter-control="select">link</th>
+				<th data-resizable-column-id="id"          class="text-center" data-sortable="true" data-field="id"          data-filter-control="select" data-visible="false">id</th>
+				<th data-resizable-column-id="name"        class="text-center" data-sortable="true" data-field="name"        data-filter-control="select">name</th>
+				<th data-resizable-column-id="version"     class="text-center" data-sortable="true" data-field="version"     data-filter-control="select">version</th>
+				<th data-resizable-column-id="description" class="text-center" data-sortable="true" data-field="description" data-filter-control="input">description</th>
+				<th data-resizable-column-id="link"        class="text-center" data-sortable="true" data-field="link"        data-filter-control="select">link</th>
 			</thead>
 			<tbody>
 				<tr th:each="data :${data}">

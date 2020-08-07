@@ -11,8 +11,10 @@
             <th:block layout:fragment="content"/>
         </div>
     </div>
+	</br>
+	<th:block layout:insert="~{fragments/footer}"/>
 </div>
 	<th:block layout:fragment="body_end"/>
-	<th:block layout:replace="~{fragments/body_scripts :: end}"/>
+	<th:block layout:replace="~{fragments/body_scripts :: end}"/>	
 </body>
 </html>
