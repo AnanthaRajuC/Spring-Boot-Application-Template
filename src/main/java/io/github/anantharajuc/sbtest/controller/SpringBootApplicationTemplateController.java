@@ -57,6 +57,7 @@ public class SpringBootApplicationTemplateController
 		
 		String command = "curl --location --request POST http://localhost:"+port+"/actuator/shutdown";
 		
+		log.info("shutdown command : "+command);
 		try 
 		{
 			Process process = Runtime.getRuntime().exec(command);

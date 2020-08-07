@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
@@ -26,8 +28,12 @@ public class SBtemplateApplication implements CommandLineRunner
 	private OtherServicesImpl otherServicesImpl;
 	
 	public static void main(String[] args) 
-	{
-		SpringApplication.run(SBtemplateApplication.class, args);
+	{		
+		SpringApplicationBuilder builder = new SpringApplicationBuilder(SBtemplateApplication.class);
+
+		builder.headless(false);
+
+		ConfigurableApplicationContext context = builder.run(args);
 	}
 
 	@Override
