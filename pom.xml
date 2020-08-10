@@ -43,7 +43,20 @@
 		<dependency>
 	      <groupId>org.flywaydb</groupId>
 	      <artifactId>flyway-core</artifactId>
-	    </dependency>	    
+	    </dependency>	  
+	    
+	    <!-- Webjars for Bootstrap and Jquery -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>4.5.0</version>
+		</dependency>	 
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>3.5.1</version>
+		</dependency>
+		     
 
 		<dependency>
 		    <groupId>com.google.guava</groupId>
