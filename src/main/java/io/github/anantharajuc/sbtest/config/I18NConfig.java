@@ -11,8 +11,7 @@ public class I18NConfig
 	public ReloadableResourceBundleMessageSource messageSource()
 	{
 		ReloadableResourceBundleMessageSource reloadableResourceBundleMessageSource = new ReloadableResourceBundleMessageSource();
-		//reloadableResourceBundleMessageSource.setBasename("classpath*:i18n/messages");
-		reloadableResourceBundleMessageSource.setBasename("classpath*:resourcebundles/messages");
+		reloadableResourceBundleMessageSource.setBasename("classpath:i18n/messages");
 		
 		//Checks for new messages every 30 minutes
 		reloadableResourceBundleMessageSource.setCacheSeconds(1800);
