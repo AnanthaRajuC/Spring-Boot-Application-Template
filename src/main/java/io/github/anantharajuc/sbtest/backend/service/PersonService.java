@@ -1,11 +1,12 @@
-package io.github.anantharajuc.sbtest.service;
+package io.github.anantharajuc.sbtest.backend.service;
 
 import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import io.github.anantharajuc.sbtest.model.Person;
+
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 
 public interface PersonService 
 {

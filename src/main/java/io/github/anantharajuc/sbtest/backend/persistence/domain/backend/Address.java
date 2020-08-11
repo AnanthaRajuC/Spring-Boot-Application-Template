@@ -1,8 +1,10 @@
-package io.github.anantharajuc.sbtest.model;
+package io.github.anantharajuc.sbtest.backend.persistence.domain.backend;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,23 +18,34 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "geo")
+@Table(name = "address")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Geo extends BaseEntity
+public class Address extends BaseEntity
 {
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name = "lat")
-	private String lat;
+	@Column(name = "street")
+	private String street;
 
-	@Column(name = "lng")
-	private String lng;
+	@Column(name = "suite")
+	private String suite;
+
+	@Column(name = "city")
+	private String city;
+
+	@Column(name = "zipcode")
+	private String zipcode;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "geo_id")
+	private Geo geo;
 
 	@JsonBackReference
-	@OneToOne(mappedBy = "geo")
-	private Address address;
+	@OneToOne(mappedBy = "address")
+	private Person person;
+
 }

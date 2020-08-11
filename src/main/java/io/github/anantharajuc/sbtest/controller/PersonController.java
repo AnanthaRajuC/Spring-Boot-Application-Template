@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.model.Person;
-import io.github.anantharajuc.sbtest.service.PersonServiceImpl;
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
+import io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl;
 
 @RestController
 @RequestMapping("/api/")

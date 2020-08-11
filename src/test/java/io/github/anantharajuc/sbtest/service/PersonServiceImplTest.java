@@ -16,12 +16,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
+import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
+import io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl;
 import io.github.anantharajuc.sbtest.enums.GenderEnum;
-import io.github.anantharajuc.sbtest.model.Person;
-import io.github.anantharajuc.sbtest.repository.PersonRepository;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes=io.github.anantharajuc.sbtest.service.PersonServiceImpl.class) 
+@SpringBootTest(classes=io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl.class) 
 public class PersonServiceImplTest 
 {
 	@Autowired

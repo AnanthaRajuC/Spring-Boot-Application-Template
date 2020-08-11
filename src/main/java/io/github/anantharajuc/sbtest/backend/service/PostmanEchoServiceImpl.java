@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.service;
+package io.github.anantharajuc.sbtest.backend.service;
 
 import java.io.IOException;
 import org.json.JSONObject;

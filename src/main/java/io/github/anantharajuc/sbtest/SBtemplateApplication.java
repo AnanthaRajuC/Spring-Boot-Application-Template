@@ -9,10 +9,10 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.ApplicationLog;
+import io.github.anantharajuc.sbtest.backend.persistence.repositories.ApplicationLogRepository;
+import io.github.anantharajuc.sbtest.backend.service.OtherServicesImpl;
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
-import io.github.anantharajuc.sbtest.model.ApplicationLog;
-import io.github.anantharajuc.sbtest.repository.ApplicationLogRepository;
-import io.github.anantharajuc.sbtest.service.OtherServicesImpl;
 import lombok.extern.log4j.Log4j2;
 
 @SpringBootApplication

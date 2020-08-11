@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.repository;
+package io.github.anantharajuc.sbtest.backend.persistence.repositories;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import io.github.anantharajuc.sbtest.model.Person;
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 
 @Transactional
 @Repository

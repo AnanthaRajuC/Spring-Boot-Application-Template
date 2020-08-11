@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.repository.PersonRepository;
+import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
 @RestController

@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.service;
+package io.github.anantharajuc.sbtest.backend.service;
 
 import java.util.List;
 
@@ -8,10 +8,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
+import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
-import io.github.anantharajuc.sbtest.model.Person;
-//import io.github.anantharajuc.sbtest.model.Quote;
-import io.github.anantharajuc.sbtest.repository.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2

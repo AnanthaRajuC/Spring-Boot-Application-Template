@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.model;
+package io.github.anantharajuc.sbtest.backend.persistence.domain.backend;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import io.github.anantharajuc.sbtest.repository.BuiltWithRepository;
+import io.github.anantharajuc.sbtest.backend.persistence.repositories.BuiltWithRepository;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
