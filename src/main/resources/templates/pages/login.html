@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+				 with:title="'Login'">
+				 
+<th:block layout:fragment="content">
+
+<div class="container">
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+
+                <div th:if="${param.error}" class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                    <p th:text="error message" />
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                    <p th:text="login.logout.success" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 col-md-offset-3">
+
+                <div class="well">
+
+                    <div class="text-center">
+
+                        <h1 th:text="#{login.h1.text}" />
+                        <p class="lead" th:text="login.p.lead" />
+
+                    </div>
+
+                    <div class="text-left">
+
+                        <form id="loginForm"
+                              th:action="@{/login}"
+                              method="post">
+
+                            <div class="form-group">
+                                <label for="username" th:text="login.username.text" />
+                                <input type="text" id="username" name="username" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" th:text="login.password.text" />
+                                <input type="password" id="password" name="password" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" th:text="navbar.login.text" class="btn btn-primary" />
+                            </div>
+
+                        </form>
+                        <a th:href="@{/forgotmypassword}" th:text="password.text" />
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</th:block>
+	
+</html>
