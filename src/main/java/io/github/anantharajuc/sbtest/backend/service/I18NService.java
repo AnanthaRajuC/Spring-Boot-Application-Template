@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.web.i18n;
+package io.github.anantharajuc.sbtest.backend.service;
 
 import java.util.Locale;
 
