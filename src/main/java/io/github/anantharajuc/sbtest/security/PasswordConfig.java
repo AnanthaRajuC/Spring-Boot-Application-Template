@@ -1,4 +1,4 @@
-/*package io.github.anantharajuc.sbtest.security;
+package io.github.anantharajuc.sbtest.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,4 +13,4 @@ public class PasswordConfig
 	{
 		return new BCryptPasswordEncoder(10);
 	}
-}*/
+}
