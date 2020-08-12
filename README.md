@@ -66,7 +66,8 @@ Delete the sample code, replace with your own and you’re good to go.
 * 	[x] Content Negotiation
 * 	[x] Dark Mode
 * 	[x] Shut down app on button click via actuator url
-* 	[ ] Security (Basic Authentication)
+* 	[x] Security (Basic Authentication)
+* 	[x] Spring Profiles
 * 	[ ] Docker
 * 	[ ] HATEOS
 * 	[ ] Spring Boot Admin
@@ -234,16 +235,37 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── main
 │       └── java
-│           ├── io.github.anantharajuc.sbtest
-│           ├── io.github.anantharajuc.config
-│           ├── io.github.anantharajuc.controller
-│           ├── io.github.anantharajuc.enums
-│           ├── io.github.anantharajuc.exception
-│           ├── io.github.anantharajuc.model
-│           ├── io.github.anantharajuc.repository
-│           ├── io.github.anantharajuc.security
-│           ├── io.github.anantharajuc.service
-│           └── io.github.anantharajuc.util
+│           ├── io.github.anantharajuc.sbtest.backend
+│           │   │ 
+│           │   ├──io.github.anantharajuc.sbtest.backend.persistence
+│           │   │  │       
+│           │   │  ├──io.github.anantharajuc.sbtest.backend.persistence.domain
+│           │   │  │  │
+│           │   │  │  └──io.github.anantharajuc.sbtest.backend.persistence.domain.backend
+│           │   │  │          
+│           │   │  └──io.github.anantharajuc.sbtest.backend.persistence.repositories
+│           │   │
+│           │   └──io.github.anantharajuc.sbtest.backend.service
+│           │
+│           ├── io.github.anantharajuc.sbtest.config
+│           │
+│           ├── io.github.anantharajuc.sbtest.controller
+│           │
+│           ├── io.github.anantharajuc.sbtest.enums
+│           │
+│           ├── io.github.anantharajuc.sbtest.exception
+│           │
+│           ├── io.github.anantharajuc.sbtest.security
+│           │
+│           ├── io.github.anantharajuc.sbtest.util
+│           │
+│           └── io.github.anantharajuc.sbtest.web
+│               │
+│				├── io.github.anantharajuc.sbtest.controllers
+│               │
+│				└── io.github.anantharajuc.sbtest.domain
+│                   │
+│					└── io.github.anantharajuc.sbtest.domain.frontend
 ├── src
 │   └── main
 │       └── resources
@@ -252,6 +274,8 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │       └── migrations
 │           │           ├── V0_0_1__initialize_structure.sql
 │           │           └── V0_0_2__populate_data.sql
+│           ├── i18n
+│           │   └── messages.properties
 │           ├── static
 │           │   ├── css
 │           │   ├── fonts
@@ -264,22 +288,30 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   │   ├── footer.html
 │           │   │   ├── htmlhead.html
 │           │   │   ├── navigation.html
-│           │   │   └── pagetitle.html
+│           │   │   ├── pagetitle.html
+│           │   │   └── social_buttons.html
 │           │   │   
 │           │   ├── pages
 │           │   │   ├── about.html
+│           │   │   ├── built_with.html
 │           │   │   ├── close.html
+│           │   │   ├── form.html
 │           │   │   └── index.html
 │           │   │   
 │           │   ├── error.html
 │           │   └── layout.html
 │           │   
+│           ├── application-dev.properties
+│           ├── application-production.properties
+│           ├── application-qa.properties
+│           ├── application-staging.properties
 │           ├── application.properties
 │           ├── banner.txt
 │           └── log4j2.xml
 ├── src
 │   └── test
-│       └── java
+│       └── java/io/github/anantharajuc/sbtest/service
+│           └── PersonServiceImpl.test
 ├── JRE System Library
 ├── Maven Dependencies
 ├── bin

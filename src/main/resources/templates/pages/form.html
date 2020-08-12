@@ -6,7 +6,23 @@
 				 with:title="'Form'">
 	  
 <th:block layout:fragment="content">
+
 <div class="container">
+
+	<a href="/api/generic-hello" class="btn btn-info" role="button">generic greetings</a> 
+
+	<br>
+
+	<form action="/api/personalized-hello" method="get">Name: <input class="form-control" type="text" placeholder="Enter name" name="name">
+
+	</br>
+
+	<button class="btn btn-info" type="submit">personalized greetings</button>
+
+	</br>
+	
+	</hr>
+
 	<p th:text="'Hello, Bud! Please fill out the form.'" />    
     
     <form action="#" th:action="@{/sbat/form}" th:object="${command}" method="post">

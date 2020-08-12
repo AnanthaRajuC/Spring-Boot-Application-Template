@@ -2,7 +2,7 @@
 
   <a class="navbar-brand" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template" target="_blank" rel="noopener noreferrer">
 	  <img src="/images/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy">
-	  Spring Boot Application Template
+	  SBAT
   </a>
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,16 +12,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/sbat/index">Home</i><span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/sbat/index" th:text="#{navbar.home.text}"></i><span class="sr-only">(current)</span></a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="/sbat/about">About</span></a>
+        <a class="nav-link" href="/sbat/about" th:text="#{navbar.about.text}"></span></a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="/sbat/tech-stack">Tech Stack</span></a>
+        <a class="nav-link" href="/sbat/tech-stack" th:text="#{navbar.tech-stack.text}"></span></a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="/sbat/form">Form</span></a>
+        <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="/sbat/login" th:text="#{navbar.login.text}"></span></a>
       </li>
     </ul>   
    
@@ -38,16 +41,16 @@
    
    <div class="custom-control custom-switch mr-1">
             <input type="checkbox" class="custom-control-input" id="darkSwitch">
-            <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+            <label class="custom-control-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
    </div>
    
    </br>
    
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success mr-1" type="submit">REFRESH</button> 
+      <button class="btn btn-outline-success mr-1" type="submit" th:text="#{navbar.refresh.text}"></button> 
     </form>
 	
-	<a class="btn btn-outline-danger" type="submit" href="/sbat/close" role="button">CLOSE APP</a>
+	<a class="btn btn-outline-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>
 	
   </div> 
   </br>

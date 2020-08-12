@@ -24,6 +24,16 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		this.passwordEncoder = passwordEncoder;
 	}
 	
+	/** Public URLs. */
+    private static final String[] PUBLIC_MATCHERS = 
+    {
+            "/webjars/**",
+            "/css/**",
+            "/js/**",
+            "/images/**",
+            "/",
+            "/sbat/index/**"
+    };	
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception
@@ -31,7 +41,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		http
 		.csrf().disable()
 		.authorizeRequests()
-		.antMatchers("/","/css/*","/js/*")
+		.antMatchers(PUBLIC_MATCHERS)
 		.permitAll()
 		.anyRequest()
 		.authenticated()
