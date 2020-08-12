@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Form;
+import io.github.anantharajuc.sbtest.web.domain.frontend.Form;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2

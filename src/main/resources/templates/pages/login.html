@@ -36,7 +36,7 @@
                     <div class="text-center">
 
                         <h1 th:text="#{login.h1.text}" />
-                        <p class="lead" th:text="login.p.lead" />
+                        <p class="lead" th:text="#{login.p.lead}" />
 
                     </div>
 
@@ -47,21 +47,21 @@
                               method="post">
 
                             <div class="form-group">
-                                <label for="username" th:text="login.username.text" />
+                                <label for="username" th:text="#{login.username.text}" />
                                 <input type="text" id="username" name="username" class="form-control" />
                             </div>
 
                             <div class="form-group">
-                                <label for="password" th:text="login.password.text" />
+                                <label for="password" th:text="#{login.password.text}" />
                                 <input type="password" id="password" name="password" class="form-control" />
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" th:text="navbar.login.text" class="btn btn-primary" />
+                                <button type="submit" th:text="#{navbar.login.text}" class="btn btn-primary" />
                             </div>
 
                         </form>
-                        <a th:href="@{/forgotmypassword}" th:text="password.text" />
+                        <a th:href="@{/forgotmypassword}" th:text="#{login.password.text}" />
                     </div>
 
                 </div>

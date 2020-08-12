@@ -30,6 +30,12 @@ public class SpringBootApplicationTemplateController
 		return "pages/index";
     }
 	
+	@GetMapping("/login")
+    public String login() 
+	{
+		return "pages/login";
+    }
+	
 	@GetMapping("/about")
     public String about() 
 	{
