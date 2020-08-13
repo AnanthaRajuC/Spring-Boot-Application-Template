@@ -3,6 +3,7 @@ package io.github.anantharajuc.sbtest.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Address;
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Geo;
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
 import io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl;
@@ -35,15 +38,35 @@ public class PersonServiceImplTest
 	public void createPersonTest()
 	{
 		Date date = new Date();
+		LocalDate dob = LocalDate.of(2017, 1, 13);  
 		
 		Person person  = new Person();
 		
 		person.setId((long) 1);
-		person.setAge(29);
-		person.setGender(GenderEnum.FEMALE);
+		person.setCreatedOn(date);		
 		person.setName("Stevie Nicks");
-		person.setCreatedOn(date);
+		person.setUsername("stevie-nicks");		
+		person.setEmailPrimary("jane1.howell@gmail.com");
+		person.setEmailSecondary("jane1.howell@yahoo.co.in"); 
+		person.setPhone(9191919191L);
+		person.setGender(GenderEnum.FEMALE);
+		person.setAge(29);
+		person.setPassword("abcd12345");
+		person.setDob(dob);
+		person.setIsAdult(true); 
 		
+		Address address = new Address();
+
+		address.setStreet("Jane Plains");
+		address.setSuite("Suite 779");
+		address.setCity("Wisokyburghh");
+		address.setZipcode("90565-7771");
+		
+		Geo geo = new Geo();
+		
+		geo.setLat("-43.9589");
+		geo.setLng("-34.4628");
+		 
 		Mockito.when(personRepository.save(person)).thenReturn(person);
 		
 		assertThat(personServiceImpl.createPerson(person)).isEqualTo(person);

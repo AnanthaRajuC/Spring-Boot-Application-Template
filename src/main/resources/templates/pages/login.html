@@ -22,7 +22,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">x</span>
                     </button>
-                    <p th:text="login.logout.success" />
+                    <p th:text="#{login.logout.success}" />
                 </div>
             </div>
         </div>
@@ -41,10 +41,7 @@
                     </div>
 
                     <div class="text-left">
-
-                        <form id="loginForm"
-                              th:action="@{/login}"
-                              method="post">
+                        <form id="loginForm" th:action="@{/sbat/login}" method="post">
 
                             <div class="form-group">
                                 <label for="username" th:text="#{login.username.text}" />
@@ -57,7 +54,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" th:text="#{navbar.login.text}" class="btn btn-primary" />
+                                <button value="submit" type="submit" th:text="#{navbar.login.text}" class="btn btn-primary" />
                             </div>
 
                         </form>

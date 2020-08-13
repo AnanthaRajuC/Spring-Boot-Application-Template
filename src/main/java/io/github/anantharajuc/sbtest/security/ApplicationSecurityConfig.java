@@ -31,7 +31,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
             "/css/**",
             "/js/**",
             "/images/**",
-            "/",
             "/sbat/index/**"
     };	
 	
@@ -41,12 +40,13 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		http
 		.csrf().disable()
 		.authorizeRequests()
-		.antMatchers(PUBLIC_MATCHERS)
-		.permitAll()
-		.anyRequest()
-		.authenticated()
+		.antMatchers(PUBLIC_MATCHERS).permitAll()
+		.anyRequest().authenticated()
 		.and()
-		.httpBasic();
+		.formLogin().loginPage("/sbat/login").defaultSuccessUrl("/sbat/index")
+		.failureUrl("/sbat/error").permitAll()
+		.and()
+		.logout().permitAll();
 	}
 	
 	@Override

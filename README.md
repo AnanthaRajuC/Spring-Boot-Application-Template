@@ -158,6 +158,7 @@ The app defines following CRUD APIs.
 |`http://localhost:8080/sbat/about`                              | GET | About Page             |
 |`http://localhost:8080/sbat/tech-stack`                         | GET | Technology Stack Table |
 |`http://localhost:8080/sbat/close`                              | GET | Close App via Actuator |
+|`http://localhost:8080/sbat/login`                              | GET | Login Page             |
 |`http://localhost:8080/sbat/error`                              | GET | Custom Error Page      |
 
 ### Other URLs
@@ -188,7 +189,7 @@ To monitor and manage your application
 |`http://localhost:8080/api/person`      | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
 |`http://localhost:8080/api/person`      | POST    | Add a person                                                                        |[JSON](#personcreate)|
 |`http://localhost:8080/api/person/{id}` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
-|`http://localhost:8080/api/person/{id}` | PUT     | Update a person                                                                     ||
+|`http://localhost:8080/api/person/{id}` | PUT     | Update a person                                                                     |[JSON](#personcreate)|
 |`http://localhost:8080/api/person/{id}` | DELETE  | Delete a person                                                                     ||
 
 ## Sample Valid JSON Request Bodys
