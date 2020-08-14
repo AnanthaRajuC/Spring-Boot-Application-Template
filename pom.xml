@@ -53,7 +53,7 @@
 		<dependency>
 		    <groupId>org.thymeleaf.extras</groupId>
 		    <artifactId>thymeleaf-extras-springsecurity4</artifactId>
-		    <version>3.0.1.RELEASE</version>
+		    <version>3.0.4.RELEASE</version>
 		</dependency>
 	    
 	    <!-- Webjars for Bootstrap and Jquery -->
