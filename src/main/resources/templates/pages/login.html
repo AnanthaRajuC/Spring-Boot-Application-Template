@@ -10,13 +10,14 @@
 <div class="container">
 
         <div class="row">
+		<div class="d-flex justify-content-center">
             <div class="col-md-6 col-md-offset-3 text-center">
 
                 <div th:if="${param.error}" class="alert alert-danger alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">x</span>
                     </button>
-                    <p th:text="error message" />
+                    <p th:text="#{v}" />
                 </div>
                 <div th:if="${param.logout}" class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -25,6 +26,7 @@
                     <p th:text="#{login.logout.success}" />
                 </div>
             </div>
+			</div>
         </div>
 
         <div class="row">

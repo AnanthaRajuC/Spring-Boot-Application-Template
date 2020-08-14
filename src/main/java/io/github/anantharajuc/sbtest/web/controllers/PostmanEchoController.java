@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.controller;
+package io.github.anantharajuc.sbtest.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

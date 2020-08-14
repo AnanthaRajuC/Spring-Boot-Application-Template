@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.controller;
+package io.github.anantharajuc.sbtest.web.controllers;
 
 import java.util.List;
 
