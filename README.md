@@ -61,14 +61,15 @@ Delete the sample code, replace with your own and you’re good to go.
 
 ## To-Do
 
-* 	[x] Logger (Console, File, Mail)
+* 	[x] Logger (Console, File)
 * 	[x] RESTful Web Service (CRUD)
 * 	[x] Content Negotiation
 * 	[x] Dark Mode
-* 	[x] Shut down app on button click via actuator url
-* 	[x] Security (Basic Authentication)
-* 	[x] Spring Profiles
-* 	[ ] Docker
+* 	[x] Security (Authentication)
+* 	[x] Login and Logout
+* 	[x] [Spring Profiles] (https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
+* 	[ ] Shut down app on button click via actuator url 
+* 	[ ] [Docker](https://www.docker.com/)
 * 	[ ] HATEOS
 * 	[ ] Spring Boot Admin
 * 	[ ] NoSQL (MongoDB)

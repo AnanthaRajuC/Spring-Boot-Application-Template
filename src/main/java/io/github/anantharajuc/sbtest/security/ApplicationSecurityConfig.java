@@ -32,7 +32,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
             "/js/**",
             "/images/**",
             "/sbat/index/**",
-            "/sbat/error/**"
+            "/sbat/error/**",
+            "/lang"
     };	
 	
 	@Override
