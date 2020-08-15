@@ -36,9 +36,10 @@
         <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
       </li>
 
-	  <li th:if="${#authorization?.expression('!isAuthenticated()')}">
+	 <!-- <li th:if="${#authorization?.expression('!isAuthenticated()')}">
+	 <li sec:authorize="!isAuthenticated()">
 		<a th:href="@{/sbat/login}" th:text="#{navbar.login.text}" />
-	  </li>
+	  </li> -->
 	  
      </ul>   
    
@@ -67,7 +68,7 @@
 	<form id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
 			<button type="submit" th:text="#{navbar.logout.text}" class="btn btn-outline-danger mr-1" />
 	</form>
-	
+
 	<a class="btn btn-outline-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>
 	
   </div> 
