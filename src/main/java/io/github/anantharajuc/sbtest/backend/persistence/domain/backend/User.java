@@ -62,7 +62,7 @@ public class User extends BaseEntity
     private String lastName;
 
     @Column(name="phone", unique=true, nullable = false)
-	private Long phone;
+	private String phone;
 
     @Length(max = 500)
     @Column(name = "description")

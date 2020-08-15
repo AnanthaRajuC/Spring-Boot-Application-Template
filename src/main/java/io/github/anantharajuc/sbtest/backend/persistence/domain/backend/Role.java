@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -30,7 +31,7 @@ import lombok.Setter;
 public class Role extends BaseEntity
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	@NotBlank
 	@Size(min=3, max=15, message="name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
