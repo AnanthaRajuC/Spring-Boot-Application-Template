@@ -12,6 +12,7 @@ import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Applicat
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.ApplicationLogRepository;
 import io.github.anantharajuc.sbtest.backend.service.OtherServicesImpl;
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
+
 import lombok.extern.log4j.Log4j2;
 
 @SpringBootApplication

@@ -67,8 +67,22 @@
 		    <artifactId>jquery</artifactId>
 		    <version>3.5.1</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.webjars.bower</groupId>
+		    <artifactId>jquery-ui</artifactId>
+		    <version>1.12.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars.bower</groupId>
+		    <artifactId>bootstrap-table</artifactId>
+		    <version>1.17.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars.bower</groupId>
+		    <artifactId>jquery-resizable-columns</artifactId>
+		    <version>0.2.3</version>
+		</dependency>		
 		     
-
 		<dependency>
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
