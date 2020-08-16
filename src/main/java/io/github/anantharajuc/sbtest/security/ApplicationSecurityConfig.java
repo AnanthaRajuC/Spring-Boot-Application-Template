@@ -49,6 +49,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		.formLogin().loginPage("/sbat/login").defaultSuccessUrl("/sbat/index")
 		.failureUrl("/sbat/error").permitAll()
 		.and()
+	    .httpBasic()
+		.and()
 		.logout().permitAll();
 	}
 
