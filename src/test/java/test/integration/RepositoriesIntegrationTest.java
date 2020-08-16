@@ -1,9 +1,6 @@
 package test.integration;
 
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import io.github.anantharajuc.sbtest.SBtemplateApplication;
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Plan;
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Role;
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.User;
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.UserRole;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.PlanRepository;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.RoleRepository;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.UserRepository;
@@ -44,7 +39,7 @@ public class RepositoriesIntegrationTest
 	}
 	
 	@Test
-	public void testCreateNewPlan() throws Exception
+	public void testCreateNewPlan()
 	{
 		Plan basicPlan = createBasicPlan(); 
 		planRepository.save(basicPlan);
@@ -53,7 +48,7 @@ public class RepositoriesIntegrationTest
 	}
 	
 	@Test
-	public void testCreateNewRole() throws Exception
+	public void testCreateNewRole()
 	{
 		Role userRole = createBasicRole(); 
 		roleRepository.save(userRole);

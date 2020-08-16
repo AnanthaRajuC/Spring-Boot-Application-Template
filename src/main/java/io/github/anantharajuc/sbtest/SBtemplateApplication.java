@@ -9,10 +9,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.ApplicationLog;
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.User;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.ApplicationLogRepository;
 import io.github.anantharajuc.sbtest.backend.service.OtherServicesImpl;
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
-
+import io.github.anantharajuc.sbtest.util.UserUtil;
 import lombok.extern.log4j.Log4j2;
 
 @SpringBootApplication
@@ -48,6 +49,9 @@ public class SBtemplateApplication implements CommandLineRunner
 		
 		log.info("-----> Application Name    : "+otherServicesImpl.getApplicationName());	
 		log.info("-----> Application Version : "+otherServicesImpl.getApplicationVersion());	
+		
+		User user = UserUtil.createBasicUser("webmasterUsername", "webmasterEmail");
+		user.setPassword("webmasterPassword");
 	}
 }
  
