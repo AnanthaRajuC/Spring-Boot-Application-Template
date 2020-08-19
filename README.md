@@ -21,9 +21,9 @@ Delete the sample code, replace with your own and you’re good to go.
 
 ## Application screenshots
 
-<img src="app-screenshots\home.PNG" width="400" height="400" />
-<img src="app-screenshots\login.PNG" width="400" height="400" />
-<img src="app-screenshots\about.PNG" width="400" height="400" />
+<img src="app-screenshots\home.PNG"/>
+<img src="app-screenshots\login.PNG"/>
+<img src="app-screenshots\about.PNG"/>
 
 ## Built With
 
