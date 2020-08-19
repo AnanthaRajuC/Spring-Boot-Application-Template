@@ -21,9 +21,9 @@ Delete the sample code, replace with your own and you’re good to go.
 
 ## Application screenshots
 
-<img src="app-screenshots\home.PNG"/>
-<img src="app-screenshots\login.PNG"/>
-<img src="app-screenshots\about.PNG"/>
+<img src="images\home.PNG"/>
+<img src="images\login.PNG"/>
+<img src="images\about.PNG"/>
 
 ## Built With
 
@@ -232,6 +232,10 @@ To monitor and manage your application
 * 	[Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
 * 	[Postman Collection](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/Spring%20Boot%20Template.postman_collection.json) - offline
 * 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
+
+## EER Diagram
+
+<img src="images\EER-Diagram.PNG"/>
 
 ## Files and Directories
 
