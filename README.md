@@ -1,23 +1,56 @@
 # Spring Boot Application Template/Starter-Project
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90dd899ee438f2b960dc)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template)
 [![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)
 [![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)
+
 [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)
+
 [![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
 [![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90dd899ee438f2b960dc)
+
 The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code.
 
 Delete the sample code, replace with your own and you’re good to go.
+
+## Table of Contents
+
+- [Application screenshots](#application-screenshots)
+- [Tech stack & Open-source libraries](#tech-stack---open-source-libraries)
+  * [Data](#data)
+  * [Client - Frontend/UI](#client---frontend-ui)
+  * [Server - Backend](#server---backend)
+  * [Libraries and Plugins](#libraries-and-plugins)
+  * [Others](#others)
+- [External Tools Used](#external-tools-used)
+- [To-Do](#to-do)
+- [Running the application locally](#running-the-application-locally)
+- [Running the application via docker container](#running-the-application-via-docker-container)
+  * [Security](#security)
+- [Explore Rest APIs](#explore-rest-apis)
+  * [URLs](#urls)
+  * [Other URLs](#other-urls)
+  * [Actuator](#actuator)
+  * [Person URLs](#person-urls)
+- [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys)
+      - [<a id="personcreate">Create Person -> /api/person</a>](#-a-id--personcreate--create-person-----api-person--a-)
+- [Documentation](#documentation)
+- [EER Diagram](#eer-diagram)
+- [Files and Directories](#files-and-directories)
+- [packages](#packages)
+- [Reporting Issues](#reporting-issues)
+- [Resources](#resources)
+- [License](#license)
 
 ## Application screenshots
 
@@ -25,7 +58,7 @@ Delete the sample code, replace with your own and you’re good to go.
 <img src="images\login.PNG"/>
 <img src="images\about.PNG"/>
 
-## Built With
+## Tech stack & Open-source libraries
 
 ### Data
 
@@ -69,13 +102,12 @@ Delete the sample code, replace with your own and you’re good to go.
 
 * 	[x] Logger (Console, File)
 * 	[x] RESTful Web Service (CRUD)
-* 	[x] Content Negotiation
-* 	[x] Dark Mode
-* 	[x] Security (Authentication)
-* 	[x] Login and Logout
-* 	[x] [Spring Profiles] (https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
+* 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
+* 	[x] [Dark Mode](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme)
+* 	[x] [Spring Security](https://spring.io/projects/spring-security) Basic In-memory Authentication to Login and Logout of the app
+* 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
+* 	[x] [Docker](https://www.docker.com/)
 * 	[ ] Shut down app on button click via actuator url 
-* 	[ ] [Docker](https://www.docker.com/)
 * 	[ ] HATEOS
 * 	[ ] Spring Boot Admin
 * 	[ ] NoSQL (MongoDB)
@@ -235,7 +267,7 @@ To monitor and manage your application
 
 ## EER Diagram
 
-<img src="images\EER-Diagram.PNG"/>
+<img src="images\EER Diagram.PNG"/>
 
 ## Files and Directories
 
