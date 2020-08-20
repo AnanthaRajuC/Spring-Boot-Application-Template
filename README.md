@@ -267,7 +267,7 @@ To monitor and manage your application
 
 ## EER Diagram
 
-<img src="images\EER Diagram.PNG"/>
+<img src="images\eer_diagram.PNG"/>
 
 ## Files and Directories
 

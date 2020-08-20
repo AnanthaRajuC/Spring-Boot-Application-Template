@@ -43,19 +43,42 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
-		</dependency>		
+		</dependency>	
 		<dependency>
-	      <groupId>org.flywaydb</groupId>
-	      <artifactId>flyway-core</artifactId>
-	    </dependency>	  
-	    
-	    <!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4 -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+	      	 <groupId>nz.net.ultraq.thymeleaf</groupId>
+	      	 <artifactId>thymeleaf-layout-dialect</artifactId>
+	      	 <version>${thymeleaf-layout-dialect.version}</version>
+	    </dependency>
+	    <dependency>
+	         <groupId>ch.mfrey.thymeleaf.extras.with</groupId>
+	         <artifactId>thymeleaf-with-dialect</artifactId>
+	         <version>${thymeleaf-with-dialect.version}</version>
+	    </dependency>
+	    <dependency>
 		    <groupId>org.thymeleaf.extras</groupId>
 		    <artifactId>thymeleaf-extras-springsecurity4</artifactId>
 		    <version>3.0.1.RELEASE</version>
 		</dependency>
-	    
+		
+		<dependency>
+	      <groupId>org.flywaydb</groupId>
+	      <artifactId>flyway-core</artifactId>
+	    </dependency>	  
+
 	    <!-- Webjars for Bootstrap and Jquery -->
 		<dependency>
 		    <groupId>org.webjars</groupId>
@@ -101,14 +124,8 @@
 		    <version>20200518</version>
 		</dependency>	
 	    	
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+
+
 		
 		<!-- hot swapping, disable cache for template, enable live reload -->
 		<dependency>
@@ -133,11 +150,7 @@
 	      <optional>true</optional>
 	    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+
 		
 		<dependency>
 		    <groupId>org.mockito</groupId>
@@ -146,16 +159,7 @@
 		    <scope>test</scope>
 		</dependency>
 		
-		<dependency>
-	      	 <groupId>nz.net.ultraq.thymeleaf</groupId>
-	      	 <artifactId>thymeleaf-layout-dialect</artifactId>
-	      	 <version>${thymeleaf-layout-dialect.version}</version>
-	    </dependency>
-	    <dependency>
-	         <groupId>ch.mfrey.thymeleaf.extras.with</groupId>
-	         <artifactId>thymeleaf-with-dialect</artifactId>
-	         <version>${thymeleaf-with-dialect.version}</version>
-	    </dependency>
+		
 
 		<!-- Swagger -->
 		<dependency>

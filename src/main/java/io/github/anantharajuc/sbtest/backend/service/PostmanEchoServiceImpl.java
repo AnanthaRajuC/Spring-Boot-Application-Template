@@ -1,6 +1,8 @@
 package io.github.anantharajuc.sbtest.backend.service;
 
 import java.io.IOException;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,8 +49,8 @@ public class PostmanEchoServiceImpl implements PostmanEchoService
 			log.info(jo.get("args"));
 
 		} 
-		catch (IOException e) 
-		{
+		catch (IOException | JSONException e) 
+		{ 
 			e.printStackTrace();
 		}			    
 	}
