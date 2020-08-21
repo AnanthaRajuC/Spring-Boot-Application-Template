@@ -36,7 +36,7 @@ Delete the sample code, replace with your own and you’re good to go.
 - [To-Do](#to-do)
 - [Running the application locally](#running-the-application-locally)
 - [Running the application via docker container](#running-the-application-via-docker-container)
-  * [Security](#security)
+- [Security](#security)
 - [Explore Rest APIs](#explore-rest-apis)
   * [URLs](#urls)
   * [Other URLs](#other-urls)
@@ -166,7 +166,7 @@ Ensure you build a jar of the application before building a docker image.
 |`docker stop [container_id]`                          | stop a container                     |
 |`docker rm $(docker ps -aq)`                          | stop and remove all containers       |
 
-### Security
+## Security
 
 ```xml
 <dependency>
