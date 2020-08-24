@@ -125,12 +125,12 @@
 		</dependency>	
 	    	
 
-		<dependency>
+		<!-- <dependency>
             <groupId>org.zalando</groupId>
             <artifactId>problem-spring-web-starter</artifactId>
             <version>0.25.0</version>
             <type>pom</type>
-        </dependency>
+        </dependency> -->
 		
 		<!-- hot swapping, disable cache for template, enable live reload -->
 		<dependency>
