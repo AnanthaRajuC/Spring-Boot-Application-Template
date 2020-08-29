@@ -16,7 +16,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.7.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -115,7 +115,7 @@
 		<dependency>
 		    <groupId>com.squareup.okhttp3</groupId>
 		    <artifactId>okhttp</artifactId>
-		    <version>4.8.0</version>
+		    <version>4.8.1</version>
 		</dependency>		
 
 		<dependency>
@@ -214,7 +214,7 @@
 						<format>html</format>
 						<format>xml</format>
 					</formats>
-					<check />
+					<check/>
 				</configuration>
 			</plugin>
 		</plugins>
