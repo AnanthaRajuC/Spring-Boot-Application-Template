@@ -44,6 +44,9 @@ CREATE TABLE `application_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+ /*
+ * Structure
+ */
 CREATE TABLE `application_settings` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -58,8 +61,8 @@ CREATE TABLE `application_settings` (
  */
 CREATE TABLE `geo` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `created_on` datetime DEFAULT NULL,
-  `updated_on` datetime DEFAULT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `lat` varchar(255) DEFAULT NULL,
   `lng` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -70,8 +73,8 @@ CREATE TABLE `geo` (
  */
 CREATE TABLE `address` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `created_on` datetime DEFAULT NULL,
-  `updated_on` datetime DEFAULT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `city` varchar(255) DEFAULT NULL,
   `street` varchar(255) DEFAULT NULL,
   `suite` varchar(255) DEFAULT NULL,
@@ -87,18 +90,18 @@ CREATE TABLE `address` (
  */
 CREATE TABLE `person` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `created_on` datetime DEFAULT NULL,
-  `updated_on` datetime DEFAULT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `age` int(11) DEFAULT NULL,
   `dob` date DEFAULT NULL,
   `email_primary` varchar(255) NOT NULL,
   `email_secondary` varchar(255) DEFAULT NULL,
   `gender` varchar(255) NOT NULL,
   `is_adult` bit(1) NOT NULL,
-  `name` varchar(15) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
   `phone` bigint(20) NOT NULL,
-  `username` varchar(15) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
   `address_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_cb2kxuy8vrw12d8wn5tc3x7uq` (`email_primary`),

@@ -38,18 +38,3 @@ INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('applicationVer
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com');
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get');
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoPOSTpath','/post');
-
-/*
- * Data
- */
-INSERT INTO `geo` (`lat`,`lng`) VALUES ('-43.9589','-34.4628');
-
-/*
- * Data
- */
-INSERT INTO `address` (`city`,`street`,`suite`,`zipcode`,`geo_id`) VALUES ('Wisokyburghh','Jane Plains','Suite 779','90565-7771',1);
-
-/*
- * Data
- */
-INSERT INTO `person` (`age`,`dob`,`email_primary`,`email_secondary`,`gender`,`is_adult`,`name`,`password`,`phone`,`username`,`address_id`) VALUES (25,'2006-12-25','jane3.howell@gmail.com','jane1.howell@gmail.com','MALE',1,'Jane3','password',9191919195,'jane3',1);
