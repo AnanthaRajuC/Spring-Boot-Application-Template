@@ -44,6 +44,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		.csrf().disable()
 		.authorizeRequests()
 		.antMatchers(PUBLIC_MATCHERS).permitAll()
+		.antMatchers("/api/**").hasRole("ADMIN")
 		.anyRequest().authenticated()
 		.and()
 		.formLogin().loginPage("/sbat/login").defaultSuccessUrl("/sbat/index")

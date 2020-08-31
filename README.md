@@ -104,7 +104,7 @@ Delete the sample code, replace with your own and you’re good to go.
 * 	[x] RESTful Web Service (CRUD)
 * 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
 * 	[x] [Dark Mode](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme)
-* 	[x] [Spring Security](https://spring.io/projects/spring-security) Basic In-memory Authentication to Login and Logout of the app
+* 	[x] [Spring Security](https://spring.io/projects/spring-security) In-memory Authentication & Role Based Authorization to Login and Logout of the app
 * 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[ ] Shut down app on button click via actuator url 
