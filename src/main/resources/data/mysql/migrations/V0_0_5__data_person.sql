@@ -7,7 +7,7 @@
 /*
  * Data
  */
-INSERT INTO `person`(`age`,`dob`,`email_primary`,`email_secondary`,`gender`,`is_adult`,`name`,`password`,`phone`,`username`,`address_id`) values (45,'2006-12-25','mlangland0@t-online.de','mlangland0@washington.edu','MALE', 0,'Monty Langland','d1294e8fc2f5dc307ed75610b0d45885531f59cb','7298509040','mlangland0', 1);
+INSERT INTO `person`(`age`,`dob`,`email_primary`,`email_secondary`,`gender`,`is_adult`,`name`,`password`,`phone`,`username`,`address_id`) values (45,'2006-12-25','johndoe@t-online.de','johndoe@washington.edu','MALE', 0,'John Doe','d1294e8fc2f5dc307ed75610b0d45885531f59cb','7298509040','johndoe', 1);
 INSERT INTO `person`(`age`,`dob`,`email_primary`,`email_secondary`,`gender`,`is_adult`,`name`,`password`,`phone`,`username`,`address_id`) values (51,'2006-12-25','clahive1@cam.ac.uk','clahive1@japanpost.jp','MALE', 0,'Cosimo Lahive','e5276e30fcac35848b038685d7c75efd42b62acb','6378723056','clahive1', 2);
 INSERT INTO `person`(`age`,`dob`,`email_primary`,`email_secondary`,`gender`,`is_adult`,`name`,`password`,`phone`,`username`,`address_id`) values (44,'2006-12-25','tpenk2@microsoft.com','tpenk2@phoca.cz','MALE', 1,'Trenton Penk','e1d979813a946bbfc03479b9bfde39a61b8c7172','9933609432','tpenk2', 3);
 INSERT INTO `person`(`age`,`dob`,`email_primary`,`email_secondary`,`gender`,`is_adult`,`name`,`password`,`phone`,`username`,`address_id`) values (45,'2006-12-25','ddeppe3@miibeian.gov.cn','ddeppe3@imageshack.us','FEMALE', 1,'Dion Deppe','070d2bbe0338eb2e039738d8178094356d06d95e','5002172728','ddeppe3', 4);

@@ -3,6 +3,7 @@ package io.github.anantharajuc.sbtest.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -11,6 +12,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+import static io.github.anantharajuc.sbtest.security.ApplicationUserRole.*;
+import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.*;
 
 @Configuration
 @EnableWebSecurity
@@ -43,16 +47,28 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		http
 		.csrf().disable()
 		.authorizeRequests()
-		.antMatchers(PUBLIC_MATCHERS).permitAll()
-		.antMatchers("/api/**").hasRole("ADMIN")
-		.anyRequest().authenticated()
+		
+			.antMatchers(PUBLIC_MATCHERS).permitAll()		
+			
+			.antMatchers("/api/**").hasRole(PERSON.name())	
+			
+			.antMatchers(HttpMethod.GET, "/management/api/**").hasAnyRole(ADMIN.name(),ADMINTRAINEE.name())
+			.antMatchers(HttpMethod.PUT, "/management/api/**").hasAuthority(PERSON_UPDATE.getPermission())	
+			.antMatchers(HttpMethod.POST, "/management/api/**").hasAuthority(PERSON_CREATE.getPermission())	
+			.antMatchers(HttpMethod.DELETE, "/management/api/**").hasAuthority(PERSON_DELETE.getPermission())		
+			
+			.anyRequest().authenticated()
 		.and()
-		.formLogin().loginPage("/sbat/login").defaultSuccessUrl("/sbat/index")
-		.failureUrl("/sbat/error").permitAll()
+			.formLogin()
+				.loginPage("/sbat/login")
+				.defaultSuccessUrl("/sbat/index")
+				.failureUrl("/sbat/error")
+				.permitAll()
 		.and()
-	    .httpBasic()
+	    	.httpBasic()
 		.and()
-		.logout().permitAll();
+			.logout()
+			.permitAll();
 	}
 
 	@Override
@@ -60,17 +76,23 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	protected UserDetailsService userDetailsService()
 	{
 		UserDetails johnDoeUser = User.builder()
-										.username("johnDoe")
+										.username("johndoe")
 										.password(passwordEncoder.encode("password"))
-										.roles("BASIC") 
+										.authorities(PERSON.getGrantedAuthorities())
 										.build();
 		
 		UserDetails AdminUser = User.builder()
 										.username("AdminUser")
 										.password(passwordEncoder.encode("password"))
-										.roles("ADMIN") 
+										.authorities(ADMIN.getGrantedAuthorities())
 										.build();
 		
-		return new InMemoryUserDetailsManager(johnDoeUser,AdminUser);
+		UserDetails AdminTraineeUser = User.builder()
+										.username("AdminTraineeUser")
+										.password(passwordEncoder.encode("password"))
+										.authorities(ADMINTRAINEE.getGrantedAuthorities())
+										.build();
+		
+		return new InMemoryUserDetailsManager(johnDoeUser,AdminUser,AdminTraineeUser);
 	}
 }

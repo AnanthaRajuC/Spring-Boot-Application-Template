@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Geo;
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
@@ -85,8 +86,15 @@ public class PersonServiceImpl implements PersonService
 						.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
 		
 		person.setName(personDetails.getName());
+		person.setUsername(personDetails.getUsername());
+		person.setEmailPrimary(personDetails.getEmailPrimary());
+		person.setEmailSecondary(personDetails.getEmailSecondary());
+		person.setPhone(personDetails.getPhone());
 		person.setGender(personDetails.getGender());
 		person.setAge(personDetails.getAge());
+		person.setPassword(personDetails.getPassword());
+		person.setDob(personDetails.getDob());
+		person.setIsAdult(personDetails.getIsAdult());		
 
 		return personRepository.save(person);
 	}

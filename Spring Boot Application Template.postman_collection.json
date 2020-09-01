@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "dadf3e2f-6ad7-4e0c-a0ac-3dcdc80148ce",
-		"name": "Spring Boot Framework",
+		"name": "Spring Boot Application Template",
 		"description": "Postman collection for the Spring Boot Application Template\n\nhttps://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,31 +12,35 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080",
+					"raw": "http://localhost:8080/sbat/index",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080"
+					"port": "8080",
+					"path": [
+						"sbat",
+						"index"
+					]
 				},
 				"description": "http://localhost:8080\nHome Page. \nNo Login Required."
 			},
 			"response": []
 		},
 		{
-			"name": "/api/person XML",
+			"name": "http://localhost:8080/api/v1/person",
 			"request": {
 				"auth": {
 					"type": "basic",
 					"basic": [
 						{
 							"key": "password",
-							"value": "bf22bff7-9960-48b6-ba1e-6c8c85f9e58f",
+							"value": "password",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "user",
+							"value": "johnDoe",
 							"type": "string"
 						}
 					]
@@ -45,12 +49,12 @@
 				"header": [
 					{
 						"key": "Accept",
-						"value": "application/xml",
-						"type": "text"
+						"type": "text",
+						"value": "application/xml"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/person",
+					"raw": "http://localhost:8080/api/v1/person",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,6 +62,7 @@
 					"port": "8080",
 					"path": [
 						"api",
+						"v1",
 						"person"
 					]
 				},
@@ -66,7 +71,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/person/1 XML",
+			"name": "http://localhost:8080/api/v1/person/10",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -77,7 +82,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/person/1",
+					"raw": "http://localhost:8080/api/v1/person/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -85,8 +90,9 @@
 					"port": "8080",
 					"path": [
 						"api",
+						"v1",
 						"person",
-						"1"
+						"10"
 					]
 				},
 				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -94,10 +100,22 @@
 			"response": []
 		},
 		{
-			"name": "/api/person/1 JSON",
+			"name": "http://localhost:8080/api/v1/person/11",
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
 				},
 				"method": "GET",
 				"header": [
@@ -108,7 +126,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/person/1",
+					"raw": "http://localhost:8080/api/v1/person/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -116,8 +134,9 @@
 					"port": "8080",
 					"path": [
 						"api",
+						"v1",
 						"person",
-						"1"
+						"11"
 					]
 				},
 				"description": "GET user by id in JSON format\nhttp://localhost:8080/api/person/1"
@@ -125,10 +144,22 @@
 			"response": []
 		},
 		{
-			"name": "/api/person JSON",
+			"name": "http://localhost:8080/api/v1/person",
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
 				},
 				"method": "GET",
 				"header": [
@@ -139,7 +170,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/person",
+					"raw": "http://localhost:8080/api/v1/person",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -147,6 +178,7 @@
 					"port": "8080",
 					"path": [
 						"api",
+						"v1",
 						"person"
 					]
 				},
@@ -155,16 +187,28 @@
 			"response": []
 		},
 		{
-			"name": "/api/person",
+			"name": "http://localhost:8080/management/api/v1/person/670",
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
 				},
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"Jane3\",\r\n\t\"username\": \"jane3\",\r\n\t\"emailPrimary\": \"jane3.howell@gmail.com\",\r\n    \"emailSecondary\": \"jane1.howell@gmail.com\",\r\n    \"phone\":9191919195,\r\n\t\"gender\": \"MALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2006\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"raw": "{\r\n\t\"name\": \"66bbbb99\",\r\n\t\"username\": \"669\",\r\n\t\"emailPrimary\": \"jane8.669@gmail.com\",\r\n    \"emailSecondary\": \"jane8.howqqqell@gmail.com\",\r\n    \"phone\":669,\r\n\t\"gender\": \"MALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2006\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -172,15 +216,18 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/person",
+					"raw": "http://localhost:8080/management/api/v1/person/670",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"management",
 						"api",
-						"person"
+						"v1",
+						"person",
+						"670"
 					]
 				},
 				"description": "POST  a person\nhttp://localhost:8080/api/person"
@@ -188,16 +235,28 @@
 			"response": []
 		},
 		{
-			"name": "/api/person/1",
+			"name": "http://localhost:8080/api/v1/person/800",
 			"request": {
 				"auth": {
-					"type": "noauth"
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "JohnDoe",
+							"type": "string"
+						}
+					]
 				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"abc\",\r\n\t\"username\": \"ervin\",\r\n\t\"emailPrimary\": \"ervin.howell@gmail.com\",\r\n    \"emailSecondary\": \"ervin.howell@gmail.com\",\r\n    \"phone\":9191919192,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"raw": "{\r\n\t\"name\": \"444\",\r\n\t\"username\": \"444\",\r\n\t\"emailPrimary\": \"444fl@gmail.com\",\r\n    \"emailSecondary\": \"ervin.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -205,7 +264,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/person/1",
+					"raw": "http://localhost:8080/api/v1/person/800",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -213,8 +272,9 @@
 					"port": "8080",
 					"path": [
 						"api",
+						"v1",
 						"person",
-						"1"
+						"800"
 					]
 				},
 				"description": "Update a person by ID\nhttp://localhost:8080/api/person/1"
@@ -449,10 +509,25 @@
 		{
 			"name": "/api/person/pageable",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/person/pageable?page=0&size=2&sort=createdOn,desc",
+					"raw": "http://localhost:8080/api/person/pageable?page=1&size=10&sort=createdOn,desc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -466,11 +541,11 @@
 					"query": [
 						{
 							"key": "page",
-							"value": "0"
+							"value": "1"
 						},
 						{
 							"key": "size",
-							"value": "2"
+							"value": "10"
 						},
 						{
 							"key": "sort",
@@ -488,7 +563,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/person/3",
+					"raw": "http://localhost:8080/api/person/1001",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -497,10 +572,126 @@
 					"path": [
 						"api",
 						"person",
-						"3"
+						"1001"
 					]
 				},
 				"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/669"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person/669",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"69"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/669"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person/69",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"69"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/69"
 			},
 			"response": []
 		}

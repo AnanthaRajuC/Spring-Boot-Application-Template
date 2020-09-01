@@ -17,7 +17,7 @@
 [![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90dd899ee438f2b960dc)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code.
 
@@ -181,8 +181,9 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 
 |  Username     |  Password |
 |---------------|-----------|
-|`johnDoe`   | `password`  |
+|`johndoe`   | `password`  |
 |`AdminUser` | `password`  |
+|`AdminTraineeUser` | `password`  |
 
 ## Explore Rest APIs
 
@@ -223,13 +224,30 @@ To monitor and manage your application
 
 ### Person URLs
 
+## Accessible to **johndoe** user only
+
 |  URL |  Method | Remarks | Sample Valid Request Body |
 |----------|--------------|--------------|--------------|
-|`http://localhost:8080/api/person`      | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
-|`http://localhost:8080/api/person`      | POST    | Add a person                                                                        |[JSON](#personcreate)|
-|`http://localhost:8080/api/person/{id}` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
-|`http://localhost:8080/api/person/{id}` | PUT     | Update a person                                                                     |[JSON](#personcreate)|
-|`http://localhost:8080/api/person/{id}` | DELETE  | Delete a person                                                                     ||
+|`http://localhost:8080/api/v1/person`                     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
+|`http://localhost:8080/api/v1/person`                     | POST    | Add a person                                                                        |[JSON](#personcreate)|
+|`http://localhost:8080/api/v1/person/{id}`                | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
+|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|Pageable API Endpoint|
+|`http://localhost:8080/api/v1/person/{id}`                | PUT     | Update a person                                                                     |[JSON](#personcreate)|
+|`http://localhost:8080/api/v1/person/{id}`                | DELETE  | Delete a person                                                                     ||
+
+### Person Management URLs
+
+## Role and Permission based secure access to **AdminUser** and **AdminTrainee** users
+
+|  URL |  Method | Remarks | Sample Valid Request Body |
+|----------|--------------|--------------|--------------|
+|`http://localhost:8080/management/api/v1/person`          | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
+|`http://localhost:8080/management/api/v1/person`          | POST    | Add a person                                                                        |[JSON](#personcreate)|
+|`http://localhost:8080/management/api/v1/person/{id}`     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
+|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|Pageable API Endpoint|
+|`http://localhost:8080/management/api/v1/person/{id}`     | PUT     | Update a person                                                                     |[JSON](#personcreate)|
+|`http://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     ||
+
 
 ## Sample Valid JSON Request Bodys
 
@@ -261,8 +279,8 @@ To monitor and manage your application
 
 ## Documentation
 
-* 	[Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
-* 	[Postman Collection](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/Spring%20Boot%20Template.postman_collection.json) - offline
+* 	[Postman Collection](https://documenter.getpostman.com/view/2449187/TVCe1UAk) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
+* 	[Postman Collection](Spring Boot Application Template.postman_collection) - offline
 * 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
 
 ## EER Diagram
@@ -407,7 +425,6 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 
 * 	[My API Lifecycle Checklist and Scorecard](https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard)
 * 	[HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
-* 	[Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
 
 ## License
 

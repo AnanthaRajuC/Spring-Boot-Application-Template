@@ -21,8 +21,8 @@ import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 import io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl;
 
 @RestController
-@RequestMapping("/api/v1")
-public class PersonController 
+@RequestMapping("management/api/v1")
+public class PersonManagementController 
 {
 	@Autowired
 	private PersonServiceImpl personServiceImpl;
@@ -30,19 +30,7 @@ public class PersonController
 	@GetMapping(value="/person")	
 	public List<Person> getAllPersons() 
 	{		
-		return personServiceImpl.getAllPersons();
-	}
-	
-	@GetMapping(value="/person/pageable")	
-	public Page<Person> getAllPersons(Pageable pageable) 
-	{		
-		return personServiceImpl.getAllPersonsPageable(pageable);
-	}
-	
-	@GetMapping(value="/person/gender/{gender}")
-	public List<Person> getPersonByGender(@PathVariable(value = "gender") String gender)
-	{
-		return personServiceImpl.getPersonsByGender(gender);  
+		return personServiceImpl.getAllPersons(); 
 	}
 	
 	@GetMapping(value="/person/{id}")
@@ -51,12 +39,18 @@ public class PersonController
 		return personServiceImpl.getPersonById(personId);
 	}
 	
+	@GetMapping(value="/person/pageable")	
+	public Page<Person> getAllPersons(Pageable pageable) 
+	{		
+		return personServiceImpl.getAllPersonsPageable(pageable);
+	}
+	
 	@PostMapping("/person")
 	public Person createPerson(@Valid @RequestBody Person person)
 	{		
 		return personServiceImpl.createPerson(person);
 	}
-
+	
 	@PutMapping("/person/{id}")
 	public Person updatePerson(@PathVariable(value = "id") Long personId,@Valid @RequestBody Person personDetails)
 	{		
