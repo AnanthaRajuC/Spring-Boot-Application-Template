@@ -179,11 +179,11 @@ Ensure you build a jar of the application before building a docker image.
 
 Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security` package to modify the preconfigured users.
 
-|  Username     |  Password |
-|---------------|-----------|
-|`johndoe`   | `password`  |
-|`AdminUser` | `password`  |
-|`AdminTraineeUser` | `password`  |
+|     Username     | Password |     Role     |                      Permission                       |         Resource          |
+|------------------|----------|--------------|-------------------------------------------------------|---------------------------|
+|`johndoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
+|`AdminUser`       |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
+|`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
 
 ## Explore Rest APIs
 
@@ -191,15 +191,15 @@ The app defines following CRUD APIs.
 
 ### URLs
 
-|  URL |  Method | Remarks |
-|----------|--------------|--------------|
-|`http://localhost:8080/index`                                   | GET | Home Page              |
-|`http://localhost:8080/sbat/index`                              | GET | Home Page              |
-|`http://localhost:8080/sbat/about`                              | GET | About Page             |
-|`http://localhost:8080/sbat/tech-stack`                         | GET | Technology Stack Table |
-|`http://localhost:8080/sbat/close`                              | GET | Close App via Actuator |
-|`http://localhost:8080/sbat/login`                              | GET | Login Page             |
-|`http://localhost:8080/sbat/error`                              | GET | Custom Error Page      |
+|                  URL                   | Method |          Remarks       |
+|----------------------------------------|--------|------------------------|
+|`http://localhost:8080/index`           | GET    | Home Page              |
+|`http://localhost:8080/sbat/index`      | GET    | Home Page              |
+|`http://localhost:8080/sbat/about`      | GET    | About Page             |
+|`http://localhost:8080/sbat/tech-stack` | GET    | Technology Stack Table |
+|`http://localhost:8080/sbat/close`      | GET    | Close App via Actuator |
+|`http://localhost:8080/sbat/login`      | GET    | Login Page             |
+|`http://localhost:8080/sbat/error`      | GET    | Custom Error Page      |
 
 ### Other URLs
 
@@ -214,17 +214,17 @@ The app defines following CRUD APIs.
 
 To monitor and manage your application
 
-|  URL |  Method |
-|----------|--------------|
-|`http://localhost:8080/actuator/`| GET |
-|`http://localhost:8080/actuator/health`| GET |
-|`http://localhost:8080/actuator/info`| GET |
-|`http://localhost:8080/actuator/prometheus`| GET |
-|`http://localhost:8080/actuator/httptrace`| GET |
+|              URL                          |Method|
+|-------------------------------------------|------|
+|`http://localhost:8080/actuator/`          |  GET |
+|`http://localhost:8080/actuator/health`    |  GET |
+|`http://localhost:8080/actuator/info`      |  GET |
+|`http://localhost:8080/actuator/prometheus`|  GET |
+|`http://localhost:8080/actuator/httptrace` |  GET |
 
 ### Person URLs
 
-## Accessible to **johndoe** user only
+#### Accessible to **johndoe** user only
 
 |  URL |  Method | Remarks | Sample Valid Request Body |
 |----------|--------------|--------------|--------------|
@@ -237,7 +237,7 @@ To monitor and manage your application
 
 ### Person Management URLs
 
-## Role and Permission based secure access to **AdminUser** and **AdminTrainee** users
+#### Role and Permission based secure access to **AdminUser** and **AdminTrainee** users
 
 |  URL |  Method | Remarks | Sample Valid Request Body |
 |----------|--------------|--------------|--------------|

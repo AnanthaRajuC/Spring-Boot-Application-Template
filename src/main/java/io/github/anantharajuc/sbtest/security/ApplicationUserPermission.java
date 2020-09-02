@@ -1,5 +1,10 @@
 package io.github.anantharajuc.sbtest.security;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public enum ApplicationUserPermission 
 {
 	PERSON_CREATE("person:create"),
@@ -12,7 +17,7 @@ public enum ApplicationUserPermission
 	
 	private final String permission;
 	
-	ApplicationUserPermission(String permission) 
+	/*ApplicationUserPermission(String permission) 
 	{
         this.permission = permission;
     }
@@ -20,5 +25,5 @@ public enum ApplicationUserPermission
     public String getPermission() 
     {
         return permission;
-    }
+    }*/
 }

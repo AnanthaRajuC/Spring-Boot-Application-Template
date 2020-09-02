@@ -29,17 +29,18 @@ public class SwaggerConfig
 	
 	private Predicate<String> postPaths() 
 	{
-		return or(regex("/api.*"), regex("/api.*"));
+		return or(regex("/api.*"), 
+				  regex("/management/api.*"));
 	}
 	
 	private ApiInfo apiInfo() 
 	{
 		return new ApiInfoBuilder()
-						.title("Spring Boot Template")
-						.description("Spring Boot Template for Web Applications")
-						.termsOfServiceUrl("None")
-						.license("None")
-						.licenseUrl("None")
+						.title("Spring Boot Application Template")
+						.description("Spring Boot Template for Web Application")
+						.termsOfServiceUrl("https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template")
+						.license("https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template")
+						.licenseUrl("https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template")
 						.version("1.0")
 						.build();
 	}
