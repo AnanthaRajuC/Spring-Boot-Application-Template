@@ -7,12 +7,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.google.common.collect.Sets;
 
-import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.PERSON_CREATE;
-import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.PERSON_DELETE;
-import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.PERSON_READ;
-import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.PERSON_UPDATE;
-import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.COURSE_READ;
-import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.COURSE_WRITE;
+import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.*;
 
 public enum ApplicationUserRole 
 {

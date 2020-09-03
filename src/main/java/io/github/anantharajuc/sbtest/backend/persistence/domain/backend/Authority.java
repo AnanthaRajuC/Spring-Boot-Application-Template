@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.backend.persistence.domain.backend;
+/*package io.github.anantharajuc.sbtest.backend.persistence.domain.backend;
 
 import org.springframework.security.core.GrantedAuthority;
 
@@ -19,3 +19,4 @@ public class Authority implements GrantedAuthority
 		return authority;
 	}
 }
+*/

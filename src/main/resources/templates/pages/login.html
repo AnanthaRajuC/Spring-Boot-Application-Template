@@ -47,13 +47,17 @@
 
                             <div class="form-group">
                                 <label for="username" th:text="#{login.username.text}" />
-                                <input type="text" id="username" name="username" class="form-control" />
+                                <input type="text" id="username" name="sbat-username" class="form-control" placeholder="username" required="" autofocus=""/>
                             </div>
 
                             <div class="form-group">
                                 <label for="password" th:text="#{login.password.text}" />
-                                <input type="password" id="show_hide_password" name="password" class="form-control" />													
+                                <input type="password" id="show_hide_password" name="sbat-password" placeholder="password" class="form-control" />													
                             </div>
+							
+							<div class="form-group">
+								<label class="form-control"><input type="checkbox" id="remember-me" name="remember-me"> Remember me</label>
+							</div>
 
                             <div class="form-group">
                                 <button value="submit" type="submit" th:text="#{navbar.login.text}" class="btn btn-primary" />

@@ -15,6 +15,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 import static io.github.anantharajuc.sbtest.security.ApplicationUserRole.*;
 
+import java.util.concurrent.TimeUnit;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)
@@ -55,10 +57,22 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 				.defaultSuccessUrl("/sbat/index")
 				.failureUrl("/sbat/error")
 				.permitAll()
+				.passwordParameter("sbat-password")
+				.usernameParameter("sbat-username") 
 		.and()
+			.rememberMe() 													
+				.tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21))
+				.key("some-strong-key") 
+				.rememberMeParameter("remember-me") 
+	    .and()
 	    	.httpBasic()
 		.and()
 			.logout()
+			.logoutUrl("/logout")
+			.clearAuthentication(true)
+			.invalidateHttpSession(true)
+			.deleteCookies("JSESSIONID","remember-me")
+			.logoutSuccessUrl("/sbat/index") 
 			.permitAll();
 	}
 
