@@ -19,6 +19,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Simple JavaBean domain object with id, created on, updated on properties. Used as a base class for objects
+ * needing this property.
+ *
+ * @author Anantha Raju C
+ */
 @MappedSuperclass
 @JsonIgnoreProperties(value = {"createdOn", "updatedOn"}, allowGetters = false)
 @Getter

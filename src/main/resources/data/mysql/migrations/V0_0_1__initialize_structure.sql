@@ -110,3 +110,20 @@ CREATE TABLE `person` (
   KEY `FKk7rgn6djxsv2j2bv1mvuxd4m9` (`address_id`),
   CONSTRAINT `FKk7rgn6djxsv2j2bv1mvuxd4m9` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*
+ * Structure
+ */
+CREATE TABLE `app_user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `grantedAuthorities` varchar(255) DEFAULT NULL,
+  `isAccountNonExpired` bit(1) NOT NULL,
+  `isAccountNonLocked` bit(1) NOT NULL,
+  `isCredentialsNonExpired` bit(1) NOT NULL,
+  `isEnabled` bit(1) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -3,26 +3,28 @@ package io.github.anantharajuc.sbtest.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-
-import static io.github.anantharajuc.sbtest.security.ApplicationUserRole.*;
+import io.github.anantharajuc.sbtest.auth.ApplicationUserService;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.concurrent.TimeUnit;
 
+@Log4j2
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 {
 	private final PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	ApplicationUserService applicationUserService;
 
 	
 	@Autowired
@@ -47,7 +49,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	protected void configure(HttpSecurity http) throws Exception
 	{
 		http
-		.csrf().disable()
+		.csrf()
+			.disable()
 		.authorizeRequests()		
 			.antMatchers(PUBLIC_MATCHERS).permitAll()					
 			.anyRequest().authenticated()
@@ -75,29 +78,23 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 			.logoutSuccessUrl("/sbat/index") 
 			.permitAll();
 	}
-
+	
 	@Override
-	@Bean
-	protected UserDetailsService userDetailsService()
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception 
 	{
-		UserDetails johnDoeUser = User.builder()
-										.username("johndoe")
-										.password(passwordEncoder.encode("password"))
-										.authorities(PERSON.getGrantedAuthorities())
-										.build();
-		
-		UserDetails adminUser = User.builder()
-										.username("AdminUser")
-										.password(passwordEncoder.encode("password"))
-										.authorities(ADMIN.getGrantedAuthorities())
-										.build();
-		
-		UserDetails adminTraineeUser = User.builder()
-										.username("AdminTraineeUser")
-										.password(passwordEncoder.encode("password"))
-										.authorities(ADMINTRAINEE.getGrantedAuthorities())
-										.build();
-		
-		return new InMemoryUserDetailsManager(johnDoeUser,adminUser,adminTraineeUser);
-	}
+        auth.authenticationProvider(daoAuthenticationProvider());
+    }
+
+    @Bean
+    public DaoAuthenticationProvider daoAuthenticationProvider() 
+    {
+    	log.info("-----> DaoAuthenticationProvider : ");
+    	
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        
+        provider.setPasswordEncoder(passwordEncoder);
+        provider.setUserDetailsService(applicationUserService);
+        
+        return provider;
+    }
 }

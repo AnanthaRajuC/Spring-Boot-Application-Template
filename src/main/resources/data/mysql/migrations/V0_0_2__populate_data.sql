@@ -30,6 +30,7 @@ INSERT INTO `built_with` (`description`,`link`,`name`,`version`) VALUES ('An aut
 INSERT INTO `built_with` (`description`,`link`,`name`,`version`) VALUES ('A dialect for Thymeleaf that allows you to use attributes with a "with" prefix to avoid having long "th:with"-expressions.','https://github.com/Antibrumm/thymeleaf-extras-with-dialect','Thymeleaf With Dialect','3.0.0');
 INSERT INTO `built_with` (`description`,`link`,`name`,`version`) VALUES ('A dialect for Thymeleaf that lets you build layouts and reusable templates in order to improve code reuse.','https://github.com/ultraq/thymeleaf-layout-dialect','Thymeleaf Layout Dialect','2.4.1');
 INSERT INTO `built_with` (`description`,`link`,`name`,`version`) VALUES ('Modern server-side Java template engine for both web and standalone environments','https://www.thymeleaf.org/','Thymeleaf','3.0.11');
+
 /*
  * Data
  */
@@ -38,3 +39,10 @@ INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('applicationVer
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com');
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get');
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoPOSTpath','/post');
+
+/*
+ * Data
+ */
+INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('PERSON',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe');
+INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('ADMIN',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser');
+INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('ADMINTRAINEE',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser');

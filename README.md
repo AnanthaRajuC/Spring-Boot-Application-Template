@@ -1,4 +1,4 @@
-# Spring Boot Application Template/Starter-Project
+# Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
@@ -8,7 +8,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)
 [![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)
 
-[![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)
@@ -168,16 +167,15 @@ Ensure you build a jar of the application before building a docker image.
 
 ## Security
 
-```xml
-<dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-security</artifactId>
-</dependency>
-```
+### Looking for something in particular?
 
-~~Spring Boot Starter Security default username is `user` and a generated security password is printed in the console like `Using generated security password: 0423bec1-6759-4ed2-8e3e-e8196effadf9`~~
+|                  Spring Boot Configuration                |                                       Tag                                     |
+|-----------------------------------------------------------|-------------------------------------------------------------------------------|
+|Role Based Authentication (In-memory Users)                | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
+|Permission Based Authentication (In-memory Users)          | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
+|Spring Method-Security with @PreAuthorize (In-memory Users)| https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
 
-Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security` package to modify the preconfigured users.
+Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security`.
 
 |     Username     | Password |     Role     |                      Permission                       |         Resource          |
 |------------------|----------|--------------|-------------------------------------------------------|---------------------------|
@@ -400,8 +398,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 * 	`util` - to hold our utility classes;
 
 * 	`resources/` - Contains all the static resources, templates and property files.
-* 	`resources/data/mysql.migrations/V0_0_1__initialize_structure.sql` - Contains initial table structure - used by flyway.
-* 	`resources/data/mysql.migrations/V0_0_2__populate_data.sql` - Contains initial table data - used by flyway.
+* 	`resources/data/mysql.migrations/` - Contains initial table structure & table data - used by flyway.
 * 	`resources/static` - contains static resources such as css, js and images.
 * 	`resources/templates` - contains server-side templates which are rendered by Spring.
 * 	`resources/templates/fragments` - contains reusable code fragments.
@@ -412,7 +409,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 
 * 	`pom.xml` - contains all the project dependencies
 
-## Reporting Issues
+## Reporting Issues/Suggest Improvements
 
 This Project uses GitHub's integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:
 

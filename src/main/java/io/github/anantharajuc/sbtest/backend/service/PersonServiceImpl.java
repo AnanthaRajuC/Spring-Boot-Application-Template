@@ -8,7 +8,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Geo;
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;

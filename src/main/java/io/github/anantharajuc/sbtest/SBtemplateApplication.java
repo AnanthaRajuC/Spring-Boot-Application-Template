@@ -14,6 +14,12 @@ import io.github.anantharajuc.sbtest.backend.service.OtherServicesImpl;
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * Spring Boot Application Template.
+ *
+ * @author Anantha Raju C
+ *
+ */
 @SpringBootApplication
 @EnableJpaAuditing
 @EnableCaching

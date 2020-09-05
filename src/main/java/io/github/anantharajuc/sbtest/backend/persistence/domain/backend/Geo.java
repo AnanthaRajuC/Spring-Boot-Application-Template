@@ -15,6 +15,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Models a {@link Address Addressess'} geographic coordinate (for example, "-43.9589,-34.4628").
+ *
+ * @author Anantha Raju C
+ */
 @Entity
 @Table(name = "geo")
 @EntityListeners(AuditingEntityListener.class)

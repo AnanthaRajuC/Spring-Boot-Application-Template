@@ -7,8 +7,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.google.common.collect.Sets;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import static io.github.anantharajuc.sbtest.security.ApplicationUserPermission.*;
 
+@AllArgsConstructor
+@Getter
 public enum ApplicationUserRole 
 {
 	PERSON(Sets.newHashSet()),
@@ -16,16 +21,6 @@ public enum ApplicationUserRole
 	ADMINTRAINEE(Sets.newHashSet(PERSON_READ,COURSE_READ));
 	
 	private final Set<ApplicationUserPermission> permissions;
-	
-	ApplicationUserRole(Set<ApplicationUserPermission> permissions) 
-	{
-        this.permissions = permissions;
-    }
-	
-	public Set<ApplicationUserPermission> getPermissions() 
-	{
-        return permissions;
-    }
 	
 	public Set<SimpleGrantedAuthority> getGrantedAuthorities() 
 	{

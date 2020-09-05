@@ -17,6 +17,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Models a {@link Person Person's} address.
+ *
+ * @author Anantha Raju C
+ */
 @Entity
 @Table(name = "address")
 @EntityListeners(AuditingEntityListener.class)
@@ -47,5 +52,4 @@ public class Address extends BaseEntity
 	@JsonBackReference
 	@OneToOne(mappedBy = "address")
 	private Person person;
-
 }

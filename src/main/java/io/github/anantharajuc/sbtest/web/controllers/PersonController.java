@@ -21,6 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 import io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl;
 
+/**
+ * @author Anantha Raju C
+ */
 @RestController
 @RequestMapping("/api/v1")
 @PreAuthorize("hasRole('PERSON')")

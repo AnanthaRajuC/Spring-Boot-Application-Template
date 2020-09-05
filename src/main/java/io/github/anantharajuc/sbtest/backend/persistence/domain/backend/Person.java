@@ -28,6 +28,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Simple JavaBean domain object representing an person.
+ *
+ * @author Anantha Raju C
+ */
 @Entity
 @Table(name = "person")
 @EntityListeners(AuditingEntityListener.class)

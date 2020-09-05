@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.anantharajuc.sbtest.backend.service.PostmanEchoServiceImpl;
 
+/**
+ * @author Anantha Raju C
+ */
 @RestController
 @RequestMapping("/api/postman-echo")
 public class PostmanEchoController 
