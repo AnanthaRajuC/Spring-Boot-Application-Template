@@ -13,7 +13,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbtest.security.Role;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2

@@ -13,7 +13,6 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.BaseEntity;
-import io.github.anantharajuc.sbtest.security.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

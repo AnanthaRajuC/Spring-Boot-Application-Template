@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security;
+package io.github.anantharajuc.sbtest.auth;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
