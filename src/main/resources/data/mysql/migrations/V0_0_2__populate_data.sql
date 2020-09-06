@@ -39,10 +39,3 @@ INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('applicationVer
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com');
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get');
 INSERT INTO `application_settings` (`appKey`,`appValue`) VALUES ('postmanEchoPOSTpath','/post');
-
-/*
- * Data
- */
-INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('PERSON',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe');
-INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('ADMIN',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser');
-INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('ADMINTRAINEE',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser');
