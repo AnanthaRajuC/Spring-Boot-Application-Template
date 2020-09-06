@@ -175,6 +175,7 @@ Ensure you build a jar of the application before building a docker image.
 |Permission Based Authentication (In-memory Users)          | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
 |Spring Method-Security with @PreAuthorize (In-memory Users)| https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
 |Database Authentication Authorization (In-memory Users)    | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
+|Role, Permission based User Authentication via MySQL       | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
 
 Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security`.
 
@@ -284,7 +285,7 @@ To monitor and manage your application
 
 ## EER Diagram
 
-<img src="images\SBAT-EER-Diagram.PNG"/>
+<img src="images\SBAT-EER-Diagram.png"/>
 
 ## Files and Directories
 
