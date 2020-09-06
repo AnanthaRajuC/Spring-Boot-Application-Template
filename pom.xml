@@ -68,12 +68,12 @@
 	         <artifactId>thymeleaf-with-dialect</artifactId>
 	         <version>${thymeleaf-with-dialect.version}</version>
 	    </dependency>
-	    <dependency>
-		    <groupId>org.thymeleaf.extras</groupId>
-		    <artifactId>thymeleaf-extras-springsecurity4</artifactId>
-		    <version>3.0.1.RELEASE</version>
-		</dependency>
 		
+		<dependency>
+		    <groupId>org.thymeleaf.extras</groupId>
+		    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+		</dependency>
+
 		<dependency>
 	      <groupId>org.flywaydb</groupId>
 	      <artifactId>flyway-core</artifactId>
@@ -123,14 +123,6 @@
 		    <artifactId>json</artifactId>
 		    <version>20200518</version>
 		</dependency>	
-	    	
-
-		<!-- <dependency>
-            <groupId>org.zalando</groupId>
-            <artifactId>problem-spring-web-starter</artifactId>
-            <version>0.25.0</version>
-            <type>pom</type>
-        </dependency> -->
 		
 		<!-- hot swapping, disable cache for template, enable live reload -->
 		<dependency>
@@ -155,16 +147,12 @@
 	      <optional>true</optional>
 	    </dependency>
 
-
-		
 		<dependency>
 		    <groupId>org.mockito</groupId>
 		    <artifactId>mockito-all</artifactId>
 		    <version>1.10.19</version>
 		    <scope>test</scope>
 		</dependency>
-		
-		
 
 		<!-- Swagger -->
 		<dependency>

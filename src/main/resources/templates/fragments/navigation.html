@@ -35,12 +35,6 @@
 	  <li class="nav-item">
         <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
       </li>
-
-	 <!-- <li th:if="${#authorization?.expression('!isAuthenticated()')}">
-	 <li sec:authorize="!isAuthenticated()">
-		<a th:href="@{/sbat/login}" th:text="#{navbar.login.text}" />
-	  </li> -->
-	  
      </ul>   
    
    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
@@ -59,17 +53,15 @@
             <label class="custom-control-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
    </div>
    
-   </br>
+   </br>		    	
 
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success mr-1" type="submit" th:text="#{navbar.refresh.text}"></button> 
-    </form>
+	<a sec:authorize="!isAuthenticated()" class="btn btn-outline-success mr-1" type="submit" href="/sbat/login" role="button" th:text="#{navbar.login.text}"></a>	
 	
-	<form id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
+	<form sec:authorize="isAuthenticated()" id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
 			<button type="submit" th:text="#{navbar.logout.text}" class="btn btn-outline-danger mr-1" />
 	</form>
-
-	<a class="btn btn-outline-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>
+	
+	<a sec:authorize="hasRole('ROLE_ADMIN')" class="btn btn-outline-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>
 	
   </div> 
   </br>
