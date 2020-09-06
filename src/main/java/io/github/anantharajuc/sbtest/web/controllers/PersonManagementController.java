@@ -53,21 +53,21 @@ public class PersonManagementController
 	}
 	
 	@PostMapping("/person")
-	@PreAuthorize("hasAuthority('person:update')")
+	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_CREATE')")
 	public Person createPerson(@Valid @RequestBody Person person)
 	{		
 		return personServiceImpl.createPerson(person);
 	}
 	
 	@PutMapping("/person/{id}")
-	@PreAuthorize("hasAuthority('person:update')")
+	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_UPDATE')")
 	public Person updatePerson(@PathVariable(value="id") Long personId,@Valid @RequestBody Person personDetails)
 	{		
 		return personServiceImpl.updatePerson(personId, personDetails);
 	}
 	
 	@DeleteMapping("/person/{id}")
-	@PreAuthorize("hasAuthority('person:delete')")
+	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@PathVariable(value="id") Long personId) 
 	{		
 		return personServiceImpl.deletePerson(personId);

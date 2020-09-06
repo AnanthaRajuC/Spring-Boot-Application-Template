@@ -26,5 +26,4 @@ public class Permission extends BaseEntity
 	
 	@Column(name = "name")
     private String name;
-
 }

@@ -51,4 +51,4 @@ INSERT INTO `permission_role`(`permission_id`,`role_id`)VALUES(5,3); /*PERSON_RE
  */	 
 INSERT INTO `role_user`(`role_id`,`user_id`)VALUES(1,1); /* PERSON       - johndoe          */
 INSERT INTO `role_user`(`role_id`,`user_id`)VALUES(2,2); /* ADMIN        - AdminUser        */ 
-INSERT INTO `role_user`(`role_id`,`user_id`)VALUES(2,3); /* ADMINTRAINEE - AdminTraineeUser */ 
+INSERT INTO `role_user`(`role_id`,`user_id`)VALUES(3,3); /* ADMINTRAINEE - AdminTraineeUser */ 

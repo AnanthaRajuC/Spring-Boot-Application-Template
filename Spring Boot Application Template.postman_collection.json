@@ -140,7 +140,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/10",
+					"raw": "http://localhost:8080/api/v1/person/18",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -150,7 +150,7 @@
 						"api",
 						"v1",
 						"person",
-						"10"
+						"18"
 					]
 				},
 				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -184,7 +184,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/10",
+					"raw": "http://localhost:8080/api/v1/person/358",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -194,7 +194,7 @@
 						"api",
 						"v1",
 						"person",
-						"10"
+						"358"
 					]
 				},
 				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -231,7 +231,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/800",
+					"raw": "http://localhost:8080/api/v1/person/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -241,7 +241,7 @@
 						"api",
 						"v1",
 						"person",
-						"800"
+						"1"
 					]
 				},
 				"description": "Update a person by ID\nhttp://localhost:8080/api/person/1"
@@ -545,7 +545,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/37",
+					"raw": "http://localhost:8080/api/v1/person/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -555,7 +555,7 @@
 						"api",
 						"v1",
 						"person",
-						"37"
+						"1"
 					]
 				},
 				"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
@@ -608,7 +608,7 @@
 					"basic": [
 						{
 							"key": "username",
-							"value": "AdminUser",
+							"value": "AdminTraineeUser",
 							"type": "string"
 						},
 						{
@@ -621,7 +621,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/management/api/v1/person/80",
+					"raw": "http://localhost:8080/management/api/v1/person/87",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -632,7 +632,7 @@
 						"api",
 						"v1",
 						"person",
-						"80"
+						"87"
 					]
 				},
 				"description": "http://localhost:8080/management/api/v1/person/669"
@@ -647,7 +647,7 @@
 					"basic": [
 						{
 							"key": "username",
-							"value": "JohnDoe",
+							"value": "AdminUser",
 							"type": "string"
 						},
 						{
@@ -657,10 +657,10 @@
 						}
 					]
 				},
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/management/api/v1/person/73",
+					"raw": "http://localhost:8080/management/api/v1/person/577",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -671,7 +671,7 @@
 						"api",
 						"v1",
 						"person",
-						"73"
+						"577"
 					]
 				},
 				"description": "http://localhost:8080/management/api/v1/person/69"
@@ -782,6 +782,54 @@
 						}
 					]
 				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"aaa\",\r\n\t\"username\": \"aaaa\",\r\n\t\"emailPrimary\": \"aaaa@gmail.com\",\r\n\t\"emailSecondary\": \"ffff.howell@gmail.com\",\r\n\t\"phone\":11111333,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"2"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -794,7 +842,44 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/management/api/v1/person",
+					"raw": "http://localhost:8080/api/v1/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person"
+					]
+				},
+				"description": "http://localhost:8080/api/v1/person"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person/{id}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminTraineeUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -804,10 +889,11 @@
 						"management",
 						"api",
 						"v1",
-						"person"
+						"person",
+						"2"
 					]
 				},
-				"description": "http://localhost:8080/management/api/v1/person"
+				"description": "http://localhost:8080/management/api/v1/person/6"
 			},
 			"response": []
 		}

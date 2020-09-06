@@ -169,11 +169,12 @@ Ensure you build a jar of the application before building a docker image.
 
 ### Looking for something in particular?
 
-|                  Spring Boot Configuration                |                                       Tag                                     |
+|                  Security Variation                       |                                       Tag                                     |
 |-----------------------------------------------------------|-------------------------------------------------------------------------------|
 |Role Based Authentication (In-memory Users)                | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
 |Permission Based Authentication (In-memory Users)          | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
 |Spring Method-Security with @PreAuthorize (In-memory Users)| https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
+|Database Authentication Authorization (In-memory Users)    | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
 
 Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security`.
 
@@ -283,7 +284,7 @@ To monitor and manage your application
 
 ## EER Diagram
 
-<img src="images\eer_diagram.PNG"/>
+<img src="images\SBAT-EER-Diagram.PNG"/>
 
 ## Files and Directories
 
@@ -388,6 +389,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 
 ## packages
 
+* 	`auth` - app authentication;
 * 	`config` - app configurations;
 * 	`controllers` - to listen to the client;
 * 	`exception` - to hold custom exception handling;
