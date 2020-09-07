@@ -2,6 +2,7 @@ package io.github.anantharajuc.sbtest.auth;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
@@ -19,7 +20,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "app_user")
+@Table(name = "user")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
@@ -29,11 +30,22 @@ public class User extends BaseEntity
 {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="password")
 	private String password; 
+	
+	@Column(name="username")
 	private String username;	
-	private boolean isAccountNonExpired; 
+	
+	@Column(name="isAccountNonExpired")
+	private boolean isAccountNonExpired;
+	
+	@Column(name="isAccountNonLocked")
 	private boolean isAccountNonLocked;
+	
+	@Column(name="isCredentialsNonExpired")
 	private boolean isCredentialsNonExpired;
+	
+	@Column(name="isEnabled")
 	private boolean isEnabled;
 	
 	@ManyToMany(fetch = FetchType.EAGER)

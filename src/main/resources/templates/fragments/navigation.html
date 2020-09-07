@@ -12,7 +12,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <ul class="navbar-nav mr-auto">
-	
+	<li sec:authorize="isAuthenticated()" class="nav-item">	
+		<label class="custom-control-label" th:text="${#authentication.getPrincipal().getUsername()}"></label>
+	</li>
 	<li class="nav-item dropdown">
 		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
 		   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -38,7 +40,6 @@
      </ul>   
    
    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-   
 		<ul class="navbar-nav ml-auto nav-flex-icons">		
 			  <li class="nav-item">
 				<a class="nav-link waves-effect waves-light" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i></a>
@@ -58,7 +59,8 @@
 	<a sec:authorize="!isAuthenticated()" class="btn btn-outline-success mr-1" type="submit" href="/sbat/login" role="button" th:text="#{navbar.login.text}"></a>	
 	
 	<form sec:authorize="isAuthenticated()" id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
-			<button type="submit" th:text="#{navbar.logout.text}" class="btn btn-outline-danger mr-1" />
+		<!--<span th:text="${#authentication.getPrincipal().getUsername()}"></span>-->
+		<button type="submit" th:text="#{navbar.logout.text}" class="btn btn-outline-danger mr-1" />
 	</form>
 	
 	<a sec:authorize="hasRole('ROLE_ADMIN')" class="btn btn-outline-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>

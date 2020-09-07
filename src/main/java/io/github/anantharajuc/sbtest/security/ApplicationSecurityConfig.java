@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
-/*import io.github.anantharajuc.sbtest.auth.ApplicationUserService;*/
 import lombok.extern.log4j.Log4j2;
 
 import java.util.concurrent.TimeUnit;
@@ -22,9 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 {
 	private final PasswordEncoder passwordEncoder;
-	
-	/*@Autowired
-	ApplicationUserService applicationUserService;*/
 	
 	@Autowired
 	UserPrincipalService userPrincipalService;

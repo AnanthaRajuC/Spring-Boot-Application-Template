@@ -23,19 +23,9 @@ public class UserPrincipal implements UserDetails
 	
 	public UserPrincipal(User user) 
 	{
-		log.info("-----> user -           : "+user.toString());
-		
+		log.info("-----> username            : "+user.getUsername());
+
         this.user = user;
-        
-        /*String[] permissions = user.getRoles().stream()
-					                .flatMap(role -> role.getPermissions().stream())
-					                .map(permission -> permission.getName())
-					                .toArray(String[]::new);
-        
-        for (int i = 0; i < permissions.length; i++) 
-        {
-        	log.info("-----> permissions[i]                : "+permissions[i]);
-        }*/
         
         Set<String> roleAndPermissions = new HashSet<>();
 		
@@ -58,8 +48,6 @@ public class UserPrincipal implements UserDetails
 		String[] roleNames = new String[roleAndPermissions.size()];
 		
 		log.info("-----> Roles & Permissions : "+roleAndPermissions.toString());			
-		
-		//Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(roleAndPermissions.toArray(roleNames));
         
         this.authorities = AuthorityUtils.createAuthorityList(roleAndPermissions.toArray(roleNames));
     }
@@ -110,5 +98,4 @@ public class UserPrincipal implements UserDetails
 	{
 		return true;
 	}
-
 }
