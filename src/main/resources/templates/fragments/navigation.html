@@ -12,9 +12,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <ul class="navbar-nav mr-auto">
-	<li sec:authorize="isAuthenticated()" class="nav-item">	
-		<label class="custom-control-label" th:text="${#authentication.getPrincipal().getUsername()}"></label>
-	</li>
 	<li class="nav-item dropdown">
 		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
 		   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -39,31 +36,36 @@
       </li>
      </ul>   
    
-   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-		<ul class="navbar-nav ml-auto nav-flex-icons">		
-			  <li class="nav-item">
-				<a class="nav-link waves-effect waves-light" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i></a>
-			  </li>  
-		</ul>
+   </br>		    	
+
+	<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+	
+	<a sec:authorize="!isAuthenticated()" class="btn btn-link btn-lg" type="submit" href="/sbat/login" role="button" th:text="#{navbar.login.text}"></a>	
+
+    <ul sec:authorize="isAuthenticated()" class="navbar-nav mr-1">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		  <a class="dropdown-item font-weight-bold" sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"/>
+          <a class="dropdown-item" href="#">Dashboard</a>
+		  <div class="dropdown-divider"></div>
+          <form id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
+			<button type="submit" th:text="#{navbar.logout.text}" class="dropdown-item text-danger" />
+		  </form>
+		  <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item text-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>	
+        </div>
+      </li>   
+    </ul>
 	</ul>
    
    </br>
    
    <div class="custom-control custom-switch mr-1">
-            <input type="checkbox" class="custom-control-input" id="darkSwitch">
-            <label class="custom-control-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
+        <input type="checkbox" class="custom-control-input" id="darkSwitch">
+        <label class="custom-control-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
    </div>
-   
-   </br>		    	
-
-	<a sec:authorize="!isAuthenticated()" class="btn btn-outline-success mr-1" type="submit" href="/sbat/login" role="button" th:text="#{navbar.login.text}"></a>	
-	
-	<form sec:authorize="isAuthenticated()" id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
-		<!--<span th:text="${#authentication.getPrincipal().getUsername()}"></span>-->
-		<button type="submit" th:text="#{navbar.logout.text}" class="btn btn-outline-danger mr-1" />
-	</form>
-	
-	<a sec:authorize="hasRole('ROLE_ADMIN')" class="btn btn-outline-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>
 	
   </div> 
   </br>

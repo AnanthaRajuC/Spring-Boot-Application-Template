@@ -7,11 +7,31 @@
 
 <th:block layout:fragment="content">
 
-<div class="jumbotron">
-	<h1 th:text="#{index.main.callout}">SBAT</h1>
-</div>
+<div class="container">
 
-<div class="row">
+<!-- Jumbotron -->
+<div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
+  <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+    <div class="py-5">
+
+      <!-- Content -->
+      <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>
+      <h2 class="card-title h2 my-4 py-2">Jumbotron with image overlay</h2>
+      <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
+      <a class="btn peach-gradient"><i class="fas fa-clone left"></i> View project</a>
+
+    </div>
+  </div>
+</div>
+<!-- Jumbotron -->
+
+</br>
+
+<!--<div class="jumbotron">
+	<h1 th:text="#{index.main.callout}" />
+</div>-->
+
+<div class="d-flex justify-content-center align-items-center">
   <div class="col-auto mb-3">
     <div class="card shadow bg-white rounded" style="width: 18rem;">
       <div class="card-body">
@@ -69,24 +89,6 @@
     </div>
   </div>
   </br>
-  <div class="col-auto mb-3">
-    <div class="card shadow bg-white rounded" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">agittis arcu ornar</h5>
-        <p class="card-text">aesent eget lacus sagittis, bibendum eros id, commodtent.</p>
-        <a href="#" class="btn btn-primary">Pellentesque varius</a>
-      </div>
-    </div>
-	</br>
-	<div class="card shadow bg-white rounded" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">eger ut scelerisque ju</h5>
-        <p class="card-text">ugiat consequat tempor. Aliquam porta volutpat odio eu egest.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
 </div>
 
 <section class="cta-section text-center py-5 theme-bg-dark position-relative">
@@ -98,6 +100,8 @@
 		    </div>
 	    </div>
     </section>
+
+</div>
 
 </th:block>
 	

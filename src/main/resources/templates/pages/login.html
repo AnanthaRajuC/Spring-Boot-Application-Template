@@ -56,11 +56,11 @@
                             </div>
 							
 							<div class="form-group">
-								<label class="form-control"><input type="checkbox" id="remember-me" name="remember-me"> Remember me</label>
+								<label class="form-control"><input type="checkbox" id="remember-me" name="remember-me" th:text="#{login.remember-me.text}" />
 							</div>
 
                             <div class="form-group">
-                                <button value="submit" type="submit" th:text="#{navbar.login.text}" class="btn btn-primary" />
+                                <button value="submit" type="submit" th:text="#{login.submit.text}" class="btn btn-primary" />
                             </div>
 
                         </form>
@@ -74,8 +74,6 @@
         </div>
 
     </div>
-	
-	
 
 </th:block>
 </html>
