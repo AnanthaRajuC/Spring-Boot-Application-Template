@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import io.github.anantharajuc.sbtest.auth.ApplicationUserService;
+/*import io.github.anantharajuc.sbtest.auth.ApplicationUserService;*/
 import lombok.extern.log4j.Log4j2;
 
 import java.util.concurrent.TimeUnit;
@@ -23,8 +23,11 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 {
 	private final PasswordEncoder passwordEncoder;
 	
+	/*@Autowired
+	ApplicationUserService applicationUserService;*/
+	
 	@Autowired
-	ApplicationUserService applicationUserService;
+	UserPrincipalService userPrincipalService;
 
 	
 	@Autowired
@@ -93,7 +96,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         
         provider.setPasswordEncoder(passwordEncoder);
-        provider.setUserDetailsService(applicationUserService);
+        provider.setUserDetailsService(userPrincipalService);
         
         return provider;
     }

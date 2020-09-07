@@ -7,9 +7,9 @@
 /*
  * Data - User
  */
-INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('PERSON',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe');
-INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('ADMIN',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser');
-INSERT INTO `app_user`(`grantedAuthorities`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES('ADMINTRAINEE',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser');
+INSERT INTO `app_user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe');
+INSERT INTO `app_user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser');
+INSERT INTO `app_user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser');
 
 /*
  * Data - Permission
@@ -24,9 +24,9 @@ INSERT INTO `permission`(`name`)VALUES('COURSE_WRITE');
 /*
  * Data - Role
  */
-INSERT INTO `role`(`name`)VALUES('PERSON');
-INSERT INTO `role`(`name`)VALUES('ADMIN');
-INSERT INTO `role`(`name`)VALUES('ADMINTRAINEE');
+INSERT INTO `role`(`name`)VALUES('ROLE_PERSON');
+INSERT INTO `role`(`name`)VALUES('ROLE_ADMIN');
+INSERT INTO `role`(`name`)VALUES('ROLE_ADMINTRAINEE');
 
 /*
  * Data - Permissions for Roles

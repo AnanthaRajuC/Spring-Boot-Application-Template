@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AppUserRepository extends JpaRepository<AppUser, Long>
+public interface AppUserRepository extends JpaRepository<User, Long>
 {
-	Optional<AppUser> findByUsername(@NotBlank String username);
+	Optional<User> findByUsername(@NotBlank String username);
 }

@@ -25,11 +25,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AppUser extends BaseEntity
+public class User extends BaseEntity
 {
 	private static final long serialVersionUID = 1L;
-	
-	private String grantedAuthorities;	
+
 	private String password; 
 	private String username;	
 	private boolean isAccountNonExpired; 

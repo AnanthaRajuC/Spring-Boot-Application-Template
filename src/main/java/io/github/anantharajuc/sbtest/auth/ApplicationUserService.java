@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.auth;
+/*package io.github.anantharajuc.sbtest.auth;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -27,7 +27,7 @@ public class ApplicationUserService implements UserDetailsService
 	{	
 		log.info("-----> username            : "+username);
 
-		AppUser appuser = appUserRepository.findByUsername(username)
+		User appuser = appUserRepository.findByUsername(username)
 								.orElseThrow(() -> new UsernameNotFoundException(String.format("Username %s not found", username)));
 
 		return new UserDetails() 
@@ -101,4 +101,4 @@ public class ApplicationUserService implements UserDetailsService
 			}
 		};		
 	}
-} 
+} */
