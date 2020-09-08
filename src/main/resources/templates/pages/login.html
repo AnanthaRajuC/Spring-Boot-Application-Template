@@ -1,79 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" 
-			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
-			    xmlns:with="http://www.thymeleaf.org/extras/with"
-			   layout:decorate="~{layout}"
-			   with:title="'Login'">
-				 
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:with="http://www.thymeleaf.org/extras/with" layout:decorate="~{layout}" with:title="'Login'">
+
 <th:block layout:fragment="content">
 
-<div class="container">
-
-        <div class="row">
-		<div class="d-flex justify-content-center">
-            <div class="col-md-6 col-md-offset-3 text-center">
-
-                <div th:if="${param.error}" class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                    <p th:text="#{v}" />
-                </div>
-                <div th:if="${param.logout}" class="alert alert-success alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
-                    <p th:text="#{login.logout.success}" />
-                </div>
-            </div>
+	<div class="container">
+	
+		<div class="row">
+			<div class="d-flex justify-content-center">
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div th:if="${param.error}" class="alert alert-danger alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">x</span> </button>
+						<p th:text="#{v}" /> </div>
+					<div th:if="${param.logout}" class="alert alert-success alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">x</span> </button>
+						<p th:text="#{login.logout.success}" /> </div>
+				</div>
 			</div>
-        </div>
-
-        <div class="row">
-
-            <div class="d-flex justify-content-center">
-
-                <div class="well">
-
-                    <div class="text-center">
-
-                        <h1 th:text="#{login.h1.text}" />
-                        <p class="lead" th:text="#{login.p.lead}" />
-
-                    </div>
-
-                    <div class="text-left">
-                        <form id="loginForm" th:action="@{/sbat/login}" method="post">
-
-                            <div class="form-group">
-                                <label for="username" th:text="#{login.username.text}" />
-                                <input type="text" id="username" name="sbat-username" class="form-control" placeholder="username" required="" autofocus=""/>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" th:text="#{login.password.text}" />
-                                <input type="password" id="show_hide_password" name="sbat-password" placeholder="password" class="form-control" />													
-                            </div>
-							
-							<div class="form-group">
-								<label class="form-control"><input type="checkbox" id="remember-me" name="remember-me" th:text="#{login.remember-me.text}" />
+		</div>
+		
+		<div class="container py-5 py-sm-7">
+			<a class="d-flex justify-content-center mb-5" href="index.html"> 
+				<img class="z-index-2" src="/images/map.svg" alt="Image Description" style="width: 8rem;"> 
+			</a>
+			<div class="row">
+				<div class="d-flex justify-content-center">
+					<div class="col-md-7 col-lg-5">
+					
+						<!-- Card -->
+						<div class="card card-lg mb-5">
+							<div class="card-body">
+								<div class="text-center">
+									<div class="mb-5">
+										<h1 th:text="#{login.h1.text}" />
+										<p class="lead" th:text="#{login.p.lead}" /> </div>
+									<div class="text-left">
+										<form id="loginForm" th:action="@{/sbat/login}" method="post">
+											<div class="form-group">
+												<label for="username" th:text="#{login.username.text}" />
+												<input type="text" id="username" name="sbat-username" class="form-control" placeholder="username" required="" autofocus="" /> </div>
+											<div class="form-group">
+												<label for="password" th:text="#{login.password.text}" />
+												<input type="password" id="show_hide_password" name="sbat-password" placeholder="8+ characters required" class="form-control" /> </div>
+											
+											<!-- Checkbox -->
+											<div class="form-group">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me">
+													<label class="custom-control-label font-size-sm text-muted" for="remember-me" th:text="#{login.remember-me.text}"></label>
+												</div>
+											</div>
+											<!-- End Checkbox -->
+											
+											<div class="form-group">
+												<button value="submit" type="submit" th:text="#{login.submit.text}" class="btn btn-primary" /> </div>
+										</form> <a th:href="@{/forgotmypassword}" th:text="#{login.password.text}" /> </div>
+								</div>
 							</div>
-
-                            <div class="form-group">
-                                <button value="submit" type="submit" th:text="#{login.submit.text}" class="btn btn-primary" />
-                            </div>
-
-                        </form>
-                        <a th:href="@{/forgotmypassword}" th:text="#{login.password.text}" />
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+						</div>
+						<!-- End Card -->
+						
+						<!-- Footer -->
+						<div class="text-center"> <small class="text-cap">Trusted by the world's best teams</small>
+							<div class=" mx-auto">
+								<div class="row justify-content-between">
+									<div class="col"> <img class="img-fluid" src="/images/map.svg" alt="Image Description"> </div>
+									<div class="col"> <img class="img-fluid" src="/images/map.svg" alt="Image Description"> </div>
+									<div class="col"> <img class="img-fluid" src="/images/map.svg" alt="Image Description"> </div>
+									<div class="col"> <img class="img-fluid" src="/images/map.svg" alt="Image Description"> </div>
+								</div>
+							</div>
+						</div>
+						<!-- End Footer -->
+						
+					</div>
+				</div>
+			</div>
+		</div>
 </th:block>
+
 </html>

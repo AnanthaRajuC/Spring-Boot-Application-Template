@@ -45,6 +45,12 @@ public class SpringBootApplicationTemplateController
 		return "pages/about";
     }
 	
+	@GetMapping("/settings")
+    public String settings() 
+	{
+		return "pages/settings";
+    }
+	
 	@GetMapping("/tech-stack")
 	public String builtWith(Model model, @RequestParam(defaultValue="0") int page)
 	{ 
