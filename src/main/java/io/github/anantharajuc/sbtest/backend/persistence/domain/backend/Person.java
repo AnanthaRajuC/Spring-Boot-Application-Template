@@ -22,7 +22,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.github.anantharajuc.sbtest.enums.GenderEnum;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,11 +42,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Person extends BaseEntity
+public class Person extends AuditEntity
 {
-	//Default Serial Version ID
 	private static final long serialVersionUID = 1L;
-	
+
 	@NotBlank
 	@Size(min=3, max=15, message="Name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)

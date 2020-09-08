@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +24,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BuiltWith extends BaseEntity
+public class BuiltWith extends AuditEntity
 {
 	//Default Serial Version ID
 	private static final long serialVersionUID = 1L;

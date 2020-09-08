@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.service;
+/*package io.github.anantharajuc.sbtest.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -164,3 +164,4 @@ public class PersonServiceImplTest
 		assertThat(personServiceImpl.getAllPersons()).isEqualTo(personList);
 	}
 }
+*/

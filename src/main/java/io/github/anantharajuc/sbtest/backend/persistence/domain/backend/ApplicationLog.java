@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +23,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ApplicationLog extends BaseEntity
+public class ApplicationLog extends AuditEntity
 {
 	//Default Serial Version ID
 	private static final long serialVersionUID = 1L;

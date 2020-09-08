@@ -21,7 +21,7 @@ import lombok.extern.log4j.Log4j2;
  *
  */
 @SpringBootApplication
-@EnableJpaAuditing
+//@EnableJpaAuditing
 @EnableCaching
 @Log4j2
 public class SBtemplateApplication implements CommandLineRunner
@@ -49,7 +49,7 @@ public class SBtemplateApplication implements CommandLineRunner
 		log.info("-----> Initial Application Settings Key Value Load.");	
 		otherServicesImpl.loadApplicationSettings();
 		
-		applicationLogRepository.save(new ApplicationLog(ApplicationLogEnum.APPLICATION_START,"application started."));
+		//applicationLogRepository.save(new ApplicationLog(ApplicationLogEnum.APPLICATION_START,"application started."));
 		
 		log.info("-----> Application Name    : "+otherServicesImpl.getApplicationName());	
 		log.info("-----> Application Version : "+otherServicesImpl.getApplicationVersion());	

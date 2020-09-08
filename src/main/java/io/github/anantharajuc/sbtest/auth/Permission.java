@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.BaseEntity;
+import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Permission extends BaseEntity
+public class Permission extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
 	

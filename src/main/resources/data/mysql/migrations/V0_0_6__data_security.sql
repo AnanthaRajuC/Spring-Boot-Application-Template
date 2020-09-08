@@ -7,26 +7,26 @@
 /*
  * Data - User
  */
-INSERT INTO `user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe');
-INSERT INTO `user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser');
-INSERT INTO `user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser');
+INSERT INTO `user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe','Installation','Installation');
+INSERT INTO `user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser','Installation','Installation');
+INSERT INTO `user`(`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES(1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser','Installation','Installation');
 
 /*
  * Data - Permission
  */
-INSERT INTO `permission`(`name`)VALUES('PERSON_CREATE');
-INSERT INTO `permission`(`name`)VALUES('PERSON_READ');
-INSERT INTO `permission`(`name`)VALUES('PERSON_UPDATE');
-INSERT INTO `permission`(`name`)VALUES('PERSON_DELETE');
-INSERT INTO `permission`(`name`)VALUES('COURSE_READ');
-INSERT INTO `permission`(`name`)VALUES('COURSE_WRITE');
+INSERT INTO `permission`(`name`,`created_by`,`last_modified_by`)VALUES('PERSON_CREATE','Installation','Installation');
+INSERT INTO `permission`(`name`,`created_by`,`last_modified_by`)VALUES('PERSON_READ','Installation','Installation');
+INSERT INTO `permission`(`name`,`created_by`,`last_modified_by`)VALUES('PERSON_UPDATE','Installation','Installation');
+INSERT INTO `permission`(`name`,`created_by`,`last_modified_by`)VALUES('PERSON_DELETE','Installation','Installation');
+INSERT INTO `permission`(`name`,`created_by`,`last_modified_by`)VALUES('COURSE_READ','Installation','Installation');
+INSERT INTO `permission`(`name`,`created_by`,`last_modified_by`)VALUES('COURSE_WRITE','Installation','Installation');
 
 /*
  * Data - Role
  */
-INSERT INTO `role`(`name`)VALUES('ROLE_PERSON');
-INSERT INTO `role`(`name`)VALUES('ROLE_ADMIN');
-INSERT INTO `role`(`name`)VALUES('ROLE_ADMINTRAINEE');
+INSERT INTO `role`(`name`,`created_by`,`last_modified_by`)VALUES('ROLE_PERSON','Installation','Installation');
+INSERT INTO `role`(`name`,`created_by`,`last_modified_by`)VALUES('ROLE_ADMIN','Installation','Installation');
+INSERT INTO `role`(`name`,`created_by`,`last_modified_by`)VALUES('ROLE_ADMINTRAINEE','Installation','Installation');
 
 /*
  * Data - Permissions for Roles
