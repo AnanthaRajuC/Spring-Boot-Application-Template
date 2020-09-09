@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbtest.auth.UserRepository;
-import io.github.anantharajuc.sbtest.auth.User;
+import io.github.anantharajuc.sbtest.authentication.User;
+import io.github.anantharajuc.sbtest.authentication.UserRepository;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2

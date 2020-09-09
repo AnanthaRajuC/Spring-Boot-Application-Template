@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.backend.service;
+package io.github.anantharajuc.sbtest.backend.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.ApplicationSetings;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.ApplicationSettingsRepository;
+import io.github.anantharajuc.sbtest.backend.service.OtherServices;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;

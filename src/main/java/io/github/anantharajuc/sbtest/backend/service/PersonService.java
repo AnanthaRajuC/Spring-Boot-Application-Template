@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
 
 public interface PersonService 
 {

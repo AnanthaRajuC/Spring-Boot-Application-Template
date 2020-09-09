@@ -20,7 +20,7 @@
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code.
 
-Delete the sample code, replace with your own and you’re good to go.
+This repository contains a recipe for bootstrapping a Web Application with the features listed below. Delete the sample code, replace with your own and you’re good to go.
 
 ## Table of Contents
 
@@ -104,6 +104,7 @@ Delete the sample code, replace with your own and you’re good to go.
 * 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
 * 	[x] [Dark Mode](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme)
 * 	[x] [Spring Security](https://spring.io/projects/spring-security) In-memory Authentication & Role Based Authorization to Login and Logout of the app
+* 	[x] [JPA Auditing via AuditorAware Interface](https://docs.spring.io/spring-data/jpa/docs/1.7.0.DATAJPA-580-SNAPSHOT/reference/html/auditing.html)
 * 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[ ] Shut down app on button click via actuator url 
@@ -309,7 +310,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   │
 │           │   └──io.github.anantharajuc.sbtest.backend.service
 │           │
-│           ├── io.github.anantharajuc.sbtest.config
+│           ├── io.github.anantharajuc.sbtest.configuration
 │           │
 │           ├── io.github.anantharajuc.sbtest.controller
 │           │

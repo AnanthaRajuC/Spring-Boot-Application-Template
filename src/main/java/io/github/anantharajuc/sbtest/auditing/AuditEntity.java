@@ -25,7 +25,7 @@ import lombok.Setter;
  * @author Anantha Raju C
  */
 @MappedSuperclass
-@JsonIgnoreProperties(value = {"createdDate", "lastModifiedDate"}, allowGetters = false)
+@JsonIgnoreProperties(value = {"createdDate","createdBy","lastModifiedDate","lastModifiedBy"}, allowGetters = false)
 @Getter
 @Setter
 public class AuditEntity extends BaseEntity

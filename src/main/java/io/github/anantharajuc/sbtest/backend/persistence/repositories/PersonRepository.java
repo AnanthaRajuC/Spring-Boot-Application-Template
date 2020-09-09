@@ -4,14 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.transaction.annotation.Transactional;
+
+import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
+
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.Person;
 
 /**
  * Repository class for <code>Person</code> domain objects All method names are compliant with Spring Data naming

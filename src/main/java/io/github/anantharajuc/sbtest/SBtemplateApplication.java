@@ -6,12 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.ApplicationLog;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.ApplicationLogRepository;
-import io.github.anantharajuc.sbtest.backend.service.OtherServicesImpl;
-import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
+import io.github.anantharajuc.sbtest.backend.service.impl.OtherServicesImpl;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -21,7 +18,6 @@ import lombok.extern.log4j.Log4j2;
  *
  */
 @SpringBootApplication
-//@EnableJpaAuditing
 @EnableCaching
 @Log4j2
 public class SBtemplateApplication implements CommandLineRunner

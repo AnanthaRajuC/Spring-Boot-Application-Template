@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.backend.persistence.domain.backend;
+package io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person;
 
 import java.time.LocalDate;
 import javax.persistence.CascadeType;

@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.auth;
+package io.github.anantharajuc.sbtest.authentication;
 
 import java.util.List;
 
