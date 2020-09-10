@@ -53,7 +53,7 @@ public class Person extends AuditEntity
 	
 	@NotBlank
 	@Column(name = "username", unique=true)
-	@Size(max = 15)
+	@Size(max = 15, message="username must not be empty.")
 	private String username;
 	
 	@Email

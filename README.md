@@ -298,21 +298,21 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── main
 │       └── java
-│           ├── io.github.anantharajuc.sbtest.backend
+│           ├── io.github.anantharajuc.sbtest
 │           │   │ 
-│           │   ├──io.github.anantharajuc.sbtest.backend.persistence
-│           │   │  │       
-│           │   │  ├──io.github.anantharajuc.sbtest.backend.persistence.domain
-│           │   │  │  │
-│           │   │  │  └──io.github.anantharajuc.sbtest.backend.persistence.domain.backend
-│           │   │  │          
-│           │   │  └──io.github.anantharajuc.sbtest.backend.persistence.repositories
+│           │   ├──io.github.anantharajuc.sbtest.auditing
+│           │   │ 
+│           │   ├──io.github.anantharajuc.sbtest.authentication
+│           │   │ 
+│           │   ├──io.github.anantharajuc.sbtest.backend
+│           │   │     │    
+│           │   │     ├──io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person
+│           │   │     │
+│           │   │     └──io.github.anantharajuc.sbtest.backend.persistence.repositories
 │           │   │
 │           │   └──io.github.anantharajuc.sbtest.backend.service
 │           │
 │           ├── io.github.anantharajuc.sbtest.configuration
-│           │
-│           ├── io.github.anantharajuc.sbtest.controller
 │           │
 │           ├── io.github.anantharajuc.sbtest.enums
 │           │
@@ -324,11 +324,9 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │
 │           └── io.github.anantharajuc.sbtest.web
 │               │
-│				├── io.github.anantharajuc.sbtest.controllers
+│				├── io.github.anantharajuc.sbtest.web.controllers
 │               │
-│				└── io.github.anantharajuc.sbtest.domain
-│                   │
-│					└── io.github.anantharajuc.sbtest.domain.frontend
+│				└── io.github.anantharajuc.sbtest.web.domain.frontend
 ├── src
 │   └── main
 │       └── resources
@@ -336,12 +334,17 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   └── mysql
 │           │       └── migrations
 │           │           ├── V0_0_1__initialize_structure.sql
-│           │           └── V0_0_2__populate_data.sql
+│           │           └── V0_0_2__audit_structure.sql
+│           │           └── V0_0_3__populate_data.sql
+│           │           └── V0_0_4__data_geo.sql
+│           │           └── V0_0_5__data_address.sql
+│           │           └── V0_0_6__data_person.sql
+│           │           └── V0_0_7__data_security.sql
 │           ├── i18n
 │           │   └── messages.properties
+│           │   └── messages_es.properties
 │           ├── static
 │           │   ├── css
-│           │   ├── fonts
 │           │   ├── images
 │           │   ├── js
 │           │   └── favicon.ico
@@ -359,7 +362,9 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   │   ├── built_with.html
 │           │   │   ├── close.html
 │           │   │   ├── form.html
-│           │   │   └── index.html
+│           │   │   ├── index.html
+│           │   │   ├── login.html
+│           │   │   └── settings.html
 │           │   │   
 │           │   ├── error.html
 │           │   └── layout.html
@@ -391,14 +396,14 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 
 ## packages
 
-* 	`auth` - app authentication;
-* 	`config` - app configurations;
+* 	`authentication` - application user authentication;
+* 	`configuration` - app configurations;
 * 	`controllers` - to listen to the client;
 * 	`exception` - to hold custom exception handling;
 * 	`models` - to hold our entities;
 * 	`repository` - to communicate with the database;
 * 	`security` - security configuration;
-* 	`service` - to hold our business logic;
+* 	`service` - to hold business logic;
 * 	`util` - to hold our utility classes;
 
 * 	`resources/` - Contains all the static resources, templates and property files.
