@@ -1,5 +1,6 @@
 package io.github.anantharajuc.sbtest.web.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,11 @@ public class UserController
 {
 	@Autowired
     private SessionRegistry sessionRegistry;
-	
-	public void listLoggedInUsers() 
+	 
+	public List<String> listLoggedInUsers() 
 	{
+		List<String> listLoggedInUsers = new ArrayList<String>();  
+		
 		log.info("------------------ Currently loggedin users");
 		
         final List<Object> allPrincipals = sessionRegistry.getAllPrincipals();
@@ -34,9 +37,13 @@ public class UserController
 
                 if (!activeUserSessions.isEmpty()) 
                 {
+                	listLoggedInUsers.add(user.getUsername());
+                	
                 	log.info(user.getUsername());
                 }
             }
         }
+        
+		return listLoggedInUsers; 
     }
 }

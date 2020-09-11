@@ -50,11 +50,11 @@ public class SpringBootApplicationTemplateController
     }
 	
 	@GetMapping("/settings")
-    public String settings() 
-	{	
-		userController.listLoggedInUsers();
+    public String settings(Model model) 
+	{
+		model.addAttribute("users", userController.listLoggedInUsers());
 		
-		return "pages/settings";
+		return "pages/users";
     }
 	
 	@GetMapping("/tech-stack")

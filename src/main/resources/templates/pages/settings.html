@@ -5,12 +5,13 @@
 			   layout:decorate="~{layout}"
 			   with:title="'Settings'">
 	  
-	<th:block layout:fragment="content">
+	<th:block layout:fragment="Settings">
 
-	<h1 class="display-4" th:text="#{settings.h1.text}"></h1>
-	<p class="lead" th:text="#{settings.p.lead}"></p>
-	<hr class="my-4">
-	<p th:text="#{settings.p.text}"></p>
+	<h2>Currently logged in users</h2>
+	
+    <div th:each="user : ${users}">
+        <p th:text="${user}">user</p>
+    </div>
 	
 	</th:block>
 	
