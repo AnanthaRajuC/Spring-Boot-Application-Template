@@ -41,13 +41,12 @@ public interface PersonRepository extends JpaRepository<Person, Long>
 	@Transactional(readOnly=true)
 	Person getPersonByName(@Param("name") String name);
 	
+	@Transactional(readOnly = true)
 	Optional<Person> findByUsername(@NotBlank String username);
 	
-	Optional<Person> findByEmailPrimary(@NotBlank String email);
-	
+	@Transactional(readOnly = true)
 	Boolean existsByUsername(@NotBlank String username);
 	
-	Boolean existsByEmailPrimary(@NotBlank String email);
-	
+	@Transactional(readOnly = true)
 	Optional<Person> findByUsernameOrEmailPrimary(String username, String email);
 }
