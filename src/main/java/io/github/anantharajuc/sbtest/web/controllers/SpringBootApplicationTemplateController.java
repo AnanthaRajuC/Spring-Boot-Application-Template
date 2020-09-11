@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.BuiltWithRepository;
+
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -26,6 +27,9 @@ public class SpringBootApplicationTemplateController
 	
 	@Autowired
 	BuiltWithRepository builtWithRepository;
+	
+	@Autowired
+	UserController userController;
 	
 	@GetMapping("/index")
     public String index() 
@@ -47,7 +51,9 @@ public class SpringBootApplicationTemplateController
 	
 	@GetMapping("/settings")
     public String settings() 
-	{
+	{	
+		userController.listLoggedInUsers();
+		
 		return "pages/settings";
     }
 	

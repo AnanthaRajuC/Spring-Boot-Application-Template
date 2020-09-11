@@ -13,10 +13,7 @@
 
     <ul class="navbar-nav mr-auto">
 	<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-		   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-		   th:text="${#strings.toUpperCase(#locale)}">
-		</a>
+		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${#strings.toUpperCase(#locale)}"></a>
 		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			<a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=en)}"><img src="/images/us.jpg" alt="user-image" class="mr-1" height="12">English</a>
 			<a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=es)}"><img src="/images/spain.jpg" alt="user-image" class="mr-1" height="12">Spanish</a>

@@ -1,6 +1,7 @@
 package io.github.anantharajuc.sbtest.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -9,7 +10,11 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
+
 import lombok.extern.log4j.Log4j2;
 
 import java.util.concurrent.TimeUnit;
@@ -76,7 +81,24 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 			.deleteCookies("JSESSIONID","remember-me")
 			.logoutSuccessUrl("/sbat/index") 
 			.permitAll();
+		
+		http
+			.sessionManagement()
+			.maximumSessions(1)
+			.sessionRegistry(sessionRegistry());
 	}
+	
+	@Bean
+    public SessionRegistry sessionRegistry() 
+	{
+        return new SessionRegistryImpl();
+    }
+	
+	@Bean
+    public ServletListenerRegistrationBean<HttpSessionEventPublisher> httpSessionEventPublisher() 
+	{
+        return new ServletListenerRegistrationBean<HttpSessionEventPublisher>(new HttpSessionEventPublisher());
+    }
 	
 	@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception 

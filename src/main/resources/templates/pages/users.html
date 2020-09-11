@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+			   with:title="'Users'">
+	  
+<th:block layout:fragment="content">
+	
+    <h2>Currently logged in users</h2>
+	
+    <div th:each="user : ${users}">
+        <p th:text="${user}">user</p>
+    </div>
+	
+</th:block>
+	
+</html>
