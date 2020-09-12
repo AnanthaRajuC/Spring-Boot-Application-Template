@@ -18,6 +18,25 @@
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)
 
+<p align="center">
+    <a alt="Java">
+        <img src="https://img.shields.io/badge/Java-v1.8-orange.svg" />
+    </a>
+    <a alt="Bootstrap">
+        <img src="https://img.shields.io/badge/Bootstrap-v4.0.0-yellowgreen.svg">
+    </a>
+    <a alt="Material">
+        <img src="https://img.shields.io/badge/Material%20Design-UI-orange.svg">  
+    </a>      
+    <a alt="Docker">
+        <img src="https://img.shields.io/badge/Docker-v19-yellowgreen.svg" />
+    </a>
+    <a alt="License">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+    </a>
+</p>
+
+
 The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code.
 
 This repository contains a recipe for bootstrapping a Web Application with the features listed below. Delete the sample code, replace with your own and you’re good to go.

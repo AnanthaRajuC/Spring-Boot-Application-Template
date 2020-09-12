@@ -19,31 +19,43 @@ import static com.google.common.base.Predicates.or;
 @EnableSwagger2
 public class SwaggerConfig 
 {
+	public static final String GROUP_NAME = "Spring Boot Application Template";
+	
+	public static final String TITLE = "Spring Boot Application Template";
+	public static final String DESCRIPTION = "Spring Boot Template for Web Application";
+	public static final String TERMS_OF_SERVICE_URL = "https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template";
+	public static final String LICENSE = "https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template";
+	public static final String LICENSE_URL = "https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template";
+	public static final String VERSION = "1.0";
+	public static final Contact CONTACT = new Contact("Anantha Raju C", "https://anantharajuc.github.io/", "anantharajuc@gmail.com");
+	
 	@Bean
 	public Docket postsApi() 
 	{
 		return new Docket(DocumentationType.SWAGGER_2)
-				.groupName("public-api")
-				.apiInfo(apiInfo())
-				.select().paths(postPaths()).build();
+					.groupName(GROUP_NAME)
+					.apiInfo(apiInfo())
+					.select()
+					.paths(postPaths())
+					.build();
+	}
+
+	private ApiInfo apiInfo() 
+	{
+		return new ApiInfoBuilder()
+						.title(TITLE)
+						.description(DESCRIPTION)
+						.termsOfServiceUrl(TERMS_OF_SERVICE_URL)
+						.license(LICENSE)
+						.licenseUrl(LICENSE_URL)
+						.version(VERSION)
+						.contact(CONTACT)
+						.build();
 	}
 	
 	private Predicate<String> postPaths() 
 	{
 		return or(regex("/api.*"), 
 				  regex("/management/api.*"));
-	}
-	
-	private ApiInfo apiInfo() 
-	{
-		return new ApiInfoBuilder()
-						.title("Spring Boot Application Template")
-						.description("Spring Boot Template for Web Application")
-						.termsOfServiceUrl("https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template")
-						.license("https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template")
-						.licenseUrl("https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template")
-						.version("1.0")
-						.contact(new Contact("Anantha Raju C", "https://anantharajuc.github.io/", "anantharajuc@gmail.com"))
-						.build();
 	}
 } 

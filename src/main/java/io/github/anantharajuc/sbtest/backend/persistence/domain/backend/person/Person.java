@@ -24,14 +24,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.github.anantharajuc.sbtest.enums.GenderEnum;
-
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Simple JavaBean domain object representing an person.
+ * Simple JavaBean domain object representing a person.
  *
  * @author Anantha Raju C
  */
@@ -42,6 +43,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ApiModel(description="Simple JavaBean domain object representing a person")
 public class Person extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
@@ -49,20 +51,24 @@ public class Person extends AuditEntity
 	@NotBlank
 	@Size(min=3, max=15, message="Name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
+	@ApiModelProperty(notes="Name of the person, it must be between 3 and 15 characters.", value = "${Person.name}")
     private String name;
 	
 	@NotBlank
 	@Column(name = "username", unique=true)
 	@Size(max = 15, message="username must not be empty.")
+	@ApiModelProperty(notes="A unique identifier used by a person.", value = "${Person.username}")
 	private String username;
 	
 	@Email
 	@Size(max=255, message="Must be a valid email id")
 	@Column(name="email_primary", unique=true, nullable = false)
+	@ApiModelProperty(notes="Primary email of the person.", value = "${Person.emailPrimary}")
 	private String emailPrimary;
 	
 	@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
 	@Column(name="email_secondary", nullable = true)
+	@ApiModelProperty(notes="Secondary email of the person.", value = "${Person.emailSecondary}")
 	private String emailSecondary;
 	
 	@Column(name="phone", unique=true, nullable = false)
@@ -70,27 +76,33 @@ public class Person extends AuditEntity
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name="gender", nullable = false)
+	@ApiModelProperty(notes="Gender the person.", value = "${Person.gender}")
 	private GenderEnum gender;
 	
 	@Column(name="age", nullable = true)
+	@ApiModelProperty(notes="Age of the person.", value = "${Person.age}")
 	private int age;
 	
 	@NotBlank
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@Size(max = 100)
 	@Column(name = "password")
+	@ApiModelProperty(notes="A secret word/phrase used to gain access to the application.", value = "${Person.password}")
 	private String password;
 	
 	@Past
 	@JsonFormat(pattern="dd-MM-yyyy", timezone="Asia/Kolkata")
 	@Column(name="dob", nullable = true)
+	@ApiModelProperty(notes="The month, day, and year a person was born. Pattern dd-MM-yyyy", value = "${Person.dob}")
 	private LocalDate dob;
 	
 	@Column(name = "is_adult", nullable = false, length = 1)
+	@ApiModelProperty(notes="A boolean to indicate if a person is after an age (such as 18/21) specified by law.", value = "${Person.isAdult}")
 	private Boolean isAdult;
 	
 	@JsonManagedReference
 	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "address_id")
+	@ApiModelProperty(notes="Address of the person.", value = "${Person.address}")
 	private Address address;
 }

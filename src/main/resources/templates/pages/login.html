@@ -1,46 +1,74 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:with="http://www.thymeleaf.org/extras/with" layout:decorate="~{layout}" with:title="'Login'">
+<head xmlns:th="http://www.thymeleaf.org">
 
-<th:block layout:fragment="content">
+	<meta charset="UTF-8"/>
+	<title>Login</title>
+	<meta name="description" content="Spring Boot Application Template"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<meta property="og:title" content="Spring Boot Application Template">
+    <meta property="og:description" content="Spring Boot Application Template">
+    <meta property="og:url" content="anantharajuc.github.io">
+	
+	<link rel="author" href="anantharajuc.github.io">
+	
+	<!-- Bootstrap CSS -->
+	<link th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
 
-	<div class="container">
+	<link href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet"/>
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+	<!-- MDB -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0-alpha4/mdb.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+	<!--<div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">-->
+	
+	<div class="view" style="background-image: url('/images/Savin-NY-Website-Background-Web.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 	
 		<div class="row">
 			<div class="d-flex justify-content-center">
 				<div class="col-md-6 col-md-offset-3 text-center">
 					<div th:if="${param.error}" class="alert alert-danger alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">x</span> </button>
-						<p th:text="#{v}" /> </div>
+						<p th:text="#{v}" /> 
+					</div>
 					<div th:if="${param.logout}" class="alert alert-success alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">x</span> </button>
-						<p th:text="#{login.logout.success}" /> </div>
+						<p th:text="#{login.logout.success}" /> 
+					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="container py-5 py-sm-7">
-			<a class="d-flex justify-content-center mb-5" href="index.html"> 
-				<img class="z-index-2" src="/images/map.svg" alt="Image Description" height="48" style="width: 8rem;"> 
-			</a>
 			<div class="row">
 				<div class="d-flex justify-content-center">
 					<div class="col-md-7 col-lg-5">
 					
 						<!-- Card -->
-						<div class="card card-lg mb-5">
+						<div class="card card-lg mb-5" style="background-color: rgba(245, 245, 245, 0.4); ">
 							<div class="card-body">
 								<div class="text-center">
 									<div class="mb-5">
 										<h1 th:text="#{login.h1.text}" />
-										<p class="lead" th:text="#{login.p.lead}" /> </div>
+										<p class="lead" th:text="#{login.p.lead}" /> 
+									</div>
 									<div class="text-left">
-										<form id="loginForm" th:action="@{/sbat/login}" method="post">
+										<form id="loginForm" th:action="@{/sbat/login}" method="post">										
 											<div class="form-group">
 												<label for="username" th:text="#{login.username.text}" />
-												<input type="text" id="username" name="sbat-username" class="form-control" placeholder="username" required="" autofocus="" /> </div>
+												<input type="text" id="username" name="sbat-username" class="form-control" placeholder="username" required="" autofocus="" /> 
+											</div>
 											<div class="form-group">
 												<label for="password" th:text="#{login.password.text}" />
-												<input type="password" id="show_hide_password" name="sbat-password" placeholder="8+ characters required" class="form-control" /> </div>
+												<input type="password" id="show_hide_password" name="sbat-password" placeholder="8+ characters required" class="form-control" /> 
+											</div>
 											
 											<!-- Checkbox -->
 											<div class="form-group">
@@ -52,30 +80,54 @@
 											<!-- End Checkbox -->
 											
 											<div class="form-group">
-												<button value="submit" type="submit" th:text="#{login.submit.text}" class="btn btn-primary" /> </div>
+												<button value="submit" type="submit" th:text="#{login.submit.text}" class="btn btn-primary" /> 
+											</div>
 										</form> <a th:href="@{/forgotmypassword}" th:text="#{login.password.text}" /> </div>
 								</div>
 							</div>
 						</div>
 						<!-- End Card -->
 						
-						<!-- Footer -->
-						<div class="text-center"> <small class="text-cap">Trusted by the world's best teams</small>
-							<div class=" mx-auto">
-								<div class="row justify-content-between">
-									<div class="col"> <img class="img-fluid" src="/images/map.svg" height="48" alt="Image Description"> </div>
-									<div class="col"> <img class="img-fluid" src="/images/map.svg" height="48" alt="Image Description"> </div>
-									<div class="col"> <img class="img-fluid" src="/images/map.svg" height="48" alt="Image Description"> </div>
-									<div class="col"> <img class="img-fluid" src="/images/map.svg" height="48" alt="Image Description"> </div>
-								</div>
-							</div>
-						</div>
-						<!-- End Footer -->
-						
 					</div>
 				</div>
 			</div>
 		</div>
-</th:block>
+</body>
+
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.slim.min.js}"></script>	
+	<script th:src="@{/webjars/popper.js/1.16.0/umd/popper.min.js}"></script>	
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"></script>
+
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script src="/js/store.js"></script>
+	
+	<!-- MDB -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0-alpha4/mdb.min.js"></script>
+	
+	<!-- Social -->
+	<div class="text-center">
+		<a class="fb-ic mr-3" role="button" href="https://www.facebook.com/"><i class="fab fa-lg fa-facebook-f" aria-hidden="true"></i></a>
+		<a class="tw-ic mr-3" role="button" href="https://twitter.com/"><i class="fab fa-lg fa-twitter" aria-hidden="true"></i></a>
+		<a class="li-ic mr-3" role="button" href="https://www.linkedin.com/"><i class="fab fa-lg fa-linkedin-in" aria-hidden="true"></i></a>
+		<a class="ins-ic mr-3" role="button" href="https://www.instagram.com/"><i class="fab fa-lg fa-instagram" aria-hidden="true"></i></a>
+		<a class="pin-ic mr-3" role="button" href="https://www.pinterest.com/"><i class="fab fa-lg fa-pinterest" aria-hidden="true"></i></a>
+		<a class="vk-ic mr-3" role="button" href="https://vk.com/"><i class="fab fa-lg fa-vk" aria-hidden="true"></i></a>
+		<a class="so-ic mr-3" role="button" href="https://stackoverflow.com/"><i class="fab fa-lg fa-stack-overflow" aria-hidden="true"></i></a>
+		<a class="yt-ic mr-3" role="button" href="https://www.youtube.com/"><i class="fab fa-lg fa-youtube" aria-hidden="true"></i></a>
+		<a class="slack-ic mr-3" role="button" href="https://slack.com/"><i class="fab fa-lg fa-slack-hash" aria-hidden="true"></i></a>
+		<a class="git-ic mr-3" role="button" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template"><i class="fab fa-lg fa-github" aria-hidden="true"></i></a>
+		<a class="comm-ic mr-3" role="button" href="https://www.discourse.org/"><i class="fas fa-lg fa-comments" aria-hidden="true"></i></a>
+		<a class="email-ic mr-3" role="button" href="email@example.com"><i class="far fa-lg fa-envelope" aria-hidden="true"></i></a>
+		<a class="dribbble-ic mr-3" role="button" href="https://dribbble.com/"><i class="fab fa-lg fa-dribbble" aria-hidden="true"></i></a>
+		<a class="reddit-ic mr-3" role="button" href="https://www.reddit.com/"><i class="fab fa-lg fa-reddit-alien" aria-hidden="true"></i></a>
+		<a class="whatsapp-ic" role="button" href="https://www.whatsapp.com/"><i class="fab fa-lg fa-whatsapp" aria-hidden="true"></i></a>
+	</div>
+	
+	<footer class="bd-footer text-muted" align="center">
+	  <div>
+		<p style="font-size:14px;">Designed and built by <a href="https://twitter.com/anantharajuc" target="_blank" rel="noopener noreferrer">@anantharajuc</a>. <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/graphs/contributors" target="_blank"  rel="noopener noreferrer">Contributors</a>.</p>
+	  </div>
+	</footer>
 
 </html>

@@ -43,7 +43,7 @@ public class PersonController
 	{		
 		return personServiceImpl.getAllPersonsPageable(pageable);
 	}
-	
+
 	@GetMapping(value="/person/gender/{gender}")
 	public List<Person> getPersonByGender(@PathVariable(value = "gender") String gender)
 	{
