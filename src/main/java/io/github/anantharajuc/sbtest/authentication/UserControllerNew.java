@@ -44,6 +44,15 @@ public class UserControllerNew
 				String resource = roles.get(i).getName().replace("ROLE_", "");
 				
 				log.info("------------------ Resource : "+resource); 
+				
+				ArrayList<Permission> permission = new ArrayList<>();
+				
+				permission.add(new Permission(resource+"_CREATE"));
+				permission.add(new Permission(resource+"_READ"));
+				permission.add(new Permission(resource+"_UPDATE"));
+				permission.add(new Permission(resource+"_DELETE"));
+				
+				roles.get(i).setPermissions(permission);
 			}
 			else
 			{
