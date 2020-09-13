@@ -26,7 +26,6 @@ import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
  */
 @RestController
 @RequestMapping("/api/v1")
-@PreAuthorize("hasRole('PERSON')")
 public class PersonController 
 {
 	@Autowired
@@ -51,6 +50,7 @@ public class PersonController
 	}
 	
 	@GetMapping(value="/person/{id}")
+	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	public Person getPersonById(@PathVariable(value = "id") Long personId)
 	{		
 		return personServiceImpl.getPersonById(personId);
