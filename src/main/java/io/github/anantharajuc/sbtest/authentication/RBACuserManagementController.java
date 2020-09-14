@@ -1,13 +1,14 @@
 package io.github.anantharajuc.sbtest.authentication;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RestController
 @RequestMapping("/rbac")
-public class UserControllerNew 
+public class RBACuserManagementController 
 {
 	@Autowired
 	private UserServiceImpl userServiceImpl;
@@ -65,9 +66,19 @@ public class UserControllerNew
 		userServiceImpl.createUser(user);
 	}
 	
-	@GetMapping(value="/person/{username}")
+	@GetMapping(value="/user/{username}")
 	public Optional<User> getPersonByUsername(@PathVariable(value = "username") String username)
-	{		
+	{
+		log.info("------------------ Getting RBAC User : "+username);
+		
 		return userServiceImpl.getUserByUsername(username);
+	}
+	
+	@DeleteMapping("/user/{username}")
+	public ResponseEntity<?> deletePerson(@PathVariable(value="username") String username) 
+	{
+		log.info("------------------ Delete RBAC User : "+username);
+		
+		return userServiceImpl.deleteUser(username);
 	}
 }

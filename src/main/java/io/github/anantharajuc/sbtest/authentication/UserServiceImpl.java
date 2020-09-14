@@ -3,8 +3,10 @@ package io.github.anantharajuc.sbtest.authentication;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -28,5 +30,22 @@ public class UserServiceImpl implements UserService
 		log.info("-----> getUserByUsername service");	
 
 		return userRepository.findByUsername(username);
+	}
+	
+	@Override
+	public ResponseEntity<?> deleteUser(String username) 
+	{
+		log.info("-----> deletePerson service");
+		
+		User user = userRepository
+				.findByUsername(username)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
+
+		
+		userRepository.delete(user);
+		
+		return ResponseEntity
+				.ok()
+				.build();
 	}
 }
