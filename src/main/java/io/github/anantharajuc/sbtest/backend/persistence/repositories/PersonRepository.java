@@ -22,7 +22,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long>
-{	
+{   
 	/**
      * Retrieve a {@link Person} from the data store by gender.
      * @param gender the gender to search for

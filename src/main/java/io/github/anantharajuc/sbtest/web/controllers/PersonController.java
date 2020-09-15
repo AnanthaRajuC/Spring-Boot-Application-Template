@@ -5,6 +5,10 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +30,13 @@ import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
  */
 @RestController
 @RequestMapping("/api/v1")
+@CacheConfig(cacheNames={"person"})
 public class PersonController 
 {
 	@Autowired
 	private PersonServiceImpl personServiceImpl;
 	
+	@Cacheable()
 	@GetMapping(value="/person")	
 	public List<Person> getAllPersons() 
 	{		
@@ -62,12 +68,14 @@ public class PersonController
 		return personServiceImpl.createPerson(person);
 	}
 
+	@CachePut(value="person", key="id")
 	@PutMapping("/person/{id}")
 	public Person updatePerson(@PathVariable(value = "id") Long personId,@Valid @RequestBody Person personDetails)
 	{		
 		return personServiceImpl.updatePerson(personId, personDetails);
 	}
 	
+	@CacheEvict(allEntries=true)
 	@DeleteMapping("/person/{id}")
 	public ResponseEntity<?> deletePerson(@PathVariable(value = "id") Long personId) 
 	{		

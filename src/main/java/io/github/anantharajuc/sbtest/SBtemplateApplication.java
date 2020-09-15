@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
-
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.ApplicationLogRepository;
 import io.github.anantharajuc.sbtest.backend.service.impl.OtherServicesImpl;
 import lombok.extern.log4j.Log4j2;
