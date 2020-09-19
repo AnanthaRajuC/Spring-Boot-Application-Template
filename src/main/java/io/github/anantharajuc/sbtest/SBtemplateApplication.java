@@ -41,7 +41,8 @@ public class SBtemplateApplication implements CommandLineRunner
 	{
 		log.info("Hello SB template");	
 		
-		log.info("-----> Initial Application Settings Key Value Load.");	
+		log.info("-----> Initial Application Settings Key Value Load.");
+		
 		otherServicesImpl.loadApplicationSettings();
 		
 		//applicationLogRepository.save(new ApplicationLog(ApplicationLogEnum.APPLICATION_START,"application started."));

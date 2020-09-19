@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.configuration;
+package io.github.anantharajuc.sbtest.configuration.web;
 
 import java.util.Locale;
 
@@ -11,14 +11,14 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
-public class WebConfig implements WebMvcConfigurer 
+public class WebConfiguration implements WebMvcConfigurer 
 {
-
     @Bean
     public LocaleResolver localeResolver() 
     {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
         localeResolver.setDefaultLocale(Locale.US);
+        
         return localeResolver;
     }
 
@@ -27,12 +27,13 @@ public class WebConfig implements WebMvcConfigurer
     {
         LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
         localeChangeInterceptor.setParamName("lang");
+        
         return localeChangeInterceptor;
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) 
     {
-        registry.addInterceptor(localeChangeInterceptor());
+        registry.addInterceptor(localeChangeInterceptor());        
     }
 }

@@ -23,4 +23,6 @@ public interface PersonService
 	Person updatePerson(Long personId, Person personDetails);
 
 	Page<Person> getAllPersonsPageable(Pageable pageable); 
+	
+	Page<Person> findPaginated(Pageable pageable);
 }

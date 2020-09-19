@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
 import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 /**
  * @author Anantha Raju C
@@ -31,6 +33,7 @@ import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
 @RestController
 @RequestMapping("/api/v1")
 @CacheConfig(cacheNames={"person"})
+@Api(value = "/api/v1", tags = "Person")
 public class PersonController 
 {
 	@Autowired
@@ -57,6 +60,7 @@ public class PersonController
 	
 	@GetMapping(value="/person/{id}")
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
+	@ApiOperation(value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)
 	public Person getPersonById(@PathVariable(value = "id") Long personId)
 	{		
 		return personServiceImpl.getPersonById(personId);

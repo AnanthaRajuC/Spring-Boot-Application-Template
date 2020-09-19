@@ -7,6 +7,12 @@
 [![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)
 [![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)
+![GitHub language count](https://img.shields.io/github/languages/count/Spring-Boot-Framework/Spring-Boot-Application-Template)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Spring-Boot-Framework/Spring-Boot-Application-Template)
+![GitHub repo size](https://img.shields.io/github/repo-size/Spring-Boot-Framework/Spring-Boot-Application-Template)
+![GitHub top language](https://img.shields.io/github/languages/top/Spring-Boot-Framework/Spring-Boot-Application-Template.svg) 
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Spring-Boot-Framework/Spring-Boot-Application-Template)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/Spring-Boot-Framework/Spring-Boot-Application-Template.svg) 
 
 [![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)
@@ -37,9 +43,9 @@
 </p>
 
 
-The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code.
+The only thing better than a Maven archetype is a repo you can fork with everything already setup, just fork-and-code.
 
-This repository contains a recipe for bootstrapping a Web Application with the features listed below. Delete the sample code, replace with your own and you’re good to go.
+This repository contains a recipe/scaffolding for bootstrapping a Web Application with the features listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
 ## Table of Contents
 
@@ -131,7 +137,7 @@ This repository contains a recipe for bootstrapping a Web Application with the f
 * 	[ ] HATEOS
 * 	[ ] Spring Boot Admin
 * 	[ ] NoSQL (MongoDB)
-* 	[ ] MySQL (Connect to Multiple Schemas)
+* 	[ ] Multitenancy
 * 	[ ] Micrometer
 * 	[ ] Grafna
 

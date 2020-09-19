@@ -28,15 +28,14 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	private final PasswordEncoder passwordEncoder;
 	
 	@Autowired
-	UserPrincipalService userPrincipalService;
-
-	
-	@Autowired
 	public ApplicationSecurityConfig(PasswordEncoder passwordEncoder)
 	{
 		this.passwordEncoder = passwordEncoder;
 	}
 	
+	@Autowired
+	UserPrincipalService userPrincipalService;
+
 	/** Public URLs. */
     private static final String[] PUBLIC_MATCHERS = 
     {

@@ -5,6 +5,10 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +30,13 @@ import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
  */
 @RestController
 @RequestMapping("/management/api/v1")
+@CacheConfig(cacheNames={"personManagement"})
 public class PersonManagementController 
 {
 	@Autowired
 	private PersonServiceImpl personServiceImpl;
 	
+	@Cacheable()
 	@GetMapping(value="/person")	
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
 	public List<Person> getAllPersons() 
@@ -59,6 +65,7 @@ public class PersonManagementController
 		return personServiceImpl.createPerson(person);
 	}
 	
+	@CachePut(value="person", key="id")
 	@PutMapping("/person/{id}")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_UPDATE')")
 	public Person updatePerson(@PathVariable(value="id") Long personId,@Valid @RequestBody Person personDetails)
@@ -66,6 +73,7 @@ public class PersonManagementController
 		return personServiceImpl.updatePerson(personId, personDetails);
 	}
 	
+	@CacheEvict(allEntries=true)
 	@DeleteMapping("/person/{id}")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@PathVariable(value="id") Long personId) 

@@ -1,9 +1,12 @@
 package io.github.anantharajuc.sbtest.backend.service.impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -105,5 +108,31 @@ public class PersonServiceImpl implements PersonService
 		log.info("-----> getPersonsByGender service");
 		
 		return personRepository.getPersonByGender(gender);
+	}
+	
+	@Override
+	public Page<Person> findPaginated(Pageable pageable)
+	{
+		int pageSize    = pageable.getPageSize();
+        int currentPage = pageable.getPageNumber();
+        int startItem   = currentPage * pageSize;
+        
+        List<Person> list;
+        
+        List<Person> persons = personRepository.findAll();
+        
+        if (persons.size() < startItem) 
+        {
+            list = Collections.emptyList();
+        } 
+        else 
+        {
+            int toIndex = Math.min(startItem + pageSize, persons.size());
+            list = persons.subList(startItem, toIndex);
+        }
+        
+        Page<Person> personPage = new PageImpl<Person>(list, PageRequest.of(currentPage, pageSize), persons.size());
+
+		return personPage;
 	}
 }
