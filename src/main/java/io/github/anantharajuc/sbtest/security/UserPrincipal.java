@@ -13,6 +13,12 @@ import io.github.anantharajuc.sbtest.authentication.Role;
 import io.github.anantharajuc.sbtest.authentication.User;
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * User Principal
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Log4j2
 public class UserPrincipal implements UserDetails
 {

@@ -20,6 +20,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Spring Security - Role
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Entity
 @Table(name = "role")
 @EntityListeners(AuditingEntityListener.class)

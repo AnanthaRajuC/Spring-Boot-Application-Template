@@ -19,16 +19,22 @@ import lombok.extern.log4j.Log4j2;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Application Security Configuration
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Log4j2
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)
-public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
+public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapter
 {
 	private final PasswordEncoder passwordEncoder;
 	
 	@Autowired
-	public ApplicationSecurityConfig(PasswordEncoder passwordEncoder)
+	public ApplicationSecurityConfiguration(PasswordEncoder passwordEncoder)
 	{
 		this.passwordEncoder = passwordEncoder;
 	}

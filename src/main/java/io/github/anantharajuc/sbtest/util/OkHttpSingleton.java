@@ -2,6 +2,12 @@ package io.github.anantharajuc.sbtest.util;
 
 import okhttp3.OkHttpClient;
 
+/**
+ * OkHttp Singleton
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 public class OkHttpSingleton 
 {
 	private static OkHttpSingleton singletonInstance;

@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 //@RunWith(SpringRunner.class)
-@SpringBootTest(classes=io.github.anantharajuc.sbtest.security.ApplicationSecurityConfig.class) 
+@SpringBootTest(classes=io.github.anantharajuc.sbtest.security.ApplicationSecurityConfiguration.class) 
 @AutoConfigureMockMvc
 public class TestSBtemplateApplication 
 {

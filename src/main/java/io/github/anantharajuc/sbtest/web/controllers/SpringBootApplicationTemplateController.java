@@ -16,13 +16,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import io.github.anantharajuc.sbtest.authentication.RBACuserManagementController;
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.BuiltWithRepository;
 import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
+
 import lombok.extern.log4j.Log4j2;
 
 /**
- * @author Anantha Raju C
+ * Application Web Controller
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
  */
 @Log4j2
 @Controller
@@ -31,6 +36,9 @@ public class SpringBootApplicationTemplateController
 {
 	@Autowired
 	private Environment environment;
+	
+	@Autowired
+	private RBACuserManagementController rBACuserManagementController;
 	
 	@Autowired
 	private BuiltWithRepository builtWithRepository;
@@ -114,7 +122,7 @@ public class SpringBootApplicationTemplateController
 	public String listPersons(Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size)
 	{
 		final int currentPage = page.orElse(1);
-        final int pageSize = size.orElse(5);
+        final int pageSize = size.orElse(1000);
         
         Page<Person> personPage = personServiceImpl.findPaginated(PageRequest.of(currentPage - 1, pageSize));
         

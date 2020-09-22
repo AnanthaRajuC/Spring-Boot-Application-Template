@@ -1,5 +1,6 @@
 package io.github.anantharajuc.sbtest.authentication;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,12 @@ import org.springframework.stereotype.Service;
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * Spring Security - User Service Implementation
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Log4j2
 @Service
 public class UserServiceImpl implements UserService
@@ -47,5 +54,11 @@ public class UserServiceImpl implements UserService
 		return ResponseEntity
 				.ok()
 				.build();
+	}
+
+	@Override
+	public List<User> getAllUsers() 
+	{
+		return userRepository.findAll();
 	}
 }

@@ -13,6 +13,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Spring Security - Permission
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Entity
 @Table(name = "permission")
 @EntityListeners(AuditingEntityListener.class)
@@ -24,6 +30,6 @@ public class Permission extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name = "name")
+	@Column(name="name")
     private String name;
 }

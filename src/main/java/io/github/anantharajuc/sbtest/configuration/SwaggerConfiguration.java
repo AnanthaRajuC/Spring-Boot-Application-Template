@@ -15,9 +15,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static springfox.documentation.builders.PathSelectors.regex;
 import static com.google.common.base.Predicates.or;
 
+/**
+ * A dependency-free collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation 
+ * from a Swagger-compliant API.
+ * 
+ * @author Anantha Raju C
+ * 
+ */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig 
+public class SwaggerConfiguration 
 {
 	public static final String GROUP_NAME = "Spring Boot Application Template";
 	

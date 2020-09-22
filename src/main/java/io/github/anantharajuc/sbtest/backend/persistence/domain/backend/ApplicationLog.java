@@ -11,11 +11,18 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.github.anantharajuc.sbtest.enums.ApplicationLogEnum;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Application Log - Event
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Entity
 @Table(name = "application_log")
 @EntityListeners(AuditingEntityListener.class)
@@ -28,10 +35,12 @@ public class ApplicationLog extends AuditEntity
 	//Default Serial Version ID
 	private static final long serialVersionUID = 1L;
 	
+	@ApiModelProperty(notes="Application Event", value="${ApplicationLog.event}", allowableValues="APPLICATION_START")
 	@Enumerated(EnumType.STRING)
 	@Column(name="event", nullable = false)
 	private ApplicationLogEnum event;
 	
+	@ApiModelProperty(notes="Application Event Details", value="${ApplicationLog.details}")
 	@Column(name="details", nullable = false)
 	private String details;
 }

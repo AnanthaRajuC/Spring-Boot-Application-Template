@@ -220,6 +220,16 @@
 					<check />
 				</configuration>
 			</plugin>
+			<!--  The Javadoc Plugin uses the Javadoc tool to generate javadocs for the specified project. -->
+			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-javadoc-plugin</artifactId>
+	            <version>3.0.0</version>
+	            <configuration>
+	                <source>1.8</source>
+	                <target>1.8</target>
+	            </configuration>
+	        </plugin>
 		</plugins>
 	</build>
 

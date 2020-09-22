@@ -309,6 +309,12 @@ To monitor and manage your application
 * 	[Postman Collection](https://documenter.getpostman.com/view/2449187/TVCe1UAk) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
 * 	[Postman Collection](Spring Boot Application Template.postman_collection) - offline
 * 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
+* 	[Swagger](http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template) - `http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template`- Documentation & Testing
+* 	Java Doc is generated in `Spring-Boot-Application-Template\target\site\apidocs` folder using the Maven command 
+
+```text
+`mvn javadoc:javadoc`                   //Generate JavaDoc
+```
 
 ## EER Diagram
 

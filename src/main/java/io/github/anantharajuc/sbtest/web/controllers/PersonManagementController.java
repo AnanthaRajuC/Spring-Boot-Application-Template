@@ -24,9 +24,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
 import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 
 /**
- * @author Anantha Raju C
+ * Person Controller
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
  */
 @RestController
 @RequestMapping("/management/api/v1")
@@ -39,6 +44,7 @@ public class PersonManagementController
 	@Cacheable()
 	@GetMapping(value="/person")	
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
+	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
 	public List<Person> getAllPersons() 
 	{		
 		return personServiceImpl.getAllPersons(); 
@@ -46,6 +52,8 @@ public class PersonManagementController
 	
 	@GetMapping(value="/person/{id}")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
+	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID", response=Person.class)
+	@ApiResponse(code = 400, message = "Invalid ID supplied")
 	public Person getPersonById(@PathVariable(value="id") Long personId)
 	{		
 		return personServiceImpl.getPersonById(personId);
@@ -53,12 +61,14 @@ public class PersonManagementController
 	
 	@GetMapping(value="/person/pageable")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
+	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
 	public Page<Person> getAllPersons(Pageable pageable) 
 	{		
 		return personServiceImpl.getAllPersonsPageable(pageable);
 	}
 	
 	@PostMapping("/person")
+	@ApiOperation(httpMethod="POST", value="Add Person", notes = "Add a new Person to the datastore", response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_CREATE')")
 	public Person createPerson(@Valid @RequestBody Person person)
 	{		
@@ -67,6 +77,7 @@ public class PersonManagementController
 	
 	@CachePut(value="person", key="id")
 	@PutMapping("/person/{id}")
+	@ApiOperation(httpMethod="PUT", value="UPDATE Person", notes = "Update an existing Person in the datastore", response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_UPDATE')")
 	public Person updatePerson(@PathVariable(value="id") Long personId,@Valid @RequestBody Person personDetails)
 	{		
@@ -75,6 +86,7 @@ public class PersonManagementController
 	
 	@CacheEvict(allEntries=true)
 	@DeleteMapping("/person/{id}")
+	@ApiOperation(httpMethod="DELETE", value = "DELETE an existing Person", notes = "Delete an existing Person from the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@PathVariable(value="id") Long personId) 
 	{		

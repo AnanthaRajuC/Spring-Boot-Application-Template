@@ -6,6 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import ch.mfrey.thymeleaf.extras.with.WithDialect;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
+/**
+ * Thymeleaf dialect configuration intended to build layouts and reusable templates in order to improve code reuse.
+ * 
+ * @author Anantha Raju C
+ * 
+ */
 @Configuration
 public class ViewConfiguration 
 {

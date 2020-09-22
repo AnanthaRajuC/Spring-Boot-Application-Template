@@ -34,16 +34,16 @@ import lombok.Setter;
 /**
  * Simple JavaBean domain object representing a person.
  *
- * @author Anantha Raju C
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  */
 @Entity
-@Table(name = "person")
+@Table(name="person") 
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(description="Simple JavaBean domain object representing a person")
+@ApiModel(description="Simple JavaBean domain object representing a person") 
 public class Person extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
@@ -51,24 +51,24 @@ public class Person extends AuditEntity
 	@NotBlank
 	@Size(min=3, max=15, message="Name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
-	@ApiModelProperty(notes="Name of the person, it must be between 3 and 15 characters.", value = "${Person.name}")
+	@ApiModelProperty(notes="Name of the person, it must be between 3 and 15 characters.", value = "${Person.name}", example="John Doe")
     private String name;
 	
 	@NotBlank
 	@Column(name = "username", unique=true)
 	@Size(max = 15, message="username must not be empty.")
-	@ApiModelProperty(notes="A unique identifier used by a person.", value = "${Person.username}")
+	@ApiModelProperty(notes="A unique identifier used by a person.", value="${Person.username}", required=true, example="user-1234")
 	private String username;
 	
 	@Email
 	@Size(max=255, message="Must be a valid email id")
 	@Column(name="email_primary", unique=true, nullable = false)
-	@ApiModelProperty(notes="Primary email of the person.", value = "${Person.emailPrimary}")
+	@ApiModelProperty(notes="Primary email of the person.", value = "${Person.emailPrimary}", example="example@domain.com")
 	private String emailPrimary;
 	
 	@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
 	@Column(name="email_secondary", nullable = true)
-	@ApiModelProperty(notes="Secondary email of the person.", value = "${Person.emailSecondary}")
+	@ApiModelProperty(notes="Secondary email of the person.", value = "${Person.emailSecondary}", example="example@domain.com")
 	private String emailSecondary;
 	
 	@Column(name="phone", unique=true, nullable = false)
@@ -76,18 +76,18 @@ public class Person extends AuditEntity
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name="gender", nullable = false)
-	@ApiModelProperty(notes="Gender the person.", value = "${Person.gender}")
+	@ApiModelProperty(notes="Gender the person.", value="${Person.gender}", allowableValues="MALE,FEMALE")
 	private GenderEnum gender;
 	
 	@Column(name="age", nullable = true)
-	@ApiModelProperty(notes="Age of the person.", value = "${Person.age}")
+	@ApiModelProperty(notes="Age of the person.", value = "${Person.age}", example="55")
 	private int age;
 	
 	@NotBlank
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@Size(max = 100)
 	@Column(name = "password")
-	@ApiModelProperty(notes="A secret word/phrase used to gain access to the application.", value = "${Person.password}")
+	@ApiModelProperty(notes="A secret word/phrase used to gain access to the application.", value = "${Person.password}", example="$+r0nG10$$w0rD")
 	private String password;
 	
 	@Past

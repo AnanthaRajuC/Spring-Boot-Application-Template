@@ -11,6 +11,12 @@ import org.springframework.stereotype.Controller;
 import io.github.anantharajuc.sbtest.security.UserPrincipal;
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * User Controller
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Log4j2
 @Controller
 public class UserController 

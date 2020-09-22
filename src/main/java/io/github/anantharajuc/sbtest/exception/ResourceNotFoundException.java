@@ -5,6 +5,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import lombok.Getter;
 
+/**
+ * Resource Not Found Exception
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 @Getter
 public class ResourceNotFoundException extends RuntimeException 

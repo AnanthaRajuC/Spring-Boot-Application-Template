@@ -10,6 +10,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+/**
+ * Configuration intended to add internationalization to the application.
+ * 
+ * @author Anantha Raju C
+ * 
+ */
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer 
 {

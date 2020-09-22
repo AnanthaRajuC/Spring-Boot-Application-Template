@@ -31,20 +31,20 @@ public class RBACuserManagementController
 	{ 		
 		List<Role> roles = user.getRoles();
 		
-		log.info("------------------ User Name : "+user.getUsername());
-		log.info("------------------ Roles Count : "+roles.size());
+		log.info("-----> User Name : "+user.getUsername());
+		log.info("-----> Roles Count : "+roles.size());
 		
 		for(int i = 0; i < roles.size(); i++)
 		{
-			log.info("------------------ Role Name : "+roles.get(i).getName()); 
+			log.info("-----> Role Name : "+roles.get(i).getName()); 
 			
 			if(roles.get(i).getPermissions().isEmpty())
 			{
-				log.info("------------------ Role doesn't have permissions explicitly defined : ");
+				log.info("-----> Role doesn't have permissions explicitly defined : ");
 
 				String resource = roles.get(i).getName().replace("ROLE_", "");
 				
-				log.info("------------------ Resource : "+resource); 
+				log.info("-----> Resource : "+resource); 
 				
 				ArrayList<Permission> permission = new ArrayList<>();
 				
@@ -57,11 +57,11 @@ public class RBACuserManagementController
 			}
 			else
 			{
-				log.info("------------------ Role has permissions explicitly defined : "); 
+				log.info("-----> Role has permissions explicitly defined : "); 
 			}
 		}
 
-		log.info("------------------ user.getUsername() : "+user.getUsername());
+		log.info("-----> user.getUsername() : "+user.getUsername());
 	
 		userServiceImpl.createUser(user);
 	}
@@ -69,15 +69,23 @@ public class RBACuserManagementController
 	@GetMapping(value="/user/{username}")
 	public Optional<User> getPersonByUsername(@PathVariable(value = "username") String username)
 	{
-		log.info("------------------ Getting RBAC User : "+username);
+		log.info("-----> Getting RBAC User : "+username);
 		
 		return userServiceImpl.getUserByUsername(username);
+	}
+	
+	@GetMapping(value="/user")
+	public List<User> getusers() 
+	{
+		log.info("-----> Getting All RBAC Users.");
+		
+		return userServiceImpl.getAllUsers();
 	}
 	
 	@DeleteMapping("/user/{username}")
 	public ResponseEntity<?> deletePerson(@PathVariable(value="username") String username) 
 	{
-		log.info("------------------ Delete RBAC User : "+username);
+		log.info("-----> Delete RBAC User : "+username);
 		
 		return userServiceImpl.deleteUser(username);
 	}

@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.log4j.Log4j2;
 
 /**
- * @author Anantha Raju C
+ * MS Controller
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
  */
 @RestController
 @RequestMapping("/api")

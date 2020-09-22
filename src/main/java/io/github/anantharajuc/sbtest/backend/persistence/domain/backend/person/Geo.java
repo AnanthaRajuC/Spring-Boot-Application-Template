@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -21,7 +22,7 @@ import lombok.Setter;
 /**
  * Models a {@link Address Addressess'} geographic coordinate (for example, "-43.9589,-34.4628").
  *
- * @author Anantha Raju C
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  */
 @Entity
 @Table(name = "geo")
@@ -36,11 +37,13 @@ public class Geo extends AuditEntity
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name = "lat")
-	@ApiModelProperty(notes="Latitude", value="${Geo.lat}")
+	@Size(min=3, max=15, message="Must be a valid Geographic latitude value.")
+	@ApiModelProperty(notes="Latitude", value="${Geo.lat}", example="-43.9589")
 	private String lat;
 
 	@Column(name = "lng")
-	@ApiModelProperty(notes="Longitude", value="${Geo.lng}")
+	@Size(min=3, max=15, message="Must be a valid Geographic longitude value")
+	@ApiModelProperty(notes="Longitude", value="${Geo.lng}", example="-34.4628")
 	private String lng;
 
 	@JsonBackReference

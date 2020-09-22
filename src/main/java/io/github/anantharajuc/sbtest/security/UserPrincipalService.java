@@ -10,6 +10,12 @@ import io.github.anantharajuc.sbtest.authentication.User;
 import io.github.anantharajuc.sbtest.authentication.UserRepository;
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * User Principal Service
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Log4j2
 @Service
 public class UserPrincipalService implements UserDetailsService

@@ -13,7 +13,7 @@ import lombok.extern.log4j.Log4j2;
 /**
  * Spring Boot Application Template.
  *
- * @author Anantha Raju C
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  *
  */
 @SpringBootApplication
