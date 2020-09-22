@@ -334,11 +334,11 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   │ 
 │           │   ├──io.github.anantharajuc.sbtest.auditing
 │           │   │ 
-│           │   ├──io.github.anantharajuc.sbtest.authentication
+│           │   ├──io.github.anantharajuc.sbtest.security.authorization
 │           │   │ 
 │           │   ├──io.github.anantharajuc.sbtest.backend
 │           │   │     │    
-│           │   │     ├──io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person
+│           │   │     ├──io.github.anantharajuc.sbtest.person
 │           │   │     │
 │           │   │     └──io.github.anantharajuc.sbtest.backend.persistence.repositories
 │           │   │

@@ -1,11 +1,11 @@
-package io.github.anantharajuc.sbtest.backend.persistence.repositories;
+package io.github.anantharajuc.sbtest.person.repositories;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
+import io.github.anantharajuc.sbtest.person.model.Person;
 
 import javax.validation.constraints.NotBlank;
 

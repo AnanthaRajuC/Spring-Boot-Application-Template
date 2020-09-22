@@ -9,8 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import io.github.anantharajuc.sbtest.authentication.Role;
-import io.github.anantharajuc.sbtest.authentication.User;
+import io.github.anantharajuc.sbtest.security.authorization.Role;
+import io.github.anantharajuc.sbtest.security.authorization.User;
 import lombok.extern.log4j.Log4j2;
 
 /**

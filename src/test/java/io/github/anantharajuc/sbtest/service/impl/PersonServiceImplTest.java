@@ -29,7 +29,7 @@ import io.github.anantharajuc.sbtest.enums.GenderEnum;
 public class PersonServiceImplTest 
 {
 	@Autowired
-	private PersonServiceImpl personServiceImpl;
+	private PersonCommandServiceImpl personServiceImpl;
 	
 	@MockBean
 	private PersonRepository personRepository;

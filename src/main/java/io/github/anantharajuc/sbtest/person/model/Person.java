@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person;
+package io.github.anantharajuc.sbtest.person.model;
 
 import java.time.LocalDate;
 import javax.persistence.CascadeType;
@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.github.anantharajuc.sbtest.auditing.AuditEntity;
-import io.github.anantharajuc.sbtest.enums.GenderEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -71,20 +70,20 @@ public class Person extends AuditEntity
 	@ApiModelProperty(notes="Secondary email of the person.", value = "${Person.emailSecondary}", example="example@domain.com")
 	private String emailSecondary;
 	
-	@Column(name="phone", unique=true, nullable = false)
+	@Column(name="phone", unique=true, nullable=false)
 	private Long phone;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="gender", nullable = false)
+	@Column(name="gender", nullable=false)
 	@ApiModelProperty(notes="Gender the person.", value="${Person.gender}", allowableValues="MALE,FEMALE")
 	private GenderEnum gender;
 	
-	@Column(name="age", nullable = true)
-	@ApiModelProperty(notes="Age of the person.", value = "${Person.age}", example="55")
+	@Column(name="age", nullable=true)
+	@ApiModelProperty(notes="Age of the person.", value="${Person.age}", example="55")
 	private int age;
 	
 	@NotBlank
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	@JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
 	@Size(max = 100)
 	@Column(name = "password")
 	@ApiModelProperty(notes="A secret word/phrase used to gain access to the application.", value = "${Person.password}", example="$+r0nG10$$w0rD")
@@ -96,13 +95,13 @@ public class Person extends AuditEntity
 	@ApiModelProperty(notes="The month, day, and year a person was born. Pattern dd-MM-yyyy", value = "${Person.dob}")
 	private LocalDate dob;
 	
-	@Column(name = "is_adult", nullable = false, length = 1)
+	@Column(name = "is_adult", nullable=false, length=1)
 	@ApiModelProperty(notes="A boolean to indicate if a person is after an age (such as 18/21) specified by law.", value = "${Person.isAdult}")
 	private Boolean isAdult;
 	
 	@JsonManagedReference
-	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "address_id")
-	@ApiModelProperty(notes="Address of the person.", value = "${Person.address}")
+	@OneToOne(cascade=CascadeType.ALL, orphanRemoval=true)
+	@JoinColumn(name="address_id")
+	@ApiModelProperty(notes="Address of the person.", value="${Person.address}")
 	private Address address;
 }

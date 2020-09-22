@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.authentication;
+package io.github.anantharajuc.sbtest.security.authorization;
 
 import java.util.ArrayList;
 import java.util.List;

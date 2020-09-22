@@ -15,18 +15,18 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Address;
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Geo;
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
+import io.github.anantharajuc.sbtest.person.Address;
+import io.github.anantharajuc.sbtest.person.Geo;
+import io.github.anantharajuc.sbtest.person.Person;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
 import io.github.anantharajuc.sbtest.enums.GenderEnum;
 
 *//**
- * Test class for {@link PersonController}
+ * Test class for {@link PersonQueryController}
  *
  * @author Anantha Raju c
  *//*
-@WebMvcTest(PersonController.class)
+@WebMvcTest(PersonQueryController.class)
 public class PersonControllerTests 
 {
 	private static final long TEST_PERSON_ID = 1L;

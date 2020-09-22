@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person;
+package io.github.anantharajuc.sbtest.person.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,17 +36,17 @@ public class Geo extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name = "lat")
+	@Column(name="lat")
 	@Size(min=3, max=15, message="Must be a valid Geographic latitude value.")
 	@ApiModelProperty(notes="Latitude", value="${Geo.lat}", example="-43.9589")
 	private String lat;
 
-	@Column(name = "lng")
+	@Column(name="lng")
 	@Size(min=3, max=15, message="Must be a valid Geographic longitude value")
 	@ApiModelProperty(notes="Longitude", value="${Geo.lng}", example="-34.4628")
 	private String lng;
 
 	@JsonBackReference
-	@OneToOne(mappedBy = "geo")
+	@OneToOne(mappedBy="geo")
 	private Address address;
 }

@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import io.github.anantharajuc.sbtest.authentication.RBACuserManagementController;
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.BuiltWithRepository;
-import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
-
+import io.github.anantharajuc.sbtest.person.controllers.PersonQueryController;
+import io.github.anantharajuc.sbtest.person.model.Person;
+import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
+import io.github.anantharajuc.sbtest.security.authorization.RBACuserManagementController;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -47,12 +47,12 @@ public class SpringBootApplicationTemplateController
 	private UserController userController;
 	
 	@Autowired
-	private PersonController personController;
+	private PersonQueryController personController;
 	
 	@Autowired
-    private PersonServiceImpl personServiceImpl;
+    private PersonQueryServiceImpl personQueryServiceImpl;
 	
-	@GetMapping("/persons")
+	@GetMapping("/persons") 
     public String persons(Model model) 
 	{
 		model.addAttribute("persons", personController.getAllPersons());
@@ -124,7 +124,7 @@ public class SpringBootApplicationTemplateController
 		final int currentPage = page.orElse(1);
         final int pageSize = size.orElse(1000);
         
-        Page<Person> personPage = personServiceImpl.findPaginated(PageRequest.of(currentPage - 1, pageSize));
+        Page<Person> personPage = personQueryServiceImpl.findPaginated(PageRequest.of(currentPage - 1, pageSize));
         
         model.addAttribute("personPage", personPage);
         

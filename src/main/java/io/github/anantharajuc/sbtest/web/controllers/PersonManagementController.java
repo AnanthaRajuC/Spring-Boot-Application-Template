@@ -22,8 +22,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.person.Person;
-import io.github.anantharajuc.sbtest.backend.service.impl.PersonServiceImpl;
+import io.github.anantharajuc.sbtest.person.model.Person;
+import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
+import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 
@@ -39,7 +40,10 @@ import io.swagger.annotations.ApiResponse;
 public class PersonManagementController 
 {
 	@Autowired
-	private PersonServiceImpl personServiceImpl;
+	private PersonQueryServiceImpl personQueryServiceImpl; 
+	
+	@Autowired
+	private PersonCommandServiceImpl personCommandServiceImpl;
 	
 	@Cacheable()
 	@GetMapping(value="/person")	
@@ -47,7 +51,7 @@ public class PersonManagementController
 	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
 	public List<Person> getAllPersons() 
 	{		
-		return personServiceImpl.getAllPersons(); 
+		return personQueryServiceImpl.getAllPersons(); 
 	}
 	
 	@GetMapping(value="/person/{id}")
@@ -56,7 +60,7 @@ public class PersonManagementController
 	@ApiResponse(code = 400, message = "Invalid ID supplied")
 	public Person getPersonById(@PathVariable(value="id") Long personId)
 	{		
-		return personServiceImpl.getPersonById(personId);
+		return personQueryServiceImpl.getPersonById(personId);
 	}
 	
 	@GetMapping(value="/person/pageable")
@@ -64,7 +68,7 @@ public class PersonManagementController
 	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
 	public Page<Person> getAllPersons(Pageable pageable) 
 	{		
-		return personServiceImpl.getAllPersonsPageable(pageable);
+		return personQueryServiceImpl.getAllPersonsPageable(pageable);
 	}
 	
 	@PostMapping("/person")
@@ -72,7 +76,7 @@ public class PersonManagementController
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_CREATE')")
 	public Person createPerson(@Valid @RequestBody Person person)
 	{		
-		return personServiceImpl.createPerson(person);
+		return personCommandServiceImpl.createPerson(person);
 	}
 	
 	@CachePut(value="person", key="id")
@@ -81,7 +85,7 @@ public class PersonManagementController
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_UPDATE')")
 	public Person updatePerson(@PathVariable(value="id") Long personId,@Valid @RequestBody Person personDetails)
 	{		
-		return personServiceImpl.updatePerson(personId, personDetails);
+		return personCommandServiceImpl.updatePerson(personId, personDetails);
 	}
 	
 	@CacheEvict(allEntries=true)
@@ -90,6 +94,6 @@ public class PersonManagementController
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@PathVariable(value="id") Long personId) 
 	{		
-		return personServiceImpl.deletePerson(personId);
+		return personCommandServiceImpl.deletePerson(personId);
 	}
 }
