@@ -46,27 +46,48 @@ public class PersonQueryController
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
-	public ResponseEntity<List<Person>> getAllPersons() 
-	{		
-		return new ResponseEntity<>(personQueryImpl.getAllPersons(), HttpStatus.OK);
+	public ResponseEntity<List<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion) 
+	{
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		
+		return new ResponseEntity<>(personQueryImpl.getAllPersons(), headers, HttpStatus.OK);
 	}
 	
 	@GetMapping(value="/person/pageable")	
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
-	public ResponseEntity<Page<Person>> getAllPersons(Pageable pageable) 
-	{		
-		return new ResponseEntity<>(personQueryImpl.getAllPersonsPageable(pageable), HttpStatus.OK);
+	public ResponseEntity<Page<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion, Pageable pageable) 
+	{
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		
+		return new ResponseEntity<>(personQueryImpl.getAllPersonsPageable(pageable), headers, HttpStatus.OK);
 	}
 
+	/**
+	 * Method that searchs for person based on gender
+	 * 
+	 * @param apiVersion - API version at the moment
+	 * @param gender - the gender of the person
+	 * 
+	 * @return ResponseEntity with list of <code>Person</code>'s of the given gender
+	 * 
+	 * HTTP Status:
+	 * 
+	 * 200 - OK: Everything worked as expected.
+	 */
 	@GetMapping(value="/person/gender/{gender}")
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons based on Gender", notes="Returns all Person's in the data store.")
-	public ResponseEntity<List<Person>> getPersonByGender(@PathVariable(value = "gender") String gender)
+	public ResponseEntity<List<Person>> getPersonByGender(@RequestHeader(defaultValue="${api.version}") String apiVersion, @PathVariable(value = "gender") String gender)
 	{
-		return new ResponseEntity<>(personQueryImpl.getPersonsByGender(gender), HttpStatus.OK);
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		
+		return new ResponseEntity<>(personQueryImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
 	}
 	
 	/**

@@ -55,11 +55,11 @@ public class SpringBootApplicationTemplateController
 	@GetMapping("/persons") 
     public String persons(Model model) 
 	{
-		model.addAttribute("persons", personController.getAllPersons());
+		model.addAttribute("persons", personController.getAllPersons(null));
 		
 		return "pages/persons";
     }
-	 
+	  
 	@GetMapping("/index")
     public String index() 
 	{

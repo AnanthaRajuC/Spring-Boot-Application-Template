@@ -33,6 +33,16 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     	<thymeleaf-with-dialect.version>3.0.1</thymeleaf-with-dialect.version>
 		<java.version>1.8</java.version>
+		<bootstrap.version>4.5.2</bootstrap.version>
+		<jquery.version>3.5.1</jquery.version>
+		<jquery-ui.version>1.12.1</jquery-ui.version>
+		<bootstrap-table.version>1.17.1</bootstrap-table.version>
+		<jquery-resizable-columns.version>0.2.3</jquery-resizable-columns.version>
+		<guava.version>29.0-jre</guava.version>
+		<json.version>20200518</json.version>
+		<mockito-all.version>1.10.19</mockito-all.version>
+		<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+		<springfox-swagger-ui.version>2.10.5</springfox-swagger-ui.version>
 	</properties>
 
 	<dependencies>
@@ -66,6 +76,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,6 +90,7 @@
 	      	 <groupId>nz.net.ultraq.thymeleaf</groupId>
 	      	 <artifactId>thymeleaf-layout-dialect</artifactId>
 	    </dependency>
+		
 	    <dependency>
 	         <groupId>ch.mfrey.thymeleaf.extras.with</groupId>
 	         <artifactId>thymeleaf-with-dialect</artifactId>
@@ -85,66 +101,57 @@
 		    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
 
-		<dependency>
-	      <groupId>org.flywaydb</groupId>
-	      <artifactId>flyway-core</artifactId>
-	    </dependency>	  
-
 	    <!-- Webjars for Bootstrap and Jquery -->
 		<dependency>
 		    <groupId>org.webjars</groupId>
 		    <artifactId>bootstrap</artifactId>
-		    <version>4.5.2</version>
+			<version>${bootstrap.version}</version>
 		</dependency>	 
 		<dependency>
 		    <groupId>org.webjars</groupId>
 		    <artifactId>jquery</artifactId>
-		    <version>3.5.1</version>
+			<version>${jquery.version}</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.webjars.bower</groupId>
 		    <artifactId>jquery-ui</artifactId>
-		    <version>1.12.1</version>
+			<version>${jquery-ui.version}</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.webjars.bower</groupId>
 		    <artifactId>bootstrap-table</artifactId>
-		    <version>1.17.1</version>
+			<version>${bootstrap-table.version}</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.webjars.bower</groupId>
 		    <artifactId>jquery-resizable-columns</artifactId>
-		    <version>0.2.3</version>
-		</dependency>		
-		     
+			<version>${jquery-resizable-columns.version}</version>
+		</dependency>	
+		
 		<dependency>
 		    <groupId>com.google.guava</groupId>
 		    <artifactId>guava</artifactId>
-		    <version>29.0-jre</version>
+			<version>${guava.version}</version>
 		</dependency>
-
 		<dependency>
 		    <groupId>com.squareup.okhttp3</groupId>
 		    <artifactId>okhttp</artifactId>
-		    </dependency>		
-
+		</dependency>		
 		<dependency>
 		    <groupId>org.json</groupId>
 		    <artifactId>json</artifactId>
-		    <version>20200518</version>
+			<version>${json.version}</version>
 		</dependency>	
 		
-		<!-- hot swapping, disable cache for template, enable live reload -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+	      <groupId>org.flywaydb</groupId>
+	      <artifactId>flyway-core</artifactId>
+	    </dependency>
 		
 	   <dependency>
 		  <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -153,13 +160,12 @@
 		<dependency>
 		    <groupId>javax.validation</groupId>
 		    <artifactId>validation-api</artifactId>
-		    </dependency>
-		
-		
+		</dependency>
+
 		<dependency>
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-commons</artifactId>
-		    </dependency>
+		</dependency>
 
 		<dependency>
 	      <groupId>org.projectlombok</groupId>
@@ -170,7 +176,7 @@
 		<dependency>
 		    <groupId>org.mockito</groupId>
 		    <artifactId>mockito-all</artifactId>
-		    <version>1.10.19</version>
+			<version>${mockito-all.version}</version>
 		    <scope>test</scope>
 		</dependency>
 
@@ -178,14 +184,13 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
+			<version>${springfox-swagger2.version}</version>
 		</dependency>
-
 		<!-- Swagger UI -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.10.5</version>
+			<version>${springfox-swagger-ui.version}</version>
 		</dependency>
 
 		<!-- Micrometer Prometheus registry -->

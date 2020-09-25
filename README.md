@@ -134,6 +134,7 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 * 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
+* 	[ ] Token based API Rate Limiting
 * 	[ ] Shut down app on button click via actuator url 
 * 	[ ] HATEOS
 * 	[ ] Spring Boot Admin
