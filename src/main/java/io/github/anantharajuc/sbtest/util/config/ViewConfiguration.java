@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.configuration;
+package io.github.anantharajuc.sbtest.util.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 /**
  * Thymeleaf dialect configuration intended to build layouts and reusable templates in order to improve code reuse.
  * 
- * @author Anantha Raju C
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  * 
  */
 @Configuration

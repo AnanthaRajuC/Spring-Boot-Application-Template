@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
+import io.github.anantharajuc.sbtest.security.user.model.User;
+import io.github.anantharajuc.sbtest.security.user.repository.UserRepository;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -18,7 +20,7 @@ import lombok.extern.log4j.Log4j2;
  */
 @Log4j2
 @Service
-public class UserServiceImpl implements UserService
+public class RBACuserServiceImpl implements RBACuserService
 {
 	@Autowired
 	private UserRepository userRepository;
@@ -48,7 +50,6 @@ public class UserServiceImpl implements UserService
 				.findByUsername(username)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
 
-		
 		userRepository.delete(user);
 		
 		return ResponseEntity

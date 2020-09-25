@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security;
+package io.github.anantharajuc.sbtest.security.authentication;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,28 +22,20 @@ public class AuthenticationSuccessEventListener implements ApplicationListener<A
     @Override
     public void onApplicationEvent(final AuthenticationSuccessEvent e) 
     {
-    	log.info("-----> -----> Login Success : ");
-    	
-    	log.info(request.getRequestURI());
-    	log.info(request.getCharacterEncoding());
-    	log.info(request.getMethod());
-    	log.info(request.getProtocol());
-    	log.info(request.getLocale());
-    	log.info(request.getLocalPort());
-    	log.info(request.getServerPort());
-    	log.info(request.getUserPrincipal());
+    	log.info("-----> AuthenticationSuccessEventListener");
     	
         final String xfHeader = request.getHeader("X-Forwarded-For");
         
+        //LoginAttemptService is notified of the IP address from where the successful attempt originated.
         if (xfHeader == null) 
         {
-        	log.info("-----> AuthenticationSuccessEventListener : xfHeader == null ");
+        	log.info("-----> AuthenticationSuccessEventListener : xfHeader == null");
         	
             loginAttemptService.loginSucceeded(request.getRemoteAddr());
         } 
         else 
         {
-        	log.info("-----> AuthenticationSuccessEventListener : xfHeader != null ");
+        	log.info("-----> AuthenticationSuccessEventListener : xfHeader != null");
         	
             loginAttemptService.loginSucceeded(xfHeader.split(",")[0]);
         }

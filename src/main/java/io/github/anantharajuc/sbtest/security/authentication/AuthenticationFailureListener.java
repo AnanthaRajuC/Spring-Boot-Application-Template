@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security;
+package io.github.anantharajuc.sbtest.security.authentication;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,27 +22,20 @@ public class AuthenticationFailureListener implements ApplicationListener<Authen
     @Override
     public void onApplicationEvent(final AuthenticationFailureBadCredentialsEvent e) 
     {  	
-    	log.info("-----> AuthenticationFailureListener : onApplicationEvent");
-    	
-    	log.info(request.getRequestURI());
-    	log.info(request.getCharacterEncoding());
-    	log.info(request.getMethod());
-    	log.info(request.getProtocol());
-    	log.info(request.getLocale());
-    	log.info(request.getLocalPort());
-    	log.info(request.getServerPort());
+    	log.info("-----> AuthenticationFailureListener");
     	
         final String xfHeader = request.getHeader("X-Forwarded-For");
         
+        //LoginAttemptService is notified of the IP address from where the unsuccessful attempt originated.
         if (xfHeader == null) 
         {
-        	log.info("-----> AuthenticationFailureListener xfHeader == null : ");
+        	log.info("-----> AuthenticationFailureListener xfHeader == null");
         	
             loginAttemptService.loginFailed(request.getRemoteAddr());
         } 
         else 
         {
-        	log.info("-----> AuthenticationFailureListener xfHeader ! = null : ");
+        	log.info("-----> AuthenticationFailureListener xfHeader != null");
         	
             loginAttemptService.loginFailed(xfHeader.split(",")[0]);
         }

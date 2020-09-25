@@ -1,9 +1,12 @@
-package io.github.anantharajuc.sbtest.security.authorization;
+package io.github.anantharajuc.sbtest.security.user.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import io.github.anantharajuc.sbtest.security.user.model.Permission;
+import io.github.anantharajuc.sbtest.security.user.model.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long>

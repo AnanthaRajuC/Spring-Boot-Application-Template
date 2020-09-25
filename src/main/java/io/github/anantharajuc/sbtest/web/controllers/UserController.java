@@ -8,7 +8,7 @@ import org.springframework.security.core.session.SessionInformation;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.stereotype.Controller;
 
-import io.github.anantharajuc.sbtest.security.UserPrincipal;
+import io.github.anantharajuc.sbtest.security.user.UserPrincipal;
 import lombok.extern.log4j.Log4j2;
 
 /**

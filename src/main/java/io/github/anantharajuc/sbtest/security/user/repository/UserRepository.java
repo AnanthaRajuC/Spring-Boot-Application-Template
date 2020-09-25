@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security.authorization;
+package io.github.anantharajuc.sbtest.security.user.repository;
 
 import java.util.Optional;
 
@@ -6,6 +6,8 @@ import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import io.github.anantharajuc.sbtest.security.user.model.User;
 
 /**
  * Repository class for <code>User</code> domain object. All method names are compliant with Spring Data naming

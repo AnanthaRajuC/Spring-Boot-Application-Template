@@ -183,15 +183,15 @@ Ensure you build a jar of the application before building a docker image.
 `mvn clean package`                     //run all tests and build
 ```
 
-|  Command |  Description |
-|----------|--------------| 
-|`docker images`                                       | take a look at the container images. |
-|`docker ps`                                           | list all the running containers.     |
+|                       Command                        |                                 Description                              |
+|------------------------------------------------------|--------------------------------------------------------------------------| 
+|`docker images`                                       | take a look at the container images.                                     |
+|`docker ps`                                           | list all the running containers.                                         |
 |`docker ps -a`                                        | list all the containers, including the ones that have finished executing.|
-|`docker build -t spring-boot-application-template .`  | Build docker image of the project    |
-|`docker run spring-boot-application-template`         | run the project's docker container   |
-|`docker stop [container_id]`                          | stop a container                     |
-|`docker rm $(docker ps -aq)`                          | stop and remove all containers       |
+|`docker build -t spring-boot-application-template .`  | Build docker image of the project                                        |
+|`docker run spring-boot-application-template`         | run the project's docker container                                       |
+|`docker stop [container_id]`                          | stop a container                                                         |
+|`docker rm $(docker ps -aq)`                          | stop and remove all containers                                           |
 
 ## Security
 
@@ -231,12 +231,12 @@ The app defines following CRUD APIs.
 
 ### Other URLs
 
-|  URL |  Method | Remarks |
-|----------|--------------|--------------|
-|`http://localhost:8080/api/generic-hello`                       | GET | |
-|`http://localhost:8080/api/personalized-hello/`                 | GET | |
-|`http://localhost:8080/api/personalized-hello?name=spring-boot` | GET | |
-|`http://localhost:8080/api/loggers`                             | GET | |
+|                           URL                                  | Method |
+|----------------------------------------------------------------|--------|
+|`http://localhost:8080/api/generic-hello`                       |   GET  | 
+|`http://localhost:8080/api/personalized-hello/`                 |   GET  | 
+|`http://localhost:8080/api/personalized-hello?name=spring-boot` |   GET  | 
+|`http://localhost:8080/api/loggers`                             |   GET  | 
 
 ### Actuator
 
@@ -254,27 +254,27 @@ To monitor and manage your application
 
 #### Accessible to **johndoe** user only
 
-|  URL |  Method | Remarks | Sample Valid Request Body |
-|----------|--------------|--------------|--------------|
-|`http://localhost:8080/api/v1/person`                     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
-|`http://localhost:8080/api/v1/person`                     | POST    | Add a person                                                                        |[JSON](#personcreate)|
-|`http://localhost:8080/api/v1/person/{id}`                | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
-|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|Pageable API Endpoint|
-|`http://localhost:8080/api/v1/person/{id}`                | PUT     | Update a person                                                                     |[JSON](#personcreate)|
-|`http://localhost:8080/api/v1/person/{id}`                | DELETE  | Delete a person                                                                     ||
+|                           URL                            |  Method |                                         Remarks                                     | Sample Valid Request Body |
+|----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
+|`http://localhost:8080/api/v1/person`                     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`http://localhost:8080/api/v1/person`                     | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
+|`http://localhost:8080/api/v1/person/{id}`                | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
+|`http://localhost:8080/api/v1/person/{id}`                | PUT     | Update a person                                                                     |    [JSON](#personcreate)  |
+|`http://localhost:8080/api/v1/person/{id}`                | DELETE  | Delete a person                                                                     |                           |
 
 ### Person Management URLs
 
 #### Role and Permission based secure access to **AdminUser** and **AdminTrainee** users
 
-|  URL |  Method | Remarks | Sample Valid Request Body |
-|----------|--------------|--------------|--------------|
-|`http://localhost:8080/management/api/v1/person`          | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
-|`http://localhost:8080/management/api/v1/person`          | POST    | Add a person                                                                        |[JSON](#personcreate)|
-|`http://localhost:8080/management/api/v1/person/{id}`     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation||
-|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|Pageable API Endpoint|
-|`http://localhost:8080/management/api/v1/person/{id}`     | PUT     | Update a person                                                                     |[JSON](#personcreate)|
-|`http://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     ||
+|                          URL                             |  Method |                                       Remarks                                       | Sample Valid Request Body |
+|----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
+|`http://localhost:8080/management/api/v1/person`          | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`http://localhost:8080/management/api/v1/person`          | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
+|`http://localhost:8080/management/api/v1/person/{id}`     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
+|`http://localhost:8080/management/api/v1/person/{id}`     | PUT     | Update a person                                                                     |   [JSON](#personcreate)   |
+|`http://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     |                           |
 
 
 ## Sample Valid JSON Request Bodys
@@ -345,7 +345,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   │
 │           │   └──io.github.anantharajuc.sbtest.backend.service
 │           │
-│           ├── io.github.anantharajuc.sbtest.configuration
+│           ├── io.github.anantharajuc.sbtest.util.config
 │           │
 │           ├── io.github.anantharajuc.sbtest.enums
 │           │

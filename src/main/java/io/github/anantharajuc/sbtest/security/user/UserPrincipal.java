@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security;
+package io.github.anantharajuc.sbtest.security.user;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -9,8 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import io.github.anantharajuc.sbtest.security.authorization.Role;
-import io.github.anantharajuc.sbtest.security.authorization.User;
+import io.github.anantharajuc.sbtest.security.user.model.Role;
+import io.github.anantharajuc.sbtest.security.user.model.User;
 import lombok.extern.log4j.Log4j2;
 
 /**

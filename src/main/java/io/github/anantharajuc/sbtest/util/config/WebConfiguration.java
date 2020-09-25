@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.configuration;
+package io.github.anantharajuc.sbtest.util.config;
 
 import java.util.Locale;
 

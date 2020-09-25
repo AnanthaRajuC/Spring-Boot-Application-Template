@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.anantharajuc.sbtest.security.user.model.Permission;
+import io.github.anantharajuc.sbtest.security.user.model.Role;
+import io.github.anantharajuc.sbtest.security.user.model.User;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -24,7 +27,7 @@ import lombok.extern.log4j.Log4j2;
 public class RBACuserManagementController 
 {
 	@Autowired
-	private UserServiceImpl userServiceImpl;
+	private RBACuserServiceImpl userServiceImpl;
 	
 	@PostMapping("/user")
 	public void createUser(@Valid @RequestBody User user)

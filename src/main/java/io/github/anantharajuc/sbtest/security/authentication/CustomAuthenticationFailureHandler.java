@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security;
+package io.github.anantharajuc.sbtest.security.authentication;
 
 import java.io.IOException;
 import java.util.Locale;

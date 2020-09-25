@@ -50,58 +50,60 @@ public class Person extends AuditEntity
 	@NotBlank
 	@Size(min=3, max=15, message="Name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
-	@ApiModelProperty(notes="Name of the person, it must be between 3 and 15 characters.", value = "${Person.name}", example="John Doe")
+	@ApiModelProperty(position=5, notes="Name of the person, it must be between 3 and 15 characters.", value="${Person.name}", required=true, example="John Doe")
     private String name;
 	
 	@NotBlank
-	@Column(name = "username", unique=true)
+	@Column(name="username", unique=true)
 	@Size(max = 15, message="username must not be empty.")
-	@ApiModelProperty(notes="A unique identifier used by a person.", value="${Person.username}", required=true, example="user-1234")
+	@ApiModelProperty(position=6, notes="A unique identifier used by a person.", value="${Person.username}", required=true, example="user-1234")
 	private String username;
+	
+	@NotBlank
+	@Column(name="phone", unique=true, nullable=false)
+	@ApiModelProperty(position=7, notes="Phone number of the person.", value="${Person.emailSecondary}", required=true, example="9874563210")
+	private Long phone;
 	
 	@Email
 	@Size(max=255, message="Must be a valid email id")
 	@Column(name="email_primary", unique=true, nullable = false)
-	@ApiModelProperty(notes="Primary email of the person.", value = "${Person.emailPrimary}", example="example@domain.com")
+	@ApiModelProperty(position=8, notes="Primary email of the person.", value="${Person.emailPrimary}", required=true, example="example@domain.com")
 	private String emailPrimary;
 	
 	@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
 	@Column(name="email_secondary", nullable = true)
-	@ApiModelProperty(notes="Secondary email of the person.", value = "${Person.emailSecondary}", example="example@domain.com")
+	@ApiModelProperty(position=9, notes="Secondary email of the person.", value="${Person.emailSecondary}", example="example@domain.com")
 	private String emailSecondary;
-	
-	@Column(name="phone", unique=true, nullable=false)
-	private Long phone;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name="gender", nullable=false)
-	@ApiModelProperty(notes="Gender the person.", value="${Person.gender}", allowableValues="MALE,FEMALE")
+	@ApiModelProperty(position=10, notes="Gender the person.", value="${Person.gender}", allowableValues="MALE,FEMALE")
 	private GenderEnum gender;
 	
 	@Column(name="age", nullable=true)
-	@ApiModelProperty(notes="Age of the person.", value="${Person.age}", example="55")
+	@ApiModelProperty(position=11, notes="Age of the person.", value="${Person.age}", example="55")
 	private int age;
 	
 	@NotBlank
 	@JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
 	@Size(max = 100)
 	@Column(name = "password")
-	@ApiModelProperty(notes="A secret word/phrase used to gain access to the application.", value = "${Person.password}", example="$+r0nG10$$w0rD")
+	@ApiModelProperty(position=12, notes="A secret word/phrase used to gain access to the application.", value="${Person.password}", example="$+r0nG10$$w0rD")
 	private String password;
 	
 	@Past
 	@JsonFormat(pattern="dd-MM-yyyy", timezone="Asia/Kolkata")
 	@Column(name="dob", nullable = true)
-	@ApiModelProperty(notes="The month, day, and year a person was born. Pattern dd-MM-yyyy", value = "${Person.dob}")
+	@ApiModelProperty(position=13, notes="The month, day, and year a person was born. Pattern dd-MM-yyyy", value="${Person.dob}", example="2006-12-25")
 	private LocalDate dob;
 	
 	@Column(name = "is_adult", nullable=false, length=1)
-	@ApiModelProperty(notes="A boolean to indicate if a person is after an age (such as 18/21) specified by law.", value = "${Person.isAdult}")
+	@ApiModelProperty(position=14, notes="A boolean to indicate if a person is after an age (such as 18/21) specified by law.", value="${Person.isAdult}", allowableValues="true,false")
 	private Boolean isAdult;
 	
 	@JsonManagedReference
 	@OneToOne(cascade=CascadeType.ALL, orphanRemoval=true)
 	@JoinColumn(name="address_id")
-	@ApiModelProperty(notes="Address of the person.", value="${Person.address}")
+	@ApiModelProperty(position=15, notes="Address of the person.", value="${Person.address}")
 	private Address address;
 }

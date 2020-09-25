@@ -5,13 +5,15 @@ import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 
+import io.github.anantharajuc.sbtest.security.user.model.User;
+
 /**
  * Spring Security - User Service
  *
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  *
  */
-public interface UserService 
+public interface RBACuserService 
 {
 	void createUser(User user);
 	

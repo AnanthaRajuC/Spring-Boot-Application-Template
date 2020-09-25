@@ -9,8 +9,17 @@
 	<artifactId>SBtemplate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	
 	<name>SBtemplate</name>
 	<description>template for spring boot project</description>
+	
+	<developers>
+		<developer>
+			<name>Anantha Raju C</name>
+			<email>arcswdev@gmail.com</email>
+			<timezone>UTC+05:30</timezone>
+		</developer>
+	</developers>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,7 +31,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<thymeleaf-layout-dialect.version>2.5.1</thymeleaf-layout-dialect.version>
     	<thymeleaf-with-dialect.version>3.0.1</thymeleaf-with-dialect.version>
 		<java.version>1.8</java.version>
 	</properties>
@@ -66,7 +74,6 @@
 		<dependency>
 	      	 <groupId>nz.net.ultraq.thymeleaf</groupId>
 	      	 <artifactId>thymeleaf-layout-dialect</artifactId>
-	      	 <version>${thymeleaf-layout-dialect.version}</version>
 	    </dependency>
 	    <dependency>
 	         <groupId>ch.mfrey.thymeleaf.extras.with</groupId>
@@ -119,8 +126,7 @@
 		<dependency>
 		    <groupId>com.squareup.okhttp3</groupId>
 		    <artifactId>okhttp</artifactId>
-		    <version>4.9.0</version>
-		</dependency>		
+		    </dependency>		
 
 		<dependency>
 		    <groupId>org.json</groupId>
@@ -147,15 +153,13 @@
 		<dependency>
 		    <groupId>javax.validation</groupId>
 		    <artifactId>validation-api</artifactId>
-		    <version>2.0.1.Final</version>
-		</dependency>
+		    </dependency>
 		
 		
 		<dependency>
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-commons</artifactId>
-		    <version>2.3.4.RELEASE</version>
-		</dependency>
+		    </dependency>
 
 		<dependency>
 	      <groupId>org.projectlombok</groupId>
@@ -212,8 +216,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
-			</plugin>
+				</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
@@ -230,7 +233,6 @@
 			<plugin>
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-javadoc-plugin</artifactId>
-	            <version>3.2.0</version>
 	            <configuration>
 	                <source>1.8</source>
 	                <target>1.8</target>

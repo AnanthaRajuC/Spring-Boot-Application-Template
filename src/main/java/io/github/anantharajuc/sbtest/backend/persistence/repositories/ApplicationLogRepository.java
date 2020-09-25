@@ -3,7 +3,7 @@ package io.github.anantharajuc.sbtest.backend.persistence.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.backend.ApplicationLog;
+import io.github.anantharajuc.sbtest.backend.persistence.domain.ApplicationLog;
 
 /**
  * Repository class for <code>ApplicationLog</code> domain object. All method names are compliant with Spring Data naming

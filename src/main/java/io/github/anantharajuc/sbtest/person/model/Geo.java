@@ -38,12 +38,12 @@ public class Geo extends AuditEntity
 	
 	@Column(name="lat")
 	@Size(min=3, max=15, message="Must be a valid Geographic latitude value.")
-	@ApiModelProperty(notes="Latitude", value="${Geo.lat}", example="-43.9589")
+	@ApiModelProperty(position=5, notes="Latitude", value="${Geo.lat}", example="-43.9589")
 	private String lat;
 
 	@Column(name="lng")
 	@Size(min=3, max=15, message="Must be a valid Geographic longitude value")
-	@ApiModelProperty(notes="Longitude", value="${Geo.lng}", example="-34.4628")
+	@ApiModelProperty(position=6, notes="Longitude", value="${Geo.lng}", example="-34.4628")
 	private String lng;
 
 	@JsonBackReference

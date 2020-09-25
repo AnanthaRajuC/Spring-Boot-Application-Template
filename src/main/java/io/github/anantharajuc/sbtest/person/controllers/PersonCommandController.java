@@ -3,12 +3,15 @@ package io.github.anantharajuc.sbtest.person.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,16 +38,38 @@ import io.swagger.annotations.ApiOperation;
 @Api(value="PersonCommands", tags="Person Commands")
 public class PersonCommandController 
 {
-	@Autowired
-	private PersonCommandServiceImpl personServiceImpl;
+	@Value("${api.version}")
+	private String apiVersion;
 	
+	@Value("${release.version}")
+	private String releaseVersion;
+	
+	@Autowired
+	private PersonCommandServiceImpl personCommandServiceImpl;
+	
+	/**
+	 * Method that creates a person in the database.
+	 * 
+	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+	 * 
+	 * @param person - person object in JSON format
+	 * 
+	 * @return ResponseEntity with a <code>Person</code> object and the HTTP status
+	 * 
+	 * HTTP Status:
+	 * 
+	 * 201 - Created: Everything worked as expected.
+	 */
 	@PostMapping(value="/person", produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
 	@ApiOperation(httpMethod="POST", value = "Add Person", notes = "Add a new Person to the datastore",response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_CREATE')")
 	public ResponseEntity<Person> createPerson(@Valid @RequestBody Person person)
-	{		
-		return new ResponseEntity<>(personServiceImpl.createPerson(person), HttpStatus.CREATED);
+	{
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();		
+		headers.add("sbat-version", releaseVersion.concat("_").concat(apiVersion));
+		
+		return new ResponseEntity<>(personCommandServiceImpl.createPerson(person), headers, HttpStatus.CREATED);
 	}
 
 	@CacheEvict(allEntries=true)
@@ -54,15 +79,33 @@ public class PersonCommandController
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_UPDATE')")
 	public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long personId,@Valid @RequestBody Person personDetails)
 	{		
-		return new ResponseEntity<>(personServiceImpl.updatePerson(personId, personDetails),HttpStatus.OK);
+		return new ResponseEntity<>(personCommandServiceImpl.updatePerson(personId, personDetails),HttpStatus.OK);
 	}
 	
+	/**
+	 * Method that deletes an existing person in the database.
+	 * 
+	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+	 * 
+	 * @param personId - the id of the person
+	 * 
+	 * @return ResponseEntity with a Response and the HTTP status
+	 * 
+	 * HTTP Status:
+	 * 
+	 * 204 - OK: Everything worked as expected.
+	 * 404 - Not Found: The requested resource doesn't exist.
+	 * 405 - Method Not Allowed: Resource (Id) to be deleted not supplied
+	 */
 	@CacheEvict(allEntries=true)
 	@DeleteMapping(value="/person/{id}")
 	@ApiOperation(httpMethod="DELETE", value = "DELETE an existing Person", notes = "Delete an existing Person from the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@PathVariable(value = "id") Long personId) 
-	{		
-		return personServiceImpl.deletePerson(personId);
+	{
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();		
+		headers.add("sbat-version", releaseVersion.concat("_").concat(apiVersion));
+		
+		return new ResponseEntity<>(personCommandServiceImpl.deletePerson(personId), headers, HttpStatus.NO_CONTENT);
 	}
 }

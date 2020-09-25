@@ -15,6 +15,7 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 
+import io.github.anantharajuc.sbtest.security.user.UserPrincipalService;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.concurrent.TimeUnit;

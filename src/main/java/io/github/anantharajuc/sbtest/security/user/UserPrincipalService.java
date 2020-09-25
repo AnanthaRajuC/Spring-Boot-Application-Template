@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.security;
+package io.github.anantharajuc.sbtest.security.user;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,8 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbtest.security.authorization.User;
-import io.github.anantharajuc.sbtest.security.authorization.UserRepository;
+import io.github.anantharajuc.sbtest.security.authentication.LoginAttemptService;
+import io.github.anantharajuc.sbtest.security.user.model.User;
+import io.github.anantharajuc.sbtest.security.user.repository.UserRepository;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -40,6 +41,8 @@ public class UserPrincipalService implements UserDetailsService
 		
         if (loginAttemptService.isBlocked(ip)) 
         {
+        	log.info("-----> Your IP has been blocked for 2 minute for 2 consecutive failed login attempts.");
+        	
             throw new RuntimeException("blocked");
         }
 		
