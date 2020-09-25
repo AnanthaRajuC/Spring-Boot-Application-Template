@@ -17,10 +17,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.anantharajuc.sbtest.APIrateLimiting.APIutil;
 import io.github.anantharajuc.sbtest.person.model.Person;
 import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
 import io.swagger.annotations.Api;
@@ -64,21 +66,46 @@ public class PersonCommandController
 	@ResponseStatus(HttpStatus.CREATED)
 	@ApiOperation(httpMethod="POST", value = "Add Person", notes = "Add a new Person to the datastore",response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_CREATE')")
-	public ResponseEntity<Person> createPerson(@Valid @RequestBody Person person)
+	public ResponseEntity<Person> createPerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+                                               @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
+			                                   @Valid @RequestBody Person person)
 	{
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();		
-		headers.add("sbat-version", releaseVersion.concat("_").concat(apiVersion));
-		
+
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
+
 		return new ResponseEntity<>(personCommandServiceImpl.createPerson(person), headers, HttpStatus.CREATED);
 	}
 
+	/**
+	 * Method that updates an existing person in the database.
+	 * 
+	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+	 * 
+	 * @param personId - the id of the person
+	 * @param personDetails - updated <code>Person</code> object
+	 * 
+	 * @return ResponseEntity with the updated <code>Person</code> object and the HTTP status
+	 * 
+	 * HTTP Status:
+	 * 
+	 * 200 - OK: Everything worked as expected.
+	 */
 	@CacheEvict(allEntries=true)
 	@PutMapping(value="/person/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	@ApiOperation(httpMethod="PUT", value = "UPDATE Person", notes = "Update an existing Person in the datastore",response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_UPDATE')")
-	public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long personId,@Valid @RequestBody Person personDetails)
-	{		
+	public ResponseEntity<Person> updatePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+                                               @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
+			                                   @PathVariable(value = "id") Long personId,@Valid @RequestBody Person personDetails)
+	{
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();		
+
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
+		
 		return new ResponseEntity<>(personCommandServiceImpl.updatePerson(personId, personDetails),HttpStatus.OK);
 	}
 	
@@ -101,10 +128,14 @@ public class PersonCommandController
 	@DeleteMapping(value="/person/{id}")
 	@ApiOperation(httpMethod="DELETE", value = "DELETE an existing Person", notes = "Delete an existing Person from the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_DELETE')")
-	public ResponseEntity<?> deletePerson(@PathVariable(value = "id") Long personId) 
+	public ResponseEntity<?> deletePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+                                          @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
+			                              @PathVariable(value = "id") Long personId) 
 	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();		
-		headers.add("sbat-version", releaseVersion.concat("_").concat(apiVersion));
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();	
+		
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
 		return new ResponseEntity<>(personCommandServiceImpl.deletePerson(personId), headers, HttpStatus.NO_CONTENT);
 	}

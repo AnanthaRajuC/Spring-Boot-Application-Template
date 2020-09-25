@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.anantharajuc.sbtest.APIrateLimiting.APIutil;
 import io.github.anantharajuc.sbtest.person.model.Person;
 import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
-import io.github.anantharajuc.sbtest.util.APIutil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -46,10 +46,13 @@ public class PersonQueryController
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
-	public ResponseEntity<List<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion) 
+	public ResponseEntity<List<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+			                                          @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey) 
 	{
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+		
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
 		return new ResponseEntity<>(personQueryImpl.getAllPersons(), headers, HttpStatus.OK);
 	}
@@ -58,10 +61,14 @@ public class PersonQueryController
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
-	public ResponseEntity<Page<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion, Pageable pageable) 
+	public ResponseEntity<Page<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
+			                                          @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
+			                                          Pageable pageable) 
 	{
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+		
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
 		return new ResponseEntity<>(personQueryImpl.getAllPersonsPageable(pageable), headers, HttpStatus.OK);
 	}
@@ -82,10 +89,14 @@ public class PersonQueryController
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons based on Gender", notes="Returns all Person's in the data store.")
-	public ResponseEntity<List<Person>> getPersonByGender(@RequestHeader(defaultValue="${api.version}") String apiVersion, @PathVariable(value = "gender") String gender)
+	public ResponseEntity<List<Person>> getPersonByGender(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
+			                                              @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
+													      @PathVariable(value="gender") String gender)
 	{
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+		
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
 		return new ResponseEntity<>(personQueryImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
 	}
@@ -107,10 +118,14 @@ public class PersonQueryController
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)
 	@ApiResponse(code = 400, message = "Invalid ID supplied")
-	public ResponseEntity<Person> getPersonById(@RequestHeader(defaultValue="${api.version}") String apiVersion, @PathVariable(value = "id") Long personId)
+	public ResponseEntity<Person> getPersonById(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
+			                                    @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
+			                                    @PathVariable(value="id") Long personId)
 	{
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+		
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
 		return new ResponseEntity<>(personQueryImpl.getPersonById(personId), headers, HttpStatus.OK);
 	}

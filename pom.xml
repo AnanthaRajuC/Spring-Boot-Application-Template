@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.arc</groupId>
@@ -43,6 +42,7 @@
 		<mockito-all.version>1.10.19</mockito-all.version>
 		<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
 		<springfox-swagger-ui.version>2.10.5</springfox-swagger-ui.version>
+		<bucket4j.version>4.10.0</bucket4j.version>
 	</properties>
 
 	<dependencies>
@@ -89,8 +89,7 @@
 		<dependency>
 	      	 <groupId>nz.net.ultraq.thymeleaf</groupId>
 	      	 <artifactId>thymeleaf-layout-dialect</artifactId>
-	    </dependency>
-		
+	    </dependency>		
 	    <dependency>
 	         <groupId>ch.mfrey.thymeleaf.extras.with</groupId>
 	         <artifactId>thymeleaf-with-dialect</artifactId>
@@ -127,6 +126,12 @@
 		    <artifactId>jquery-resizable-columns</artifactId>
 			<version>${jquery-resizable-columns.version}</version>
 		</dependency>	
+		
+		<dependency>
+			<groupId>com.github.vladimir-bukhtoyarov</groupId>
+			<artifactId>bucket4j-core</artifactId>
+			<version>${bucket4j.version}</version>
+		</dependency>
 		
 		<dependency>
 		    <groupId>com.google.guava</groupId>

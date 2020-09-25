@@ -55,7 +55,7 @@ public class SpringBootApplicationTemplateController
 	@GetMapping("/persons") 
     public String persons(Model model) 
 	{
-		model.addAttribute("persons", personController.getAllPersons(null));
+		model.addAttribute("persons", personController.getAllPersons(null, null)); 
 		
 		return "pages/persons";
     }

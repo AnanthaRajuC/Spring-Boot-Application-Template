@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.backend.persistence.domain;
+package io.github.anantharajuc.sbtest.backend.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.backend.persistence.domain;
+package io.github.anantharajuc.sbtest.backend.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +16,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Simple JavaBean domain object representing built_with.
+ *
+ * @author Anantha Raju C
+ */
 @Entity
 @Table(name = "built_with")
 @EntityListeners(AuditingEntityListener.class)

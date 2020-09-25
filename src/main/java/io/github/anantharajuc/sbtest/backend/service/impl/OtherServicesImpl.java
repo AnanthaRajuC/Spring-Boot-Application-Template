@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.ApplicationSetings;
+import io.github.anantharajuc.sbtest.backend.persistence.model.ApplicationSetings;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.ApplicationSettingsRepository;
 import io.github.anantharajuc.sbtest.backend.service.OtherServices;
 import lombok.Getter;

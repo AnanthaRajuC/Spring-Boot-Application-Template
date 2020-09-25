@@ -5,6 +5,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+/**
+ * Audit Configuration.
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Configuration
 @EnableJpaAuditing(auditorAwareRef="auditorProvider")
 public class AuditConfiguration 

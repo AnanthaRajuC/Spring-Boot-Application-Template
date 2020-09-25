@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.enums;
+package io.github.anantharajuc.sbtest.backend.persistence.model.enumeration;
 
 /**
  * Application Log - Enum

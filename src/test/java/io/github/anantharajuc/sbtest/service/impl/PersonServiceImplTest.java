@@ -17,9 +17,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.github.anantharajuc.sbtest.backend.persistence.domain.Address;
-import io.github.anantharajuc.sbtest.backend.persistence.domain.Geo;
-import io.github.anantharajuc.sbtest.backend.persistence.domain.Person;
+import io.github.anantharajuc.sbtest.backend.persistence.model.Address;
+import io.github.anantharajuc.sbtest.backend.persistence.model.Geo;
+import io.github.anantharajuc.sbtest.backend.persistence.model.Person;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
 import io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl;
 import io.github.anantharajuc.sbtest.enums.GenderEnum;
