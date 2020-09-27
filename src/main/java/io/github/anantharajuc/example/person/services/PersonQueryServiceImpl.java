@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.person.services;
+package io.github.anantharajuc.example.person.services;
 
 import java.util.Collections;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import io.github.anantharajuc.example.person.model.Person;
+import io.github.anantharajuc.example.person.repositories.PersonRepository;
 import io.github.anantharajuc.sbtest.exception.ResourceNotFoundException;
-import io.github.anantharajuc.sbtest.person.model.Person;
-import io.github.anantharajuc.sbtest.person.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -26,32 +26,12 @@ public class PersonQueryServiceImpl implements PersonQueryService
 {
 	@Autowired
 	private PersonRepository personRepository;
-	
-	@Override
-	public List<Person> getAllPersons() 
-	{
-		log.info("-----> getAllPersons service");	
-		
-		return personRepository
-				.findAll();
-	}
-	
-	@Override
-	public Page<Person> getAllPersonsPageable(Pageable pageable) 
-	{
-		log.info("-----> getAllPersons service");	
-		
-		return personRepository
-				.findAll(pageable);
-	}
 
 	@Override
 	public Person getPersonById(Long personId) 
 	{
 		log.info("-----> getPersonById service");	
-		
-		
-		
+
 		return personRepository
 				.findById(personId)
 				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
@@ -63,6 +43,15 @@ public class PersonQueryServiceImpl implements PersonQueryService
 		log.info("-----> getPersonsByGender service");
 		
 		return personRepository.getPersonByGender(gender);
+	}
+	
+	@Override
+	public Page<Person> getAllPersonsPageable(Pageable pageable) 
+	{
+		log.info("-----> getAllPersonsPageable service");	
+		
+		return personRepository
+				.findAll(pageable);
 	}
 	
 	@Override

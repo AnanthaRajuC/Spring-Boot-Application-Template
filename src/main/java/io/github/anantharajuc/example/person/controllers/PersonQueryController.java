@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.person.controllers;
+package io.github.anantharajuc.example.person.controllers;
 
 import java.util.List;
 
@@ -19,9 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.APIrateLimiting.APIutil;
-import io.github.anantharajuc.sbtest.person.model.Person;
-import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
+import io.github.anantharajuc.example.person.model.Person;
+import io.github.anantharajuc.example.person.services.PersonQueryServiceImpl;
+import io.github.anantharajuc.sbtest.api.ResourcePaths;
+import io.github.anantharajuc.sbtest.api.rateLimiting.APIutil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,31 +34,16 @@ import io.swagger.annotations.ApiResponse;
  *
  */
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(value=ResourcePaths.Person.V1.ROOT) 
 @CacheConfig(cacheNames={"person"})
 @Api(value="PersonQuery", tags="Person Query")
 public class PersonQueryController 
 {
 	@Autowired
-	private PersonQueryServiceImpl personQueryImpl;
-	
+	private PersonQueryServiceImpl personQueryServiceImpl;
+
 	@Cacheable()
-	@GetMapping(value="/person")	
-	@ResponseStatus(HttpStatus.OK)
-	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
-	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
-	public ResponseEntity<List<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
-			                                          @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey) 
-	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-		
-		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
-		headers.add(APIutil.HEADER_API_KEY, apiKey);
-		
-		return new ResponseEntity<>(personQueryImpl.getAllPersons(), headers, HttpStatus.OK);
-	}
-	
-	@GetMapping(value="/person/pageable")	
+	@GetMapping()	
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
@@ -70,7 +56,7 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
-		return new ResponseEntity<>(personQueryImpl.getAllPersonsPageable(pageable), headers, HttpStatus.OK);
+		return new ResponseEntity<>(personQueryServiceImpl.getAllPersonsPageable(pageable), headers, HttpStatus.OK);
 	}
 
 	/**
@@ -85,7 +71,8 @@ public class PersonQueryController
 	 * 
 	 * 200 - OK: Everything worked as expected.
 	 */
-	@GetMapping(value="/person/gender/{gender}")
+	//@GetMapping(value="/gender/{gender}")
+	@GetMapping(value=ResourcePaths.Person.V1.GET_BY_GENDER)
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons based on Gender", notes="Returns all Person's in the data store.")
@@ -98,7 +85,7 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
-		return new ResponseEntity<>(personQueryImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
+		return new ResponseEntity<>(personQueryServiceImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
 	}
 	
 	/**
@@ -113,7 +100,7 @@ public class PersonQueryController
 	 * 
 	 * 200 - OK: Everything worked as expected.
 	 */
-	@GetMapping(value="/person/{id}")
+	@GetMapping(value=ResourcePaths.ID)
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)
@@ -127,6 +114,6 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
-		return new ResponseEntity<>(personQueryImpl.getPersonById(personId), headers, HttpStatus.OK);
+		return new ResponseEntity<>(personQueryServiceImpl.getPersonById(personId), headers, HttpStatus.OK);
 	}
 }

@@ -1,11 +1,11 @@
-package io.github.anantharajuc.sbtest.person.repositories;
+package io.github.anantharajuc.example.person.repositories;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import io.github.anantharajuc.sbtest.person.model.Person;
+import io.github.anantharajuc.example.person.model.Person;
 
 import javax.validation.constraints.NotBlank;
 

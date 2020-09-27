@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.APIrateLimiting;
+package io.github.anantharajuc.sbtest.api.rateLimiting;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

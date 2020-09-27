@@ -38,8 +38,7 @@ public class UserController
             {
                 final UserPrincipal user = (UserPrincipal) principal;
 
-                List<SessionInformation> activeUserSessions = sessionRegistry.getAllSessions(principal,
-                                /* includeExpiredSessions */ false); // Should not return null;
+                List<SessionInformation> activeUserSessions = sessionRegistry.getAllSessions(principal,false); 
 
                 if (!activeUserSessions.isEmpty()) 
                 {

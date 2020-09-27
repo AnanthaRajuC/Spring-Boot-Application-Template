@@ -28,7 +28,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/person XML",
+			"name": "Get Person's - XML Response",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -71,7 +71,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/person JSON",
+			"name": "Get Person's - JSON Response",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -94,6 +94,11 @@
 						"key": "Accept",
 						"type": "text",
 						"value": "application/json"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
 					}
 				],
 				"url": {
@@ -114,7 +119,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/person/{id} XML",
+			"name": "Get Person by Id - XML Response",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -158,7 +163,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/person/{id} JSON",
+			"name": "Get Person by Id - JSON Response",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -181,10 +186,15 @@
 						"key": "Accept",
 						"type": "text",
 						"value": "application/json"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/669",
+					"raw": "http://localhost:8080/api/v1/person/672",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -194,7 +204,7 @@
 						"api",
 						"v1",
 						"person",
-						"669"
+						"672"
 					]
 				},
 				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -202,7 +212,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/person/{id}",
+			"name": "Update Person by Id",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -220,10 +230,16 @@
 					]
 				},
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"iii\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"raw": "{\r\n\t\"name\": \"uuuuu\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -556,7 +572,7 @@
 			"response": []
 		},
 		{
-			"name": "/api/person/3",
+			"name": "Delete Person by Id",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -574,9 +590,15 @@
 					]
 				},
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/6",
+					"raw": "http://localhost:8080/api/v1/person/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -586,7 +608,7 @@
 						"api",
 						"v1",
 						"person",
-						"6"
+						"5"
 					]
 				},
 				"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
@@ -616,6 +638,11 @@
 					{
 						"key": "X-TenantID",
 						"value": "sbat_tenant_two",
+						"type": "text"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
 						"type": "text"
 					}
 				],
@@ -734,9 +761,15 @@
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:8080/management/api/v1/person/pageable?page=1&size=10&sort=createdDate,desc",
+					"raw": "http://localhost:8080/management/api/v1/person/pageable?page=1&size=1&sort=createdDate,desc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -756,7 +789,7 @@
 						},
 						{
 							"key": "size",
-							"value": "10"
+							"value": "1"
 						},
 						{
 							"key": "sort",
@@ -865,7 +898,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/person",
+			"name": "Create Person",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -883,10 +916,16 @@
 					]
 				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"hhhh\",\r\n\t\"username\": \"hhh\",\r\n\t\"emailPrimary\": \"hhhh@gmail.com\",\r\n\t\"emailSecondary\": \"hhh@gmail.com\",\r\n\t\"phone\":7777777,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"raw": "{\r\n\t\"name\": \"nnn\",\r\n\t\"username\": \"nnn\",\r\n\t\"emailPrimary\": \"nn@gmail.com\",\r\n\t\"emailSecondary\": \"nn@gmail.com\",\r\n\t\"phone\":7778777,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1154,6 +1193,93 @@
 					]
 				},
 				"description": "Get All RBAC Users"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/person?page=1&size=1&sort=createdDate,desc",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-api-key",
+						"type": "text",
+						"value": "null"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person?size=150&pageNumber=5&sort=id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "150"
+						},
+						{
+							"key": "pageNumber",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "id"
+						}
+					]
+				},
+				"description": "http://localhost:8080/api/v1/person/pageable?page=1&size=1&sort=createdDate,desc"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person's by Gender",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/gender/MALE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"gender",
+						"MALE"
+					]
+				},
+				"description": "http://localhost:8080/api/v1/person/gender/MALE"
 			},
 			"response": []
 		}

@@ -1,8 +1,8 @@
-package io.github.anantharajuc.sbtest.person.services;
+package io.github.anantharajuc.example.person.services;
 
 import org.springframework.http.ResponseEntity;
 
-import io.github.anantharajuc.sbtest.person.model.Person;
+import io.github.anantharajuc.example.person.model.Person;
 
 /**
  * Person Command Service.

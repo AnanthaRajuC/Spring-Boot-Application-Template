@@ -109,19 +109,21 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 * 	[Thymeleaf Layout Dialect](https://github.com/ultraq/thymeleaf-layout-dialect) - A dialect for Thymeleaf that lets you build layouts and reusable templates in order to improve code reuse.
 * 	[Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
 * 	[Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
+* 	[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Java rate limiting library based on token/leaky-bucket algorithm.
 
 ### Others 
 
 * 	[git](https://git-scm.com/) - Free and Open-Source distributed version control system
 * 	[Prometheus](https://prometheus.io/) - Monitoring system and time series database
 
-## External Tools Used
+## External Tools & Services 
 
 * 	[Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * 	[Postman Echo](https://docs.postman-echo.com/?version=latest) - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.
 * 	[Travis CI](https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.
 * 	[Codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted tool that is used to measure the test coverage of your codebase.
 *	[Dependabot](https://dependabot.com/) - Automated dependency updates.
+*	[FOSSA](https://fossa.com/) - Scalable, end-to-end management for third-party code, license compliance and vulnerabilities.
 
 ## To-Do
 
@@ -134,10 +136,9 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 * 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
-* 	[x] Token based API Rate Limiting
+* 	[x] API [Rate Limiting](https://en.wikipedia.org/wiki/Rate_limiting)
 * 	[ ] Shut down app on button click via actuator url 
 * 	[ ] HATEOS
-* 	[ ] Spring Boot Admin
 * 	[ ] NoSQL (MongoDB)
 * 	[ ] Multitenancy
 * 	[ ] Micrometer
@@ -310,7 +311,7 @@ To monitor and manage your application
 
 * 	[Postman Collection](https://documenter.getpostman.com/view/2449187/TVCe1UAk) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
 * 	[Postman Collection](Spring Boot Application Template.postman_collection) - offline
-* 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
+* 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Swagger (interactive) API documentation
 * 	[Swagger](http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template) - `http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template`- Documentation & Testing
 * 	Java Doc is generated in `Spring-Boot-Application-Template\target\site\apidocs` folder using the Maven command 
 

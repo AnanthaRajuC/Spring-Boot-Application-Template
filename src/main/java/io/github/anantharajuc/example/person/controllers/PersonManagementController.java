@@ -1,6 +1,4 @@
-package io.github.anantharajuc.sbtest.web.controllers;
-
-import java.util.List;
+package io.github.anantharajuc.example.person.controllers;
 
 import javax.validation.Valid;
 
@@ -8,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.person.model.Person;
-import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
-import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
+import io.github.anantharajuc.example.person.model.Person;
+import io.github.anantharajuc.example.person.services.PersonCommandServiceImpl;
+import io.github.anantharajuc.example.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 
@@ -45,15 +42,6 @@ public class PersonManagementController
 	@Autowired
 	private PersonCommandServiceImpl personCommandServiceImpl;
 	
-	@Cacheable()
-	@GetMapping(value="/person")	
-	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
-	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
-	public List<Person> getAllPersons() 
-	{		
-		return personQueryServiceImpl.getAllPersons(); 
-	}
-	
 	@GetMapping(value="/person/{id}")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
 	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID", response=Person.class)
@@ -63,7 +51,7 @@ public class PersonManagementController
 		return personQueryServiceImpl.getPersonById(personId);
 	}
 	
-	@GetMapping(value="/person/pageable")
+	@GetMapping(value="/person")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
 	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
 	public Page<Person> getAllPersons(Pageable pageable) 

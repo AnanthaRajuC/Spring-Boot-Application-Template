@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import io.github.anantharajuc.example.person.controllers.PersonQueryController;
+import io.github.anantharajuc.example.person.model.Person;
+import io.github.anantharajuc.example.person.services.PersonQueryServiceImpl;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.BuiltWithRepository;
-import io.github.anantharajuc.sbtest.person.controllers.PersonQueryController;
-import io.github.anantharajuc.sbtest.person.model.Person;
-import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 import io.github.anantharajuc.sbtest.security.authorization.RBACuserManagementController;
 import lombok.extern.log4j.Log4j2;
 
@@ -32,6 +32,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @Controller
 @RequestMapping({"/sbat"})
+//@RequestMapping(value=ResourcePaths.SBAT.V1.ROOT) ///api/v1/sbat
 public class SpringBootApplicationTemplateController 
 {
 	@Autowired
@@ -55,7 +56,7 @@ public class SpringBootApplicationTemplateController
 	@GetMapping("/persons") 
     public String persons(Model model) 
 	{
-		model.addAttribute("persons", personController.getAllPersons(null, null)); 
+		model.addAttribute("persons", personController.getAllPersons(null, null, null)); 
 		
 		return "pages/persons";
     }

@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.person.controllers;
+package io.github.anantharajuc.example.person.controllers;
 
 import javax.validation.Valid;
 
@@ -22,9 +22,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.APIrateLimiting.APIutil;
-import io.github.anantharajuc.sbtest.person.model.Person;
-import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
+import io.github.anantharajuc.example.person.model.Person;
+import io.github.anantharajuc.example.person.services.PersonCommandServiceImpl;
+import io.github.anantharajuc.sbtest.api.ResourcePaths;
+import io.github.anantharajuc.sbtest.api.rateLimiting.APIutil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -35,7 +36,7 @@ import io.swagger.annotations.ApiOperation;
  *
  */
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(value=ResourcePaths.Person.V1.ROOT)
 @CacheConfig(cacheNames={"person"})
 @Api(value="PersonCommands", tags="Person Commands")
 public class PersonCommandController 
@@ -62,9 +63,9 @@ public class PersonCommandController
 	 * 
 	 * 201 - Created: Everything worked as expected.
 	 */
-	@PostMapping(value="/person", produces=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
-	@ApiOperation(httpMethod="POST", value = "Add Person", notes = "Add a new Person to the datastore",response=Person.class)
+	@ApiOperation(httpMethod="POST", value="Add Person", notes="Add a new Person to the datastore",response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_CREATE')")
 	public ResponseEntity<Person> createPerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                                @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
@@ -93,9 +94,9 @@ public class PersonCommandController
 	 * 200 - OK: Everything worked as expected.
 	 */
 	@CacheEvict(allEntries=true)
-	@PutMapping(value="/person/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value=ResourcePaths.ID, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	@ApiOperation(httpMethod="PUT", value = "UPDATE Person", notes = "Update an existing Person in the datastore",response=Person.class)
+	@ApiOperation(httpMethod="PUT", value="UPDATE Person", notes="Update an existing Person in the datastore", response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_UPDATE')")
 	public ResponseEntity<Person> updatePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                                @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
@@ -125,8 +126,8 @@ public class PersonCommandController
 	 * 405 - Method Not Allowed: Resource (Id) to be deleted not supplied
 	 */
 	@CacheEvict(allEntries=true)
-	@DeleteMapping(value="/person/{id}")
-	@ApiOperation(httpMethod="DELETE", value = "DELETE an existing Person", notes = "Delete an existing Person from the datastore")
+	@DeleteMapping(value=ResourcePaths.ID)
+	@ApiOperation(httpMethod="DELETE", value="DELETE an existing Person", notes="Delete an existing Person from the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                           @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,

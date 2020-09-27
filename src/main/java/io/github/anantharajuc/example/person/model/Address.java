@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.person.model;
+package io.github.anantharajuc.example.person.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

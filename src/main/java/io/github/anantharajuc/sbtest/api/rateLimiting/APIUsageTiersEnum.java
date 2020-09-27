@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.APIrateLimiting;
+package io.github.anantharajuc.sbtest.api.rateLimiting;
 
 import java.time.Duration;
 
@@ -14,9 +14,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum APIUsageTiersEnum 
 {
-	FREE(3),
-    BASIC(4),
-    PROFESSIONAL(5);
+	FREE(15),
+    BASIC(25),
+    PROFESSIONAL(50);
 	
 	private int bucketCapacity;
 	
