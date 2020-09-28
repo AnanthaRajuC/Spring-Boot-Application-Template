@@ -5,12 +5,14 @@ import java.time.Duration;
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Refill;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * Enum that classifies the usage tiers in the API.
  * 
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  */
+@Log4j2
 @AllArgsConstructor
 public enum APIUsageTiersEnum 
 {
@@ -30,6 +32,7 @@ public enum APIUsageTiersEnum
      */
     public Bandwidth getLimit() 
     {
+    	log.info("-----> API Rate Limiting : Bandwidth : "+Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(20))));
         return Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(20)));
     }
     
@@ -43,6 +46,8 @@ public enum APIUsageTiersEnum
      */
     public int getBucketCapacity() 
     {
+    	log.info("-----> API Rate Limiting : bucketCapacity : "+bucketCapacity);
+        
         return bucketCapacity;
     }
     
@@ -59,16 +64,19 @@ public enum APIUsageTiersEnum
     {        
     	if (apiKey == null || apiKey.isEmpty()) 
     	{
+    		log.info("-----> API Rate Limiting : API Usage Tier : FREE 25");
             return FREE;
         
         } 
     	else if (apiKey.startsWith("PX001-")) 
     	{
+    		log.info("-----> API Rate Limiting : API Usage Tier : PROFESSIONAL 75");
             return PROFESSIONAL;
             
         } 
     	else if (apiKey.startsWith("BX001-")) 
     	{
+    		log.info("-----> API Rate Limiting : API Usage Tier : BASIC 50");
             return BASIC;
         }
     	

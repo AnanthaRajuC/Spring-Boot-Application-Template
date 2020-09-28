@@ -197,6 +197,10 @@ Ensure you build a jar of the application before building a docker image.
 |`docker stop [container_id]`                          | stop a container                                                         |
 |`docker rm $(docker ps -aq)`                          | stop and remove all containers                                           |
 
+## API Rate Limiting
+
+Bucket4j - check io.github.anantharajuc.sbtest.api.rate_limiting package
+
 ## Security
 
 ### Looking for something in particular?

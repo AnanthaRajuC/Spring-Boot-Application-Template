@@ -29,8 +29,8 @@ public class RateLimitInterceptor implements HandlerInterceptor
      * @see HandlerInterceptor#preHandle(HttpServletRequest, HttpServletResponse, Object)
      */
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception 
+    {       
     	String apiKey = request.getHeader(APIutil.HEADER_API_KEY);
     	
         if (apiKey == null || apiKey.isEmpty()) 
@@ -43,6 +43,7 @@ public class RateLimitInterceptor implements HandlerInterceptor
         }
 
         Bucket tokenBucket = pricingPlanService.resolveBucket(apiKey);
+        
         ConsumptionProbe probe = tokenBucket.tryConsumeAndReturnRemaining(1);
 
         if (probe.isConsumed()) 
