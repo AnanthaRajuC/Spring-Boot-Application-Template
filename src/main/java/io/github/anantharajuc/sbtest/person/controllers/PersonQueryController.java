@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.apiRateLimiting.APIutil;
+import io.github.anantharajuc.sbtest.api.ResourcePaths;
+import io.github.anantharajuc.sbtest.api.rate_limiting.APIutil;
 import io.github.anantharajuc.sbtest.person.model.Person;
 import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.Api;
@@ -33,7 +34,7 @@ import io.swagger.annotations.ApiResponse;
  *
  */
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(value=ResourcePaths.Person.V1.ROOT)
 @CacheConfig(cacheNames={"person"})
 @Api(value="PersonQuery", tags="Person Query")
 public class PersonQueryController 
@@ -42,7 +43,7 @@ public class PersonQueryController
 	private PersonQueryServiceImpl personQueryImpl;
 	
 	@Cacheable()
-	@GetMapping(value="/person")	
+	@GetMapping()	
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
@@ -57,7 +58,7 @@ public class PersonQueryController
 		return new ResponseEntity<>(personQueryImpl.getAllPersons(), headers, HttpStatus.OK);
 	}
 	
-	@GetMapping(value="/person/pageable")	
+	@GetMapping(value="/pageable")	
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
@@ -85,7 +86,7 @@ public class PersonQueryController
 	 * 
 	 * 200 - OK: Everything worked as expected.
 	 */
-	@GetMapping(value="/person/gender/{gender}")
+	@GetMapping(value="/gender/{gender}")
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons based on Gender", notes="Returns all Person's in the data store.")
@@ -113,7 +114,7 @@ public class PersonQueryController
 	 * 
 	 * 200 - OK: Everything worked as expected.
 	 */
-	@GetMapping(value="/person/{id}")
+	@GetMapping(value=ResourcePaths.ID)
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)

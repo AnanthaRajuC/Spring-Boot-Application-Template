@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.apiRateLimiting;
+package io.github.anantharajuc.sbtest.api.rate_limiting;
 
 import java.time.Duration;
 
