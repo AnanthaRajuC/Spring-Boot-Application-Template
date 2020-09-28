@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.APIrateLimiting;
+package io.github.anantharajuc.sbtest.apiRateLimiting;
 
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;

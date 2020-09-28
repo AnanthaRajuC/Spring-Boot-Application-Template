@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.APIrateLimiting;
+package io.github.anantharajuc.sbtest.apiRateLimiting;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

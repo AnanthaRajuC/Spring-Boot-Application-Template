@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.APIrateLimiting;
+package io.github.anantharajuc.sbtest.apiRateLimiting;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

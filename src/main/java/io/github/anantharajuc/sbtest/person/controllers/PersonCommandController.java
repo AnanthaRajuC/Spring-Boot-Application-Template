@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbtest.APIrateLimiting.APIutil;
+import io.github.anantharajuc.sbtest.apiRateLimiting.APIutil;
 import io.github.anantharajuc.sbtest.person.model.Person;
 import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
 import io.swagger.annotations.Api;
