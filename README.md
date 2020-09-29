@@ -178,7 +178,14 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
-The app will start running at <http://localhost:8080>
+The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command `java -jar SBtemplate-0.0.1-SNAPSHOT.jar`
+
+To shutdown the jar, follow the below mentioned steps on a Windows machine.
+
+*	In command prompt execute the **jcmd** command to print a list of all running Java processes
+*	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP ** with the actual process id of the running jar found out from executing the previous command
+
+The app will start running at <http://localhost:8080>, change the database settings in **application.properties** file as per your need.
 
 ## Running the application via docker container
 
@@ -193,22 +200,24 @@ docker pull anantha/spring-boot-application-template
 Ensure you build a jar of the application before building a docker image.  
 
 ```text
-`mvn package -Dmaven.test.skip=true`    //skip all tests and build
+`mvn package -Dmaven.test.skip=true`    //skip all tests and build. The build once completed is available in target folder
 ```
 
 ```text
 `mvn clean package`                     //run all tests and build
 ```
 
-|                       Command                        |                                 Description                              |
-|------------------------------------------------------|--------------------------------------------------------------------------| 
-|`docker images`                                       | take a look at the container images.                                     |
-|`docker ps`                                           | list all the running containers.                                         |
-|`docker ps -a`                                        | list all the containers, including the ones that have finished executing.|
-|`docker build -t spring-boot-application-template .`  | Build docker image of the project                                        |
-|`docker run spring-boot-application-template`         | run the project's docker container                                       |
-|`docker stop [container_id]`                          | stop a container                                                         |
-|`docker rm $(docker ps -aq)`                          | stop and remove all containers                                           |
+On Windows machine use **Windows Powershell**, navigate to the project folder where Dockerfile is present.
+
+|                           Command                        |                                 Description                              |
+|----------------------------------------------------------|--------------------------------------------------------------------------| 
+|`docker images`                                           | take a look at the container images.                                     |
+|`docker ps`                                               | list all the running containers.                                         |
+|`docker ps -a`                                            | list all the containers, including the ones that have finished executing.|
+|**`docker build -t spring-boot-application-template .`**  | **Build docker image of the project**                                    |
+|**`docker run spring-boot-application-template`**         | **run the project's docker container**                                   |
+|`docker stop [container_id]`                              | stop a container                                                         |
+|`docker rm $(docker ps -aq)`                              | stop and remove all containers                                           |
 
 ## Security
 

@@ -1,4 +1,4 @@
-/*package io.github.anantharajuc.sbtest.service.impl;
+package io.github.anantharajuc.sbtest.service.impl;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -17,19 +17,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.github.anantharajuc.sbtest.backend.persistence.model.Address;
-import io.github.anantharajuc.sbtest.backend.persistence.model.Geo;
-import io.github.anantharajuc.sbtest.backend.persistence.model.Person;
-import io.github.anantharajuc.sbtest.backend.persistence.repositories.PersonRepository;
-import io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl;
-import io.github.anantharajuc.sbtest.enums.GenderEnum;
+import io.github.anantharajuc.sbtest.person.model.Address;
+import io.github.anantharajuc.sbtest.person.model.GenderEnum;
+import io.github.anantharajuc.sbtest.person.model.Geo;
+import io.github.anantharajuc.sbtest.person.model.Person;
+import io.github.anantharajuc.sbtest.person.repositories.PersonRepository;
+import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
+import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes=io.github.anantharajuc.sbtest.backend.service.PersonServiceImpl.class) 
+@SpringBootTest() 
 public class PersonServiceImplTest 
 {
 	@Autowired
-	private PersonCommandServiceImpl personServiceImpl;
+	private PersonCommandServiceImpl personCommandServiceImpl; 
+	
+	@Autowired
+	private PersonQueryServiceImpl personQueryServiceImpl;
 	
 	@MockBean
 	private PersonRepository personRepository;
@@ -42,7 +46,7 @@ public class PersonServiceImplTest
 		Person person = new Person();
 		
 		person.setId((long) 1);
-		person.setCreatedOn(date);		
+		person.setCreatedDate(date);		
 		person.setName("Stevie Nicks");
 		person.setUsername("stevienicks");		
 		person.setEmailPrimary("stevienicks@gmail.com");
@@ -79,7 +83,7 @@ public class PersonServiceImplTest
 		 
 		Mockito.when(personRepository.save(person)).thenReturn(person);
 		
-		assertThat(personServiceImpl.createPerson(person)).isEqualTo(person);
+		assertThat(personCommandServiceImpl.createPerson(person)).isEqualTo(person);
 	}
 	
 	@Test
@@ -103,7 +107,7 @@ public class PersonServiceImplTest
 		person.setName("Stevie Nicks Updated Name");
 		Mockito.when(personRepository.save(person)).thenReturn(person);
 		
-		assertThat(personServiceImpl.updatePerson((long) 1, person)).isEqualTo(person);
+		assertThat(personCommandServiceImpl.updatePerson((long) 1, person)).isEqualTo(person);
 	}
 	
 	@Test
@@ -112,7 +116,7 @@ public class PersonServiceImplTest
 		Person person = createPerson();
 		
 		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person)); 
-		assertThat(personServiceImpl.getPersonById(1L)).isEqualTo(person);
+		assertThat(personQueryServiceImpl.getPersonById(1L)).isEqualTo(person);
 	}
 	
 	@Test
@@ -127,7 +131,7 @@ public class PersonServiceImplTest
 		Person person2 = new Person();
 		
 		person2.setId((long) 1);
-		person2.setCreatedOn(date);		
+		person2.setCreatedDate(date);		
 		person2.setName("Stevie Nicks");
 		person2.setUsername("stevienicks");		
 		person2.setEmailPrimary("stevienicks@gmail.com");
@@ -161,7 +165,6 @@ public class PersonServiceImplTest
 		
 		Mockito.when(personRepository.findAll()).thenReturn(personList);
 		
-		assertThat(personServiceImpl.getAllPersons()).isEqualTo(personList);
+		assertThat(personQueryServiceImpl.getAllPersons()).isEqualTo(personList);
 	}
 }
-*/
