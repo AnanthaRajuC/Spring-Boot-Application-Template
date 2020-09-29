@@ -344,6 +344,7 @@ To monitor and manage your application
 * 	[Postman Collection](Spring Boot Application Template.postman_collection) - offline
 * 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
 * 	[Swagger](http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template) - `http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template`- Documentation & Testing
+*	Find Java Doc in **javadoc** folder
 * 	Java Doc is generated in `Spring-Boot-Application-Template\target\site\apidocs` folder using the Maven command 
 
 ```text
