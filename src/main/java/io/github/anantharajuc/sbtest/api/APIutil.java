@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.api.rate_limiting;
+package io.github.anantharajuc.sbtest.api;
 
 /**
  * Class that implements the API utility methods.

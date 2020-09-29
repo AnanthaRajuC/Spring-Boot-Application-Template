@@ -11,12 +11,21 @@ import com.google.common.cache.LoadingCache;
 
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * Login Attempt Service
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Log4j2
 @Service
 public class LoginAttemptService 
 {
 	//Maximum failed login attempts count before account is blocked
     private static final int MAX_ATTEMPT = 2;
+    
+    //Duration for which an account is blocked after crossing the maximum failed login attempts 
+    private static final int ACCOUNT_BLOCK_DURATION = 3;
     
     //The number of wrong attempts per IP address is stored in this cache
     private LoadingCache<String, Integer> attemptsCache;
@@ -25,7 +34,7 @@ public class LoginAttemptService
     {    	
         super();
         
-        attemptsCache = CacheBuilder.newBuilder().expireAfterWrite(2, TimeUnit.MINUTES).build(new CacheLoader<String, Integer>() 
+        attemptsCache = CacheBuilder.newBuilder().expireAfterWrite(ACCOUNT_BLOCK_DURATION, TimeUnit.MINUTES).build(new CacheLoader<String, Integer>() 
         {
             @Override
             public Integer load(final String key) 

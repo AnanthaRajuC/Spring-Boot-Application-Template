@@ -17,6 +17,12 @@ import org.springframework.web.servlet.LocaleResolver;
 
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * Custom Authentication Failure Handler
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 @Log4j2
 @Component("authenticationFailureHandler")
 public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler 

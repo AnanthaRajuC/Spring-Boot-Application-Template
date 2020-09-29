@@ -17,7 +17,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
  * 
  */
 @Configuration
-public class WebConfiguration implements WebMvcConfigurer 
+public class I18Nconfiguration implements WebMvcConfigurer 
 {
     @Bean
     public LocaleResolver localeResolver() 

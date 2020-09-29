@@ -46,42 +46,55 @@
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup, just fork-and-code.
 
-This repository contains a recipe/scaffolding for bootstrapping a Web Application with the features listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
+This repository contains a recipe/scaffolding for bootstrapping a Web Application with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
 ## Table of Contents
 
-- [Application screenshots](#application-screenshots)
-- [Tech stack & Open-source libraries](#tech-stack---open-source-libraries)
-  * [Data](#data)
-  * [Client - Frontend/UI](#client---frontend-ui)
-  * [Server - Backend](#server---backend)
-  * [Libraries and Plugins](#libraries-and-plugins)
-  * [Others](#others)
-- [External Tools Used](#external-tools-used)
-- [To-Do](#to-do)
-- [Running the application locally](#running-the-application-locally)
-- [Running the application via docker container](#running-the-application-via-docker-container)
-- [Security](#security)
-- [Explore Rest APIs](#explore-rest-apis)
-  * [URLs](#urls)
-  * [Other URLs](#other-urls)
-  * [Actuator](#actuator)
-  * [Person URLs](#person-urls)
-- [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys)
-      - [<a id="personcreate">Create Person -> /api/person</a>](#-a-id--personcreate--create-person-----api-person--a-)
-- [Documentation](#documentation)
-- [EER Diagram](#eer-diagram)
-- [Files and Directories](#files-and-directories)
-- [packages](#packages)
-- [Reporting Issues](#reporting-issues)
-- [Resources](#resources)
-- [License](#license)
+  * [Application screenshots](#application-screenshots)
+  * [Internationalization (i18n)](#internationalization-(i18n))
+  * [Tech stack & Open-source libraries](#tech-stack---open-source-libraries)
+    + [Data](#data)
+    + [Client - Frontend/UI](#client---frontend-ui)
+    + [Server - Backend](#server---backend)
+    + [Libraries and Plugins](#libraries-and-plugins)
+    + [Others](#others)
+    + [External Tools & Services](#external-tools---services)
+  * [To-Do](#to-do)
+  * [Running the application locally](#running-the-application-locally)
+  * [Running the application via docker container](#running-the-application-via-docker-container)
+  * [Security](#security)
+    + [Looking for something in particular?](#looking-for-something-in-particular-)
+    + [API Rate Limiting](#api-rate-limiting)
+    + [Preventing Brute Force Authentication Attempts](#preventing-brute-force-authentication-attempts)
+    + [Session Timeout](#session-timeout)
+  * [Explore Rest APIs](#explore-rest-apis)
+    + [URLs](#urls)
+    + [Other URLs](#other-urls)
+    + [Actuator](#actuator)
+    + [Person URLs](#person-urls)
+      - [Accessible to **johndoe** user only](#accessible-to---johndoe---user-only)
+    + [Person Management URLs](#person-management-urls)
+      - [Role and Permission based secure access to **AdminUser** and **AdminTrainee** users](#role-and-permission-based-secure-access-to---adminuser---and---admintrainee---users)
+  * [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys)
+        * [<a id="personcreate">Create Person -> /api/person</a>](#-a-id--personcreate--create-person-----api-person--a-)
+  * [Documentation](#documentation)
+  * [EER Diagram](#eer-diagram)
+  * [Files and Directories Structure](#files-and-directories-structure)
+  * [Packages](#packages)
+  * [Reporting Issues/Suggest Improvements](#reporting-issues-suggest-improvements)
+  * [FOSSA third-party code, license compliance and vulnerabilities](#FOSSA-third-party-code,-license-compliance-and-vulnerabilities)
 
 ## Application screenshots
 
 <img src="images\home.PNG"/>
 <img src="images\login.PNG"/>
 <img src="images\about.PNG"/>
+
+## Internationalization (i18n)
+
+This app can be adapted to various languages and regions without engineering changes. Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.
+
+Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
 
 ## Tech stack & Open-source libraries
 
@@ -116,7 +129,7 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 * 	[git](https://git-scm.com/) - Free and Open-Source distributed version control system
 * 	[Prometheus](https://prometheus.io/) - Monitoring system and time series database
 
-## External Tools & Services
+### External Tools & Services
 
 * 	[Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * 	[Postman Echo](https://docs.postman-echo.com/?version=latest) - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.
@@ -133,11 +146,11 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 * 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
 * 	[x] [Dark Mode](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme)
 * 	[x] [Spring Security](https://spring.io/projects/spring-security) RBAC, Session Timeout
+* 	[x] API [Rate Limiting](https://en.wikipedia.org/wiki/Rate_limiting)
 * 	[x] [JPA Auditing via AuditorAware Interface](https://docs.spring.io/spring-data/jpa/docs/1.7.0.DATAJPA-580-SNAPSHOT/reference/html/auditing.html)
 * 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
-* 	[x] API [Rate Limiting](https://en.wikipedia.org/wiki/Rate_limiting)
 * 	[ ] Shut down app on button click via actuator url 
 * 	[ ] HATEOS
 * 	[ ] Spring Boot Admin
@@ -197,10 +210,6 @@ Ensure you build a jar of the application before building a docker image.
 |`docker stop [container_id]`                          | stop a container                                                         |
 |`docker rm $(docker ps -aq)`                          | stop and remove all containers                                           |
 
-## API Rate Limiting
-
-Bucket4j - check io.github.anantharajuc.sbtest.api.rate_limiting package
-
 ## Security
 
 ### Looking for something in particular?
@@ -220,6 +229,22 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 |`johndoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
 |`AdminUser`       |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
 |`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
+
+### API Rate Limiting
+
+[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbtest.api.rate_limiting package`
+
+### Preventing Brute Force Authentication Attempts
+
+A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.
+
+Refer `io.github.anantharajuc.sbtest.security.authentication.LoginAttemptService`
+
+### Session Timeout
+
+If the application remains inactive for a specified period of time, the session will expire. The session after this period of time is considered invalid and the user has to login to the application again.
+
+This value **server.servlet.session.timeout** can be configured in **application.properties** file
 
 ## Explore Rest APIs
 
@@ -329,7 +354,7 @@ To monitor and manage your application
 
 <img src="images\SBAT-EER-Diagram.png"/>
 
-## Files and Directories
+## Files and Directories Structure
 
 The project (a.k.a. project directory) has a particular directory structure. A representative project is shown below:
 
@@ -435,8 +460,11 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 └── README.md
 ```
 
-## packages
+## Packages
 
+*   `api` - API utilities;
+*   `rate_limiting` - API rate limiting;
+*   `auditing` - data entity auditing;
 * 	`authentication` - application user authentication;
 * 	`configuration` - app configurations;
 * 	`controllers` - to listen to the client;
@@ -468,6 +496,6 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 * 	Please provide as much information as possible with the issue report.
 * 	If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.
 
-## License
+## FOSSA third-party code, license compliance and vulnerabilities
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_large)
