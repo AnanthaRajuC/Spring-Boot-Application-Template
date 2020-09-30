@@ -2,30 +2,42 @@
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
-
-![GitHub last commit](https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template)
 [![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)
 [![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)
-![GitHub language count](https://img.shields.io/github/languages/count/Spring-Boot-Framework/Spring-Boot-Application-Template)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Spring-Boot-Framework/Spring-Boot-Application-Template)
-![GitHub repo size](https://img.shields.io/github/repo-size/Spring-Boot-Framework/Spring-Boot-Application-Template)
-![GitHub top language](https://img.shields.io/github/languages/top/Spring-Boot-Framework/Spring-Boot-Application-Template.svg) 
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Spring-Boot-Framework/Spring-Boot-Application-Template)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/Spring-Boot-Framework/Spring-Boot-Application-Template.svg) 
 [![Open Source Helpers](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template/badges/users.svg)](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template)
-
 [![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)
-
 [![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
 [![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
-![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)
-
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)
 
 <p align="center">
+	<a alt="GitHub tag (latest SemVer)">
+        <img src="https://img.shields.io/github/tag/Spring-Boot-Framework/Spring-Boot-Application-Template.svg" />
+    </a>
+	<a alt="Docker Image Size (latest by date)">
+        <img src="https://img.shields.io/docker/image-size/anantha/spring-boot-application-template" />
+    </a>
+	<a alt="GitHub code size in bytes">
+        <img src="https://img.shields.io/github/languages/code-size/Spring-Boot-Framework/Spring-Boot-Application-Template" />
+    </a>
+	<a alt="GitHub top language">
+        <img src="https://img.shields.io/github/languages/top/Spring-Boot-Framework/Spring-Boot-Application-Template.svg" />
+    </a>
+	<a alt="GitHub pull requests">
+        <img src="https://img.shields.io/github/issues-pr-raw/Spring-Boot-Framework/Spring-Boot-Application-Template" />
+    </a>
+	<a alt="GitHub repo size">
+        <img src="https://img.shields.io/github/repo-size/Spring-Boot-Framework/Spring-Boot-Application-Template" />
+    </a>
+	<a alt="GitHub language count">
+        <img src="https://img.shields.io/github/languages/count/Spring-Boot-Framework/Spring-Boot-Application-Template" />
+    </a>
+	<a alt="GitHub last commit">
+        <img src="https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template" />
+    </a>
     <a alt="Java">
         <img src="https://img.shields.io/badge/Java-v1.8-orange.svg" />
     </a>
@@ -142,7 +154,7 @@ Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text el
 ## To-Do
 
 * 	[x] Logger (Console, File)
-* 	[x] RESTful Web Service (CRUD)
+* 	[ ] RESTful Web Service (CRUD)
 * 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
 * 	[x] [Dark Mode](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme)
 * 	[x] [Spring Security](https://spring.io/projects/spring-security) RBAC, Session Timeout
@@ -183,7 +195,7 @@ The code can also be built into a jar and then executed/run. Once the jar is bui
 To shutdown the jar, follow the below mentioned steps on a Windows machine.
 
 *	In command prompt execute the **jcmd** command to print a list of all running Java processes
-*	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP ** with the actual process id of the running jar found out from executing the previous command
+*	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP** with the actual process id of the running jar found out from executing the previous command
 
 The app will start running at <http://localhost:8080>, change the database settings in **application.properties** file as per your need.
 
@@ -223,13 +235,15 @@ On Windows machine use **Windows Powershell**, navigate to the project folder wh
 
 ### Looking for something in particular?
 
-|                  Security Variation                       |                                       Tag                                     |
-|-----------------------------------------------------------|-------------------------------------------------------------------------------|
-|Role Based Authentication (In-memory Users)                | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
-|Permission Based Authentication (In-memory Users)          | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
-|Spring Method-Security with @PreAuthorize (In-memory Users)| https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
-|Database Authentication Authorization (In-memory Users)    | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
-|Role, Permission based User Authentication via MySQL       | https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags|
+[Role Based Authentication (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
+
+[Permission Based Authentication (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
+
+[Spring Method-Security with @PreAuthorize (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
+
+[Database Authentication Authorization (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
+
+[Role, Permission based User Authentication via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
 
 Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security`.
 

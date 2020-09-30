@@ -1,12 +1,10 @@
-package io.github.anantharajuc.sbtest.service.impl;
+package io.github.anantharajuc.sbtest.person.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 import org.junit.Test;
@@ -22,18 +20,18 @@ import io.github.anantharajuc.sbtest.person.model.GenderEnum;
 import io.github.anantharajuc.sbtest.person.model.Geo;
 import io.github.anantharajuc.sbtest.person.model.Person;
 import io.github.anantharajuc.sbtest.person.repositories.PersonRepository;
-import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
-import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 
+/*
+ * Test class for {@link PersonCommandServiceImpl}
+ *
+ * @author Anantha Raju c
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest() 
-public class PersonServiceImplTest 
+public class PersonCommandServiceImplTests 
 {
 	@Autowired
 	private PersonCommandServiceImpl personCommandServiceImpl; 
-	
-	@Autowired
-	private PersonQueryServiceImpl personQueryServiceImpl;
 	
 	@MockBean
 	private PersonRepository personRepository;
@@ -94,6 +92,7 @@ public class PersonServiceImplTest
 		
 		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person));
 		Mockito.when(personRepository.existsById(person.getId())).thenReturn(false);
+		
 		assertFalse(personRepository.existsById(person.getId())); 
 	}
 	
@@ -105,66 +104,10 @@ public class PersonServiceImplTest
 		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person));
 		
 		person.setName("Stevie Nicks Updated Name");
+		
 		Mockito.when(personRepository.save(person)).thenReturn(person);
 		
 		assertThat(personCommandServiceImpl.updatePerson((long) 1, person)).isEqualTo(person);
 	}
-	
-	@Test
-	public void getPersonByIdTest()
-	{		
-		Person person = createPerson();
-		
-		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person)); 
-		assertThat(personQueryServiceImpl.getPersonById(1L)).isEqualTo(person);
-	}
-	
-	@Test
-	public void getAllPersonsTest()
-	{	
-		Person person1 = createPerson();
 
-		
-		Date date = new Date();
-		LocalDate dob = LocalDate.of(2017, 1, 13);
-		
-		Person person2 = new Person();
-		
-		person2.setId((long) 1);
-		person2.setCreatedDate(date);		
-		person2.setName("Stevie Nicks");
-		person2.setUsername("stevienicks");		
-		person2.setEmailPrimary("stevienicks@gmail.com");
-		person2.setEmailSecondary("nicksstevie@yahoo.co.in"); 
-		person2.setPhone(9191919191L);
-		person2.setGender(GenderEnum.FEMALE);
-		person2.setAge(29);
-		person2.setPassword("abcd12345");
-		person2.setDob(dob);
-		person2.setIsAdult(true); 
-		
-		Address address2 = new Address();
-
-		address2.setStreet("Jane Plains");
-		address2.setSuite("Suite 779");
-		address2.setCity("Wisokyburghh");
-		address2.setZipcode("90565-7771");
-		
-		Geo geo2 = new Geo();	
-		
-		geo2.setLat("-43.9589");
-		geo2.setLng("-34.4628");
-		
-		address2.setGeo(geo2);
-		person2.setAddress(address2);
-		
-		List<Person> personList = new ArrayList<>();
-		
-		personList.add(person1);
-		personList.add(person2);
-		
-		Mockito.when(personRepository.findAll()).thenReturn(personList);
-		
-		assertThat(personQueryServiceImpl.getAllPersons()).isEqualTo(personList);
-	}
 }

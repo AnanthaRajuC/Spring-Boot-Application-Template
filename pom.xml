@@ -75,6 +75,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+		        <exclusion>
+		            <groupId>com.vaadin.external.google</groupId>
+		            <artifactId>android-json</artifactId>
+		        </exclusion>
+		    </exclusions>
 		</dependency>	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -166,6 +172,17 @@
 		    <groupId>javax.validation</groupId>
 		    <artifactId>validation-api</artifactId>
 		</dependency>
+		
+<!-- 		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.2.1.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator-annotation-processor</artifactId>
+		    <version>5.2.1.Final</version>
+		</dependency> -->
 
 		<dependency>
 		    <groupId>org.springframework.data</groupId>
@@ -177,6 +194,12 @@
 	      <artifactId>lombok</artifactId>
 	      <optional>true</optional>
 	    </dependency>
+	    
+	    <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.2.4.Final</version>
+		</dependency>
 
 		<dependency>
 		    <groupId>org.mockito</groupId>

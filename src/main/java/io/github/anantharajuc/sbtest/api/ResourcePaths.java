@@ -28,4 +28,24 @@ public class ResourcePaths
             public static final String GET_BY_GENDER  = GENDER;                       //  /gender/{gender} 
     	}
     }
+    
+    public class SBAT
+    {
+    	public static final String NAME = "/sbat";
+    	
+    	public final class V1
+    	{
+    		private V1() {}
+    		
+    		public static final String ROOT           = NAME;
+    		
+    		public static final String PERSONS        = "/persons";
+    		public static final String INDEX          = "/index";
+    		public static final String LOGIN          = "/login";
+    		public static final String ABOUT          = "/about";
+    		public static final String SETTINGS       = "/settings";
+    		public static final String TECH_STACK     = "/tech-stack";
+    		public static final String CLOSE          = "/close";
+    	}
+    }
 }

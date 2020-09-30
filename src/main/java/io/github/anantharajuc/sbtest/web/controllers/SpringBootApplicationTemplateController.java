@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import io.github.anantharajuc.sbtest.api.ResourcePaths;
 import io.github.anantharajuc.sbtest.backend.persistence.repositories.BuiltWithRepository;
 import io.github.anantharajuc.sbtest.person.controllers.PersonQueryController;
 import io.github.anantharajuc.sbtest.person.model.Person;
@@ -31,7 +32,7 @@ import lombok.extern.log4j.Log4j2;
  */
 @Log4j2
 @Controller
-@RequestMapping({"/sbat"})
+@RequestMapping(value=ResourcePaths.SBAT.V1.ROOT)
 public class SpringBootApplicationTemplateController 
 {
 	@Autowired
@@ -52,7 +53,7 @@ public class SpringBootApplicationTemplateController
 	@Autowired
     private PersonQueryServiceImpl personQueryServiceImpl;
 	
-	@GetMapping("/persons") 
+	@GetMapping(value=ResourcePaths.SBAT.V1.PERSONS) 
     public String persons(Model model) 
 	{
 		model.addAttribute("persons", personController.getAllPersons(null, null)); 
@@ -60,25 +61,25 @@ public class SpringBootApplicationTemplateController
 		return "pages/persons";
     }
 	  
-	@GetMapping("/index")
+	@GetMapping(value=ResourcePaths.SBAT.V1.INDEX)
     public String index() 
 	{
 		return "pages/index";
     }
 	
-	@GetMapping("/login")
+	@GetMapping(value=ResourcePaths.SBAT.V1.LOGIN)
     public String login() 
 	{
 		return "pages/login";
     }
 	
-	@GetMapping("/about")
+	@GetMapping(value=ResourcePaths.SBAT.V1.ABOUT)
     public String about() 
 	{
 		return "pages/about";
     }
 	
-	@GetMapping("/settings")
+	@GetMapping(value=ResourcePaths.SBAT.V1.SETTINGS)
     public String settings(Model model) 
 	{
 		model.addAttribute("users", userController.listLoggedInUsers());
@@ -86,7 +87,7 @@ public class SpringBootApplicationTemplateController
 		return "pages/users";
     }
 	
-	@GetMapping("/tech-stack")
+	@GetMapping(value=ResourcePaths.SBAT.V1.TECH_STACK)
 	public String builtWith(Model model, @RequestParam(defaultValue="0") int page)
 	{ 
 		model.addAttribute("data", builtWithRepository.findAll());
@@ -94,7 +95,7 @@ public class SpringBootApplicationTemplateController
 		return "pages/built_with";
 	}
 	
-	@GetMapping("/close")
+	@GetMapping(value=ResourcePaths.SBAT.V1.CLOSE)
 	public String close()
 	{
 		log.info("App Shutdown");
