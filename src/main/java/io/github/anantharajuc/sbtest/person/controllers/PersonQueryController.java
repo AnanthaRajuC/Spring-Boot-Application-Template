@@ -42,6 +42,14 @@ public class PersonQueryController
 	@Autowired
 	private PersonQueryServiceImpl personQueryImpl;
 	
+	/**
+	 * Method that returns all persons from the datastore 
+	 * 
+	 * 
+	 * HTTP Status:
+	 * 
+	 * 200 - OK: Everything worked as expected.
+	 */
 	@Cacheable()
 	@GetMapping()	
 	@ResponseStatus(HttpStatus.OK)
@@ -57,8 +65,8 @@ public class PersonQueryController
 		
 		return new ResponseEntity<>(personQueryImpl.getAllPersons(), headers, HttpStatus.OK);
 	}
-	
-	@GetMapping(value="/pageable")	
+		
+	@GetMapping(value=ResourcePaths.PAGEABLE)	
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
@@ -86,7 +94,7 @@ public class PersonQueryController
 	 * 
 	 * 200 - OK: Everything worked as expected.
 	 */
-	@GetMapping(value="/gender/{gender}")
+	@GetMapping(value=ResourcePaths.GENDER)	
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons based on Gender", notes="Returns all Person's in the data store.")

@@ -51,6 +51,11 @@
 						"key": "Accept",
 						"type": "text",
 						"value": "application/xml"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
 					}
 				],
 				"url": {
@@ -142,6 +147,11 @@
 						"key": "Accept",
 						"value": "application/xml",
 						"type": "text"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
 					}
 				],
 				"url": {
@@ -194,7 +204,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/557",
+					"raw": "http://localhost:8080/api/v1/person/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -204,7 +214,7 @@
 						"api",
 						"v1",
 						"person",
-						"557"
+						"5"
 					]
 				},
 				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -239,7 +249,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"TTT\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"raw": "{\r\n\t\"name\": \"ooooo\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -538,9 +548,15 @@
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdOn,desc",
+					"raw": "http://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdBy,desc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -563,7 +579,7 @@
 						},
 						{
 							"key": "sort",
-							"value": "createdOn,desc"
+							"value": "createdBy,desc"
 						}
 					]
 				},
@@ -598,7 +614,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person/771",
+					"raw": "http://localhost:8080/api/v1/person/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -608,7 +624,7 @@
 						"api",
 						"v1",
 						"person",
-						"771"
+						"5"
 					]
 				},
 				"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
@@ -672,45 +688,6 @@
 					"basic": [
 						{
 							"key": "username",
-							"value": "johndoe",
-							"type": "string"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/management/api/v1/person/88",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"management",
-						"api",
-						"v1",
-						"person",
-						"88"
-					]
-				},
-				"description": "http://localhost:8080/management/api/v1/person/669"
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/management/api/v1/person/{id}",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "username",
 							"value": "AdminUser",
 							"type": "string"
 						},
@@ -722,9 +699,15 @@
 					]
 				},
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:8080/management/api/v1/person/3",
+					"raw": "http://localhost:8080/management/api/v1/person/89",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -735,10 +718,10 @@
 						"api",
 						"v1",
 						"person",
-						"3"
+						"89"
 					]
 				},
-				"description": "http://localhost:8080/management/api/v1/person/69"
+				"description": "http://localhost:8080/management/api/v1/person/669"
 			},
 			"response": []
 		},
@@ -820,10 +803,16 @@
 					]
 				},
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Vincents Orrey7\",\r\n    \"username\": \"vorrey1y\",\r\n    \"emailPrimary\": \"vorrey1y@booking.com\",\r\n    \"emailSecondary\": \"vorrey1y@dailymotion.com\",\r\n    \"phone\": 3871794362,\r\n    \"gender\": \"MALE\",\r\n    \"password\": \"MAhfhfhdfhdLE\",\r\n    \"age\": 41,\r\n    \"dob\": \"25-12-2006\",\r\n    \"isAdult\": false,\r\n    \"address\": {\r\n        \"id\": 71,\r\n        \"street\": \"Butterfield\",\r\n        \"suite\": \"porttitor\",\r\n        \"city\": \"Malaga\",\r\n        \"zipcode\": \"29015\",\r\n        \"geo\": {\r\n            \"id\": 71,\r\n            \"lat\": \"40.6892276\",\r\n            \"lng\": \"-8.6031905\"\r\n        }\r\n    }\r\n}",
+					"raw": "{\r\n    \"name\": \"Vincen7\",\r\n    \"username\": \"vorre7777y1y\",\r\n    \"emailPrimary\": \"777@booking.com\",\r\n    \"emailSecondary\": \"vor777rey1y@dailymotion.com\",\r\n    \"phone\": 7898,\r\n    \"gender\": \"MALE\",\r\n    \"password\": \"MAhfhfhdfhdLE\",\r\n    \"age\": 41,\r\n    \"dob\": \"25-12-2006\",\r\n    \"isAdult\": false,\r\n    \"address\": {\r\n        \"id\": 71,\r\n        \"street\": \"Butterfield\",\r\n        \"suite\": \"porttitor\",\r\n        \"city\": \"Malaga\",\r\n        \"zipcode\": \"29015\",\r\n        \"geo\": {\r\n            \"id\": 71,\r\n            \"lat\": \"40.6892276\",\r\n            \"lng\": \"-8.6031905\"\r\n        }\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -868,7 +857,13 @@
 					]
 				},
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"name\": \"aaa\",\r\n\t\"username\": \"aaaa\",\r\n\t\"emailPrimary\": \"aaaa@gmail.com\",\r\n\t\"emailSecondary\": \"ffff.howell@gmail.com\",\r\n\t\"phone\":11111333,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
@@ -925,7 +920,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"nnn\",\r\n\t\"username\": \"nnn\",\r\n\t\"emailPrimary\": \"nn@gmail.com\",\r\n\t\"emailSecondary\": \"nn@gmail.com\",\r\n\t\"phone\":7778777,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"raw": "{\r\n\t\"name\": \"rrrrrggr\",\r\n\t\"username\": \"rrgggr\",\r\n\t\"emailPrimary\": \"jgggj@gmail.com\",\r\n\t\"emailSecondary\": \"ggggj@gmail.com\",\r\n\t\"phone\":666666,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -968,7 +963,13 @@
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:8080/management/api/v1/person/4",
 					"protocol": "http",
@@ -1007,7 +1008,13 @@
 					]
 				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"name\": \"hfghghf\",\r\n\t\"username\": \"hhgfhghg\",\r\n\t\"emailPrimary\": \"555hhgfll@gmail.com\",\r\n\t\"emailSecondary\": \"55fdhdgll@gmail.com\",\r\n\t\"phone\":55656000,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
@@ -1063,7 +1070,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"createdBy\": \"Installation\",\r\n    \"lastModifiedBy\": \"Installation\",\r\n    \"password\": \"$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe\",\r\n    \"username\": \"jane\",\r\n    \"roles\": [\r\n        {\r\n            \"createdBy\": \"Installation\",\r\n            \"lastModifiedBy\": \"Installation\",\r\n            \"name\": \"ROLE_PERSON\",\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"createdBy\": \"Installation\",\r\n            \"lastModifiedBy\": \"Installation\",\r\n            \"name\": \"ROLE_ADMIN\",\r\n            \"permissions\": [\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_CREATE\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_READ\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_UPDATE\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_DELETE\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"enabled\": true,\r\n    \"accountNonExpired\": true,\r\n    \"credentialsNonExpired\": true,\r\n    \"accountNonLocked\": true\r\n}",
+					"raw": "{\r\n    \"createdBy\": \"Installation\",\r\n    \"lastModifiedBy\": \"Installation\",\r\n    \"password\": \"$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe\",\r\n    \"username\": \"janehhhh\",\r\n    \"roles\": [\r\n        {\r\n            \"createdBy\": \"Installation\",\r\n            \"lastModifiedBy\": \"Installation\",\r\n            \"name\": \"ROLE_PERSON\",\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"createdBy\": \"Installation\",\r\n            \"lastModifiedBy\": \"Installation\",\r\n            \"name\": \"ROLE_ADMIN\",\r\n            \"permissions\": [\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_CREATE\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_READ\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_UPDATE\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_DELETE\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"enabled\": true,\r\n    \"accountNonExpired\": true,\r\n    \"credentialsNonExpired\": true,\r\n    \"accountNonLocked\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1197,7 +1204,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/v1/person?page=1&size=1&sort=createdDate,desc",
+			"name": "Get Person's - Pageable",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -1208,7 +1215,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/person?size=150&pageNumber=5&sort=id",
+					"raw": "http://localhost:8080/api/v1/person/pageable?size=150&pageNumber=5&sort=id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1217,7 +1224,8 @@
 					"path": [
 						"api",
 						"v1",
-						"person"
+						"person",
+						"pageable"
 					],
 					"query": [
 						{

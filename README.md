@@ -154,7 +154,6 @@ Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text el
 ## To-Do
 
 * 	[x] Logger (Console, File)
-* 	[ ] RESTful Web Service (CRUD)
 * 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
 * 	[x] [Dark Mode](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme)
 * 	[x] [Spring Security](https://spring.io/projects/spring-security) RBAC, Session Timeout
@@ -163,8 +162,9 @@ Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text el
 * 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
+*   [ ] Unit Tests, Integration Tests
 * 	[ ] Shut down app on button click via actuator url 
-* 	[ ] HATEOS
+* 	[ ] HATEOS - RESTful Web Service 
 * 	[ ] Spring Boot Admin
 * 	[ ] NoSQL (MongoDB)
 * 	[ ] Multitenancy
@@ -254,6 +254,12 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 |`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
 
 ### API Rate Limiting
+
+|     Tier   | API Request Cap |
+|------------|-----------------|
+|FREE        |     25          |
+|BASIC       |     50          |
+|PROFESSIONAL|     75          |
 
 [Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbtest.api.rate_limiting package`
 

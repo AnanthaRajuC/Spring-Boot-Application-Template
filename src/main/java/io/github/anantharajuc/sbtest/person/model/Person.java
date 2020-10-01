@@ -10,9 +10,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -47,24 +44,20 @@ public class Person extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
 
-	@NotBlank
 	@Size(min=3, max=15, message="Name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
 	@ApiModelProperty(position=5, notes="Name of the person, it must be between 3 and 15 characters.", value="${Person.name}", required=true, example="John Doe")
     private String name;
 	
-	@NotBlank
 	@Column(name="username", unique=true)
-	@Size(max = 15, message="username must not be empty.")
+	@Size(min=3, max = 15, message="username must not be empty.")
 	@ApiModelProperty(position=6, notes="A unique identifier used by a person.", value="${Person.username}", required=true, example="user-1234")
 	private String username;
 	
-	@NotBlank
 	@Column(name="phone", unique=true, nullable=false)
 	@ApiModelProperty(position=7, notes="Phone number of the person.", value="${Person.emailSecondary}", required=true, example="9874563210")
 	private Long phone;
 	
-	@Email
 	@Size(max=255, message="Must be a valid email id")
 	@Column(name="email_primary", unique=true, nullable = false)
 	@ApiModelProperty(position=8, notes="Primary email of the person.", value="${Person.emailPrimary}", required=true, example="example@domain.com")
@@ -84,14 +77,13 @@ public class Person extends AuditEntity
 	@ApiModelProperty(position=11, notes="Age of the person.", value="${Person.age}", example="55")
 	private int age;
 	
-	@NotBlank
+	@Size(min=6, max = 15, message="password must not be empty.")
 	@JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
 	@Size(max = 100)
 	@Column(name = "password")
 	@ApiModelProperty(position=12, notes="A secret word/phrase used to gain access to the application.", value="${Person.password}", example="$+r0nG10$$w0rD")
 	private String password;
-	
-	@Past
+
 	@JsonFormat(pattern="dd-MM-yyyy", timezone="Asia/Kolkata")
 	@Column(name="dob", nullable = true)
 	@ApiModelProperty(position=13, notes="The month, day, and year a person was born. Pattern dd-MM-yyyy", value="${Person.dob}", example="2006-12-25")

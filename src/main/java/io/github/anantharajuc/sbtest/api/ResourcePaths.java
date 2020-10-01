@@ -8,7 +8,8 @@ public class ResourcePaths
     public static final String V2          = "/v2";
     
     public static final String ID          = "/{id}";
-    public static final String GENDER      = "gender/{gender}";
+    public static final String PAGEABLE    = "/pageable";
+    public static final String GENDER      = "/gender/{gender}";
     
     public static final String ROOT_API    = "/" + API;                               //  /api
     public static final String ROOT_API_V1 = ROOT_API + V1;		                      //  /api/v1
@@ -26,6 +27,8 @@ public class ResourcePaths
             public static final String GET            = ROOT_API_V1 + NAME + ID;      //  /api/v1/person/{id} 
             
             public static final String GET_BY_GENDER  = GENDER;                       //  /gender/{gender} 
+            
+            public static final String PAGEABLE       = GENDER;                       //  /gender/{gender} 
     	}
     }
     

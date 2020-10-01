@@ -6,6 +6,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * API Rate Limiting Configuration.
+ * 
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ */
 @Configuration
 @AllArgsConstructor
 public class RateLimitingConfiguration implements WebMvcConfigurer

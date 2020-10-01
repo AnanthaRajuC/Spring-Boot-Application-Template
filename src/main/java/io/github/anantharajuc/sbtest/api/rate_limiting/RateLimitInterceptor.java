@@ -14,6 +14,11 @@ import io.github.bucket4j.Bucket;
 import io.github.bucket4j.ConsumptionProbe;
 import lombok.extern.log4j.Log4j2;
 
+/**
+ * API Rate Limit Interceptor
+ * 
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ */
 @Log4j2
 @Component
 public class RateLimitInterceptor implements HandlerInterceptor

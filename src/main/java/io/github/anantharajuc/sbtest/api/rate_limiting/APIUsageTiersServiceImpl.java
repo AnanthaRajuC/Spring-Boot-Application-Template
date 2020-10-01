@@ -36,6 +36,7 @@ public class APIUsageTiersServiceImpl implements APIUsageTiersService
 	public Bucket newBucket(String apiKey) 
 	{
 		APIUsageTiersEnum pricingPlan = APIUsageTiersEnum.resolvePlanFromApiKey(apiKey);
+		
 		return bucket(pricingPlan.getLimit());
 	}
 
