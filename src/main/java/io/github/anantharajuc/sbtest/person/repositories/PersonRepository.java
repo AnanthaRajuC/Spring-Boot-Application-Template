@@ -15,6 +15,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 /**
+ * 
  * Repository class for <code>Person</code> domain object. All method names are compliant with Spring Data naming
  * conventions so this interface can easily be extended for Spring Data See here: http://static.springsource.org/spring-data/jpa/docs/current/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
  *
@@ -23,7 +24,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long>
 {   
-	/**
+	/*
      * Retrieve a {@link Person} from the data store by gender.
      * @param gender the gender to search for
      * @return <code>List</code> of {@link Person}'s if found
@@ -32,7 +33,7 @@ public interface PersonRepository extends JpaRepository<Person, Long>
 	@Transactional(readOnly=true)
     List<Person> getPersonByGender(@Param("gender") String gender);
 	
-	/**
+	/*
      * Retrieve a {@link Person} from the data store by name.
      * @param name the name to search for
      * @return The {@link Person} if found
@@ -49,7 +50,7 @@ public interface PersonRepository extends JpaRepository<Person, Long>
 	@Transactional(readOnly = true)
 	Optional<Person> findByUsername(@NotBlank String username);
 
-	/**
+	/*
      * Retrieve a {@link Person} from the data store by username or email.
      * @param username the username to search for or
      * @param email the email to search for

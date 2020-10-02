@@ -255,13 +255,15 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 
 ### API Rate Limiting
 
-|     Tier   | API Request Cap |
-|------------|-----------------|
-|FREE        |     25          |
-|BASIC       |     50          |
-|PROFESSIONAL|     75          |
+|     Tier   | API Request Cap |  API Key Prefix  |
+|------------|-----------------|------------------|
+|FREE        |     25          |     `null`       |
+|BASIC       |     50          |     `PX001-`     |
+|PROFESSIONAL|     75          |     `BX001-`     |
 
-[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbtest.api.rate_limiting package`
+Rate Limiting header `X-api-key`
+
+[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbtest.api.rate_limiting` package
 
 ### Preventing Brute Force Authentication Attempts
 

@@ -29,7 +29,7 @@ import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-/**
+/*
  * Person Command Controller
  *
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
@@ -50,7 +50,7 @@ public class PersonCommandController
 	@Autowired
 	private PersonCommandServiceImpl personCommandServiceImpl;
 	
-	/**
+	/*
 	 * Method that creates a person in the database.
 	 * 
 	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
@@ -79,7 +79,7 @@ public class PersonCommandController
 		return new ResponseEntity<>(personCommandServiceImpl.createPerson(person), headers, HttpStatus.CREATED);
 	}
 
-	/**
+	/*
 	 * Method that updates an existing person in the database.
 	 * 
 	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
@@ -110,7 +110,7 @@ public class PersonCommandController
 		return new ResponseEntity<>(personCommandServiceImpl.updatePerson(personId, personDetails),HttpStatus.OK);
 	}
 	
-	/**
+	/*
 	 * Method that deletes an existing person in the database.
 	 * 
 	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>

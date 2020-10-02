@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.web.controllers;
+/*package io.github.anantharajuc.sbtest.web.controllers;
 
 import java.util.List;
 
@@ -22,28 +22,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.anantharajuc.example.person.services.PersonCommandService;
+import io.github.anantharajuc.example.person.services.PersonQueryService;
 import io.github.anantharajuc.sbtest.person.model.Person;
-import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
-import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 
-/**
+*//**
  * Person Controller
  *
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  *
- */
+ *//*
 @RestController
 @RequestMapping("/management/api/v1")
 @CacheConfig(cacheNames={"personManagement"})
 public class PersonManagementController 
 {
 	@Autowired
-	private PersonQueryServiceImpl personQueryServiceImpl; 
+	private PersonQueryService personQueryServiceImpl; 
 	
 	@Autowired
-	private PersonCommandServiceImpl personCommandServiceImpl;
+	private PersonCommandService personCommandServiceImpl;
 	
 	@Cacheable()
 	@GetMapping(value="/person")	
@@ -97,3 +97,4 @@ public class PersonManagementController
 		return personCommandServiceImpl.deletePerson(personId);
 	}
 }
+*/

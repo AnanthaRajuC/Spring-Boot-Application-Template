@@ -27,7 +27,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 
-/**
+/*
  * Person Query Controller
  *
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
@@ -42,7 +42,7 @@ public class PersonQueryController
 	@Autowired
 	private PersonQueryServiceImpl personQueryImpl;
 	
-	/**
+	/*
 	 * Method that returns all persons from the datastore 
 	 * 
 	 * 
@@ -82,7 +82,7 @@ public class PersonQueryController
 		return new ResponseEntity<>(personQueryImpl.getAllPersonsPageable(pageable), headers, HttpStatus.OK);
 	}
 
-	/**
+	/*
 	 * Method that searchs for person based on gender
 	 * 
 	 * @param apiVersion - API version at the moment
@@ -110,7 +110,7 @@ public class PersonQueryController
 		return new ResponseEntity<>(personQueryImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
 	}
 	
-	/**
+	/*
 	 * Method that search a person by the id.
 	 * 
 	 * @param apiVersion - API version at the moment

@@ -45,7 +45,7 @@ public class APIUsageTiersServiceImpl implements APIUsageTiersService
 	 */
 	@Override
 	public Bucket bucket(Bandwidth limit) 
-	{
+	{		
 		return Bucket4j.builder().addLimit(limit).build();
 	}
 }

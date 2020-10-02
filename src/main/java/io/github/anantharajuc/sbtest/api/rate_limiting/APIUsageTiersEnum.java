@@ -33,7 +33,10 @@ public enum APIUsageTiersEnum
     public Bandwidth getLimit() 
     {
     	log.info("-----> API Rate Limiting : Bandwidth : "+Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(20))));
-        return Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(20)));
+    	
+    	return Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(20)));
+    	
+    	//return Bandwidth.simple(1, Duration.ofSeconds(30));
     }
     
     /**
