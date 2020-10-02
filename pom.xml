@@ -192,7 +192,7 @@
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-validator-annotation-processor</artifactId>
-		    <version>5.2.1.Final</version>
+		    <version>5.4.3.Final</version>
 		</dependency>
 
 		<dependency>
