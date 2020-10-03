@@ -13,10 +13,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Simple JavaBean domain object representing built_with.
@@ -32,6 +34,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(description="Models a builit_with table.")
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class BuiltWith extends AuditEntity
 {
 	//Default Serial Version ID
@@ -40,17 +43,17 @@ public class BuiltWith extends AuditEntity
 	@Size(min=3, max=15, message="name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
 	@ApiModelProperty(position=5, notes="name.", value="${BuiltWith.name}", required=true, example="Apache Maven")
-	private String name;
+	String name;
 	
 	@Column(name="version", nullable = true)
 	@ApiModelProperty(position=6, notes="version.", value="${BuiltWith.version}", example="3.5.2")
-	private String version;
+	String version;
 	
 	@Column(name="description", nullable = true)
 	@ApiModelProperty(position=7, notes="description.", value="${BuiltWith.description}", example="Dependency Management")
-	private String description;
+	String description;
 	
 	@Column(name="link", nullable = true)
 	@ApiModelProperty(position=8, notes="link.", value="${BuiltWith.link}", example="https://maven.apache.org/")
-	private String link;
+	String link;
 }

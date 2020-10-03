@@ -16,10 +16,12 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Models a {@link Person Person's} address.
@@ -34,6 +36,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(description="Models a Person's address.")
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class Address extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
@@ -41,28 +44,28 @@ public class Address extends AuditEntity
 	@Column(name="street", nullable=true)
 	@Size(min=3, max=15, message="street must be between 3 and 15 characters.")
 	@ApiModelProperty(position=5, notes="street.", value="${Address.street}", example="Jane Plains")
-	private String street;
+	String street;
 
 	@Column(name="suite", nullable=true)
 	@Size(min=3, max=15, message="suite must be between 3 and 15 characters.")
 	@ApiModelProperty(position=6, notes="suite.", value="${Address.suite}", example="Suite 779")
-	private String suite;
+	String suite;
 
 	@Column(name="city", nullable=true)
 	@Size(min=3, max=15, message="city must be between 3 and 15 characters.")
 	@ApiModelProperty(position=7, notes="city.", value="${Address.city}", example="Wisokyburghh")
-	private String city;
+	String city;
 
 	@Column(name="zipcode", nullable=true)
 	@Size(min=3, max=15, message="zipcode must be between 3 and 15 characters.")
 	@ApiModelProperty(position=8, notes="A postal code consisting of five or nine digits.", value="${Address.zipcode}", example="90565-7771")
-	private String zipcode;
+	String zipcode;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="geo_id")
-	private Geo geo;
+	Geo geo;
 
 	@JsonBackReference
 	@OneToOne(mappedBy="address")
-	private Person person;
+	Person person;
 }

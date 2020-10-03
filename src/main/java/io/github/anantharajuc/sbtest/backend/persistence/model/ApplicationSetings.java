@@ -11,11 +11,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Properties to be loaded when the application starts.
@@ -32,6 +34,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @ApiModel(description="Properties to be loaded when the application starts.") 
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class ApplicationSetings extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;

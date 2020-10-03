@@ -12,10 +12,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import io.github.anantharajuc.sbtest.auditing.AuditEntity;
 import io.github.anantharajuc.sbtest.backend.persistence.model.enumeration.ApplicationLogEnum;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Application Log - Event
@@ -30,6 +32,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class ApplicationLog extends AuditEntity
 {
 	//Default Serial Version ID
@@ -38,9 +41,9 @@ public class ApplicationLog extends AuditEntity
 	@ApiModelProperty(notes="Application Event", value="${ApplicationLog.event}", allowableValues="APPLICATION_START")
 	@Enumerated(EnumType.STRING)
 	@Column(name="event", nullable = false)
-	private ApplicationLogEnum event;
+	ApplicationLogEnum event;
 	
 	@ApiModelProperty(notes="Application Event Details", value="${ApplicationLog.details}")
 	@Column(name="details", nullable = false)
-	private String details;
+	String details;
 }
