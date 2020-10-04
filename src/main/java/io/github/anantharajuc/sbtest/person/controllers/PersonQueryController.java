@@ -7,6 +7,7 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.github.anantharajuc.sbtest.api.APIutil;
 import io.github.anantharajuc.sbtest.api.ResourcePaths;
 import io.github.anantharajuc.sbtest.person.model.Person;
+import io.github.anantharajuc.sbtest.person.model.PersonModelAssembler;
 import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -41,6 +43,15 @@ public class PersonQueryController
 {
 	@Autowired
 	private PersonQueryServiceImpl personQueryImpl;
+	
+	private final PersonModelAssembler personModelAssembler;
+	
+	@Autowired
+    public PersonQueryController(PersonModelAssembler personModelAssembler) 
+	{
+        this.personModelAssembler = personModelAssembler;
+    }
+
 	
 	/*
 	 * Method that returns all persons from the datastore 
@@ -127,7 +138,7 @@ public class PersonQueryController
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)
 	@ApiResponse(code = 400, message = "Invalid ID supplied")
-	public ResponseEntity<Person> getPersonById(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
+	public EntityModel<Person> getPersonById(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
 			                                    @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
 			                                    @PathVariable(value="id") Long personId)
 	{
@@ -135,7 +146,7 @@ public class PersonQueryController
 		
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
-		
-		return new ResponseEntity<>(personQueryImpl.getPersonById(personId), headers, HttpStatus.OK);
+		 
+		return personModelAssembler.toModel(personQueryImpl.getPersonById(personId));
 	}
 }
