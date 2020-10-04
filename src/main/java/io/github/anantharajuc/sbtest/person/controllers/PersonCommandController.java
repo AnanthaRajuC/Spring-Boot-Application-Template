@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.github.anantharajuc.sbtest.api.APIutil;
 import io.github.anantharajuc.sbtest.api.ResourcePaths;
 import io.github.anantharajuc.sbtest.person.model.Person;
+import io.github.anantharajuc.sbtest.person.model.PersonModelAssembler;
 import io.github.anantharajuc.sbtest.person.services.PersonCommandServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -50,6 +53,14 @@ public class PersonCommandController
 	@Autowired
 	private PersonCommandServiceImpl personCommandServiceImpl;
 	
+	private final PersonModelAssembler personModelAssembler;
+	
+	@Autowired
+    public PersonCommandController(PersonModelAssembler personModelAssembler) 
+	{
+        this.personModelAssembler = personModelAssembler;
+    }
+	
 	/*
 	 * Method that creates a person in the database.
 	 * 
@@ -67,18 +78,19 @@ public class PersonCommandController
 	@ResponseStatus(HttpStatus.CREATED)
 	@ApiOperation(httpMethod="POST", value = "Add Person", notes = "Add a new Person to the datastore",response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_CREATE')")
-	public ResponseEntity<Person> createPerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+	public ResponseEntity<EntityModel<Person>> createPerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                                @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
 			                                   @Valid @RequestBody Person person)
-	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();		
+	{		
+		EntityModel<Person> entityModel = personModelAssembler.toModel(personCommandServiceImpl.createPerson(person)); 
 
-		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
-		headers.add(APIutil.HEADER_API_KEY, apiKey);
-
-		return new ResponseEntity<>(personCommandServiceImpl.createPerson(person), headers, HttpStatus.CREATED);
+		return ResponseEntity
+                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .header(APIutil.HEADER_PERSON_API_VERSION, apiVersion) 
+                .header(APIutil.HEADER_API_KEY, apiKey) 
+                .body(entityModel);
 	}
-
+ 
 	/*
 	 * Method that updates an existing person in the database.
 	 * 
@@ -98,16 +110,17 @@ public class PersonCommandController
 	@ResponseStatus(HttpStatus.OK)
 	@ApiOperation(httpMethod="PUT", value = "UPDATE Person", notes = "Update an existing Person in the datastore",response=Person.class)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_UPDATE')")
-	public ResponseEntity<Person> updatePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+	public ResponseEntity<EntityModel<Person>> updatePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                                @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
 			                                   @PathVariable(value = "id") Long personId,@Valid @RequestBody Person personDetails)
-	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();		
-
-		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
-		headers.add(APIutil.HEADER_API_KEY, apiKey);
+	{ 
+		EntityModel<Person> entityModel = personModelAssembler.toModel(personCommandServiceImpl.updatePerson(personId, personDetails));
 		
-		return new ResponseEntity<>(personCommandServiceImpl.updatePerson(personId, personDetails),HttpStatus.OK);
+		return ResponseEntity
+                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+                .header(APIutil.HEADER_PERSON_API_VERSION, apiVersion) 
+                .header(APIutil.HEADER_API_KEY, apiKey) 
+                .body(entityModel);
 	}
 	
 	/*

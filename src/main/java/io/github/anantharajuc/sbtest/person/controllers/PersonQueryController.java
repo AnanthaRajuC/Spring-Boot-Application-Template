@@ -1,13 +1,17 @@
 package io.github.anantharajuc.sbtest.person.controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.core.LinkBuilderSupport;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -28,6 +32,8 @@ import io.github.anantharajuc.sbtest.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 /*
  * Person Query Controller
@@ -51,7 +57,6 @@ public class PersonQueryController
 	{
         this.personModelAssembler = personModelAssembler;
     }
-
 	
 	/*
 	 * Method that returns all persons from the datastore 
@@ -66,15 +71,44 @@ public class PersonQueryController
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
-	public ResponseEntity<List<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+	public ResponseEntity<Object> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
 			                                          @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey) 
 	{
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
 		
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
-		
-		return new ResponseEntity<>(personQueryImpl.getAllPersons(), headers, HttpStatus.OK);
+
+		return new ResponseEntity<>(personModelAssembler.toModel(personQueryImpl.getAllPersons()), headers, HttpStatus.OK); 
+	}
+	
+	/*
+	 * Method that search a person by the id.
+	 * 
+	 * @param apiVersion - API version at the moment
+	 * @param personId - the id of the person
+	 * 
+	 * @return ResponseEntity with a <code>Person</code> object and the HTTP status
+	 * 
+	 * HTTP Status:
+	 * 
+	 * 200 - OK: Everything worked as expected.
+	 */	
+	@GetMapping(value=ResourcePaths.ID)
+	@ResponseStatus(HttpStatus.OK)
+	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
+	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)
+	@ApiResponse(code = 400, message = "Invalid ID supplied")
+	public ResponseEntity<Object> getPersonById(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
+			                                    @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
+			                                    @PathVariable(value="id") Long personId)
+	{
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>(); 
+		  
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
+
+		return new ResponseEntity<>(personModelAssembler.toModel(personQueryImpl.getPersonById(personId)), headers, HttpStatus.OK);
 	}
 		
 	@GetMapping(value=ResourcePaths.PAGEABLE)	
@@ -119,34 +153,5 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
 		return new ResponseEntity<>(personQueryImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
-	}
-	
-	/*
-	 * Method that search a person by the id.
-	 * 
-	 * @param apiVersion - API version at the moment
-	 * @param personId - the id of the person
-	 * 
-	 * @return ResponseEntity with a <code>Person</code> object and the HTTP status
-	 * 
-	 * HTTP Status:
-	 * 
-	 * 200 - OK: Everything worked as expected.
-	 */
-	@GetMapping(value=ResourcePaths.ID)
-	@ResponseStatus(HttpStatus.OK)
-	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
-	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)
-	@ApiResponse(code = 400, message = "Invalid ID supplied")
-	public EntityModel<Person> getPersonById(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
-			                                    @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
-			                                    @PathVariable(value="id") Long personId)
-	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-		
-		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
-		headers.add(APIutil.HEADER_API_KEY, apiKey);
-		 
-		return personModelAssembler.toModel(personQueryImpl.getPersonById(personId));
 	}
 }

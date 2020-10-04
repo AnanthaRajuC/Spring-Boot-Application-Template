@@ -42,7 +42,7 @@ public class PersonCommandServiceImpl implements PersonCommandService
 		personRepository.delete(person);
 		
 		return ResponseEntity
-				.ok()
+				.noContent()
 				.build();
 	}
 
