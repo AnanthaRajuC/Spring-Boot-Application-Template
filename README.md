@@ -162,9 +162,9 @@ Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text el
 * 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
+* 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
 *   [ ] Unit Tests, Integration Tests
 * 	[ ] Shut down app on button click via actuator url 
-* 	[ ] HATEOS - RESTful Web Service 
 * 	[ ] Spring Boot Admin
 * 	[ ] NoSQL (MongoDB)
 * 	[ ] Multitenancy

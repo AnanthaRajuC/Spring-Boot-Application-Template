@@ -8,10 +8,10 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.server.core.LinkBuilderSupport;
-import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -33,6 +33,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 /*
@@ -49,6 +50,9 @@ public class PersonQueryController
 {
 	@Autowired
 	private PersonQueryServiceImpl personQueryImpl;
+	
+	@Autowired
+    private PagedResourcesAssembler<Person> pagedResourcesAssembler;
 	
 	private final PersonModelAssembler personModelAssembler;
 	
@@ -71,15 +75,36 @@ public class PersonQueryController
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
 	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
-	public ResponseEntity<Object> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
-			                                          @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey) 
-	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-		
-		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
-		headers.add(APIutil.HEADER_API_KEY, apiKey);
+	public ResponseEntity<CollectionModel<EntityModel<Person>>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
+			                                                                  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey) 
+	{		
+		List<EntityModel<Person>> persons = personQueryImpl.getAllPersons().stream().map(personModelAssembler::toModel).collect(Collectors.toList());
 
-		return new ResponseEntity<>(personModelAssembler.toModel(personQueryImpl.getAllPersons()), headers, HttpStatus.OK); 
+		return ResponseEntity
+				.ok()
+				.header(APIutil.HEADER_PERSON_API_VERSION, apiVersion) 
+                .header(APIutil.HEADER_API_KEY, apiKey)
+                .body(CollectionModel.of(persons, linkTo(methodOn(PersonQueryController.class).getAllPersons(null, null)).withSelfRel()));
+                
+	}
+	
+	@GetMapping(value=ResourcePaths.PAGEABLE)	
+	@ResponseStatus(HttpStatus.OK)
+	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
+	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
+	public ResponseEntity<CollectionModel<EntityModel<Person>>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
+			                                                                  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
+			                                                                  Pageable pageable) 
+	{	
+		 Page<Person> personsPageable = personQueryImpl.getAllPersonsPageable(pageable);  
+		 
+		 PagedModel<EntityModel<Person>> collModel = pagedResourcesAssembler.toModel(personsPageable, personModelAssembler);		 
+		 
+		 return ResponseEntity
+					.ok()
+					.header(APIutil.HEADER_PERSON_API_VERSION, apiVersion) 
+	                .header(APIutil.HEADER_API_KEY, apiKey)
+	                .body(collModel);
 	}
 	
 	/*
@@ -109,22 +134,6 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 
 		return new ResponseEntity<>(personModelAssembler.toModel(personQueryImpl.getPersonById(personId)), headers, HttpStatus.OK);
-	}
-		
-	@GetMapping(value=ResourcePaths.PAGEABLE)	
-	@ResponseStatus(HttpStatus.OK)
-	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
-	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
-	public ResponseEntity<Page<Person>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
-			                                          @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
-			                                          Pageable pageable) 
-	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-		
-		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
-		headers.add(APIutil.HEADER_API_KEY, apiKey);
-		
-		return new ResponseEntity<>(personQueryImpl.getAllPersonsPageable(pageable), headers, HttpStatus.OK);
 	}
 
 	/*
