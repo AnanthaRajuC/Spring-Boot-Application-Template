@@ -67,6 +67,7 @@ local.properties
 .project
 .settings/
 target/
+logs/
 
 # Annotation Processing
 .apt_generated

@@ -17,7 +17,7 @@ public interface APIUsageTiersService
 	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
 	 * @since 25/09/2020
 	 * 
-	 * @param apiKey
+	 * @param apiKey API Key
 	 * @return <code>Bucket</code> object
 	 */
 	public Bucket resolveBucket(String apiKey);
@@ -28,7 +28,7 @@ public interface APIUsageTiersService
 	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
      * @since 25/09/2020
 	 * 
-	 * @param apiKey
+	 * @param apiKey API Key
 	 * @return <code>Bucket</code> object
 	 */
 	public Bucket newBucket(String apiKey);
@@ -40,7 +40,7 @@ public interface APIUsageTiersService
 	 * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
      * @since 25/09/2020
 	 * 
-	 * @param limit
+	 * @param limit API Rate Limit
 	 * @return <code>Bucket</code> object
 	 */
 	public Bucket bucket(Bandwidth limit);

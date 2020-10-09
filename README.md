@@ -55,7 +55,7 @@
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
     </a>
 </p>
-
+(https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup, just fork-and-code.
 
@@ -151,6 +151,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 *	[Dependabot](https://dependabot.com/) - Automated dependency updates.
 *	[FOSSA](https://fossa.com/) - Scalable, end-to-end management for third-party code, license compliance and vulnerabilities.
 *	[sonarcloud](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template) - Cloud-based code analysis service designed to detect code quality issues continuously ensuring the maintainability, reliability and security of code.
+* 	[gitignore.io](https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij) - Create useful .gitignore files for your project.
 
 ## To-Do
 

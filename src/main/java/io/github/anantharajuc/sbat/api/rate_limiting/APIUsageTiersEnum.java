@@ -60,7 +60,7 @@ public enum APIUsageTiersEnum
      * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
      * @since 25/09/2020
      * 
-     * @param apiKey
+     * @param apiKey API Key
      * @return <code>APIUsagePlansEnum</code>
      */
     public static APIUsageTiersEnum resolvePlanFromApiKey(String apiKey) 
