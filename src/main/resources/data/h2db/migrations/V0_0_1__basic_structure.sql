@@ -1,27 +1,4 @@
-/*
- * Engine: MySQL
- * Version: 0.0.1
- * Description: Initial database structure
- */
-
-/*
--- create schema
-CREATE SCHEMA [schema_name];
-
--- use schema
-USE [schema_name];
-
--- Create user 
-create user 'USERNAME'@'IPADDRESS' identified by 'PASSWORD';
-
--- Grant privileges to user
-grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
- */
-
- /*
- * Structure
- */
- CREATE TABLE `application_log` (
+CREATE TABLE `application_log` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -31,10 +8,7 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
   `event` varchar(255) NOT NULL
 );
 
- /*
- * Structure
- */
- CREATE TABLE `built_with` (
+CREATE TABLE `built_with` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -46,10 +20,7 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
   `version` varchar(255) DEFAULT NULL
 );
 
- /*
- * Structure
- */
- CREATE TABLE `application_settings` (
+CREATE TABLE `application_settings` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,

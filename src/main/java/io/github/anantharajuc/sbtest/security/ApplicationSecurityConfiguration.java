@@ -52,7 +52,8 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
             "/images/**",
             "/sbat/index/**",
             "/sbat/error/**",
-            "/lang"
+            "/lang",
+            "/h2-console/**"
     };	
 	
 	@Override
@@ -87,6 +88,12 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 			.deleteCookies("JSESSIONID","remember-me")
 			.logoutSuccessUrl("/sbat/index") 
 			.permitAll();
+		
+		//https://stackoverflow.com/questions/53395200/h2-console-is-not-showing-in-browser
+		http
+			.headers()
+			.frameOptions()
+			.sameOrigin();
 		
 		http
 			.sessionManagement()

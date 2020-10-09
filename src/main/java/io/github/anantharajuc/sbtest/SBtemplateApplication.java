@@ -48,7 +48,7 @@ public class SBtemplateApplication implements CommandLineRunner
 		otherServicesImpl.loadApplicationSettings();
 		
 		log.info("-----> Application Name    : "+otherServicesImpl.getApplicationName());	
-		log.info("-----> Application Version : "+otherServicesImpl.getApplicationVersion());	
+		log.info("-----> Application Version : "+otherServicesImpl.getApplicationVersion());
 	}
 }
  

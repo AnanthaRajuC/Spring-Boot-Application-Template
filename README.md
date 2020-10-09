@@ -174,6 +174,9 @@ Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text el
 
 ## Running the application locally
 
+* 	Default active profile: **test**
+* 	URL to access application UI: **http://localhost:8080/sbat/index**
+
 ### Running the application with IDE
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.arc.sbtest.SBtemplateApplication` class from your IDE.
@@ -213,7 +216,24 @@ To shutdown the jar, follow the below mentioned steps on a Windows machine.
 *	In command prompt execute the **jcmd** command to print a list of all running Java processes
 *	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP** with the actual process id of the running jar found out from executing the previous command
 
-The app will start running at <http://localhost:8080>, change the database settings in **application.properties** file as per your need.
+### Accessing Data in H2 Database
+
+#### H2 Console
+
+URL to access H2 console: **http://localhost:8080/h2-console/login.jsp**
+
+Fill the login form as follows and click on Connect:
+
+* 	Saved Settings: **Generic H2 (Embedded)**
+* 	Setting Name: **Generic H2 (Embedded)**
+* 	Driver class: **org.h2.Driver**
+* 	JDBC URL: **jdbc:h2:mem:sbat;MODE=MySQL**
+* 	User Name: **sa**
+* 	Password:
+
+![H2 Console Login](images\h2-console-login.PNG)
+
+![H2 Console Main View](images\h2-console-main-view.PNG)
 
 ### Running the application via docker container
 
