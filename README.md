@@ -55,7 +55,10 @@
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
     </a>
 </p>
-(https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
+
+## Important Note: This project's new milestone is to secure the application by implementing JWT Authentication, so stay tuned.
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup, just fork-and-code.
 
@@ -115,6 +118,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 
 * 	[Flyway](https://flywaydb.org/) - Version control for database
 * 	[MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
+* 	[H2 Database Engine](https://www.h2database.com/html/main.html) - Java SQL database. Embedded and server modes; in-memory databases
 
 ### Client - Frontend/UI
 
@@ -165,6 +169,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[x] [Docker](https://www.docker.com/)
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
+* 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
 *   [ ] Unit Tests, Integration Tests
 * 	[ ] Shut down app on button click via actuator url 
 * 	[ ] Spring Boot Admin
@@ -642,6 +647,19 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 * 	If the issue doesn't already exist, [create a new issue](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new)
 * 	Please provide as much information as possible with the issue report.
 * 	If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.
+
+### The End
+
+In the end, I hope you enjoyed the application and find it useful, as I did when I was developing it to create a Spring Boot web application template with good/convenient practices for rapid prototyping. 
+
+If you would like to enhance, please: 
+
+* 	**Open PRs**, 
+* 	Give **feedback**, 
+* 	Add **new suggestions**, and
+*	Finally, give it a 🌟.
+
+*	Happy Coding ...* 🙂
 
 ## FOSSA third-party code, license compliance and vulnerabilities
 
