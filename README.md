@@ -1,5 +1,6 @@
 # Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/Spring-Boot-Framework/Spring-Boot-Application-Template?branch=master)](https://bettercodehub.com/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
 [![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)
@@ -173,6 +174,8 @@ Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text el
 
 ## Running the application locally
 
+### Running the application with IDE
+
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.arc.sbtest.SBtemplateApplication` class from your IDE.
 
 * 	Download the zip or clone the Git repository.
@@ -184,13 +187,26 @@ There are several ways to run a Spring Boot application on your local machine. O
 * 	Choose the Spring Boot Application file (search for @SpringBootApplication)
 * 	Right Click on the file and Run as Java Application
 
+### Running the application with Maven
+
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
 ```shell
-mvn spring-boot:run
+$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
+$ cd Spring-Boot-Application-Template
+$ mvn spring-boot:run
 ```
 
-The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command `java -jar SBtemplate-0.0.1-SNAPSHOT.jar`
+### Running the application with Executable JAR
+
+The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command 
+
+```shell
+$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
+$ cd Spring-Boot-Application-Template
+$ mvn package -DskipTests
+$ java -jar target/SBtemplate-0.0.1-SNAPSHOT.jar
+```
 
 To shutdown the jar, follow the below mentioned steps on a Windows machine.
 
@@ -199,7 +215,7 @@ To shutdown the jar, follow the below mentioned steps on a Windows machine.
 
 The app will start running at <http://localhost:8080>, change the database settings in **application.properties** file as per your need.
 
-## Running the application via docker container
+### Running the application via docker container
 
 * 	[anantha/spring-boot-application-template](https://hub.docker.com/repository/docker/anantha/spring-boot-application-template) - DockerHub Image
 
@@ -230,6 +246,83 @@ On Windows machine use **Windows Powershell**, navigate to the project folder wh
 |**`docker run spring-boot-application-template`**         | **run the project's docker container**                                   |
 |`docker stop [container_id]`                              | stop a container                                                         |
 |`docker rm $(docker ps -aq)`                              | stop and remove all containers                                           |
+
+## Testing API
+
+### Testing with Maven
+
+*	Run only unit tests:
+```shell
+$ mvn clean test
+```
+
+### Basic Load Testing
+
+Basic load testing for retrieving a `person` for a given `id` can be performed with the ApacheBench by executing the following command:
+
+```shell
+ab -n 10000 -c 100 -k http://localhost:8080/api/v1/person/1
+```
+
+* **-n 10000** is the number of requests to make
+* **-c 100** is the number of concurrent requests to make at a time
+* **-k** sends the **KeepAlive** header, which asks the web server to not shut down the connection after each request is done, but to instead keep reusing it
+
+Result:
+
+```
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /api/v1/person/1
+Document Length:        132 bytes
+
+Concurrency Level:      100
+Time taken for tests:   9.213 seconds
+Complete requests:      10000
+Failed requests:        0
+Non-2xx responses:      10000
+Keep-Alive requests:    0
+Total transferred:      5330000 bytes
+HTML transferred:       1320000 bytes
+Requests per second:    1085.38 [#/sec] (mean)
+Time per request:       92.133 [ms] (mean)
+Time per request:       0.921 [ms] (mean, across all concurrent requests)
+Transfer rate:          564.95 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.1      1      49
+Processing:    13   91  30.1     85     523
+Waiting:        0   68  29.3     65     472
+Total:         14   91  30.1     85     523
+
+Percentage of the requests served within a certain time (ms)
+  50%     85
+  66%     95
+  75%    101
+  80%    105
+  90%    119
+  95%    136
+  98%    176
+  99%    223
+ 100%    523 (longest request)
+```
 
 ## Security
 

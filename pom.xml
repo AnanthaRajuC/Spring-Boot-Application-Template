@@ -26,10 +26,12 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<!--  Dependencies versions properties  -->
     	<thymeleaf-with-dialect.version>3.0.1</thymeleaf-with-dialect.version>
 		<java.version>1.8</java.version>
 		<bootstrap.version>4.5.2</bootstrap.version>
@@ -86,6 +88,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		
+		<!-- Start - Database driver for mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- End - Database driver for mysql -->
+		<!-- Start - Database migration dependencies -->
+		<dependency>
+	      <groupId>org.flywaydb</groupId>
+	      <artifactId>flyway-core</artifactId>
+	    </dependency>
+		<!-- End - Database migration dependencies -->
+		
+		<dependency>
+		    <groupId>io.rest-assured</groupId>
+		    <artifactId>rest-assured</artifactId>
+		    <scope>test</scope>
 		</dependency>
 		
 		<dependency>
@@ -159,15 +181,7 @@
 		    <artifactId>spring-hateoas</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-	      <groupId>org.flywaydb</groupId>
-	      <artifactId>flyway-core</artifactId>
-	    </dependency>
+		
 		
 	   <dependency>
 		  <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -182,12 +196,14 @@
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-commons</artifactId>
 		</dependency>
-
+		
+		<!-- Start - POJO creation made easy -->
 		<dependency>
 	      <groupId>org.projectlombok</groupId>
 	      <artifactId>lombok</artifactId>
 	      <optional>true</optional>
 	    </dependency>
+	    <!-- End - POJO creation made easy -->
 		
 		<dependency>
 		    <groupId>org.hibernate</groupId>
@@ -207,6 +223,7 @@
 		    <scope>test</scope>
 		</dependency>
 
+		<!-- Start - API documentation with Swagger -->
 		<!-- Swagger -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -219,12 +236,19 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${springfox-swagger-ui.version}</version>
 		</dependency>
+		<!-- End - API documentation with Swagger -->
 
 		<!-- Micrometer Prometheus registry -->
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
+		
+		<dependency>
+	      <groupId>com.h2database</groupId>
+	      <artifactId>h2</artifactId>
+	      <scope>runtime</scope>
+	    </dependency>
 
 		<!-- Needed for SMTP appender -->
 		<dependency>
