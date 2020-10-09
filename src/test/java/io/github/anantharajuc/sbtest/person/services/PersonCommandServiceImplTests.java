@@ -15,11 +15,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.github.anantharajuc.sbtest.person.model.Address;
-import io.github.anantharajuc.sbtest.person.model.GenderEnum;
-import io.github.anantharajuc.sbtest.person.model.Geo;
-import io.github.anantharajuc.sbtest.person.model.Person;
-import io.github.anantharajuc.sbtest.person.repositories.PersonRepository;
+import io.github.anantharajuc.sbat.person.model.Address;
+import io.github.anantharajuc.sbat.person.model.GenderEnum;
+import io.github.anantharajuc.sbat.person.model.Geo;
+import io.github.anantharajuc.sbat.person.model.Person;
+import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
+import io.github.anantharajuc.sbat.person.services.PersonCommandServiceImpl;
 
 /*
  * Test class for {@link PersonCommandServiceImpl}

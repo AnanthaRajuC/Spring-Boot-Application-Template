@@ -107,7 +107,7 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 
 This app can be adapted to various languages and regions without engineering changes. Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.
 
-Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
+Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
 
 ## Tech stack & Open-source libraries
 
@@ -171,6 +171,7 @@ Refer `io.github.anantharajuc.sbtest.util.config.I18Nconfiguration`. The text el
 * 	[ ] Multitenancy
 * 	[ ] Micrometer
 * 	[ ] Grafna
+* 	[ ] Spring Retry
 
 ## Running the application locally
 
@@ -231,9 +232,9 @@ Fill the login form as follows and click on Connect:
 * 	User Name: **sa**
 * 	Password:
 
-![H2 Console Login](images\h2-console-login.PNG)
+<img src="images\h2-console-login.PNG"/>
 
-![H2 Console Main View](images\h2-console-main-view.PNG)
+<img src="images\h2-console-main-view.PNG"/>
 
 ### Running the application via docker container
 
@@ -358,7 +359,7 @@ Percentage of the requests served within a certain time (ms)
 
 [Role, Permission based User Authentication via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
 
-Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest.security`.
+Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.security`.
 
 |     Username     | Password |     Role     |                      Permission                       |         Resource          |
 |------------------|----------|--------------|-------------------------------------------------------|---------------------------|
@@ -376,13 +377,13 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbtest
 
 Rate Limiting header `X-api-key`
 
-[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbtest.api.rate_limiting` package
+[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbat.api.rate_limiting` package
 
 ### Preventing Brute Force Authentication Attempts
 
 A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.
 
-Refer `io.github.anantharajuc.sbtest.security.authentication.LoginAttemptService`
+Refer `io.github.anantharajuc.sbat.security.authentication.LoginAttemptService`
 
 ### Session Timeout
 
@@ -509,35 +510,35 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── main
 │       └── java
-│           ├── io.github.anantharajuc.sbtest
+│           ├── io.github.anantharajuc.sbat
 │           │   │ 
-│           │   ├──io.github.anantharajuc.sbtest.auditing
+│           │   ├──io.github.anantharajuc.sbat.auditing
 │           │   │ 
-│           │   ├──io.github.anantharajuc.sbtest.security.authorization
+│           │   ├──io.github.anantharajuc.sbat.security.authorization
 │           │   │ 
-│           │   ├──io.github.anantharajuc.sbtest.backend
+│           │   ├──io.github.anantharajuc.sbat.backend
 │           │   │     │    
-│           │   │     ├──io.github.anantharajuc.sbtest.person
+│           │   │     ├──io.github.anantharajuc.sbat.person
 │           │   │     │
-│           │   │     └──io.github.anantharajuc.sbtest.backend.persistence.repositories
+│           │   │     └──io.github.anantharajuc.sbat.backend.persistence.repositories
 │           │   │
-│           │   └──io.github.anantharajuc.sbtest.backend.service
+│           │   └──io.github.anantharajuc.sbat.backend.service
 │           │
-│           ├── io.github.anantharajuc.sbtest.util.config
+│           ├── io.github.anantharajuc.sbat.util.config
 │           │
-│           ├── io.github.anantharajuc.sbtest.enums
+│           ├── io.github.anantharajuc.sbat.enums
 │           │
-│           ├── io.github.anantharajuc.sbtest.exception
+│           ├── io.github.anantharajuc.sbat.exception
 │           │
-│           ├── io.github.anantharajuc.sbtest.security
+│           ├── io.github.anantharajuc.sbat.security
 │           │
-│           ├── io.github.anantharajuc.sbtest.util
+│           ├── io.github.anantharajuc.sbat.util
 │           │
-│           └── io.github.anantharajuc.sbtest.web
+│           └── io.github.anantharajuc.sbat.web
 │               │
-│				├── io.github.anantharajuc.sbtest.web.controllers
+│				├── io.github.anantharajuc.sbat.web.controllers
 │               │
-│				└── io.github.anantharajuc.sbtest.web.domain.frontend
+│				└── io.github.anantharajuc.sbat.web.domain.frontend
 ├── src
 │   └── main
 │       └── resources

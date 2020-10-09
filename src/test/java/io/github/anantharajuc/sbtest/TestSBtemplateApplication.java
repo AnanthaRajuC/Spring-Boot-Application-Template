@@ -1,4 +1,4 @@
-/*package io.github.anantharajuc.sbtest;
+/*package io.github.anantharajuc.sbat;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
