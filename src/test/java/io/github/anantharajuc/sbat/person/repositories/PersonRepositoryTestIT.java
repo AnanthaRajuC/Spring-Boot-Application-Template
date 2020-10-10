@@ -1,7 +1,7 @@
-package io.github.anantharajuc.sbtest.person.services;
+package io.github.anantharajuc.sbat.person.repositories;
+
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -9,32 +9,23 @@ import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import io.github.anantharajuc.sbat.person.model.Address;
 import io.github.anantharajuc.sbat.person.model.GenderEnum;
 import io.github.anantharajuc.sbat.person.model.Geo;
 import io.github.anantharajuc.sbat.person.model.Person;
 import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
-import io.github.anantharajuc.sbat.person.services.PersonCommandServiceImpl;
 
-/*
- * Test class for {@link PersonCommandServiceImpl}
- *
- * @author Anantha Raju c
- */
 @RunWith(SpringRunner.class)
-@SpringBootTest() 
-public class PersonCommandServiceImplTests 
+@SpringBootTest
+@Transactional
+public class PersonRepositoryTestIT
 {
 	@Autowired
-	private PersonCommandServiceImpl personCommandServiceImpl; 
-	
-	@MockBean
 	private PersonRepository personRepository;
 	
 	private Person createPerson()
@@ -76,39 +67,13 @@ public class PersonCommandServiceImplTests
 	}
 	
 	@Test
-	public void createPersonTest()
+	public void findById_savedBooking_savedBookingFound() 
 	{
-		Person person = createPerson();
-		 
-		Mockito.when(personRepository.save(person)).thenReturn(person);
-		
-		assertThat(personCommandServiceImpl.createPerson(person)).isEqualTo(person);
+		// given
+	    Person savedPerson = createPerson();
+	    // when
+	    Optional<Person> foundBooking = personRepository.findById(savedPerson.getId());
+	    // then
+	    assertThat(foundBooking).hasValue(savedPerson); 
 	}
-	
-	@Test
-	public void deletePersonTest()
-	{
-		
-		Person person = createPerson();
-		
-		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person));
-		Mockito.when(personRepository.existsById(person.getId())).thenReturn(false);
-		
-		assertFalse(personRepository.existsById(person.getId())); 
-	}
-	
-	@Test
-	public void updatePersonTest()
-	{
-		Person person = createPerson();
-		
-		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person));
-		
-		person.setName("Stevie Nicks Updated Name");
-		
-		Mockito.when(personRepository.save(person)).thenReturn(person);
-		
-		assertThat(personCommandServiceImpl.updatePerson((long) 1, person)).isEqualTo(person);
-	}
-
 }

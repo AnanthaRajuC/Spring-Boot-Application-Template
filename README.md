@@ -181,7 +181,32 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 
 ## Running the application locally
 
-* 	Default active profile: **test**
+*	Default active profile is **`test`**. When the application is running, **Flyway** will create the necessary tables and system data along with sample data. In the **`test`** profile, the application uses **H2** database (data in memory).
+
+*	You need to have **MySQL** installed on your machine to run the application on `dev` profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
+
+~~~sql
+-- create schema
+CREATE SCHEMA [SCHEMA_NAME];
+
+-- use schema
+USE [SCHEMA_NAME];
+
+-- Create user 
+create user 'USERNAME'@'IPADDRESS' identified by 'PASSWORD';
+
+-- Grant privileges to user
+grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
+~~~
+
+After creating the database/schema, you need to add your **MySQL** `username` and `password` in the `application-dev.properties` file on `src/main/resource`. The lines that must be modified are as follows:
+
+```properties
+spring.datasource.url=jdbc:mysql://<IPADDRESS>:3306/<SCHEMA_NAME>?useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=
+spring.datasource.password=
+```
+
 * 	URL to access application UI: **http://localhost:8080/sbat/index**
 
 ### Running the application with IDE
@@ -215,7 +240,7 @@ The code can also be built into a jar and then executed/run. Once the jar is bui
 $ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
 $ cd Spring-Boot-Application-Template
 $ mvn package -DskipTests
-$ java -jar target/SBtemplate-0.0.1-SNAPSHOT.jar
+$ java -jar target/SBtemplate-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
 ```
 
 To shutdown the jar, follow the below mentioned steps on a Windows machine.

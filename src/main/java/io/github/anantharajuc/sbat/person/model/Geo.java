@@ -37,6 +37,10 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level=AccessLevel.PRIVATE)
 public class Geo extends AuditEntity
 {
+	public Geo(String lat2, String lng2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="lat")

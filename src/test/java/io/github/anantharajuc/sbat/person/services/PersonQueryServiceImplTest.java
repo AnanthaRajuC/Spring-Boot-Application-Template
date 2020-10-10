@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbtest.person.services;
+package io.github.anantharajuc.sbat.person.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDate;

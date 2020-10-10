@@ -1,3 +1,4 @@
+package io.github.anantharajuc.sbat;
 /*package io.github.anantharajuc.sbat;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;

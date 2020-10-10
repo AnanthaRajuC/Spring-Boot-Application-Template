@@ -39,6 +39,11 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level=AccessLevel.PRIVATE)
 public class Address extends AuditEntity
 {
+	public Address(String street2, String suite2, String city2, String zipCode2, Geo geo2) 
+	{
+		
+	}
+
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="street", nullable=true)
