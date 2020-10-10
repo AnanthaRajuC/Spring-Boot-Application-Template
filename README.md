@@ -58,7 +58,7 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
 
-## Important Note: This project's new milestone is to secure the application by implementing JWT Authentication, so stay tuned.
+## Important Note: This project's new milestone is to update the security of the application by implementing JWT Authentication, so stay tuned.
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup, just fork-and-code.
 
@@ -648,7 +648,7 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 * 	Please provide as much information as possible with the issue report.
 * 	If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.
 
-### The End
+## The End
 
 In the end, I hope you enjoyed the application and find it useful, as I did when I was developing it to create a Spring Boot web application template with good/convenient practices for rapid prototyping. 
 
