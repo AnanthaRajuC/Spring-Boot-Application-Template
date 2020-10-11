@@ -17,10 +17,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import io.github.anantharajuc.sbat.auditing.AuditEntity;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Spring Security - User
@@ -35,29 +37,30 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class User extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="password")
 	@ApiModelProperty(notes="A secret word/phrase used to gain access to the application.", value = "${Person.password}", example="$+r0nG10$$w0rD")
-	private String password; 
+	String password; 
 	
 	@Column(name="username", unique=true)
 	@Size(max = 255, message="username must not be empty.")
-	private String username;	
+	String username;	
 	
 	@Column(name="isAccountNonExpired")
-	private boolean isAccountNonExpired;
+	boolean isAccountNonExpired;
 	
 	@Column(name="isAccountNonLocked")
-	private boolean isAccountNonLocked;
+	boolean isAccountNonLocked;
 	
 	@Column(name="isCredentialsNonExpired")
-	private boolean isCredentialsNonExpired;
+	boolean isCredentialsNonExpired;
 	
 	@Column(name="isEnabled")
-	private boolean isEnabled;
+	boolean isEnabled;
 	
 	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "role_user", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},

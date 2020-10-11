@@ -8,10 +8,12 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import io.github.anantharajuc.sbat.auditing.AuditEntity;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Spring Security - Permission
@@ -26,10 +28,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class Permission extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="name")
-    private String name;
+    String name;
 }
