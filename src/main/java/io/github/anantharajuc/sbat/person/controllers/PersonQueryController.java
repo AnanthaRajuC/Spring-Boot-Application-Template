@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.anantharajuc.sbat.api.APIutil;
 import io.github.anantharajuc.sbat.api.ResourcePaths;
+import io.github.anantharajuc.sbat.person.dto.PersonDTOModelAssembler;
 import io.github.anantharajuc.sbat.person.model.Person;
 import io.github.anantharajuc.sbat.person.model.PersonModelAssembler;
 import io.github.anantharajuc.sbat.person.services.PersonQueryServiceImpl;
@@ -49,17 +50,20 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class PersonQueryController 
 {
 	@Autowired
-	private PersonQueryServiceImpl personQueryImpl;
+	private PersonQueryServiceImpl personQueryServiceImpl;
 	
 	@Autowired
     private PagedResourcesAssembler<Person> pagedResourcesAssembler;
 	
 	private final PersonModelAssembler personModelAssembler;
 	
+	private final PersonDTOModelAssembler personDTOModelAssembler;
+	
 	@Autowired
-    public PersonQueryController(PersonModelAssembler personModelAssembler) 
+    public PersonQueryController(PersonModelAssembler personModelAssembler, PersonDTOModelAssembler personDTOModelAssembler) 
 	{
         this.personModelAssembler = personModelAssembler;
+        this.personDTOModelAssembler = personDTOModelAssembler; 
     }
 	
 	/*
@@ -78,7 +82,7 @@ public class PersonQueryController
 	public ResponseEntity<CollectionModel<EntityModel<Person>>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
 			                                                                  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey) 
 	{		
-		List<EntityModel<Person>> persons = personQueryImpl.getAllPersons().stream().map(personModelAssembler::toModel).collect(Collectors.toList());
+		List<EntityModel<Person>> persons = personQueryServiceImpl.getAllPersons().stream().map(personModelAssembler::toModel).collect(Collectors.toList());
 
 		return ResponseEntity
 				.ok()
@@ -96,7 +100,7 @@ public class PersonQueryController
 			                                                                  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
 			                                                                  Pageable pageable) 
 	{	
-		 Page<Person> personsPageable = personQueryImpl.getAllPersonsPageable(pageable);  
+		 Page<Person> personsPageable = personQueryServiceImpl.getAllPersonsPageable(pageable);  
 		 
 		 PagedModel<EntityModel<Person>> collModel = pagedResourcesAssembler.toModel(personsPageable, personModelAssembler);		 
 		 
@@ -133,7 +137,7 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 
-		return new ResponseEntity<>(personModelAssembler.toModel(personQueryImpl.getPersonById(personId)), headers, HttpStatus.OK);
+		return new ResponseEntity<>(personDTOModelAssembler.toModel(personQueryServiceImpl.getPersonById(personId)), headers, HttpStatus.OK);
 	}
 
 	/*
@@ -161,6 +165,6 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
-		return new ResponseEntity<>(personQueryImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
+		return new ResponseEntity<>(personQueryServiceImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
 	}
 }

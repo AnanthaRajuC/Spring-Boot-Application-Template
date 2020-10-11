@@ -1,0 +1,1311 @@
+{
+	"info": {
+		"_postman_id": "05b89f7a-1847-4204-aabd-1d481db900a2",
+		"name": "Spring Boot Application Template",
+		"description": "Postman collection for the Spring Boot Application Template\n\nhttps://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sbat/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sbat",
+						"index"
+					]
+				},
+				"description": "http://localhost:8080\nHome Page. \nNo Login Required."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person's - XML Response",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "JohnDoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person"
+					]
+				},
+				"description": "API - Get a JSON array of all Persons\nhttp://localhost:8080/api/person"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person's - JSON Response",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person"
+					]
+				},
+				"description": "API - Get a JSON array of all Persons\nhttp://localhost:8080/api/person"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person by Id - XML Response",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"18"
+					]
+				},
+				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person by Id - JSON Response",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"5"
+					]
+				},
+				"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Person by Id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"ooooo\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/66",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"66"
+					]
+				},
+				"description": "Update a person by ID\nhttp://localhost:8080/api/person/1"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/generic-hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/personalized-hello?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"personalized-hello"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				},
+				"description": "http://localhost:8088/api/generic-hello"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/personalized-hello?name=springboot%20application",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/personalized-hello?name=springboot%20application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"personalized-hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "springboot%20application"
+						}
+					]
+				},
+				"description": "http://localhost:8088/api/personalized-hello?name=springboot%20application"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						""
+					]
+				},
+				"description": "http://localhost:8080/actuator/"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health\r\n/actuator/health"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/info",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"info"
+					]
+				},
+				"description": "http://localhost:8080/actuator/info\r\n/actuator/info"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/prometheus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/prometheus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"prometheus"
+					]
+				},
+				"description": "http://localhost:8080/actuator/prometheus\r\n/actuator/prometheus"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health/diskSpace",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health/diskSpace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health",
+						"diskSpace"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health/diskSpace"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health/ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health",
+						"ping"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health/ping"
+			},
+			"response": []
+		},
+		{
+			"name": "/actuator/health/db",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health/db",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health",
+						"db"
+					]
+				},
+				"description": "http://localhost:8080/actuator/health/db"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/loggers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/loggers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loggers"
+					]
+				},
+				"description": "http://localhost:8080/api/loggers"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/person/pageable",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdBy,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"pageable"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "createdBy,desc"
+						}
+					]
+				},
+				"description": "http://localhost:8080/api/personPageable?page=0&size=2&sort=createdOn,desc"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Person by Id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"5"
+					]
+				},
+				"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-TenantID",
+						"value": "sbat_tenant_two",
+						"type": "text"
+					},
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/669"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person/{id}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/89",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"89"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/669"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person/pageable?page=1&size=1&sort=createdOn,desc",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/pageable?page=1&size=550&sort=createdDate,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"pageable"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "550"
+						},
+						{
+							"key": "sort",
+							"value": "createdDate,desc"
+						}
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/pageable?page=1&size=1&sort=createdOn,desc"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person/{id}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vincen7\",\r\n    \"username\": \"vorre7777y1y\",\r\n    \"emailPrimary\": \"777@booking.com\",\r\n    \"emailSecondary\": \"vor777rey1y@dailymotion.com\",\r\n    \"phone\": 7898,\r\n    \"gender\": \"MALE\",\r\n    \"password\": \"MAhfhfhdfhdLE\",\r\n    \"age\": 41,\r\n    \"dob\": \"25-12-2006\",\r\n    \"isAdult\": false,\r\n    \"address\": {\r\n        \"id\": 71,\r\n        \"street\": \"Butterfield\",\r\n        \"suite\": \"porttitor\",\r\n        \"city\": \"Malaga\",\r\n        \"zipcode\": \"29015\",\r\n        \"geo\": {\r\n            \"id\": 71,\r\n            \"lat\": \"40.6892276\",\r\n            \"lng\": \"-8.6031905\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"3"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"aaa\",\r\n\t\"username\": \"aaaa\",\r\n\t\"emailPrimary\": \"aaaa@gmail.com\",\r\n\t\"emailSecondary\": \"ffff.howell@gmail.com\",\r\n\t\"phone\":11111333,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"2"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"rrrrrggr\",\r\n\t\"username\": \"rrgggr\",\r\n\t\"emailPrimary\": \"jgggj@gmail.com\",\r\n\t\"emailSecondary\": \"ggggj@gmail.com\",\r\n\t\"phone\":666666,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person"
+					]
+				},
+				"description": "http://localhost:8080/api/v1/person"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person/{id}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person",
+						"4"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person/6"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/management/api/v1/person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"hfghghf\",\r\n\t\"username\": \"hhgfhghg\",\r\n\t\"emailPrimary\": \"555hhgfll@gmail.com\",\r\n\t\"emailSecondary\": \"55fdhdgll@gmail.com\",\r\n\t\"phone\":55656000,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/management/api/v1/person",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"api",
+						"v1",
+						"person"
+					]
+				},
+				"description": "http://localhost:8080/management/api/v1/person"
+			},
+			"response": []
+		},
+		{
+			"name": "RBAC User - Create",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Tenant",
+						"value": "sbat_tenant_one",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"createdBy\": \"Installation\",\r\n    \"lastModifiedBy\": \"Installation\",\r\n    \"password\": \"$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe\",\r\n    \"username\": \"janehhhh\",\r\n    \"roles\": [\r\n        {\r\n            \"createdBy\": \"Installation\",\r\n            \"lastModifiedBy\": \"Installation\",\r\n            \"name\": \"ROLE_PERSON\",\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"createdBy\": \"Installation\",\r\n            \"lastModifiedBy\": \"Installation\",\r\n            \"name\": \"ROLE_ADMIN\",\r\n            \"permissions\": [\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_CREATE\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_READ\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_UPDATE\"\r\n                },\r\n                {\r\n                    \"createdBy\": \"Installation\",\r\n                    \"lastModifiedBy\": \"Installation\",\r\n                    \"name\": \"PERSON_DELETE\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"enabled\": true,\r\n    \"accountNonExpired\": true,\r\n    \"credentialsNonExpired\": true,\r\n    \"accountNonLocked\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rbac/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rbac",
+						"user"
+					]
+				},
+				"description": "http://localhost:8080/user/person"
+			},
+			"response": []
+		},
+		{
+			"name": "RBAC User - Get",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rbac/user/johnDoe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rbac",
+						"user",
+						"johnDoe"
+					]
+				},
+				"description": "http://localhost:8080/user/person/johndoetest"
+			},
+			"response": []
+		},
+		{
+			"name": "RBAC User - Delete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rbac/user/jane",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rbac",
+						"user",
+						"jane"
+					]
+				},
+				"description": "http://localhost:8080/rbac/user/rbac2"
+			},
+			"response": []
+		},
+		{
+			"name": "RBAC User - Get All",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rbac/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rbac",
+						"user"
+					]
+				},
+				"description": "Get All RBAC Users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person's - Pageable",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-api-key",
+						"type": "text",
+						"value": "null"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/pageable?size=150&pageNumber=5&sort=id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"pageable"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "150"
+						},
+						{
+							"key": "pageNumber",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "id"
+						}
+					]
+				},
+				"description": "http://localhost:8080/api/v1/person/pageable?page=1&size=1&sort=createdDate,desc"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person's by Gender",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "AdminUser",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-api-key",
+						"value": "null",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/gender/FEMALE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"gender",
+						"FEMALE"
+					]
+				},
+				"description": "http://localhost:8080/api/v1/person/gender/MALE"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "johnDoe",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "password",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}

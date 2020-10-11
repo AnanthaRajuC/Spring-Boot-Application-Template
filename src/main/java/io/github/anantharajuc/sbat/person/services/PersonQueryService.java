@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import io.github.anantharajuc.sbat.person.dto.PersonDTO;
 import io.github.anantharajuc.sbat.person.model.Person;
 
 /**
@@ -18,7 +19,7 @@ public interface PersonQueryService
 	
 	List<Person> getPersonsByGender(String gender);
 
-	Person getPersonById(Long personId);
+	PersonDTO getPersonById(Long personId); 
 
 	Page<Person> getAllPersonsPageable(Pageable pageable); 
 	

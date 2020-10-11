@@ -2,7 +2,9 @@ package io.github.anantharajuc.sbat.person.services;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -11,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbat.exception.ResourceNotFoundException;
+import io.github.anantharajuc.sbat.person.dto.PersonDTO;
 import io.github.anantharajuc.sbat.person.model.Person;
 import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;
@@ -26,6 +29,9 @@ public class PersonQueryServiceImpl implements PersonQueryService
 {
 	@Autowired
 	private PersonRepository personRepository;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 	
 	@Override
 	public List<Person> getAllPersons() 
@@ -46,15 +52,18 @@ public class PersonQueryServiceImpl implements PersonQueryService
 	}
 
 	@Override
-	public Person getPersonById(Long personId) 
+	public PersonDTO getPersonById(Long personId) 
 	{
 		log.info("-----> getPersonById service");	
 		
+		Optional<Person> personOptional = personRepository.findById(personId); 
 		
+		if(!personOptional.isPresent()) 
+		{
+			throw new ResourceNotFoundException("Person", "id", personId);
+		}
 		
-		return personRepository
-				.findById(personId)
-				.orElseThrow(() -> new ResourceNotFoundException("Person", "id", personId));
+		return modelMapper.map(personOptional.get(), PersonDTO.class); 
 	}
 	
 	@Override
