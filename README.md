@@ -187,24 +187,24 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 
 ~~~sql
 -- create schema
-CREATE SCHEMA [SCHEMA_NAME];
+CREATE SCHEMA sbat;
 
 -- use schema
-USE [SCHEMA_NAME];
+USE sbat;
 
 -- Create user 
-create user 'USERNAME'@'IPADDRESS' identified by 'PASSWORD';
+create user 'sbat'@'localhost' identified by 'sbat';
 
 -- Grant privileges to user
-grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
+grant all privileges on *.* to 'sbat'@'localhost' with grant option;
 ~~~
 
 After creating the database/schema, you need to add your **MySQL** `username` and `password` in the `application-dev.properties` file on `src/main/resource`. The lines that must be modified are as follows:
 
 ```properties
-spring.datasource.url=jdbc:mysql://<IPADDRESS>:3306/<SCHEMA_NAME>?useSSL=false&allowPublicKeyRetrieval=true
-spring.datasource.username=
-spring.datasource.password=
+spring.datasource.url=jdbc:mysql://localhost:3306/sbat?useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=sbat
+spring.datasource.password=sbat
 ```
 
 * 	URL to access application UI: **http://localhost:8080/sbat/index**
@@ -287,17 +287,44 @@ Ensure you build a jar of the application before building a docker image.
 `mvn clean package`                     //run all tests and build
 ```
 
-On Windows machine use **Windows Powershell**, navigate to the project folder where Dockerfile is present.
+On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
 
-|                           Command                        |                                 Description                              |
-|----------------------------------------------------------|--------------------------------------------------------------------------| 
-|`docker images`                                           | take a look at the container images.                                     |
-|`docker ps`                                               | list all the running containers.                                         |
-|`docker ps -a`                                            | list all the containers, including the ones that have finished executing.|
-|**`docker build -t spring-boot-application-template .`**  | **Build docker image of the project**                                    |
-|**`docker run spring-boot-application-template`**         | **run the project's docker container**                                   |
-|`docker stop [container_id]`                              | stop a container                                                         |
-|`docker rm $(docker ps -aq)`                              | stop and remove all containers                                           |
+|                        Docker Command                        |                                 Description                              |
+|--------------------------------------------------------------|--------------------------------------------------------------------------| 
+|`docker-machine ip default`							       | check your docker IP default, usually it is **192.168.99.102**			  |
+|`docker images`                                               | take a look at the container images.                                     |
+|`docker ps`                                                   | list all the running containers.                                         |
+|`docker ps -a`                                                | list all the containers, including the ones that have finished executing.|
+|**`docker build -t spring-boot-application-template .`**      | **Build docker image of the project**                                    |
+|**`docker run -p 8080:8080 spring-boot-application-template`**| **run the project's docker container by mapping docker to localhost**	  |	
+|`docker stop [container_id]`                                  | stop a container                                                         |
+|`docker rm $(docker ps -aq)`                                  | stop and remove all containers                                           |
+
+**NOTE:** If you are facing any issues with accessing the application at **`localhost:8080`** while using **DockerToolBox** and **OracleVM VirtualBox**
+
+In the Oracle VM VirtualBox:
+
+*	Click the appropriate machine (probably the one labeled **default**)
+*	**Settings**
+*	**Network** > **Adapter 1** > **Advanced** > **Port Forwarding**
+*	Click on **+** to add a new Rule
+*	Set **Host Port** to **8080** and **Guest Port** to **8080**; be sure to leave **Host IP** and **Guest IP** empty
+
+Reference: https://stackoverflow.com/a/45822356/3711562
+
+|             Docker Hub Commands for Reference                      |                         Description                               |
+|--------------------------------------------------------------------|-------------------------------------------------------------------| 
+|`docker logout`							                         | logout of Docker Hub from the local machine.                      |
+|`docker login --username=YOUR_DOCKERHUB_USERNAME`	                 | login to Docker Hub from your machine.                            |
+|`docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]`        | re-tagging an existing local image					             |
+|`docker commit <existing-container> <hub-user>/<repo-name>[:<tag>]` | commit changes					                                 |
+|`docker push <hub-user>/<repo-name>:<tag>`                          | push this repository to the registry designated by its name or tag|
+
+**Examples:**
+
+re-tagging an existing local image : `docker tag spring-boot-application-template anantha/spring-boot-application-template:h2db-test-profile`
+commit changes                     : `docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile`
+docker push                        : `docker push anantha/spring-boot-application-template:h2db-test-profile`
 
 ## Testing API
 
