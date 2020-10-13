@@ -183,7 +183,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 
 *	Default active profile is **`test`**. When the application is running, **Flyway** will create the necessary tables and system data along with sample data. In the **`test`** profile, the application uses **H2** database (data in memory).
 
-*	You need to have **MySQL** installed on your machine to run the application on `dev` profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
+*	You need to have **MySQL** installed on your machine to run the application on **`dev`** profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
 
 ~~~sql
 -- create schema
@@ -322,9 +322,9 @@ Reference: https://stackoverflow.com/a/45822356/3711562
 
 **Examples:**
 
-re-tagging an existing local image : `docker tag spring-boot-application-template anantha/spring-boot-application-template:h2db-test-profile`
-commit changes                     : `docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile`
-docker push                        : `docker push anantha/spring-boot-application-template:h2db-test-profile`
+*	re-tagging an existing local image : `docker tag spring-boot-application-template anantha/spring-boot-application-template:h2db-test-profile`
+*	commit changes                     : `docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile`
+*	docker push                        : `docker push anantha/spring-boot-application-template:h2db-test-profile`
 
 ## Testing API
 
