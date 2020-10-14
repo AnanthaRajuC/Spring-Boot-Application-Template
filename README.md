@@ -271,34 +271,45 @@ Fill the login form as follows and click on Connect:
 
 * 	[anantha/spring-boot-application-template](https://hub.docker.com/repository/docker/anantha/spring-boot-application-template) - DockerHub Image
 
-DockerHub Pull Command
+DockerHub Pull Command if you want to directly pull the docker image of the application from Docker Hub.
 
-```text
+```shell
 docker pull anantha/spring-boot-application-template
 ```
 
-Ensure you build a jar of the application before building a docker image.  
+**NOTE:** If you want to build a docker image from the source code, ensure you build a jar of the application before building a docker image.  
 
-```text
-`mvn package -Dmaven.test.skip=true`    //skip all tests and build. The build once completed is available in target folder
+```shell
+`mvn package -Dmaven.test.skip=true`    //skip all tests and build. The build once completed is available in **target** folder
 ```
 
-```text
+```shell
 `mvn clean package`                     //run all tests and build
 ```
 
 On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
 
-|                        Docker Command                        |                                 Description                              |
+|               Basic Docker commands for reference            |                                 Description                              |
 |--------------------------------------------------------------|--------------------------------------------------------------------------| 
 |`docker-machine ip default`							       | check your docker IP default, usually it is **192.168.99.102**			  |
 |`docker images`                                               | take a look at the container images.                                     |
 |`docker ps`                                                   | list all the running containers.                                         |
 |`docker ps -a`                                                | list all the containers, including the ones that have finished executing.|
-|**`docker build -t spring-boot-application-template .`**      | **Build docker image of the project**                                    |
-|**`docker run -p 8080:8080 spring-boot-application-template`**| **run the project's docker container by mapping docker to localhost**	  |	
-|`docker stop [container_id]`                                  | stop a container                                                         |
-|`docker rm $(docker ps -aq)`                                  | stop and remove all containers                                           |
+
+|                                             Command to run the MySQL docker image                                                                |                                 Description                              |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------| 
+|**`docker pull mysql:5.7`**							                                                                                           | pull a MySQL Docker Image                                 				  |
+|`docker images`                                                                                                                                   | take a look at the container images. See if MySQL image is present       |
+|**`docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=sbat -d mysql:5.7`**| run the MySQL docker image                                               |
+
+|                                 Command to run the docker image of app with MySQL docker image                                 |                                                         Description                              |
+|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
+|**`docker build -t spring-boot-application-template .`**                                                                        | **Build docker image of the project**                                                            |
+|**`docker run -p 8080:8080 spring-boot-application-template`**                                                                  | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
+|**`docker run -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**| **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
+|**`docker stop [container_id]`**                                                                                                | **stop a container**                                                                             |
+|**`docker rm [container_name]`**                                                                                                | **remove a container with a particular container name**                                          |
+|`docker rm $(docker ps -aq)`                                                                                                    | stop and remove all containers                                                                   |
 
 **NOTE:** If you are facing any issues with accessing the application at **`localhost:8080`** while using **DockerToolBox** and **OracleVM VirtualBox**
 
@@ -326,7 +337,19 @@ Reference: https://stackoverflow.com/a/45822356/3711562
 *	commit changes                     : `docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile`
 *	docker push                        : `docker push anantha/spring-boot-application-template:h2db-test-profile`
 
+### Deploying to Heroku
+
+* 	Download and install the Heroku CLI
+*	log in to your Heroku account **`heroku login`**
+* 	set git remote heroku to the heroku app url,  example **`heroku git:remote -a spring-boot-app-template`**
+*	**Add** and **Commit** any pending changes to git
+*	push the code to heroku to deploy the app, example **`git push heroku master`**
+
 ## Testing API
+
+### Testing with Postman Runner
+
+Import the **Spring Boot Application Template API.postman_test_run** file into postman and run the API tests.
 
 ### Testing with Maven
 
@@ -544,7 +567,7 @@ To monitor and manage your application
 ## Documentation
 
 * 	[Postman Collection](https://documenter.getpostman.com/view/2449187/TVCe1UAk) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
-* 	[Postman Collection](Spring Boot Application Template.postman_collection) - offline
+* 	Postman Collection for offline testing is available in the postman folder.
 * 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
 * 	[Swagger](http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template) - `http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template`- Documentation & Testing
 *	Find Java Doc in **javadoc** folder

@@ -15,7 +15,7 @@ CREATE TABLE `user` (
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_sb8bbouer5wak8vyiiy4pf2bx` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*
  * Structure
@@ -28,7 +28,7 @@ CREATE TABLE `permission` (
   `last_modified_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 /*
  * Structure
@@ -41,7 +41,7 @@ CREATE TABLE `role` (
   `last_modified_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 /*
  * Structure
@@ -53,7 +53,7 @@ CREATE TABLE `permission_role` (
   KEY `FK50sfdcvbvdaclpn7wp4uop4ml` (`role_id`),
   CONSTRAINT `FK3tuvkbyi6wcytyg21hvpd6txw` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`id`),
   CONSTRAINT `FK50sfdcvbvdaclpn7wp4uop4ml` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci; 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
 
 /*
  * Structure
@@ -65,4 +65,4 @@ CREATE TABLE `role_user` (
   KEY `FK4320p8bgvumlxjkohtbj214qi` (`user_id`),
   CONSTRAINT `FK4320p8bgvumlxjkohtbj214qi` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `FKiqpmjd2qb4rdkej916ymonic6` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

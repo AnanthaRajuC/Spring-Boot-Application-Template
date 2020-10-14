@@ -30,7 +30,7 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
   `details` varchar(255) NOT NULL,
   `event` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
  /*
  * Structure
@@ -46,7 +46,7 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
   `name` varchar(255) NOT NULL,
   `version` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
  /*
  * Structure
@@ -60,4 +60,4 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
   `appKey` varchar(255) NOT NULL,
   `appValue` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;

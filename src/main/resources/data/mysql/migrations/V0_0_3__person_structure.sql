@@ -10,7 +10,7 @@ CREATE TABLE `geo` (
   `lat` varchar(255) DEFAULT NULL,
   `lng` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 /*
  * Structure
@@ -29,7 +29,7 @@ CREATE TABLE `geo` (
   PRIMARY KEY (`id`),
   KEY `FKco48e3q5mlq831ijyssn2t25q` (`geo_id`),
   CONSTRAINT `FKco48e3q5mlq831ijyssn2t25q` FOREIGN KEY (`geo_id`) REFERENCES `geo` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
  
 /*
  * Structure
@@ -57,4 +57,4 @@ CREATE TABLE `person` (
   UNIQUE KEY `UK_n0i6d7rc1hqkjivk494g8j2qd` (`username`),
   KEY `FKk7rgn6djxsv2j2bv1mvuxd4m9` (`address_id`),
   CONSTRAINT `FKk7rgn6djxsv2j2bv1mvuxd4m9` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
