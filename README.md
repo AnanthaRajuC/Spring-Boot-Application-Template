@@ -289,12 +289,22 @@ docker pull anantha/spring-boot-application-template
 
 On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
 
-|               Basic Docker commands for reference            |                                 Description                              |
-|--------------------------------------------------------------|--------------------------------------------------------------------------| 
-|`docker-machine ip default`							       | check your docker IP default, usually it is **192.168.99.102**			  |
-|`docker images`                                               | take a look at the container images.                                     |
-|`docker ps`                                                   | list all the running containers.                                         |
-|`docker ps -a`                                                | list all the containers, including the ones that have finished executing.|
+|                     Basic Docker commands for reference            |                                     Description                               |
+|--------------------------------------------------------------------|-------------------------------------------------------------------------------| 
+|`docker-machine ip default`							             | check your docker IP default, usually it is **192.168.99.102**			     |
+|`docker images`                                                     | take a look at the container images.                                          |
+|`docker ps`                                                         | list all the running containers.                                              |
+|`docker ps -a`                                                      | list all the containers, including the ones that have finished executing.     |
+|`docker restart [container_name]`							         | restart the docker image			                             		         |
+|`docker stats`							                             | Show CPU and memory usage of all running containers                 	         |
+|`docker stats [container_name]`						             | Show CPU and memory usage of a particular running container                   |
+|`docker stats [container1_name] [container2_name]`			         | Show CPU and memory usage of container1, container2                           |
+|`docker top [container_name]`			                             | Show running processes in a container                                         |
+|`docker system df`			                                         | Show storage usage                                                            |
+|`docker logs [container_id]`			                             | list container logs                                                           |
+|`docker logs [container_id] --tail N`                               | list container logs, **`--tail`** flag will show the last **N** lines of logs |   
+|`docker logs [container_id] --since YYYY-MM-DD`                     | list container logs since a particular date                                   |
+|`docker logs [container_id] --since YYYY-MM-DDTHH:MM:SS.000000000Z` | list container logs since a particular timestamp                              |
 
 |                                             Command to run the MySQL docker image                                                                |                                 Description                              |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------| 
@@ -310,6 +320,20 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |**`docker stop [container_id]`**                                                                                                | **stop a container**                                                                             |
 |**`docker rm [container_name]`**                                                                                                | **remove a container with a particular container name**                                          |
 |`docker rm $(docker ps -aq)`                                                                                                    | stop and remove all containers                                                                   |
+|`docker restart mysql-docker`																									 | restart the MySQL docker image																	|
+
+|                                 Connecting to the MySQL docker image via CLI                                                   |                                                         Description                              |
+|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
+|`docker exec mysql-docker mysql -usbat -psbat -e 'show databases;'`														     | connect to MySQL image without interactive CLI.													|
+|`docker exec -it mysql-docker mysql -usbat -psbat -e 'show databases;'`														 | connect to MySQL image without interactive CLI.													|
+|`docker exec -it mysql-docker mysql -usbat -psbat`																				 | connect to MySQL image via interactive CLI.														|
+
+| Basic MySQL commands for reference |                   Description                  |
+|------------------------------------|------------------------------------------------| 
+|`show databases;`					 | lists the databases on the MySQL server host	  |
+|`show schemas;`					 | a synonym for **show databases;**		      |
+|`use [database_name];`				 | select any existing database in the SQL schema |
+|`show tables;`						 | list tables in a Database	         		  |
 
 **NOTE:** If you are facing any issues with accessing the application at **`localhost:8080`** while using **DockerToolBox** and **OracleVM VirtualBox**
 
