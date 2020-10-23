@@ -348,7 +348,7 @@ In the Oracle VM VirtualBox:
 *	Click on **+** to add a new Rule
 *	Set **Host Port** to **8080** and **Guest Port** to **8080**; be sure to leave **Host IP** and **Guest IP** empty
 
-<img src="images\h2-console-login.PNG"/>
+<img src="images\Oracle-VM-Virtualbox-Manager.PNG"/>
 
 Reference: https://stackoverflow.com/a/45822356/3711562
 
