@@ -1,6 +1,7 @@
-/*
- * Structure
- */
+--
+-- Table structure for table `geo`
+--
+
 CREATE TABLE `geo` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -12,9 +13,10 @@ CREATE TABLE `geo` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-/*
- * Structure
- */
+--
+-- Table structure for table `address`
+--
+
  CREATE TABLE `address` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -31,9 +33,10 @@ CREATE TABLE `geo` (
   CONSTRAINT `FKco48e3q5mlq831ijyssn2t25q` FOREIGN KEY (`geo_id`) REFERENCES `geo` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
  
-/*
- * Structure
- */
+--
+-- Table structure for table `person`
+--
+
 CREATE TABLE `person` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,

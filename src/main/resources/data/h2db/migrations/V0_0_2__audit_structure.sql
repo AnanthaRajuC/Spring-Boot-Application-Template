@@ -1,3 +1,7 @@
+--
+-- Table structure for table `user`
+--
+
 CREATE TABLE `user` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -12,6 +16,10 @@ CREATE TABLE `user` (
   `username` varchar(255) DEFAULT NULL UNIQUE
 );
 
+--
+-- Table structure for table `permission`
+--
+
 CREATE TABLE `permission` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -20,6 +28,10 @@ CREATE TABLE `permission` (
   `last_modified_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `name` varchar(255) DEFAULT NULL
 );
+
+--
+-- Table structure for table `role`
+--
 
 CREATE TABLE `role` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
@@ -30,6 +42,10 @@ CREATE TABLE `role` (
   `name` varchar(255) DEFAULT NULL
 );
 
+--
+-- Table structure for table `permission_role`
+--
+
 create table permission_role (
 role_id bigint not null,
 permission_id bigint not null
@@ -37,6 +53,10 @@ permission_id bigint not null
 
 ALTER TABLE permission_role ADD FOREIGN KEY (permission_id) REFERENCES permission(id);
 ALTER TABLE permission_role ADD FOREIGN KEY (role_id) REFERENCES role(id);
+
+--
+-- Table structure for table `role_user`
+--
 
 create table role_user (
 user_id bigint not null,

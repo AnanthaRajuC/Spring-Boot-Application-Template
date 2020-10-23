@@ -1,3 +1,7 @@
+--
+-- Table structure for table `geo`
+--
+
 CREATE TABLE `geo` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -7,6 +11,10 @@ CREATE TABLE `geo` (
   `lat` varchar(255) DEFAULT NULL,
   `lng` varchar(255) DEFAULT NULL
 );
+
+--
+-- Table structure for table `address`
+--
 
  CREATE TABLE `address` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
@@ -22,6 +30,10 @@ CREATE TABLE `geo` (
 );
 
 ALTER TABLE address ADD FOREIGN KEY (geo_id) REFERENCES geo(id);
+
+--
+-- Table structure for table `person`
+--
 
 CREATE TABLE `person` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,

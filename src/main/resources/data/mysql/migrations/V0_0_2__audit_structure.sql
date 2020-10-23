@@ -1,6 +1,7 @@
-/*
- * Structure
- */
+--
+-- Table structure for table `user`
+--
+
 CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -17,9 +18,10 @@ CREATE TABLE `user` (
   UNIQUE KEY `UK_sb8bbouer5wak8vyiiy4pf2bx` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-/*
- * Structure
- */
+--
+-- Table structure for table `permission`
+--
+
 CREATE TABLE `permission` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -30,9 +32,10 @@ CREATE TABLE `permission` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-/*
- * Structure
- */
+--
+-- Table structure for table `role`
+--
+
 CREATE TABLE `role` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -43,9 +46,10 @@ CREATE TABLE `role` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-/*
- * Structure
- */
+--
+-- Table structure for table `permission_role`
+--
+
 CREATE TABLE `permission_role` (
   `role_id` bigint(20) NOT NULL,
   `permission_id` bigint(20) NOT NULL,
@@ -55,9 +59,10 @@ CREATE TABLE `permission_role` (
   CONSTRAINT `FK50sfdcvbvdaclpn7wp4uop4ml` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
 
-/*
- * Structure
- */
+--
+-- Table structure for table `role_user`
+--
+
 CREATE TABLE `role_user` (
   `user_id` bigint(20) NOT NULL,
   `role_id` bigint(20) NOT NULL,

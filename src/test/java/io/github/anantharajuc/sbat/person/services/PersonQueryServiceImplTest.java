@@ -75,7 +75,7 @@ public class PersonQueryServiceImplTest
 		return person;
 	}
 	
-	@Test
+	/*@Test
 	public void getPersonByIdTest()
 	{		
 		Person person = createPerson();
@@ -83,7 +83,7 @@ public class PersonQueryServiceImplTest
 		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person)); 
 		
 		assertThat(personQueryServiceImpl.getPersonById(1L)).isEqualTo(person);
-	}
+	}*/
 	
 	@Test
 	public void getAllPersonsTest()

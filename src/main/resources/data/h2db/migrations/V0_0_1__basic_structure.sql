@@ -1,3 +1,7 @@
+--
+-- Table structure for table `application_log`
+--
+
 CREATE TABLE `application_log` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
@@ -7,6 +11,10 @@ CREATE TABLE `application_log` (
   `details` varchar(255) NOT NULL,
   `event` varchar(255) NOT NULL
 );
+
+--
+-- Table structure for table `built_with`
+--
 
 CREATE TABLE `built_with` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
@@ -19,6 +27,10 @@ CREATE TABLE `built_with` (
   `name` varchar(255) NOT NULL,
   `version` varchar(255) DEFAULT NULL
 );
+
+--
+-- Table structure for table `application_settings`
+--
 
 CREATE TABLE `application_settings` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,

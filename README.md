@@ -145,6 +145,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 
 * 	[git](https://git-scm.com/) - Free and Open-Source distributed version control system
 * 	[Prometheus](https://prometheus.io/) - Monitoring system and time series database
+* 	[Docker](https://www.docker.com/) - A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
 
 ### External Tools & Services
 
@@ -170,6 +171,8 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
 * 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
+* 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
+* 	[ ] HTTPS
 *   [ ] Unit Tests, Integration Tests
 * 	[ ] Shut down app on button click via actuator url 
 * 	[ ] Spring Boot Admin
@@ -207,7 +210,7 @@ spring.datasource.username=sbat
 spring.datasource.password=sbat
 ```
 
-* 	URL to access application UI: **http://localhost:8080/sbat/index**
+* 	URL to access application UI: **http://localhost:8080/sbat/index** or **http://192.168.99.102:8080/sbat/index**
 
 ### Running the application with IDE
 
@@ -252,7 +255,7 @@ To shutdown the jar, follow the below mentioned steps on a Windows machine.
 
 #### H2 Console
 
-URL to access H2 console: **http://localhost:8080/h2-console/login.jsp**
+URL to access H2 console: **http://localhost:8080/h2-console/login.jsp** or **http://192.168.99.102:8080/h2-console/login.jsp**
 
 Fill the login form as follows and click on Connect:
 
@@ -269,7 +272,7 @@ Fill the login form as follows and click on Connect:
 
 ### Running the application via docker container
 
-* 	[anantha/spring-boot-application-template](https://hub.docker.com/repository/docker/anantha/spring-boot-application-template) - DockerHub Image
+* 	[anantha/spring-boot-application-template](https://hub.docker.com/r/anantha/spring-boot-application-template/tags) - DockerHub Image
 
 DockerHub Pull Command if you want to directly pull the docker image of the application from Docker Hub.
 
@@ -312,15 +315,15 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |`docker images`                                                                                                                                   | take a look at the container images. See if MySQL image is present       |
 |**`docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=sbat -d mysql:5.7`**| run the MySQL docker image                                               |
 
-|                                 Command to run the docker image of app with MySQL docker image                                 |                                                         Description                              |
-|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
-|**`docker build -t spring-boot-application-template .`**                                                                        | **Build docker image of the project**                                                            |
-|**`docker run -p 8080:8080 spring-boot-application-template`**                                                                  | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
-|**`docker run -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**| **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
-|**`docker stop [container_id]`**                                                                                                | **stop a container**                                                                             |
-|**`docker rm [container_name]`**                                                                                                | **remove a container with a particular container name**                                          |
-|`docker rm $(docker ps -aq)`                                                                                                    | stop and remove all containers                                                                   |
-|`docker restart mysql-docker`																									 | restart the MySQL docker image																	|
+|                                                                  Command to run the docker image of app with MySQL docker image                                       |                                                         Description                              |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
+|**`docker build -t spring-boot-application-template .`**                                                                                                               | **Build docker image of the project**                                                            |
+|**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template spring-boot-application-template`**                                | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
+|**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**| **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
+|**`docker stop [container_id]`**                                                                                                                                       | **stop a container**                                                                             |
+|**`docker rm [container_name]`**                                                                                                                                       | **remove a container with a particular container name**                                          |
+|`docker rm $(docker ps -aq)`                                                                                                                                           | stop and remove all containers                                                                   |
+|`docker restart mysql-docker`																									                                        | restart the MySQL docker image																	 |
 
 |                                 Connecting to the MySQL docker image via CLI                                                   |                                                         Description                              |
 |--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
@@ -344,6 +347,8 @@ In the Oracle VM VirtualBox:
 *	**Network** > **Adapter 1** > **Advanced** > **Port Forwarding**
 *	Click on **+** to add a new Rule
 *	Set **Host Port** to **8080** and **Guest Port** to **8080**; be sure to leave **Host IP** and **Guest IP** empty
+
+<img src="images\h2-console-login.PNG"/>
 
 Reference: https://stackoverflow.com/a/45822356/3711562
 
@@ -369,6 +374,20 @@ Reference: https://stackoverflow.com/a/45822356/3711562
 *	**Add** and **Commit** any pending changes to git
 *	push the code to heroku to deploy the app, example **`git push heroku master`**
 
+## Code Coverage
+
+### Cobertura
+
+Generating code coverage reports
+
+```shell
+$ mvn cobertura:cobertura
+```
+
+This will create a detailed HTML style report showing code coverage statistics gathered via code instrumentation.
+
+**Spring-Boot-Application-Template\target\site\cobertura**
+
 ## Testing API
 
 ### Testing with Postman Runner
@@ -378,6 +397,7 @@ Import the **Spring Boot Application Template API.postman_test_run** file into p
 ### Testing with Maven
 
 *	Run only unit tests:
+
 ```shell
 $ mvn clean test
 ```
@@ -498,7 +518,7 @@ This value **server.servlet.session.timeout** can be configured in **application
 
 ## Explore Rest APIs
 
-The app defines following CRUD APIs.
+The app defines following CRUD APIs. **If localhost doesn't work, use 192.168.99.102**
 
 ### URLs
 

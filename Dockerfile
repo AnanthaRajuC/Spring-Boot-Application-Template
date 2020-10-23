@@ -11,10 +11,10 @@ VOLUME /tmp
 EXPOSE 8080
 
 # The application's jar file
-ARG JAR_FILE=target/SBtemplate-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/spring-boot-application-template.jar
 
 # Add the application's jar to the container
-ADD ${JAR_FILE} SBtemplate.jar
+ADD ${JAR_FILE} spring-boot-application-template.jar
 
 # Run the jar file 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/SBtemplate.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/spring-boot-application-template.jar"]

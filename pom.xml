@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.arc</groupId>
-	<artifactId>SBtemplate</artifactId>
+	<artifactId>spring-boot-application-template</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
-	<name>SBtemplate</name>
+	<name>spring-boot-application-template</name>
 	<description>template for spring boot project</description>
 	
 	<developers>
@@ -49,11 +49,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>${modelmapper.version}</version>
-        </dependency>
 		<dependency>
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-starter-security</artifactId>
@@ -109,6 +104,12 @@
 	      <artifactId>flyway-core</artifactId>
 	    </dependency>
 		<!-- End - Database migration dependencies -->
+		
+		<dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
+        </dependency>
 		
 		<dependency>
 		    <groupId>io.rest-assured</groupId>
@@ -270,15 +271,17 @@
 
 	<build>
 		<plugins>
-			<!-- Package as an executable jar/war -->
+			<!-- Package as an executable jar/war. -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!-- Used during the test phase of the build lifecycle to execute the unit tests. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				</plugin>
+			</plugin>
+			<!-- Cobertura is a reporting tool that calculates test coverage for a codebase – the percentage of branches/lines accessed by unit tests in a Java project. -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
@@ -301,6 +304,7 @@
 	            </configuration>
 	        </plugin>
 		</plugins>
+		<finalName>spring-boot-application-template</finalName>
 	</build>
 
 </project>
