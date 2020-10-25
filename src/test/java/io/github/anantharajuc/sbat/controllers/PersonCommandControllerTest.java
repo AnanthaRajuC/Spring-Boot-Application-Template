@@ -67,7 +67,7 @@ public class PersonCommandControllerTest
 	
 	private static final String LAT 			= "-43.9589";
 	private static final String LNG 			= "-34.4628";
-	private static final Geo GEO 				= new Geo(LAT, LNG);
+	private static final Geo GEO 				= new Geo(LAT, LNG, null); 
 	
 	private static final Address ADDRESS        = new Address(STREET, SUITE, CITY, ZIP_CODE,GEO);
 	

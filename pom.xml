@@ -12,6 +12,7 @@
 	<name>spring-boot-application-template</name>
 	<description>template for spring boot project</description>
 	
+	<!-- Start - Spring Boot Application Template Project Owner -->
 	<developers>
 		<developer>
 			<name>Anantha Raju C</name>
@@ -19,6 +20,22 @@
 			<timezone>UTC+05:30</timezone>
 		</developer>
 	</developers>
+	<!-- End - Spring Boot Application Template Project Owner -->
+	
+	<!-- Start - Spring Boot Application Template source repository -->
+    <scm>
+        <connection>https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git</connection>
+        <developerConnection>git@github.com:Spring-Boot-Framework/Spring-Boot-Application-Template.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <!-- End - Spring Boot Application Template source repository -->
+    
+    <!-- Start - Spring Boot Application Template issue management -->
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues</url>
+    </issueManagement>
+    <!-- End - Spring Boot Application Template issue management -->
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -300,9 +317,9 @@
 	                <source>1.8</source>
 	                <target>1.8</target>
 	            </configuration>
-	        </plugin>
-	        
-	       <plugin>
+	        </plugin>	
+	        <!--  Plugin for building and pushing Docker image to Docker Hub. -->
+	        <plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.0</version>
@@ -310,7 +327,7 @@
 					<repository>anantha/${project.artifactId}</repository>
 					<tag>${project.version}</tag>
 					<buildArgs>
-						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+						<JAR_FILE>target/${project.artifactId}-${project.version}.jar</JAR_FILE>
 					</buildArgs>
 				</configuration>
 				<executions>
@@ -323,10 +340,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> 
-	        
+			</plugin>        	        	        
 		</plugins>
-		<finalName>spring-boot-application-template</finalName>
 	</build>
-
 </project>

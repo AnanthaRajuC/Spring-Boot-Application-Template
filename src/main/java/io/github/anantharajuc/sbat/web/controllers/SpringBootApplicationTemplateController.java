@@ -113,7 +113,7 @@ public class SpringBootApplicationTemplateController
 		} 
 		catch (IOException e) 
 		{
-			e.printStackTrace();
+			log.error( "App shutdown failed!", e );
 		}
 		
 		return "pages/close";

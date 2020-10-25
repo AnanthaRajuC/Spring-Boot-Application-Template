@@ -52,7 +52,7 @@ public class PostmanEchoServiceImpl implements PostmanEchoService
 		} 
 		catch (IOException | JSONException e) 
 		{ 
-			e.printStackTrace();
+			log.error( "PostmanEcho getRequest failed!", e );
 		}			    
 	}
 
@@ -83,7 +83,7 @@ public class PostmanEchoServiceImpl implements PostmanEchoService
 		} 
 		catch (IOException e) 
 		{
-			e.printStackTrace();
+			log.error( "postFormData failed!", e );
 		}
 	}
 }

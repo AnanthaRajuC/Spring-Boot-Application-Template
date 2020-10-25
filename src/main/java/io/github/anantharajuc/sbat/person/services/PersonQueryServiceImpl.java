@@ -95,8 +95,6 @@ public class PersonQueryServiceImpl implements PersonQueryService
             list = persons.subList(startItem, toIndex);
         }
         
-        Page<Person> personPage = new PageImpl<Person>(list, PageRequest.of(currentPage, pageSize), persons.size());
-
-		return personPage;
+        return new PageImpl<>(list, PageRequest.of(currentPage, pageSize), persons.size());
 	}
 }

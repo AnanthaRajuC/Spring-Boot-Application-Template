@@ -26,7 +26,7 @@ public class UserController
 	 
 	public List<String> listLoggedInUsers() 
 	{
-		List<String> listLoggedInUsers = new ArrayList<String>();  
+		List<String> listLoggedInUsers = new ArrayList<>();  
 		
 		log.info("------------------ Currently loggedin users");
 		

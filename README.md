@@ -1,5 +1,7 @@
 # Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 
+[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)
 [![BCH compliance](https://bettercodehub.com/edge/badge/Spring-Boot-Framework/Spring-Boot-Application-Template?branch=master)](https://bettercodehub.com/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)
@@ -60,7 +62,9 @@
 
 ## Important Note: This project's new milestone is to update the security of the application by implementing JWT Authentication, so stay tuned.
 
-The only thing better than a Maven archetype is a repo you can fork with everything already setup, just fork-and-code.
+## Purpose
+
+The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.
 
 This repository contains a recipe/scaffolding for bootstrapping a Web Application with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
@@ -171,6 +175,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
 * 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
+* 	[ ] Quartz Scheduler
 * 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
 * 	[ ] HTTPS
 *   [ ] Unit Tests, Integration Tests
@@ -283,11 +288,11 @@ docker pull anantha/spring-boot-application-template
 **NOTE:** If you want to build a docker image from the source code, ensure you build a jar of the application before building a docker image.  
 
 ```shell
-`mvn package -Dmaven.test.skip=true`    //skip all tests and build. The build once completed is available in **target** folder
+$ mvn package -Dmaven.test.skip=true     //skip all tests and build. The build once completed is available in **target** folder
 ```
 
 ```shell
-`mvn clean package`                     //run all tests and build
+$ mvn clean package                      //run all tests and build
 ```
 
 On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
