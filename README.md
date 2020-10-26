@@ -297,7 +297,9 @@ $ mvn clean package                      //run all tests and build
 
 On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
 
-|                     Basic Docker commands for reference            |                                     Description                               |
+#### Basic Docker commands for reference
+
+|                           Command                                  |                                     Description                               |
 |--------------------------------------------------------------------|-------------------------------------------------------------------------------| 
 |`docker-machine ip default`							             | check your docker IP default, usually it is **192.168.99.102**			     |
 |`docker images`                                                     | take a look at the container images.                                          |
@@ -314,29 +316,37 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |`docker logs [container_id] --since YYYY-MM-DD`                     | list container logs since a particular date                                   |
 |`docker logs [container_id] --since YYYY-MM-DDTHH:MM:SS.000000000Z` | list container logs since a particular timestamp                              |
 
-|                                             Command to run the MySQL docker image                                                                |                                 Description                              |
+#### Commands to run the MySQL docker image
+
+|                                                   Command                                                                                        |                                 Description                              |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------| 
 |**`docker pull mysql:5.7`**							                                                                                           | pull a MySQL Docker Image                                 				  |
 |`docker images`                                                                                                                                   | take a look at the container images. See if MySQL image is present       |
 |**`docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=sbat -d mysql:5.7`**| run the MySQL docker image                                               |
 
-|                                                                  Command to run the docker image of app with MySQL docker image                                       |                                                         Description                              |
+#### Commands to run the docker image of app with MySQL docker image
+
+|                                                                  Command                                                                                              |                                                         Description                              |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
 |**`docker build -t spring-boot-application-template .`**                                                                                                               | **Build docker image of the project**                                                            |
-|**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template spring-boot-application-template`**                                | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
+|**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template anantha/spring-boot-application-template:0.0.1-SNAPSHOT`**         | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
 |**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**| **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
 |**`docker stop [container_id]`**                                                                                                                                       | **stop a container**                                                                             |
 |**`docker rm [container_name]`**                                                                                                                                       | **remove a container with a particular container name**                                          |
 |`docker rm $(docker ps -aq)`                                                                                                                                           | stop and remove all containers                                                                   |
 |`docker restart mysql-docker`																									                                        | restart the MySQL docker image																	 |
 
-|                                 Connecting to the MySQL docker image via CLI                                                   |                                                         Description                              |
+#### Connecting to the MySQL docker image via CLI 
+
+|                                                           Command                                                              |                                                         Description                              |
 |--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
 |`docker exec mysql-docker mysql -usbat -psbat -e 'show databases;'`														     | connect to MySQL image without interactive CLI.													|
 |`docker exec -it mysql-docker mysql -usbat -psbat -e 'show databases;'`														 | connect to MySQL image without interactive CLI.													|
 |`docker exec -it mysql-docker mysql -usbat -psbat`																				 | connect to MySQL image via interactive CLI.														|
 
-| Basic MySQL commands for reference |                   Description                  |
+#### Basic MySQL commands for reference
+
+|                Commands            |                   Description                  |
 |------------------------------------|------------------------------------------------| 
 |`show databases;`					 | lists the databases on the MySQL server host	  |
 |`show schemas;`					 | a synonym for **show databases;**		      |
@@ -357,7 +367,9 @@ In the Oracle VM VirtualBox:
 
 Reference: https://stackoverflow.com/a/45822356/3711562
 
-|             Docker Hub Commands for Reference                      |                         Description                               |
+#### Docker Hub Commands for Reference     
+
+|                               Command                              |                         Description                               |
 |--------------------------------------------------------------------|-------------------------------------------------------------------| 
 |`docker logout`							                         | logout of Docker Hub from the local machine.                      |
 |`docker login --username=YOUR_DOCKERHUB_USERNAME`	                 | login to Docker Hub from your machine.                            |
