@@ -175,9 +175,9 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
 * 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
+* 	[x] HTTPS with self-signed certificate
 * 	[ ] Quartz Scheduler
 * 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
-* 	[ ] HTTPS
 *   [ ] Unit Tests, Integration Tests
 * 	[ ] Shut down app on button click via actuator url 
 * 	[ ] Spring Boot Admin
@@ -215,7 +215,7 @@ spring.datasource.username=sbat
 spring.datasource.password=sbat
 ```
 
-* 	URL to access application UI: **http://localhost:8080/sbat/index** or **http://192.168.99.102:8080/sbat/index**
+* 	URL to access application UI: **https://localhost:8080/sbat/index** or **https://192.168.99.102:8080/sbat/index**
 
 ### Running the application with IDE
 
@@ -260,7 +260,7 @@ To shutdown the jar, follow the below mentioned steps on a Windows machine.
 
 #### H2 Console
 
-URL to access H2 console: **http://localhost:8080/h2-console/login.jsp** or **http://192.168.99.102:8080/h2-console/login.jsp**
+URL to access H2 console: **https://localhost:8080/h2-console/login.jsp** or **https://192.168.99.102:8080/h2-console/login.jsp**
 
 Fill the login form as follows and click on Connect:
 
@@ -424,7 +424,7 @@ $ mvn clean test
 Basic load testing for retrieving a `person` for a given `id` can be performed with the ApacheBench by executing the following command:
 
 ```shell
-ab -n 10000 -c 100 -k http://localhost:8080/api/v1/person/1
+ab -n 10000 -c 100 -k https://localhost:8080/api/v1/person/1
 ```
 
 * **-n 10000** is the number of requests to make
@@ -541,22 +541,22 @@ The app defines following CRUD APIs. **If localhost doesn't work, use 192.168.99
 
 |                  URL                   | Method |          Remarks       |
 |----------------------------------------|--------|------------------------|
-|`http://localhost:8080/index`           | GET    | Home Page              |
-|`http://localhost:8080/sbat/index`      | GET    | Home Page              |
-|`http://localhost:8080/sbat/about`      | GET    | About Page             |
-|`http://localhost:8080/sbat/tech-stack` | GET    | Technology Stack Table |
-|`http://localhost:8080/sbat/close`      | GET    | Close App via Actuator |
-|`http://localhost:8080/sbat/login`      | GET    | Login Page             |
-|`http://localhost:8080/sbat/error`      | GET    | Custom Error Page      |
+|`https://localhost:8080/index`           | GET    | Home Page              |
+|`https://localhost:8080/sbat/index`      | GET    | Home Page              |
+|`https://localhost:8080/sbat/about`      | GET    | About Page             |
+|`https://localhost:8080/sbat/tech-stack` | GET    | Technology Stack Table |
+|`https://localhost:8080/sbat/close`      | GET    | Close App via Actuator |
+|`https://localhost:8080/sbat/login`      | GET    | Login Page             |
+|`https://localhost:8080/sbat/error`      | GET    | Custom Error Page      |
 
 ### Other URLs
 
 |                           URL                                  | Method |
 |----------------------------------------------------------------|--------|
-|`http://localhost:8080/api/generic-hello`                       |   GET  | 
-|`http://localhost:8080/api/personalized-hello/`                 |   GET  | 
-|`http://localhost:8080/api/personalized-hello?name=spring-boot` |   GET  | 
-|`http://localhost:8080/api/loggers`                             |   GET  | 
+|`https://localhost:8080/api/generic-hello`                       |   GET  | 
+|`https://localhost:8080/api/personalized-hello/`                 |   GET  | 
+|`https://localhost:8080/api/personalized-hello?name=spring-boot` |   GET  | 
+|`https://localhost:8080/api/loggers`                             |   GET  | 
 
 ### Actuator
 
@@ -564,11 +564,11 @@ To monitor and manage your application
 
 |              URL                          |Method|
 |-------------------------------------------|------|
-|`http://localhost:8080/actuator/`          |  GET |
-|`http://localhost:8080/actuator/health`    |  GET |
-|`http://localhost:8080/actuator/info`      |  GET |
-|`http://localhost:8080/actuator/prometheus`|  GET |
-|`http://localhost:8080/actuator/httptrace` |  GET |
+|`https://localhost:8080/actuator/`          |  GET |
+|`https://localhost:8080/actuator/health`    |  GET |
+|`https://localhost:8080/actuator/info`      |  GET |
+|`https://localhost:8080/actuator/prometheus`|  GET |
+|`https://localhost:8080/actuator/httptrace` |  GET |
 
 ### Person URLs
 
@@ -576,12 +576,12 @@ To monitor and manage your application
 
 |                           URL                            |  Method |                                         Remarks                                     | Sample Valid Request Body |
 |----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
-|`http://localhost:8080/api/v1/person`                     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/api/v1/person`                     | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
-|`http://localhost:8080/api/v1/person/{id}`                | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
-|`http://localhost:8080/api/v1/person/{id}`                | PUT     | Update a person                                                                     |    [JSON](#personcreate)  |
-|`http://localhost:8080/api/v1/person/{id}`                | DELETE  | Delete a person                                                                     |                           |
+|`https://localhost:8080/api/v1/person`                     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`https://localhost:8080/api/v1/person`                     | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
+|`https://localhost:8080/api/v1/person/{id}`                | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`https://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
+|`https://localhost:8080/api/v1/person/{id}`                | PUT     | Update a person                                                                     |    [JSON](#personcreate)  |
+|`https://localhost:8080/api/v1/person/{id}`                | DELETE  | Delete a person                                                                     |                           |
 
 ### Person Management URLs
 
@@ -589,12 +589,12 @@ To monitor and manage your application
 
 |                          URL                             |  Method |                                       Remarks                                       | Sample Valid Request Body |
 |----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
-|`http://localhost:8080/management/api/v1/person`          | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/management/api/v1/person`          | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
-|`http://localhost:8080/management/api/v1/person/{id}`     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
-|`http://localhost:8080/management/api/v1/person/{id}`     | PUT     | Update a person                                                                     |   [JSON](#personcreate)   |
-|`http://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     |                           |
+|`https://localhost:8080/management/api/v1/person`          | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`https://localhost:8080/management/api/v1/person`          | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
+|`https://localhost:8080/management/api/v1/person/{id}`     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
+|`https://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
+|`https://localhost:8080/management/api/v1/person/{id}`     | PUT     | Update a person                                                                     |   [JSON](#personcreate)   |
+|`https://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     |                           |
 
 
 ## Sample Valid JSON Request Bodys

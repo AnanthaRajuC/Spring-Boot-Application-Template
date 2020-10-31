@@ -15,8 +15,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/sbat/index",
-							"protocol": "http",
+							"raw": "https://localhost:8080/sbat/index",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -57,8 +57,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/actuator/",
-							"protocol": "http",
+							"raw": "https://localhost:8080/actuator/",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -78,8 +78,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/actuator/health",
-							"protocol": "http",
+							"raw": "https://localhost:8080/actuator/health",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -114,8 +114,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/actuator/info",
-							"protocol": "http",
+							"raw": "https://localhost:8080/actuator/info",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -135,8 +135,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/actuator/prometheus",
-							"protocol": "http",
+							"raw": "https://localhost:8080/actuator/prometheus",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -156,8 +156,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/actuator/health/diskSpace",
-							"protocol": "http",
+							"raw": "https://localhost:8080/actuator/health/diskSpace",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -178,8 +178,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/actuator/health/ping",
-							"protocol": "http",
+							"raw": "https://localhost:8080/actuator/health/ping",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -200,8 +200,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/actuator/health/db",
-							"protocol": "http",
+							"raw": "https://localhost:8080/actuator/health/db",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -258,8 +258,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/rbac/user",
-							"protocol": "http",
+							"raw": "https://localhost:8080/rbac/user",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -275,6 +275,23 @@
 				},
 				{
 					"name": "RBAC User - Get",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "368dbe68-62a9-4438-b21e-6a8e6c5c830d",
+								"exec": [
+									"pm.test('Get A RBAC User - XML Response', function()\r",
+									"{\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -294,8 +311,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/rbac/user/johnDoe",
-							"protocol": "http",
+							"raw": "https://localhost:8080/rbac/user/johnDoe",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -312,6 +329,21 @@
 				},
 				{
 					"name": "RBAC User - Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e5917936-659d-4a72-bad1-d53e968b4536",
+								"exec": [
+									"pm.test('Delete A RBAC User', function()\r",
+									"{\r",
+									"    pm.response.to.have.status(204);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -331,8 +363,8 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/rbac/user/jane",
-							"protocol": "http",
+							"raw": "https://localhost:8080/rbac/user/johndoe",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -340,7 +372,7 @@
 							"path": [
 								"rbac",
 								"user",
-								"jane"
+								"johndoe"
 							]
 						},
 						"description": "http://localhost:8080/rbac/user/rbac2"
@@ -349,6 +381,23 @@
 				},
 				{
 					"name": "RBAC User - Get All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d6ee61b-471e-4031-8d56-d2444b0b0309",
+								"exec": [
+									"pm.test('Get All RBAC User\\'s', function()\r",
+									"{\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -368,15 +417,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/rbac/user",
-							"protocol": "http",
+							"raw": "https://localhost:8080/rbac/AdminUser",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"rbac",
-								"user"
+								"AdminUser"
 							]
 						},
 						"description": "Get All RBAC Users"
@@ -438,8 +487,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -504,8 +553,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -568,8 +617,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/18",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/18",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -639,8 +688,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/33",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/33",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -664,16 +713,16 @@
 							"script": {
 								"id": "b86acd43-8c1d-481f-9fdd-b732b672231c",
 								"exec": [
-									"pm.test('Get Existing Person by ID - JSON Response', function()\r",
+									"pm.test('Get Non-existent Person by Id - JSON Response', function()\r",
 									"{\r",
-									"    pm.response.to.be.ok;\r",
-									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.notFound\r",
+									"    pm.response.to.have.status(404);\r",
 									"    pm.response.to.be.withBody;      \r",
 									"    pm.response.to.be.json;\r",
 									"\r",
 									"    const responseJson = pm.response.json();\r",
 									"\r",
-									"    pm.expect(responseJson.name).to.be.a('string');\r",
+									"    pm.expect(responseJson.error).to.be.a('string');\r",
 									"})"
 								],
 								"type": "text/javascript"
@@ -710,8 +759,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/0",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/0",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -780,8 +829,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/1",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/1",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -854,8 +903,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/0",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/0",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -913,8 +962,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/66",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/66",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -978,8 +1027,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/0",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/0",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1031,8 +1080,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1074,8 +1123,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/gender/FEMALE",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/gender/FEMALE",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1119,8 +1168,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/pageable?size=500&pageNumber=5&sort=id",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/pageable?size=500&pageNumber=5&sort=id",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1177,8 +1226,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdBy,desc",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdBy,desc",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1246,8 +1295,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/management/person",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1290,8 +1339,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person/2",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/management/person/2",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1335,8 +1384,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person/pageable?page=1&size=2&sort=createdDate,desc",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/management/person/pageable?page=1&size=2&sort=createdDate,desc",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1403,8 +1452,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person/33",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/management/person/33",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1448,8 +1497,8 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person/12",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/management/person/12",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1502,8 +1551,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/v1/management/person",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1532,8 +1581,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/personalized-hello?",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/personalized-hello?",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1559,8 +1608,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/loggers",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/loggers",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -1580,8 +1629,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/personalized-hello?name=springboot%20application",
-							"protocol": "http",
+							"raw": "https://localhost:8080/api/personalized-hello?name=springboot%20application",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
