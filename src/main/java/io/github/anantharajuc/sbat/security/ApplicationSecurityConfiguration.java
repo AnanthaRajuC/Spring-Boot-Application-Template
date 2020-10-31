@@ -39,9 +39,6 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 	{
 		this.passwordEncoder = passwordEncoder;
 	}
-	
-	@Autowired
-	UserPrincipalService userPrincipalService;
 
 	/** Public URLs. */
     private static final String[] PUBLIC_MATCHERS = 
@@ -110,17 +107,17 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 	@Bean
     public ServletListenerRegistrationBean<HttpSessionEventPublisher> httpSessionEventPublisher() 
 	{
-        return new ServletListenerRegistrationBean<HttpSessionEventPublisher>(new HttpSessionEventPublisher());
+        return new ServletListenerRegistrationBean<>(new HttpSessionEventPublisher());
     }
 	
 	@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception 
 	{
-        auth.authenticationProvider(daoAuthenticationProvider());
+        auth.authenticationProvider(daoAuthenticationProvider(null));
     }
 
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() 
+    public DaoAuthenticationProvider daoAuthenticationProvider(UserPrincipalService userPrincipalService) 
     {
     	log.info("-----> DaoAuthenticationProvider : ");
     	

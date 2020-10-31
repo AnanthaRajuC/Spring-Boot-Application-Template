@@ -23,11 +23,12 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping({"/sbat"})
 public class FormController 
 {
+	private static final String COMMAND = "command";  
 	
 	@GetMapping("/form")
 	public String fooForm(Model model)
 	{
-		model.addAttribute("command", new Form());
+		model.addAttribute(COMMAND, new Form());
 		
 		return "pages/form";
 	}
@@ -53,7 +54,7 @@ public class FormController
 		
 		log.info("form submission.");
 
-		log.info(model.getAttribute("command"));  
+		log.info(model.getAttribute(COMMAND));  
 		
 		log.info("Color Field "+command.getColorField()); 
 		log.info("Datetime Field "+command.getDatetimeField()); 
@@ -68,7 +69,7 @@ public class FormController
 			return "pages/form";
 		}
 
-		ra.addFlashAttribute("command", command);
+		ra.addFlashAttribute(COMMAND, command);
 		
 		return "redirect:/index";
 	}

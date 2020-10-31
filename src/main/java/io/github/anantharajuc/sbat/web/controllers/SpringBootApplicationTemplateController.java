@@ -21,7 +21,6 @@ import io.github.anantharajuc.sbat.backend.persistence.repositories.BuiltWithRep
 import io.github.anantharajuc.sbat.person.controllers.PersonQueryController;
 import io.github.anantharajuc.sbat.person.model.Person;
 import io.github.anantharajuc.sbat.person.services.PersonQueryServiceImpl;
-import io.github.anantharajuc.sbat.security.authorization.RBACuserManagementController;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -37,9 +36,6 @@ public class SpringBootApplicationTemplateController
 {
 	@Autowired
 	private Environment environment;
-	
-	@Autowired
-	private RBACuserManagementController rBACuserManagementController;
 	
 	@Autowired
 	private BuiltWithRepository builtWithRepository;
@@ -107,9 +103,12 @@ public class SpringBootApplicationTemplateController
 		String command = "curl --location --request POST http://localhost:"+port+"/actuator/shutdown";
 		
 		log.info("shutdown command : "+command);
+		
 		try 
 		{
 			Process process = Runtime.getRuntime().exec(command);
+			
+			log.info("process : "+process);
 		} 
 		catch (IOException e) 
 		{

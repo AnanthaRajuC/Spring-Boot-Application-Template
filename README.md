@@ -170,7 +170,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[x] [Spring Security](https://spring.io/projects/spring-security) RBAC, Session Timeout
 * 	[x] API [Rate Limiting](https://en.wikipedia.org/wiki/Rate_limiting)
 * 	[x] [JPA Auditing via AuditorAware Interface](https://docs.spring.io/spring-data/jpa/docs/1.7.0.DATAJPA-580-SNAPSHOT/reference/html/auditing.html)
-* 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
+* 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles) (dev, production, qa, staging, test)
 * 	[x] [Docker](https://www.docker.com/)
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)

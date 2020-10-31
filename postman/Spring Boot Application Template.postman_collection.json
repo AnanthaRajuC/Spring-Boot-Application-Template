@@ -355,7 +355,7 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "johndoe",
+									"value": "AdminUser",
 									"type": "string"
 								},
 								{
@@ -391,13 +391,30 @@
 			"item": [
 				{
 					"name": "Get Person's - XML Response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5891bbac-431c-4def-9ef3-131b4c3a74c1",
+								"exec": [
+									"pm.test('Get All Person\\'s - XML Response', function()\r",
+									"{\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
 								{
 									"key": "username",
-									"value": "JohnDoe",
+									"value": "AdminUser",
 									"type": "string"
 								},
 								{
@@ -439,6 +456,24 @@
 				},
 				{
 					"name": "Get Person's - JSON Response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9d5b724b-6cea-448c-87c0-f8fd4d0e4957",
+								"exec": [
+									"pm.test('Get All Person\\'s - XML Response', function()\r",
+									"{\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;      \r",
+									"    pm.response.to.be.json;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -487,6 +522,22 @@
 				},
 				{
 					"name": "Get Person by Id - XML Response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "40ae472c-4a79-4fad-80f1-98a2c9122f25",
+								"exec": [
+									"pm.test('Get A Person by ID - XML Response', function()\r",
+									"{\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;      \r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -535,19 +586,41 @@
 					"response": []
 				},
 				{
-					"name": "Get Person by Id - JSON Response",
+					"name": "Get Existing Person by Id - JSON Response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b47575aa-d7b6-4e28-8723-3062223bca8f",
+								"exec": [
+									"pm.test('Get Existing Person by ID - JSON Response', function()\r",
+									"{\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;      \r",
+									"    pm.response.to.be.json;\r",
+									"\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseJson.name).to.be.a('string');\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
 								{
 									"key": "password",
-									"value": "{{AdminPassword}}",
+									"value": "password",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "{{AdminUsername}}",
+									"value": "AdminUser",
 									"type": "string"
 								}
 							]
@@ -561,12 +634,12 @@
 							},
 							{
 								"key": "X-api-key",
-								"value": "null",
-								"type": "text"
+								"type": "text",
+								"value": "null"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/8",
+							"raw": "http://localhost:8080/api/v1/person/33",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -576,7 +649,7 @@
 								"api",
 								"v1",
 								"person",
-								"8"
+								"33"
 							]
 						},
 						"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -584,7 +657,95 @@
 					"response": []
 				},
 				{
-					"name": "Update Person by Id",
+					"name": "Get Non-existent Person by Id - JSON Response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b86acd43-8c1d-481f-9fdd-b732b672231c",
+								"exec": [
+									"pm.test('Get Existing Person by ID - JSON Response', function()\r",
+									"{\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;      \r",
+									"    pm.response.to.be.json;\r",
+									"\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseJson.name).to.be.a('string');\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "AdminUser",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-api-key",
+								"type": "text",
+								"value": "null"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/person/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"person",
+								"0"
+							]
+						},
+						"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Existing Person by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "058092cd-fcaa-4fdf-9278-33aba7ae3765",
+								"exec": [
+									"pm.test('Update A Person by ID - JSON Response', function()\r",
+									"{\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.be.withBody;      \r",
+									"    pm.response.to.be.json;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -605,8 +766,8 @@
 						"header": [
 							{
 								"key": "X-api-key",
-								"value": "null",
-								"type": "text"
+								"type": "text",
+								"value": "null"
 							}
 						],
 						"body": {
@@ -637,7 +798,96 @@
 					"response": []
 				},
 				{
+					"name": "Update Non-existent Person by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ceadcea9-94b4-4ff8-ae44-43504894cba9",
+								"exec": [
+									"pm.test('Update A Person by ID - JSON Response', function()\r",
+									"{\r",
+									"    pm.response.to.have.status(404);\r",
+									"    pm.response.to.be.withBody;      \r",
+									"    pm.response.to.be.json;\r",
+									"\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseJson.error).to.eql(\"Not Found\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "AdminUser",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-api-key",
+								"type": "text",
+								"value": "null"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"ooooo\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/person/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"person",
+								"0"
+							]
+						},
+						"description": "Update a person by ID\nhttp://localhost:8080/api/person/1"
+					},
+					"response": []
+				},
+				{
 					"name": "Delete Person by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c0be23ff-15b3-46b8-bc12-a1c0dfd80dbe",
+								"exec": [
+									"pm.test('Delete A Person', function()\r",
+									"{\r",
+									"    pm.response.to.have.status(204);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -681,6 +931,71 @@
 					"response": []
 				},
 				{
+					"name": "Delete Non-existent Person by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a8567bb-8a25-4191-ac78-2d05be15a92c",
+								"exec": [
+									"pm.test('Delete a Non-existent Person by ID', function()\r",
+									"{\r",
+									"    pm.response.to.have.status(404);\r",
+									"    pm.response.to.be.withBody;      \r",
+									"    pm.response.to.be.json;\r",
+									"\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseJson.error).to.eql(\"Not Found\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "AdminUser",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-api-key",
+								"type": "text",
+								"value": "null"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/person/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"person",
+								"0"
+							]
+						},
+						"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
+					},
+					"response": []
+				},
+				{
 					"name": "Create Person",
 					"request": {
 						"auth": {
@@ -708,7 +1023,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"kkkkkk\",\r\n\t\"username\": \"ssskets\",\r\n\t\"emailPrimary\": \"owektsw@gmail.com\",\r\n\t\"emailSecondary\": \"wwwkestw@gmail.com\",\r\n\t\"phone\":1781461,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+							"raw": "{\r\n\t\"name\": \"kkkkkllk\",\r\n\t\"username\": \"ssskets\",\r\n\t\"emailPrimary\": \"owektsw@gmail.com\",\r\n\t\"emailSecondary\": \"wwwkestw@gmail.com\",\r\n\t\"phone\":1781461,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -780,6 +1095,21 @@
 				{
 					"name": "Get Person's - Pageable",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "AdminUser",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -885,7 +1215,7 @@
 			"name": "Person Management Endpoint",
 			"item": [
 				{
-					"name": "http://localhost:8080/management/api/v1/person",
+					"name": "Get Person's - JSON Response",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -916,16 +1246,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/management/api/v1/person",
+							"raw": "http://localhost:8080/api/v1/management/person",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"management",
 								"api",
 								"v1",
+								"management",
 								"person"
 							]
 						},
@@ -934,7 +1264,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/management/api/v1/person/{id}",
+					"name": "Delete Person by Id",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -960,18 +1290,18 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/management/api/v1/person/89",
+							"raw": "http://localhost:8080/api/v1/management/person/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"management",
 								"api",
 								"v1",
+								"management",
 								"person",
-								"89"
+								"2"
 							]
 						},
 						"description": "http://localhost:8080/management/api/v1/person/669"
@@ -979,7 +1309,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/management/api/v1/person/pageable?page=1&size=1&sort=createdOn,desc",
+					"name": "Get Person's - Pageable",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -1005,16 +1335,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/management/api/v1/person/pageable?page=1&size=550&sort=createdDate,desc",
+							"raw": "http://localhost:8080/api/v1/management/person/pageable?page=1&size=2&sort=createdDate,desc",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"management",
 								"api",
 								"v1",
+								"management",
 								"person",
 								"pageable"
 							],
@@ -1025,7 +1355,7 @@
 								},
 								{
 									"key": "size",
-									"value": "550"
+									"value": "2"
 								},
 								{
 									"key": "sort",
@@ -1038,7 +1368,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/management/api/v1/person/{id}",
+					"name": "Update Person by Id",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -1059,13 +1389,13 @@
 						"header": [
 							{
 								"key": "X-api-key",
-								"value": "null",
-								"type": "text"
+								"type": "text",
+								"value": "null"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Vincen7\",\r\n    \"username\": \"vorre7777y1y\",\r\n    \"emailPrimary\": \"777@booking.com\",\r\n    \"emailSecondary\": \"vor777rey1y@dailymotion.com\",\r\n    \"phone\": 7898,\r\n    \"gender\": \"MALE\",\r\n    \"password\": \"MAhfhfhdfhdLE\",\r\n    \"age\": 41,\r\n    \"dob\": \"25-12-2006\",\r\n    \"isAdult\": false,\r\n    \"address\": {\r\n        \"id\": 71,\r\n        \"street\": \"Butterfield\",\r\n        \"suite\": \"porttitor\",\r\n        \"city\": \"Malaga\",\r\n        \"zipcode\": \"29015\",\r\n        \"geo\": {\r\n            \"id\": 71,\r\n            \"lat\": \"40.6892276\",\r\n            \"lng\": \"-8.6031905\"\r\n        }\r\n    }\r\n}",
+							"raw": "{\r\n\t\"name\": \"33335l\",\r\n\t\"username\": \"aaaa\",\r\n\t\"emailPrimary\": \"aaaa@gmail.com\",\r\n\t\"emailSecondary\": \"ffff.howell@gmail.com\",\r\n\t\"phone\":11111333,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1073,72 +1403,18 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/management/api/v1/person/3",
+							"raw": "http://localhost:8080/api/v1/management/person/33",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"management",
 								"api",
 								"v1",
-								"person",
-								"3"
-							]
-						},
-						"description": "http://localhost:8080/management/api/v1/person/{id}"
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:8080/management/api/v1/person",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "X-api-key",
-								"value": "null",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"aaa\",\r\n\t\"username\": \"aaaa\",\r\n\t\"emailPrimary\": \"aaaa@gmail.com\",\r\n\t\"emailSecondary\": \"ffff.howell@gmail.com\",\r\n\t\"phone\":11111333,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/management/api/v1/person/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
 								"management",
-								"api",
-								"v1",
 								"person",
-								"2"
+								"33"
 							]
 						},
 						"description": "http://localhost:8080/management/api/v1/person"
@@ -1146,7 +1422,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/management/api/v1/person/{id}",
+					"name": "Get Person by Id - JSON Response",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -1172,18 +1448,18 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/management/api/v1/person/4",
+							"raw": "http://localhost:8080/api/v1/management/person/12",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"management",
 								"api",
 								"v1",
+								"management",
 								"person",
-								"4"
+								"12"
 							]
 						},
 						"description": "http://localhost:8080/management/api/v1/person/6"
@@ -1191,7 +1467,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/management/api/v1/person",
+					"name": "Create Person",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -1226,16 +1502,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/management/api/v1/person",
+							"raw": "http://localhost:8080/api/v1/management/person",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"management",
 								"api",
 								"v1",
+								"management",
 								"person"
 							]
 						},

@@ -47,6 +47,6 @@ public class Role extends AuditEntity
     @JoinTable(   name = "permission_role", 
            joinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}, 
     inverseJoinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")})
-    List<Permission> permissions;
+    private List<Permission> permissions;
 
 }

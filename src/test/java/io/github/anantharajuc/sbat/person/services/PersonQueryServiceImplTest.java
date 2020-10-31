@@ -10,11 +10,13 @@ import java.util.Optional;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import io.github.anantharajuc.sbat.person.dto.PersonDTO;
 import io.github.anantharajuc.sbat.person.model.Address;
 import io.github.anantharajuc.sbat.person.model.GenderEnum;
 import io.github.anantharajuc.sbat.person.model.Geo;
@@ -75,14 +77,17 @@ public class PersonQueryServiceImplTest
 		return person;
 	}
 	
+	@Autowired
+	private ModelMapper modelMapper;
+	
 	/*@Test
 	public void getPersonByIdTest()
 	{		
 		Person person = createPerson();
+		PersonDTO personDTO = modelMapper.map(person, PersonDTO.class);
 		
 		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person)); 
-		
-		assertThat(personQueryServiceImpl.getPersonById(1L)).isEqualTo(person);
+		assertThat(personQueryServiceImpl.getPersonById(1L)).isEqualTo(personDTO);
 	}*/
 	
 	@Test

@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import io.github.anantharajuc.sbat.exception.FailedLoginAttemptException;
 import io.github.anantharajuc.sbat.security.authentication.LoginAttemptService;
 import io.github.anantharajuc.sbat.security.user.model.User;
 import io.github.anantharajuc.sbat.security.user.repository.UserRepository;
@@ -43,7 +44,7 @@ public class UserPrincipalService implements UserDetailsService
         {
         	log.info("-----> Your IP has been blocked for 2 minute for 2 consecutive failed login attempts.");
         	
-            throw new RuntimeException("blocked");
+        	throw new FailedLoginAttemptException();
         }
 		
 		User user = appUserRepository.findByUsername(username)
