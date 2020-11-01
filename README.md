@@ -175,7 +175,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
 * 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
-* 	[x] HTTPS with self-signed certificate
+* 	[x] (HTTPS)[https://en.wikipedia.org/wiki/HTTPS] with (self-signed certificate)[https://en.wikipedia.org/wiki/Self-signed_certificate]
 * 	[ ] Quartz Scheduler
 * 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
 *   [ ] Unit Tests, Integration Tests
@@ -537,10 +537,14 @@ This value **server.servlet.session.timeout** can be configured in **application
 
 The app defines following CRUD APIs. **If localhost doesn't work, use 192.168.99.102**
 
+Since the SSL certificate is self signed, turn off the **SSL certificate verification** option while interacting with the URLs via **Postman**
+
+<img src="images\postman-ssl-certificate-verification.PNG"/>
+
 ### URLs
 
-|                  URL                   | Method |          Remarks       |
-|----------------------------------------|--------|------------------------|
+|                   URL                   | Method |          Remarks       |
+|-----------------------------------------|--------|------------------------|
 |`https://localhost:8080/index`           | GET    | Home Page              |
 |`https://localhost:8080/sbat/index`      | GET    | Home Page              |
 |`https://localhost:8080/sbat/about`      | GET    | About Page             |
