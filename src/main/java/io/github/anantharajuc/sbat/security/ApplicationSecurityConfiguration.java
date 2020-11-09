@@ -79,12 +79,15 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 	    	.httpBasic()
 		.and()
 			.logout()
-			.logoutUrl("/logout")
-			.clearAuthentication(true)
-			.invalidateHttpSession(true)
-			.deleteCookies("JSESSIONID","remember-me")
-			.logoutSuccessUrl("/sbat/index") 
-			.permitAll();
+				.logoutUrl("/logout")
+				.clearAuthentication(true)
+				.invalidateHttpSession(true)
+				.deleteCookies("JSESSIONID","remember-me")
+				.logoutSuccessUrl("/sbat/index") 
+				.permitAll()
+		.and()
+			.exceptionHandling()
+				.accessDeniedPage("/403");
 		
 		//https://stackoverflow.com/questions/53395200/h2-console-is-not-showing-in-browser
 		http

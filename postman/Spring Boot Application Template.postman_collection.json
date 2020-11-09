@@ -15,8 +15,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/sbat/index",
-							"protocol": "https",
+							"raw": "http://localhost:8080/sbat/index",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -57,8 +57,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/actuator/",
-							"protocol": "https",
+							"raw": "http://localhost:8080/actuator/",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -78,8 +78,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/actuator/health",
-							"protocol": "https",
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -114,8 +114,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/actuator/info",
-							"protocol": "https",
+							"raw": "http://localhost:8080/actuator/info",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -135,8 +135,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/actuator/prometheus",
-							"protocol": "https",
+							"raw": "http://localhost:8080/actuator/prometheus",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -156,8 +156,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/actuator/health/diskSpace",
-							"protocol": "https",
+							"raw": "http://localhost:8080/actuator/health/diskSpace",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -178,8 +178,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/actuator/health/ping",
-							"protocol": "https",
+							"raw": "http://localhost:8080/actuator/health/ping",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -200,8 +200,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/actuator/health/db",
-							"protocol": "https",
+							"raw": "http://localhost:8080/actuator/health/db",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -258,8 +258,8 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/rbac/user",
-							"protocol": "https",
+							"raw": "http://localhost:8080/rbac/user",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -311,8 +311,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/rbac/user/johnDoe",
-							"protocol": "https",
+							"raw": "http://localhost:8080/rbac/user/johnDoe",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -363,8 +363,8 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/rbac/user/johndoe",
-							"protocol": "https",
+							"raw": "http://localhost:8080/rbac/user/johndoe",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -417,8 +417,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/rbac/AdminUser",
-							"protocol": "https",
+							"raw": "http://localhost:8080/rbac/AdminUser",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -487,8 +487,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -553,8 +553,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -617,8 +617,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/18",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/18",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -688,8 +688,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/33",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/33",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -759,8 +759,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/0",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -829,8 +829,8 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/1",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/1",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -903,8 +903,8 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/0",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -962,8 +962,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/66",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/66",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1027,8 +1027,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/0",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/0",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1080,8 +1080,8 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1123,8 +1123,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/gender/FEMALE",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/gender/FEMALE",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1168,8 +1168,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/pageable?size=500&pageNumber=5&sort=id",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/pageable?size=500&pageNumber=5&sort=id",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1226,8 +1226,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdBy,desc",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdBy,desc",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1295,8 +1295,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/management/person",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/management/person",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1339,8 +1339,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/management/person/2",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/management/person/2",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1384,8 +1384,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/management/person/pageable?page=1&size=2&sort=createdDate,desc",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/management/person/pageable?page=1&size=2&sort=createdDate,desc",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1452,8 +1452,8 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/v1/management/person/33",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/management/person/33",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1497,8 +1497,8 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:8080/api/v1/management/person/12",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/management/person/12",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1551,8 +1551,8 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/v1/management/person",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/v1/management/person",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1581,8 +1581,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/personalized-hello?",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/personalized-hello?",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1608,8 +1608,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/loggers",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/loggers",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
@@ -1629,8 +1629,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/personalized-hello?name=springboot%20application",
-							"protocol": "https",
+							"raw": "http://localhost:8080/api/personalized-hello?name=springboot%20application",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
