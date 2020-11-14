@@ -34,3 +34,12 @@ INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modif
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoPOSTpath','/post','Installation','Installation');
+
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('mailFrom','sbat@email.com','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('mailSubject','Spring Boot Application Template','Installation','Installation');
+
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailHost','smtp.mailtrap.io','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailPort','2525','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailProtocol','smtp','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','f7fdce4b06166a','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','3e66d59362741f','Installation','Installation');

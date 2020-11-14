@@ -28,6 +28,16 @@ public class OtherServicesImpl implements OtherServices
 	private String postmanEchoGETurl;
 	private String postmanEchoPOSTpath;
 	
+	private String mailFrom;
+	private String mailSubject;
+
+	private int springMailPort;
+	private String springMailProtocol;
+	private String springMailUsername;
+	private String springMailPassword;
+	
+	private String springMailHost;
+	
 	@Autowired
 	private ApplicationSettingsRepository applicationSettingsRepository;
 		
@@ -51,5 +61,15 @@ public class OtherServicesImpl implements OtherServices
 		setPostmanEchoBaseUrl(applicationSettingsHashMap.get("postmanEchoBaseUrl"));
 		setPostmanEchoGETurl(applicationSettingsHashMap.get("postmanEchoGETurl")); 
 		setPostmanEchoPOSTpath(applicationSettingsHashMap.get("postmanEchoPOSTpath"));
+		
+		setMailFrom(applicationSettingsHashMap.get("mailFrom"));
+		setMailSubject(applicationSettingsHashMap.get("mailSubject"));
+
+		setSpringMailPort(Integer.parseInt(applicationSettingsHashMap.get("springMailPort")));
+		setSpringMailProtocol(applicationSettingsHashMap.get("springMailProtocol"));
+		setSpringMailUsername(applicationSettingsHashMap.get("springMailUsername"));
+		setSpringMailPassword(applicationSettingsHashMap.get("springMailPassword"));
+		
+		setSpringMailHost(applicationSettingsHashMap.get("springMailHost"));
 	}
 }

@@ -16,8 +16,8 @@ jdk:
 
 before_install:
   - echo "Testing docker credentials"
-  - docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-  - echo "docker hub credential are working"
+  #- docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
+  #- echo "docker hub credential are working"
   #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 # git strips the wrapper jar file so we have to force its download during the build
