@@ -14,6 +14,24 @@ public class ResourcePaths
     public static final String ROOT_API    = "/" + API;                                /*   /api                        */
     public static final String ROOT_API_V1 = ROOT_API + V1;   					       /*   /api/v1                     */
     
+    public class Authentication
+	{
+		public static final String NAME              = "/auth";
+		
+		public final class V1
+		{
+			private V1() {}
+			
+			public static final String ROOT          = ROOT_API_V1 + NAME;
+			
+			public static final String SIGNUP        = "/signup";
+			public static final String VERIFICATION  = "/verification/{token}";
+			public static final String LOGIN         = "/login"; 	
+			public static final String REFRESH_TOKEN = "/refresh/token";
+			public static final String LOGOUT        = "/logout";
+		}
+	}
+    
     public class PersonManagement
     {
     	public static final String NAME = "/management/person";

@@ -31,9 +31,17 @@ INSERT INTO `built_with` (`description`,`link`,`name`,`version`,`created_by`,`la
  */
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('applicationName','sbat','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('applicationVersion','1.0','Installation','Installation');
+
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoPOSTpath','/post','Installation','Installation');
+
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('keystoreFileName','redditclone.jks','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('keystoreAlias','redditclone','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('keystorePassword','abcd1234','Installation','Installation');
+
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('verificationTokenValidity','10','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('jwtExpirationTime','90000','Installation','Installation');
 
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('mailFrom','sbat@email.com','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('mailSubject','Spring Boot Application Template','Installation','Installation');

@@ -65,3 +65,37 @@ role_id bigint not null
 
 ALTER TABLE role_user ADD FOREIGN KEY (user_id) REFERENCES permission(id);
 ALTER TABLE role_user ADD FOREIGN KEY (role_id) REFERENCES role(id);
+
+--
+-- Table structure for table `verification_token`
+--
+
+CREATE TABLE `verification_token` (
+  `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
+  `created_by` varchar(255) NOT NULL,
+  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_modified_by` varchar(255) NOT NULL,
+  `last_modified_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `expiry_date` datetime DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKrdn0mss276m9jdobfhhn2qogw` (`user_id`),
+  CONSTRAINT `FKrdn0mss276m9jdobfhhn2qogw` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `refresh_token`
+--
+
+CREATE TABLE `refresh_token` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_date` datetime DEFAULT NULL,
+  `created_by` varchar(255) NOT NULL,
+  `last_modified_date` datetime DEFAULT NULL,
+  `last_modified_by` varchar(255) NOT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

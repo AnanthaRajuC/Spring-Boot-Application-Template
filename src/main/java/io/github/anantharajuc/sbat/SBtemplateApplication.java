@@ -8,10 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import io.github.anantharajuc.sbat.backend.service.impl.OtherServicesImpl;
-import io.github.anantharajuc.sbat.email.Email;
-import io.github.anantharajuc.sbat.email.EmailServiceImpl;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -23,15 +22,11 @@ import lombok.extern.log4j.Log4j2;
 @SpringBootApplication
 @EnableCaching
 @Log4j2
+@EnableAsync(proxyTargetClass=true)
 public class SBtemplateApplication implements CommandLineRunner
 {	
 	@Autowired
 	private OtherServicesImpl otherServicesImpl;
-	
-	@Autowired
-	private EmailServiceImpl mailServiceImpl;
-
-	private String mailBody = "Spring Boot Application has Started Successfully";
 	
 	public static void main(String[] args) 
 	{		
@@ -55,8 +50,6 @@ public class SBtemplateApplication implements CommandLineRunner
 		
 		log.info("-----> Application Name    : "+otherServicesImpl.getApplicationName());	
 		log.info("-----> Application Version : "+otherServicesImpl.getApplicationVersion());
-		
-		mailServiceImpl.sendMail(new Email(otherServicesImpl.getMailSubject(), "mail-to@gmail.com", mailBody));
 	}
 }
  

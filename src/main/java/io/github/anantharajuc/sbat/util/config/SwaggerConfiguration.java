@@ -8,11 +8,13 @@ import org.springframework.context.annotation.Profile;
 import com.google.common.base.Predicate;
 
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+//import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 import static com.google.common.base.Predicates.or;
@@ -26,6 +28,7 @@ import static com.google.common.base.Predicates.or;
 @Configuration
 @Profile({"dev"})
 @EnableSwagger2
+//@EnableSwagger2WebMvc
 public class SwaggerConfiguration 
 {
 	@Value("${release.version}")
@@ -57,7 +60,8 @@ public class SwaggerConfiguration
 					.groupName(GROUP_NAME)
 					.apiInfo(apiInfo())
 					.select()
-					.paths(postPaths())
+					//.paths(postPaths())
+					.paths(PathSelectors.any())
 					.build();
 	}
 
@@ -81,9 +85,9 @@ public class SwaggerConfiguration
 						.build();
 	}
 	
-	private Predicate<String> postPaths() 
+	/*private Predicate<String> postPaths() 
 	{
 		return or(regex("/api.*"), 
 				  regex("/management/api.*"));
-	}
+	}*/
 } 

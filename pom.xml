@@ -59,10 +59,13 @@
 		<guava.version>30.0-android</guava.version>
 		<json.version>20200518</json.version>
 		<mockito-all.version>1.10.19</mockito-all.version>
-		<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
-		<springfox-swagger-ui.version>2.10.5</springfox-swagger-ui.version>
+		<springfox-swagger2.version>3.0.0</springfox-swagger2.version>
+		<springfox-swagger-ui.version>3.0.0</springfox-swagger-ui.version>
 		<bucket4j.version>4.10.0</bucket4j.version>
 		<modelmapper.version>2.3.8</modelmapper.version>
+		<jjwt-api.version>0.11.2</jjwt-api.version>
+		<jjwt-impl.version>0.11.2</jjwt-impl.version>
+		<jjwt-jackson.version>0.11.2</jjwt-jackson.version>
 	</properties>
 
 	<dependencies>
@@ -127,6 +130,26 @@
             <artifactId>modelmapper</artifactId>
             <version>${modelmapper.version}</version>
         </dependency>
+        
+        <!-- JWT dependencies START -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <scope>runtime</scope>
+            <version>${jjwt-impl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <scope>runtime</scope>
+            <version>${jjwt-jackson.version}</version>
+        </dependency>
+        <!-- JWT dependencies END -->
 		
 		<dependency>
 		    <groupId>io.rest-assured</groupId>

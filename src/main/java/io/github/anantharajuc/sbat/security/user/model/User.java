@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -49,6 +51,11 @@ public class User extends AuditEntity
 	@Column(name="username", unique=true)
 	@Size(max = 255, message="username must not be empty.")
 	String username;	
+	
+	@Email
+    @NotEmpty(message = "Email is required")
+    @Column(name="email", unique=true, nullable = false)
+	String email;
 	
 	@Column(name="isAccountNonExpired")
 	boolean isAccountNonExpired;
