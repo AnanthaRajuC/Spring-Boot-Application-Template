@@ -177,7 +177,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
 * 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
-* 	[x] (HTTPS)[https://en.wikipedia.org/wiki/HTTPS] with (self-signed certificate)[https://en.wikipedia.org/wiki/Self-signed_certificate]
+* 	[x] [HTTPS](https://en.wikipedia.org/wiki/HTTPS) with (self-signed certificate)[https://en.wikipedia.org/wiki/Self-signed_certificate]
 * 	[ ] Quartz Scheduler
 * 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
 *   [ ] Unit Tests, Integration Tests
@@ -503,6 +503,8 @@ Percentage of the requests served within a certain time (ms)
 
 [Role, Permission based User Authentication via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
 
+[Json Web Token - Role Based Access Controll via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
+
 Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.security`.
 
 *	A Java Keystore File is required to generate JSON Web Token.
@@ -737,9 +739,9 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │
 │           └── io.github.anantharajuc.sbat.web
 │               │
-│				├── io.github.anantharajuc.sbat.web.controllers
+│               ├── io.github.anantharajuc.sbat.web.controllers
 │               │
-│				└── io.github.anantharajuc.sbat.web.domain.frontend
+│               └── io.github.anantharajuc.sbat.web.domain.frontend
 ├── src
 │   └── main
 │       └── resources
