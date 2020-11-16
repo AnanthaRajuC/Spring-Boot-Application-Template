@@ -135,6 +135,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 * 	[JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit
 * 	[Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
 * 	[Maven](https://maven.apache.org/) - Dependency Management
+* 	[JSON Web Token](https://www.jsonwebtoken.io/) - Encode or Decode JWTs
 
 ###  Libraries and Plugins
 
@@ -153,6 +154,7 @@ Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elem
 
 ### External Tools & Services
 
+*   [Mailtrap](https://mailtrap.io/) - Safe Email Testing for Staging & Development.
 * 	[Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
 * 	[Postman Echo](https://docs.postman-echo.com/?version=latest) - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.
 * 	[Travis CI](https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.
@@ -503,11 +505,62 @@ Percentage of the requests served within a certain time (ms)
 
 Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.security`.
 
+*	A Java Keystore File is required to generate JSON Web Token.
+
+```shell
+keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
+```
+
+<img src="images\reddit-clone-jks-generation.PNG"/>
+
 |     Username     | Password |     Role     |                      Permission                       |         Resource          |
 |------------------|----------|--------------|-------------------------------------------------------|---------------------------|
 |`johndoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
 |`AdminUser`       |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
 |`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
+
+|                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
+|---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
+|`http://localhost:8080/api/v1/auth/signup`                           | POST   |                                               | [JSON](#signup)           |
+|`http://localhost:8080/api/v1/auth/verification/{verification-token}`| GET    |                                               |                           |
+|`http://localhost:8080/api/v1/auth/login`                            | POST   |Bearer Token, Refresh Token is generated       | [JSON](#login)            |
+|`http://localhost:8080/api/v1/subreddit`                             | POST   |Bearer Token should be passed for authorization| [JSON](#subreddit)        |
+|`http://localhost:8080/api/v1/auth/refresh/token`                    | POST   |Refresh Token from login should be passed      | [JSON](#refresh-token)    |
+
+### Sample Valid JSON Request Bodys
+
+##### <a id="signup">Signup -> /api/auth/signup</a>
+```json
+{
+    "username":"johndoe",
+    "email":"domain@example.com",
+    "password":"abcd1234"
+}
+```
+
+##### <a id="login">Login -> /api/auth/login</a>
+```json
+{
+    "username":"johndoe",
+    "password":"abcd1234"
+}
+```
+
+##### <a id="subreddit">Subreddit -> /api/subreddit</a>
+```json
+{
+    "name":"my-cool-subreddit",
+    "description":"My subreddit for all thing cool."
+}
+```
+
+##### <a id="refresh-token">Refresh Token -> /api/auth/refresh/token</a>
+```json
+{
+    "token":"1178cd43-21d2-45b4-8b5f-c79aa1d5b76e",
+    "username":"johndoe"
+}
+```
 
 ### API Rate Limiting
 

@@ -49,5 +49,5 @@ INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modif
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailHost','smtp.mailtrap.io','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailPort','2525','Installation','Installation');
 INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailProtocol','smtp','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','f7fdce4b06166a','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','3e66d59362741f','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','93dd691a318117','Installation','Installation');
+INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','1cd38f70dc364a','Installation','Installation');

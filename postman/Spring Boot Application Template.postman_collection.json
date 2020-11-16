@@ -525,16 +525,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA1NDQ5MTk4fQ.Lkpgdp-BnFDIWtDAwKZN0R3CZd4nA2GMigdyzo8PE5wAyTSKfhsLOoUUnq4oSo4gE1q83rTjYEd6o-XkhAuqFMRH_aZxkQ39mdS3m4pBc6hdrOS6RyA4BArPRN0Mf-Xmm_jxVD2oAlzBupxLIQlZbMIPFObVw1b5VyoHujaoSgM-nDv0MPicwpltur03oJjL1nUW2uoL4P2B-Eob65C7cnrMmgBi9iNCgEIXZrAeF2BAHId5xRbWAtzCq3jtYNLgMcltlCCKdLf_XPnbdgEpeMYUFJxK1QDLjJl8Y1ELu-XGMe-Wxu53WLuQiCzZv8tJc7aRl_J-kP_wazElgHeoKg",
 									"type": "string"
 								}
 							]
@@ -658,18 +653,16 @@
 							}
 						}
 					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "AdminUser",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiaWF0IjoxNjA1NTA4MTc5LCJleHAiOjE2MDU1MDgyNjl9.MR3P6KUELjMRoqpzF9FXVyPdw8fGw2burgFTYLDs1IoYSAkaj0o0cirgOafa-V1BxZGcV9DsdWJiLC7dhFaY2h2rNFmdz0k4H0DSoPrJqWii1ivtRUCnXvCyzuFzXbMs7BDMj3hQ7Mv0lYypxLHhL-zIGuElgffY99goQ-LIJCuyfYFzq0aSSua1IQRiVkkIzv0BqIep8VGnKaJUp1w6ZuZYnuvqBLOL30fhweegeTn3pwjbIHTQNeBd2Shk1ZVX9zeQ1WzyIfZKbDO5UBlIqmrPxcQsidiWVAyHFRRrYuzO6f0_qvPLACUWLX7Ca-SfQu3zkU7a7XVuNgHHlcJ4vQ",
 									"type": "string"
 								}
 							]
@@ -687,8 +680,12 @@
 								"value": "null"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/33",
+							"raw": "http://localhost:8080/api/v1/person/34",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -698,7 +695,7 @@
 								"api",
 								"v1",
 								"person",
-								"33"
+								"34"
 							]
 						},
 						"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -1647,6 +1644,153 @@
 							]
 						},
 						"description": "http://localhost:8088/api/personalized-hello?name=springboot%20application"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "user signup",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"johndoe8\",\r\n    \"email\":\"johndoe8@domain.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						},
+						"description": "http://localhost:8080/api/v1/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"johndoe\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "http://localhost:8080/api/v1/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "user logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"0c63c802-b360-4761-a034-d734a90a0282\",\r\n    \"username\":\"johndoe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "http://localhost:8080/api/v1/auth/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "get refresh token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"7fbac449-c548-4a9e-b8e2-b7d8f5848ed1\",\r\n    \"username\":\"johndoe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/refresh/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh",
+								"token"
+							]
+						},
+						"description": "http://localhost:8080/api/v1/auth/refresh/token"
 					},
 					"response": []
 				}
