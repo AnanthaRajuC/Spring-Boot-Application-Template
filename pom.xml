@@ -340,30 +340,8 @@
 	                <source>1.8</source>
 	                <target>1.8</target>
 	            </configuration>
-	        </plugin>	
-	        <!--  Plugin for building and pushing Docker image to Docker Hub. -->
-	        <plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.13</version>
-				<configuration>
-					<repository>anantha/${project.artifactId}</repository>
-					<tag>${project.version}</tag>
-					<buildArgs>
-						<JAR_FILE>target/${project.artifactId}-${project.version}.jar</JAR_FILE>
-					</buildArgs>
-				</configuration>
-				<executions>
-					<execution>
-						<id>default</id>
-						<phase>install</phase>
-						<goals>
-							<goal>build</goal>
-							<goal>push</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>        	        	        
+	        </plugin>	 	        	        
 		</plugins>
 	</build>
+	<url>https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template</url>
 </project>

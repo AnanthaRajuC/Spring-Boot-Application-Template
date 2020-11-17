@@ -70,53 +70,74 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 
 ## Table of Contents
 
-  * [Application screenshots](#application-screenshots)
-  * [Internationalization (i18n)](#internationalization-(i18n))
-  * [Tech stack & Open-source libraries](#tech-stack---open-source-libraries)
-    + [Data](#data)
-    + [Client - Frontend/UI](#client---frontend-ui)
-    + [Server - Backend](#server---backend)
-    + [Libraries and Plugins](#libraries-and-plugins)
-    + [Others](#others)
-    + [External Tools & Services](#external-tools---services)
-  * [To-Do](#to-do)
-  * [Running the application locally](#running-the-application-locally)
-  * [Running the application via docker container](#running-the-application-via-docker-container)
-  * [Security](#security)
-    + [Looking for something in particular?](#looking-for-something-in-particular-)
-    + [API Rate Limiting](#api-rate-limiting)
-    + [Preventing Brute Force Authentication Attempts](#preventing-brute-force-authentication-attempts)
-    + [Session Timeout](#session-timeout)
-  * [Explore Rest APIs](#explore-rest-apis)
-    + [URLs](#urls)
-    + [Other URLs](#other-urls)
-    + [Actuator](#actuator)
-    + [Person URLs](#person-urls)
-      - [Accessible to **johndoe** user only](#accessible-to---johndoe---user-only)
-    + [Person Management URLs](#person-management-urls)
-      - [Role and Permission based secure access to **AdminUser** and **AdminTrainee** users](#role-and-permission-based-secure-access-to---adminuser---and---admintrainee---users)
-  * [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys)
-        * [<a id="personcreate">Create Person -> /api/person</a>](#-a-id--personcreate--create-person-----api-person--a-)
-  * [Documentation](#documentation)
+- [Application screenshots](#application-screenshots)
+- [Technology stack & other Open-source libraries](#technology-stack---other-open-source-libraries)
+  * [Data](#data)
+  * [Client - Frontend/UI](#client---frontend-ui)
+  * [Server - Backend](#server---backend)
+  * [Libraries and Plugins](#libraries-and-plugins)
+  * [Others](#others)
+  * [External Tools & Services](#external-tools---services)
+- [Features and To-Do](#features-and-to-do)
+- [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
   * [EER Diagram](#eer-diagram)
-  * [Files and Directories Structure](#files-and-directories-structure)
+- [Installing](#installing)
+    + [Running the application with IDE](#running-the-application-with-ide)
+    + [Running the application with Maven](#running-the-application-with-maven)
+    + [Running the application with Executable JAR](#running-the-application-with-executable-jar)
+      - [Accessing Data in H2 Database](#accessing-data-in-h2-database)
+        * [H2 Console](#h2-console)
+    + [Running the application via docker container](#running-the-application-via-docker-container)
+      - [Basic Docker commands for reference](#basic-docker-commands-for-reference)
+      - [Commands to run the MySQL docker image](#commands-to-run-the-mysql-docker-image)
+      - [Commands to run the docker image of app with MySQL docker image](#commands-to-run-the-docker-image-of-app-with-mysql-docker-image)
+      - [Connecting to the MySQL docker image via CLI](#connecting-to-the-mysql-docker-image-via-cli)
+      - [Basic MySQL commands for reference](#basic-mysql-commands-for-reference)
+      - [Docker Hub Commands for Reference](#docker-hub-commands-for-reference)
+- [Deployment](#deployment)
+  * [Deploying to Heroku](#deploying-to-heroku)
+- [Code Coverage](#code-coverage)
+  * [Cobertura](#cobertura)
+- [Testing API](#testing-api)
+  * [Testing with Postman Runner](#testing-with-postman-runner)
+  * [Testing with Maven](#testing-with-maven)
+  * [Basic Load Testing](#basic-load-testing)
+- [Security](#security)
+  * [Looking for something in particular?](#looking-for-something-in-particular-)
+    + [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys)
+      - [<a id="signup">Signup -> /api/auth/signup</a>](#-a-id--signup--signup-----api-auth-signup--a-)
+      - [<a id="login">Login -> /api/auth/login</a>](#-a-id--login--login-----api-auth-login--a-)
+      - [<a id="subreddit">Subreddit -> /api/subreddit</a>](#-a-id--subreddit--subreddit-----api-subreddit--a-)
+      - [<a id="refresh-token">Refresh Token -> /api/auth/refresh/token</a>](#-a-id--refresh-token--refresh-token-----api-auth-refresh-token--a-)
+  * [API Rate Limiting](#api-rate-limiting)
+  * [Preventing Brute Force Authentication Attempts](#preventing-brute-force-authentication-attempts)
+  * [Session Timeout](#session-timeout)
+- [Explore Rest APIs](#explore-rest-apis)
+  * [URLs](#urls)
+  * [Other URLs](#other-urls)
+  * [Actuator](#actuator)
+  * [Person URLs](#person-urls)
+    + [Accessible to **johndoe** user only](#accessible-to---johndoe---user-only)
+  * [Person Management URLs](#person-management-urls)
+    + [Role and Permission based secure access to **AdminUser** and **AdminTrainee** users](#role-and-permission-based-secure-access-to---adminuser---and---admintrainee---users)
+    + [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys-1)
+      - [<a id="personcreate">Create Person -> /api/person</a>](#-a-id--personcreate--create-person-----api-person--a-)
+- [Documentation](#documentation)
+- [Internationalization (i18n)](#internationalization--i18n-)
+- [Files and Directories Structure](#files-and-directories-structure)
   * [Packages](#packages)
-  * [Reporting Issues/Suggest Improvements](#reporting-issues-suggest-improvements)
-  * [FOSSA third-party code, license compliance and vulnerabilities](#FOSSA-third-party-code,-license-compliance-and-vulnerabilities)
+- [Reporting Issues/Suggest Improvements](#reporting-issues-suggest-improvements)
+- [The End](#the-end)
+- [FOSSA third-party code, license compliance and vulnerabilities](#fossa-third-party-code--license-compliance-and-vulnerabilities)
 
 ## Application screenshots
 
-<img src="images\home.PNG"/>
-<img src="images\login.PNG"/>
-<img src="images\about.PNG"/>
+<img src="documents\images\app-ui\home.PNG"/>
+<img src="documents\images\app-ui\login.PNG"/>
+<img src="documents\images\app-ui\about.PNG"/>
 
-## Internationalization (i18n)
-
-This app can be adapted to various languages and regions without engineering changes. Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.
-
-Refer `io.github.anantharajuc.sbat.backend.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
-
-## Tech stack & Open-source libraries
+## Technology stack & other Open-source libraries
 
 ### Data
 
@@ -164,7 +185,7 @@ Refer `io.github.anantharajuc.sbat.backend.config.I18Nconfiguration`. The text e
 *	[sonarcloud](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template) - Cloud-based code analysis service designed to detect code quality issues continuously ensuring the maintainability, reliability and security of code.
 * 	[gitignore.io](https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij) - Create useful .gitignore files for your project.
 
-## To-Do
+## Features and To-Do
 
 * 	[x] Logger (Console, File)
 * 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
@@ -178,6 +199,7 @@ Refer `io.github.anantharajuc.sbat.backend.config.I18Nconfiguration`. The text e
 * 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
 * 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
 * 	[x] [HTTPS](https://en.wikipedia.org/wiki/HTTPS) with (self-signed certificate)[https://en.wikipedia.org/wiki/Self-signed_certificate]
+* 	[x] [JSON Web Token](https://www.jsonwebtoken.io/) based authentication
 * 	[ ] Quartz Scheduler
 * 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
 *   [ ] Unit Tests, Integration Tests
@@ -189,11 +211,13 @@ Refer `io.github.anantharajuc.sbat.backend.config.I18Nconfiguration`. The text e
 * 	[ ] Grafna
 * 	[ ] Spring Retry
 
-## Running the application locally
+## Getting Started
 
-*	Default active profile is **`test`**. When the application is running, **Flyway** will create the necessary tables and system data along with sample data. In the **`test`** profile, the application uses **H2** database (data in memory).
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-*	You need to have **MySQL** installed on your machine to run the application on **`dev`** profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
+### Prerequisites
+
+*	You need to have **MySQL** installed on your machine to run the application in **`dev`** profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
 
 ~~~sql
 -- create schema
@@ -217,9 +241,25 @@ spring.datasource.username=sbat
 spring.datasource.password=sbat
 ```
 
-* 	URL to access application UI: **http://localhost:8080/sbat/index** or **https://192.168.99.102:8080/sbat/index**
+*	A Java Keystore File is required to generate JSON Web Token.
 
-### Running the application with IDE
+```shell
+keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
+```
+
+<img src="documents\images\settings\reddit-clone-jks-generation.PNG"/>
+
+### EER Diagram
+
+<img src="documents\images\settings\SBAT-EER-Diagram.png"/>
+
+## Installing
+
+*	Default active profile is **`test`**. When the application is running, **Flyway** will create the necessary tables and system data along with sample data. In the **`test`** profile, the application uses **H2** database (data in memory).
+
+* 	URL to access application UI: **http://localhost:8080/sbat/index** or **https://192.168.99.102:8080/sbat/index** if **SSL** is enabled.
+
+#### Running the application with IDE
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.arc.sbtest.SBtemplateApplication` class from your IDE.
 
@@ -232,7 +272,7 @@ There are several ways to run a Spring Boot application on your local machine. O
 * 	Choose the Spring Boot Application file (search for @SpringBootApplication)
 * 	Right Click on the file and Run as Java Application
 
-### Running the application with Maven
+#### Running the application with Maven
 
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
@@ -242,7 +282,7 @@ $ cd Spring-Boot-Application-Template
 $ mvn spring-boot:run
 ```
 
-### Running the application with Executable JAR
+#### Running the application with Executable JAR
 
 The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command 
 
@@ -258,11 +298,11 @@ To shutdown the jar, follow the below mentioned steps on a Windows machine.
 *	In command prompt execute the **jcmd** command to print a list of all running Java processes
 *	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP** with the actual process id of the running jar found out from executing the previous command
 
-### Accessing Data in H2 Database
+##### Accessing Data in H2 Database
 
-#### H2 Console
+###### H2 Console
 
-URL to access H2 console: **http://localhost:8080/h2-console/login.jsp** or **https://192.168.99.102:8080/h2-console/login.jsp**
+URL to access H2 console: **http://localhost:8080/h2-console/login.jsp** or **https://192.168.99.102:8080/h2-console/login.jsp** if **SSL** is enabled.
 
 Fill the login form as follows and click on Connect:
 
@@ -273,11 +313,11 @@ Fill the login form as follows and click on Connect:
 * 	User Name: **sa**
 * 	Password:
 
-<img src="images\h2-console-login.PNG"/>
+<img src="documents\images\h2db\h2-console-login.PNG"/>
 
-<img src="images\h2-console-main-view.PNG"/>
+<img src="documents\images\h2db\h2-console-main-view.PNG"/>
 
-### Running the application via docker container
+#### Running the application via docker container
 
 * 	[anantha/spring-boot-application-template](https://hub.docker.com/r/anantha/spring-boot-application-template/tags) - DockerHub Image
 
@@ -299,7 +339,7 @@ $ mvn clean package                      //run all tests and build
 
 On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
 
-#### Basic Docker commands for reference
+##### Basic Docker commands for reference
 
 |                           Command                                  |                                     Description                               |
 |--------------------------------------------------------------------|-------------------------------------------------------------------------------| 
@@ -318,7 +358,7 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |`docker logs [container_id] --since YYYY-MM-DD`                     | list container logs since a particular date                                   |
 |`docker logs [container_id] --since YYYY-MM-DDTHH:MM:SS.000000000Z` | list container logs since a particular timestamp                              |
 
-#### Commands to run the MySQL docker image
+##### Commands to run the MySQL docker image
 
 |                                                   Command                                                                                        |                                 Description                              |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------| 
@@ -326,7 +366,7 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |`docker images`                                                                                                                                   | take a look at the container images. See if MySQL image is present       |
 |**`docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=sbat -d mysql:5.7`**| run the MySQL docker image                                               |
 
-#### Commands to run the docker image of app with MySQL docker image
+##### Commands to run the docker image of app with MySQL docker image
 
 |                                                                  Command                                                                                              |                                                         Description                              |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
@@ -338,7 +378,7 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |`docker rm $(docker ps -aq)`                                                                                                                                           | stop and remove all containers                                                                   |
 |`docker restart mysql-docker`																									                                        | restart the MySQL docker image																	 |
 
-#### Connecting to the MySQL docker image via CLI 
+##### Connecting to the MySQL docker image via CLI 
 
 |                                                           Command                                                              |                                                         Description                              |
 |--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
@@ -346,7 +386,7 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |`docker exec -it mysql-docker mysql -usbat -psbat -e 'show databases;'`														 | connect to MySQL image without interactive CLI.													|
 |`docker exec -it mysql-docker mysql -usbat -psbat`																				 | connect to MySQL image via interactive CLI.														|
 
-#### Basic MySQL commands for reference
+##### Basic MySQL commands for reference
 
 |                Commands            |                   Description                  |
 |------------------------------------|------------------------------------------------| 
@@ -365,11 +405,11 @@ In the Oracle VM VirtualBox:
 *	Click on **+** to add a new Rule
 *	Set **Host Port** to **8080** and **Guest Port** to **8080**; be sure to leave **Host IP** and **Guest IP** empty
 
-<img src="images\Oracle-VM-Virtualbox-Manager.PNG"/>
+<img src="documents\images\tools\Oracle-VM-Virtualbox-Manager.PNG"/>
 
 Reference: https://stackoverflow.com/a/45822356/3711562
 
-#### Docker Hub Commands for Reference     
+##### Docker Hub Commands for Reference     
 
 |                               Command                              |                         Description                               |
 |--------------------------------------------------------------------|-------------------------------------------------------------------| 
@@ -384,6 +424,8 @@ Reference: https://stackoverflow.com/a/45822356/3711562
 *	re-tagging an existing local image : `docker tag spring-boot-application-template anantha/spring-boot-application-template:h2db-test-profile`
 *	commit changes                     : `docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile`
 *	docker push                        : `docker push anantha/spring-boot-application-template:h2db-test-profile`
+
+## Deployment
 
 ### Deploying to Heroku
 
@@ -513,7 +555,7 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.b
 keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
 ```
 
-<img src="images\reddit-clone-jks-generation.PNG"/>
+<img src="documents\images\settings\reddit-clone-jks-generation.PNG"/>
 
 |     Username     | Password |     Role     |                      Permission                       |         Resource          |
 |------------------|----------|--------------|-------------------------------------------------------|---------------------------|
@@ -529,7 +571,7 @@ keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysiz
 |`http://localhost:8080/api/v1/subreddit`                             | POST   |Bearer Token should be passed for authorization| [JSON](#subreddit)        |
 |`http://localhost:8080/api/v1/auth/refresh/token`                    | POST   |Refresh Token from login should be passed      | [JSON](#refresh-token)    |
 
-### Sample Valid JSON Request Bodys
+#### Sample Valid JSON Request Bodys
 
 ##### <a id="signup">Signup -> /api/auth/signup</a>
 ```json
@@ -596,7 +638,7 @@ To enable SSL, toggle **server.ssl.enabled** to **true** and use the **https://*
 
 Since the SSL certificate is self signed, turn off the **SSL certificate verification** option while interacting with the URLs via **Postman**
 
-<img src="images\postman-ssl-certificate-verification.PNG"/>
+<img src="documents\images\tools\postman-ssl-certificate-verification.PNG"/>
 
 ### URLs
 
@@ -658,7 +700,7 @@ To monitor and manage your application
 |`http://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     |                           |
 
 
-## Sample Valid JSON Request Bodys
+#### Sample Valid JSON Request Bodys
 
 ##### <a id="personcreate">Create Person -> /api/person</a>
 ```json
@@ -699,9 +741,11 @@ To monitor and manage your application
 `mvn javadoc:javadoc`                   //Generate JavaDoc
 ```
 
-## EER Diagram
+## Internationalization (i18n)
 
-<img src="images\SBAT-EER-Diagram.png"/>
+This app can be adapted to various languages and regions without engineering changes. Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.
+
+Refer `io.github.anantharajuc.sbat.backend.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
 
 ## Files and Directories Structure
 
@@ -714,34 +758,45 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │   └── main
 │       └── java
 │           ├── io.github.anantharajuc.sbat
-│           │   │ 
-│           │   ├──io.github.anantharajuc.sbat.backend.persistence.auditing
-│           │   │ 
-│           │   ├──io.github.anantharajuc.sbat.backend.security.authorization
-│           │   │ 
-│           │   ├──io.github.anantharajuc.sbat.backend
-│           │   │     │    
-│           │   │     ├──io.github.anantharajuc.sbat.person
-│           │   │     │
-│           │   │     └──io.github.anantharajuc.sbat.backend.persistence.repositories
-│           │   │
-│           │   └──io.github.anantharajuc.sbat.backend.service
+│           │ 
+│           ├──io.github.anantharajuc.sbat.app.admin.controllers
+│           │  
+│           ├──io.github.anantharajuc.sbat.app.user.controllers
+│           ├──io.github.anantharajuc.sbat.app.user.model
+│           ├──io.github.anantharajuc.sbat.app.user.model.dto
+│           ├──io.github.anantharajuc.sbat.app.user.repositories
+│           ├──io.github.anantharajuc.sbat.app.user.services
+│           │ 
+│           ├──io.github.anantharajuc.sbat.backend.api
+│           ├──io.github.anantharajuc.sbat.backend.api.rate_limiting
+│           │ 
+│           ├──io.github.anantharajuc.sbat.backend.config
+│           ├──io.github.anantharajuc.sbat.backend.email
+│           ├──io.github.anantharajuc.sbat.backend.exception
+│           │     
+│           ├──io.github.anantharajuc.sbat.backend.persistence.auditing
+│           ├──io.github.anantharajuc.sbat.backend.persistence.model
+│           ├──io.github.anantharajuc.sbat.backend.persistence.model.enumeration
+│           ├──io.github.anantharajuc.sbat.backend.persistence.repositories
 │           │
-│           ├── io.github.anantharajuc.sbat.backend.config
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.authentication
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.authorization
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.jwt
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.jwt.model
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.jwt.repository
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.jwt.service
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.user
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.user.model
+│           ├──io.github.anantharajuc.sbat.backend.persistence.security.user.repository
 │           │
-│           ├── io.github.anantharajuc.sbat.enums
+│           ├──io.github.anantharajuc.sbat.backend.service
+│           ├──io.github.anantharajuc.sbat.backend.service.impl
 │           │
-│           ├── io.github.anantharajuc.sbat.backend.exception
+│           ├──io.github.anantharajuc.sbat.backend.util
 │           │
-│           ├── io.github.anantharajuc.sbat.backend.security
-│           │
-│           ├── io.github.anantharajuc.sbat.backend.util
-│           │
-│           └── io.github.anantharajuc.sbat.web
-│               │
-│               ├── io.github.anantharajuc.sbat.web.controllers
-│               │
-│               └── io.github.anantharajuc.sbat.web.domain.frontend
+│           ├──io.github.anantharajuc.sbat.web.controllers
+│           └──io.github.anantharajuc.sbat.web.domain.frontend
 ├── src
 │   └── main
 │       └── resources
@@ -782,14 +837,20 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   │   └── settings.html
 │           │   │   
 │           │   ├── error.html
-│           │   └── layout.html
+│           │   ├── layout.html
+│           │   └── mailTemplate.html
 │           │   
 │           ├── application-dev.properties
 │           ├── application-production.properties
 │           ├── application-qa.properties
 │           ├── application-staging.properties
 │           ├── application.properties
+│           │  
+│           ├── ebininfosoft-ssl-key
+│           ├── redditclone.jks
+│           │  
 │           ├── banner.txt
+│           │  
 │           └── log4j2.xml
 ├── src
 │   └── test
@@ -806,10 +867,16 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
+│ 
+├── .travis
+│ 
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE.md
 └── README.md
 ```
 
-## Packages
+### Packages
 
 *   `api` - API utilities;
 *   `rate_limiting` - API rate limiting;
@@ -821,6 +888,7 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 * 	`models` - to hold our entities;
 * 	`repository` - to communicate with the database;
 * 	`security` - security configuration;
+* 	`jwt` - json web token for authentication;
 * 	`service` - to hold business logic;
 * 	`util` - to hold our utility classes;
 
