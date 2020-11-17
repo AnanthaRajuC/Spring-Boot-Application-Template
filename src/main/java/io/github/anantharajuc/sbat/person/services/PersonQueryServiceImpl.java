@@ -12,9 +12,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbat.exception.ResourceNotFoundException;
-import io.github.anantharajuc.sbat.person.dto.PersonDTO;
+import io.github.anantharajuc.sbat.backend.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbat.person.model.Person;
+import io.github.anantharajuc.sbat.person.model.dto.PersonDTO;
 import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
@@ -61,6 +61,21 @@ public class PersonQueryServiceImpl implements PersonQueryService
 		if(!personOptional.isPresent()) 
 		{
 			throw new ResourceNotFoundException("Person", "id", personId);
+		}
+		
+		return modelMapper.map(personOptional.get(), PersonDTO.class); 
+	}
+	
+	@Override
+	public PersonDTO getPersonByUsername(String username) 
+	{
+		log.info("-----> getPersonByUsername service");
+		
+		Optional<Person> personOptional = personRepository.findByUsername(username); 
+		
+		if(!personOptional.isPresent()) 
+		{
+			throw new ResourceNotFoundException("Person", "username", username);
 		}
 		
 		return modelMapper.map(personOptional.get(), PersonDTO.class); 

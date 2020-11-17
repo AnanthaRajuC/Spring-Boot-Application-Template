@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbat.exception.ResourceNotFoundException;
+import io.github.anantharajuc.sbat.backend.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbat.person.model.Person;
 import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;

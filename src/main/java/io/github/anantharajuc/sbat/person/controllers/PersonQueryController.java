@@ -24,11 +24,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbat.api.APIutil;
-import io.github.anantharajuc.sbat.api.ResourcePaths;
-import io.github.anantharajuc.sbat.person.dto.PersonDTOModelAssembler;
+import io.github.anantharajuc.sbat.backend.api.APIutil;
+import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.person.model.Person;
 import io.github.anantharajuc.sbat.person.model.PersonModelAssembler;
+import io.github.anantharajuc.sbat.person.model.dto.PersonDTOModelAssembler;
 import io.github.anantharajuc.sbat.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -138,6 +138,23 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 
 		return new ResponseEntity<>(personDTOModelAssembler.toModel(personQueryServiceImpl.getPersonById(personId)), headers, HttpStatus.OK);
+	}
+	
+	@GetMapping(value=ResourcePaths.USERNAME)
+	@ResponseStatus(HttpStatus.OK)
+	@PreAuthorize("#username == authentication.principal.username")
+	@ApiOperation(httpMethod="GET", value = "Find person by Username", notes = "Returns a person for the given username",response = Person.class)
+	@ApiResponse(code = 400, message = "Invalid Username supplied")
+	public ResponseEntity<Object> getPersonByName(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
+            									  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
+                                                  @PathVariable(value="username") String username)
+	{
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>(); 
+		  
+		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
+		headers.add(APIutil.HEADER_API_KEY, apiKey);
+		
+		return new ResponseEntity<>(personDTOModelAssembler.toModel(personQueryServiceImpl.getPersonByUsername(username)), headers, HttpStatus.OK); 
 	}
 
 	/*

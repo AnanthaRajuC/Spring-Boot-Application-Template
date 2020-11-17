@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbat.backend.service.PostmanEchoService;
-import io.github.anantharajuc.sbat.util.OkHttpSingleton;
+import io.github.anantharajuc.sbat.backend.util.OkHttpSingleton;
 import lombok.extern.log4j.Log4j2;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;

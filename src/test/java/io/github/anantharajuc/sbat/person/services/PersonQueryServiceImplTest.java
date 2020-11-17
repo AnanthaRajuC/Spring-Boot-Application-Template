@@ -16,11 +16,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.github.anantharajuc.sbat.person.dto.PersonDTO;
 import io.github.anantharajuc.sbat.person.model.Address;
 import io.github.anantharajuc.sbat.person.model.GenderEnum;
 import io.github.anantharajuc.sbat.person.model.Geo;
 import io.github.anantharajuc.sbat.person.model.Person;
+import io.github.anantharajuc.sbat.person.model.dto.PersonDTO;
 import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
 import io.github.anantharajuc.sbat.person.services.PersonQueryServiceImpl;
 

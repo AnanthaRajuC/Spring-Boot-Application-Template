@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import io.github.anantharajuc.sbat.api.ResourcePaths;
+import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.backend.persistence.repositories.BuiltWithRepository;
 import io.github.anantharajuc.sbat.person.controllers.PersonQueryController;
 import io.github.anantharajuc.sbat.person.model.Person;

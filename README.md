@@ -114,7 +114,7 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 
 This app can be adapted to various languages and regions without engineering changes. Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.
 
-Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
+Refer `io.github.anantharajuc.sbat.backend.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
 
 ## Tech stack & Open-source libraries
 
@@ -505,7 +505,7 @@ Percentage of the requests served within a certain time (ms)
 
 [Json Web Token - Role Based Access Controll via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
 
-Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.security`.
+Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.backend.security`.
 
 *	A Java Keystore File is required to generate JSON Web Token.
 
@@ -574,13 +574,13 @@ keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysiz
 
 Rate Limiting header `X-api-key`
 
-[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbat.api.rate_limiting` package
+[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbat.backend.api.rate_limiting` package
 
 ### Preventing Brute Force Authentication Attempts
 
 A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.
 
-Refer `io.github.anantharajuc.sbat.security.authentication.LoginAttemptService`
+Refer `io.github.anantharajuc.sbat.backend.security.authentication.LoginAttemptService`
 
 ### Session Timeout
 
@@ -715,9 +715,9 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │       └── java
 │           ├── io.github.anantharajuc.sbat
 │           │   │ 
-│           │   ├──io.github.anantharajuc.sbat.auditing
+│           │   ├──io.github.anantharajuc.sbat.backend.persistence.auditing
 │           │   │ 
-│           │   ├──io.github.anantharajuc.sbat.security.authorization
+│           │   ├──io.github.anantharajuc.sbat.backend.security.authorization
 │           │   │ 
 │           │   ├──io.github.anantharajuc.sbat.backend
 │           │   │     │    
@@ -727,15 +727,15 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │           │   │
 │           │   └──io.github.anantharajuc.sbat.backend.service
 │           │
-│           ├── io.github.anantharajuc.sbat.util.config
+│           ├── io.github.anantharajuc.sbat.backend.config
 │           │
 │           ├── io.github.anantharajuc.sbat.enums
 │           │
-│           ├── io.github.anantharajuc.sbat.exception
+│           ├── io.github.anantharajuc.sbat.backend.exception
 │           │
-│           ├── io.github.anantharajuc.sbat.security
+│           ├── io.github.anantharajuc.sbat.backend.security
 │           │
-│           ├── io.github.anantharajuc.sbat.util
+│           ├── io.github.anantharajuc.sbat.backend.util
 │           │
 │           └── io.github.anantharajuc.sbat.web
 │               │

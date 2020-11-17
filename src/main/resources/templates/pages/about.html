@@ -128,7 +128,7 @@
 </p>
 <h2 id="#internationalization-(i18n)">Internationalization (i18n)</h2>
 <p>This app can be adapted to various languages and regions without engineering changes. Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.</p>
-<p>Refer `io.github.anantharajuc.sbat.util.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.</p>
+<p>Refer `io.github.anantharajuc.sbat.backend.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.</p>
 <h2 id="tech-stack-open-source-libraries">Tech stack &amp; Open-source libraries</h2>
 <h3 id="data">Data</h3>
 <ul>
@@ -293,7 +293,7 @@
       </tr>
    </tbody>
 </table>
-<p>Refer to the <code>ApplicationSecurityConfig</code> class in <code>io.github.anantharajuc.sbat.security</code>.</p>
+<p>Refer to the <code>ApplicationSecurityConfig</code> class in <code>io.github.anantharajuc.sbat.backend.security</code>.</p>
 <table>
    <thead>
       <tr>
@@ -329,10 +329,10 @@
    </tbody>
 </table>
 <h3 id="api-rate-limiting">API Rate Limiting</h3>
-<p><a href="https://github.com/vladimir-bukhtoyarov/bucket4j">Bucket4j</a> - Rate limiting library based on token/leaky-bucket algorithm - Refer <code>io.github.anantharajuc.sbat.api.rate_limiting package</code></p>
+<p><a href="https://github.com/vladimir-bukhtoyarov/bucket4j">Bucket4j</a> - Rate limiting library based on token/leaky-bucket algorithm - Refer <code>io.github.anantharajuc.sbat.backend.api.rate_limiting package</code></p>
 <h3 id="preventing-brute-force-authentication-attempts">Preventing Brute Force Authentication Attempts</h3>
 <p>A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.</p>
-<p>Refer <code>io.github.anantharajuc.sbat.security.authentication.LoginAttemptService</code></p>
+<p>Refer <code>io.github.anantharajuc.sbat.backend.security.authentication.LoginAttemptService</code></p>
 <h3 id="session-timeout">Session Timeout</h3>
 <p>If the application remains inactive for a specified period of time, the session will expire. The session after this period of time is considered invalid and the user has to login to the application again.</p>
 <p>This value <strong>server.servlet.session.timeout</strong> can be configured in <strong>application.properties</strong> file</p>

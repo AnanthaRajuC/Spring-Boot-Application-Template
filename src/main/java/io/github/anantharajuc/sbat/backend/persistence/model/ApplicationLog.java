@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import io.github.anantharajuc.sbat.auditing.AuditEntity;
+import io.github.anantharajuc.sbat.backend.persistence.auditing.AuditEntity;
 import io.github.anantharajuc.sbat.backend.persistence.model.enumeration.ApplicationLogEnum;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;

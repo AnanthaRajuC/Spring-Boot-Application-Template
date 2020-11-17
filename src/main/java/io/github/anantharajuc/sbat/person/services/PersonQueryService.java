@@ -1,12 +1,11 @@
 package io.github.anantharajuc.sbat.person.services;
 
 import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import io.github.anantharajuc.sbat.person.dto.PersonDTO;
 import io.github.anantharajuc.sbat.person.model.Person;
+import io.github.anantharajuc.sbat.person.model.dto.PersonDTO;
 
 /**
  * Person Query Service.
@@ -24,4 +23,6 @@ public interface PersonQueryService
 	Page<Person> getAllPersonsPageable(Pageable pageable); 
 	
 	Page<Person> findPaginated(Pageable pageable);
+	
+	PersonDTO getPersonByUsername(String username);
 }

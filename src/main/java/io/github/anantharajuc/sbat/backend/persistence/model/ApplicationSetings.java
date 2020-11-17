@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import io.github.anantharajuc.sbat.auditing.AuditEntity;
+import io.github.anantharajuc.sbat.backend.persistence.auditing.AuditEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
