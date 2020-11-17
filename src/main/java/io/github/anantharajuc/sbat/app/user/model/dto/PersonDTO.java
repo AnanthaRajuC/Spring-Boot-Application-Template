@@ -1,12 +1,12 @@
-package io.github.anantharajuc.sbat.person.model.dto;
+package io.github.anantharajuc.sbat.app.user.model.dto;
 
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.github.anantharajuc.sbat.app.user.model.Address;
+import io.github.anantharajuc.sbat.app.user.model.GenderEnum;
 import io.github.anantharajuc.sbat.backend.persistence.auditing.AuditEntity;
-import io.github.anantharajuc.sbat.person.model.Address;
-import io.github.anantharajuc.sbat.person.model.GenderEnum;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,8 +1,8 @@
-package io.github.anantharajuc.sbat.person.services;
+package io.github.anantharajuc.sbat.app.user.services;
 
 import org.springframework.http.ResponseEntity;
 
-import io.github.anantharajuc.sbat.person.model.Person;
+import io.github.anantharajuc.sbat.app.user.model.Person;
 
 /**
  * Person Command Service.

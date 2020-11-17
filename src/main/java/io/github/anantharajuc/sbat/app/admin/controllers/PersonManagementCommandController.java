@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.person.controllers;
+package io.github.anantharajuc.sbat.app.admin.controllers;
 
 import javax.validation.Valid;
 
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.anantharajuc.sbat.app.user.model.Person;
+import io.github.anantharajuc.sbat.app.user.services.PersonCommandService;
 import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
-import io.github.anantharajuc.sbat.person.model.Person;
-import io.github.anantharajuc.sbat.person.services.PersonCommandService;
 import io.swagger.annotations.ApiOperation;
 
 /**

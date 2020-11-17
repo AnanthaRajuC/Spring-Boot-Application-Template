@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.person.services;
+package io.github.anantharajuc.sbat.app.user.services;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,10 +12,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import io.github.anantharajuc.sbat.app.user.model.Person;
+import io.github.anantharajuc.sbat.app.user.model.dto.PersonDTO;
+import io.github.anantharajuc.sbat.app.user.repositories.PersonRepository;
 import io.github.anantharajuc.sbat.backend.exception.ResourceNotFoundException;
-import io.github.anantharajuc.sbat.person.model.Person;
-import io.github.anantharajuc.sbat.person.model.dto.PersonDTO;
-import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
 /*

@@ -33,11 +33,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import io.github.anantharajuc.sbat.person.model.Address;
-import io.github.anantharajuc.sbat.person.model.GenderEnum;
-import io.github.anantharajuc.sbat.person.model.Geo;
-import io.github.anantharajuc.sbat.person.model.Person;
-import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
+import io.github.anantharajuc.sbat.app.user.model.Address;
+import io.github.anantharajuc.sbat.app.user.model.GenderEnum;
+import io.github.anantharajuc.sbat.app.user.model.Geo;
+import io.github.anantharajuc.sbat.app.user.model.Person;
+import io.github.anantharajuc.sbat.app.user.repositories.PersonRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest

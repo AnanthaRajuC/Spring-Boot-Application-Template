@@ -1,12 +1,12 @@
-package io.github.anantharajuc.sbat.person.services;
+package io.github.anantharajuc.sbat.app.user.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import io.github.anantharajuc.sbat.app.user.model.Person;
+import io.github.anantharajuc.sbat.app.user.repositories.PersonRepository;
 import io.github.anantharajuc.sbat.backend.exception.ResourceNotFoundException;
-import io.github.anantharajuc.sbat.person.model.Person;
-import io.github.anantharajuc.sbat.person.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
 /*

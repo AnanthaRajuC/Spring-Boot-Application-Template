@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.person.controllers;
+package io.github.anantharajuc.sbat.app.admin.controllers;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.anantharajuc.sbat.app.user.model.Person;
+import io.github.anantharajuc.sbat.app.user.model.dto.PersonDTO;
+import io.github.anantharajuc.sbat.app.user.services.PersonQueryService;
 import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
-import io.github.anantharajuc.sbat.person.model.Person;
-import io.github.anantharajuc.sbat.person.model.dto.PersonDTO;
-import io.github.anantharajuc.sbat.person.services.PersonQueryService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 

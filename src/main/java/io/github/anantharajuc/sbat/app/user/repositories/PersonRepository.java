@@ -1,11 +1,11 @@
-package io.github.anantharajuc.sbat.person.repositories;
+package io.github.anantharajuc.sbat.app.user.repositories;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import io.github.anantharajuc.sbat.person.model.Person;
+import io.github.anantharajuc.sbat.app.user.model.Person;
 
 import javax.validation.constraints.NotBlank;
 

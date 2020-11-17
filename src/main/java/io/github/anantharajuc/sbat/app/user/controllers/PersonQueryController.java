@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.person.controllers;
+package io.github.anantharajuc.sbat.app.user.controllers;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,12 +24,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.anantharajuc.sbat.app.user.model.Person;
+import io.github.anantharajuc.sbat.app.user.model.PersonModelAssembler;
+import io.github.anantharajuc.sbat.app.user.model.dto.PersonDTOModelAssembler;
+import io.github.anantharajuc.sbat.app.user.services.PersonQueryServiceImpl;
 import io.github.anantharajuc.sbat.backend.api.APIutil;
 import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
-import io.github.anantharajuc.sbat.person.model.Person;
-import io.github.anantharajuc.sbat.person.model.PersonModelAssembler;
-import io.github.anantharajuc.sbat.person.model.dto.PersonDTOModelAssembler;
-import io.github.anantharajuc.sbat.person.services.PersonQueryServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
