@@ -60,7 +60,7 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
 
-## Important Note: This project's new milestone is to update the security of the application by implementing JWT Authentication, so stay tuned.
+## Important Note: This project's new milestone is to release version 1, so stay tuned.
 
 ## Purpose
 
@@ -216,6 +216,12 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
+
+*	To activate the accounts of registered users, an email with activation link is sent to the email provided during the user signup stage. An **SMTP** is required for the same.
+
+	[Mailtrap](https://mailtrap.io/) or any other service like **Gmail**, etc., can be used to create an SMTP.
+	
+	update the **springMailHost**, **springMailPort**, **springMailProtocol**, **springMailUsername** and **springMailPassword** details in the **application_settings** section of **/resources/data/mysql/migrations/V0_0_4__populate_data.sql**
 
 *	You need to have **MySQL** installed on your machine to run the application in **`dev`** profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
 
