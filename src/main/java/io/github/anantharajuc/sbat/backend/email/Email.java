@@ -15,4 +15,5 @@ public class Email
     String subject;
     String recipient;
     String body;
+    String replyTo;
 }

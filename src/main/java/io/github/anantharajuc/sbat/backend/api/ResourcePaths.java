@@ -1,5 +1,11 @@
 package io.github.anantharajuc.sbat.backend.api;
 
+/**
+ * Spring Boot Application Template.
+ *
+ * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
+ *
+ */
 public class ResourcePaths 
 {
 	public static final String API         = "api";                       

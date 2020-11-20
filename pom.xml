@@ -10,7 +10,8 @@
 	<packaging>jar</packaging>
 	
 	<name>spring-boot-application-template</name>
-	<description>template for spring boot project</description>
+	<url>https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template</url>
+	<description>This repository contains a recipe/scaffolding for bootstrapping a Web Application. Delete the sample code (or keep it.) and add your own, you’re good to go.</description>
 	
 	<!-- Start - Spring Boot Application Template Project Owner -->
 	<developers>
@@ -40,7 +41,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.0</version>
+		<version>2.3.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
@@ -366,4 +367,4 @@
 			</plugin>        	        	        
 		</plugins>
 	</build>
-</project>
+	</project>

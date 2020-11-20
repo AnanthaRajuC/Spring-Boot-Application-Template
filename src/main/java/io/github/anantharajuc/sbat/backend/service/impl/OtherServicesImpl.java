@@ -19,9 +19,11 @@ import lombok.extern.log4j.Log4j2;
 @Service
 public class OtherServicesImpl implements OtherServices
 {
-	//Application Settings
+	//Application, API details
 	private String applicationName;
 	private String applicationVersion;
+	private String apiVersion;
+	private String releaseVersion;
 	
 	//Postman URL
 	private String postmanEchoBaseUrl;
@@ -36,13 +38,14 @@ public class OtherServicesImpl implements OtherServices
 	private Long jwtExpirationTime;
 	
 	private String mailFrom;
+	private String mailReplyTo;
 	private String mailSubject;
 
+	//SMTP details
 	private int springMailPort;
 	private String springMailProtocol;
 	private String springMailUsername;
-	private String springMailPassword;
-	
+	private String springMailPassword;	
 	private String springMailHost;
 	
 	@Autowired
@@ -64,6 +67,8 @@ public class OtherServicesImpl implements OtherServices
 		
 		setApplicationName(applicationSettingsHashMap.get("applicationName"));
 		setApplicationVersion(applicationSettingsHashMap.get("applicationVersion"));
+		setApiVersion(applicationSettingsHashMap.get("apiVersion"));
+		setReleaseVersion(applicationSettingsHashMap.get("releaseVersion"));
 		
 		setPostmanEchoBaseUrl(applicationSettingsHashMap.get("postmanEchoBaseUrl"));
 		setPostmanEchoGETurl(applicationSettingsHashMap.get("postmanEchoGETurl")); 
@@ -72,17 +77,18 @@ public class OtherServicesImpl implements OtherServices
 		setKeystoreFileName(applicationSettingsHashMap.get("keystoreFileName"));
 		setKeystoreAlias(applicationSettingsHashMap.get("keystoreAlias"));
 		setKeystorePassword(applicationSettingsHashMap.get("keystorePassword"));
+		
 		setVerificationTokenValidity(Long.parseLong(applicationSettingsHashMap.get("verificationTokenValidity")));
 		setJwtExpirationTime(Long.parseLong(applicationSettingsHashMap.get("jwtExpirationTime")));
 		
 		setMailFrom(applicationSettingsHashMap.get("mailFrom"));
+		setMailReplyTo(applicationSettingsHashMap.get("mailReplyTo")); 
 		setMailSubject(applicationSettingsHashMap.get("mailSubject"));
 
 		setSpringMailPort(Integer.parseInt(applicationSettingsHashMap.get("springMailPort")));
 		setSpringMailProtocol(applicationSettingsHashMap.get("springMailProtocol"));
 		setSpringMailUsername(applicationSettingsHashMap.get("springMailUsername"));
-		setSpringMailPassword(applicationSettingsHashMap.get("springMailPassword"));
-		
+		setSpringMailPassword(applicationSettingsHashMap.get("springMailPassword"));	
 		setSpringMailHost(applicationSettingsHashMap.get("springMailHost"));
 	}
 }

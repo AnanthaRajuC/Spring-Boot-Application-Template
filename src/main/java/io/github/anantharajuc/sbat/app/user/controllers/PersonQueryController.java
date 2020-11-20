@@ -6,12 +6,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -92,25 +89,6 @@ public class PersonQueryController
                 
 	}
 	
-	@GetMapping(value=ResourcePaths.PAGEABLE)	
-	@ResponseStatus(HttpStatus.OK)
-	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
-	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
-	public ResponseEntity<CollectionModel<EntityModel<Person>>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
-			                                                                  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
-			                                                                  Pageable pageable) 
-	{	
-		 Page<Person> personsPageable = personQueryServiceImpl.getAllPersonsPageable(pageable);  
-		 
-		 PagedModel<EntityModel<Person>> collModel = pagedResourcesAssembler.toModel(personsPageable, personModelAssembler);		 
-		 
-		 return ResponseEntity
-					.ok()
-					.header(APIutil.HEADER_PERSON_API_VERSION, apiVersion) 
-	                .header(APIutil.HEADER_API_KEY, apiKey)
-	                .body(collModel);
-	}
-	
 	/*
 	 * Method that search a person by the id.
 	 * 
@@ -155,33 +133,5 @@ public class PersonQueryController
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
 		
 		return new ResponseEntity<>(personDTOModelAssembler.toModel(personQueryServiceImpl.getPersonByUsername(username)), headers, HttpStatus.OK); 
-	}
-
-	/*
-	 * Method that searchs for person based on gender
-	 * 
-	 * @param apiVersion - API version at the moment
-	 * @param gender - the gender of the person
-	 * 
-	 * @return ResponseEntity with list of <code>Person</code>'s of the given gender
-	 * 
-	 * HTTP Status:
-	 * 
-	 * 200 - OK: Everything worked as expected.
-	 */
-	@GetMapping(value=ResourcePaths.GENDER)	
-	@ResponseStatus(HttpStatus.OK)
-	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
-	@ApiOperation(httpMethod="GET", value="Find all persons based on Gender", notes="Returns all Person's in the data store.")
-	public ResponseEntity<List<Person>> getPersonByGender(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
-			                                              @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
-													      @PathVariable(value="gender") String gender)
-	{
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-		
-		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
-		headers.add(APIutil.HEADER_API_KEY, apiKey);
-		
-		return new ResponseEntity<>(personQueryServiceImpl.getPersonsByGender(gender), headers, HttpStatus.OK);
 	}
 }

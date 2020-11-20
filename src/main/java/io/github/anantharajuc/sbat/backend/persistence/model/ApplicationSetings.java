@@ -41,11 +41,11 @@ public class ApplicationSetings extends AuditEntity
 
 	@ApiModelProperty(notes="Application Event", value="${ApplicationSetings.appKey}", example="API_KEY")
 	@Size(min=3, max=25, message="App Key must be between 3 and 25 characters.")
-	@Column(name="appKey", nullable = false)
+	@Column(name="app_key", nullable = false)
 	String appKey;
 	
 	@ApiModelProperty(notes="Application Event", value="${ApplicationSetings.appValue}", example="1eGHY@T-dre565-56yrtr")
 	@Size(min=3, max=100, message="App Value must be between 3 and 100 characters.")
-	@Column(name="appValue", nullable = false)
+	@Column(name="app_value", nullable = false)
 	String appValue;
 }

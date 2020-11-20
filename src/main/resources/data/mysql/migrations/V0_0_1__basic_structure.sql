@@ -60,7 +60,7 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_modified_by` varchar(255) NOT NULL,
   `last_modified_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `appKey` varchar(255) NOT NULL,
-  `appValue` varchar(255) NOT NULL,
+  `app_key` varchar(255) NOT NULL,
+  `app_value` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;

@@ -2,8 +2,6 @@ package io.github.anantharajuc.sbat.app.user.controllers;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.hateoas.EntityModel;
@@ -31,6 +29,7 @@ import io.github.anantharajuc.sbat.backend.api.APIutil;
 import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 
 /*
  * Person Command Controller
@@ -42,24 +41,11 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping(value=ResourcePaths.Person.V1.ROOT)
 @CacheConfig(cacheNames={"person"})
 @Api(value="PersonCommands", tags="Person Commands")
+@AllArgsConstructor
 public class PersonCommandController 
 {
-	@Value("${api.version}")
-	private String apiVersion;
-	
-	@Value("${release.version}")
-	private String releaseVersion;
-	
-	@Autowired
-	private PersonCommandServiceImpl personCommandServiceImpl;
-	
+	private final PersonCommandServiceImpl personCommandServiceImpl;
 	private final PersonModelAssembler personModelAssembler;
-	
-	@Autowired
-    public PersonCommandController(PersonModelAssembler personModelAssembler) 
-	{
-        this.personModelAssembler = personModelAssembler;
-    }
 	
 	/*
 	 * Method that creates a person in the database.

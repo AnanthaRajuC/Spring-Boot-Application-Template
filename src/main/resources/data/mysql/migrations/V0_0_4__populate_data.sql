@@ -29,25 +29,28 @@ INSERT INTO `built_with` (`description`,`link`,`name`,`version`,`created_by`,`la
 /*
  * Data
  */
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('applicationName','sbat','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('applicationVersion','1.0','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('applicationName','sbat','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('applicationVersion','1.0','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('apiVersion','2020-09-20','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('releaseVersion','3.1.3','Installation','Installation');
 
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('postmanEchoPOSTpath','/post','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('postmanEchoPOSTpath','/post','Installation','Installation');
 
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('keystoreFileName','redditclone.jks','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('keystoreAlias','redditclone','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('keystorePassword','abcd1234','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('keystoreFileName','redditclone.jks','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('keystoreAlias','redditclone','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('keystorePassword','abcd1234','Installation','Installation');
 
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('verificationTokenValidity','10','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('jwtExpirationTime','90000','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('verificationTokenValidity','10','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('jwtExpirationTime','300','Installation','Installation');
 
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('mailFrom','sbat@email.com','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('mailSubject','Spring Boot Application Template','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('mailFrom','sbat@email.com','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('mailReplyTo','sbat@email.com','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('mailSubject','Spring Boot Application Template','Installation','Installation');
 
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailHost','smtp.mailtrap.io','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailPort','2525','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailProtocol','smtp','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','93dd691a318117','Installation','Installation');
-INSERT INTO `application_settings` (`appKey`,`appValue`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','1cd38f70dc364a','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailHost','smtp.mailtrap.io','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailPort','2525','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailProtocol','smtp','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','b719b389f8c835','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','f64ab693c96fde','Installation','Installation');

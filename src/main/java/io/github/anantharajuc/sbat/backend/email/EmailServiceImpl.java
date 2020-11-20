@@ -1,6 +1,7 @@
 package io.github.anantharajuc.sbat.backend.email;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Date;
+
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -12,23 +13,18 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
 import io.github.anantharajuc.sbat.backend.service.impl.OtherServicesImpl;
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @Service
 @Log4j2
+@AllArgsConstructor
 public class EmailServiceImpl implements EmailService
 {
-	@Autowired
-	private TemplateEngine templateEngine;
-	
-	@Autowired
-	private JavaMailSender javaMailSender;
-
-	@Autowired
-	private JavaMailSenderImpl javaMailSenderImpl;
-	
-	@Autowired
-	private OtherServicesImpl otherServicesImpl;
+	private final TemplateEngine templateEngine;
+	private final JavaMailSender javaMailSender;
+	private final JavaMailSenderImpl javaMailSenderImpl;
+	private final OtherServicesImpl otherServicesImpl;
 	
 	@Override
 	public String mailContentBuilder(String mailContent) 
@@ -59,7 +55,8 @@ public class EmailServiceImpl implements EmailService
 														            messageHelper.setTo(notificationEmail.getRecipient());
 														            messageHelper.setSubject(notificationEmail.getSubject());
 														            messageHelper.setText(notificationEmail.getBody());
-														            messageHelper.setReplyTo(otherServicesImpl.getMailFrom());
+														            messageHelper.setReplyTo(otherServicesImpl.getMailReplyTo());
+														            messageHelper.setSentDate(new Date());
 														         };
         
         try 

@@ -82,7 +82,7 @@ public class JwtProvider
 		return Jwts.builder()
                 .setSubject(authentication.getName())
                 .signWith(getPrivateKey())
-                .setExpiration(Date.from(Instant.now().plusMillis(otherServicesImpl.getJwtExpirationTime()))) 
+                .setExpiration(Date.from(Instant.now().plusSeconds(otherServicesImpl.getJwtExpirationTime()))) 
                 .compact();
 	}
 	
@@ -92,7 +92,7 @@ public class JwtProvider
 				.setSubject(username)
 				.setIssuedAt(from(Instant.now()))
 				.signWith(getPrivateKey())
-				.setExpiration(Date.from(Instant.now().plusMillis(otherServicesImpl.getJwtExpirationTime())))
+				.setExpiration(Date.from(Instant.now().plusSeconds(otherServicesImpl.getJwtExpirationTime())))
                 .compact();
 				
 		

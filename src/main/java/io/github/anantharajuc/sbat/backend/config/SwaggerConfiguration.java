@@ -1,12 +1,13 @@
 package io.github.anantharajuc.sbat.backend.config;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.google.common.base.Predicate;
 
+import io.github.anantharajuc.sbat.backend.service.impl.OtherServicesImpl;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -31,11 +32,8 @@ import static com.google.common.base.Predicates.or;
 //@EnableSwagger2WebMvc
 public class SwaggerConfiguration 
 {
-	@Value("${release.version}")
-	private String releaseVersion;
-	
-	@Value("${api.version}")
-	private String apiVersion;
+	@Autowired
+	private OtherServicesImpl otherServicesImpl;
 	
 	private static final String GROUP_NAME = "Spring Boot Application Template";
 	
@@ -74,13 +72,15 @@ public class SwaggerConfiguration
 	 */
 	private ApiInfo apiInfo() 
 	{
+		otherServicesImpl.loadApplicationSettings();
+		
 		return new ApiInfoBuilder()
 						.title(TITLE)
 						.description(DESCRIPTION)
 						.termsOfServiceUrl(TERMS_OF_SERVICE_URL)
 						.license(LICENSE)
 						.licenseUrl(LICENSE_URL)
-						.version(releaseVersion.concat("_").concat(apiVersion))
+						.version(otherServicesImpl.getReleaseVersion().concat("_").concat(otherServicesImpl.getApiVersion()))
 						.contact(CONTACT)
 						.build();
 	}

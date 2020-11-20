@@ -111,7 +111,7 @@ public class AuthenticationServiceImpl implements AuthenticationService
 		
 		String token = generateVerificationToken(user);
 		
-		mailServiceImpl.sendMail(new Email(otherServicesImpl.getMailSubject(), user.getEmail(), mailBody+token+" This link is valid for the next "+otherServicesImpl.getVerificationTokenValidity().toString()+" minute."));		
+		mailServiceImpl.sendMail(new Email(otherServicesImpl.getMailSubject(), user.getEmail(), mailBody+token+" This link is valid for the next "+otherServicesImpl.getVerificationTokenValidity().toString()+" minute.",otherServicesImpl.getMailReplyTo()));		
 	}
 
 	@Override

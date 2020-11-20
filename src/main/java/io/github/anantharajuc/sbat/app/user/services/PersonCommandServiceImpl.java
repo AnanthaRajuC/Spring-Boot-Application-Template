@@ -18,8 +18,16 @@ import lombok.extern.log4j.Log4j2;
 @Service("PersonCommandServiceImpl")
 public class PersonCommandServiceImpl implements PersonCommandService
 {
-	@Autowired
-	private PersonRepository personRepository;
+	/*@Autowired
+	private PersonRepository personRepository;*/
+	
+	PersonRepository personRepository;
+
+	public PersonCommandServiceImpl(PersonRepository personRepository) 
+	{
+		super();		
+		this.personRepository = personRepository;
+	}
 
 	@Override
 	public Person createPerson(Person person) 
