@@ -7,9 +7,9 @@
 /*
  * Data - User
  */
-INSERT INTO `user`(`email`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES('johndoe@example.com',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe','Installation','Installation');
-INSERT INTO `user`(`email`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES('adminuser@example.com',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser','Installation','Installation');
-INSERT INTO `user`(`email`,`isAccountNonExpired`,`isAccountNonLocked`,`isCredentialsNonExpired`,`isEnabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES('admintraineeuser@example.com',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser','Installation','Installation');
+INSERT INTO `user`(`email`,`is_account_non_expired`,`is_account_non_locked`,`is_credentials_non_expired`,`is_enabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES('johndoe@example.com',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','johndoe','Installation','Installation');
+INSERT INTO `user`(`email`,`is_account_non_expired`,`is_account_non_locked`,`is_credentials_non_expired`,`is_enabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES('adminuser@example.com',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminUser','Installation','Installation');
+INSERT INTO `user`(`email`,`is_account_non_expired`,`is_account_non_locked`,`is_credentials_non_expired`,`is_enabled`,`password`,`username`,`created_by`,`last_modified_by`)VALUES('admintraineeuser@example.com',1,1,1,1,'$2y$10$TGK.5Z.gLBOBlXjFlXTCme4PQlGneVhYrhLuzosdL8jd3xvuuuvYe','AdminTraineeUser','Installation','Installation');
 
 /*
  * Data - Permission
