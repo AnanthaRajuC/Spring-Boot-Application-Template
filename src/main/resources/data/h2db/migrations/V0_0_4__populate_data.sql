@@ -29,28 +29,28 @@ INSERT INTO `built_with` (`description`,`link`,`name`,`version`,`created_by`,`la
 /*
  * Data
  */
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('applicationName','sbat','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('applicationVersion','1.0','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('apiVersion','2020-09-20','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('releaseVersion','3.1.3','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('applicationName','sbat','Name of the application','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('applicationVersion','1.0','Version of the application','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('apiVersion','2020-09-20','Version of the API','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('releaseVersion','3.1.3','Release version of the API','Installation','Installation');
 
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('postmanEchoPOSTpath','/post','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('postmanEchoBaseUrl','https://postman-echo.com','Postman URL to test the HTTP requests','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('postmanEchoGETurl','https://postman-echo.com/get','Postman URL to test the GET request','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('postmanEchoPOSTpath','/post','Postman path to test the POST request','Installation','Installation');
 
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('keystoreFileName','redditclone.jks','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('keystoreAlias','redditclone','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('keystorePassword','abcd1234','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('keystoreFileName','redditclone.jks','Java Keystore File Name','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('keystoreAlias','redditclone','Alias of the Java Keystore','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('keystorePassword','abcd1234','Password of the Java Keystore','Installation','Installation');
 
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('verificationTokenValidity','10','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('jwtExpirationTime','300','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('verificationTokenValidity','10','Duration of the verification token validity - In minutes','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('jwtExpirationTime','300','Duration of JWT validity - In seconds','Installation','Installation');
 
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('mailFrom','sbat@email.com','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('mailReplyTo','sbat@email.com','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('mailSubject','Spring Boot Application Template','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('mailFrom','sbat@email.com','Account verification mail from address','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('mailReplyTo','sbat@email.com','Account verification mail reply to address','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('mailSubject','Spring Boot Application Template','Account verification mail subject','Installation','Installation');
 
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailHost','smtp.mailtrap.io','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailPort','2525','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailProtocol','smtp','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','b719b389f8c835','Installation','Installation');
-INSERT INTO `application_settings` (`app_key`,`app_value`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','f64ab693c96fde','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailHost','smtp.mailtrap.io','SMTP server host','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailPort','2525','SMTP server port','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailProtocol','smtp','Protocol used by the SMTP server','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','b719b389f8c835','Login user of the SMTP server','Installation','Installation');
+INSERT INTO `application_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','f64ab693c96fde','Login password of the SMTP server','Installation','Installation');

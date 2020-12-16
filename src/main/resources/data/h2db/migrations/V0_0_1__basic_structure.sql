@@ -39,5 +39,6 @@ CREATE TABLE `application_settings` (
   `last_modified_by` varchar(255) NOT NULL,
   `last_modified_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `app_key` varchar(255) NOT NULL,
-  `app_value` varchar(255) NOT NULL
+  `app_value` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL
 );
