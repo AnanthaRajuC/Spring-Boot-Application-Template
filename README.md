@@ -201,6 +201,8 @@ This repository contains a recipe/scaffolding for bootstrapping a Web Applicatio
 * 	[x] [HTTPS](https://en.wikipedia.org/wiki/HTTPS) with (self-signed certificate)[https://en.wikipedia.org/wiki/Self-signed_certificate]
 * 	[x] [JSON Web Token](https://www.jsonwebtoken.io/) based authentication
 * 	[ ] Quartz Scheduler
+* 	[ ] Multiple Databases
+* 	[ ] [jOOQ](https://www.jooq.org/)
 * 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
 *   [ ] Unit Tests, Integration Tests
 * 	[ ] Shut down app on button click via actuator url 
