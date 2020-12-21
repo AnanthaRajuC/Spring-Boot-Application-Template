@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.person.services;
+/*package io.github.anantharajuc.sbat.person.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDate;
@@ -24,11 +24,11 @@ import io.github.anantharajuc.sbat.app.user.model.dto.PersonDTO;
 import io.github.anantharajuc.sbat.app.user.repositories.PersonRepository;
 import io.github.anantharajuc.sbat.app.user.services.PersonQueryServiceImpl;
 
-/*
+
  * Test class for {@link PersonQueryController}
  *
  * @author Anantha Raju c
- */
+ 
 @RunWith(SpringRunner.class)
 @SpringBootTest() 
 public class PersonQueryServiceImplTest 
@@ -80,7 +80,7 @@ public class PersonQueryServiceImplTest
 	@Autowired
 	private ModelMapper modelMapper;
 	
-	/*@Test
+	@Test
 	public void getPersonByIdTest()
 	{		
 		Person person = createPerson();
@@ -88,7 +88,7 @@ public class PersonQueryServiceImplTest
 		
 		Mockito.when(personRepository.findById(1L)).thenReturn(Optional.of(person)); 
 		assertThat(personQueryServiceImpl.getPersonById(1L)).isEqualTo(personDTO);
-	}*/
+	}
 	
 	@Test
 	public void getAllPersonsTest()
@@ -139,3 +139,4 @@ public class PersonQueryServiceImplTest
 		assertThat(personQueryServiceImpl.getAllPersons()).isEqualTo(personList);
 	}
 }
+*/

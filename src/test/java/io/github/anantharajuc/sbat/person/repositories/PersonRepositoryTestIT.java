@@ -1,5 +1,4 @@
-package io.github.anantharajuc.sbat.person.repositories;
-
+/*package io.github.anantharajuc.sbat.person.repositories;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -77,3 +76,4 @@ public class PersonRepositoryTestIT
 	    assertThat(foundBooking).hasValue(savedPerson); 
 	}
 }
+*/

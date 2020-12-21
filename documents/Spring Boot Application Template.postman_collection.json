@@ -30,8 +30,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Actuator Endpoints",
@@ -216,8 +215,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "RBAC User Endpoints",
@@ -279,7 +277,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "368dbe68-62a9-4438-b21e-6a8e6c5c830d",
 								"exec": [
 									"pm.test('Get A RBAC User - XML Response', function()\r",
 									"{\r",
@@ -333,7 +330,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e5917936-659d-4a72-bad1-d53e968b4536",
 								"exec": [
 									"pm.test('Delete A RBAC User', function()\r",
 									"{\r",
@@ -385,7 +381,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6d6ee61b-471e-4031-8d56-d2444b0b0309",
 								"exec": [
 									"pm.test('Get All RBAC User\\'s', function()\r",
 									"{\r",
@@ -432,8 +427,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Person Endpoints",
@@ -444,7 +438,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5891bbac-431c-4def-9ef3-131b4c3a74c1",
 								"exec": [
 									"pm.test('Get All Person\\'s - XML Response', function()\r",
 									"{\r",
@@ -459,16 +452,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMwNDk0fQ.efu6fmLto2OWNYCVoFNX_D47y-psU923jr24PiLJD7WLtaNKrJKDoPx4TCq-uM0mf5PmfYsiOqk0ndt87aWD02Dw8-79G7Zdy1NzDknUTJiXXYPnmI2qtj1vPWdNIhT5roHY4HU_CnnnBwHDSRspi3wu7hA4rJPZS1tYZGySWW8WoMnYw_c0qzRHOD_l-hVUhjtUUqhn3eJsO408FlhnEnJ0vkGLl59fzXvoJ_ADmMe2NIMWxVF7ePuGHaHBvqXlHFu8buiUgvQJMl9CpVaRBmyR8eLCX4k0WLxiUI569iebBttE-k56gnO0MuKB26Z7zRSAxYXto4qIQOoMRKjxuA",
 									"type": "string"
 								}
 							]
@@ -487,7 +475,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person",
+							"raw": "http://localhost:8080/api/v1/person?X-api-key=null&api.Version=2020-09-20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -497,6 +485,16 @@
 								"api",
 								"v1",
 								"person"
+							],
+							"query": [
+								{
+									"key": "X-api-key",
+									"value": "null"
+								},
+								{
+									"key": "api.Version",
+									"value": "2020-09-20"
+								}
 							]
 						},
 						"description": "API - Get a JSON array of all Persons\nhttp://localhost:8080/api/person"
@@ -509,7 +507,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9d5b724b-6cea-448c-87c0-f8fd4d0e4957",
 								"exec": [
 									"pm.test('Get All Person\\'s - XML Response', function()\r",
 									"{\r",
@@ -529,7 +526,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA1NDQ5MTk4fQ.Lkpgdp-BnFDIWtDAwKZN0R3CZd4nA2GMigdyzo8PE5wAyTSKfhsLOoUUnq4oSo4gE1q83rTjYEd6o-XkhAuqFMRH_aZxkQ39mdS3m4pBc6hdrOS6RyA4BArPRN0Mf-Xmm_jxVD2oAlzBupxLIQlZbMIPFObVw1b5VyoHujaoSgM-nDv0MPicwpltur03oJjL1nUW2uoL4P2B-Eob65C7cnrMmgBi9iNCgEIXZrAeF2BAHId5xRbWAtzCq3jtYNLgMcltlCCKdLf_XPnbdgEpeMYUFJxK1QDLjJl8Y1ELu-XGMe-Wxu53WLuQiCzZv8tJc7aRl_J-kP_wazElgHeoKg",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMwNDk0fQ.efu6fmLto2OWNYCVoFNX_D47y-psU923jr24PiLJD7WLtaNKrJKDoPx4TCq-uM0mf5PmfYsiOqk0ndt87aWD02Dw8-79G7Zdy1NzDknUTJiXXYPnmI2qtj1vPWdNIhT5roHY4HU_CnnnBwHDSRspi3wu7hA4rJPZS1tYZGySWW8WoMnYw_c0qzRHOD_l-hVUhjtUUqhn3eJsO408FlhnEnJ0vkGLl59fzXvoJ_ADmMe2NIMWxVF7ePuGHaHBvqXlHFu8buiUgvQJMl9CpVaRBmyR8eLCX4k0WLxiUI569iebBttE-k56gnO0MuKB26Z7zRSAxYXto4qIQOoMRKjxuA",
 									"type": "string"
 								}
 							]
@@ -565,12 +562,11 @@
 					"response": []
 				},
 				{
-					"name": "Get Person by Id - XML Response",
+					"name": "Get Existing Person by Id - XML Response",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "40ae472c-4a79-4fad-80f1-98a2c9122f25",
 								"exec": [
 									"pm.test('Get A Person by ID - XML Response', function()\r",
 									"{\r",
@@ -584,16 +580,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "johndoe",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMwNDk0fQ.efu6fmLto2OWNYCVoFNX_D47y-psU923jr24PiLJD7WLtaNKrJKDoPx4TCq-uM0mf5PmfYsiOqk0ndt87aWD02Dw8-79G7Zdy1NzDknUTJiXXYPnmI2qtj1vPWdNIhT5roHY4HU_CnnnBwHDSRspi3wu7hA4rJPZS1tYZGySWW8WoMnYw_c0qzRHOD_l-hVUhjtUUqhn3eJsO408FlhnEnJ0vkGLl59fzXvoJ_ADmMe2NIMWxVF7ePuGHaHBvqXlHFu8buiUgvQJMl9CpVaRBmyR8eLCX4k0WLxiUI569iebBttE-k56gnO0MuKB26Z7zRSAxYXto4qIQOoMRKjxuA",
 									"type": "string"
 								}
 							]
@@ -602,17 +593,17 @@
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/xml",
-								"type": "text"
+								"type": "text",
+								"value": "application/xml"
 							},
 							{
 								"key": "X-api-key",
-								"value": "null",
-								"type": "text"
+								"type": "text",
+								"value": "null"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/18",
+							"raw": "http://localhost:8080/api/v1/person/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -622,7 +613,8 @@
 								"api",
 								"v1",
 								"person",
-								"18"
+								"id",
+								"1"
 							]
 						},
 						"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -635,7 +627,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b47575aa-d7b6-4e28-8723-3062223bca8f",
 								"exec": [
 									"pm.test('Get Existing Person by ID - JSON Response', function()\r",
 									"{\r",
@@ -662,7 +653,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiaWF0IjoxNjA1NTA4MTc5LCJleHAiOjE2MDU1MDgyNjl9.MR3P6KUELjMRoqpzF9FXVyPdw8fGw2burgFTYLDs1IoYSAkaj0o0cirgOafa-V1BxZGcV9DsdWJiLC7dhFaY2h2rNFmdz0k4H0DSoPrJqWii1ivtRUCnXvCyzuFzXbMs7BDMj3hQ7Mv0lYypxLHhL-zIGuElgffY99goQ-LIJCuyfYFzq0aSSua1IQRiVkkIzv0BqIep8VGnKaJUp1w6ZuZYnuvqBLOL30fhweegeTn3pwjbIHTQNeBd2Shk1ZVX9zeQ1WzyIfZKbDO5UBlIqmrPxcQsidiWVAyHFRRrYuzO6f0_qvPLACUWLX7Ca-SfQu3zkU7a7XVuNgHHlcJ4vQ",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTM2NDc5fQ.bIX5V4drlw85PGeeNtnElAjugSH0t3y2LOePpeABoLJTnDDC8YwlLg0YS2cEYpfcOTJObL4o1ISXWeKmqDudbkcDqDiqhMuaBKEO15Wwx6VWjgd5x0fzcb502Gy3coGJqtIWC6GxfDp6VTZTfjbvLQvTcLeHDObcZFVjB2OECy8_0fhqw7dPwIytubQy4HTMquoLsZymr95D8SJWmOrZTf69sjiQNRDOQhjCHQrX9EwO-JjAPKy0wbyjRncmNEGhp9GzeLS7I2IOF-AnynqCznyPXwKrU1S6GiGACnqUndlWIFl3IjmEsrFqC-dEXfZHiR1BK8AEIg8zWgff6d60Pg",
 									"type": "string"
 								}
 							]
@@ -685,7 +676,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/34",
+							"raw": "http://localhost:8080/api/v1/person/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -695,7 +686,8 @@
 								"api",
 								"v1",
 								"person",
-								"34"
+								"id",
+								"1"
 							]
 						},
 						"description": "GET a user by id in XML data format\nhttp://localhost:8080/api/person/1"
@@ -708,7 +700,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b86acd43-8c1d-481f-9fdd-b732b672231c",
 								"exec": [
 									"pm.test('Get Non-existent Person by Id - JSON Response', function()\r",
 									"{\r",
@@ -728,16 +719,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "AdminUser",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMwNDk0fQ.efu6fmLto2OWNYCVoFNX_D47y-psU923jr24PiLJD7WLtaNKrJKDoPx4TCq-uM0mf5PmfYsiOqk0ndt87aWD02Dw8-79G7Zdy1NzDknUTJiXXYPnmI2qtj1vPWdNIhT5roHY4HU_CnnnBwHDSRspi3wu7hA4rJPZS1tYZGySWW8WoMnYw_c0qzRHOD_l-hVUhjtUUqhn3eJsO408FlhnEnJ0vkGLl59fzXvoJ_ADmMe2NIMWxVF7ePuGHaHBvqXlHFu8buiUgvQJMl9CpVaRBmyR8eLCX4k0WLxiUI569iebBttE-k56gnO0MuKB26Z7zRSAxYXto4qIQOoMRKjxuA",
 									"type": "string"
 								}
 							]
@@ -756,7 +742,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/0",
+							"raw": "http://localhost:8080/api/v1/person/id/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -766,6 +752,7 @@
 								"api",
 								"v1",
 								"person",
+								"id",
 								"0"
 							]
 						},
@@ -779,7 +766,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "058092cd-fcaa-4fdf-9278-33aba7ae3765",
 								"exec": [
 									"pm.test('Update A Person by ID - JSON Response', function()\r",
 									"{\r",
@@ -794,16 +780,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMwNDk0fQ.efu6fmLto2OWNYCVoFNX_D47y-psU923jr24PiLJD7WLtaNKrJKDoPx4TCq-uM0mf5PmfYsiOqk0ndt87aWD02Dw8-79G7Zdy1NzDknUTJiXXYPnmI2qtj1vPWdNIhT5roHY4HU_CnnnBwHDSRspi3wu7hA4rJPZS1tYZGySWW8WoMnYw_c0qzRHOD_l-hVUhjtUUqhn3eJsO408FlhnEnJ0vkGLl59fzXvoJ_ADmMe2NIMWxVF7ePuGHaHBvqXlHFu8buiUgvQJMl9CpVaRBmyR8eLCX4k0WLxiUI569iebBttE-k56gnO0MuKB26Z7zRSAxYXto4qIQOoMRKjxuA",
 									"type": "string"
 								}
 							]
@@ -818,7 +799,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"ooooo\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+							"raw": "{\r\n\t\"name\": \"gggggg\",\r\n\t\"username\": \"gfg5\",\r\n\t\"emailPrimary\": \"uuu@gmail.com\",\r\n    \"emailSecondary\": \"uu.howell@gmail.com\",\r\n    \"phone\":444,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 35,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":false,\r\n\t\"address\": {\r\n\t\t\"street\": \"Victor Plains\",\r\n\t\t\"suite\": \"Suite 879\",\r\n\t\t\"city\": \"Wisokyburgh\",\r\n\t\t\"zipcode\": \"90566-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -826,7 +807,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/1",
+							"raw": "http://localhost:8080/api/v1/person/id/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -836,6 +817,7 @@
 								"api",
 								"v1",
 								"person",
+								"id",
 								"1"
 							]
 						},
@@ -849,7 +831,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ceadcea9-94b4-4ff8-ae44-43504894cba9",
 								"exec": [
 									"pm.test('Update A Person by ID - JSON Response', function()\r",
 									"{\r",
@@ -868,16 +849,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMwNDk0fQ.efu6fmLto2OWNYCVoFNX_D47y-psU923jr24PiLJD7WLtaNKrJKDoPx4TCq-uM0mf5PmfYsiOqk0ndt87aWD02Dw8-79G7Zdy1NzDknUTJiXXYPnmI2qtj1vPWdNIhT5roHY4HU_CnnnBwHDSRspi3wu7hA4rJPZS1tYZGySWW8WoMnYw_c0qzRHOD_l-hVUhjtUUqhn3eJsO408FlhnEnJ0vkGLl59fzXvoJ_ADmMe2NIMWxVF7ePuGHaHBvqXlHFu8buiUgvQJMl9CpVaRBmyR8eLCX4k0WLxiUI569iebBttE-k56gnO0MuKB26Z7zRSAxYXto4qIQOoMRKjxuA",
 									"type": "string"
 								}
 							]
@@ -900,7 +876,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/0",
+							"raw": "http://localhost:8080/api/v1/person/id/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -910,6 +886,7 @@
 								"api",
 								"v1",
 								"person",
+								"id",
 								"0"
 							]
 						},
@@ -923,7 +900,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c0be23ff-15b3-46b8-bc12-a1c0dfd80dbe",
 								"exec": [
 									"pm.test('Delete A Person', function()\r",
 									"{\r",
@@ -936,16 +912,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiaWF0IjoxNjA4NTMwNTExLCJleHAiOjE2MDg1MzA4MTF9.RvwpHpwnXb3-Hu2NjZF5SEPEk6P2MqHbr9MAHHEl0WIZt4faJnK03DTxoyisoPVC_eJ1LMa-tfIXejT9bPL40vg884JVm2bfejrgTKylvn9k7CXuAzbR6TH5icbZu0HXjE9IFK4_z3v-RAocXE1tPXleTmlsq_76Vrxbvv2HcqJO49xrF0sB2oi0bOUcbx7l0ZzKlZajwBmePk1C7b3Wmy6H6lCzkeqxCN5mjtL-ZWRy0C2KD1Owkxci5UKnK1e2cDMGhRYA5A2Q5HQBKnrqVczVXB3psa-fUaF3TgZFeRtASP1PWl5MmXRR-UjQDrOV7THV-U22s8KNzYCiORANWA",
 									"type": "string"
 								}
 							]
@@ -959,7 +930,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/66",
+							"raw": "http://localhost:8080/api/v1/person/id/67",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -969,7 +940,8 @@
 								"api",
 								"v1",
 								"person",
-								"66"
+								"id",
+								"67"
 							]
 						},
 						"description": "DELETE\r\n/api/person/3\r\nhttp://localhost:8080/api/person/3"
@@ -982,7 +954,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8a8567bb-8a25-4191-ac78-2d05be15a92c",
 								"exec": [
 									"pm.test('Delete a Non-existent Person by ID', function()\r",
 									"{\r",
@@ -1001,16 +972,11 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiaWF0IjoxNjA4NTMwNTExLCJleHAiOjE2MDg1MzA4MTF9.RvwpHpwnXb3-Hu2NjZF5SEPEk6P2MqHbr9MAHHEl0WIZt4faJnK03DTxoyisoPVC_eJ1LMa-tfIXejT9bPL40vg884JVm2bfejrgTKylvn9k7CXuAzbR6TH5icbZu0HXjE9IFK4_z3v-RAocXE1tPXleTmlsq_76Vrxbvv2HcqJO49xrF0sB2oi0bOUcbx7l0ZzKlZajwBmePk1C7b3Wmy6H6lCzkeqxCN5mjtL-ZWRy0C2KD1Owkxci5UKnK1e2cDMGhRYA5A2Q5HQBKnrqVczVXB3psa-fUaF3TgZFeRtASP1PWl5MmXRR-UjQDrOV7THV-U22s8KNzYCiORANWA",
 									"type": "string"
 								}
 							]
@@ -1024,7 +990,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/0",
+							"raw": "http://localhost:8080/api/v1/person/id/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1034,6 +1000,7 @@
 								"api",
 								"v1",
 								"person",
+								"id",
 								"0"
 							]
 						},
@@ -1045,16 +1012,11 @@
 					"name": "Create Person",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMxNjUxfQ.MWkbiQ0eTI8zz8-uuTUK5qqoHxe2ZbYB_mJ1xvDCXyHlIOR26hm9xTBSROuX6tHtCxApOPai4CJrXXyrRUaEPGiPM5vLoSMBZoyK3HAEOMqTRuEA_9zVyXo-8u8rehSE8aXTpCub6IbUPjOM7YHLEFcpN74HSEvudG2KQ9jVPf6MrfzLeRjnjz6gXmBlNsbxfN6AK9wzQvvgvJfsNEeAGwimk6N9fd7mo4LPlMZiFsx634z5j6JDrw-zu--sqtQG83R9_oebUOy6f1nrir3wsnb-Ryzn-0X3WlGQcvajGCwCU5M9aICYEkUOdkYso2ENjPTFZm-_6-4YhhB4w4pnZA",
 									"type": "string"
 								}
 							]
@@ -1069,7 +1031,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"kkkkkllk\",\r\n\t\"username\": \"ssskets\",\r\n\t\"emailPrimary\": \"owektsw@gmail.com\",\r\n\t\"emailSecondary\": \"wwwkestw@gmail.com\",\r\n\t\"phone\":1781461,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+							"raw": "{\r\n\t\"name\": \"kkkkgkllk\",\r\n\t\"username\": \"ssgskets\",\r\n\t\"emailPrimary\": \"owekgtsw@gmail.com\",\r\n\t\"emailSecondary\": \"wwwkgestw@gmail.com\",\r\n\t\"phone\":17814761,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1097,16 +1059,11 @@
 					"name": "Get Person's by Gender",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMxNjUxfQ.MWkbiQ0eTI8zz8-uuTUK5qqoHxe2ZbYB_mJ1xvDCXyHlIOR26hm9xTBSROuX6tHtCxApOPai4CJrXXyrRUaEPGiPM5vLoSMBZoyK3HAEOMqTRuEA_9zVyXo-8u8rehSE8aXTpCub6IbUPjOM7YHLEFcpN74HSEvudG2KQ9jVPf6MrfzLeRjnjz6gXmBlNsbxfN6AK9wzQvvgvJfsNEeAGwimk6N9fd7mo4LPlMZiFsx634z5j6JDrw-zu--sqtQG83R9_oebUOy6f1nrir3wsnb-Ryzn-0X3WlGQcvajGCwCU5M9aICYEkUOdkYso2ENjPTFZm-_6-4YhhB4w4pnZA",
 									"type": "string"
 								}
 							]
@@ -1142,16 +1099,11 @@
 					"name": "Get Person's - Pageable",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzI0NDd9.IIku3zTtLheTTinysF4BpBVYq07GAjym-M-C_oMZv0SH1RxX7bw_8MOrrxZcXglIC2EjePxQnBn71CTC_tT_9i_7UVPB3Q10a3Wf0jMqvmpeJzg1L3bbFHyhHYXmk81oHyfrb_9f6BJVqpponVKJJucnQiOuyHGNQFe3M7yUFkZ2knmtZqC5MYNAVeThuXcgo2MZgBnPeejR2pgo66EmJbp9uu4JlXvTjXiJldEhEYQuLT_cyF1-hrCfvY8bL1CKJoDa6d3EDzFkk8R1Qm9_KMSSdW1MKprdjqTC0qgAIwISYZTmQWjFo-4DxS7DM7VfVJGY9_IQt_UKf26H2nX2iw",
 									"type": "string"
 								}
 							]
@@ -1165,7 +1117,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/pageable?size=500&pageNumber=5&sort=id",
+							"raw": "http://localhost:8080/api/v1/management/person/pageable?size=10&pageNumber=5&sort=id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1174,13 +1126,14 @@
 							"path": [
 								"api",
 								"v1",
+								"management",
 								"person",
 								"pageable"
 							],
 							"query": [
 								{
 									"key": "size",
-									"value": "500"
+									"value": "10"
 								},
 								{
 									"key": "pageNumber",
@@ -1197,19 +1150,14 @@
 					"response": []
 				},
 				{
-					"name": "/api/person/pageable",
+					"name": "Get Person by username",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTM2NDc5fQ.bIX5V4drlw85PGeeNtnElAjugSH0t3y2LOePpeABoLJTnDDC8YwlLg0YS2cEYpfcOTJObL4o1ISXWeKmqDudbkcDqDiqhMuaBKEO15Wwx6VWjgd5x0fzcb502Gy3coGJqtIWC6GxfDp6VTZTfjbvLQvTcLeHDObcZFVjB2OECy8_0fhqw7dPwIytubQy4HTMquoLsZymr95D8SJWmOrZTf69sjiQNRDOQhjCHQrX9EwO-JjAPKy0wbyjRncmNEGhp9GzeLS7I2IOF-AnynqCznyPXwKrU1S6GiGACnqUndlWIFl3IjmEsrFqC-dEXfZHiR1BK8AEIg8zWgff6d60Pg",
 									"type": "string"
 								}
 							]
@@ -1217,13 +1165,18 @@
 						"method": "GET",
 						"header": [
 							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
 								"key": "X-api-key",
 								"value": "null",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/person/pageable?page=0&size=10&sort=createdBy,desc",
+							"raw": "http://localhost:8080/api/v1/person/username/johndoe",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1233,47 +1186,28 @@
 								"api",
 								"v1",
 								"person",
-								"pageable"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "0"
-								},
-								{
-									"key": "size",
-									"value": "10"
-								},
-								{
-									"key": "sort",
-									"value": "createdBy,desc"
-								}
+								"username",
+								"johndoe"
 							]
 						},
-						"description": "http://localhost:8080/api/personPageable?page=0&size=2&sort=createdOn,desc"
+						"description": "http://localhost:8080/api/v1/person/username/johndoe"
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Person Management Endpoint",
 			"item": [
 				{
-					"name": "Get Person's - JSON Response",
+					"name": "Get All Person's - JSON Response",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY1NzJ9.NlAzPjvzlQ4secnB79XdjsB323tcAaLAe3uDrV5EFwH-V0HC5QTg2SmaAaszcXswtCsCRBLBWJ0F4SSMvjulDW4tKhsxW7cNh3LlT2fVCwxTtNPOOAWalw4Bo2PCHu4Djthm7WvhGUfplvHVoq7HVXxHAgP8uRaU8ajqxTHuY0n_TwtVZnTzN8_x7TZngf8pbvKX0BTcAd5y9oebjthlVxq7mnvfAWWKL9UH-mvkJQhOrLg5HttA31HZ__63iBzKQZQkq1B_FzuAh5tvghMZgrbbYyx8DAAcgDYZHqvK7iUM2qLg7DkBeArCPGWZ_fdv4PtMiKEYZq3quctQ2QAO_w",
 									"type": "string"
 								}
 							]
@@ -1313,16 +1247,11 @@
 					"name": "Delete Person by Id",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY1NzJ9.NlAzPjvzlQ4secnB79XdjsB323tcAaLAe3uDrV5EFwH-V0HC5QTg2SmaAaszcXswtCsCRBLBWJ0F4SSMvjulDW4tKhsxW7cNh3LlT2fVCwxTtNPOOAWalw4Bo2PCHu4Djthm7WvhGUfplvHVoq7HVXxHAgP8uRaU8ajqxTHuY0n_TwtVZnTzN8_x7TZngf8pbvKX0BTcAd5y9oebjthlVxq7mnvfAWWKL9UH-mvkJQhOrLg5HttA31HZ__63iBzKQZQkq1B_FzuAh5tvghMZgrbbYyx8DAAcgDYZHqvK7iUM2qLg7DkBeArCPGWZ_fdv4PtMiKEYZq3quctQ2QAO_w",
 									"type": "string"
 								}
 							]
@@ -1336,7 +1265,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person/2",
+							"raw": "http://localhost:8080/api/v1/management/person/id/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1347,6 +1276,7 @@
 								"v1",
 								"management",
 								"person",
+								"id",
 								"2"
 							]
 						},
@@ -1358,16 +1288,11 @@
 					"name": "Get Person's - Pageable",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY1NzJ9.NlAzPjvzlQ4secnB79XdjsB323tcAaLAe3uDrV5EFwH-V0HC5QTg2SmaAaszcXswtCsCRBLBWJ0F4SSMvjulDW4tKhsxW7cNh3LlT2fVCwxTtNPOOAWalw4Bo2PCHu4Djthm7WvhGUfplvHVoq7HVXxHAgP8uRaU8ajqxTHuY0n_TwtVZnTzN8_x7TZngf8pbvKX0BTcAd5y9oebjthlVxq7mnvfAWWKL9UH-mvkJQhOrLg5HttA31HZ__63iBzKQZQkq1B_FzuAh5tvghMZgrbbYyx8DAAcgDYZHqvK7iUM2qLg7DkBeArCPGWZ_fdv4PtMiKEYZq3quctQ2QAO_w",
 									"type": "string"
 								}
 							]
@@ -1417,16 +1342,11 @@
 					"name": "Update Person by Id",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY1NzJ9.NlAzPjvzlQ4secnB79XdjsB323tcAaLAe3uDrV5EFwH-V0HC5QTg2SmaAaszcXswtCsCRBLBWJ0F4SSMvjulDW4tKhsxW7cNh3LlT2fVCwxTtNPOOAWalw4Bo2PCHu4Djthm7WvhGUfplvHVoq7HVXxHAgP8uRaU8ajqxTHuY0n_TwtVZnTzN8_x7TZngf8pbvKX0BTcAd5y9oebjthlVxq7mnvfAWWKL9UH-mvkJQhOrLg5HttA31HZ__63iBzKQZQkq1B_FzuAh5tvghMZgrbbYyx8DAAcgDYZHqvK7iUM2qLg7DkBeArCPGWZ_fdv4PtMiKEYZq3quctQ2QAO_w",
 									"type": "string"
 								}
 							]
@@ -1441,7 +1361,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"33335l\",\r\n\t\"username\": \"aaaa\",\r\n\t\"emailPrimary\": \"aaaa@gmail.com\",\r\n\t\"emailSecondary\": \"ffff.howell@gmail.com\",\r\n\t\"phone\":11111333,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
+							"raw": "{\r\n\t\"name\": \"gfgfgfgf\",\r\n\t\"username\": \"aaaa\",\r\n\t\"emailPrimary\": \"aaaa@gmail.com\",\r\n\t\"emailSecondary\": \"ffff.howell@gmail.com\",\r\n\t\"phone\":11111333,\r\n\t\"gender\": \"FEMALE\",\r\n\t\"age\": 25,\r\n\t\"password\": \"password\",\r\n\t\"dob\":\"25-12-2005\",\r\n\t\"isAdult\":true,\r\n\t\"address\": {\r\n\t\t\"street\": \"Jane Plains\",\r\n\t\t\"suite\": \"Suite 779\",\r\n\t\t\"city\": \"Wisokyburghh\",\r\n\t\t\"zipcode\": \"90565-7771\",\r\n\t\t\"geo\": {\r\n\t\t\t\"lat\": \"-43.9589\",\r\n\t\t\t\"lng\": \"-34.4628\"\r\n\t\t}\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1449,7 +1369,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person/33",
+							"raw": "http://localhost:8080/api/v1/management/person/id/33",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1460,6 +1380,7 @@
 								"v1",
 								"management",
 								"person",
+								"id",
 								"33"
 							]
 						},
@@ -1471,16 +1392,11 @@
 					"name": "Get Person by Id - JSON Response",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY1NzJ9.NlAzPjvzlQ4secnB79XdjsB323tcAaLAe3uDrV5EFwH-V0HC5QTg2SmaAaszcXswtCsCRBLBWJ0F4SSMvjulDW4tKhsxW7cNh3LlT2fVCwxTtNPOOAWalw4Bo2PCHu4Djthm7WvhGUfplvHVoq7HVXxHAgP8uRaU8ajqxTHuY0n_TwtVZnTzN8_x7TZngf8pbvKX0BTcAd5y9oebjthlVxq7mnvfAWWKL9UH-mvkJQhOrLg5HttA31HZ__63iBzKQZQkq1B_FzuAh5tvghMZgrbbYyx8DAAcgDYZHqvK7iUM2qLg7DkBeArCPGWZ_fdv4PtMiKEYZq3quctQ2QAO_w",
 									"type": "string"
 								}
 							]
@@ -1494,7 +1410,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/management/person/12",
+							"raw": "http://localhost:8080/api/v1/management/person/id/13",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1505,7 +1421,8 @@
 								"v1",
 								"management",
 								"person",
-								"12"
+								"id",
+								"13"
 							]
 						},
 						"description": "http://localhost:8080/management/api/v1/person/6"
@@ -1516,16 +1433,11 @@
 					"name": "Create Person",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "AdminUser",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY1NzJ9.NlAzPjvzlQ4secnB79XdjsB323tcAaLAe3uDrV5EFwH-V0HC5QTg2SmaAaszcXswtCsCRBLBWJ0F4SSMvjulDW4tKhsxW7cNh3LlT2fVCwxTtNPOOAWalw4Bo2PCHu4Djthm7WvhGUfplvHVoq7HVXxHAgP8uRaU8ajqxTHuY0n_TwtVZnTzN8_x7TZngf8pbvKX0BTcAd5y9oebjthlVxq7mnvfAWWKL9UH-mvkJQhOrLg5HttA31HZ__63iBzKQZQkq1B_FzuAh5tvghMZgrbbYyx8DAAcgDYZHqvK7iUM2qLg7DkBeArCPGWZ_fdv4PtMiKEYZq3quctQ2QAO_w",
 									"type": "string"
 								}
 							]
@@ -1566,8 +1478,7 @@
 					"response": []
 				}
 			],
-			"description": "Person Management Endpoint",
-			"protocolProfileBehavior": {}
+			"description": "Person Management Endpoint"
 		},
 		{
 			"name": "Other Simple Endpoints",
@@ -1575,6 +1486,16 @@
 				{
 					"name": "/api/generic-hello",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY4MTl9.ZweWcmpap4Ur3q5IkT58-1LGJSHhP9RsSgv_Mr8kP01psQNI0mkzqrFSldI9dXXTrHiFJnFW9uY6wYDCxmyZcke1WnTO180gkYcvtxlaklWZuvDhGwAFU2O3ZhnmAJ_74ZUybuF1lZpJNH8b5N8n82wwFUK0P8wzD-Sau61Nx3r4DycNtJGqsU9XdxF5bzMlDYpliHiZsEPFdow5uBKGXcVB4p8VEFWuqYqT2pCkq3wTSF4oysGLNR1WTBevNLqTOwq9K7nl1QednlGfwcgmlvQSx55AiadNEDCORBeB8xMHyxoG6kAdXh1NXDj81h_F__vEuSOTtVF-9f86fmQu5Q",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1602,6 +1523,16 @@
 				{
 					"name": "/api/loggers",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY4MTl9.ZweWcmpap4Ur3q5IkT58-1LGJSHhP9RsSgv_Mr8kP01psQNI0mkzqrFSldI9dXXTrHiFJnFW9uY6wYDCxmyZcke1WnTO180gkYcvtxlaklWZuvDhGwAFU2O3ZhnmAJ_74ZUybuF1lZpJNH8b5N8n82wwFUK0P8wzD-Sau61Nx3r4DycNtJGqsU9XdxF5bzMlDYpliHiZsEPFdow5uBKGXcVB4p8VEFWuqYqT2pCkq3wTSF4oysGLNR1WTBevNLqTOwq9K7nl1QednlGfwcgmlvQSx55AiadNEDCORBeB8xMHyxoG6kAdXh1NXDj81h_F__vEuSOTtVF-9f86fmQu5Q",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1623,6 +1554,16 @@
 				{
 					"name": "/api/personalized-hello?name=springboot%20application",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDg1MzY4MTl9.ZweWcmpap4Ur3q5IkT58-1LGJSHhP9RsSgv_Mr8kP01psQNI0mkzqrFSldI9dXXTrHiFJnFW9uY6wYDCxmyZcke1WnTO180gkYcvtxlaklWZuvDhGwAFU2O3ZhnmAJ_74ZUybuF1lZpJNH8b5N8n82wwFUK0P8wzD-Sau61Nx3r4DycNtJGqsU9XdxF5bzMlDYpliHiZsEPFdow5uBKGXcVB4p8VEFWuqYqT2pCkq3wTSF4oysGLNR1WTBevNLqTOwq9K7nl1QednlGfwcgmlvQSx55AiadNEDCORBeB8xMHyxoG6kAdXh1NXDj81h_F__vEuSOTtVF-9f86fmQu5Q",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1647,8 +1588,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Authentication",
@@ -1663,7 +1603,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"johndoe8\",\r\n    \"email\":\"johndoe8@domain.com\",\r\n    \"password\":\"password\"\r\n}",
+							"raw": "{\r\n    \"username\":\"johndoe4\",\r\n    \"email\":\"arcmusiccollection@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1698,7 +1638,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"johndoe\",\r\n    \"password\":\"password\"\r\n}",
+							"raw": "{\r\n    \"username\": \"AdminUser\",\r\n    \"password\": \"password\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1733,7 +1673,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"token\":\"0c63c802-b360-4761-a034-d734a90a0282\",\r\n    \"username\":\"johndoe\"\r\n}",
+							"raw": "{\r\n    \"token\":\"73ab90d3-bc52-499e-9a72-e2a8b27ff937\",\r\n    \"username\":\"AdminUser\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1768,7 +1708,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"token\":\"7fbac449-c548-4a9e-b8e2-b7d8f5848ed1\",\r\n    \"username\":\"johndoe\"\r\n}",
+							"raw": "{\r\n    \"token\":\"30504c8d-b7dd-4608-99f6-0380beac54e4\",\r\n    \"username\":\"johndoe\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1794,8 +1734,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"auth": {
@@ -1812,6 +1751,5 @@
 				"type": "string"
 			}
 		]
-	},
-	"protocolProfileBehavior": {}
+	}
 }

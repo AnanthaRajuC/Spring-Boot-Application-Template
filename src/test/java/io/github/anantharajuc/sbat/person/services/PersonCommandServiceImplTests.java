@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.person.services;
+/*package io.github.anantharajuc.sbat.person.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -22,11 +22,11 @@ import io.github.anantharajuc.sbat.app.user.model.Person;
 import io.github.anantharajuc.sbat.app.user.repositories.PersonRepository;
 import io.github.anantharajuc.sbat.app.user.services.PersonCommandServiceImpl;
 
-/*
+
  * Test class for {@link PersonCommandServiceImpl}
  *
  * @author Anantha Raju c
- */
+ 
 @RunWith(SpringRunner.class)
 @SpringBootTest() 
 public class PersonCommandServiceImplTests 
@@ -112,3 +112,4 @@ public class PersonCommandServiceImplTests
 	}
 
 }
+*/

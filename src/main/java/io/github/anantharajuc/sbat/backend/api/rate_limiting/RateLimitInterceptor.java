@@ -56,6 +56,8 @@ public class RateLimitInterceptor implements HandlerInterceptor
         {
             response.addHeader(APIutil.HEADER_LIMIT_REMAINING, String.valueOf(probe.getRemainingTokens()));
             
+            log.info("Remaining API requests count : "+probe.getRemainingTokens());
+            
             return true;
         } 
         else 
@@ -64,9 +66,9 @@ public class RateLimitInterceptor implements HandlerInterceptor
 
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.addHeader(APIutil.HEADER_RETRY_AFTER, String.valueOf(waitForRefill));
-            response.sendError(HttpStatus.TOO_MANY_REQUESTS.value(), "You have exhausted your API Request Quota"); // 429
+            response.sendError(HttpStatus.TOO_MANY_REQUESTS.value(), "You have exhausted your API Request Quota. Check Rate Limiting details in response headers."); // 429
             
-            log.info("You have exhausted your API Request Quota");
+            log.info("You have exhausted your API Request Quota. Check Rate Limiting details in response headers.");
 
             return false;
         }
