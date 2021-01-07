@@ -526,7 +526,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTMwNDk0fQ.efu6fmLto2OWNYCVoFNX_D47y-psU923jr24PiLJD7WLtaNKrJKDoPx4TCq-uM0mf5PmfYsiOqk0ndt87aWD02Dw8-79G7Zdy1NzDknUTJiXXYPnmI2qtj1vPWdNIhT5roHY4HU_CnnnBwHDSRspi3wu7hA4rJPZS1tYZGySWW8WoMnYw_c0qzRHOD_l-hVUhjtUUqhn3eJsO408FlhnEnJ0vkGLl59fzXvoJ_ADmMe2NIMWxVF7ePuGHaHBvqXlHFu8buiUgvQJMl9CpVaRBmyR8eLCX4k0WLxiUI569iebBttE-k56gnO0MuKB26Z7zRSAxYXto4qIQOoMRKjxuA",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDk0ODQ5NzN9.M1t1fKzcDn89fN76goHBNagLlIxGRCityWl1hbFGSYlmWIwIbowJslB8ZEqSlusDLwVjFgHRCp6J7QBj9we5AOlrOtO38vuwWhlQDzRJ6iIwENsWEG85MK9Fa42Of_Wx0U8PstNxW9Ls-_M8MFBTywlaEQDtAAkd_41poJraJ8NopCF5ULbeWXX5bma-aw8oSvvVrgCIl0WGRPRy39V7klk2H1v5R913Bnzv2V31Yg9K3lzqJfTlU0aGnHpO1-BwgQOrJp93xJCOOYoV9NhJONrpWJiFmOa-U3ivsALMkNlQ9YONcI8Iot5dSf_FXpO516_Zc5gMFS5ZLteaebxF9g",
 									"type": "string"
 								}
 							]
@@ -653,7 +653,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjA4NTM2NDc5fQ.bIX5V4drlw85PGeeNtnElAjugSH0t3y2LOePpeABoLJTnDDC8YwlLg0YS2cEYpfcOTJObL4o1ISXWeKmqDudbkcDqDiqhMuaBKEO15Wwx6VWjgd5x0fzcb502Gy3coGJqtIWC6GxfDp6VTZTfjbvLQvTcLeHDObcZFVjB2OECy8_0fhqw7dPwIytubQy4HTMquoLsZymr95D8SJWmOrZTf69sjiQNRDOQhjCHQrX9EwO-JjAPKy0wbyjRncmNEGhp9GzeLS7I2IOF-AnynqCznyPXwKrU1S6GiGACnqUndlWIFl3IjmEsrFqC-dEXfZHiR1BK8AEIg8zWgff6d60Pg",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pblVzZXIiLCJleHAiOjE2MDk5NDIwMjR9.Wq0pLxB0Qw28Fr_qv0VrC2Gve35S6i_PmCw66BO7JqOiYAnVDlwb9fGbDg-d4gERNCcs_BQO0k1EIY562XcJlKIp1www8PsrIaWGby1lrax5vitGcqu8pvsA9CpZgdMwDSUHl_pNf6m85AmfUZ5Ztae6nIkgIDd36eNHeZ8KxXYxpGE7ukOdNzJ4nllutU5VWxQjAEEbzCfVfseDnJv2eaJPVJIvUCbi0okhEciH9NKEUh1VjDmGCTuTunBAQFESxTVAgMU7leewNjRqHhVkOIrDD09vVKKTaGUseU90E_ZUUrl5OBAF7Yt8DTxjaoZT50oyzteOHcKcmelOeE2DVw",
 									"type": "string"
 								}
 							]
@@ -1673,7 +1673,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"token\":\"73ab90d3-bc52-499e-9a72-e2a8b27ff937\",\r\n    \"username\":\"AdminUser\"\r\n}",
+							"raw": "{\r\n    \"token\":\"49fa3052-f188-4566-9967-2c08e154c475\",\r\n    \"username\":\"AdminUser\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
