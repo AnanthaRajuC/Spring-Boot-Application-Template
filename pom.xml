@@ -6,7 +6,7 @@
 
 	<groupId>com.arc</groupId>
 	<artifactId>spring-boot-application-template</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>latest</version>
 	<packaging>jar</packaging>
 	
 	<name>spring-boot-application-template</name>
