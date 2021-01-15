@@ -1,52 +1,16 @@
 # Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 
-|     Service    | Badge | Badge | Badge | Badge | Badge |
-|----------------|-------|-------|-------|-------|-------|
-|  **GitHub**    |[![GitHub last commit](https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/commits/master)|[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/pulls)|[![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)|[![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)|
+|     Service     | Badge | Badge | Badge | Badge | Badge |
+|-----------------|-------|-------|-------|-------|-------|
+|  **GitHub**     |[![GitHub last commit](https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/commits/master)|[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/pulls)|[![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)|[![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)|
+|  **GitHub**     |![GitHub repo size](https://img.shields.io/github/repo-size/Spring-Boot-Framework/Spring-Boot-Application-Template)|![GitHub top language](https://img.shields.io/github/languages/top/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)|![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Spring-Boot-Framework/Spring-Boot-Application-Template)|![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)|![GitHub language count](https://img.shields.io/github/languages/count/Spring-Boot-Framework/Spring-Boot-Application-Template)|
 |**Build/Quality**|[![Spring-Boot-Framework](https://circleci.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?style=svg)](https://circleci.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![BCH compliance](https://bettercodehub.com/edge/badge/Spring-Boot-Framework/Spring-Boot-Application-Template?branch=master)](https://bettercodehub.com/)|[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)|[![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)|
-|  **Others**    |[![Open Source Helpers](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template/badges/users.svg)](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template)|[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)|[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)|[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)|
-| **Security**   |[![DepShield Badge](https://depshield.sonatype.org/badges/Spring-Boot-Framework/Spring-Boot-Application-Template/depshield.svg)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
+|  **Others**     |[![Open Source Helpers](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template/badges/users.svg)](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template)|[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)|[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)|[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)|
+|    **Tech**     |![License](https://img.shields.io/badge/license-MIT-blue.svg)|![Material](https://img.shields.io/badge/Material%20Design-UI-orange.svg)|![Bootstrap](https://img.shields.io/badge/Bootstrap-v4.0.0-yellowgreen.svg)|![Java](https://img.shields.io/badge/Java-v1.8-orange.svg)|
+| **Docker**      |![Docker](https://img.shields.io/badge/Docker-v19-yellowgreen.svg)|[![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)|
+| **Security**    |[![DepShield Badge](https://depshield.sonatype.org/badges/Spring-Boot-Framework/Spring-Boot-Application-Template/depshield.svg)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
 
-[![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
-[![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)
-
-<p align="center">
-	<a alt="GitHub tag (latest SemVer)">
-        <img src="https://img.shields.io/github/tag/Spring-Boot-Framework/Spring-Boot-Application-Template.svg" />
-    </a>
-	<a alt="Docker Image Size (latest by date)">
-        <img src="https://img.shields.io/docker/image-size/anantha/spring-boot-application-template" />
-    </a>
-	<a alt="GitHub code size in bytes">
-        <img src="https://img.shields.io/github/languages/code-size/Spring-Boot-Framework/Spring-Boot-Application-Template" />
-    </a>
-	<a alt="GitHub top language">
-        <img src="https://img.shields.io/github/languages/top/Spring-Boot-Framework/Spring-Boot-Application-Template.svg" />
-    </a>
-	<a alt="GitHub repo size">
-        <img src="https://img.shields.io/github/repo-size/Spring-Boot-Framework/Spring-Boot-Application-Template" />
-    </a>
-	<a alt="GitHub language count">
-        <img src="https://img.shields.io/github/languages/count/Spring-Boot-Framework/Spring-Boot-Application-Template" />
-    </a>
-    <a alt="Java">
-        <img src="https://img.shields.io/badge/Java-v1.8-orange.svg" />
-    </a>
-    <a alt="Bootstrap">
-        <img src="https://img.shields.io/badge/Bootstrap-v4.0.0-yellowgreen.svg">
-    </a>
-    <a alt="Material">
-        <img src="https://img.shields.io/badge/Material%20Design-UI-orange.svg">  
-    </a>      
-    <a alt="Docker">
-        <img src="https://img.shields.io/badge/Docker-v19-yellowgreen.svg" />
-    </a>
-    <a alt="License">
-        <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
-    </a>
-</p>
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+bootstrapping+a+%40springboot+based+monolithic+web+application&url=https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template&hashtags=SpringBoot) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)  
 
 ## Important Note: This project's new milestone is to release version 1, so stay tuned.
 
@@ -54,7 +18,7 @@
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.
 
-This repository (Monolith) contains a recipe/scaffolding for bootstrapping a Web Application with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
+This repository contains a recipe/scaffolding for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
 ## Table of Contents
 
