@@ -9,6 +9,7 @@
 |    **Tech**     |![License](https://img.shields.io/badge/license-MIT-blue.svg)|![Material](https://img.shields.io/badge/Material%20Design-UI-orange.svg)|![Bootstrap](https://img.shields.io/badge/Bootstrap-v4.0.0-yellowgreen.svg)|![Java](https://img.shields.io/badge/Java-v1.8-orange.svg)|
 | **Docker**      |![Docker](https://img.shields.io/badge/Docker-v19-yellowgreen.svg)|[![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)|
 | **Security**    |[![DepShield Badge](https://depshield.sonatype.org/badges/Spring-Boot-Framework/Spring-Boot-Application-Template/depshield.svg)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
+|    **lgtm**     |[![lgtm-languages](https://badgen.net/lgtm/langs/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-alerts](https://badgen.net/lgtm/alerts/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines-java](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template/java)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-grade](https://badgen.net/lgtm/grade/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|
 
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+bootstrapping+a+%40springboot+based+monolithic+web+application&url=https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template&hashtags=SpringBoot) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)  
 
@@ -41,12 +42,6 @@ This repository contains a recipe/scaffolding for bootstrapping a **Monolithic W
       - [Accessing Data in H2 Database](#accessing-data-in-h2-database)
         * [H2 Console](#h2-console)
     + [Running the application via docker container](#running-the-application-via-docker-container)
-      - [Basic Docker commands for reference](#basic-docker-commands-for-reference)
-      - [Commands to run the MySQL docker image](#commands-to-run-the-mysql-docker-image)
-      - [Commands to run the docker image of app with MySQL docker image](#commands-to-run-the-docker-image-of-app-with-mysql-docker-image)
-      - [Connecting to the MySQL docker image via CLI](#connecting-to-the-mysql-docker-image-via-cli)
-      - [Basic MySQL commands for reference](#basic-mysql-commands-for-reference)
-      - [Docker Hub Commands for Reference](#docker-hub-commands-for-reference)
 - [Deployment](#deployment)
   * [Deploying to Heroku](#deploying-to-heroku)
 - [Code Coverage](#code-coverage)
@@ -279,111 +274,9 @@ Fill the login form as follows and click on Connect:
 
 #### Running the application via docker container
 
-* 	[anantha/spring-boot-application-template](https://hub.docker.com/r/anantha/spring-boot-application-template/tags) - DockerHub Image
-
-DockerHub Pull Command if you want to directly pull the docker image of the application from Docker Hub.
-
-```shell
-docker pull anantha/spring-boot-application-template
-```
-
-**NOTE:** If you want to build a docker image from the source code, ensure you build a jar of the application before building a docker image.  
-
-```shell
-$ mvn package -Dmaven.test.skip=true     //skip all tests and build. The build once completed is available in **target** folder
-```
-
-```shell
-$ mvn clean package                      //run all tests and build
-```
+* 	Refer to DOCKER.md for details.
 
 On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
-
-##### Basic Docker commands for reference
-
-|                           Command                                  |                                     Description                               |
-|--------------------------------------------------------------------|-------------------------------------------------------------------------------| 
-|`docker-machine ip default`							             | check your docker IP default, usually it is **192.168.99.102**			     |
-|`docker images`                                                     | take a look at the container images.                                          |
-|`docker ps`                                                         | list all the running containers.                                              |
-|`docker ps -a`                                                      | list all the containers, including the ones that have finished executing.     |
-|`docker restart [container_name]`							         | restart the docker image			                             		         |
-|`docker stats`							                             | Show CPU and memory usage of all running containers                 	         |
-|`docker stats [container_name]`						             | Show CPU and memory usage of a particular running container                   |
-|`docker stats [container1_name] [container2_name]`			         | Show CPU and memory usage of container1, container2                           |
-|`docker top [container_name]`			                             | Show running processes in a container                                         |
-|`docker system df`			                                         | Show storage usage                                                            |
-|`docker logs [container_id]`			                             | list container logs                                                           |
-|`docker logs [container_id] --tail N`                               | list container logs, **`--tail`** flag will show the last **N** lines of logs |   
-|`docker logs [container_id] --since YYYY-MM-DD`                     | list container logs since a particular date                                   |
-|`docker logs [container_id] --since YYYY-MM-DDTHH:MM:SS.000000000Z` | list container logs since a particular timestamp                              |
-
-##### Commands to run the MySQL docker image
-
-|                                                   Command                                                                                        |                                 Description                              |
-|--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------| 
-|**`docker pull mysql:5.7`**							                                                                                           | pull a MySQL Docker Image                                 				  |
-|`docker images`                                                                                                                                   | take a look at the container images. See if MySQL image is present       |
-|**`docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=sbat -d mysql:5.7`**| run the MySQL docker image                                               |
-
-##### Commands to run the docker image of app with MySQL docker image
-
-|                                                                  Command                                                                                              |                                                         Description                              |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
-|**`docker build -t spring-boot-application-template .`**                                                                                                               | **Build docker image of the project**                                                            |
-|**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template anantha/spring-boot-application-template:0.0.1-SNAPSHOT`**         | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
-|**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**| **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
-|**`docker stop [container_id]`**                                                                                                                                       | **stop a container**                                                                             |
-|**`docker rm [container_name]`**                                                                                                                                       | **remove a container with a particular container name**                                          |
-|`docker rm $(docker ps -aq)`                                                                                                                                           | stop and remove all containers                                                                   |
-|`docker restart mysql-docker`																									                                        | restart the MySQL docker image																	 |
-
-##### Connecting to the MySQL docker image via CLI 
-
-|                                                           Command                                                              |                                                         Description                              |
-|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
-|`docker exec mysql-docker mysql -usbat -psbat -e 'show databases;'`														     | connect to MySQL image without interactive CLI.													|
-|`docker exec -it mysql-docker mysql -usbat -psbat -e 'show databases;'`														 | connect to MySQL image without interactive CLI.													|
-|`docker exec -it mysql-docker mysql -usbat -psbat`																				 | connect to MySQL image via interactive CLI.														|
-
-##### Basic MySQL commands for reference
-
-|                Commands            |                   Description                  |
-|------------------------------------|------------------------------------------------| 
-|`show databases;`					 | lists the databases on the MySQL server host	  |
-|`show schemas;`					 | a synonym for **show databases;**		      |
-|`use [database_name];`				 | select any existing database in the SQL schema |
-|`show tables;`						 | list tables in a Database	         		  |
-
-**NOTE:** If you are facing any issues with accessing the application at **`localhost:8080`** while using **DockerToolBox** and **OracleVM VirtualBox**
-
-In the Oracle VM VirtualBox:
-
-*	Click the appropriate machine (probably the one labeled **default**)
-*	**Settings**
-*	**Network** > **Adapter 1** > **Advanced** > **Port Forwarding**
-*	Click on **+** to add a new Rule
-*	Set **Host Port** to **8080** and **Guest Port** to **8080**; be sure to leave **Host IP** and **Guest IP** empty
-
-<img src="documents\images\tools\Oracle-VM-Virtualbox-Manager.PNG"/>
-
-Reference: https://stackoverflow.com/a/45822356/3711562
-
-##### Docker Hub Commands for Reference     
-
-|                               Command                              |                         Description                               |
-|--------------------------------------------------------------------|-------------------------------------------------------------------| 
-|`docker logout`							                         | logout of Docker Hub from the local machine.                      |
-|`docker login --username=YOUR_DOCKERHUB_USERNAME`	                 | login to Docker Hub from your machine.                            |
-|`docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]`        | re-tagging an existing local image					             |
-|`docker commit <existing-container> <hub-user>/<repo-name>[:<tag>]` | commit changes					                                 |
-|`docker push <hub-user>/<repo-name>:<tag>`                          | push this repository to the registry designated by its name or tag|
-
-**Examples:**
-
-*	re-tagging an existing local image : `docker tag spring-boot-application-template anantha/spring-boot-application-template:h2db-test-profile`
-*	commit changes                     : `docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile`
-*	docker push                        : `docker push anantha/spring-boot-application-template:h2db-test-profile`
 
 ## Deployment
 
@@ -493,200 +386,11 @@ Percentage of the requests served within a certain time (ms)
 
 ## Security
 
-### Looking for something in particular?
-
-[Role Based Authentication (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
-
-[Permission Based Authentication (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
-
-[Spring Method-Security with @PreAuthorize (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
-
-[Database Authentication Authorization (In-memory Users)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
-
-[Role, Permission based User Authentication via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
-
-[Json Web Token - Role Based Access Controll via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
-
-Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.backend.security`.
-
-*	A Java Keystore File is required to generate JSON Web Token.
-
-```shell
-keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
-```
-
-<img src="documents\images\settings\reddit-clone-jks-generation.PNG"/>
-
-|     Username     | Password |     Role     |                      Permission                       |         Resource          |
-|------------------|----------|--------------|-------------------------------------------------------|---------------------------|
-|`johndoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
-|`AdminUser`       |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
-|`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
-
-|                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
-|---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
-|`http://localhost:8080/api/v1/auth/signup`                           | POST   |                                               | [JSON](#signup)           |
-|`http://localhost:8080/api/v1/auth/verification/{verification-token}`| GET    |                                               |                           |
-|`http://localhost:8080/api/v1/auth/login`                            | POST   |Bearer Token, Refresh Token is generated       | [JSON](#login)            |
-|`http://localhost:8080/api/v1/subreddit`                             | POST   |Bearer Token should be passed for authorization| [JSON](#subreddit)        |
-|`http://localhost:8080/api/v1/auth/refresh/token`                    | POST   |Refresh Token from login should be passed      | [JSON](#refresh-token)    |
-
-#### Sample Valid JSON Request Bodys
-
-##### <a id="signup">Signup -> /api/auth/signup</a>
-```json
-{
-    "username":"johndoe",
-    "email":"domain@example.com",
-    "password":"abcd1234"
-}
-```
-
-##### <a id="login">Login -> /api/auth/login</a>
-```json
-{
-    "username":"johndoe",
-    "password":"abcd1234"
-}
-```
-
-##### <a id="subreddit">Subreddit -> /api/subreddit</a>
-```json
-{
-    "name":"my-cool-subreddit",
-    "description":"My subreddit for all thing cool."
-}
-```
-
-##### <a id="refresh-token">Refresh Token -> /api/auth/refresh/token</a>
-```json
-{
-    "token":"1178cd43-21d2-45b4-8b5f-c79aa1d5b76e",
-    "username":"johndoe"
-}
-```
-
-### API Rate Limiting
-
-|     Tier   | API Request Cap |  API Key Prefix  |
-|------------|-----------------|------------------|
-|FREE        |     25          |     `null`       |
-|BASIC       |     50          |     `PX001-`     |
-|PROFESSIONAL|     75          |     `BX001-`     |
-
-Rate Limiting header `X-api-key`
-
-[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbat.backend.api.rate_limiting` package
-
-### Preventing Brute Force Authentication Attempts
-
-A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.
-
-Refer `io.github.anantharajuc.sbat.backend.security.authentication.LoginAttemptService`
-
-### Session Timeout
-
-If the application remains inactive for a specified period of time, the session will expire. The session after this period of time is considered invalid and the user has to login to the application again.
-
-This value **server.servlet.session.timeout** can be configured in **application.properties** file
+* 	Refer to App_Security_and_API.md for details.
 
 ## Explore Rest APIs
 
-The app defines following CRUD APIs. **If localhost doesn't work, use 192.168.99.102**
-
-To enable SSL, toggle **server.ssl.enabled** to **true** and use the **https://** protocol in the URL instead of **http://**
-
-Since the SSL certificate is self signed, turn off the **SSL certificate verification** option while interacting with the URLs via **Postman**
-
-<img src="documents\images\tools\postman-ssl-certificate-verification.PNG"/>
-
-### URLs
-
-|                   URL                  | Method |          Remarks       |
-|----------------------------------------|--------|------------------------|
-|`http://localhost:8080/index`           | GET    | Home Page              |
-|`http://localhost:8080/sbat/index`      | GET    | Home Page              |
-|`http://localhost:8080/sbat/about`      | GET    | About Page             |
-|`http://localhost:8080/sbat/tech-stack` | GET    | Technology Stack Table |
-|`http://localhost:8080/sbat/close`      | GET    | Close App via Actuator |
-|`http://localhost:8080/sbat/login`      | GET    | Login Page             |
-|`http://localhost:8080/sbat/error`      | GET    | Custom Error Page      |
-
-### Other URLs
-
-|                           URL                                  | Method |
-|----------------------------------------------------------------|--------|
-|`http://localhost:8080/api/generic-hello`                       |   GET  | 
-|`http://localhost:8080/api/personalized-hello/`                 |   GET  | 
-|`http://localhost:8080/api/personalized-hello?name=spring-boot` |   GET  | 
-|`http://localhost:8080/api/loggers`                             |   GET  | 
-
-### Actuator
-
-To monitor and manage your application
-
-|              URL                          |Method|
-|-------------------------------------------|------|
-|`http://localhost:8080/actuator/`          |  GET |
-|`http://localhost:8080/actuator/health`    |  GET |
-|`http://localhost:8080/actuator/info`      |  GET |
-|`http://localhost:8080/actuator/prometheus`|  GET |
-|`http://localhost:8080/actuator/httptrace` |  GET |
-
-### Person URLs
-
-#### Accessible to **johndoe** user only
-
-|                           URL                            |  Method |                                         Remarks                                     | Sample Valid Request Body |
-|----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
-|`http://localhost:8080/api/v1/person`                     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/api/v1/person`                     | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
-|`http://localhost:8080/api/v1/person/{id}`                | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
-|`http://localhost:8080/api/v1/person/{id}`                | PUT     | Update a person                                                                     |    [JSON](#personcreate)  |
-|`http://localhost:8080/api/v1/person/{id}`                | DELETE  | Delete a person                                                                     |                           |
-
-### Person Management URLs
-
-#### Role and Permission based secure access to **AdminUser** and **AdminTrainee** users
-
-|                          URL                             |  Method |                                       Remarks                                       | Sample Valid Request Body |
-|----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
-|`http://localhost:8080/management/api/v1/person`          | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/management/api/v1/person`          | POST    | Add a person                                                                        |   [JSON](#personcreate)   |
-|`http://localhost:8080/management/api/v1/person/{id}`     | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
-|`http://localhost:8080/management/api/v1/person/pageable` | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|   Pageable API Endpoint   |
-|`http://localhost:8080/management/api/v1/person/{id}`     | PUT     | Update a person                                                                     |   [JSON](#personcreate)   |
-|`http://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     |                           |
-
-
-#### Sample Valid JSON Request Bodys
-
-##### <a id="personcreate">Create Person -> /api/person</a>
-```json
-{
-	"name": "Jane",
-	"username": "janejane",
-	"emailPrimary": "jane1.howell@gmail.com",
-	"emailSecondary": "jane2.howell@gmail.com",
-	"phone":9191919191,
-	"gender": "FEMALE",
-	"age": 25,
-	"password": "password",
-	"dob":"25-12-2005",
-	"isAdult":true,
-	"address": {
-		"street": "Jane Plains",
-		"suite": "Suite 779",
-		"city": "Wisokyburghh",
-		"zipcode": "90565-7771",
-		"geo": {
-			"lat": "-43.9589",
-			"lng": "-34.4628"
-		}
-	}
-}
-```
+* 	Refer to App_Security_and_API.md for details.
 
 ## Documentation
 
