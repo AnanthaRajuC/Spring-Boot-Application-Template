@@ -51,25 +51,7 @@ This repository contains a recipe/scaffolding for bootstrapping a **Monolithic W
   * [Testing with Maven](#testing-with-maven)
   * [Basic Load Testing](#basic-load-testing)
 - [Security](#security)
-  * [Looking for something in particular?](#looking-for-something-in-particular-)
-    + [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys)
-      - [<a id="signup">Signup -> /api/auth/signup</a>](#-a-id--signup--signup-----api-auth-signup--a-)
-      - [<a id="login">Login -> /api/auth/login</a>](#-a-id--login--login-----api-auth-login--a-)
-      - [<a id="subreddit">Subreddit -> /api/subreddit</a>](#-a-id--subreddit--subreddit-----api-subreddit--a-)
-      - [<a id="refresh-token">Refresh Token -> /api/auth/refresh/token</a>](#-a-id--refresh-token--refresh-token-----api-auth-refresh-token--a-)
-  * [API Rate Limiting](#api-rate-limiting)
-  * [Preventing Brute Force Authentication Attempts](#preventing-brute-force-authentication-attempts)
-  * [Session Timeout](#session-timeout)
 - [Explore Rest APIs](#explore-rest-apis)
-  * [URLs](#urls)
-  * [Other URLs](#other-urls)
-  * [Actuator](#actuator)
-  * [Person URLs](#person-urls)
-    + [Accessible to **johndoe** user only](#accessible-to---johndoe---user-only)
-  * [Person Management URLs](#person-management-urls)
-    + [Role and Permission based secure access to **AdminUser** and **AdminTrainee** users](#role-and-permission-based-secure-access-to---adminuser---and---admintrainee---users)
-    + [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys-1)
-      - [<a id="personcreate">Create Person -> /api/person</a>](#-a-id--personcreate--create-person-----api-person--a-)
 - [Documentation](#documentation)
 - [Internationalization (i18n)](#internationalization--i18n-)
 - [Files and Directories Structure](#files-and-directories-structure)
@@ -274,9 +256,7 @@ Fill the login form as follows and click on Connect:
 
 #### Running the application via docker container
 
-* 	Refer to DOCKER.md for details.
-
-On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
+* 	Refer to [DOCKER.md](documents\DOCKER.md) for details.
 
 ## Deployment
 
@@ -386,11 +366,11 @@ Percentage of the requests served within a certain time (ms)
 
 ## Security
 
-* 	Refer to App_Security_and_API.md for details.
+* 	Refer to [APP_SECURITY_AND_API.md](documents\APP_SECURITY_AND_API.md) for details.
 
 ## Explore Rest APIs
 
-* 	Refer to App_Security_and_API.md for details.
+* 	Refer to [APP_SECURITY_AND_API.md](documents\APP_SECURITY_AND_API.md) for details.
 
 ## Documentation
 
