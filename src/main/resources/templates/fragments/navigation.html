@@ -1,76 +1,75 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+   <a class="navbar-brand" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template" target="_blank" rel="noopener noreferrer">
+   <img src="/images/map.svg" width="30" height="30" alt="" loading="lazy">
+   SBAT
+   </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${#strings.toUpperCase(#locale)}"></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+               <a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=en)}"><img src="/images/us.jpg" alt="user-image" class="mr-1" height="12">English</a>
+               <a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=es)}"><img src="/images/spain.jpg" alt="user-image" class="mr-1" height="12">Spanish</a>
+            </div>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/sbat/index" th:text="#{navbar.home.text}"></i><span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/sbat/tech-stack" th:text="#{navbar.tech-stack.text}"></span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/sbat/about" th:text="#{navbar.about.text}"></span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
+         </li>
+         <li class="nav-item" sec:authorize="isAuthenticated()">
+            <a sec:authorize="hasRole('ROLE_PERSON')" class="nav-link" href="/sbat/listPersons" th:text="#{navbar.persons.text}"></span></a>
+         </li>
+		 
 
-  <a class="navbar-brand" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template" target="_blank" rel="noopener noreferrer">
-	  <img src="/images/map.svg" width="30" height="30" alt="" loading="lazy">
-	  SBAT
-  </a>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-    <ul class="navbar-nav mr-auto">
-	<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${#strings.toUpperCase(#locale)}"></a>
-		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			<a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=en)}"><img src="/images/us.jpg" alt="user-image" class="mr-1" height="12">English</a>
-			<a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=es)}"><img src="/images/spain.jpg" alt="user-image" class="mr-1" height="12">Spanish</a>
-		</div>
-	</li>
-      <li class="nav-item">
-        <a class="nav-link" href="/sbat/index" th:text="#{navbar.home.text}"></i><span class="sr-only">(current)</span></a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="/sbat/tech-stack" th:text="#{navbar.tech-stack.text}"></span></a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="/sbat/about" th:text="#{navbar.about.text}"></span></a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
-      </li>
-	  <li class="nav-item" sec:authorize="isAuthenticated()">
-        <a sec:authorize="hasRole('ROLE_PERSON')" class="nav-link" href="/sbat/listPersons" th:text="#{navbar.persons.text}"></span></a>
-      </li>
-     </ul>   
-   
-   </br>		    	
-
-	<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-	
-	<a sec:authorize="!isAuthenticated()" class="btn btn-link btn-lg" type="submit" href="/sbat/login" role="button" th:text="#{navbar.login.text}"></a>	
-
-    <ul sec:authorize="isAuthenticated()" class="navbar-nav mr-1">
-	
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		  <a class="dropdown-header font-weight-bold" sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"/>
-		  <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Dashboard</a>	
-		  <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" href="/sbat/settings" th:text="#{navbar.settings.text}"></a>			  
-		  <div class="dropdown-divider"></div>
-          <form id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
-			<button type="submit" th:text="#{navbar.logout.text}" class="dropdown-item text-danger"/>
-		  </form>
-		  <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item text-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>			  
-		</div>
-      </li>   
-    </ul>
-	</ul>
-   
-   </br>
-   
-   <div class="custom-control custom-switch mr-1"> 
-        <input type="checkbox" class="custom-control-input" id="darkSwitch">
-        <label class="custom-control-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="Help"></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+               <a class="dropdown-item notify-item" href="/sbat/form"><img src="/images/us.jpg" alt="user-image" class="mr-1" height="12">Docker</a>
+               <a class="dropdown-item notify-item" href="/sbat/form"><img src="/images/spain.jpg" alt="user-image" class="mr-1" height="12">Architecture</a>
+            </div>
+         </li> 
+		 
+		 
+      </ul>
+      </br>		    	
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+         <a sec:authorize="!isAuthenticated()" class="btn btn-link btn-lg" type="submit" href="/sbat/login" role="button" th:text="#{navbar.login.text}"></a>	
+         <ul sec:authorize="isAuthenticated()" class="navbar-nav mr-1">
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-header font-weight-bold" sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"/>
+                     <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Dashboard</a>	
+                  <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" href="/sbat/settings" th:text="#{navbar.settings.text}"></a>			  
+                  <div class="dropdown-divider"></div>
+                  <form id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
+                     <button type="submit" th:text="#{navbar.logout.text}" class="dropdown-item text-danger"/>
+                  </form>
+                  <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item text-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>			  
+               </div>
+            </li>
+         </ul>
+      </ul>
+      </br>
+      <div class="custom-control custom-switch mr-1"> 
+         <input type="checkbox" class="custom-control-input" id="darkSwitch">
+         <label class="custom-control-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
+      </div>
    </div>
-
-  </div> 
-  </br>
-  </br>
+   </br>
+   </br>
 </nav>

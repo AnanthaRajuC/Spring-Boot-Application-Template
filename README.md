@@ -6,16 +6,18 @@
 -->
 # Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
 
-  <p align="center">
-    A simple Spring Boot Web App template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Request Feature</a>
-  </p>
+The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.
+
+This repository contains a **recipe/scaffolding** for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
+
+<p align="center">
+	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template"><strong>Explore the docs »</strong></a>
+	<br />
+	<br />
+	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Report Bug</a>
+	·
+	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Request Feature</a>
+</p>
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -37,13 +39,6 @@
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+bootstrapping+a+%40springboot+based+monolithic+web+application&url=https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template&hashtags=SpringBoot) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)  
 
 ## Important Note: This project's new milestone is to release version 1, so stay tuned.
-
-<!-- PURPOSE -->
-## Purpose
-
-The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.
-
-This repository contains a **recipe/scaffolding** for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -130,7 +125,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 [![Home](documents/images/app-ui/home.PNG)](documents/images/app-ui/home.PNG)
 
-More [Screenshots](documents/SCREENSHOTS.md)
+**More [Screenshots](documents/SCREENSHOTS.md)**
 
 ## Technology stack & other Open-source libraries
 
@@ -182,31 +177,35 @@ More [Screenshots](documents/SCREENSHOTS.md)
 
 ## Features and To-Do
 
-* 	[x] Logger (Console, File)
-* 	[x] [Content Negotiation](https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc)
-* 	[x] [Dark Mode](https://en.wikipedia.org/wiki/Light-on-dark_color_scheme)
-* 	[x] [Spring Security](https://spring.io/projects/spring-security) RBAC, Session Timeout
-* 	[x] API [Rate Limiting](https://en.wikipedia.org/wiki/Rate_limiting)
-* 	[x] [JPA Auditing via AuditorAware Interface](https://docs.spring.io/spring-data/jpa/docs/1.7.0.DATAJPA-580-SNAPSHOT/reference/html/auditing.html)
-* 	[x] [Spring Profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles) (dev, production, qa, staging, test)
-* 	[x] [Docker](https://www.docker.com/)
-* 	[x] [Caching](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html)
-* 	[x] [HATEOS (Hypermedia as the Engine of Application State)](https://en.wikipedia.org/wiki/HATEOAS)
-* 	[x] Software documentation - [Swagger](https://swagger.io/), [Javadoc](https://en.wikipedia.org/wiki/Javadoc), [Postman Collection](https://www.postman.com/collection/)
-* 	[x] [HTTPS](https://en.wikipedia.org/wiki/HTTPS) with (self-signed certificate)[https://en.wikipedia.org/wiki/Self-signed_certificate]
-* 	[x] [JSON Web Token](https://www.jsonwebtoken.io/) based authentication
-* 	[ ] Quartz Scheduler
-* 	[ ] Multiple Databases
-* 	[ ] [jOOQ](https://www.jooq.org/)
-* 	[ ] Replace Docker with [jib](https://github.com/GoogleContainerTools/jib)
-*   [ ] Unit Tests, Integration Tests
-* 	[ ] Shut down app on button click via actuator url 
-* 	[ ] Spring Boot Admin
-* 	[ ] NoSQL (MongoDB)
-* 	[ ] Multitenancy
-* 	[ ] Micrometer
-* 	[ ] Grafna
-* 	[ ] Spring Retry
+<details open="open">
+   <ul>
+      <li>[x] Logger (Console, File)</li>
+      <li>[x] <a href="https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc">Content Negotiation</a></li>
+      <li>[x] <a href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme">Dark Mode</a></li>
+      <li>[x] <a href="https://spring.io/projects/spring-security">Spring Security</a> RBAC, Session Timeout</li>
+      <li>[x] API <a href="https://en.wikipedia.org/wiki/Rate_limiting">Rate Limiting</a></li>
+      <li>[x] <a href="https://docs.spring.io/spring-data/jpa/docs/1.7.0.DATAJPA-580-SNAPSHOT/reference/html/auditing.html">JPA Auditing via AuditorAware Interface</a></li>
+      <li>[x] <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles">Spring Profiles</a> (dev, production, qa, staging, test)</li>
+      <li>[x] <a href="https://www.docker.com/">Docker</a></li>
+      <li>[x] <a href="https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html">Caching</a></li>
+      <li>[x] <a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOS (Hypermedia as the Engine of Application State)</a></li>
+      <li>[x] Software documentation - <a href="https://swagger.io/">Swagger</a>, <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a>, <a href="https://www.postman.com/collection/">Postman Collection</a></li>
+      <li>[x] <a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a> with <a href="https://en.wikipedia.org/wiki/Self-signed_certificate">(self-signed certificate)</a></li>
+      <li>[x] <a href="https://www.jsonwebtoken.io/">JSON Web Token</a> based authentication</li>
+      <li>[ ] Quartz Scheduler</li>
+      <li>[ ] Multiple Databases</li>
+      <li>[ ] <a href="https://www.jooq.org/">jOOQ</a></li>
+      <li>[ ] Replace Docker with <a href="https://github.com/GoogleContainerTools/jib">jib</a></li>
+      <li>[ ] Unit Tests, Integration Tests</li>
+      <li>[ ] Shut down app on button click via actuator url </li>
+      <li>[ ] Spring Boot Admin</li>
+      <li>[ ] NoSQL (MongoDB)</li>
+      <li>[ ] Multitenancy</li>
+      <li>[ ] Micrometer</li>
+      <li>[ ] Grafna</li>
+      <li>[ ] Spring Retry</li>
+   </ul>
+</details>
 
 ## Getting Started
 
