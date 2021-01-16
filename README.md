@@ -1,4 +1,27 @@
+<!--
+*** Thanks for checking out Spring Boot Application Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Thanks again!
+-->
 # Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
+
+  <p align="center">
+    A simple Spring Boot Web App template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Request Feature</a>
+  </p>
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+-->
 
 |     Service     | Badge | Badge | Badge | Badge | Badge |
 |-----------------|-------|-------|-------|-------|-------|
@@ -15,56 +38,102 @@
 
 ## Important Note: This project's new milestone is to release version 1, so stay tuned.
 
+<!-- PURPOSE -->
 ## Purpose
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.
 
-This repository contains a recipe/scaffolding for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
+This repository contains a **recipe/scaffolding** for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
+<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-- [Application screenshots](#application-screenshots)
-- [Technology stack & other Open-source libraries](#technology-stack---other-open-source-libraries)
-  * [Data](#data)
-  * [Client - Frontend/UI](#client---frontend-ui)
-  * [Server - Backend](#server---backend)
-  * [Libraries and Plugins](#libraries-and-plugins)
-  * [Others](#others)
-  * [External Tools & Services](#external-tools---services)
-- [Features and To-Do](#features-and-to-do)
-- [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [EER Diagram](#eer-diagram)
-- [Installing](#installing)
-    + [Running the application with IDE](#running-the-application-with-ide)
-    + [Running the application with Maven](#running-the-application-with-maven)
-    + [Running the application with Executable JAR](#running-the-application-with-executable-jar)
-      - [Accessing Data in H2 Database](#accessing-data-in-h2-database)
-        * [H2 Console](#h2-console)
-    + [Running the application via docker container](#running-the-application-via-docker-container)
-- [Deployment](#deployment)
-  * [Deploying to Heroku](#deploying-to-heroku)
-- [Code Coverage](#code-coverage)
-  * [Cobertura](#cobertura)
-- [Testing API](#testing-api)
-  * [Testing with Postman Runner](#testing-with-postman-runner)
-  * [Testing with Maven](#testing-with-maven)
-  * [Basic Load Testing](#basic-load-testing)
-- [Security](#security)
-- [Explore Rest APIs](#explore-rest-apis)
-- [Documentation](#documentation)
-- [Internationalization (i18n)](#internationalization--i18n-)
-- [Files and Directories Structure](#files-and-directories-structure)
-  * [Packages](#packages)
-- [Reporting Issues/Suggest Improvements](#reporting-issues-suggest-improvements)
-- [The End](#the-end)
-- [FOSSA third-party code, license compliance and vulnerabilities](#fossa-third-party-code--license-compliance-and-vulnerabilities)
+<details open="open">
+   <ul>
+      <li><a href="#application-screenshots">Application screenshots</a></li>
+      <li>
+         <a href="#technology-stack---other-open-source-libraries">Technology stack &amp; other Open-source libraries</a>
+         <ul>
+            <li><a href="#data">Data</a></li>
+            <li><a href="#client---frontend-ui">Client - Frontend/UI</a></li>
+            <li><a href="#server---backend">Server - Backend</a></li>
+            <li><a href="#libraries-and-plugins">Libraries and Plugins</a></li>
+            <li><a href="#others">Others</a></li>
+            <li><a href="#external-tools---services">External Tools &amp; Services</a></li>
+         </ul>
+      </li>
+      <li><a href="#features-and-to-do">Features and To-Do</a></li>
+      <li>
+         <a href="#getting-started">Getting Started</a>
+         <ul>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#eer-diagram">EER Diagram</a></li>
+         </ul>
+      </li>
+      <li>
+         <a href="#installing">Installing</a>
+         <ul>
+            <li><a href="#running-the-application-with-ide">Running the application with IDE</a></li>
+            <li><a href="#running-the-application-with-maven">Running the application with Maven</a></li>
+            <li>
+               <a href="#running-the-application-with-executable-jar">Running the application with Executable JAR</a>
+               <ul>
+                  <li>
+                     <a href="#accessing-data-in-h2-database">Accessing Data in H2 Database</a>
+                     <ul>
+                        <li><a href="#h2-console">H2 Console</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><a href="#running-the-application-via-docker-container">Running the application via docker container</a></li>
+         </ul>
+      </li>
+      <li>
+         <a href="#deployment">Deployment</a>
+         <ul>
+            <li><a href="#deploying-to-heroku">Deploying to Heroku</a></li>
+         </ul>
+      </li>
+      <li>
+         <a href="#code-coverage">Code Coverage</a>
+         <ul>
+            <li><a href="#cobertura">Cobertura</a></li>
+         </ul>
+      </li>
+      <li>
+         <a href="#testing-api">Testing API</a>
+         <ul>
+            <li><a href="#testing-with-postman-runner">Testing with Postman Runner</a></li>
+            <li><a href="#testing-with-maven">Testing with Maven</a></li>
+            <li><a href="#basic-load-testing">Basic Load Testing</a></li>
+         </ul>
+      </li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#explore-rest-apis">Explore Rest APIs</a></li>
+      <li><a href="#documentation">Documentation</a></li>
+      <li><a href="#internationalization--i18n-">Internationalization (i18n)</a></li>
+      <li>
+         <a href="#files-and-directories-structure">Files and Directories Structure</a>
+         <ul>
+            <li><a href="#packages">Packages</a></li>
+         </ul>
+      </li>
+      <li><a href="#reporting-issues-suggest-improvements">Reporting Issues/Suggest Improvements</a></li>
+      <li><a href="#the-end">The End</a></li>
+      <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#license">License</a></li>
+      <li><a href="#fossa-third-party-code--license-compliance-and-vulnerabilities">FOSSA third-party code, license compliance and vulnerabilities</a></li>
+      <li><a href="#contact">Contact</a></li>
+   </ul>
+</details>
 
+<!-- APPLICATION SCREENSHOTS -->
 ## Application screenshots
 
-<img src="documents\images\app-ui\home.PNG"/>
-<img src="documents\images\app-ui\login.PNG"/>
-<img src="documents\images\app-ui\about.PNG"/>
+[![Home](documents/images/app-ui/home.PNG)](documents/images/app-ui/home.PNG)
+
+More [Screenshots](documents/SCREENSHOTS.md)
 
 ## Technology stack & other Open-source libraries
 
@@ -256,7 +325,7 @@ Fill the login form as follows and click on Connect:
 
 #### Running the application via docker container
 
-* 	Refer to [DOCKER.md](documents\DOCKER.md) for details.
+* 	Refer to [DOCKER.md](documents/DOCKER.md) for details.
 
 ## Deployment
 
@@ -366,11 +435,11 @@ Percentage of the requests served within a certain time (ms)
 
 ## Security
 
-* 	Refer to [APP_SECURITY_AND_API.md](documents\APP_SECURITY_AND_API.md) for details.
+* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
 
 ## Explore Rest APIs
 
-* 	Refer to [APP_SECURITY_AND_API.md](documents\APP_SECURITY_AND_API.md) for details.
+* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
 
 ## Documentation
 
@@ -568,8 +637,32 @@ If you would like to enhance, please:
 * 	Add **new suggestions**, and
 *	Finally, give it a 🌟.
 
-*	Happy Coding ...* 🙂
+* Happy Coding ...* 🙂
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+Kindly refer to [CONTRIBUTING.md](/CONTRIBUTING.md) for important additional details
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## FOSSA third-party code, license compliance and vulnerabilities
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_large)
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@anantharajuc](https://twitter.com/anantharajuc) - arcswdev@gmail.com
+
+Project Link: [https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)
