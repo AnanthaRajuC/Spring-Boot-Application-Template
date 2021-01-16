@@ -1,25 +1,57 @@
 ## Table of Contents
 
-- [Security](#security)
-  * [Looking for something in particular?](#looking-for-something-in-particular-)
-    + [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys)
-      - [<a id="signup">Signup -> /api/auth/signup</a>](#-a-id--signup--signup-----api-auth-signup--a-)
-      - [<a id="login">Login -> /api/auth/login</a>](#-a-id--login--login-----api-auth-login--a-)
-      - [<a id="subreddit">Subreddit -> /api/subreddit</a>](#-a-id--subreddit--subreddit-----api-subreddit--a-)
-      - [<a id="refresh-token">Refresh Token -> /api/auth/refresh/token</a>](#-a-id--refresh-token--refresh-token-----api-auth-refresh-token--a-)
-  * [API Rate Limiting](#api-rate-limiting)
-  * [Preventing Brute Force Authentication Attempts](#preventing-brute-force-authentication-attempts)
-  * [Session Timeout](#session-timeout)
-- [Explore Rest APIs](#explore-rest-apis)
-  * [URLs](#urls)
-  * [Other URLs](#other-urls)
-  * [Actuator](#actuator)
-  * [Person URLs](#person-urls)
-    + [Accessible to **johndoe** user only](#accessible-to---johndoe---user-only)
-  * [Person Management URLs](#person-management-urls)
-    + [Role and Permission based secure access to **AdminUser** and **AdminTrainee** users](#role-and-permission-based-secure-access-to---adminuser---and---admintrainee---users)
-    + [Sample Valid JSON Request Bodys](#sample-valid-json-request-bodys-1)
-      - [<a id="personcreate">Create Person -> /api/person</a>](#-a-id--personcreate--create-person-----api-person--a-)
+<details open="open">
+   <ul>
+      <li>
+         <a href="#security">Security</a>
+         <ul>
+            <li>
+               <a href="#looking-for-something-in-particular-">Looking for something in particular?</a>
+               <ul>
+                  <li>
+                     <a href="#sample-valid-json-request-bodys">Sample Valid JSON Request Bodys</a>
+                     <ul>
+                        <li><a href="#-a-id--signup--signup-----api-auth-signup--a-"><a id="signup">Signup -&gt; /api/auth/signup</a></a></li>
+                        <li><a href="#-a-id--login--login-----api-auth-login--a-"><a id="login">Login -&gt; /api/auth/login</a></a></li>
+                        <li><a href="#-a-id--subreddit--subreddit-----api-subreddit--a-"><a id="subreddit">Subreddit -&gt; /api/subreddit</a></a></li>
+                        <li><a href="#-a-id--refresh-token--refresh-token-----api-auth-refresh-token--a-"><a id="refresh-token">Refresh Token -&gt; /api/auth/refresh/token</a></a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><a href="#api-rate-limiting">API Rate Limiting</a></li>
+            <li><a href="#preventing-brute-force-authentication-attempts">Preventing Brute Force Authentication Attempts</a></li>
+            <li><a href="#session-timeout">Session Timeout</a></li>
+         </ul>
+      </li>
+      <li>
+         <a href="#explore-rest-apis">Explore Rest APIs</a>
+         <ul>
+            <li><a href="#urls">URLs</a></li>
+            <li><a href="#other-urls">Other URLs</a></li>
+            <li><a href="#actuator">Actuator</a></li>
+            <li>
+               <a href="#person-urls">Person URLs</a>
+               <ul>
+                  <li><a href="#accessible-to---johndoe---user-only">Accessible to <strong>johndoe</strong> user only</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#person-management-urls">Person Management URLs</a>
+               <ul>
+                  <li><a href="#role-and-permission-based-secure-access-to---adminuser---and---admintrainee---users">Role and Permission based secure access to <strong>AdminUser</strong> and <strong>AdminTrainee</strong> users</a></li>
+                  <li>
+                     <a href="#sample-valid-json-request-bodys-1">Sample Valid JSON Request Bodys</a>
+                     <ul>
+                        <li><a href="#-a-id--personcreate--create-person-----api-person--a-"><a id="personcreate">Create Person -&gt; /api/person</a></a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+</details>
 
 ## Security
 
@@ -45,7 +77,7 @@ Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.b
 keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
 ```
 
-<img src="documents\images\settings\reddit-clone-jks-generation.PNG"/>
+<img src="images\settings\reddit-clone-jks-generation.PNG"/>
 
 |     Username     | Password |     Role     |                      Permission                       |         Resource          |
 |------------------|----------|--------------|-------------------------------------------------------|---------------------------|
@@ -129,7 +161,7 @@ To enable SSL, toggle **server.ssl.enabled** to **true** and use the **https://*
 
 Since the SSL certificate is self signed, turn off the **SSL certificate verification** option while interacting with the URLs via **Postman**
 
-<img src="documents\images\tools\postman-ssl-certificate-verification.PNG"/>
+<img src="images\tools\postman-ssl-certificate-verification.PNG"/>
 
 ### URLs
 

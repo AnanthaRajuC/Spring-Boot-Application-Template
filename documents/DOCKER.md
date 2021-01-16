@@ -1,13 +1,25 @@
 ## Table of Contents
 
-- [Installing](#installing)
-    + [Running the application via docker container](#running-the-application-via-docker-container)
-      - [Basic Docker commands for reference](#basic-docker-commands-for-reference)
-      - [Commands to run the MySQL docker image](#commands-to-run-the-mysql-docker-image)
-      - [Commands to run the docker image of app with MySQL docker image](#commands-to-run-the-docker-image-of-app-with-mysql-docker-image)
-      - [Connecting to the MySQL docker image via CLI](#connecting-to-the-mysql-docker-image-via-cli)
-      - [Basic MySQL commands for reference](#basic-mysql-commands-for-reference)
-      - [Docker Hub Commands for Reference](#docker-hub-commands-for-reference)
+<details open="open">
+   <ul>
+      <li>
+         <a href="#installing">Installing</a>
+         <ul>
+            <li>
+               <a href="#running-the-application-via-docker-container">Running the application via docker container</a>
+               <ul>
+                  <li><a href="#basic-docker-commands-for-reference">Basic Docker commands for reference</a></li>
+                  <li><a href="#commands-to-run-the-mysql-docker-image">Commands to run the MySQL docker image</a></li>
+                  <li><a href="#commands-to-run-the-docker-image-of-app-with-mysql-docker-image">Commands to run the docker image of app with MySQL docker image</a></li>
+                  <li><a href="#connecting-to-the-mysql-docker-image-via-cli">Connecting to the MySQL docker image via CLI</a></li>
+                  <li><a href="#basic-mysql-commands-for-reference">Basic MySQL commands for reference</a></li>
+                  <li><a href="#docker-hub-commands-for-reference">Docker Hub Commands for Reference</a></li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+</details>
 
 ## Installing
 
@@ -100,7 +112,7 @@ In the Oracle VM VirtualBox:
 *	Click on **+** to add a new Rule
 *	Set **Host Port** to **8080** and **Guest Port** to **8080**; be sure to leave **Host IP** and **Guest IP** empty
 
-<img src="documents\images\tools\Oracle-VM-Virtualbox-Manager.PNG"/>
+<img src="images\tools\Oracle-VM-Virtualbox-Manager.PNG"/>
 
 Reference: https://stackoverflow.com/a/45822356/3711562
 
