@@ -89,6 +89,7 @@ public class ResourcePaths
     		public static final String ARCHITECTURE   = "/architecture";
     		public static final String DOCKER         = "/docker";
     		public static final String STATUS         = "/status";
+    		public static final String SECURITY         = "/security";
     	}
     }
 }

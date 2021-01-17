@@ -93,6 +93,12 @@ public class SpringBootApplicationTemplateController
 		return "pages/status";
     }
 	
+	@GetMapping(value=ResourcePaths.SBAT.V1.SECURITY)
+    public String security() 
+	{
+		return "pages/security";
+    }
+	
 	@GetMapping(value=ResourcePaths.SBAT.V1.SETTINGS)
     public String settings(Model model) 
 	{

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+			   with:title="'About'">
+
+<th:block layout:fragment="content">
+
+<body data-spy="scroll" data-target="#toc">
+
+		<div class="row">	
+			<!-- sidebar, which will move to the top on a small screen -->
+			<div class="col-sm-3">
+			
+			 </br>
+			 </br>
+			 
+			<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+		</div>
+	
+    <!-- main content area -->
+    <div class="col-sm-9">
+
+	<!-- README.ms start -->
+<div class="sect2">
+          <h3 id="security">Security</h3>
+          <div class="sect3">
+            <h4 id="looking-for-something-in-particular">Looking for something in particular?</h4>
+            <div class="paragraph">
+              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Role Based Authentication (In-memory Users)</a></p>
+            </div>
+            <div class="paragraph">
+              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Permission Based Authentication (In-memory Users)</a></p>
+            </div>
+            <div class="paragraph">
+              <p>[Spring Method-Security with @PreAuthorize (In-memory Users)](<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags"
+                  class="bare">https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags</a>)</p>
+            </div>
+            <div class="paragraph">
+              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Database Authentication Authorization (In-memory Users)</a></p>
+            </div>
+            <div class="paragraph">
+              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Role, Permission based User Authentication via MySQL</a></p>
+            </div>
+            <div class="paragraph">
+              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Json Web Token - Role Based Access Controll via MySQL</a></p>
+            </div>
+            <div class="paragraph">
+              <p>Refer to the <code>ApplicationSecurityConfig</code> class in <code>io.github.anantharajuc.sbat.backend.security</code>.</p>
+            </div>
+            <div class="ulist">
+              <ul>
+                <li>
+                  <p>A Java Keystore File is required to generate JSON Web Token.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="listingblock">
+              <div class="content">
+                <pre class="highlight"><code class="language-shell" data-lang="shell">keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048</code></pre>
+              </div>
+			  
+			  <img src="/images/settings/reddit-clone-jks-generation.PNG"/>
+			  
+            </div>
+            <table class="tableblock frame-all grid-all spread">
+              <colgroup>
+                <col style="width: 17%;">
+                <col style="width: 8%;">
+                <col style="width: 11%;">
+                <col style="width: 43%;">
+                <col style="width: 21%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="tableblock halign-left valign-top">Username</th>
+                  <th class="tableblock halign-left valign-top">Password</th>
+                  <th class="tableblock halign-left valign-top">Role</th>
+                  <th class="tableblock halign-left valign-top">Permission</th>
+                  <th class="tableblock halign-left valign-top">Resource</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>johndoe</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>password</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>PERSON</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top"></td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>/api/v1/person</code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>AdminUser</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>password</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>ADMIN</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>/management/api/v1/person</code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>AdminTraineeUser</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>password</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>ADMINTRAINEE</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>PERSON_READ</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code>/management/api/v1/person</code></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="tableblock frame-all grid-all spread">
+              <colgroup>
+                <col style="width: 47%;">
+                <col style="width: 5%;">
+                <col style="width: 30%;">
+                <col style="width: 18%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="tableblock halign-left valign-top">URL</th>
+                  <th class="tableblock halign-left valign-top">Method</th>
+                  <th class="tableblock halign-left valign-top">Remarks</th>
+                  <th class="tableblock halign-left valign-top">Sample Valid Request Body</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/signup" class="bare">http://localhost:8080/api/v1/auth/signup</a></code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">POST</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top"></td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><a href="#signup">JSON</a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/verification/{verification-token}" class="bare">http://localhost:8080/api/v1/auth/verification/{verification-token}</a></code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">GET</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top"></td>
+                  <td class="tableblock halign-left valign-top"></td>
+                </tr>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/login" class="bare">http://localhost:8080/api/v1/auth/login</a></code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">POST</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">Bearer Token, Refresh Token is generated</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><a href="#login">JSON</a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/subreddit" class="bare">http://localhost:8080/api/v1/subreddit</a></code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">POST</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">Bearer Token should be passed for authorization</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><a href="#subreddit">JSON</a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/refresh/token" class="bare">http://localhost:8080/api/v1/auth/refresh/token</a></code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">POST</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock">Refresh Token from login should be passed</p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><a href="#refresh-token">JSON</a></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+	<!-- README.md end   -->
+	  
+	</div>
+    </div>
+</body>
+	
+</th:block>
+	
+</html>
