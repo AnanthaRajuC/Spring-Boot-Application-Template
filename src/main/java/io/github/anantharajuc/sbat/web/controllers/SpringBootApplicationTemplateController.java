@@ -75,6 +75,24 @@ public class SpringBootApplicationTemplateController
 		return "pages/about";
     }
 	
+	@GetMapping(value=ResourcePaths.SBAT.V1.ARCHITECTURE)
+    public String architecture() 
+	{
+		return "pages/architecture";
+    }
+	
+	@GetMapping(value=ResourcePaths.SBAT.V1.DOCKER)
+    public String docker() 
+	{
+		return "pages/docker";
+    }
+	
+	@GetMapping(value=ResourcePaths.SBAT.V1.STATUS)
+    public String status() 
+	{
+		return "pages/status";
+    }
+	
 	@GetMapping(value=ResourcePaths.SBAT.V1.SETTINGS)
     public String settings(Model model) 
 	{

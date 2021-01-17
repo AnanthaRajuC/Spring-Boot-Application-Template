@@ -86,6 +86,9 @@ public class ResourcePaths
     		public static final String SETTINGS       = "/settings";
     		public static final String TECH_STACK     = "/tech-stack";
     		public static final String CLOSE          = "/close";
+    		public static final String ARCHITECTURE   = "/architecture";
+    		public static final String DOCKER         = "/docker";
+    		public static final String STATUS         = "/status";
     	}
     }
 }

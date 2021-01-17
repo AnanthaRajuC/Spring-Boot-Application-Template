@@ -22,9 +22,6 @@
             <a class="nav-link" href="/sbat/tech-stack" th:text="#{navbar.tech-stack.text}"></span></a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="/sbat/about" th:text="#{navbar.about.text}"></span></a>
-         </li>
-         <li class="nav-item">
             <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
          </li>
          <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -35,9 +32,11 @@
 		<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="Help"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-               <a class="dropdown-item notify-item" href="/sbat/form"><img src="/images/us.jpg" alt="user-image" class="mr-1" height="12">Docker</a>
-               <a class="dropdown-item notify-item" href="/sbat/form"><img src="/images/spain.jpg" alt="user-image" class="mr-1" height="12">Architecture</a>
-            </div>
+               <a class="dropdown-item notify-item" href="/sbat/docker"><img src="/images/docker.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.docker.text}"></a>
+               <a class="dropdown-item notify-item" href="/sbat/architecture"><img src="/images/architecture.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.architecture.text}"></a>
+			   <a class="dropdown-item notify-item" href="/sbat/about"><img src="/images/about.jpg" alt="user-image" class="mr-1" height="12" th:text="#{navbar.about.text}"></a>
+			   <a class="dropdown-item notify-item" href="/sbat/status"><img src="/images/status.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.status.text}"></a>
+			</div>
          </li> 
 		 
 		 

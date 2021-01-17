@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+			   with:title="'About'">
+
+<th:block layout:fragment="content">
+
+<body data-spy="scroll" data-target="#toc">
+
+		<div class="row">	
+			<!-- sidebar, which will move to the top on a small screen -->
+			<div class="col-sm-3">
+			
+			 </br>
+			 </br>
+			 
+			<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+		</div>
+
+	
+    <!-- main content area -->
+    <div class="col-sm-9">
+
+	<!-- README.ms start -->
+
+<h2 id="installing">Installing</h2>
+<h4 id="running-the-application-via-docker-container">Running the application via docker container</h4>
+<ul>
+   <li><a href="https://hub.docker.com/r/anantha/spring-boot-application-template/tags">anantha/spring-boot-application-template</a> - DockerHub Image</li>
+</ul>
+<p>DockerHub Pull Command if you want to directly pull the docker image of the application from Docker Hub.</p>
+<pre><code class="lang-shell">docker pull anantha/spring-boot-<span class="hljs-built_in">application</span>-template
+</code></pre>
+<p><strong>NOTE:</strong> If you want to build a docker image from the source code, ensure you build a jar of the application before building a docker image.  </p>
+<pre><code class="lang-shell">$ mvn <span class="hljs-keyword">package</span> -Dmaven.test.skip=<span class="hljs-literal">true</span>     //skip <span class="hljs-keyword">all</span> tests <span class="hljs-keyword">and</span> build. The build once completed <span class="hljs-keyword">is</span> available <span class="hljs-keyword">in</span> **target** folder
+</code></pre>
+<pre><code class="lang-shell">$ mvn clean <span class="hljs-keyword">package</span>                      //run <span class="hljs-keyword">all</span> tests <span class="hljs-keyword">and</span> build
+</code></pre>
+<p>On Windows machine use <strong>Docker Quickstart Terminal</strong> or, use <strong>Windows Powershell</strong> and navigate to the project folder where Dockerfile is present.</p>
+<h5 id="basic-docker-commands-for-reference">Basic Docker commands for reference</h5>
+<table>
+   <thead>
+      <tr>
+         <th>Command</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>docker-machine ip default</code></td>
+         <td>check your docker IP default, usually it is <strong>192.168.99.102</strong></td>
+      </tr>
+      <tr>
+         <td><code>docker images</code></td>
+         <td>take a look at the container images.</td>
+      </tr>
+      <tr>
+         <td><code>docker ps</code></td>
+         <td>list all the running containers.</td>
+      </tr>
+      <tr>
+         <td><code>docker ps -a</code></td>
+         <td>list all the containers, including the ones that have finished executing.</td>
+      </tr>
+      <tr>
+         <td><code>docker restart [container_name]</code></td>
+         <td>restart the docker image</td>
+      </tr>
+      <tr>
+         <td><code>docker stats</code></td>
+         <td>Show CPU and memory usage of all running containers</td>
+      </tr>
+      <tr>
+         <td><code>docker stats [container_name]</code></td>
+         <td>Show CPU and memory usage of a particular running container</td>
+      </tr>
+      <tr>
+         <td><code>docker stats [container1_name] [container2_name]</code></td>
+         <td>Show CPU and memory usage of container1, container2</td>
+      </tr>
+      <tr>
+         <td><code>docker top [container_name]</code></td>
+         <td>Show running processes in a container</td>
+      </tr>
+      <tr>
+         <td><code>docker system df</code></td>
+         <td>Show storage usage</td>
+      </tr>
+      <tr>
+         <td><code>docker logs [container_id]</code></td>
+         <td>list container logs</td>
+      </tr>
+      <tr>
+         <td><code>docker logs [container_id] --tail N</code></td>
+         <td>list container logs, <strong><code>--tail</code></strong> flag will show the last <strong>N</strong> lines of logs</td>
+      </tr>
+      <tr>
+         <td><code>docker logs [container_id] --since YYYY-MM-DD</code></td>
+         <td>list container logs since a particular date</td>
+      </tr>
+      <tr>
+         <td><code>docker logs [container_id] --since YYYY-MM-DDTHH:MM:SS.000000000Z</code></td>
+         <td>list container logs since a particular timestamp</td>
+      </tr>
+   </tbody>
+</table>
+<h5 id="commands-to-run-the-mysql-docker-image">Commands to run the MySQL docker image</h5>
+<table>
+   <thead>
+      <tr>
+         <th>Command</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><strong><code>docker pull mysql:5.7</code></strong></td>
+         <td>pull a MySQL Docker Image</td>
+      </tr>
+      <tr>
+         <td><code>docker images</code></td>
+         <td>take a look at the container images. See if MySQL image is present</td>
+      </tr>
+      <tr>
+         <td><strong><code>docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=sbat -d mysql:5.7</code></strong></td>
+         <td>run the MySQL docker image</td>
+      </tr>
+   </tbody>
+</table>
+<h5 id="commands-to-run-the-docker-image-of-app-with-mysql-docker-image">Commands to run the docker image of app with MySQL docker image</h5>
+<table>
+   <thead>
+      <tr>
+         <th>Command</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><strong><code>docker build -t spring-boot-application-template .</code></strong></td>
+         <td><strong>Build docker image of the project</strong></td>
+      </tr>
+      <tr>
+         <td><strong><code>docker run -e &quot;SPRING_PROFILES_ACTIVE=test&quot; -p 8080:8080 --name spring-boot-application-template anantha/spring-boot-application-template:0.0.1-SNAPSHOT</code></strong></td>
+         <td><strong>DEV profile (H2DB)        : run the project&#39;s docker container by mapping docker to localhost</strong></td>
+      </tr>
+      <tr>
+         <td><strong><code>docker run -e &quot;SPRING_PROFILES_ACTIVE=production&quot; -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template</code></strong></td>
+         <td><strong>PROCUCTION profile (MySQL): run the project&#39;s docker container by mapping docker to localhost</strong></td>
+      </tr>
+      <tr>
+         <td><strong><code>docker stop [container_id]</code></strong></td>
+         <td><strong>stop a container</strong></td>
+      </tr>
+      <tr>
+         <td><strong><code>docker rm [container_name]</code></strong></td>
+         <td><strong>remove a container with a particular container name</strong></td>
+      </tr>
+      <tr>
+         <td><code>docker rm $(docker ps -aq)</code></td>
+         <td>stop and remove all containers</td>
+      </tr>
+      <tr>
+         <td><code>docker restart mysql-docker</code></td>
+         <td>restart the MySQL docker image</td>
+      </tr>
+   </tbody>
+</table>
+<h5 id="connecting-to-the-mysql-docker-image-via-cli">Connecting to the MySQL docker image via CLI</h5>
+<table>
+   <thead>
+      <tr>
+         <th>Command</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>docker exec mysql-docker mysql -usbat -psbat -e &#39;show databases;&#39;</code></td>
+         <td>connect to MySQL image without interactive CLI.</td>
+      </tr>
+      <tr>
+         <td><code>docker exec -it mysql-docker mysql -usbat -psbat -e &#39;show databases;&#39;</code></td>
+         <td>connect to MySQL image without interactive CLI.</td>
+      </tr>
+      <tr>
+         <td><code>docker exec -it mysql-docker mysql -usbat -psbat</code></td>
+         <td>connect to MySQL image via interactive CLI.</td>
+      </tr>
+   </tbody>
+</table>
+<h5 id="basic-mysql-commands-for-reference">Basic MySQL commands for reference</h5>
+<table>
+   <thead>
+      <tr>
+         <th>Commands</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>show databases;</code></td>
+         <td>lists the databases on the MySQL server host</td>
+      </tr>
+      <tr>
+         <td><code>show schemas;</code></td>
+         <td>a synonym for <strong>show databases;</strong></td>
+      </tr>
+      <tr>
+         <td><code>use [database_name];</code></td>
+         <td>select any existing database in the SQL schema</td>
+      </tr>
+      <tr>
+         <td><code>show tables;</code></td>
+         <td>list tables in a Database</td>
+      </tr>
+   </tbody>
+</table>
+<p><strong>NOTE:</strong> If you are facing any issues with accessing the application at <strong><code>localhost:8080</code></strong> while using <strong>DockerToolBox</strong> and <strong>OracleVM VirtualBox</strong></p>
+<p>In the Oracle VM VirtualBox:</p>
+<ul>
+   <li>Click the appropriate machine (probably the one labeled <strong>default</strong>)</li>
+   <li><strong>Settings</strong></li>
+   <li><strong>Network</strong> &gt; <strong>Adapter 1</strong> &gt; <strong>Advanced</strong> &gt; <strong>Port Forwarding</strong></li>
+   <li>Click on <strong>+</strong> to add a new Rule</li>
+   <li>Set <strong>Host Port</strong> to <strong>8080</strong> and <strong>Guest Port</strong> to <strong>8080</strong>; be sure to leave <strong>Host IP</strong> and <strong>Guest IP</strong> empty</li>
+</ul>
+<p><img src="/images/tools/Oracle-VM-Virtualbox-Manager.PNG"/></p>
+<p>Reference: <a href="https://stackoverflow.com/a/45822356/3711562">https://stackoverflow.com/a/45822356/3711562</a></p>
+<h5 id="docker-hub-commands-for-reference">Docker Hub Commands for Reference</h5>
+<table>
+   <thead>
+      <tr>
+         <th>Command</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>docker logout</code></td>
+         <td>logout of Docker Hub from the local machine.</td>
+      </tr>
+      <tr>
+         <td><code>docker login --username=YOUR_DOCKERHUB_USERNAME</code></td>
+         <td>login to Docker Hub from your machine.</td>
+      </tr>
+      <tr>
+         <td><code>docker tag &lt;existing-image&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]</code></td>
+         <td>re-tagging an existing local image</td>
+      </tr>
+      <tr>
+         <td><code>docker commit &lt;existing-container&gt; &lt;hub-user&gt;/&lt;repo-name&gt;[:&lt;tag&gt;]</code></td>
+         <td>commit changes</td>
+      </tr>
+      <tr>
+         <td><code>docker push &lt;hub-user&gt;/&lt;repo-name&gt;:&lt;tag&gt;</code></td>
+         <td>push this repository to the registry designated by its name or tag</td>
+      </tr>
+   </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<ul>
+   <li>re-tagging an existing local image : <code>docker tag spring-boot-application-template anantha/spring-boot-application-template:h2db-test-profile</code></li>
+   <li>commit changes                     : <code>docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile</code></li>
+   <li>docker push                        : <code>docker push anantha/spring-boot-application-template:h2db-test-profile</code></li>
+</ul>
+ 
+	<!-- README.md end   -->
+	  
+	</div>
+    </div>
+</body>
+	
+</th:block>
+	
+</html>

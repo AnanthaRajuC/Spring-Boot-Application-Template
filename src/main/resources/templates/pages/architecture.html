@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+			   with:title="'About'">
+
+<th:block layout:fragment="content">
+
+<body data-spy="scroll" data-target="#toc">
+
+		<div class="row">	
+			<!-- sidebar, which will move to the top on a small screen -->
+			<div class="col-sm-3">
+			
+			 </br>
+			 </br>
+			 
+			<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+		</div>
+	
+    <!-- main content area -->
+    <div class="col-sm-9">
+
+	<!-- README.ms start -->
+
+<h2 id="eer-diagram">EER Diagram</h2>
+<p><a href="/images/settings/SBAT-EER-Diagram.PNG"><img src="/images/settings/SBAT-EER-Diagram.PNG" alt="EER Diagram"></a></p>
+<h2 id="files-and-directories-structure">Files and Directories Structure</h2>
+<p>The project (a.k.a. project directory) has a particular directory structure. A representative project is shown below:</p>
+<h3 id="project-structure">Project Structure</h3>
+<pre><code class="lang-text">.
+├── Spring Elements
+├── src
+│   └── main
+│       └── java
+│           ├── io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span>
+│           │ 
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.admin</span><span class="hljs-selector-class">.controllers</span>
+│           │  
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.controllers</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.model</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.model</span><span class="hljs-selector-class">.dto</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.repositories</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.services</span>
+│           │ 
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.api</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.api</span><span class="hljs-selector-class">.rate_limiting</span>
+│           │ 
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.config</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.email</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.exception</span>
+│           │     
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.auditing</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.model</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.model</span><span class="hljs-selector-class">.enumeration</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.repositories</span>
+│           │
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.authentication</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.authorization</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.jwt</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.jwt</span><span class="hljs-selector-class">.model</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.jwt</span><span class="hljs-selector-class">.repository</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.jwt</span><span class="hljs-selector-class">.service</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.user</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.model</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.persistence</span><span class="hljs-selector-class">.security</span><span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.repository</span>
+│           │
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.service</span>
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.service</span><span class="hljs-selector-class">.impl</span>
+│           │
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.backend</span><span class="hljs-selector-class">.util</span>
+│           │
+│           ├──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.web</span><span class="hljs-selector-class">.controllers</span>
+│           └──io<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.anantharajuc</span><span class="hljs-selector-class">.sbat</span><span class="hljs-selector-class">.web</span><span class="hljs-selector-class">.domain</span><span class="hljs-selector-class">.frontend</span>
+├── src
+│   └── main
+│       └── resources
+│           ├── data
+│           │   └── mysql
+│           │       └── migrations
+│           │           ├── V0_0_1__initialize_structure<span class="hljs-selector-class">.sql</span>
+│           │           └── V0_0_2__audit_structure<span class="hljs-selector-class">.sql</span>
+│           │           └── V0_0_3__populate_data<span class="hljs-selector-class">.sql</span>
+│           │           └── V0_0_4__data_geo<span class="hljs-selector-class">.sql</span>
+│           │           └── V0_0_5__data_address<span class="hljs-selector-class">.sql</span>
+│           │           └── V0_0_6__data_person<span class="hljs-selector-class">.sql</span>
+│           │           └── V0_0_7__data_security<span class="hljs-selector-class">.sql</span>
+│           ├── i18n
+│           │   └── messages<span class="hljs-selector-class">.properties</span>
+│           │   └── messages_es<span class="hljs-selector-class">.properties</span>
+│           ├── static
+│           │   ├── css
+│           │   ├── images
+│           │   ├── js
+│           │   └── favicon<span class="hljs-selector-class">.ico</span>
+│           ├── templates
+│           │   ├── fragments
+│           │   │   ├── body_scripts<span class="hljs-selector-class">.html</span>
+│           │   │   ├── <span class="hljs-selector-tag">footer</span><span class="hljs-selector-class">.html</span>
+│           │   │   ├── htmlhead<span class="hljs-selector-class">.html</span>
+│           │   │   ├── navigation<span class="hljs-selector-class">.html</span>
+│           │   │   ├── pagetitle<span class="hljs-selector-class">.html</span>
+│           │   │   └── social_buttons<span class="hljs-selector-class">.html</span>
+│           │   │   
+│           │   ├── pages
+│           │   │   ├── about<span class="hljs-selector-class">.html</span>
+│           │   │   ├── built_with<span class="hljs-selector-class">.html</span>
+│           │   │   ├── close<span class="hljs-selector-class">.html</span>
+│           │   │   ├── <span class="hljs-selector-tag">form</span><span class="hljs-selector-class">.html</span>
+│           │   │   ├── index<span class="hljs-selector-class">.html</span>
+│           │   │   ├── login<span class="hljs-selector-class">.html</span>
+│           │   │   └── settings<span class="hljs-selector-class">.html</span>
+│           │   │   
+│           │   ├── error<span class="hljs-selector-class">.html</span>
+│           │   ├── layout<span class="hljs-selector-class">.html</span>
+│           │   └── mailTemplate<span class="hljs-selector-class">.html</span>
+│           │   
+│           ├── application-dev<span class="hljs-selector-class">.properties</span>
+│           ├── application-production<span class="hljs-selector-class">.properties</span>
+│           ├── application-qa<span class="hljs-selector-class">.properties</span>
+│           ├── application-staging<span class="hljs-selector-class">.properties</span>
+│           ├── application<span class="hljs-selector-class">.properties</span>
+│           │  
+│           ├── ebininfosoft-ssl-key
+│           ├── redditclone<span class="hljs-selector-class">.jks</span>
+│           │  
+│           ├── banner<span class="hljs-selector-class">.txt</span>
+│           │  
+│           └── log4j2<span class="hljs-selector-class">.xml</span>
+├── src
+│   └── test
+│       └── java/io/github/anantharajuc/sbtest/service
+│           └── PersonServiceImpl<span class="hljs-selector-class">.test</span>
+├── JRE System Library
+├── Maven Dependencies
+├── bin
+├── logs
+│   └── application<span class="hljs-selector-class">.log</span>
+├── src
+├── target
+│   └──application-<span class="hljs-number">0.0</span>.<span class="hljs-number">1</span>-SNAPSHOT
+├── mvnw
+├── mvnw<span class="hljs-selector-class">.cmd</span>
+├── pom<span class="hljs-selector-class">.xml</span>
+│ 
+├── <span class="hljs-selector-class">.travis</span>
+│ 
+├── CODE_OF_CONDUCT<span class="hljs-selector-class">.md</span>
+├── CONTRIBUTING<span class="hljs-selector-class">.md</span>
+├── LICENSE<span class="hljs-selector-class">.md</span>
+└── README.md
+</code></pre>
+<h3 id="packages">Packages</h3>
+<ul>
+   <li><code>api</code> - API utilities;</li>
+   <li><code>rate_limiting</code> - API rate limiting;</li>
+   <li><code>auditing</code> - data entity auditing;</li>
+   <li><code>authentication</code> - application user authentication;</li>
+   <li><code>configuration</code> - app configurations;</li>
+   <li><code>controllers</code> - to listen to the client;</li>
+   <li><code>exception</code> - to hold custom exception handling;</li>
+   <li><code>models</code> - to hold our entities;</li>
+   <li><code>repository</code> - to communicate with the database;</li>
+   <li><code>security</code> - security configuration;</li>
+   <li><code>jwt</code> - json web token for authentication;</li>
+   <li><code>service</code> - to hold business logic;</li>
+   <li>
+      <p><code>util</code> - to hold our utility classes;</p>
+   </li>
+   <li>
+      <p><code>resources/</code> - Contains all the static resources, templates and property files.</p>
+   </li>
+   <li><code>resources/data/mysql.migrations/</code> - Contains initial table structure &amp; table data - used by flyway.</li>
+   <li><code>resources/static</code> - contains static resources such as css, js and images.</li>
+   <li><code>resources/templates</code> - contains server-side templates which are rendered by Spring.</li>
+   <li><code>resources/templates/fragments</code> - contains reusable code fragments.</li>
+   <li><code>resources/templates/pages</code> - contains server-side templates built using fragments.</li>
+   <li>
+      <p><code>resources/application.properties</code> - It contains application-wide properties. Spring reads the properties defined in this file to configure your application. You can define server’s default port, server’s context path, database URLs etc, in this file.</p>
+   </li>
+   <li>
+      <p><code>test/</code> - contains unit and integration tests</p>
+   </li>
+   <li>
+      <p><code>pom.xml</code> - contains all the project dependencies</p>
+   </li>
+</ul>
+ 
+	<!-- README.md end   -->
+	  
+	</div>
+    </div>
+</body>
+	
+</th:block>
+	
+</html>

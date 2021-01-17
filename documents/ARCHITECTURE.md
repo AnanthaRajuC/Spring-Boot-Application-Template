@@ -16,7 +16,7 @@
 
 ## EER Diagram
 
-[![EER Diagram](images\settings\SBAT-EER-Diagram.png)](images\settings\SBAT-EER-Diagram.png)
+[![EER Diagram](images/settings/SBAT-EER-Diagram.png)](images/settings/SBAT-EER-Diagram.png)
 
 ## Files and Directories Structure
 
