@@ -532,7 +532,7 @@ Kindly refer to [CONTRIBUTING.md](/CONTRIBUTING.md) for important **Pull Request
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE.md](/LICENSE.md) for more information.
 
 ## FOSSA third-party code, license compliance and vulnerabilities
 

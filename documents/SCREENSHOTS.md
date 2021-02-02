@@ -10,11 +10,11 @@
 
 ## Built-With Page
 
-[![Built With](images/app-ui/built-with.png)](images/app-ui/tech-stack.png)
+[![Built With](images/app-ui/tech-stack.png)](images/app-ui/tech-stack.png)
 
 ## Built-With Page (Dark Mode)
 
-[![Built With](images/app-ui/built-with-dark-mode.png)](images/app-ui/tech-stack-dark-mode.png)
+[![Built With](images/app-ui/tech-stack-dark-mode.png)](images/app-ui/tech-stack-dark-mode.png)
 
 ## Form
 
