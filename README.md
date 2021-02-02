@@ -10,6 +10,10 @@ The only thing better than a Maven archetype is a repo you can fork with everyth
 
 This repository contains a **recipe/scaffolding** for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
+<div align="center">
+  <sub>Built with ❤︎ by <a href="https://twitter.com/anantharajuc">Anantha Raju C</a> and <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/graphs/contributors">contributors</a>
+</div>
+
 <p align="center">
 	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template"><strong>Explore the docs »</strong></a>
 	<br />
