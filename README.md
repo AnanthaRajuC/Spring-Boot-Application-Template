@@ -14,6 +14,8 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
   <sub>Built with ❤︎ by <a href="https://twitter.com/anantharajuc">Anantha Raju C</a> and <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/graphs/contributors">contributors</a>
 </div>
 
+</br>
+
 <p align="center">
 	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template"><strong>Explore the docs »</strong></a>
 	<br />
@@ -116,6 +118,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
          <a href="#files-and-directories-structure">Files and Directories Structure</a>
       </li>
       <li><a href="#reporting-issues-suggest-improvements">Reporting Issues/Suggest Improvements</a></li>
+	  <li><a href="#changelog">Changelog</a></li>
       <li><a href="#the-end">The End</a></li>
       <li><a href="#contributing">Contributing</a></li>
       <li><a href="#license">License</a></li>
@@ -496,6 +499,10 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 * 	If the issue doesn't already exist, [create a new issue](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new)
 * 	Please provide as much information as possible with the issue report.
 * 	If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.
+
+## Changelog
+
+See [CHANGELOG.md](documents/CHANGELOG.md)
 
 ## The End
 
