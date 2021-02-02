@@ -32,9 +32,9 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 |**Build/Quality**|[![Spring-Boot-Framework](https://circleci.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?style=svg)](https://circleci.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![BCH compliance](https://bettercodehub.com/edge/badge/Spring-Boot-Framework/Spring-Boot-Application-Template?branch=master)](https://bettercodehub.com/)|[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)|[![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)|
 |  **Others**     |[![Open Source Helpers](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template/badges/users.svg)](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template)|[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)|[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)|[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)|
 |    **Tech**     |![License](https://img.shields.io/badge/license-MIT-blue.svg)|![Material](https://img.shields.io/badge/Material%20Design-UI-orange.svg)|![Bootstrap](https://img.shields.io/badge/Bootstrap-v4.0.0-yellowgreen.svg)|![Java](https://img.shields.io/badge/Java-v1.8-orange.svg)|[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)](http://isitmaintained.com/project/Spring-Boot-Framework/Spring-Boot-Application-Template "Average time to resolve an issue")|
+|    **lgtm**     |[![lgtm-languages](https://badgen.net/lgtm/langs/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-alerts](https://badgen.net/lgtm/alerts/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines-java](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template/java)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-grade](https://badgen.net/lgtm/grade/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|
 | **Docker**      |![Docker](https://img.shields.io/badge/Docker-v19-yellowgreen.svg)|[![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)|
 | **Security**    |[![DepShield Badge](https://depshield.sonatype.org/badges/Spring-Boot-Framework/Spring-Boot-Application-Template/depshield.svg)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
-|    **lgtm**     |[![lgtm-languages](https://badgen.net/lgtm/langs/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-alerts](https://badgen.net/lgtm/alerts/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines-java](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template/java)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-grade](https://badgen.net/lgtm/grade/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|
 
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+bootstrapping+a+%40springboot+based+monolithic+web+application&url=https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template&hashtags=SpringBoot) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)  
 
@@ -131,7 +131,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 ### Data
 
-<details>
+<details open="open">
    <ul>
       <li><a href="https://flywaydb.org/">Flyway</a> - Version control for database</li>
       <li><a href="https://www.mysql.com/">MySQL</a> - Open-Source Relational Database Management System</li>
@@ -141,7 +141,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 ### Client - Frontend/UI
 
-<details>
+<details open="open">
    <ul>
       <li><a href="https://getbootstrap.com/">Bootstrap</a> - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.</li>
       <li><a href="https://bootstrap-table.com/">Bootstrap Table</a> - An extended table to the integration with some of the most widely used CSS frameworks.</li>
@@ -151,7 +151,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 ### Server - Backend
 
-<details>
+<details open="open">
    <ul>
       <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a> - Java™ Platform, Standard Edition Development Kit</li>
       <li><a href="https://spring.io/projects/spring-boot">Spring Boot</a> - Framework to ease the bootstrapping and development of new Spring Applications</li>
@@ -162,7 +162,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 ###  Libraries and Plugins
 
-<details>
+<details open="open">
    <ul>
       <li><a href="https://afeld.github.io/bootstrap-toc/">Bootstrap ToC</a> - Table of Contents plugin for Bootstrap</li>
       <li><a href="https://github.com/Antibrumm/thymeleaf-extras-with-dialect">Thymeleaf With Dialect</a> - A dialect for Thymeleaf that allows you to use attributes with a &quot;with&quot; prefix to avoid having long &quot;th:with&quot;-expressions.</li>
@@ -175,7 +175,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 ### Others 
 
-<details>
+<details open="open">
    <ul>
       <li><a href="https://git-scm.com/">git</a> - Free and Open-Source distributed version control system</li>
       <li><a href="https://prometheus.io/">Prometheus</a> - Monitoring system and time series database</li>
@@ -185,7 +185,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 ### External Tools & Services
 
-<details>
+<details open="open">
    <ul>
       <li><a href="https://mailtrap.io/">Mailtrap</a> - Safe Email Testing for Staging &amp; Development.</li>
       <li><a href="https://www.getpostman.com/">Postman</a> - API Development Environment (Testing Docmentation)</li>
