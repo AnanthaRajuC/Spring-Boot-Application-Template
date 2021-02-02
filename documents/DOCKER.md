@@ -75,15 +75,16 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 
 ##### Commands to run the docker image of app with MySQL docker image
 
-|                                                                  Command                                                                                              |                                                         Description                              |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
-|**`docker build -t spring-boot-application-template .`**                                                                                                               | **Build docker image of the project**                                                            |
-|**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template anantha/spring-boot-application-template:0.0.1-SNAPSHOT`**         | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
-|**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**| **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
-|**`docker stop [container_id]`**                                                                                                                                       | **stop a container**                                                                             |
-|**`docker rm [container_name]`**                                                                                                                                       | **remove a container with a particular container name**                                          |
-|`docker rm $(docker ps -aq)`                                                                                                                                           | stop and remove all containers                                                                   |
-|`docker restart mysql-docker`																									                                        | restart the MySQL docker image																	 |
+|                                                                  Command                                                                                                |                                                         Description                              |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
+|**`docker build -t spring-boot-application-template .`**                                                                                                                 | **Build docker image of the project**                                                            |
+|**`docker build -t anantha/spring-boot-application-template --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` .`** | **Build docker image of the project and also populate the labels mentioned in Dockerfile**       |
+|**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template anantha/spring-boot-application-template:0.0.1-SNAPSHOT`**           | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
+|**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**  | **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
+|**`docker stop [container_id]`**                                                                                                                                         | **stop a container**                                                                             |
+|**`docker rm [container_name]`**                                                                                                                                         | **remove a container with a particular container name**                                          |
+|`docker rm $(docker ps -aq)`                                                                                                                                             | stop and remove all containers                                                                   |
+|`docker restart mysql-docker`																									                                          | restart the MySQL docker image																	 |
 
 ##### Connecting to the MySQL docker image via CLI 
 
