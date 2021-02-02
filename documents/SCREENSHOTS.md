@@ -10,4 +10,4 @@
 
 ## Built-With Page
 
-[![Built With](images/app-ui/built-with.PNG)](images/app-ui/built-with.PNG)
+[![Built With](images/app-ui/built-with.png)](images/app-ui/built-with.png)

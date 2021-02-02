@@ -131,49 +131,73 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 ### Data
 
-* 	[Flyway](https://flywaydb.org/) - Version control for database
-* 	[MySQL](https://www.mysql.com/) - Open-Source Relational Database Management System
-* 	[H2 Database Engine](https://www.h2database.com/html/main.html) - Java SQL database. Embedded and server modes; in-memory databases
+<details>
+   <ul>
+      <li><a href="https://flywaydb.org/">Flyway</a> - Version control for database</li>
+      <li><a href="https://www.mysql.com/">MySQL</a> - Open-Source Relational Database Management System</li>
+      <li><a href="https://www.h2database.com/html/main.html">H2 Database Engine</a> - Java SQL database. Embedded and server modes; in-memory databases</li>
+   </ul>
+</details>
 
 ### Client - Frontend/UI
 
-* 	[Bootstrap](https://getbootstrap.com/) - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
-* 	[Bootstrap Table](https://bootstrap-table.com/) - An extended table to the integration with some of the most widely used CSS frameworks.
-* 	[Thymeleaf](https://www.thymeleaf.org/) - Modern server-side Java template engine for both web and standalone environments.
+<details>
+   <ul>
+      <li><a href="https://getbootstrap.com/">Bootstrap</a> - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.</li>
+      <li><a href="https://bootstrap-table.com/">Bootstrap Table</a> - An extended table to the integration with some of the most widely used CSS frameworks.</li>
+      <li><a href="https://www.thymeleaf.org/">Thymeleaf</a> - Modern server-side Java template engine for both web and standalone environments.</li>
+   </ul>
+</details>
 
 ### Server - Backend
 
-* 	[JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) - Java™ Platform, Standard Edition Development Kit
-* 	[Spring Boot](https://spring.io/projects/spring-boot) - Framework to ease the bootstrapping and development of new Spring Applications
-* 	[Maven](https://maven.apache.org/) - Dependency Management
-* 	[JSON Web Token](https://www.jsonwebtoken.io/) - Encode or Decode JWTs
+<details>
+   <ul>
+      <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a> - Java™ Platform, Standard Edition Development Kit</li>
+      <li><a href="https://spring.io/projects/spring-boot">Spring Boot</a> - Framework to ease the bootstrapping and development of new Spring Applications</li>
+      <li><a href="https://maven.apache.org/">Maven</a> - Dependency Management</li>
+      <li><a href="https://www.jsonwebtoken.io/">JSON Web Token</a> - Encode or Decode JWTs</li>
+   </ul>
+</details>
 
 ###  Libraries and Plugins
 
-* 	[Bootstrap ToC](https://afeld.github.io/bootstrap-toc/) - Table of Contents plugin for Bootstrap
-* 	[Thymeleaf With Dialect](https://github.com/Antibrumm/thymeleaf-extras-with-dialect) - A dialect for Thymeleaf that allows you to use attributes with a "with" prefix to avoid having long "th:with"-expressions.
-* 	[Thymeleaf Layout Dialect](https://github.com/ultraq/thymeleaf-layout-dialect) - A dialect for Thymeleaf that lets you build layouts and reusable templates in order to improve code reuse.
-* 	[Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
-* 	[Swagger](https://swagger.io/) - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
-* 	[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Java rate limiting library based on token/leaky-bucket algorithm.
+<details>
+   <ul>
+      <li><a href="https://afeld.github.io/bootstrap-toc/">Bootstrap ToC</a> - Table of Contents plugin for Bootstrap</li>
+      <li><a href="https://github.com/Antibrumm/thymeleaf-extras-with-dialect">Thymeleaf With Dialect</a> - A dialect for Thymeleaf that allows you to use attributes with a &quot;with&quot; prefix to avoid having long &quot;th:with&quot;-expressions.</li>
+      <li><a href="https://github.com/ultraq/thymeleaf-layout-dialect">Thymeleaf Layout Dialect</a> - A dialect for Thymeleaf that lets you build layouts and reusable templates in order to improve code reuse.</li>
+      <li><a href="https://projectlombok.org/">Lombok</a> - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</li>
+      <li><a href="https://swagger.io/">Swagger</a> - Open-Source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.</li>
+      <li><a href="https://github.com/vladimir-bukhtoyarov/bucket4j">Bucket4j</a> - Java rate limiting library based on token/leaky-bucket algorithm.</li>
+   </ul>
+</details>
 
 ### Others 
 
-* 	[git](https://git-scm.com/) - Free and Open-Source distributed version control system
-* 	[Prometheus](https://prometheus.io/) - Monitoring system and time series database
-* 	[Docker](https://www.docker.com/) - A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+<details>
+   <ul>
+      <li><a href="https://git-scm.com/">git</a> - Free and Open-Source distributed version control system</li>
+      <li><a href="https://prometheus.io/">Prometheus</a> - Monitoring system and time series database</li>
+      <li><a href="https://www.docker.com/">Docker</a> - A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.</li>
+   </ul>
+</details>
 
 ### External Tools & Services
 
-*   [Mailtrap](https://mailtrap.io/) - Safe Email Testing for Staging & Development.
-* 	[Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
-* 	[Postman Echo](https://docs.postman-echo.com/?version=latest) - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.
-* 	[Travis CI](https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.
-* 	[Codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template) - A hosted tool that is used to measure the test coverage of your codebase.
-*	[Dependabot](https://dependabot.com/) - Automated dependency updates.
-*	[FOSSA](https://fossa.com/) - Scalable, end-to-end management for third-party code, license compliance and vulnerabilities.
-*	[sonarcloud](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template) - Cloud-based code analysis service designed to detect code quality issues continuously ensuring the maintainability, reliability and security of code.
-* 	[gitignore.io](https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij) - Create useful .gitignore files for your project.
+<details>
+   <ul>
+      <li><a href="https://mailtrap.io/">Mailtrap</a> - Safe Email Testing for Staging &amp; Development.</li>
+      <li><a href="https://www.getpostman.com/">Postman</a> - API Development Environment (Testing Docmentation)</li>
+      <li><a href="https://docs.postman-echo.com/?version=latest">Postman Echo</a> - A service that can be used to test your REST clients and make sample API calls. It provides endpoints for GET, POST, PUT, various auth mechanisms and other utility endpoints.</li>
+      <li><a href="https://travis-ci.org/github/Spring-Boot-Framework/Spring-Boot-Application-Template">Travis CI</a> - A hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket.</li>
+      <li><a href="https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template">Codecov</a> - A hosted tool that is used to measure the test coverage of your codebase.</li>
+      <li><a href="https://dependabot.com/">Dependabot</a> - Automated dependency updates.</li>
+      <li><a href="https://fossa.com/">FOSSA</a> - Scalable, end-to-end management for third-party code, license compliance and vulnerabilities.</li>
+      <li><a href="https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template">sonarcloud</a> - Cloud-based code analysis service designed to detect code quality issues continuously ensuring the maintainability, reliability and security of code.</li>
+      <li><a href="https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij">gitignore.io</a> - Create useful .gitignore files for your project.</li>
+   </ul>
+</details>
 
 ## Features and To-Do
 
