@@ -11,13 +11,18 @@ The only thing better than a Maven archetype is a repo you can fork with everyth
 This repository contains a **recipe/scaffolding** for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
 <div align="center">
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)](CODE_OF_CONDUCT.md) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+bootstrapping+a+%40springboot+based+monolithic+web+application&url=https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template&hashtags=SpringBoot) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
+</div>
+
+<div align="center">
   <sub>Built with ❤︎ by <a href="https://twitter.com/anantharajuc">Anantha Raju C</a> and <a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/graphs/contributors">contributors</a>
 </div>
 
 </br>
 
 <p align="center">
-	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template"><strong>Explore the docs »</strong></a>
+	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/blob/master/README.md"><strong>Explore the docs »</strong></a>
 	<br />
 	<br />
 	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Report Bug</a>
@@ -42,7 +47,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 | **Docker**      |![Docker](https://img.shields.io/badge/Docker-v19-yellowgreen.svg)|[![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/commit/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|
 | **Security**    |[![DepShield Badge](https://depshield.sonatype.org/badges/Spring-Boot-Framework/Spring-Boot-Application-Template/depshield.svg)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
 
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+bootstrapping+a+%40springboot+based+monolithic+web+application&url=https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template&hashtags=SpringBoot) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)  
+  
 
 ## Important Note: This project's new milestone is to release version 1, so stay tuned.
 
