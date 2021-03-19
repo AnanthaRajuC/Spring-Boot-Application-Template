@@ -3,6 +3,7 @@
 <details open="open">
    <ul>
       <li>
+		 <a href="#dockerfile-maven">Dockerfile Maven</a>
          <a href="#installing">Installing</a>
          <ul>
             <li>
@@ -23,7 +24,7 @@
 
 ## Dockerfile Maven
 
-This [Maven plugin](https://github.com/spotify/dockerfile-maven) integrates Maven with Docker. Update the pom.xml file with your DockerHub username and execute the maven build command ****.
+This [Maven plugin](https://github.com/spotify/dockerfile-maven) integrates Maven with Docker. Update the pom.xml file with your DockerHub username and execute the maven install command **mvn install**. Execution of this command will result in the generation of the application jar file, building of the Docker image and pushing of this newly created image to DockerHub.
 
 ```
 <!--  Plugin for building and pushing Docker image to Docker Hub. -->

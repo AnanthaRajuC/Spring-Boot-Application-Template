@@ -540,6 +540,18 @@ Kindly refer to [CONTRIBUTING.md](/CONTRIBUTING.md) for important **Pull Request
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+Kindly follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to create an explicit commit history. Kindly prefix the commit message with one of the following type's.
+
+**build**   : Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+**ci**      : Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+**docs**    : Documentation only changes
+**feat**    : A new feature
+**fix**     : A bug fix
+**perf**    : A code change that improves performance
+**refactor**: A code change that neither fixes a bug nor adds a feature
+**style**   : Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+**test**    : Adding missing tests or correcting existing tests
+
 ## License
 
 Distributed under the MIT License. See [LICENSE.md](/LICENSE.md) for more information.
