@@ -21,6 +21,36 @@
    </ul>
 </details>
 
+## Dockerfile Maven
+
+This [Maven plugin](https://github.com/spotify/dockerfile-maven) integrates Maven with Docker. Update the pom.xml file with your DockerHub username and execute the maven build command ****.
+
+```
+<!--  Plugin for building and pushing Docker image to Docker Hub. -->
+<plugin>
+	<groupId>com.spotify</groupId>
+	<artifactId>dockerfile-maven-plugin</artifactId>
+	<version>1.4.13</version>
+	<configuration>
+		<repository>DOCKER_HUB_USERNAME/${project.artifactId}</repository>
+		<tag>${project.version}</tag>
+		<buildArgs>
+			<JAR_FILE>target/${project.artifactId}-${project.version}.jar</JAR_FILE>
+		</buildArgs>
+	</configuration>
+	<executions>
+		<execution>
+			<id>default</id>
+			<phase>install</phase>
+			<goals>
+				<goal>build</goal>
+				<goal>push</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
+```
+
 ## Installing
 
 #### Running the application via docker container
@@ -43,10 +73,13 @@ $ mvn package -Dmaven.test.skip=true     //skip all tests and build. The build o
 $ mvn clean package                      //run all tests and build
 ```
 
+A runnable jar file gets built and is available in the **target** folder
+
 On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
 
-
 ##### Basic Docker commands for reference
+
+Checkout additional Docker and DockerHub commands here, [https://github.com/AnanthaRajuC/Hacks-and-Code-Snippets/blob/master/Docker.md](https://github.com/AnanthaRajuC/Hacks-and-Code-Snippets/blob/master/Docker.md) 
 
 |                           Command                                  |                                     Description                               |
 |--------------------------------------------------------------------|-------------------------------------------------------------------------------| 
@@ -80,7 +113,7 @@ On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershe
 |**`docker build -t spring-boot-application-template .`**                                                                                                                 | **Build docker image of the project**                                                            |
 |**`docker build -t anantha/spring-boot-application-template --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` .`** | **Build docker image of the project and also populate the labels mentioned in Dockerfile**       |
 |**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template anantha/spring-boot-application-template:0.0.1-SNAPSHOT`**           | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
-|**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**  | **PROCUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
+|**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**  | **PRODUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
 |**`docker stop [container_id]`**                                                                                                                                         | **stop a container**                                                                             |
 |**`docker rm [container_name]`**                                                                                                                                         | **remove a container with a particular container name**                                          |
 |`docker rm $(docker ps -aq)`                                                                                                                                             | stop and remove all containers                                                                   |

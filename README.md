@@ -22,7 +22,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 </br>
 
 <p align="center">
-	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/blob/master/README.md"><strong>Explore the docs »</strong></a>
+	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/blob/master/README.md#spring-boot-application-templatestarter-project-"><strong>Explore the docs »</strong></a>
 	<br />
 	<br />
 	<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues">Report Bug</a>
@@ -191,6 +191,7 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
    <ul>
       <li><a href="https://git-scm.com/">git</a> - Free and Open-Source distributed version control system</li>
       <li><a href="https://prometheus.io/">Prometheus</a> - Monitoring system and time series database</li>
+	  <li><a href="https://github.com/spotify/dockerfile-maven">Dockerfile Maven</a> - This Maven plugin integrates Maven with Docker</li>
       <li><a href="https://www.docker.com/">Docker</a> - A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.</li>
    </ul>
 </details>
@@ -296,6 +297,10 @@ keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysiz
 *	Default active profile is **`test`**. When the application is running, **Flyway** will create the necessary tables and system data along with sample data. In the **`test`** profile, the application uses **H2** database (data in memory).
 
 * 	URL to access application UI: **http://localhost:8080/sbat/index** or **https://192.168.99.102:8080/sbat/index** if **SSL** is enabled.
+
+* 	Other sample profiles like **`dev`**, **`production`**, **`qa`**, and  **`staging`** are available. Change the **spring.profiles.active** property in the **application.properties** file to any of the aforementioned profiles to use it.
+
+*	To enable or disable **SSL** support, in the **application properties** file turn **server.ssl.enabled** to **true** or **false**
 
 #### Running the application with IDE
 
