@@ -63,11 +63,12 @@ This [Maven plugin](https://github.com/spotify/dockerfile-maven) integrates Mave
 
 Check the **docker-compose.yml** file 
 
-|        Command          |                                        Description                                     |
-|-------------------------|----------------------------------------------------------------------------------------| 
-|`docker-compose config`  | check the build-file for syntax-errors	                                               |
-|`docker-compose up`      | start the containers                                                                   |
-|`docker-compose down`	  | stop the containers, remove them from Docker and remove the connected networks from it.|
+|                  Command          |                                             Description                                     |
+|-----------------------------------|---------------------------------------------------------------------------------------------| 
+|`docker-compose config`            | check the build-file for syntax-errors	                                                  |
+|`docker-compose up`                | start the containers                                                                        |
+|`docker-compose --compatibility up`| start the containers using compatibility mode to set Memory and CPU Limits                  |
+|`docker-compose down`	            | stop the containers, remove them from Docker and remove the connected networks from it.     |
 
 #### Running the application manually via docker container
 

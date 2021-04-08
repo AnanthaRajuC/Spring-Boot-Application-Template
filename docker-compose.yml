@@ -4,22 +4,32 @@ services:
     db:
         container_name: sbat_mysql_5.7
         image: mysql:5.7
+        restart: always
         environment:
             - MYSQL_ROOT_PASSWORD=sbat
             - MYSQL_DATABASE=sbat
         networks:
             - sbat 
+        deploy:
+            resources:
+                limits:
+                    memory: 500M 
     
     app:
         container_name: sbat_app
         image: spring-boot-application-template:latest
+        restart: always
         ports: 
             - "8080:8080"
         networks:
             - sbat 
         depends_on:    
             - db
-            
+        deploy:
+            resources:
+                limits:
+                    memory: 500M    
+     
 networks: 
     sbat:            
         driver: bridge
