@@ -97,9 +97,6 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
       </li>
       <li>
          <a href="#deployment">Deployment</a>
-         <ul>
-            <li><a href="#deploying-to-heroku">Deploying to Heroku</a></li>
-         </ul>
       </li>
       <li>
          <a href="#code-coverage">Code Coverage</a>

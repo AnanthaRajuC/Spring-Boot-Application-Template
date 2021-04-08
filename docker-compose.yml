@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+    db:
+        container_name: sbat_mysql_5.7
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=sbat
+            - MYSQL_DATABASE=sbat
+        networks:
+            - sbat 
+    
+    app:
+        container_name: sbat_app
+        image: spring-boot-application-template:latest
+        ports: 
+            - "8080:8080"
+        networks:
+            - sbat 
+        depends_on:    
+            - db
+            
+networks: 
+    sbat:            
+        driver: bridge

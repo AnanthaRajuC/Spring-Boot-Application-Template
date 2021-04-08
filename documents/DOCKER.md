@@ -6,8 +6,11 @@
 		 <a href="#dockerfile-maven">Dockerfile Maven</a>
          <a href="#installing">Installing</a>
          <ul>
+			<li>
+				<a href="#running-the-application-via-docker-compose">Running the application via docker compose</a>
+			</li>
             <li>
-               <a href="#running-the-application-via-docker-container">Running the application via docker container</a>
+               <a href="#running-the-application-manually-via-docker-container">Running the application manually via docker container</a>
                <ul>
                   <li><a href="#basic-docker-commands-for-reference">Basic Docker commands for reference</a></li>
                   <li><a href="#commands-to-run-the-mysql-docker-image">Commands to run the MySQL docker image</a></li>
@@ -56,7 +59,17 @@ This [Maven plugin](https://github.com/spotify/dockerfile-maven) integrates Mave
 
 ## Installing
 
-#### Running the application via docker container
+#### Running the application via docker compose
+
+Check the **docker-compose.yml** file 
+
+|        Command          |                                        Description                                     |
+|-------------------------|----------------------------------------------------------------------------------------| 
+|`docker-compose config`  | check the build-file for syntax-errors	                                               |
+|`docker-compose up`      | start the containers                                                                   |
+|`docker-compose down`	  | stop the containers, remove them from Docker and remove the connected networks from it.|
+
+#### Running the application manually via docker container
 
 * 	[anantha/spring-boot-application-template](https://hub.docker.com/r/anantha/spring-boot-application-template/tags) - DockerHub Image
 
