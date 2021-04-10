@@ -65,10 +65,10 @@ Check the **docker-compose.yml** file
 
 |                  Command          |                                             Description                                     |
 |-----------------------------------|---------------------------------------------------------------------------------------------| 
-|`docker-compose config`            | check the build-file for syntax-errors	                                                  |
-|`docker-compose up`                | start the containers                                                                        |
-|`docker-compose --compatibility up`| start the containers using compatibility mode to set Memory and CPU Limits                  |
-|`docker-compose down`	            | stop the containers, remove them from Docker and remove the connected networks from it.     |
+|`docker-compose config`            | Check the build-file for syntax-errors	                                                  |
+|`docker-compose up`                | Start the containers                                                                        |
+|`docker-compose --compatibility up`| Start the containers using compatibility mode to set Memory and CPU Limits. Using --compatibility mode will attempt to convert that API v3 way of setting resource limits back into v2 compatible properties.                  |
+|`docker-compose down`	            | Stop the containers, remove them from Docker and remove the connected networks from it.     |
 
 #### Running the application manually via docker container
 
