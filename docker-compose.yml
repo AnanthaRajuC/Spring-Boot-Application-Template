@@ -11,8 +11,7 @@ services:
         
         #Volume mounted for database for the storage
         volumes:
-            #- sbat-data:/var/lib/mysql
-            - sbat-data:/home/node/app
+            - sbat-data:/var/lib/mysql
         
         ports:
             - "3306:3306"
@@ -21,6 +20,8 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=sbat
             - MYSQL_DATABASE=sbat
+            - MYSQL_USER=sbat
+            - MYSQL_PASSWORD=sbat
         networks:
             - sbat 
         deploy:
@@ -35,6 +36,8 @@ services:
         restart: always
         ports: 
             - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+        environment:
+            - "SPRING_PROFILES_ACTIVE=production"
         networks:
             - sbat 
         depends_on:    
@@ -49,7 +52,7 @@ services:
 #Volumes for DB data
 volumes:
     sbat-data:  
-     
+             
 networks: 
     sbat:            
         driver: bridge
