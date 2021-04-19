@@ -18,10 +18,10 @@ services:
         
         # Environment variable for DB name, password
         environment:
-            - MYSQL_ROOT_PASSWORD=sbat
             - MYSQL_DATABASE=sbat
             - MYSQL_USER=sbat
             - MYSQL_PASSWORD=sbat
+            - MYSQL_ROOT_PASSWORD=sbat
         networks:
             - sbat 
         deploy:
