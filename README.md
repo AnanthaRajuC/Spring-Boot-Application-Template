@@ -12,6 +12,11 @@ This repository contains a **recipe/scaffolding** for bootstrapping a **Monolith
 
 <div align="center">
 
+[![Gitter](https://badges.gitter.im/spring-boot-application-template/community.svg)](https://gitter.im/spring-boot-application-template/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+</div>
+
+<div align="center">
+
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)](CODE_OF_CONDUCT.md) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+bootstrapping+a+%40springboot+based+monolithic+web+application&url=https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template&hashtags=SpringBoot) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
 </div>
 
