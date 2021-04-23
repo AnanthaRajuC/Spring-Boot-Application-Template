@@ -10,6 +10,16 @@ The only thing better than a Maven archetype is a repo you can fork with everyth
 
 This repository contains a **recipe/scaffolding** for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
+Essentially it's a simple on-demand application backend for rapd-prototyping.
+
+Features include but not limited to:
+
+1. User account creation via Email Id
+2. Account activation via Email verification
+3. Supported user actions - CREATE (POST), READ (GET), UPDATE (UPDATE), DELETE (DELETE)
+4. Supports Admin accounts for application maintainence
+5. User Account security via JSON Web Token (JWT)
+
 <div align="center">
 
 [![Gitter](https://badges.gitter.im/spring-boot-application-template/community.svg)](https://gitter.im/spring-boot-application-template/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
