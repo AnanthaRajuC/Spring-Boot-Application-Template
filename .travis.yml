@@ -5,6 +5,10 @@
 # https://docs.travis-ci.com/user/reference/overview/#linux
 dist: xenial
 
+services:
+# Linking Travis CI and Docker
+  - docker
+
 # This enables the 'defaults' to test java applications:
 language: java
 
@@ -13,6 +17,11 @@ language: java
 # https://docs.travis-ci.com/user/reference/xenial/#jvm-clojure-groovy-java-scala-support
 jdk:
 - openjdk8
+
+before_install:
+- mvn clean
+- echo "$DOCKER_PASS" | docker login  -u "$DOCKER_USER" --password-stdin
+- docker pull openjdk:8-jdk-alpine
 
 # git strips the wrapper jar file so we have to force its download during the build
 install:
@@ -32,5 +41,5 @@ script: "mvn cobertura:cobertura"
 # If a build is successful, the code is submitted for coverage analysis
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  #- docker login -u $DOCKER_USER -p $DOCKER_PASS
 

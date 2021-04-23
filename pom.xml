@@ -348,8 +348,8 @@
 	                <source>1.8</source>
 	                <target>1.8</target>
 	            </configuration>
-	        </plugin>	
-	        <!--  Plugin for building and pushing Docker image to Docker Hub. 
+	        </plugin>
+	        <!--  Plugin for building and pushing Docker image to Docker Hub. -->      	        
 	        <plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
@@ -371,7 +371,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>  -->      	        	        
+			</plugin>  	        
 		</plugins>
 	</build>
 	</project>
