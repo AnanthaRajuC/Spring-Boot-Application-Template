@@ -32,5 +32,5 @@ script: "mvn cobertura:cobertura"
 # If a build is successful, the code is submitted for coverage analysis
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
 
