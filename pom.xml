@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 	
 	<name>spring-boot-application-template</name>
-	<url>https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template</url>
+	<url>https://github.com/AnanthaRajuC/Spring-Boot-Application-Template</url>
 	<description>This repository contains a recipe/scaffolding for bootstrapping a Web Application. Delete the sample code (or keep it.) and add your own, you’re good to go.</description>
 	
 	<!-- Start - Spring Boot Application Template Project Owner -->
@@ -25,8 +25,8 @@
 	
 	<!-- Start - Spring Boot Application Template source repository -->
     <scm>
-        <connection>https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git</connection>
-        <developerConnection>git@github.com:Spring-Boot-Framework/Spring-Boot-Application-Template.git</developerConnection>
+        <connection>https://github.com/AnanthaRajuC/Spring-Boot-Application-Template.git</connection>
+        <developerConnection>git@github.com:AnanthaRajuC/Spring-Boot-Application-Template.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     <!-- End - Spring Boot Application Template source repository -->
@@ -34,7 +34,7 @@
     <!-- Start - Spring Boot Application Template issue management -->
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues</url>
+        <url>https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues</url>
     </issueManagement>
     <!-- End - Spring Boot Application Template issue management -->
 
@@ -126,6 +126,23 @@
 	      <artifactId>flyway-core</artifactId>
 	    </dependency>
 		<!-- End - Database migration dependencies -->
+		
+		<dependency>
+	      <groupId>com.h2database</groupId>
+	      <artifactId>h2</artifactId>
+	      <scope>runtime</scope>
+	    </dependency>
+		
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>7.0.1.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator-annotation-processor</artifactId>
+		    <version>7.0.1.Final</version>
+		</dependency>
 		
 		<dependency>
             <groupId>org.modelmapper</groupId>
@@ -257,17 +274,6 @@
 	      <optional>true</optional>
 	    </dependency>
 	    <!-- End - POJO creation made easy -->
-		
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-validator</artifactId>
-		    <version>7.0.1.Final</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-validator-annotation-processor</artifactId>
-		    <version>7.0.1.Final</version>
-		</dependency>
 
 		<dependency>
 		    <groupId>org.mockito</groupId>
@@ -296,12 +302,6 @@
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
-		
-		<dependency>
-	      <groupId>com.h2database</groupId>
-	      <artifactId>h2</artifactId>
-	      <scope>runtime</scope>
-	    </dependency>
 
 		<!-- Needed for SMTP appender -->
 		<dependency>

@@ -25,8 +25,8 @@ before_install:
 
 # git strips the wrapper jar file so we have to force its download during the build
 install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+#- mvn -N io.takari:maven:wrapper
+#- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 # Each job in Travis CI has several steps:
 # https://docs.travis-ci.com/user/job-lifecycle/
@@ -41,5 +41,3 @@ script: "mvn cobertura:cobertura"
 # If a build is successful, the code is submitted for coverage analysis
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  #- docker login -u $DOCKER_USER -p $DOCKER_PASS
-
