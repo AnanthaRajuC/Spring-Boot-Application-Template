@@ -1,0 +1,69 @@
+## Authentication
+
+Spring Boot Application Template is built on top of Spring Security and includes a few additional features such as email verification, username login.
+
+* **Registration**  
+* **Email Verification** 
+* **Login**  
+ 
+
+### Registration
+
+By default users will need to register via email in order to create an account.
+
+|                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
+|---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
+|`http://localhost:8080/api/v1/auth/signup`                           | POST   |                                               | [JSON](#signup)           |
+
+#### Sample Valid JSON Request Bodys
+
+##### <a id="signup">Signup -> /api/auth/signup</a>
+```json
+{
+    "username":"johndoe",
+    "email":"domain@example.com",
+    "password":"abcd1234"
+}
+```
+
+### Email Verification
+
+The simplest way to test emails in development mode is to use Mailtrap. You can sign up for a free account and then enter your mailtrap credentials in your **`.env`** file
+
+|                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
+|---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
+|`http://localhost:8080/api/v1/auth/verification/{verification-token}`| GET    |                                               |                           |
+
+### Login
+
+If you have just installed Spring Boot Application Template you can login with the following default accounts.
+
+|     Username     | Password |     Role     |                      Permission                       |         Resource          |
+|------------------|----------|--------------|-------------------------------------------------------|---------------------------|
+|`johndoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
+|`AdminUser`       |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
+|`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
+
+|                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
+|---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
+|`http://localhost:8080/api/v1/auth/login`                            | POST   |Bearer Token, Refresh Token is generated       | [JSON](#login)            |
+|`http://localhost:8080/api/v1/auth/refresh/token`                    | POST   |Refresh Token from login should be passed      | [JSON](#refresh-token)    |
+
+#### Sample Valid JSON Request Bodys
+
+##### <a id="login">Login -> /api/auth/login</a>
+```json
+{
+    "username":"johndoe",
+    "password":"abcd1234"
+}
+```
+
+
+
+
+
+
+
+
+
