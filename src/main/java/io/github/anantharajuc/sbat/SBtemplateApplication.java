@@ -12,7 +12,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 import io.github.anantharajuc.sbat.backend.service.impl.OtherServicesImpl;
 import io.github.cdimascio.dotenv.Dotenv;
-import io.github.cdimascio.dotenv.DotenvEntry;
 import lombok.extern.log4j.Log4j2;
 
 /**
