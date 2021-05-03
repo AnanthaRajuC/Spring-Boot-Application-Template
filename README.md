@@ -14,11 +14,8 @@ Essentially it's a simple on-demand application backend for rapd-prototyping.
 
 Features include but not limited to:
 
-1. User account creation via Email Id
-2. Account activation via Email verification
-3. Supported user actions - CREATE (POST), READ (GET), UPDATE (UPDATE), DELETE (DELETE)
-4. Supports Admin accounts for application maintainence
-5. User Account security via JSON Web Token (JWT)
+- [Authentication](documents/AUTHENTICATION.md)  
+- [User Roles](documents/USER_ROLES.md)  
 
 <div align="center">
 
