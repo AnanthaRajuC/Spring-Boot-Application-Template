@@ -9,7 +9,7 @@ Spring Boot Application Template is built on top of Spring Security and includes
 
 ### Registration
 
-By default users will need to register via email in order to create an account.
+By default users will need to register via. a valid email id in order to create an account.
 
 |                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
 |---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
@@ -38,11 +38,11 @@ The simplest way to test emails in development mode is to use Mailtrap. You can 
 
 If you have just installed Spring Boot Application Template you can login with the following default accounts.
 
-|     Username     | Password |     Role     |                      Permission                       |         Resource          |
-|------------------|----------|--------------|-------------------------------------------------------|---------------------------|
-|`johndoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
-|`AdminUser`       |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
-|`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
+|     Username     | Password |
+|------------------|----------|
+|`johndoe`         |`password`|
+|`AdminUser`       |`password`|
+|`AdminTraineeUser`|`password`|
 
 |                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
 |---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
@@ -59,7 +59,13 @@ If you have just installed Spring Boot Application Template you can login with t
 }
 ```
 
-
+##### <a id="refresh-token">Refresh Token -> /api/auth/refresh/token</a>
+```json
+{
+    "token":"1178cd43-21d2-45b4-8b5f-c79aa1d5b76e",
+    "username":"johndoe"
+}
+```
 
 
 
