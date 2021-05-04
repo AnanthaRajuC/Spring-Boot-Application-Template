@@ -27,7 +27,7 @@ import static javax.persistence.FetchType.LAZY;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="verification_token")
+@Table(name="sbat_auth_verification_token")
 @EntityListeners(AuditingEntityListener.class)
 @EqualsAndHashCode(callSuper=false)
 @FieldDefaults(level=AccessLevel.PRIVATE)

@@ -1,8 +1,8 @@
 --
--- Table structure for table `geo`
+-- Table structure for table `example_geo`
 --
 
-CREATE TABLE `geo` (
+CREATE TABLE `example_geo` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -14,10 +14,10 @@ CREATE TABLE `geo` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `address`
+-- Table structure for table `example_address`
 --
 
- CREATE TABLE `address` (
+ CREATE TABLE `example_address` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -30,14 +30,14 @@ CREATE TABLE `geo` (
   `geo_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKco48e3q5mlq831ijyssn2t25q` (`geo_id`),
-  CONSTRAINT `FKco48e3q5mlq831ijyssn2t25q` FOREIGN KEY (`geo_id`) REFERENCES `geo` (`id`)
+  CONSTRAINT `FKco48e3q5mlq831ijyssn2t25q` FOREIGN KEY (`geo_id`) REFERENCES `example_geo` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
  
 --
--- Table structure for table `person`
+-- Table structure for table `example_person`
 --
 
-CREATE TABLE `person` (
+CREATE TABLE `example_person` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -59,5 +59,5 @@ CREATE TABLE `person` (
   UNIQUE KEY `UK_24t7n7hhuvwaqw92b2t514m33` (`phone`),
   UNIQUE KEY `UK_n0i6d7rc1hqkjivk494g8j2qd` (`username`),
   KEY `FKk7rgn6djxsv2j2bv1mvuxd4m9` (`address_id`),
-  CONSTRAINT `FKk7rgn6djxsv2j2bv1mvuxd4m9` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`)
+  CONSTRAINT `FKk7rgn6djxsv2j2bv1mvuxd4m9` FOREIGN KEY (`address_id`) REFERENCES `example_address` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;

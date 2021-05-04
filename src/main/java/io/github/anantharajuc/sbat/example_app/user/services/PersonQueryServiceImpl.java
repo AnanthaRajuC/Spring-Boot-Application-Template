@@ -70,7 +70,7 @@ public class PersonQueryServiceImpl implements PersonQueryService
 	public PersonDTO getPersonByUsername(String username) 
 	{
 		log.info("-----> getPersonByUsername service");
-		
+
 		//Optional<Person> personOptional = personRepository.findByUsername(username); 
 		Optional<Person> personOptional = personRepository.getPersonByCreatedBy(username);
 		
@@ -78,7 +78,7 @@ public class PersonQueryServiceImpl implements PersonQueryService
 		{
 			throw new ResourceNotFoundException("Person", "username", username);
 		}
-		
+
 		return modelMapper.map(personOptional.get(), PersonDTO.class); 
 	}
 	

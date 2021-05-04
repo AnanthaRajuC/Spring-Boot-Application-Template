@@ -29,7 +29,7 @@ public interface PersonRepository extends JpaRepository<Person, Long>
      * @param gender the gender to search for
      * @return <code>List</code> of {@link Person}'s if found
      */
-	@Query(value = "SELECT * FROM person WHERE gender = :gender",nativeQuery = true) 
+	@Query(value = "SELECT * FROM example_person WHERE gender = :gender",nativeQuery = true) 
 	@Transactional(readOnly=true)
     List<Person> getPersonByGender(@Param("gender") String gender);
 	
@@ -38,7 +38,7 @@ public interface PersonRepository extends JpaRepository<Person, Long>
      * @param name the name to search for
      * @return The {@link Person} if found
      */
-	@Query(value = "SELECT * FROM person WHERE name = :name",nativeQuery = true) 
+	@Query(value = "SELECT * FROM example_person WHERE name = :name",nativeQuery = true) 
 	@Transactional(readOnly=true)
 	Person getPersonByName(@Param("name") String name);
 	
@@ -51,7 +51,7 @@ public interface PersonRepository extends JpaRepository<Person, Long>
 	Optional<Person> findByUsername(@NotBlank String username);
 	
 	//NEW
-	@Query(value = "SELECT * FROM person WHERE created_by = :createdBy",nativeQuery = true) 
+	@Query(value = "SELECT * FROM example_person WHERE created_by = :createdBy",nativeQuery = true) 
 	@Transactional(readOnly=true)
 	Optional<Person> getPersonByCreatedBy(@Param("createdBy") String createdBy);
 

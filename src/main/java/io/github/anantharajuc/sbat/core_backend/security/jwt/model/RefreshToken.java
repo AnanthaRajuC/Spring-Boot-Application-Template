@@ -18,7 +18,7 @@ import io.github.anantharajuc.sbat.core_backend.persistence.auditing.AuditEntity
 
 @Data
 @Entity
-@Table(name="refresh_token") 
+@Table(name="sbat_auth_refresh_token") 
 @EntityListeners(AuditingEntityListener.class)
 @AllArgsConstructor
 @NoArgsConstructor

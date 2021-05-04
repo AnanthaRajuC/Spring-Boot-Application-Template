@@ -27,7 +27,7 @@ import lombok.experimental.FieldDefaults;
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  */
 @Entity
-@Table(name = "geo")
+@Table(name = "example_geo")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter

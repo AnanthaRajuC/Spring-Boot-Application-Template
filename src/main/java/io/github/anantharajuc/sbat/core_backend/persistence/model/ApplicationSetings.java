@@ -26,7 +26,7 @@ import lombok.experimental.FieldDefaults;
  *
  */
 @Entity
-@Table(name = "application_settings")
+@Table(name = "sbat_settings")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter

@@ -26,7 +26,7 @@ import lombok.experimental.FieldDefaults;
  * @author Anantha Raju C
  */
 @Entity
-@Table(name="built_with")
+@Table(name="sbat_built_with")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
 @Getter

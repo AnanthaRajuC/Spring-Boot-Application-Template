@@ -29,7 +29,7 @@ import lombok.experimental.FieldDefaults;
  *
  */
 @Entity
-@Table(name = "role")
+@Table(name = "sbat_auth_role")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
@@ -44,7 +44,7 @@ public class Role extends AuditEntity
     String name;
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(   name = "permission_role", 
+    @JoinTable(   name = "sbat_auth_permission_role", 
            joinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}, 
     inverseJoinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")})
     private List<Permission> permissions;

@@ -20,10 +20,10 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `permission`
+-- Table structure for table `security_permission`
 --
 
-CREATE TABLE `permission` (
+CREATE TABLE `sbat_auth_permission` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -34,10 +34,10 @@ CREATE TABLE `permission` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `role`
+-- Table structure for table `security_role`
 --
 
-CREATE TABLE `role` (
+CREATE TABLE `sbat_auth_role` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -48,36 +48,36 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `permission_role`
+-- Table structure for table `security_permission_role`
 --
 
-CREATE TABLE `permission_role` (
+CREATE TABLE `sbat_auth_permission_role` (
   `role_id` bigint(20) NOT NULL,
   `permission_id` bigint(20) NOT NULL,
   KEY `FK3tuvkbyi6wcytyg21hvpd6txw` (`permission_id`),
   KEY `FK50sfdcvbvdaclpn7wp4uop4ml` (`role_id`),
-  CONSTRAINT `FK3tuvkbyi6wcytyg21hvpd6txw` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`id`),
-  CONSTRAINT `FK50sfdcvbvdaclpn7wp4uop4ml` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
+  CONSTRAINT `FK3tuvkbyi6wcytyg21hvpd6txw` FOREIGN KEY (`permission_id`) REFERENCES `sbat_auth_permission` (`id`),
+  CONSTRAINT `FK50sfdcvbvdaclpn7wp4uop4ml` FOREIGN KEY (`role_id`) REFERENCES `sbat_auth_role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
 
 --
--- Table structure for table `role_user`
+-- Table structure for table `security_role_user`
 --
 
-CREATE TABLE `role_user` (
+CREATE TABLE `sbat_auth_role_user` (
   `user_id` bigint(20) NOT NULL,
   `role_id` bigint(20) NOT NULL,
   KEY `FKiqpmjd2qb4rdkej916ymonic6` (`role_id`),
   KEY `FK4320p8bgvumlxjkohtbj214qi` (`user_id`),
   CONSTRAINT `FK4320p8bgvumlxjkohtbj214qi` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  CONSTRAINT `FKiqpmjd2qb4rdkej916ymonic6` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
+  CONSTRAINT `FKiqpmjd2qb4rdkej916ymonic6` FOREIGN KEY (`role_id`) REFERENCES `sbat_auth_role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `verification_token`
+-- Table structure for table `security_verification_token`
 --
 
-CREATE TABLE `verification_token` (
+CREATE TABLE `sbat_auth_verification_token` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_by` varchar(255) NOT NULL,
@@ -93,10 +93,10 @@ CREATE TABLE `verification_token` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `refresh_token`
+-- Table structure for table `security_refresh_token`
 --
 
-CREATE TABLE `refresh_token` (
+CREATE TABLE `sbat_auth_refresh_token` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_date` datetime DEFAULT NULL,
   `created_by` varchar(255) NOT NULL,

@@ -19,10 +19,10 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
  */
 
 --
--- Table structure for table `application_log`
+-- Table structure for table `sbat_log`
 --
 
- CREATE TABLE `application_log` (
+ CREATE TABLE `sbat_log` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -37,7 +37,7 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
 -- Table structure for table `built_with`
 --
 
- CREATE TABLE `built_with` (
+ CREATE TABLE `sbat_built_with` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -51,10 +51,10 @@ grant all privileges on *.* to 'USERNAME'@'IPADDRESS' with grant option;
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `application_settings`
+-- Table structure for table `sbat_settings`
 --
 
- CREATE TABLE `application_settings` (
+ CREATE TABLE `sbat_settings` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,

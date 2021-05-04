@@ -22,7 +22,7 @@ import lombok.experimental.FieldDefaults;
  *
  */
 @Entity
-@Table(name = "permission")
+@Table(name = "sbat_auth_permission")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
