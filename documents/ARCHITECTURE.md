@@ -32,13 +32,13 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 │       └── java
 │           ├── io.github.anantharajuc.sbat
 │           │ 
-│           ├──io.github.anantharajuc.sbat.app.admin.controllers
+│           ├──io.github.anantharajuc.sbat.example_app.admin.controllers
 │           │  
-│           ├──io.github.anantharajuc.sbat.app.user.controllers
-│           ├──io.github.anantharajuc.sbat.app.user.model
-│           ├──io.github.anantharajuc.sbat.app.user.model.dto
-│           ├──io.github.anantharajuc.sbat.app.user.repositories
-│           ├──io.github.anantharajuc.sbat.app.user.services
+│           ├──io.github.anantharajuc.sbat.example_app.user.controllers
+│           ├──io.github.anantharajuc.sbat.example_app.user.model
+│           ├──io.github.anantharajuc.sbat.example_app.user.model.dto
+│           ├──io.github.anantharajuc.sbat.example_app.user.repositories
+│           ├──io.github.anantharajuc.sbat.example_app.user.services
 │           │ 
 │           ├──io.github.anantharajuc.sbat.backend.api
 │           ├──io.github.anantharajuc.sbat.backend.api.rate_limiting

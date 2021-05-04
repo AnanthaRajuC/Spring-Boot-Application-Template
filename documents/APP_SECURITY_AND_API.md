@@ -144,7 +144,7 @@ Rate Limiting header `X-api-key`
 
 A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.
 
-Refer `io.github.anantharajuc.sbat.backend.security.authentication.LoginAttemptService`
+Refer `io.github.anantharajuc.sbat.backend.security.user.authentication.LoginAttemptService`
 
 ### Session Timeout
 

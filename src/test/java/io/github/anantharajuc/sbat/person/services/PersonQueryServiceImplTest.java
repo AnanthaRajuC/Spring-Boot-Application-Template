@@ -16,13 +16,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.github.anantharajuc.sbat.app.user.model.Address;
-import io.github.anantharajuc.sbat.app.user.model.GenderEnum;
-import io.github.anantharajuc.sbat.app.user.model.Geo;
-import io.github.anantharajuc.sbat.app.user.model.Person;
-import io.github.anantharajuc.sbat.app.user.model.dto.PersonDTO;
-import io.github.anantharajuc.sbat.app.user.repositories.PersonRepository;
-import io.github.anantharajuc.sbat.app.user.services.PersonQueryServiceImpl;
+import io.github.anantharajuc.sbat.example_app.user.model.Address;
+import io.github.anantharajuc.sbat.example_app.user.model.GenderEnum;
+import io.github.anantharajuc.sbat.example_app.user.model.Geo;
+import io.github.anantharajuc.sbat.example_app.user.model.Person;
+import io.github.anantharajuc.sbat.example_app.user.model.dto.PersonDTO;
+import io.github.anantharajuc.sbat.example_app.user.repositories.PersonRepository;
+import io.github.anantharajuc.sbat.example_app.user.services.PersonQueryServiceImpl;
 
 
  * Test class for {@link PersonQueryController}

@@ -20,9 +20,9 @@ By default users will need to register via. a valid email id in order to create 
 ##### <a id="signup">Signup -> /api/auth/signup</a>
 ```json
 {
-    "username":"johndoe",
+    "username":"janedoe",
     "email":"domain@example.com",
-    "password":"abcd1234"
+    "password":"password"
 }
 ```
 
@@ -55,7 +55,7 @@ If you have just installed Spring Boot Application Template you can login with t
 ```json
 {
     "username":"johndoe",
-    "password":"abcd1234"
+    "password":"password"
 }
 ```
 

@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbat.backend.exception.FailedLoginAttemptException;
-import io.github.anantharajuc.sbat.backend.security.authentication.LoginAttemptService;
+import io.github.anantharajuc.sbat.backend.security.user.authentication.LoginAttemptService;
 import io.github.anantharajuc.sbat.backend.security.user.model.User;
 import io.github.anantharajuc.sbat.backend.security.user.repository.UserRepository;
 import lombok.extern.log4j.Log4j2;
