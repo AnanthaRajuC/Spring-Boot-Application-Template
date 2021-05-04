@@ -12,7 +12,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbat.backend.exception.ResourceNotFoundException;
+import io.github.anantharajuc.sbat.core_backend.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbat.example_app.user.model.Person;
 import io.github.anantharajuc.sbat.example_app.user.model.dto.PersonDTO;
 import io.github.anantharajuc.sbat.example_app.user.repositories.PersonRepository;

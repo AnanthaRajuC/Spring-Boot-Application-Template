@@ -10,7 +10,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-import io.github.anantharajuc.sbat.backend.service.impl.OtherServicesImpl;
+import io.github.anantharajuc.sbat.core_backend.service.impl.OtherServicesImpl;
 import io.github.cdimascio.dotenv.Dotenv;
 import lombok.extern.log4j.Log4j2;
 

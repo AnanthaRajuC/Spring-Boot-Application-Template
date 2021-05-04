@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbat.backend.api.APIutil;
-import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
+import io.github.anantharajuc.sbat.core_backend.api.APIutil;
+import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.example_app.user.model.Person;
 import io.github.anantharajuc.sbat.example_app.user.model.PersonModelAssembler;
 import io.github.anantharajuc.sbat.example_app.user.model.dto.PersonDTOModelAssembler;

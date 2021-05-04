@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbat.backend.service.impl.PostmanEchoServiceImpl;
+import io.github.anantharajuc.sbat.core_backend.service.impl.PostmanEchoServiceImpl;
 import io.swagger.annotations.ApiOperation;
 
 /**

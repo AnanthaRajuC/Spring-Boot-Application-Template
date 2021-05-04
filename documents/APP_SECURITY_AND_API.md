@@ -69,7 +69,7 @@
 
 [Json Web Token - Role Based Access Controll via MySQL](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags)
 
-Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.backend.security`.
+Refer to the `ApplicationSecurityConfig` class in `io.github.anantharajuc.sbat.core_backend.security`.
 
 *	A Java Keystore File is required to generate JSON Web Token.
 
@@ -138,13 +138,13 @@ keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysiz
 
 Rate Limiting header `X-api-key`
 
-[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbat.backend.api.rate_limiting` package
+[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbat.core_backend.api.rate_limiting` package
 
 ### Preventing Brute Force Authentication Attempts
 
 A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.
 
-Refer `io.github.anantharajuc.sbat.backend.security.user.authentication.LoginAttemptService`
+Refer `io.github.anantharajuc.sbat.core_backend.security.user.authentication.LoginAttemptService`
 
 ### Session Timeout
 

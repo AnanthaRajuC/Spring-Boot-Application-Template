@@ -22,7 +22,7 @@ import io.github.anantharajuc.sbat.example_app.user.model.GenderEnum;
 import io.github.anantharajuc.sbat.example_app.user.model.Geo;
 import io.github.anantharajuc.sbat.example_app.user.model.Person;
 import io.github.anantharajuc.sbat.example_app.user.repositories.PersonRepository;
-import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
+import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)

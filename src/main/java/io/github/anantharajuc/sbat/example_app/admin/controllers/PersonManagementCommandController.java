@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.anantharajuc.sbat.backend.api.ResourcePaths;
+import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.example_app.user.model.Person;
 import io.github.anantharajuc.sbat.example_app.user.services.PersonCommandService;
 import io.swagger.annotations.ApiOperation;
