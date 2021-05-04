@@ -11,7 +11,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 import io.github.anantharajuc.sbat.core_backend.service.impl.OtherServicesImpl;
-import io.github.cdimascio.dotenv.Dotenv;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -51,13 +50,6 @@ public class SBtemplateApplication implements CommandLineRunner
 		
 		log.info("-----> Application Name    : "+otherServicesImpl.getApplicationName());	
 		log.info("-----> Application Version : "+otherServicesImpl.getApplicationVersion());
-		
-		Dotenv dotenv = Dotenv.load();
-		
-		log.info("-----> NEWVARSYS     : "+dotenv.get("NEWVARSYS", "DEFAULT VALUE - ERROR"));	
-		log.info("-----> NEWVARSBATUSR : "+dotenv.get("NEWVARSBATUSR", "DEFAULT VALUE - ERROR"));	
-		log.info("-----> NEWVARSBATSYS : "+dotenv.get("NEWVARSBATSYS", "DEFAULT VALUE - ERROR"));	
-
 	}
 }
  

@@ -48,9 +48,3 @@ INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`l
 INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('mailFrom','sbat@email.com','Account verification mail from address','Installation','Installation');
 INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('mailReplyTo','sbat@email.com','Account verification mail reply to address','Installation','Installation');
 INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('mailSubject','Spring Boot Application Template','Account verification mail subject','Installation','Installation');
-
-INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailHost','smtp.mailtrap.io','SMTP server host','Installation','Installation');
-INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailPort','2525','SMTP server port','Installation','Installation');
-INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailProtocol','smtp','Protocol used by the SMTP server','Installation','Installation');
-INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailUsername','b719b389f8c835','Login user of the SMTP server','Installation','Installation');
-INSERT INTO `sbat_settings` (`app_key`,`app_value`,`description`,`created_by`,`last_modified_by`) VALUES ('springMailPassword','f64ab693c96fde','Login password of the SMTP server','Installation','Installation');

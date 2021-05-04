@@ -184,6 +184,7 @@ Features include but not limited to:
 <details open="open">
    <ul>
       <li><a href="https://afeld.github.io/bootstrap-toc/">Bootstrap ToC</a> - Table of Contents plugin for Bootstrap</li>
+	  <li><a href="https://github.com/cdimascio/dotenv-java">dotenv-java</a> - A no-dependency, pure Java port of the Ruby dotenv project. Load environment variables from a .env file.</li>
       <li><a href="https://github.com/Antibrumm/thymeleaf-extras-with-dialect">Thymeleaf With Dialect</a> - A dialect for Thymeleaf that allows you to use attributes with a &quot;with&quot; prefix to avoid having long &quot;th:with&quot;-expressions.</li>
       <li><a href="https://github.com/ultraq/thymeleaf-layout-dialect">Thymeleaf Layout Dialect</a> - A dialect for Thymeleaf that lets you build layouts and reusable templates in order to improve code reuse.</li>
       <li><a href="https://projectlombok.org/">Lombok</a> - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</li>
@@ -261,7 +262,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 	[Mailtrap](https://mailtrap.io/) or any other service like **Gmail**, etc., can be used to create an SMTP.
 	
-	update the **springMailHost**, **springMailPort**, **springMailProtocol**, **springMailUsername** and **springMailPassword** details in the **application_settings** section of **/resources/data/mysql/migrations/V0_0_4__populate_data.sql**
+	**MAIL_HOST**, **MAIL_PORT**, **MAIL_PROTOCOL** is configured in the **.env** file. Now configure **MAIL_USERNAME**, **MAIL_PASSWORD** as environment variable.
+	
+	[dotenv-java](https://github.com/cdimascio/dotenv-java) is used to Load environment variables from the **.env** file.
 
 *	You need to have **MySQL** installed on your machine to run the application in **`dev`** profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
 
