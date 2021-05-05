@@ -131,7 +131,7 @@ public class PersonQueryController
 		  
 		headers.add(APIutil.HEADER_PERSON_API_VERSION, apiVersion);
 		headers.add(APIutil.HEADER_API_KEY, apiKey);
-		
-		return new ResponseEntity<>(personDTOModelAssembler.toModel(personQueryServiceImpl.getPersonByUsername(username)), headers, HttpStatus.OK); 
+
+		return new ResponseEntity<>(personQueryServiceImpl.getPersonByUsername(username), headers, HttpStatus.OK); 
 	}
 }

@@ -24,5 +24,5 @@ public interface PersonQueryService
 	
 	Page<Person> findPaginated(Pageable pageable);
 	
-	PersonDTO getPersonByUsername(String username);
+	List<Person> getPersonByUsername(String username);
 }

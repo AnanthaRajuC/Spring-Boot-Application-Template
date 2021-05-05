@@ -49,11 +49,15 @@ public interface PersonRepository extends JpaRepository<Person, Long>
      */
 	@Transactional(readOnly = true)
 	Optional<Person> findByUsername(@NotBlank String username);
-	
-	//NEW
+
+	/*
+     * Retrieve a {@link Person} from the data store by createdBy.
+     * @param createdBy the createdBy to search for
+     * @return <code>List</code> of {@link Person}'s if found
+     */
 	@Query(value = "SELECT * FROM example_person WHERE created_by = :createdBy",nativeQuery = true) 
 	@Transactional(readOnly=true)
-	Optional<Person> getPersonByCreatedBy(@Param("createdBy") String createdBy);
+	List<Person> getPersonByCreatedBy(@Param("createdBy") String createdBy);
 
 	/*
      * Retrieve a {@link Person} from the data store by username or email.

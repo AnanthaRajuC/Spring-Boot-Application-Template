@@ -67,19 +67,11 @@ public class PersonQueryServiceImpl implements PersonQueryService
 	}
 	
 	@Override
-	public PersonDTO getPersonByUsername(String username) 
+	public List<Person> getPersonByUsername(String username) 
 	{
 		log.info("-----> getPersonByUsername service");
 
-		//Optional<Person> personOptional = personRepository.findByUsername(username); 
-		Optional<Person> personOptional = personRepository.getPersonByCreatedBy(username);
-		
-		if(!personOptional.isPresent()) 
-		{
-			throw new ResourceNotFoundException("Person", "username", username);
-		}
-
-		return modelMapper.map(personOptional.get(), PersonDTO.class); 
+		return personRepository.getPersonByCreatedBy(username);
 	}
 	
 	@Override
