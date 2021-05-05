@@ -40,13 +40,6 @@ public class OtherServicesImpl implements OtherServices
 	private String mailFrom;
 	private String mailReplyTo;
 	private String mailSubject;
-
-	//SMTP details
-	private int springMailPort;
-	private String springMailProtocol;
-	private String springMailUsername;
-	private String springMailPassword;	
-	private String springMailHost;
 	
 	@Autowired
 	private ApplicationSettingsRepository applicationSettingsRepository;
@@ -84,11 +77,5 @@ public class OtherServicesImpl implements OtherServices
 		setMailFrom(applicationSettingsHashMap.get("mailFrom"));
 		setMailReplyTo(applicationSettingsHashMap.get("mailReplyTo")); 
 		setMailSubject(applicationSettingsHashMap.get("mailSubject"));
-
-		setSpringMailPort(Integer.parseInt(applicationSettingsHashMap.get("springMailPort")));
-		setSpringMailProtocol(applicationSettingsHashMap.get("springMailProtocol"));
-		setSpringMailUsername(applicationSettingsHashMap.get("springMailUsername"));
-		setSpringMailPassword(applicationSettingsHashMap.get("springMailPassword"));	
-		setSpringMailHost(applicationSettingsHashMap.get("springMailHost"));
 	}
 }

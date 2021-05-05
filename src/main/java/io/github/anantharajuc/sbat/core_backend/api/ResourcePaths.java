@@ -39,6 +39,18 @@ public class ResourcePaths
 		}
 	}
     
+    public class User
+    {
+    	public static final String NAME = "/user";
+    	
+    	public final class V1
+    	{
+    		private V1() {}
+    		
+    		public static final String ROOT           = ROOT_API_V1 + NAME;            /*	/api/v1/user                */
+    	}
+    }
+    
     public class PersonManagement
     {
     	public static final String NAME = "/management/person";
