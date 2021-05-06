@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.core_backend.persistence.repositories.BuiltWithRepository;
-import io.github.anantharajuc.sbat.example_app.user.controllers.PersonQueryController;
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
-import io.github.anantharajuc.sbat.example_app.user.services.PersonQueryServiceImpl;
+import io.github.anantharajuc.sbat.example.crm.user.controllers.PersonQueryController;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.services.PersonQueryServiceImpl;
 import lombok.extern.log4j.Log4j2;
 
 /**

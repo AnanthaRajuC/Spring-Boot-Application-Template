@@ -15,12 +15,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.github.anantharajuc.sbat.example_app.user.model.Address;
-import io.github.anantharajuc.sbat.example_app.user.model.GenderEnum;
-import io.github.anantharajuc.sbat.example_app.user.model.Geo;
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
-import io.github.anantharajuc.sbat.example_app.user.repositories.PersonRepository;
-import io.github.anantharajuc.sbat.example_app.user.services.PersonCommandServiceImpl;
+import io.github.anantharajuc.sbat.example.crm.user.model.Address;
+import io.github.anantharajuc.sbat.example.crm.user.model.GenderEnum;
+import io.github.anantharajuc.sbat.example.crm.user.model.Geo;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.repositories.PersonRepository;
+import io.github.anantharajuc.sbat.example.crm.user.services.PersonCommandServiceImpl;
 
 
  * Test class for {@link PersonCommandServiceImpl}

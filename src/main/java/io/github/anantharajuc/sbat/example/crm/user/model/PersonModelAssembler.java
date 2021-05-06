@@ -1,11 +1,11 @@
-package io.github.anantharajuc.sbat.example_app.user.model;
+package io.github.anantharajuc.sbat.example.crm.user.model;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 
-import io.github.anantharajuc.sbat.example_app.user.controllers.PersonQueryController;
+import io.github.anantharajuc.sbat.example.crm.user.controllers.PersonQueryController;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;

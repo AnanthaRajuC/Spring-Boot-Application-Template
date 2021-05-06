@@ -1,11 +1,11 @@
-package io.github.anantharajuc.sbat.example_app.user.services;
+package io.github.anantharajuc.sbat.example.crm.user.services;
 
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
-import io.github.anantharajuc.sbat.example_app.user.model.dto.PersonDTO;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.model.dto.PersonDTO;
 
 /**
  * Person Query Service.

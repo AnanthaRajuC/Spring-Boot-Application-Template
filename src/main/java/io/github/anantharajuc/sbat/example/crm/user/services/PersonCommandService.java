@@ -1,8 +1,8 @@
-package io.github.anantharajuc.sbat.example_app.user.services;
+package io.github.anantharajuc.sbat.example.crm.user.services;
 
 import org.springframework.http.ResponseEntity;
 
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 
 /**
  * Person Command Service.

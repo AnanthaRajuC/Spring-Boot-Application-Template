@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.example_app.user.model;
+package io.github.anantharajuc.sbat.example.crm.user.model;
 
 /**
  * Gender - Enum

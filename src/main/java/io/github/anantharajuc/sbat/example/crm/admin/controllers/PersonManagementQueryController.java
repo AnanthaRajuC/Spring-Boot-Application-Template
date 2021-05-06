@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.example_app.admin.controllers;
+package io.github.anantharajuc.sbat.example.crm.admin.controllers;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
-import io.github.anantharajuc.sbat.example_app.user.model.dto.PersonDTO;
-import io.github.anantharajuc.sbat.example_app.user.services.PersonQueryService;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.model.dto.PersonDTO;
+import io.github.anantharajuc.sbat.example.crm.user.services.PersonQueryService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 

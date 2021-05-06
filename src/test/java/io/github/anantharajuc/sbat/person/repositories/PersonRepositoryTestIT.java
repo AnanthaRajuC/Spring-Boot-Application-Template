@@ -13,11 +13,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import io.github.anantharajuc.sbat.example_app.user.model.Address;
-import io.github.anantharajuc.sbat.example_app.user.model.GenderEnum;
-import io.github.anantharajuc.sbat.example_app.user.model.Geo;
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
-import io.github.anantharajuc.sbat.example_app.user.repositories.PersonRepository;
+import io.github.anantharajuc.sbat.example.crm.user.model.Address;
+import io.github.anantharajuc.sbat.example.crm.user.model.GenderEnum;
+import io.github.anantharajuc.sbat.example.crm.user.model.Geo;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.repositories.PersonRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

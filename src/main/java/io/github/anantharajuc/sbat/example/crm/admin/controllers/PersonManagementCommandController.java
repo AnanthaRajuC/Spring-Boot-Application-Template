@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.example_app.admin.controllers;
+package io.github.anantharajuc.sbat.example.crm.admin.controllers;
 
 import javax.validation.Valid;
 
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
-import io.github.anantharajuc.sbat.example_app.user.services.PersonCommandService;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.services.PersonCommandService;
 import io.swagger.annotations.ApiOperation;
 
 /**

@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.example_app.user.model.dto;
+package io.github.anantharajuc.sbat.example.crm.user.model.dto;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
@@ -6,7 +6,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 
-import io.github.anantharajuc.sbat.example_app.user.controllers.PersonQueryController;
+import io.github.anantharajuc.sbat.example.crm.user.controllers.PersonQueryController;
 
 public class PersonDTOModelAssembler implements RepresentationModelAssembler<PersonDTO, EntityModel<PersonDTO>>
 {

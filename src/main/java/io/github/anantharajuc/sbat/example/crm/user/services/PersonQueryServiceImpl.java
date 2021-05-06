@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.example_app.user.services;
+package io.github.anantharajuc.sbat.example.crm.user.services;
 
 import java.util.Collections;
 import java.util.List;
@@ -13,9 +13,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbat.core_backend.exception.ResourceNotFoundException;
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
-import io.github.anantharajuc.sbat.example_app.user.model.dto.PersonDTO;
-import io.github.anantharajuc.sbat.example_app.user.repositories.PersonRepository;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.model.dto.PersonDTO;
+import io.github.anantharajuc.sbat.example.crm.user.repositories.PersonRepository;
 import lombok.extern.log4j.Log4j2;
 
 /*

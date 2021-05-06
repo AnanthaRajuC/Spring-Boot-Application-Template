@@ -1,11 +1,11 @@
-package io.github.anantharajuc.sbat.example_app.user.repositories;
+package io.github.anantharajuc.sbat.example.crm.user.repositories;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import io.github.anantharajuc.sbat.example_app.user.model.Person;
+import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 
 import javax.validation.constraints.NotBlank;
 
