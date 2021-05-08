@@ -282,7 +282,9 @@ create user 'sbat'@'localhost' identified by 'sbat';
 grant all privileges on *.* to 'sbat'@'localhost' with grant option;
 ~~~
 
-After creating the database/schema, you need to add your **MySQL** `username` and `password` in the `application-dev.properties` file on `src/main/resource`. The lines that must be modified are as follows:
+We need to specify our Environment variables for the application. Open up the **`.env`** file and update your **DB_DATABASE**, **DB_USERNAME**, **DB_CONNECTION**, **DB_HOST**, **DB_PORT** and **DB_PASSWORD** in the appropriate fields.
+
+If you do not wish to use environment variables. After creating the database/schema, you need to add your **MySQL** `username` and `password` in the `application-dev.properties` file on `src/main/resource`. The lines that must be modified are as follows:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/sbat?useSSL=false&allowPublicKeyRetrieval=true

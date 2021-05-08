@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.core_backend.persistence.repositories.BuiltWithRepository;
+import io.github.anantharajuc.sbat.core_backend.util.SiteSettings;
 import io.github.anantharajuc.sbat.example.crm.user.controllers.PersonQueryController;
 import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 import io.github.anantharajuc.sbat.example.crm.user.services.PersonQueryServiceImpl;
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -58,8 +60,19 @@ public class SpringBootApplicationTemplateController
     }
 	  
 	@GetMapping(value=ResourcePaths.SBAT.V1.INDEX)
-    public String index() 
+    public String index(Model model) 
 	{
+		Dotenv dotenv = Dotenv.load();	
+		
+		SiteSettings siteSettings = new SiteSettings();	
+		
+		siteSettings.setSiteLogo(dotenv.get("SITE_LOGO", "Unable to fetch SITE_LOGO"));
+		siteSettings.setSiteInitials(dotenv.get("SITE_INITIALS", "Unable to fetch SITE_INITIALS"));
+		siteSettings.setSiteTitle(dotenv.get("SITE_TITLE", "Unable to fetch SITE_TITLE"));
+		siteSettings.setSiteDescription(dotenv.get("SITE_DESCRIPTION", "Unable to fetch SITE_DESCRIPTION"));
+		
+		model.addAttribute("site_settings", siteSettings);
+		
 		return "pages/index";
     }
 	

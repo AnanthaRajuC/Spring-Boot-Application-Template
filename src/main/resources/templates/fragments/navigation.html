@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
    <a class="navbar-brand" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template" target="_blank" rel="noopener noreferrer">
-   <img src="/images/map.svg" width="30" height="30" alt="" loading="lazy">
-   SBAT
+   <img th:src="@{${site_settings.SiteLogo}}" width="30" height="30" alt="" loading="lazy" th:text="${site_settings.SiteInitials}">
    </a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
