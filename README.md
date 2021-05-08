@@ -148,135 +148,43 @@ Features include but not limited to:
 
 ## Technology stack & other Open-source libraries
 
-* 	Refer to [TECHNOLOGY STACK.md](documents/TECHNOLOGY_STACK.md) for details.
+* 	Refer to [TECHNOLOGY STACK.md](documents/TECHNOLOGY_STACK.MD) for details.
+
+## Features and To-Do
+
+* 	Refer to [TECHNICAL_FUNCTIONALITIES.MD](documents/TECHNICAL_FUNCTIONALITIES.MD) for details.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-*	To activate the accounts of registered users, an email with activation link is sent to the email provided during the user signup stage. An **SMTP** is required for the same.
-
-	[Mailtrap](https://mailtrap.io/) or any other service like **Gmail**, etc., can be used to create an SMTP.
-	
-	**MAIL_HOST**, **MAIL_PORT**, **MAIL_PROTOCOL** is configured in the **.env** file. Now configure **MAIL_USERNAME**, **MAIL_PASSWORD** as environment variable.
-	
-	[dotenv-java](https://github.com/cdimascio/dotenv-java) is used to Load environment variables from the **.env** file.
-
-*	You need to have **MySQL** installed on your machine to run the application in **`dev`** profile. Using the `MySQL Workbench` or on any other MySQL client/console, create a database/schema named `sbat`. 
-
-~~~sql
--- create schema
-CREATE SCHEMA sbat;
-
--- use schema
-USE sbat;
-
--- Create user 
-create user 'sbat'@'localhost' identified by 'sbat';
-
--- Grant privileges to user
-grant all privileges on *.* to 'sbat'@'localhost' with grant option;
-~~~
-
-We need to specify our Environment variables for the application. Open up the **`.env`** file and update your **DB_DATABASE**, **DB_USERNAME**, **DB_CONNECTION**, **DB_HOST**, **DB_PORT** and **DB_PASSWORD** in the appropriate fields.
-
-If you do not wish to use environment variables. After creating the database/schema, you need to add your **MySQL** `username` and `password` in the `application-dev.properties` file on `src/main/resource`. The lines that must be modified are as follows:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/sbat?useSSL=false&allowPublicKeyRetrieval=true
-spring.datasource.username=sbat
-spring.datasource.password=sbat
-```
-
-*	A Java Keystore File is required to generate JSON Web Token.
-
-```shell
-keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
-```
-
-<img src="documents\images\settings\reddit-clone-jks-generation.PNG"/>
-
-### EER Diagram
-
-* 	Refer to [ARCHITECTURE.md](documents/ARCHITECTURE.md) for details.
+* 	Refer to [GETTING_STARTED.MD](documents/GETTING_STARTED.MD) for details.
 
 ## Installing
 
-*	Default active profile is **`test`**. When the application is running, **Flyway** will create the necessary tables and system data along with sample data. In the **`test`** profile, the application uses **H2** database (data in memory).
-
-* 	URL to access application UI: **http://localhost:8080/sbat/index** or **https://192.168.99.102:8080/sbat/index** if **SSL** is enabled.
-
-* 	Other sample profiles like **`dev`**, **`production`**, **`qa`**, and  **`staging`** are available. Change the **spring.profiles.active** property in the **application.properties** file to any of the aforementioned profiles to use it.
-
-*	To enable or disable **SSL** support, in the **application properties** file turn **server.ssl.enabled** to **true** or **false**
-
-#### Running the application with IDE
-
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.arc.sbtest.SBtemplateApplication` class from your IDE.
-
-* 	Download the zip or clone the Git repository.
-* 	Unzip the zip file (if you downloaded one)
-* 	Open Command Prompt and Change directory (cd) to folder containing pom.xml
-* 	Open Eclipse
-	* File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
-	* Select the project
-* 	Choose the Spring Boot Application file (search for @SpringBootApplication)
-* 	Right Click on the file and Run as Java Application
-
-#### Running the application with Maven
-
-Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
-
-```shell
-$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
-$ mvn spring-boot:run
-```
-
-#### Running the application with Executable JAR
-
-The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command 
-
-```shell
-$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
-$ mvn package -DskipTests
-$ java -jar target/SBtemplate-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
-```
-
-To shutdown the jar, follow the below mentioned steps on a Windows machine.
-
-*	In command prompt execute the **jcmd** command to print a list of all running Java processes
-*	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP** with the actual process id of the running jar found out from executing the previous command
-
-##### Accessing Data in H2 Database
-
-###### H2 Console
-
-URL to access H2 console: **http://localhost:8080/h2-console/login.jsp** or **https://192.168.99.102:8080/h2-console/login.jsp** if **SSL** is enabled.
-
-Fill the login form as follows and click on Connect:
-
-* 	Saved Settings: **Generic H2 (Embedded)**
-* 	Setting Name: **Generic H2 (Embedded)**
-* 	Driver class: **org.h2.Driver**
-* 	JDBC URL: **jdbc:h2:mem:sbat;MODE=MySQL**
-* 	User Name: **sa**
-* 	Password:
-
-<img src="documents\images\h2db\h2-console-login.PNG"/>
-
-<img src="documents\images\h2db\h2-console-main-view.PNG"/>
-
-#### Running the application via docker container
-
-* 	Refer to [DOCKER.md](documents/DOCKER.md) for details.
+* 	Refer to [INSTALLATION.MD](documents/INSTALLATION.MD) for details.
 
 ## Deployment
 
 * 	Refer to [DEPLOYMENT.md](documents/DEPLOYMENT.md) for details.
+
+## Security
+
+* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
+
+## Explore Rest APIs
+
+* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
+
+## Testing API
+
+* 	Refer to [TESTING.MD](documents/TESTING.MD) for details.
+
+## Files and Directories Structure
+
+* 	Refer to [ARCHITECTURE.md](documents/ARCHITECTURE.md) for details.
+
+## Changelog
+
+See [CHANGELOG.md](documents/CHANGELOG.md)
 
 ## Code Coverage
 
@@ -291,96 +199,6 @@ $ mvn cobertura:cobertura
 This will create a detailed HTML style report showing code coverage statistics gathered via code instrumentation.
 
 **Spring-Boot-Application-Template\target\site\cobertura**
-
-## Testing API
-
-### Testing with Postman Runner
-
-Import the **Spring Boot Application Template API.postman_test_run** file into postman and run the API tests.
-
-### Testing with Maven
-
-*	Run only unit tests:
-
-```shell
-$ mvn clean test
-```
-
-### Basic Load Testing
-
-Basic load testing for retrieving a `person` for a given `id` can be performed with the ApacheBench by executing the following command:
-
-```shell
-ab -n 10000 -c 100 -k http://localhost:8080/api/v1/person/1
-```
-
-* **-n 10000** is the number of requests to make
-* **-c 100** is the number of concurrent requests to make at a time
-* **-k** sends the **KeepAlive** header, which asks the web server to not shut down the connection after each request is done, but to instead keep reusing it
-
-Result:
-
-```
-Benchmarking localhost (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
-
-
-Server Software:
-Server Hostname:        localhost
-Server Port:            8080
-
-Document Path:          /api/v1/person/1
-Document Length:        132 bytes
-
-Concurrency Level:      100
-Time taken for tests:   9.213 seconds
-Complete requests:      10000
-Failed requests:        0
-Non-2xx responses:      10000
-Keep-Alive requests:    0
-Total transferred:      5330000 bytes
-HTML transferred:       1320000 bytes
-Requests per second:    1085.38 [#/sec] (mean)
-Time per request:       92.133 [ms] (mean)
-Time per request:       0.921 [ms] (mean, across all concurrent requests)
-Transfer rate:          564.95 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    1   1.1      1      49
-Processing:    13   91  30.1     85     523
-Waiting:        0   68  29.3     65     472
-Total:         14   91  30.1     85     523
-
-Percentage of the requests served within a certain time (ms)
-  50%     85
-  66%     95
-  75%    101
-  80%    105
-  90%    119
-  95%    136
-  98%    176
-  99%    223
- 100%    523 (longest request)
-```
-
-## Security
-
-* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
-
-## Explore Rest APIs
-
-* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
 
 ## Documentation
 
@@ -401,10 +219,6 @@ This app can be adapted to various languages and regions without engineering cha
 
 Refer `io.github.anantharajuc.sbat.core_backend.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
 
-## Files and Directories Structure
-
-* 	Refer to [ARCHITECTURE.md](documents/ARCHITECTURE.md) for details.
-
 ## Reporting Issues/Suggest Improvements
 
 This Project uses GitHub's integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:
@@ -413,10 +227,6 @@ This Project uses GitHub's integrated issue tracking system to record bugs and f
 * 	If the issue doesn't already exist, [create a new issue](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new)
 * 	Please provide as much information as possible with the issue report.
 * 	If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.
-
-## Changelog
-
-See [CHANGELOG.md](documents/CHANGELOG.md)
 
 <!-- CONTRIBUTING -->
 ## Contributing
