@@ -81,10 +81,10 @@ Fill the login form as follows and click on Connect:
 * 	User Name: **sa**
 * 	Password:
 
-<img src="documents\images\h2db\h2-console-login.PNG"/>
+<img src="images\h2db\h2-console-login.PNG"/>
 
-<img src="documents\images\h2db\h2-console-main-view.PNG"/>
+<img src="images\h2db\h2-console-main-view.PNG"/>
 
 #### Running the application via docker container
 
-* 	Refer to [DOCKER.md](documents/DOCKER.md) for details.
+* 	Refer to [DOCKER.md](/DOCKER.md) for details.

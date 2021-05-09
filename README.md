@@ -74,6 +74,7 @@ Features include but not limited to:
 - [Technology stack & other Open-source libraries](documents/TECHNOLOGY_STACK.MD)  
 - [Technical Functionalities and To-Do](documents/TECHNICAL_FUNCTIONALITIES.MD)  
 - [Getting Started](documents/GETTING_STARTED.MD)  
+- [Architecture](documents/ARCHITECTURE.md) 
 - [Installation](documents/INSTALLATION.MD)  
 - [Deployment](documents/DEPLOYMENT.md)  
 - [Explore Rest APIs](documents/APP_SECURITY_AND_API.md)  

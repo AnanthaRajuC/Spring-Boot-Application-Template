@@ -51,8 +51,4 @@ spring.datasource.password=sbat
 keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048
 ```
 
-<img src="documents\images\settings\reddit-clone-jks-generation.PNG"/>
-
-### EER Diagram
-
-* 	Refer to [ARCHITECTURE.md](documents/ARCHITECTURE.md) for details.
+<img src="images\settings\reddit-clone-jks-generation.PNG"/>
