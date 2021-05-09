@@ -16,6 +16,7 @@ Features include but not limited to:
 
 - [Authentication](documents/AUTHENTICATION.MD)  
 - [User Roles](documents/USER_ROLES.MD)  
+- [Internationalization (i18n)](documents/INTERNATIONALIZATION.MD) 
 
 <div align="center">
 
@@ -125,7 +126,6 @@ Features include but not limited to:
       <li><a href="#security">Security</a></li>
       <li><a href="#explore-rest-apis">Explore Rest APIs</a></li>
       <li><a href="#documentation">Documentation</a></li>
-      <li><a href="#internationalization--i18n-">Internationalization (i18n)</a></li>
       <li>
          <a href="#files-and-directories-structure">Files and Directories Structure</a>
       </li>
@@ -146,78 +146,20 @@ Features include but not limited to:
 
 **More [Screenshots](documents/SCREENSHOTS.md)**
 
-## Technology stack & other Open-source libraries
+## Details
 
-* 	Refer to [TECHNOLOGY STACK.md](documents/TECHNOLOGY_STACK.MD) for details.
-
-## Features and To-Do
-
-* 	Refer to [TECHNICAL_FUNCTIONALITIES.MD](documents/TECHNICAL_FUNCTIONALITIES.MD) for details.
-
-## Getting Started
-
-* 	Refer to [GETTING_STARTED.MD](documents/GETTING_STARTED.MD) for details.
-
-## Installing
-
-* 	Refer to [INSTALLATION.MD](documents/INSTALLATION.MD) for details.
-
-## Deployment
-
-* 	Refer to [DEPLOYMENT.md](documents/DEPLOYMENT.md) for details.
-
-## Security
-
-* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
-
-## Explore Rest APIs
-
-* 	Refer to [APP_SECURITY_AND_API.md](documents/APP_SECURITY_AND_API.md) for details.
-
-## Testing API
-
-* 	Refer to [TESTING.MD](documents/TESTING.MD) for details.
-
-## Files and Directories Structure
-
-* 	Refer to [ARCHITECTURE.md](documents/ARCHITECTURE.md) for details.
-
-## Changelog
-
-See [CHANGELOG.md](documents/CHANGELOG.md)
-
-## Code Coverage
-
-### Cobertura
-
-Generating code coverage reports
-
-```shell
-$ mvn cobertura:cobertura
-```
-
-This will create a detailed HTML style report showing code coverage statistics gathered via code instrumentation.
-
-**Spring-Boot-Application-Template\target\site\cobertura**
-
-## Documentation
-
-* 	[Postman Collection](https://documenter.getpostman.com/view/2449187/TVCe1UAk) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
-* 	Postman Collection for offline testing is available in the postman folder.
-* 	[Swagger](http://localhost:8080/swagger-ui.html) - `http://localhost:8080/swagger-ui.html`- Documentation & Testing
-* 	[Swagger](http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template) - `http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template`- Documentation & Testing
-*	Find Java Doc in **javadoc** folder
-* 	Java Doc is generated in `Spring-Boot-Application-Template\target\site\apidocs` folder using the Maven command 
-
-```text
-`mvn javadoc:javadoc`                   //Generate JavaDoc
-```
-
-## Internationalization (i18n)
-
-This app can be adapted to various languages and regions without engineering changes. Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.
-
-Refer `io.github.anantharajuc.sbat.core_backend.config.I18Nconfiguration`. The text elements are stored in `\src\main\resources\i18n` folder.
+- [Technology stack & other Open-source libraries](documents/TECHNOLOGY_STACK.MD)  
+- [Technical Functionalities and To-Do](documents/TECHNICAL_FUNCTIONALITIES.MD)  
+- [Getting Started](documents/GETTING_STARTED.MD)  
+- [Installation](documents/INSTALLATION.MD)  
+- [Deployment](documents/DEPLOYMENT.md)  
+- [Explore Rest APIs](documents/APP_SECURITY_AND_API.md)  
+- [Security](documents/APP_SECURITY_AND_API.md)  
+- [Testing API](documents/TESTING.MD)  
+- [Files and Directories Structure](documents/ARCHITECTURE.md)  
+- [Changelog](documents/CHANGELOG.md) 
+- [Code Coverage](documents/CODE_COVERAGE.MD) 
+- [Documentation](documents/DOCUMENTATION.MD) 
 
 ## Reporting Issues/Suggest Improvements
 
