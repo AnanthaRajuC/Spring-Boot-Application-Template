@@ -21,7 +21,7 @@ CREATE TABLE `user` (
 -- Table structure for table `permission`
 --
 
-CREATE TABLE `permission` (
+CREATE TABLE `sbat_auth_permission` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -34,7 +34,7 @@ CREATE TABLE `permission` (
 -- Table structure for table `role`
 --
 
-CREATE TABLE `role` (
+CREATE TABLE `sbat_auth_role` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -47,31 +47,31 @@ CREATE TABLE `role` (
 -- Table structure for table `permission_role`
 --
 
-create table permission_role (
+create table sbat_auth_permission_role (
 role_id bigint not null,
 permission_id bigint not null
 );
 
-ALTER TABLE permission_role ADD FOREIGN KEY (permission_id) REFERENCES permission(id);
-ALTER TABLE permission_role ADD FOREIGN KEY (role_id) REFERENCES role(id);
+ALTER TABLE sbat_auth_permission_role ADD FOREIGN KEY (permission_id) REFERENCES sbat_auth_permission(id);
+ALTER TABLE sbat_auth_permission_role ADD FOREIGN KEY (role_id) REFERENCES sbat_auth_role(id);
 
 --
 -- Table structure for table `role_user`
 --
 
-create table role_user (
+create table sbat_auth_role_user (
 user_id bigint not null,
 role_id bigint not null
 );
 
-ALTER TABLE role_user ADD FOREIGN KEY (user_id) REFERENCES permission(id);
-ALTER TABLE role_user ADD FOREIGN KEY (role_id) REFERENCES role(id);
+ALTER TABLE sbat_auth_role_user ADD FOREIGN KEY (user_id) REFERENCES sbat_auth_permission(id);
+ALTER TABLE sbat_auth_role_user ADD FOREIGN KEY (role_id) REFERENCES sbat_auth_role(id);
 
 --
 -- Table structure for table `verification_token`
 --
 
-CREATE TABLE `verification_token` (
+CREATE TABLE `sbat_auth_verification_token` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -83,13 +83,13 @@ CREATE TABLE `verification_token` (
   `user_id` bigint(20) DEFAULT NULL
 );
 
-ALTER TABLE verification_token ADD FOREIGN KEY (user_id) REFERENCES user(id);
+ALTER TABLE sbat_auth_verification_token ADD FOREIGN KEY (user_id) REFERENCES user(id);
 
 --
 -- Table structure for table `refresh_token`
 --
 
-CREATE TABLE `refresh_token` (
+CREATE TABLE `sbat_auth_refresh_token` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_date` datetime DEFAULT NULL,
   `created_by` varchar(255) NOT NULL,
@@ -97,4 +97,4 @@ CREATE TABLE `refresh_token` (
   `last_modified_by` varchar(255) NOT NULL,
   `token` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL
-) ;
+);

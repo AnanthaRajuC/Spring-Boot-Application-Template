@@ -2,7 +2,7 @@
 -- Table structure for table `geo`
 --
 
-CREATE TABLE `geo` (
+CREATE TABLE `example_geo` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -16,7 +16,7 @@ CREATE TABLE `geo` (
 -- Table structure for table `address`
 --
 
- CREATE TABLE `address` (
+ CREATE TABLE `example_address` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -29,13 +29,13 @@ CREATE TABLE `geo` (
   `geo_id` bigint(20) DEFAULT NULL
 );
 
-ALTER TABLE address ADD FOREIGN KEY (geo_id) REFERENCES geo(id);
+ALTER TABLE example_address ADD FOREIGN KEY (geo_id) REFERENCES example_geo(id);
 
 --
 -- Table structure for table `person`
 --
 
-CREATE TABLE `person` (
+CREATE TABLE `example_person` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -54,4 +54,4 @@ CREATE TABLE `person` (
   `address_id` bigint(20) DEFAULT NULL
 );
 
-ALTER TABLE person ADD FOREIGN KEY (address_id) REFERENCES address(id);
+ALTER TABLE example_person ADD FOREIGN KEY (address_id) REFERENCES example_address(id);

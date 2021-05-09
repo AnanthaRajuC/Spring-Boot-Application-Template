@@ -2,7 +2,7 @@
 -- Table structure for table `application_log`
 --
 
-CREATE TABLE `application_log` (
+CREATE TABLE `sbat_log` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -16,7 +16,7 @@ CREATE TABLE `application_log` (
 -- Table structure for table `built_with`
 --
 
-CREATE TABLE `built_with` (
+CREATE TABLE `sbat_built_with` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -32,7 +32,7 @@ CREATE TABLE `built_with` (
 -- Table structure for table `application_settings`
 --
 
-CREATE TABLE `application_settings` (
+CREATE TABLE `sbat_settings` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `created_by` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
