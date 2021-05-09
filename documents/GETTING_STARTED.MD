@@ -2,6 +2,13 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+<details open="open">
+	<ul>
+		<li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#eer-diagram">EER Diagram</a></li>
+	</ul>
+</details>
+
 ### Prerequisites
 
 *	To activate the accounts of registered users, an email with activation link is sent to the email provided during the user signup stage. An **SMTP** is required for the same.

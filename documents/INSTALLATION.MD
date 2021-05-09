@@ -8,6 +8,25 @@
 
 *	To enable or disable **SSL** support, in the **application properties** file turn **server.ssl.enabled** to **true** or **false**
 
+<details open="open">
+	<ul>
+		<li><a href="#running-the-application-with-ide">Running the application with IDE</a></li>
+		<li><a href="#running-the-application-with-maven">Running the application with Maven</a></li>
+		<li>
+			<a href="#running-the-application-with-executable-jar">Running the application with Executable JAR</a>
+			<ul>
+				<li>
+					<a href="#accessing-data-in-h2-database">Accessing Data in H2 Database</a>
+					<ul>
+						<li><a href="#h2-console">H2 Console</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><a href="#running-the-application-via-docker-container">Running the application via docker container</a></li>
+	</ul>
+</details>
+
 #### Running the application with IDE
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.arc.sbtest.SBtemplateApplication` class from your IDE.

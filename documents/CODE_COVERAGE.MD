@@ -1,5 +1,11 @@
 ## Code Coverage
 
+<details open="open">
+	<ul>
+		<li><a href="#cobertura">Cobertura</a></li>
+	</ul>
+</details>
+
 ### Cobertura
 
 Generating code coverage reports

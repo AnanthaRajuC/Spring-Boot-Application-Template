@@ -1,5 +1,13 @@
 ## Testing API
 
+<details open="open">
+	<ul>
+		<li><a href="#testing-with-postman-runner">Testing with Postman Runner</a></li>
+		<li><a href="#testing-with-maven">Testing with Maven</a></li>
+		<li><a href="#basic-load-testing">Basic Load Testing</a></li>
+	</ul>
+</details>
+
 ### Testing with Postman Runner
 
 Import the **Spring Boot Application Template API.postman_test_run** file into postman and run the API tests.
