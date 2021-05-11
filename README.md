@@ -4,7 +4,7 @@
 *** or simply open an issue with the tag "enhancement".
 *** Thanks again!
 -->
-# Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/AnanthaRajuC/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template)
+# Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/AnanthaRajuC/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/github/AnanthaRajuC/Spring-Boot-Application-Template)
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.
 
