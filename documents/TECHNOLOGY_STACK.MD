@@ -13,34 +13,28 @@
 
 ### Data
 
-<details open="open">
-   <ul>
-      <li><a href="https://flywaydb.org/">Flyway</a> - Version control for database</li>
-      <li><a href="https://www.mysql.com/">MySQL</a> - Open-Source Relational Database Management System</li>
-      <li><a href="https://www.h2database.com/html/main.html">H2 Database Engine</a> - Java SQL database. Embedded and server modes; in-memory databases</li>
-   </ul>
-</details>
+|                 Technology                                               |                              Description                        |
+|--------------------------------------------------------------------------|-----------------------------------------------------------------|
+|<a href="https://flywaydb.org/">Flyway</a>                                |Version control for database                                     |
+|<a href="https://www.mysql.com/">MySQL</a>                                |Open-Source Relational Database Management System                |
+|<a href="https://www.h2database.com/html/main.html">H2 Database Engine</a>|Java SQL database. Embedded and server modes; in-memory databases|
 
 ### Client - Frontend/UI
 
-<details open="open">
-   <ul>
-      <li><a href="https://getbootstrap.com/">Bootstrap</a> - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.</li>
-      <li><a href="https://bootstrap-table.com/">Bootstrap Table</a> - An extended table to the integration with some of the most widely used CSS frameworks.</li>
-      <li><a href="https://www.thymeleaf.org/">Thymeleaf</a> - Modern server-side Java template engine for both web and standalone environments.</li>
-   </ul>
-</details>
+|                 Technology                               |                                           Description                                                           |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+|<a href="https://getbootstrap.com/">Bootstrap</a>         |Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.|
+|<a href="https://bootstrap-table.com/">Bootstrap Table</a>|An extended table to the integration with some of the most widely used CSS frameworks.                           |
+|<a href="https://www.thymeleaf.org/">Thymeleaf</a>        |Modern server-side Java template engine for both web and standalone environments.                                |
 
 ### Server - Backend
 
-<details open="open">
-   <ul>
-      <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a> - Java™ Platform, Standard Edition Development Kit</li>
-      <li><a href="https://spring.io/projects/spring-boot">Spring Boot</a> - Framework to ease the bootstrapping and development of new Spring Applications</li>
-      <li><a href="https://maven.apache.org/">Maven</a> - Dependency Management</li>
-      <li><a href="https://www.jsonwebtoken.io/">JSON Web Token</a> - Encode or Decode JWTs</li>
-   </ul>
-</details>
+|                                            Technology                                               |                              Description                                     |
+|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+|<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a>|Java™ Platform, Standard Edition Development Kit                              |
+|<a href="https://spring.io/projects/spring-boot">Spring Boot</a>                                     |Framework to ease the bootstrapping and development of new Spring Applications|
+|<a href="https://maven.apache.org/">Maven</a>                                                        |Dependency Management                                                         |
+|<a href="https://www.jsonwebtoken.io/">JSON Web Token</a>                                            |Encode or Decode JWTs                                                         |
 
 ###  Libraries and Plugins
 
