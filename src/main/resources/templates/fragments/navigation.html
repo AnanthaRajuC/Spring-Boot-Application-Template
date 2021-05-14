@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
    <a class="navbar-brand" href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template" target="_blank" rel="noopener noreferrer">
-   <img th:src="@{${site_settings.SiteLogo}}" width="30" height="30" alt="" loading="lazy" th:text="${site_settings.SiteInitials}">
+   <!--<img th:src="@{${site_settings.SiteLogo}}" width="30" height="30" alt="" loading="lazy" th:text="${site_settings.SiteInitials}">-->
+   <img src="/images/map.svg" width="30" height="30" alt="" loading="lazy" text="SBAT">
    </a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -24,9 +25,8 @@
             <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
          </li>
          <li class="nav-item" sec:authorize="isAuthenticated()">
-            <a sec:authorize="hasRole('ROLE_PERSON')" class="nav-link" href="/sbat/listPersons" th:text="#{navbar.persons.text}"></span></a>
+            <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" href="/sbat/listPersons" th:text="#{navbar.persons.text}"></span></a>
          </li>
-		 
 
 		<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="Help"></a>
@@ -38,8 +38,7 @@
 			   <a class="dropdown-item notify-item" href="/sbat/security"><img src="/images/security.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.security.text}"></a>
 			</div>
          </li> 
-		 
-		 
+
       </ul>
       </br>		    	
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
