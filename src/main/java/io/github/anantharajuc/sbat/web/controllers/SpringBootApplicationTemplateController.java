@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +35,7 @@ import lombok.extern.log4j.Log4j2;
  */
 @Log4j2
 @Controller
-@RequestMapping(value=ResourcePaths.SBAT.V1.ROOT)
+@RequestMapping(value=ResourcePaths.SBAT.V1.ROOT) 
 public class SpringBootApplicationTemplateController 
 {
 	@Autowired
@@ -156,15 +157,27 @@ public class SpringBootApplicationTemplateController
 		return "pages/close";
 	}
 	
+	@GetMapping("/listPersonsByUsers")
+	public String listPersons(Model model)
+	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        
+        log.info("currentPrincipalName : "+currentPrincipalName);
+        
+        model.addAttribute("personPage", personQueryServiceImpl.getPersonByUsername(currentPrincipalName)); 
+        
+		return "pages/listPersonsByUsers";
+	}
+	
 	@GetMapping("/listPersons")
-	//@PreAuthorize("#username == authentication.principal.username")
 	public String listPersons(Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size)
 	{
 		final int currentPage = page.orElse(1);
         final int pageSize = size.orElse(10);
-        
+
         Page<Person> personPage = personQueryServiceImpl.findPaginated(PageRequest.of(currentPage - 1, pageSize));
-        
+
         model.addAttribute("personPage", personPage);
         
         int totalPages = personPage.getTotalPages();

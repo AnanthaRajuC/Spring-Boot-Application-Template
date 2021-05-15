@@ -27,6 +27,9 @@
          <li class="nav-item" sec:authorize="isAuthenticated()">
             <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" href="/sbat/listPersons" th:text="#{navbar.persons.text}"></span></a>
          </li>
+		 <li class="nav-item" sec:authorize="isAuthenticated()">
+            <a sec:authorize="hasRole('ROLE_PERSON')" class="nav-link" href="/sbat/listPersonsByUsers" th:text="#{navbar.persons-user.text}"></span></a>
+         </li>
 
 		<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="Help"></a>

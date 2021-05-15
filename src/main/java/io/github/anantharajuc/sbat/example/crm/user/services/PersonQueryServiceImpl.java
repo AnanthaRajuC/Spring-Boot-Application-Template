@@ -10,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbat.core_backend.exception.ResourceNotFoundException;
@@ -90,6 +92,11 @@ public class PersonQueryServiceImpl implements PersonQueryService
         int startItem   = currentPage * pageSize;
         
         List<Person> list;
+        
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        
+        log.info("currentPrincipalName : "+currentPrincipalName);
         
         List<Person> persons = personRepository.findAll();
         

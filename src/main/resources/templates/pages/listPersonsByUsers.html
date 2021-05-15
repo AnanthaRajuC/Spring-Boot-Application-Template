@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+			   with:title="'Persons'">
+
+<th:block layout:fragment="content">
+
+<h1>Persons List</h1>
+
+	<div class="card-block">
+	
+		<table 
+		border="1"
+		class="table table-hover table-striped table-sm" 
+		id="table"
+		data-buttons="btn btn-sm"
+		data-buttons-class="link btn-sm"
+		data-advanced-search="true"
+		data-id-table="advancedTable"
+		data-resizable="true"
+		data-filter-control="true"
+		data-show-fullscreen="true"
+		data-show-search-clear-button="true"
+		data-show-button-text="true"
+		data-show-columns-search="true"	
+		data-show-toggle="true"
+		data-show-refresh="true"
+		data-show-pagination-switch="true"
+		data-toolbar="#toolbar"
+		data-toggle="table" 
+		data-flat="true" 
+		data-search="true"
+		data-search-align="left"
+		data-show-columns="true"
+		data-show-columns-toggle-all="true"
+		data-pagination="true"
+		data-pagination-v-align="both"
+		data-pagination-pre-text="Previous"
+		data-pagination-next-text="Next"
+		data-page-list="[5, 10, 25, All]">
+		<caption>Persons List</caption>
+			<thead>
+				<tr>
+					<th scope="col" data-resizable-column-id="id"             class="text-center" data-sortable="true" data-field="id"             data-filter-control="select" data-visible="false">id</th>
+					<th scope="col" data-resizable-column-id="name"           class="text-center" data-sortable="true" data-field="name"           data-filter-control="input">name</th>
+					<th scope="col" data-resizable-column-id="username"       class="text-center" data-sortable="true" data-field="username"       data-filter-control="input">username</th>
+					<th scope="col" data-resizable-column-id="emailPrimary"   class="text-center" data-sortable="true" data-field="emailPrimary"   data-filter-control="input">emailPrimary</th>
+					<th scope="col" data-resizable-column-id="emailSecondary" class="text-center" data-sortable="true" data-field="emailSecondary" data-filter-control="input" data-visible="false">emailSecondary</th>
+					<th scope="col" data-resizable-column-id="phone"          class="text-center" data-sortable="true" data-field="phone"          data-filter-control="input">phone</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="person :${personPage}">
+					<td th:text="${person.id}" />
+					<td th:text="${person.name}" />
+					<td th:text="${person.username}" />
+					<td th:text="${person.emailPrimary}" />
+					<td th:text="${person.emailSecondary}" />
+					<td th:text="${person.phone}" />
+				</tr>
+			</tbody>
+		</table>
+	
+	</div>
+	
+    <div th:if="${personPage.totalPages > 0}" class="pagination" th:each="pageNumber : ${pageNumbers}">
+		<a th:href="@{/sbat/listPersons(size=${personPage.size}, page=${pageNumber})}" th:text=${pageNumber} th:class="${pageNumber==personPage.number + 1} ? active"></a>
+    </div>
+
+</th:block>
+	
+</html>
