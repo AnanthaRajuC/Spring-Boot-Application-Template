@@ -5,12 +5,15 @@ Each user in the app will have a primary role and every role has permissions to 
 |     Username     | Password |     Role     |                      Permission                       |         Resource          |
 |------------------|----------|--------------|-------------------------------------------------------|---------------------------|
 |`johndoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
-|`AdminUser`       |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
-|`AdminTraineeUser`|`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
+|`janedoe`         |`password`|`PERSON`      |                                                       |`/api/v1/person`           |
+|`Admin1`          |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
+|`Admin2`          |`password`|`ADMIN`       |`PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE`|`/management/api/v1/person`|
+|`AdminTrainee1`   |`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
+|`AdminTrainee2`   |`password`|`ADMINTRAINEE`|`PERSON_READ`                                          |`/management/api/v1/person`|
 
 ### Person URLs
 
-#### Accessible to **johndoe** user only
+#### Accessible to user's with **PERSON** role only
 
 |                           URL                            |  Method |                                         Remarks                                     | Sample Valid Request Body |
 |----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
@@ -23,7 +26,7 @@ Each user in the app will have a primary role and every role has permissions to 
 
 ### Person Management URLs
 
-#### Role and Permission based secure access to **AdminUser** and **AdminTrainee** users
+#### Role and Permission based secure access to user's with **ADMIN** role. 
 
 |                          URL                             |  Method |                                       Remarks                                       | Sample Valid Request Body |
 |----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
@@ -34,6 +37,11 @@ Each user in the app will have a primary role and every role has permissions to 
 |`http://localhost:8080/management/api/v1/person/{id}`     | PUT     | Update a person                                                                     |   [JSON](#personcreate)   |
 |`http://localhost:8080/management/api/v1/person/{id}`     | DELETE  | Delete a person                                                                     |                           |
 
+#### Role and Permission based secure access to user's with **ADMINTRAINEE** role. 
+
+|                          URL                             |  Method |                                       Remarks                                       | Sample Valid Request Body |
+|----------------------------------------------------------|---------|-------------------------------------------------------------------------------------|---------------------------|
+|`http://localhost:8080/management/api/v1/person`          | GET     | Header `Accept:application/json` or `Accept:application/xml` for content negotiation|                           |
 
 #### Sample Valid JSON Request Bodys
 
