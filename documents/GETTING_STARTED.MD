@@ -5,7 +5,6 @@ These instructions will get you a copy of the project up and running on your loc
 <details open="open">
 	<ul>
 		<li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#eer-diagram">EER Diagram</a></li>
 	</ul>
 </details>
 
@@ -15,7 +14,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 	[Mailtrap](https://mailtrap.io/) or any other service like **Gmail**, etc., can be used to create an SMTP.
 	
-	**MAIL_HOST**, **MAIL_PORT**, **MAIL_PROTOCOL** is configured in the **.env** file. Now configure **MAIL_USERNAME**, **MAIL_PASSWORD** as environment variable.
+~~~txt
+MAIL_PROTOCOL=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=
+MAIL_PASSWORD=
+~~~
 	
 	[dotenv-java](https://github.com/cdimascio/dotenv-java) is used to Load environment variables from the **.env** file.
 
@@ -35,7 +40,16 @@ create user 'sbat'@'localhost' identified by 'sbat';
 grant all privileges on *.* to 'sbat'@'localhost' with grant option;
 ~~~
 
-We need to specify our Environment variables for the application. Open up the **`.env`** file and update your **DB_DATABASE**, **DB_USERNAME**, **DB_CONNECTION**, **DB_HOST**, **DB_PORT** and **DB_PASSWORD** in the appropriate fields.
+We need to specify our Environment variables for the application. Open up the **`.env`** file and update the fields with appropriate values.
+
+~~~txt
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+~~~
 
 If you do not wish to use environment variables. After creating the database/schema, you need to add your **MySQL** `username` and `password` in the `application-dev.properties` file on `src/main/resource`. The lines that must be modified are as follows:
 
