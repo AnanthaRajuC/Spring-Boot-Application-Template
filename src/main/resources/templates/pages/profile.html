@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+			    xmlns:with="http://www.thymeleaf.org/extras/with"
+			   layout:decorate="~{layout}"
+			   with:title="'Profile'">
+	  
+<th:block layout:fragment="content">
+	
+    <h2>Profile</h2>
+	
+	<div class="card-block">
+	
+		<table 
+		border="1" 
+		class="table table-hover table-striped table-sm" 
+		id="table"
+		data-buttons="btn btn-sm"
+		data-buttons-class="link btn-sm"
+		data-advanced-search="true"
+		data-id-table="advancedTable"
+		data-resizable="true"
+		data-filter-control="true"
+		data-show-fullscreen="true"
+		data-show-search-clear-button="true"
+		data-show-button-text="true"
+		data-show-columns-search="true"	
+		data-show-toggle="true"
+		data-show-refresh="true"
+		data-show-pagination-switch="true"
+		data-toolbar="#toolbar"
+		data-toggle="table" 
+		data-flat="true" 
+		data-search="true"
+		data-search-align="left"
+		data-show-columns="true"
+		data-show-columns-toggle-all="true"
+		data-pagination="true"
+		data-pagination-v-align="both"
+		data-pagination-pre-text="Previous"
+		data-pagination-next-text="Next"
+		data-page-list="[5, 10, 25, All]">
+		<caption>User Profile</caption>
+			<thead  class="black white-text">
+				<!--<th scope="col" data-resizable-column-id="usernamename"        class="text-center" data-sortable="true" data-field="name"        data-filter-control="select">username</th>-->
+				<tr>
+					<th> Key </th>
+					<th> Value </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="data :${data}">
+					<td th:text="Username"> Key </span></td>
+					<td><span th:text="${data.username}"> Value </span></td>
+				</tr>
+				<tr th:each="data :${data}">
+					<td th:text="Email"> Key </span></td>
+					<td><span th:text="${data.email}"> Value </span></td>
+				</tr>
+				<tr th:each="data :${data}">
+					<td th:text="Roles"> Key </span></td>
+					<td><span th:text="${data.roles}"> Value </span></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+	
+</th:block>
+	
+</html>

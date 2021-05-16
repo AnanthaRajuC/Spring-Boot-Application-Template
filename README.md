@@ -16,6 +16,7 @@ Features include but not limited to:
 
 - [Authentication](documents/AUTHENTICATION.MD)  
 - [User Roles](documents/USER_ROLES.MD)   
+- [API](documents/API.md)  
 - [Internationalization (i18n)](documents/INTERNATIONALIZATION.MD) 
 
 <div align="center">
@@ -77,10 +78,8 @@ Features include but not limited to:
 - [Architecture](documents/ARCHITECTURE.md) 
 - [Installation](documents/INSTALLATION.MD)  
 - [Deployment](documents/DEPLOYMENT.md)  
-- [Explore Rest APIs](documents/APP_SECURITY_AND_API.md)  
-- [Security](documents/APP_SECURITY_AND_API.md)  
+- [Security](documents/API.md)  
 - [Testing API](documents/TESTING.MD)  
-- [Files and Directories Structure](documents/ARCHITECTURE.md)  
 - [Changelog](documents/CHANGELOG.md) 
 - [Code Coverage](documents/CODE_COVERAGE.MD) 
 - [Documentation](documents/DOCUMENTATION.MD) 

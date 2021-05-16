@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.core_backend.persistence.repositories.BuiltWithRepository;
+import io.github.anantharajuc.sbat.core_backend.security.user.repository.UserRepository;
+import io.github.anantharajuc.sbat.core_backend.user.service.UserQueryServiceImpl;
 import io.github.anantharajuc.sbat.core_backend.util.SiteSettings;
 import io.github.anantharajuc.sbat.example.crm.user.controllers.PersonQueryController;
 import io.github.anantharajuc.sbat.example.crm.user.model.Person;
@@ -46,6 +48,12 @@ public class SpringBootApplicationTemplateController
 	
 	@Autowired
 	private UserController userController;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private UserQueryServiceImpl userQueryServiceImpl;
 	
 	@Autowired
 	private PersonQueryController personController;
@@ -113,7 +121,7 @@ public class SpringBootApplicationTemplateController
 	{
 		return "pages/security";
     }
-	
+
 	@GetMapping(value=ResourcePaths.SBAT.V1.SETTINGS)
     public String settings(Model model) 
 	{
@@ -130,32 +138,18 @@ public class SpringBootApplicationTemplateController
 		return "pages/built_with";
 	}
 	
-	@GetMapping(value=ResourcePaths.SBAT.V1.CLOSE)
-	public String close()
+	@GetMapping("/profile")
+    public String profile(Model model) 
 	{
-		log.info("App Shutdown");
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        
+        log.info("currentPrincipalName : "+currentPrincipalName);
+        
+		model.addAttribute("data", userQueryServiceImpl.getUserByUsername(currentPrincipalName)); 
 		
-		String port = environment.getProperty("local.server.port");
-		
-		log.info("port : "+port);
-		
-		String command = "curl --location --request POST http://localhost:"+port+"/actuator/shutdown";
-		
-		log.info("shutdown command : "+command);
-		
-		try 
-		{
-			Process process = Runtime.getRuntime().exec(command);
-			
-			log.info("process : "+process);
-		} 
-		catch (IOException e) 
-		{
-			log.error( "App shutdown failed!", e );
-		}
-		
-		return "pages/close";
-	}
+		return "pages/profile";
+    }
 	
 	@GetMapping("/listPersonsByUsers")
 	public String listPersons(Model model)
@@ -192,5 +186,32 @@ public class SpringBootApplicationTemplateController
         }
         
 		return "pages/listPersons";
+	}
+	
+	@GetMapping(value=ResourcePaths.SBAT.V1.CLOSE)
+	public String close()
+	{
+		log.info("App Shutdown");
+		
+		String port = environment.getProperty("local.server.port");
+		
+		log.info("port : "+port);
+		
+		String command = "curl --location --request POST http://localhost:"+port+"/actuator/shutdown";
+		
+		log.info("shutdown command : "+command);
+		
+		try 
+		{
+			Process process = Runtime.getRuntime().exec(command);
+			
+			log.info("process : "+process);
+		} 
+		catch (IOException e) 
+		{
+			log.error( "App shutdown failed!", e );
+		}
+		
+		return "pages/close";
 	}
 }
