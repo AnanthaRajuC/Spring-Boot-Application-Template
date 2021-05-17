@@ -45,7 +45,7 @@ If you have just installed Spring Boot Application Template you can login with t
 |`Admin1`          |`password`|`ADMIN`       |
 |`Admin2`          |`password`|`ADMIN`       |
 |`AdminTrainee1`   |`password`|`ADMINTRAINEE`|
-|`AdminTrainee1`   |`password`|`ADMINTRAINEE`|
+|`AdminTrainee2`   |`password`|`ADMINTRAINEE`|
 
 |                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
 |---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|

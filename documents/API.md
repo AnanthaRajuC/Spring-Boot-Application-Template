@@ -45,7 +45,7 @@ And you will recieve a new **authenticationToken** for your application to be us
 
 ### Request Data with an Access Token
 
-Now, that you have an **authenticationToken** you can request data from the application using that token. Based on the permission of the current user they will be able to CREATE, READ, UPDATE, and DELETE content in your application.
+Now, that you have an **authenticationToken** you can request data from the application using that token. Based on the permission of the current user they will be able to **CREATE**, **READ**, **UPDATE**, and **DELETE** content in your application.
 
 
 ### API Rate Limiting
@@ -84,8 +84,8 @@ Since the SSL certificate is self signed, turn off the **SSL certificate verific
 
 ### Authentication, Person, Person Management URLs
 
-- [Authentication API's](/AUTHENTICATION.MD)  
-- [Person and Person Management API's](/USER_ROLES.MD)  
+- [Authentication API's](documents/AUTHENTICATION.MD)  
+- [Person and Person Management API's](documents/USER_ROLES.MD)  
 
 ### URLs
 

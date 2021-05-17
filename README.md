@@ -15,6 +15,7 @@ Essentially it's a simple on-demand application backend for rapd-prototyping.
 Features include but not limited to:
 
 - [Authentication](documents/AUTHENTICATION.MD)  
+- [User Profiles](documents/USER_PROFILES.MD)   
 - [User Roles](documents/USER_ROLES.MD)   
 - [API](documents/API.md)  
 - [Internationalization (i18n)](documents/INTERNATIONALIZATION.MD) 
