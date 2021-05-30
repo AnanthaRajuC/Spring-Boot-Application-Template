@@ -16,6 +16,8 @@
 
 ## EER Diagram
 
+*	The authentication and authorization is governed by User and Role collection.  
+
 [![EER Diagram](images/settings/SBAT-EER-Diagram.png)](images/settings/SBAT-EER-Diagram.png)
 
 ## Files and Directories Structure
