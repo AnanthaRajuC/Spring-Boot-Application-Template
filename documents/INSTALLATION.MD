@@ -87,4 +87,4 @@ Fill the login form as follows and click on Connect:
 
 #### Running the application via docker container
 
-* 	Refer to [DOCKER.md](/DOCKER.md) for details.
+* 	Refer to [DOCKER.md](./DOCKER.md) for details.
