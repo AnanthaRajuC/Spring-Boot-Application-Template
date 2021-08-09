@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.core_backend.config;
+package io.github.anantharajuc.sbat.core_backend.infra.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

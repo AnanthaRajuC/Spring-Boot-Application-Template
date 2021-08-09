@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.core_backend.exception;
+package io.github.anantharajuc.sbat.core_backend.infra.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

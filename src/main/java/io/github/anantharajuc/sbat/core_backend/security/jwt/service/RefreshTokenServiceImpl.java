@@ -5,7 +5,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import io.github.anantharajuc.sbat.core_backend.exception.OtherExceptions;
+import io.github.anantharajuc.sbat.core_backend.infra.exception.OtherExceptions;
 import io.github.anantharajuc.sbat.core_backend.security.jwt.model.RefreshToken;
 import io.github.anantharajuc.sbat.core_backend.security.jwt.repository.RefreshTokenRepository;
 import lombok.AllArgsConstructor;

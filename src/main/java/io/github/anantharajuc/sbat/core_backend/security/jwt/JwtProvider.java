@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbat.core_backend.exception.OtherExceptions;
+import io.github.anantharajuc.sbat.core_backend.infra.exception.OtherExceptions;
 import io.github.anantharajuc.sbat.core_backend.service.impl.OtherServicesImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbat.core_backend.exception.ResourceNotFoundException;
+import io.github.anantharajuc.sbat.core_backend.infra.exception.ResourceNotFoundException;
 import io.github.anantharajuc.sbat.core_backend.security.user.model.User;
 import io.github.anantharajuc.sbat.core_backend.security.user.repository.UserRepository;
 import io.github.anantharajuc.sbat.core_backend.user.model.dto.UserDTO;

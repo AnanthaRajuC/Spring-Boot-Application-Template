@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbat.core_backend.exception.FailedLoginAttemptException;
+import io.github.anantharajuc.sbat.core_backend.infra.exception.FailedLoginAttemptException;
 import io.github.anantharajuc.sbat.core_backend.security.user.authentication.LoginAttemptService;
 import io.github.anantharajuc.sbat.core_backend.security.user.model.User;
 import io.github.anantharajuc.sbat.core_backend.security.user.repository.UserRepository;

@@ -1,4 +1,4 @@
-package io.github.anantharajuc.sbat.core_backend.config;
+package io.github.anantharajuc.sbat.core_backend.infra.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

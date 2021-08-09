@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import io.github.anantharajuc.sbat.core_backend.email.Email;
 import io.github.anantharajuc.sbat.core_backend.email.EmailServiceImpl;
-import io.github.anantharajuc.sbat.core_backend.exception.OtherExceptions;
+import io.github.anantharajuc.sbat.core_backend.infra.exception.OtherExceptions;
 import io.github.anantharajuc.sbat.core_backend.security.jwt.JwtProvider;
 import io.github.anantharajuc.sbat.core_backend.security.jwt.model.AuthenticationResponse;
 import io.github.anantharajuc.sbat.core_backend.security.jwt.model.RefreshToken;
