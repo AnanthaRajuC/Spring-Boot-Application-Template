@@ -141,7 +141,7 @@
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-validator-annotation-processor</artifactId>
-		    <version>7.0.3.Final</version>
+		    <version>7.0.5.Final</version>
 		</dependency>
 		
 		<dependency>
