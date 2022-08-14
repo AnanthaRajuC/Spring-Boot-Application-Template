@@ -62,7 +62,7 @@
 		<mockito-all.version>1.10.19</mockito-all.version>
 		<springfox-swagger2.version>3.0.0</springfox-swagger2.version>
 		<springfox-swagger-ui.version>3.0.0</springfox-swagger-ui.version>
-		<bucket4j.version>7.3.0</bucket4j.version>
+		<bucket4j.version>7.6.0</bucket4j.version>
 		<modelmapper.version>3.0.0</modelmapper.version>
 		<jjwt-api.version>0.11.2</jjwt-api.version>
 		<jjwt-impl.version>0.11.2</jjwt-impl.version>
