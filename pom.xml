@@ -67,7 +67,7 @@
 		<jjwt-api.version>0.11.2</jjwt-api.version>
 		<jjwt-impl.version>0.11.2</jjwt-impl.version>
 		<jjwt-jackson.version>0.11.2</jjwt-jackson.version>
-		<jasperreports.version>6.19.0</jasperreports.version>
+		<jasperreports.version>6.19.1</jasperreports.version>
 	</properties>
 
 	<dependencies>
