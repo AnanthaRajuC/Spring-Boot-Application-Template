@@ -53,7 +53,7 @@
     	<thymeleaf-with-dialect.version>3.0.1</thymeleaf-with-dialect.version>
 		<java.version>1.8</java.version>
 		<bootstrap.version>5.1.3</bootstrap.version>
-		<jquery.version>3.6.0</jquery.version>
+		<jquery.version>3.6.1</jquery.version>
 		<jquery-ui.version>1.12.1</jquery-ui.version>
 		<bootstrap-table.version>1.17.1</bootstrap-table.version>
 		<jquery-resizable-columns.version>0.2.3</jquery-resizable-columns.version>
