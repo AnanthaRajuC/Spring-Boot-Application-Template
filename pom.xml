@@ -58,7 +58,7 @@
 		<bootstrap-table.version>1.17.1</bootstrap-table.version>
 		<jquery-resizable-columns.version>0.2.3</jquery-resizable-columns.version>
 		<guava.version>31.1-jre</guava.version>
-		<json.version>20211205</json.version>
+		<json.version>20220924</json.version>
 		<mockito-all.version>1.10.19</mockito-all.version>
 		<springfox-swagger2.version>3.0.0</springfox-swagger2.version>
 		<springfox-swagger-ui.version>3.0.0</springfox-swagger-ui.version>
