@@ -1,11 +1,12 @@
 repo_name: AnanthaRajuC/Spring-Boot-Application-Template
 report_id: 28db6652a15fdde224c7756017265c93
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-13T07:28:29+00:00'
+timestamp: '2024-02-29T18:42:41+00:00'
 requested_by: AnanthaRajuC
 provider: github
 branch: master
-detected_tools_count: 21
+detected_tools_count: 59
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template
   detection_source: Repo Metadata
 - name: Java
   description: A concurrent, class-based, object-oriented, language specifically designed
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -35,6 +38,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template
   detection_source: Repo Metadata
 - name: SQL
   description: It is a domain-specific language used in programming
@@ -44,7 +48,8 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
-  detection_source: src/main/resources/data/mysql/migrations/V0_0_8__example_data_person.sql
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/src/main/resources/data/h2db/migrations/V0_0_1__SBAT_structure_basic.sql
+  detection_source: src/main/resources/data/h2db/migrations/V0_0_1__SBAT_structure_basic.sql
   last_updated_by: Anantha Raju C
   last_updated_on: 2020-10-09 11:57:25.000000000 Z
 - name: Spring Framework
@@ -57,7 +62,8 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/2006/spring-framework-project-logo.png
-  detection_source: pom.xml
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
   last_updated_by: IronMetallica123#
   last_updated_on: 2018-08-07 09:22:17.000000000 Z
 - name: guava
@@ -70,7 +76,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Java Tools
   image_url: https://img.stackshare.io/service/2970/wBjKn0ol.png
-  detection_source_url: pom.xml
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
   detection_source: pom.xml
   last_updated_by: dependabot[bot]
   last_updated_on: 2022-02-28 23:13:14.000000000 Z
@@ -84,7 +90,7 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1021/lxEKmMnB_400x400.jpg
-  detection_source_url: pom.xml
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
   detection_source: pom.xml
   last_updated_by: dependabot[bot]
   last_updated_on: 2022-08-31 23:13:43.000000000 Z
@@ -96,6 +102,7 @@ tools:
   category: Data Stores
   sub_category: SQL Database as a Service
   image_url: https://img.stackshare.io/service/21275/default_078eb0ae2b56280a937ed073a3ba4332291f9ba8.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/docker-compose.yml
   detection_source: docker-compose.yml
   last_updated_by: Anantha Raju C
   last_updated_on: 2021-04-10 14:48:50.000000000 Z
@@ -107,18 +114,21 @@ tools:
   category: Data Stores
   sub_category: Databases
   image_url: https://img.stackshare.io/service/3105/h2-logo_square_400x400.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
   detection_source: pom.xml
   last_updated_by: Anantha Raju C
   last_updated_on: 2021-04-23 10:48:26.000000000 Z
 - name: MySQL
   description: The world's most popular open source database
   website_url: http://www.mysql.com
+  version: '8.0'
   open_source: true
   hosted_saas: false
   category: Data Stores
   sub_category: Databases
   image_url: https://img.stackshare.io/service/1025/logo-mysql-170x170.png
-  detection_source: pom.xml
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/docker-compose.yml
+  detection_source: bin/pom.xml
   last_updated_by: IronMetallica123#
   last_updated_on: 2018-08-07 09:22:17.000000000 Z
 - name: Spring Data
@@ -131,9 +141,22 @@ tools:
   category: Data Stores
   sub_category: Database Tools
   image_url: https://img.stackshare.io/service/7624/IG6D4Ro2_400x400.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
   detection_source: pom.xml
   last_updated_by: Anantha Raju C
   last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: pgvector
+  description: Open-source vector similarity search for Postgres
+  website_url: https://github.com/pgvector/pgvector/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/src/main/resources/banner.txt
+  detection_source: bin/src/main/resources/banner.txt
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
 - name: CircleCI
   description: Automate your development process quickly, safely, and at scale
   website_url: https://circleci.com/
@@ -142,6 +165,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/190/CvqrSSFs_400x400.jpg
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/.circleci/config.yml
   detection_source: ".circleci/config.yml"
   last_updated_by: Anantha Raju C
   last_updated_on: 2020-08-10 15:31:46.000000000 Z
@@ -154,6 +178,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Virtual Machine Platforms & Containers
   image_url: https://img.stackshare.io/service/586/n4u37v9t_400x400.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -163,6 +188,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template
   detection_source: Repo Metadata
 - name: Log4j
   description: A Java-based logging utility
@@ -173,6 +199,7 @@ tools:
   category: Monitoring
   sub_category: Logging Tools
   image_url: https://img.stackshare.io/service/2804/Coralogix-log4j-integration.jpg
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
   detection_source: bin/pom.xml
   last_updated_by: IronMetallica123#
   last_updated_on: 2018-08-07 09:22:17.000000000 Z
@@ -185,6 +212,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Testing Frameworks
   image_url: https://img.stackshare.io/service/2021/4y634TJm_400x400.jpg
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
   detection_source: pom.xml
   last_updated_by: Anantha Raju C
   last_updated_on: 2020-09-25 07:11:57.000000000 Z
@@ -198,6 +226,7 @@ tools:
   category: Monitoring
   sub_category: Monitoring Tools
   image_url: https://img.stackshare.io/service/2501/default_3cf1b307194b26782be5cb209d30360580ae5b3c.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
   detection_source: pom.xml
   last_updated_by: IronMetallica123#
   last_updated_on: 2018-08-09 13:28:23.000000000 Z
@@ -210,6 +239,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/460/Lu6cGu0z_400x400.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/.travis.yml
   detection_source: ".travis.yml"
   last_updated_by: Anantha Raju C
   last_updated_on: 2021-04-23 06:38:41.000000000 Z
@@ -222,7 +252,8 @@ tools:
   category: Application Hosting
   sub_category: Platform as a Service
   image_url: https://img.stackshare.io/service/3276/xWt1RFo6_400x400.jpg
-  detection_source: src/main/resources/application.properties
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/src/main/resources/application.properties
+  detection_source: bin/src/main/resources/application.properties
   last_updated_by: IronMetallica123#
   last_updated_on: 2018-08-07 09:22:17.000000000 Z
 - name: Dataform
@@ -234,16 +265,489 @@ tools:
   category: Analytics
   sub_category: Business Intelligence
   image_url: https://img.stackshare.io/service/11236/Group_22__3_.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
   detection_source: pom.xml
   last_updated_by: Anantha Raju C
   last_updated_on: 2020-10-09 11:57:25.000000000 Z
-- name: Shell
-  description: A shell is a text-based terminal, used for manipulating programs and
-    files. Shell scripts typically manage program execution.
-  website_url: https://en.wikipedia.org/wiki/Shell_script
+- name: HTML
+  description: Hypertext Markup Language for creating web pages.
+  website_url: http://
   open_source: false
   hosted_saas: false
-  category: Languages & Frameworks
-  sub_category: Languages
-  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
-  detection_source: Repo Metadata
+  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/src/main/resources/static/index.html
+  detection_source: bin/src/main/resources/static/index.html
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: LangChain
+  description: Build AI apps with LLMs through composability
+  website_url: https://github.com/hwchase17/langchain
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/src/main/resources/banner.txt
+  detection_source: bin/src/main/resources/banner.txt
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: com.fasterxml.jackson.dataformat:jackson-dataformat-xml
+  description: Data format extension for Jackson
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2021-12-06 23:09:05.000000000 Z
+- name: com.google.guava:guava
+  description: Guava is a suite of core and expanded libraries that include utility
+    classes
+  version: '31.1'
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-02-28 23:13:14.000000000 Z
+  vulnerabilities:
+  - name: Guava vulnerable to insecure use of temporary directory
+    cve_id: CVE-2023-2976
+    cve_url: https://github.com/advisories/GHSA-7g45-4rm6-3mm3
+    detected_date: Jun 15
+    severity: moderate
+    first_patched: 32.0.0-android
+  - name: Information Disclosure in Guava
+    cve_id: CVE-2020-8908
+    cve_url: https://github.com/advisories/GHSA-5mg8-w23w-74h3
+    detected_date: Aug 22
+    severity: low
+    first_patched: 32.0.0-android
+- name: com.h2database:h2
+  description: H2 Database Engine
+  license: MIT-feh
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: com.squareup.okhttp3:okhttp
+  description: 'Null'
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: io.micrometer:micrometer-registry-prometheus
+  description: Application monitoring instrumentation facade
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: io.rest-assured:rest-assured
+  description: Java DSL for easy testing of REST services
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2020-10-09 11:57:25.000000000 Z
+- name: io.springfox:springfox-swagger-ui
+  description: JSON API documentation for spring based applications
+  version: 3.0.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: io.springfox:springfox-swagger2
+  description: JSON API documentation for spring based applications
+  version: 3.0.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: javax.validation:validation-api
+  description: Bean Validation API
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-05-02 14:37:27.000000000 Z
+- name: mysql:mysql-connector-java
+  description: MySQL JDBC Type 4 driver
+  license: GPL-3.0-only
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: net.sf.jasperreports:jasperreports
+  description: JasperReports Library
+  version: 6.19.1
+  license: LGPL-2.1+
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: snyk-bot
+  last_updated_on: 2022-07-17 02:43:22.000000000 Z
+- name: nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect
+  description: A dialect for Thymeleaf that allows you to use layout/decorator templates
+    to style your content
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2020-12-16 11:54:19.000000000 Z
+- name: org.flywaydb:flyway-core
+  description: 'Flyway: Database Migrations Made Easy'
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.hibernate:hibernate-validator
+  description: Hibernate's Bean Validation
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.hibernate:hibernate-validator-annotation-processor
+  description: Hibernate Validator - Bean Validation 2.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.json:json
+  description: JSON is a light-weight, language independent, data interchange format
+  license: JSON
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2021-12-06 23:09:05.000000000 Z
+- name: org.mockito:mockito-all
+  description: Mock objects library for java
+  version: 1.10.19
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.modelmapper:modelmapper
+  description: Simple, Intelligent, Object Mapping
+  version: 3.0.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-01-05 23:07:25.000000000 Z
+- name: org.projectlombok:lombok
+  description: 'Spice up your java: Automatic Resource Management'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.springframework.boot:spring-boot-configuration-processor
+  description: Spring Boot Configuration Processor
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-09-10 04:22:27.000000000 Z
+- name: org.springframework.boot:spring-boot-devtools
+  description: Spring Boot Developer Tools
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.boot:spring-boot-starter
+  description: Core starter
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-actuator
+  description: Starter for using Spring Boot's Actuator which provides production
+    ready features to help you monitor and manage your application
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-data-jpa
+  description: Starter for using Spring Data JPA with Hibernate
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-log4j2
+  description: Starter for using Log4j2 for logging
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-mail
+  description: Starter for using Java Mail and Spring Framework's email sending support
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-security
+  description: Starter for using Spring Security
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-09-10 04:22:27.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-test
+  description: Starter for testing Spring Boot applications with libraries including
+    JUnit
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-thymeleaf
+  description: Starter for building MVC web applications using Thymeleaf views
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-09-10 04:22:27.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-web
+  description: Starter for building web, including RESTful, applications using Spring
+    MVC
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/bin/pom.xml
+  detection_source: bin/pom.xml
+  last_updated_by: IronMetallica123#
+  last_updated_on: 2018-08-07 09:22:17.000000000 Z
+- name: org.springframework.data:spring-data-commons
+  description: Global parent pom.xml to be used by Spring Data modules
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.springframework.hateoas:spring-hateoas
+  description: "Library to support implementing representations for \t\thyper-text
+    driven REST web services"
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.springframework.security:spring-security-test
+  description: Spring-security-test
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: Anantha Raju C
+  last_updated_on: 2021-04-23 10:48:26.000000000 Z
+- name: org.webjars.bower:jquery-ui
+  description: WebJar for jquery-ui
+  version: 1.12.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-08-31 23:13:43.000000000 Z
+- name: org.webjars:bootstrap
+  description: WebJar for Bootstrap
+  version: 5.2.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-09-10 04:22:27.000000000 Z
+- name: org.webjars:jquery
+  description: WebJar for jQuery
+  version: 3.6.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/pom.xml
+  detection_source: pom.xml
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-08-31 23:13:43.000000000 Z
