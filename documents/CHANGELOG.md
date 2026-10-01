@@ -37,6 +37,9 @@ Modernization to Spring Boot 4 (#396, #401).
  - Expired verification links deleted the wrong user.
  - Login throttling could be bypassed or abused through the `X-Forwarded-For` header, and returned a server error when blocking.
  - Sign-up created a duplicate `ROLE_PERSON` per user; deleting a user deleted shared roles.
+ - The person management API (`/api/v1/management/person/**`) was not rate limited because the interceptor was registered for a non-existent path; it now needs an `X-api-key` header like `/api/v1/person/**`.
+ - `POST /rbac/user` failed on Jackson 3 (#402).
+ - Removed the committed JWT key store (`redditclone.jks`) and SSL key store (`ebininfosoft-ssl-key.p12`). They are still in the Git history and must not be reused.
  - Broken webjar paths, missing `/403` page, invalid JWTs causing server errors, and other bugs listed in #396.
 
 ## v0.1.3
