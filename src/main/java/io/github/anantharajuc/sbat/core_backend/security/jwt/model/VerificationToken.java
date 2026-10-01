@@ -2,13 +2,13 @@ package io.github.anantharajuc.sbat.core_backend.security.jwt.model;
 
 import java.time.Instant;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import static javax.persistence.FetchType.LAZY;
+import static jakarta.persistence.FetchType.LAZY;
 
 @Data
 @AllArgsConstructor

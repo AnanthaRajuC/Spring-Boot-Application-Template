@@ -1,11 +1,13 @@
 package io.github.anantharajuc.sbat.core_backend.security.jwt.service;
 
+import java.time.Instant;
 import java.util.UUID;
 
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import io.github.anantharajuc.sbat.core_backend.infra.exception.OtherExceptions;
+import io.github.anantharajuc.sbat.core_backend.security.SecurityProperties;
 import io.github.anantharajuc.sbat.core_backend.security.jwt.model.RefreshToken;
 import io.github.anantharajuc.sbat.core_backend.security.jwt.repository.RefreshTokenRepository;
 import lombok.AllArgsConstructor;
@@ -18,56 +20,59 @@ import lombok.extern.log4j.Log4j2;
 public class RefreshTokenServiceImpl implements RefreshTokenService
 {
 	private final RefreshTokenRepository refreshTokenRepository;
-	
+	private final SecurityProperties securityProperties;
+
 	@Override
-	public RefreshToken generateRefreshToken(String stage, String username) 
+	public RefreshToken generateRefreshToken(String username)
 	{
 		RefreshToken refreshToken = new RefreshToken();
-		
-		if(stage.equalsIgnoreCase("LOGIN"))
-		{
-			log.info("LOGIN token generation");
-			
-			refreshToken.setToken(UUID.randomUUID().toString());
-			refreshToken.setUsername(username); 
-		}
-		else if(stage.equalsIgnoreCase("POST_LOGIN"))
-		{
-			log.info("POST_LOGIN token generation");
-			
-			refreshToken = refreshTokenRepository.findByUsername(username).orElseThrow(() -> new OtherExceptions("Invalid Refresh Token"));
-			
-			refreshToken.setToken(UUID.randomUUID().toString());
-			refreshToken.setUsername(username); 
-		}
+		refreshToken.setToken(UUID.randomUUID().toString());
+		refreshToken.setUsername(username);
 
 		return refreshTokenRepository.save(refreshToken);
 	}
 
 	@Override
-	public void validateRefreshToken(String token) 
+	// Keep the deletion of an expired token when rejecting it.
+	@Transactional(noRollbackFor=BadCredentialsException.class)
+	public RefreshToken rotateRefreshToken(String token, String expectedUsername)
 	{
-		log.info("Validating Refresh Token");
-		
-		refreshTokenRepository.findByToken(token).orElseThrow(() -> new OtherExceptions("Invalid Refresh Token"));
+		RefreshToken refreshToken = refreshTokenRepository.findByToken(token).orElseThrow(() -> new BadCredentialsException("Invalid Refresh Token"));
+
+		if (expectedUsername != null && !expectedUsername.equals(refreshToken.getUsername()))
+		{
+			log.warn("Refresh token presented for a different username");
+
+			throw new BadCredentialsException("Invalid Refresh Token");
+		}
+
+		refreshTokenRepository.delete(refreshToken);
+
+		if (isExpired(refreshToken))
+		{
+			throw new BadCredentialsException("Refresh Token expired, please login again");
+		}
+
+		return generateRefreshToken(refreshToken.getUsername());
 	}
 
 	@Override
-	public void deleteByToken(String token, String username) 
+	public void deleteByToken(String token, String username)
 	{
-		RefreshToken refreshToken = refreshTokenRepository.findByToken(token).orElseThrow(() -> new OtherExceptions("Invalid Refresh Token"));
+		RefreshToken refreshToken = refreshTokenRepository.findByToken(token).orElseThrow(() -> new BadCredentialsException("Invalid Refresh Token"));
 
-		if(refreshToken.getToken().equals(token) && refreshToken.getUsername().equals(username)) 
+		if (!refreshToken.getUsername().equals(username))
 		{
-			refreshTokenRepository.deleteByToken(token); 
-			
-			log.info("Token deletion successful.");
+			throw new BadCredentialsException("Token, Username mismatch!");
 		}
-		else
-		{
-			log.info("Token, Username mismatch!");
-			
-			throw new OtherExceptions("Token, Username mismatch!");
-		}
+
+		refreshTokenRepository.delete(refreshToken);
+	}
+
+	private boolean isExpired(RefreshToken refreshToken)
+	{
+		Instant createdDate = refreshToken.getCreatedDate();
+
+		return createdDate == null || createdDate.plus(securityProperties.refreshTokenValidity()).isBefore(Instant.now());
 	}
 }

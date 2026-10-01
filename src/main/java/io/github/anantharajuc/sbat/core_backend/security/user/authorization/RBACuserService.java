@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.http.ResponseEntity;
 
 import io.github.anantharajuc.sbat.core_backend.security.user.model.User;
+import io.github.anantharajuc.sbat.core_backend.user.model.dto.UserDTO;
 
 /**
  * Spring Security - User Service
@@ -13,13 +14,13 @@ import io.github.anantharajuc.sbat.core_backend.security.user.model.User;
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  *
  */
-public interface RBACuserService 
+public interface RBACuserService
 {
-	void createUser(User user);
-	
-	Optional<User> getUserByUsername(String username);
+	UserDTO createUser(User user);
 
-	ResponseEntity<?> deleteUser(String username);  
-	
-	List<User> getAllUsers();
+	Optional<UserDTO> getUserByUsername(String username);
+
+	ResponseEntity<?> deleteUser(String username);
+
+	List<UserDTO> getAllUsers();
 }

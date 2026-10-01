@@ -1,6 +1,8 @@
 package io.github.anantharajuc.sbat.example.crm.admin.controllers;
 
-import javax.validation.Valid;
+import io.swagger.v3.oas.annotations.Operation;
+
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -19,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 import io.github.anantharajuc.sbat.example.crm.user.services.PersonCommandService;
-import io.swagger.annotations.ApiOperation;
 
 /**
  * Person Management Controller
@@ -36,7 +37,7 @@ public class PersonManagementCommandController
 	private PersonCommandService personCommandServiceImpl;
 
 	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE)
-	@ApiOperation(httpMethod="POST", value="Add Person", notes = "Add a new Person to the datastore", response=Person.class)
+	@Operation(summary="Add Person", description="Add a new Person to the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_CREATE')")
 	public Person createPerson(@Valid @RequestBody Person person)
 	{		
@@ -45,7 +46,7 @@ public class PersonManagementCommandController
 	
 	@CacheEvict(allEntries=true)
 	@PutMapping(value=ResourcePaths.ID, produces=MediaType.APPLICATION_JSON_VALUE)
-	@ApiOperation(httpMethod="PUT", value="UPDATE Person", notes = "Update an existing Person in the datastore", response=Person.class)
+	@Operation(summary="UPDATE Person", description="Update an existing Person in the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_UPDATE')")
 	public Person updatePerson(@PathVariable(value="id") Long personId,@Valid @RequestBody Person personDetails)
 	{		
@@ -54,7 +55,7 @@ public class PersonManagementCommandController
 	
 	@CacheEvict(allEntries=true)
 	@DeleteMapping(value=ResourcePaths.ID)
-	@ApiOperation(httpMethod="DELETE", value = "DELETE an existing Person", notes = "Delete an existing Person from the datastore")
+	@Operation(summary="DELETE an existing Person", description="Delete an existing Person from the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@PathVariable(value="id") Long personId) 
 	{		

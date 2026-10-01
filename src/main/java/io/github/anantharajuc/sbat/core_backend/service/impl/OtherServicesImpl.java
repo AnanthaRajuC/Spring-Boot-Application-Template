@@ -30,9 +30,6 @@ public class OtherServicesImpl implements OtherServices
 	private String postmanEchoGETurl;
 	private String postmanEchoPOSTpath;
 	
-	private String keystoreFileName;
-	private String keystoreAlias;
-	private String keystorePassword;
 	
 	private Long verificationTokenValidity;
 	private Long jwtExpirationTime;
@@ -67,9 +64,6 @@ public class OtherServicesImpl implements OtherServices
 		setPostmanEchoGETurl(applicationSettingsHashMap.get("postmanEchoGETurl")); 
 		setPostmanEchoPOSTpath(applicationSettingsHashMap.get("postmanEchoPOSTpath"));
 		
-		setKeystoreFileName(applicationSettingsHashMap.get("keystoreFileName"));
-		setKeystoreAlias(applicationSettingsHashMap.get("keystoreAlias"));
-		setKeystorePassword(applicationSettingsHashMap.get("keystorePassword"));
 		
 		setVerificationTokenValidity(Long.parseLong(applicationSettingsHashMap.get("verificationTokenValidity")));
 		setJwtExpirationTime(Long.parseLong(applicationSettingsHashMap.get("jwtExpirationTime")));

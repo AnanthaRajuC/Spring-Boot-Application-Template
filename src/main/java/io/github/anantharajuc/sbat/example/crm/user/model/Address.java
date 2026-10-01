@@ -1,21 +1,21 @@
 package io.github.anantharajuc.sbat.example.crm.user.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.Size;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import io.github.anantharajuc.sbat.core_backend.persistence.auditing.AuditEntity;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,35 +35,30 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(description="Models a Person's address.")
+@Schema(description="Models a Person's address.")
 @FieldDefaults(level=AccessLevel.PRIVATE)
 public class Address extends AuditEntity
 {
-	public Address(String street2, String suite2, String city2, String zipCode2, Geo geo2) 
-	{
-		
-	}
-
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="street", nullable=true)
 	@Size(min=3, max=15, message="street must be between 3 and 15 characters.")
-	@ApiModelProperty(position=5, notes="street.", value="${Address.street}", example="Jane Plains")
+	@Schema(description="street.", example="Jane Plains")
 	String street;
 
 	@Column(name="suite", nullable=true)
 	@Size(min=3, max=15, message="suite must be between 3 and 15 characters.")
-	@ApiModelProperty(position=6, notes="suite.", value="${Address.suite}", example="Suite 779")
+	@Schema(description="suite.", example="Suite 779")
 	String suite;
 
 	@Column(name="city", nullable=true)
 	@Size(min=3, max=15, message="city must be between 3 and 15 characters.")
-	@ApiModelProperty(position=7, notes="city.", value="${Address.city}", example="Wisokyburghh")
+	@Schema(description="city.", example="Wisokyburghh")
 	String city;
 
 	@Column(name="zipcode", nullable=true)
 	@Size(min=3, max=15, message="zipcode must be between 3 and 15 characters.")
-	@ApiModelProperty(position=8, notes="A postal code consisting of five or nine digits.", value="${Address.zipcode}", example="90565-7771")
+	@Schema(description="A postal code consisting of five or nine digits.", example="90565-7771")
 	String zipcode;
 	
 	@OneToOne(cascade=CascadeType.ALL)

@@ -1,17 +1,12 @@
 package io.github.anantharajuc.sbat.example.crm.user.services;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import io.github.anantharajuc.sbat.core_backend.infra.exception.ResourceNotFoundException;
@@ -87,29 +82,6 @@ public class PersonQueryServiceImpl implements PersonQueryService
 	@Override
 	public Page<Person> findPaginated(Pageable pageable)
 	{
-		int pageSize    = pageable.getPageSize();
-        int currentPage = pageable.getPageNumber();
-        int startItem   = currentPage * pageSize;
-        
-        List<Person> list;
-        
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentPrincipalName = authentication.getName();
-        
-        log.info("currentPrincipalName : "+currentPrincipalName);
-        
-        List<Person> persons = personRepository.findAll();
-        
-        if (persons.size() < startItem) 
-        {
-            list = Collections.emptyList();
-        } 
-        else 
-        {
-            int toIndex = Math.min(startItem + pageSize, persons.size());
-            list = persons.subList(startItem, toIndex);
-        }
-        
-        return new PageImpl<>(list, PageRequest.of(currentPage, pageSize), persons.size());
+		return personRepository.findAll(pageable);
 	}
 }

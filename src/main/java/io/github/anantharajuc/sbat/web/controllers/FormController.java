@@ -71,6 +71,6 @@ public class FormController
 
 		ra.addFlashAttribute(COMMAND, command);
 		
-		return "redirect:/index";
+		return "redirect:/sbat/index";
 	}
 }

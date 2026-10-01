@@ -1,5 +1,9 @@
 package io.github.anantharajuc.sbat.core_backend.user.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +21,6 @@ import io.github.anantharajuc.sbat.core_backend.api.APIutil;
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.core_backend.security.user.model.User;
 import io.github.anantharajuc.sbat.core_backend.user.service.UserQueryServiceImpl;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
 
 /*
  * User Query Controller
@@ -29,7 +30,7 @@ import io.swagger.annotations.ApiResponse;
  */
 @RestController
 @RequestMapping(value=ResourcePaths.User.V1.ROOT)
-@Api(value="UserQuery", tags="User Query")
+@Tag(name="User Query")
 public class UserQueryController 
 {
 	@Autowired
@@ -38,8 +39,8 @@ public class UserQueryController
 	@GetMapping(value=ResourcePaths.USERNAME)
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("#username == authentication.principal.username")
-	@ApiOperation(httpMethod="GET", value = "Find user by Username", notes = "Returns a user for the given username",response = User.class)
-	@ApiResponse(code = 400, message = "Invalid Username supplied")
+	@Operation(summary="Find user by Username", description="Returns a user for the given username")
+	@ApiResponse(responseCode="400", description="Invalid Username supplied")
 	public ResponseEntity<Object> getUserByUsername(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
 			  										@RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
 			  										@PathVariable(value="username") String username)

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.scheduling.annotation.Async;
@@ -13,7 +12,6 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
 import io.github.anantharajuc.sbat.core_backend.service.impl.OtherServicesImpl;
-import io.github.cdimascio.dotenv.Dotenv;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -24,7 +22,6 @@ public class EmailServiceImpl implements EmailService
 {
 	private final TemplateEngine templateEngine;
 	private final JavaMailSender javaMailSender;
-	private final JavaMailSenderImpl javaMailSenderImpl;
 	private final OtherServicesImpl otherServicesImpl;
 	
 	@Override
@@ -43,13 +40,6 @@ public class EmailServiceImpl implements EmailService
 	{
 		otherServicesImpl.loadApplicationSettings();
 		
-		Dotenv dotenv = Dotenv.load();
-
-		javaMailSenderImpl.setUsername(dotenv.get("MAIL_USERNAME", "Unable to fetch MAIL_USERNAME")); 
-		javaMailSenderImpl.setPassword(dotenv.get("MAIL_PASSWORD", "Unable to fetch MAIL_PASSWORD"));
-		javaMailSenderImpl.setPort(Integer.parseInt(dotenv.get("MAIL_PORT", "Unable to fetch MAIL_PORT")));
-		javaMailSenderImpl.setProtocol(dotenv.get("MAIL_PROTOCOL", "Unable to fetch MAIL_PROTOCOL"));
-		javaMailSenderImpl.setHost(dotenv.get("MAIL_HOST", "Unable to fetch MAIL_HOST"));
 		
 		MimeMessagePreparator messagePreparator = mimeMessage -> {
 														          	MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);

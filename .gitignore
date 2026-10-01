@@ -248,3 +248,9 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,gradle,intellij,visualstudiocode,netbeans,eclipse
+### Local secrets and runtime files ###
+.env
+logs/
+*.p12
+*.jks
+secrets/

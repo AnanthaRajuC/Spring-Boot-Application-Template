@@ -19,8 +19,12 @@ public class AuditorAwareImpl implements AuditorAware<String>
 	{
 		Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
 		
-		String username = loggedInUser.getName();
-		
-		return Optional.of(username);
+		// Changes made outside of a request, e.g. at startup or in @Async methods, have no authentication.
+		if (loggedInUser == null || loggedInUser.getName() == null)
+		{
+			return Optional.of("system");
+		}
+
+		return Optional.of(loggedInUser.getName());
 	}
 }
