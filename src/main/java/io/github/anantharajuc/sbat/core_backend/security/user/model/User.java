@@ -1,24 +1,26 @@
 package io.github.anantharajuc.sbat.core_backend.security.user.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import io.github.anantharajuc.sbat.core_backend.persistence.auditing.AuditEntity;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -46,12 +48,15 @@ public class User extends AuditEntity
 {
 	private static final long serialVersionUID = 1L;
 
+	@ToString.Exclude
+	@JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
 	@Column(name="password")
-	@ApiModelProperty(notes="A secret word/phrase used to gain access to the application.", value = "${Person.password}", example="$+r0nG10$$w0rD")
+	@Schema(description="A secret word/phrase used to gain access to the application.", example="$+r0nG10$$w0rD")
 	String password; 
 	
 	@Column(name="username", unique=true)
-	@Size(max = 255, message="username must not be empty.")
+	@NotEmpty(message = "Username is required")
+	@Size(max = 255, message="username must be at most 255 characters.")
 	String username;	
 	
 	@Email
@@ -71,7 +76,8 @@ public class User extends AuditEntity
 	@Column(name="isEnabled")
 	boolean isEnabled;
 	
-	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	// No cascading: roles are shared between users and must never be removed along with one of them.
+	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "sbat_auth_role_user", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
     private List<Role> roles;

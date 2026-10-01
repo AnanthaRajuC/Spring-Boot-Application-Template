@@ -14,4 +14,6 @@ import io.github.anantharajuc.sbat.core_backend.security.jwt.model.VerificationT
 public interface VerificationTokenRepository extends JpaRepository<VerificationToken, Long> 
 {
 	Optional<VerificationToken> findByToken(String token);
+
+	Optional<VerificationToken> findByUserUsername(String username);
 }

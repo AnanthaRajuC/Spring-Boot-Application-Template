@@ -4,7 +4,7 @@
 *** or simply open an issue with the tag "enhancement".
 *** Thanks again!
 -->
-# Spring Boot Application Template/Starter-Project [![Build Status](https://travis-ci.org/AnanthaRajuC/Spring-Boot-Application-Template.svg?branch=master)](https://travis-ci.org/github/AnanthaRajuC/Spring-Boot-Application-Template)
+# Spring Boot Application Template/Starter-Project [![Build](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/actions/workflows/build.yml/badge.svg)](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/actions/workflows/build.yml)
 
 The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.
 
@@ -57,12 +57,78 @@ Features include but not limited to:
 |  **GitHub**     |![GitHub repo size](https://img.shields.io/github/repo-size/Spring-Boot-Framework/Spring-Boot-Application-Template)|![GitHub top language](https://img.shields.io/github/languages/top/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)|![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Spring-Boot-Framework/Spring-Boot-Application-Template)|![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)|![GitHub language count](https://img.shields.io/github/languages/count/Spring-Boot-Framework/Spring-Boot-Application-Template)|
 |**Build/Quality**|[![Spring-Boot-Framework](https://circleci.com/gh/AnanthaRajuC/Spring-Boot-Application-Template.svg?style=svg)](https://circleci.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![BCH compliance](https://bettercodehub.com/edge/badge/Spring-Boot-Framework/Spring-Boot-Application-Template?branch=master)](https://bettercodehub.com/)|[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)|[![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)|
 |  **Others**     |[![Open Source Helpers](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template/badges/users.svg)](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template)|[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)|[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)|[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)|
-|    **Tech**     |![License](https://img.shields.io/badge/license-MIT-blue.svg)|![Material](https://img.shields.io/badge/Material%20Design-UI-orange.svg)|![Bootstrap](https://img.shields.io/badge/Bootstrap-v4.0.0-yellowgreen.svg)|![Java](https://img.shields.io/badge/Java-v1.8-orange.svg)|[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)](http://isitmaintained.com/project/Spring-Boot-Framework/Spring-Boot-Application-Template "Average time to resolve an issue")|
+|    **Tech**     |![License](https://img.shields.io/badge/license-MIT-blue.svg)|![Material](https://img.shields.io/badge/Material%20Design-UI-orange.svg)|![Bootstrap](https://img.shields.io/badge/Bootstrap-v4.6-yellowgreen.svg)|![Java](https://img.shields.io/badge/Java-21-orange.svg) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1-brightgreen.svg)|[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)](http://isitmaintained.com/project/Spring-Boot-Framework/Spring-Boot-Application-Template "Average time to resolve an issue")|
 |    **lgtm**     |[![lgtm-languages](https://badgen.net/lgtm/langs/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-alerts](https://badgen.net/lgtm/alerts/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines-java](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template/java)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-grade](https://badgen.net/lgtm/grade/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|
 | **Docker**      |![Docker](https://img.shields.io/badge/Docker-v19-yellowgreen.svg)|[![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/commit/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|
 | **Security**    |[![DepShield Badge](https://depshield.sonatype.org/badges/Spring-Boot-Framework/Spring-Boot-Application-Template/depshield.svg)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
 
 ## Important Note: This project's new milestone is to release version 1, so stay tuned.
+
+## Quick start
+
+Requirements: **Java 21**. Maven is provided through the wrapper.
+
+```bash
+./mvnw spring-boot:run        # http://localhost:8080 , in-memory H2 database (default "test" profile)
+./mvnw verify                 # tests + coverage report in target/site/jacoco/index.html
+```
+
+Seeded users (password `password`): `Admin1`, `Admin2` (ROLE_ADMIN), `AdminTrainee1`, `AdminTrainee2` (ROLE_ADMINTRAINEE), `johndoe`, `janedoe` (ROLE_PERSON).
+Change or remove them before exposing an instance.
+
+| What | Where |
+|------|-------|
+| Web UI (form login, CSRF protected) | `/sbat/index` |
+| REST API (JWT bearer token or HTTP Basic) | `/api/**`, `/rbac/**` (admin only) |
+| Swagger UI / OpenAPI document (not in production) | `/swagger-ui.html`, `/v3/api-docs` |
+| Actuator: health and info are public, the rest needs ROLE_ADMIN | `/actuator/**` |
+| H2 console (test profile, localhost only) | `/h2-console` |
+
+### Using the API
+
+```bash
+# 1. Login: returns a short lived access token and a single use refresh token
+curl -s -X POST localhost:8080/api/v1/auth/login -H 'Content-Type: application/json' \
+     -d '{"username":"Admin1","password":"password"}'
+
+# 2. Call the API with the access token (person endpoints are also rate limited per X-api-key)
+curl -s localhost:8080/api/v1/person -H "Authorization: Bearer $ACCESS_TOKEN" -H 'X-api-key: FX001-demo'
+
+# 3. Exchange the refresh token for a new pair; the old refresh token stops working
+curl -s -X POST localhost:8080/api/v1/auth/refresh/token -H 'Content-Type: application/json' \
+     -d "{\"token\":\"$REFRESH_TOKEN\"}"
+```
+
+### Configuration
+
+Common settings live in `src/main/resources/application.properties`; the `dev`, `qa`, `staging` and `production`
+profiles use MySQL and only override what differs. Everything environment specific is read from environment
+variables, or from a git-ignored `.env` file (see [`.env.example`](.env.example)).
+
+| Variable | Purpose |
+|----------|---------|
+| `SPRING_PROFILES_ACTIVE` | `test` (default, H2), `dev`, `qa`, `staging`, `production` |
+| `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` | MySQL connection |
+| `JWT_KEY_STORE`, `JWT_KEY_STORE_PASSWORD`, `JWT_KEY_ALIAS` | RSA key used to sign access tokens. **Required in production**: without it a throw-away key is generated at startup and tokens stop working on restart |
+| `REMEMBER_ME_KEY` | Secret for remember-me cookies, random per start when unset |
+| `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD` | SMTP server for sign-up verification e-mails |
+| `BASE_URL` | Public URL used in verification links |
+| `FORWARD_HEADERS_STRATEGY` | Set to `native` or `framework` when running behind a reverse proxy |
+
+Create a JWT signing key store (keep it out of the repository):
+
+```bash
+mkdir -p secrets
+keytool -genkeypair -alias sbat -keyalg RSA -keysize 2048 -validity 3650 \
+        -storetype PKCS12 -keystore secrets/jwt.p12 -dname "CN=sbat"
+```
+
+### Docker
+
+```bash
+export DB_PASSWORD=... DB_ROOT_PASSWORD=... JWT_KEY_STORE_PASSWORD=... REMEMBER_ME_KEY=$(openssl rand -base64 32)
+docker compose up --build     # MySQL 8.4 + the application in the production profile
+```
 
 <!-- APPLICATION SCREENSHOTS -->
 ## Application screenshots
@@ -128,7 +194,7 @@ That's it! Soon I'll be merging your changes into the master branch of this proj
 Kindly follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to create an explicit commit history. Kindly prefix the commit message with one of the following type's.
 
 **build**   : Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)  
-**ci**      : Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)  
+**ci**      : Changes to our CI configuration files and scripts (example scopes: GitHub Actions, Dependabot)  
 **docs**    : Documentation only changes  
 **feat**    : A new feature  
 **fix**     : A bug fix  

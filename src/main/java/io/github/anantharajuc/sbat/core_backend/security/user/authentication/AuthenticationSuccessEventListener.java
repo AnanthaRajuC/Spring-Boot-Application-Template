@@ -1,50 +1,41 @@
 package io.github.anantharajuc.sbat.core_backend.security.user.authentication;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.AllArgsConstructor;
 
 /**
  * Authentication Success Event Listener.
  *
+ * Notifies the {@link LoginAttemptService} of the client IP address the attempt originated from. The remote
+ * address honours X-Forwarded-For only when {@code server.forward-headers-strategy} is enabled.
+ *
  * @author <a href="mailto:arcswdev@gmail.com">Anantha Raju C</a>
  *
  */
-@Log4j2
 @Component
-public class AuthenticationSuccessEventListener implements ApplicationListener<AuthenticationSuccessEvent> 
+@AllArgsConstructor
+public class AuthenticationSuccessEventListener implements ApplicationListener<AuthenticationSuccessEvent>
 {
-    @Autowired
-    private HttpServletRequest request;
-
-    @Autowired
-    private LoginAttemptService loginAttemptService;
+    private final LoginAttemptService loginAttemptService;
 
     @Override
-    public void onApplicationEvent(final AuthenticationSuccessEvent e) 
+    public void onApplicationEvent(final AuthenticationSuccessEvent e)
     {
-    	log.info("-----> AuthenticationSuccessEventListener");
-    	
-        final String xfHeader = request.getHeader("X-Forwarded-For");
-        
-        //LoginAttemptService is notified of the IP address from where the successful attempt originated.
-        if (xfHeader == null) 
+        // A bearer token is not a login attempt, it must not reset the failed login counter.
+        if (e.getAuthentication().getCredentials() instanceof Jwt)
         {
-        	log.info("-----> AuthenticationSuccessEventListener : xfHeader == null");
-        	
-            loginAttemptService.loginSucceeded(request.getRemoteAddr());
-        } 
-        else 
+            return;
+        }
+
+        if (RequestContextHolder.getRequestAttributes() instanceof ServletRequestAttributes attributes)
         {
-        	log.info("-----> AuthenticationSuccessEventListener : xfHeader != null");
-        	
-            loginAttemptService.loginSucceeded(xfHeader.split(",")[0]);
+            loginAttemptService.loginSucceeded(attributes.getRequest().getRemoteAddr());
         }
     }
-
 }

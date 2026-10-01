@@ -1,5 +1,9 @@
 package io.github.anantharajuc.sbat.example.crm.user.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,9 +31,6 @@ import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 import io.github.anantharajuc.sbat.example.crm.user.model.PersonModelAssembler;
 import io.github.anantharajuc.sbat.example.crm.user.model.dto.PersonDTOModelAssembler;
 import io.github.anantharajuc.sbat.example.crm.user.services.PersonQueryServiceImpl;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
@@ -43,7 +44,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RestController
 @RequestMapping(value=ResourcePaths.Person.V1.ROOT)
 @CacheConfig(cacheNames={"person"})
-@Api(value="PersonQuery", tags="Person Query")
+@Tag(name="Person Query")
 public class PersonQueryController 
 {
 	@Autowired
@@ -75,7 +76,7 @@ public class PersonQueryController
 	@GetMapping()	
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
-	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
+	@Operation(summary="Find all persons", description="Returns all Person's in the data store.")
 	public ResponseEntity<CollectionModel<EntityModel<Person>>> getAllPersons(@RequestHeader(defaultValue="${api.version}") String apiVersion,
 			                                                                  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey) 
 	{		
@@ -104,8 +105,8 @@ public class PersonQueryController
 	@GetMapping(value=ResourcePaths.ID)
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_READ')")
-	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID",response = Person.class)
-	@ApiResponse(code = 400, message = "Invalid ID supplied")
+	@Operation(summary="Find person by ID", description="Returns a person for the given ID")
+	@ApiResponse(responseCode="400", description="Invalid ID supplied")
 	public ResponseEntity<Object> getPersonById(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
 			                                    @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
 			                                    @PathVariable(value="id") Long personId)
@@ -121,8 +122,8 @@ public class PersonQueryController
 	@GetMapping(value=ResourcePaths.USERNAME)
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("#username == authentication.principal.username")
-	@ApiOperation(httpMethod="GET", value = "Find person by Username", notes = "Returns a person for the given username",response = Person.class)
-	@ApiResponse(code = 400, message = "Invalid Username supplied")
+	@Operation(summary="Find person by Username", description="Returns a person for the given username")
+	@ApiResponse(responseCode="400", description="Invalid Username supplied")
 	public ResponseEntity<Object> getPersonByName(@RequestHeader(defaultValue="${api.version}") String apiVersion, 
             									  @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey, 
                                                   @PathVariable(value="username") String username)

@@ -1,22 +1,23 @@
 package io.github.anantharajuc.sbat.core_backend.security.user.model;
 
-import io.github.anantharajuc.sbat.core_backend.persistence.auditing.AuditEntity;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level=AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper=false)
-public class UserLogin extends AuditEntity
+public class UserLogin
 {
-	private static final long serialVersionUID = 1L;
-	
+	@NotBlank
 	String username;
-    String password;
+
+	@ToString.Exclude
+	@NotBlank
+	String password;
 }

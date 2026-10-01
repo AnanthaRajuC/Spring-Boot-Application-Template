@@ -1,13 +1,13 @@
 package io.github.anantharajuc.sbat.web.controllers;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.Authentication;
@@ -15,18 +15,16 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.core_backend.persistence.repositories.BuiltWithRepository;
-import io.github.anantharajuc.sbat.core_backend.security.user.repository.UserRepository;
 import io.github.anantharajuc.sbat.core_backend.user.service.UserQueryServiceImpl;
-import io.github.anantharajuc.sbat.core_backend.util.SiteSettings;
-import io.github.anantharajuc.sbat.example.crm.user.controllers.PersonQueryController;
+import io.github.anantharajuc.sbat.core_backend.util.SiteProperties;
 import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 import io.github.anantharajuc.sbat.example.crm.user.services.PersonQueryServiceImpl;
-import io.github.cdimascio.dotenv.Dotenv;
 import lombok.extern.log4j.Log4j2;
 
 /**
@@ -41,7 +39,10 @@ import lombok.extern.log4j.Log4j2;
 public class SpringBootApplicationTemplateController 
 {
 	@Autowired
-	private Environment environment;
+	private ConfigurableApplicationContext applicationContext;
+	
+	@Autowired
+	private SiteProperties siteProperties;
 	
 	@Autowired
 	private BuiltWithRepository builtWithRepository;
@@ -50,13 +51,7 @@ public class SpringBootApplicationTemplateController
 	private UserController userController;
 	
 	@Autowired
-	private UserRepository userRepository;
-	
-	@Autowired
 	private UserQueryServiceImpl userQueryServiceImpl;
-	
-	@Autowired
-	private PersonQueryController personController;
 	
 	@Autowired
     private PersonQueryServiceImpl personQueryServiceImpl;
@@ -64,24 +59,13 @@ public class SpringBootApplicationTemplateController
 	@GetMapping(value=ResourcePaths.SBAT.V1.PERSONS) 
     public String persons(Model model) 
 	{
-		model.addAttribute("persons", personController.getAllPersons(null, null)); 
-		
-		return "pages/persons";
+		return "redirect:/sbat/listPersons";
     }
 	  
 	@GetMapping(value=ResourcePaths.SBAT.V1.INDEX)
     public String index(Model model) 
 	{
-		Dotenv dotenv = Dotenv.load();	
-		
-		SiteSettings siteSettings = new SiteSettings();	
-		
-		siteSettings.setSiteLogo(dotenv.get("SITE_LOGO", "Unable to fetch SITE_LOGO"));
-		siteSettings.setSiteInitials(dotenv.get("SITE_INITIALS", "Unable to fetch SITE_INITIALS"));
-		siteSettings.setSiteTitle(dotenv.get("SITE_TITLE", "Unable to fetch SITE_TITLE"));
-		siteSettings.setSiteDescription(dotenv.get("SITE_DESCRIPTION", "Unable to fetch SITE_DESCRIPTION"));
-		
-		model.addAttribute("site_settings", siteSettings);
+		model.addAttribute("site_settings", siteProperties.toSiteSettings());
 		
 		return "pages/index";
     }
@@ -167,8 +151,8 @@ public class SpringBootApplicationTemplateController
 	@GetMapping("/listPersons")
 	public String listPersons(Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size)
 	{
-		final int currentPage = page.orElse(1);
-        final int pageSize = size.orElse(10);
+		final int currentPage = Math.max(1, page.orElse(1));
+        final int pageSize = Math.clamp(size.orElse(10), 1, 100);
 
         Page<Person> personPage = personQueryServiceImpl.findPaginated(PageRequest.of(currentPage - 1, pageSize));
 
@@ -188,29 +172,26 @@ public class SpringBootApplicationTemplateController
 		return "pages/listPersons";
 	}
 	
-	@GetMapping(value=ResourcePaths.SBAT.V1.CLOSE)
+	@PostMapping(value=ResourcePaths.SBAT.V1.CLOSE)
 	public String close()
 	{
-		log.info("App Shutdown");
+		log.info("App Shutdown requested");
 		
-		String port = environment.getProperty("local.server.port");
-		
-		log.info("port : "+port);
-		
-		String command = "curl --location --request POST http://localhost:"+port+"/actuator/shutdown";
-		
-		log.info("shutdown command : "+command);
-		
-		try 
-		{
-			Process process = Runtime.getRuntime().exec(command);
+		// Shut down after the response has been rendered.
+		Thread shutdown = new Thread(() -> {
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch (InterruptedException e)
+			{
+				Thread.currentThread().interrupt();
+			}
 			
-			log.info("process : "+process);
-		} 
-		catch (IOException e) 
-		{
-			log.error( "App shutdown failed!", e );
-		}
+			System.exit(SpringApplication.exit(applicationContext, () -> 0));
+		}, "sbat-shutdown");
+		shutdown.setDaemon(false);
+		shutdown.start();
 		
 		return "pages/close";
 	}

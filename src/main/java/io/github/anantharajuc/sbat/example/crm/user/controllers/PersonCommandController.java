@@ -1,6 +1,9 @@
 package io.github.anantharajuc.sbat.example.crm.user.controllers;
 
-import javax.validation.Valid;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import jakarta.validation.Valid;
 
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -27,8 +30,6 @@ import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 import io.github.anantharajuc.sbat.example.crm.user.model.PersonModelAssembler;
 import io.github.anantharajuc.sbat.example.crm.user.services.PersonCommandServiceImpl;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 
 /*
@@ -40,7 +41,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping(value=ResourcePaths.Person.V1.ROOT)
 @CacheConfig(cacheNames={"person"})
-@Api(value="PersonCommands", tags="Person Commands")
+@Tag(name="Person Commands")
 @AllArgsConstructor
 public class PersonCommandController 
 {
@@ -62,7 +63,7 @@ public class PersonCommandController
 	 */
 	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
-	@ApiOperation(httpMethod="POST", value = "Add Person", notes = "Add a new Person to the datastore",response=Person.class)
+	@Operation(summary="Add Person", description="Add a new Person to the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_CREATE')")
 	public ResponseEntity<EntityModel<Person>> createPerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                                @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
@@ -94,7 +95,7 @@ public class PersonCommandController
 	@CacheEvict(allEntries=true)
 	@PutMapping(value=ResourcePaths.ID, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	@ApiOperation(httpMethod="PUT", value = "UPDATE Person", notes = "Update an existing Person in the datastore",response=Person.class)
+	@Operation(summary="UPDATE Person", description="Update an existing Person in the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_UPDATE')")
 	public ResponseEntity<EntityModel<Person>> updatePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                                @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,
@@ -126,7 +127,7 @@ public class PersonCommandController
 	 */
 	@CacheEvict(allEntries=true)
 	@DeleteMapping(value=ResourcePaths.ID)
-	@ApiOperation(httpMethod="DELETE", value = "DELETE an existing Person", notes = "Delete an existing Person from the datastore")
+	@Operation(summary="DELETE an existing Person", description="Delete an existing Person from the datastore")
 	@PreAuthorize("hasAnyRole('ADMIN','PERSON') and hasAuthority('PERSON_DELETE')")
 	public ResponseEntity<?> deletePerson(@RequestHeader(defaultValue="${api.version}") String apiVersion,
                                           @RequestHeader(value=APIutil.HEADER_API_KEY, defaultValue="${api.key}") String apiKey,

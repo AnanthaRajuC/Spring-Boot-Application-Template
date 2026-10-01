@@ -1,2 +1,10 @@
 .git
 .gitignore
+.github
+.env
+target/
+logs/
+secrets/
+*.iml
+.idea/
+.vscode/

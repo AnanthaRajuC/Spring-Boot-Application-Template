@@ -2,7 +2,7 @@ package io.github.anantharajuc.sbat.core_backend.security.user.repository;
 
 import java.util.Optional;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -24,4 +24,6 @@ public interface UserRepository extends JpaRepository<User, Long>
      * @return {@link User} if found
      */
 	Optional<User> findByUsername(@NotBlank String username);
+
+	boolean existsByUsernameOrEmail(String username, String email);
 }

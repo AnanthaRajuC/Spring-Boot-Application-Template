@@ -1,21 +1,26 @@
 package io.github.anantharajuc.sbat.core_backend.security.jwt.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import io.github.anantharajuc.sbat.core_backend.persistence.auditing.AuditEntity;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
+/**
+ * Refresh token sent by API clients. The username is optional and only checked for consistency: the account a
+ * refresh token belongs to is always taken from the stored token.
+ */
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @FieldDefaults(level=AccessLevel.PRIVATE)
-@JsonIgnoreProperties({"createdDate", "createdBy","lastModifiedDate","lastModifiedBy"}) 
-public class RefreshTokenDTO extends AuditEntity
+public class RefreshTokenDTO
 {
-	private static final long serialVersionUID = 1L;
-	
+	@NotBlank
 	String token;
+
 	String username;
 }

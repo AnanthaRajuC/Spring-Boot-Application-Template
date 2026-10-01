@@ -1,13 +1,14 @@
 package io.github.anantharajuc.sbat.core_backend.api.rate_limiting;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.time.Duration;
 
 import org.springframework.stereotype.Service;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
-import io.github.bucket4j.Bucket4j;
 
 /**
  * Class that implements the API usage plans service methods.
@@ -18,7 +19,11 @@ import io.github.bucket4j.Bucket4j;
 @Service
 public class APIUsageTiersServiceImpl implements APIUsageTiersService
 {
-	private final Map<String, Bucket> cache = new ConcurrentHashMap<>();
+	// Bounded, so clients sending random API keys cannot exhaust the memory.
+	private final Cache<String, Bucket> cache = Caffeine.newBuilder()
+			.maximumSize(10_000)
+			.expireAfterAccess(Duration.ofHours(1))
+			.build();
 
 	/**
 	 * @see APIUsageTiersService#resolveBucket(String)
@@ -26,7 +31,7 @@ public class APIUsageTiersServiceImpl implements APIUsageTiersService
 	@Override
 	public Bucket resolveBucket(String apiKey) 
 	{
-		return cache.computeIfAbsent(apiKey, this::newBucket);
+		return cache.get(apiKey, this::newBucket);
 	}
 
 	/**
@@ -46,6 +51,6 @@ public class APIUsageTiersServiceImpl implements APIUsageTiersService
 	@Override
 	public Bucket bucket(Bandwidth limit) 
 	{		
-		return Bucket4j.builder().addLimit(limit).build();
+		return Bucket.builder().addLimit(limit).build();
 	}
 }

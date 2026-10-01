@@ -29,7 +29,7 @@ public class UserPrincipal implements UserDetails
 	
 	public UserPrincipal(User user) 
 	{
-		log.info("-----> username            : "+user.getUsername());
+		log.debug("-----> username            : "+user.getUsername());
 
         this.user = user;
         
@@ -41,11 +41,11 @@ public class UserPrincipal implements UserDetails
 		{
 			roleAndPermissions.add(role.getName());
 			
-			log.info("-----> Role                : "+role.getName());
+			log.debug("-----> Role                : "+role.getName());
 			
 			for(int i = 0; i<role.getPermissions().size(); i++)
 			{
-				log.info("-----> Permission          : "+role.getPermissions().get(i).getName());
+				log.debug("-----> Permission          : "+role.getPermissions().get(i).getName());
 				
 				roleAndPermissions.add(role.getPermissions().get(i).getName());
 			}
@@ -53,7 +53,7 @@ public class UserPrincipal implements UserDetails
 		
 		String[] roleNames = new String[roleAndPermissions.size()];
 		
-		log.info("-----> Roles & Permissions : "+roleAndPermissions.toString());			
+		log.debug("-----> Roles & Permissions : "+roleAndPermissions.toString());			
         
         this.authorities = AuthorityUtils.createAuthorityList(roleAndPermissions.toArray(roleNames));
     }
@@ -84,24 +84,24 @@ public class UserPrincipal implements UserDetails
 	@Override
 	public boolean isAccountNonExpired() 
 	{
-		return true;
+		return user.isAccountNonExpired();
 	}
 
 	@Override
 	public boolean isAccountNonLocked() 
 	{
-		return true;
+		return user.isAccountNonLocked();
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() 
 	{
-		return true;
+		return user.isCredentialsNonExpired();
 	}
 
 	@Override
 	public boolean isEnabled() 
 	{
-		return true;
+		return user.isEnabled();
 	}
 }

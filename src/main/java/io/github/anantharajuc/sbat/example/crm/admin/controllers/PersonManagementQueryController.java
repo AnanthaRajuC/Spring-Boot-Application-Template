@@ -1,5 +1,8 @@
 package io.github.anantharajuc.sbat.example.crm.admin.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +20,6 @@ import io.github.anantharajuc.sbat.core_backend.api.ResourcePaths;
 import io.github.anantharajuc.sbat.example.crm.user.model.Person;
 import io.github.anantharajuc.sbat.example.crm.user.model.dto.PersonDTO;
 import io.github.anantharajuc.sbat.example.crm.user.services.PersonQueryService;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
 
 /**
  * Person Management Query Controller
@@ -37,7 +38,7 @@ public class PersonManagementQueryController
 	@Cacheable()
 	@GetMapping()
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
-	@ApiOperation(httpMethod="GET", value="Find all persons", notes="Returns all Person's in the data store.")
+	@Operation(summary="Find all persons", description="Returns all Person's in the data store.")
 	public List<Person> getAllPersons() 
 	{		
 		return personQueryServiceImpl.getAllPersons(); 
@@ -45,8 +46,8 @@ public class PersonManagementQueryController
 	
 	@GetMapping(value=ResourcePaths.ID)
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
-	@ApiOperation(httpMethod="GET", value = "Find person by ID", notes = "Returns a person for the given ID", response=Person.class)
-	@ApiResponse(code = 400, message = "Invalid ID supplied")
+	@Operation(summary="Find person by ID", description="Returns a person for the given ID")
+	@ApiResponse(responseCode="400", description="Invalid ID supplied")
 	public PersonDTO getPersonById(@PathVariable(value="id") Long personId)
 	{		
 		return personQueryServiceImpl.getPersonById(personId);
@@ -54,7 +55,7 @@ public class PersonManagementQueryController
 	
 	@GetMapping(value=ResourcePaths.PAGEABLE)	
 	@PreAuthorize("hasAnyRole('ADMIN','ADMINTRAINEE')")
-	@ApiOperation(httpMethod="GET", value="Find all persons via Paging", notes="Returns all Person's in the data store via Paging.")
+	@Operation(summary="Find all persons via Paging", description="Returns all Person's in the data store via Paging.")
 	public Page<Person> getAllPersons(Pageable pageable) 
 	{		
 		return personQueryServiceImpl.getAllPersonsPageable(pageable);

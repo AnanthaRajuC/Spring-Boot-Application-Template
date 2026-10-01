@@ -1,18 +1,18 @@
 package io.github.anantharajuc.sbat.core_backend.persistence.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Table;
-import javax.validation.constraints.Size;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import io.github.anantharajuc.sbat.core_backend.persistence.auditing.AuditEntity;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,7 +33,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(description="Models a builit_with table.")
+@Schema(description="Models a builit_with table.")
 @FieldDefaults(level=AccessLevel.PRIVATE)
 public class BuiltWith extends AuditEntity
 {
@@ -42,18 +42,18 @@ public class BuiltWith extends AuditEntity
 	
 	@Size(min=3, max=15, message="name must be between 3 and 15 characters.")
 	@Column(name="name", nullable = false)
-	@ApiModelProperty(position=5, notes="name.", value="${BuiltWith.name}", required=true, example="Apache Maven")
+	@Schema(description="name.", example="Apache Maven", requiredMode=Schema.RequiredMode.REQUIRED)
 	String name;
 	
 	@Column(name="version", nullable = true)
-	@ApiModelProperty(position=6, notes="version.", value="${BuiltWith.version}", example="3.5.2")
+	@Schema(description="version.", example="3.5.2")
 	String version;
 	
 	@Column(name="description", nullable = true)
-	@ApiModelProperty(position=7, notes="description.", value="${BuiltWith.description}", example="Dependency Management")
+	@Schema(description="description.", example="Dependency Management")
 	String description;
 	
 	@Column(name="link", nullable = true)
-	@ApiModelProperty(position=8, notes="link.", value="${BuiltWith.link}", example="https://maven.apache.org/")
+	@Schema(description="link.", example="https://maven.apache.org/")
 	String link;
 }

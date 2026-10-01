@@ -2,15 +2,14 @@ package io.github.anantharajuc.sbat.core_backend.security.user.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -45,7 +44,7 @@ public class Role extends AuditEntity
 	@Column(name="name")
     String name;
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(   name = "sbat_auth_permission_role", 
            joinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}, 
     inverseJoinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")})

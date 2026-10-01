@@ -61,7 +61,9 @@
                   <form id="f" th:action="@{/logout}" method="post" role="form" class="navbar-form">
                      <button type="submit" th:text="#{navbar.logout.text}" class="dropdown-item text-danger"/>
                   </form>
-                  <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item text-danger" type="submit" href="/sbat/close" role="button" th:text="#{navbar.close-app.text}"></a>			  
+                  <form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/sbat/close}" method="post" role="form" class="navbar-form">
+                     <button type="submit" th:text="#{navbar.close-app.text}" class="dropdown-item text-danger"/>
+                  </form>			  
                </div>
             </li>
          </ul>

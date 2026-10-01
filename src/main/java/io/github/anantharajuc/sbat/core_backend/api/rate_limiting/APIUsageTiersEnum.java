@@ -3,7 +3,6 @@ package io.github.anantharajuc.sbat.core_backend.api.rate_limiting;
 import java.time.Duration;
 
 import io.github.bucket4j.Bandwidth;
-import io.github.bucket4j.Refill;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -32,11 +31,9 @@ public enum APIUsageTiersEnum
      */
     public Bandwidth getLimit() 
     {
-    	log.info("-----> API Rate Limiting : Bandwidth : "+Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(20))));
     	
-    	return Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(20)));
+    	return Bandwidth.builder().capacity(bucketCapacity).refillIntervally(bucketCapacity, Duration.ofMinutes(20)).build();
     	
-    	//return Bandwidth.simple(1, Duration.ofSeconds(30));
     }
     
     /**

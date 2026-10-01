@@ -1,117 +1,52 @@
 package io.github.anantharajuc.sbat.core_backend.security.jwt;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
 import java.time.Instant;
-import java.util.Date;
 
-import javax.annotation.PostConstruct;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
+import org.springframework.security.oauth2.jwt.JwsHeader;
+import org.springframework.security.oauth2.jwt.JwtClaimsSet;
+import org.springframework.security.oauth2.jwt.JwtEncoder;
+import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Service;
 
-import io.github.anantharajuc.sbat.core_backend.infra.exception.OtherExceptions;
+import io.github.anantharajuc.sbat.core_backend.security.SecurityProperties;
 import io.github.anantharajuc.sbat.core_backend.service.impl.OtherServicesImpl;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
+import lombok.AllArgsConstructor;
 
-import static io.jsonwebtoken.Jwts.parser;
-import static java.util.Date.from;
-
+/**
+ * Issues RS256 signed access tokens. Tokens are verified by Spring Security's OAuth2 resource server support,
+ * see {@link io.github.anantharajuc.sbat.core_backend.security.ApplicationSecurityConfiguration}.
+ */
 @Service
-public class JwtProvider 
+@AllArgsConstructor
+public class JwtProvider
 {
-	@Autowired
-	private OtherServicesImpl otherServicesImpl;
-	
-	private KeyStore keyStore;
-	
-	@PostConstruct
-    public void init() 
-	{
-		otherServicesImpl.loadApplicationSettings();
-		
-        try 
-        {
-            keyStore = KeyStore.getInstance("JKS");
-            
-            InputStream resourceAsStream = getClass().getResourceAsStream("/"+otherServicesImpl.getKeystoreFileName());
-            
-            keyStore.load(resourceAsStream, otherServicesImpl.getKeystorePassword().toCharArray());
-        } 
-        catch (KeyStoreException | CertificateException | NoSuchAlgorithmException | IOException e) 
-        {
-            throw new OtherExceptions("Exception occurred while loading keystore", e);
-        }
-    }
-	
-	private PrivateKey getPrivateKey() 
-	{
-        try 
-        {
-            return (PrivateKey) keyStore.getKey(otherServicesImpl.getKeystoreAlias(), otherServicesImpl.getKeystorePassword().toCharArray());
-        } 
-        catch (KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException e) 
-        {
-            throw new OtherExceptions("Exception occured while retrieving public key from keystore", e);
-        }
-    }
-	
-	private PublicKey getPublickey() 
-	{
-        try 
-        {
-            return keyStore.getCertificate(otherServicesImpl.getKeystoreAlias()).getPublicKey();
-        } 
-        catch (KeyStoreException e) 
-        {
-            throw new OtherExceptions("Exception occured while retrieving public key from keystore", e);
-        }
-    }
-	
-	public String generateToken(Authentication authentication)
-	{
-		return Jwts.builder()
-                .setSubject(authentication.getName())
-                .signWith(getPrivateKey())
-                .setExpiration(Date.from(Instant.now().plusSeconds(otherServicesImpl.getJwtExpirationTime()))) 
-                .compact();
-	}
-	
-	public String generateTokenWithUserName(String username) 
-	{
-		return Jwts.builder()
-				.setSubject(username)
-				.setIssuedAt(from(Instant.now()))
-				.signWith(getPrivateKey())
-				.setExpiration(Date.from(Instant.now().plusSeconds(otherServicesImpl.getJwtExpirationTime())))
-                .compact();
-				
-		
-	}
-	
-	public boolean validateToken(String jwt) 
-	{
-        parser().setSigningKey(getPublickey()).parseClaimsJws(jwt);
-        
-        return true;
-    }
-	
-	public String getUsernameFromJwt(String token) 
-	{
-        Claims claims = parser()
-			                .setSigningKey(getPublickey())
-			                .parseClaimsJws(token)
-			                .getBody();
+	private final JwtEncoder jwtEncoder;
+	private final OtherServicesImpl otherServicesImpl;
+	private final SecurityProperties securityProperties;
 
-        return claims.getSubject();
-    }
+	/**
+	 * @param username subject of the token
+	 * @return the signed token together with its expiry
+	 */
+	public IssuedToken generateTokenWithUserName(String username)
+	{
+		Instant now = Instant.now();
+		Instant expiresAt = now.plusSeconds(otherServicesImpl.getJwtExpirationTime());
+
+		JwtClaimsSet claims = JwtClaimsSet.builder()
+				.issuer(securityProperties.jwt().issuer())
+				.subject(username)
+				.issuedAt(now)
+				.expiresAt(expiresAt)
+				.build();
+
+		String token = jwtEncoder.encode(JwtEncoderParameters.from(JwsHeader.with(SignatureAlgorithm.RS256).build(), claims)).getTokenValue();
+
+		return new IssuedToken(token, expiresAt);
+	}
+
+	public record IssuedToken(String token, Instant expiresAt)
+	{
+	}
 }
