@@ -10,15 +10,19 @@ The only thing better than a Maven archetype is a repo you can fork with everyth
 
 This repository contains a **recipe/scaffolding** for bootstrapping a **Monolithic Web Application** with the features & Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.
 
-Essentially it's a simple on-demand application backend for rapd-prototyping.
+Essentially it's a simple on-demand application backend for rapid prototyping.
+
+**Documentation:** [anantharajuc.github.io/Spring_Boot_Starter_Template](https://anantharajuc.github.io/Spring_Boot_Starter_Template/) · [documents/](documents/) · Swagger UI at `/swagger-ui.html` when running.
 
 Features include but not limited to:
 
-- [Authentication](documents/AUTHENTICATION.MD)  
-- [User Profiles](documents/USER_PROFILES.MD)   
-- [User Roles](documents/USER_ROLES.MD)   
-- [API](documents/API.md)  
-- [Internationalization (i18n)](documents/INTERNATIONALIZATION.MD) 
+- **Spring Boot 4.1 on Java 21** with Spring Security 7, Spring Data JPA, Flyway (H2 and MySQL) and Thymeleaf with Bootstrap 5
+- [Authentication](documents/AUTHENTICATION.MD): form login with remember-me and CSRF protection for the web UI; RS256 JWT access tokens with rotating, single-use refresh tokens for the REST API; sign-up with e-mail verification; login throttling
+- [User Roles](documents/USER_ROLES.MD): role and permission based access control, RBAC user management API
+- [API](documents/API.md): rate limiting per API key, HATEOAS links, RFC 9457 problem details, OpenAPI 3 / Swagger UI
+- [User Profiles](documents/USER_PROFILES.MD)
+- [Internationalization (i18n)](documents/INTERNATIONALIZATION.MD), dark mode
+- Actuator with Prometheus metrics, [Docker](documents/DOCKER.md) image and Compose setup, GitHub Actions CI, integration tests, JaCoCo coverage
 
 <div align="center">
 
@@ -55,12 +59,11 @@ Features include but not limited to:
 |-----------------|-------|-------|-------|-------|-------|
 |  **GitHub**     |[![GitHub last commit](https://img.shields.io/github/last-commit/anantharajuc/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/commits/master)|[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/pulls)|[![GitHub issues](https://img.shields.io/github/issues/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![GitHub forks](https://img.shields.io/github/forks/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/network)|[![GitHub stars](https://img.shields.io/github/stars/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/stargazers)|
 |  **GitHub**     |![GitHub repo size](https://img.shields.io/github/repo-size/Spring-Boot-Framework/Spring-Boot-Application-Template)|![GitHub top language](https://img.shields.io/github/languages/top/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)|![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Spring-Boot-Framework/Spring-Boot-Application-Template)|![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)|![GitHub language count](https://img.shields.io/github/languages/count/Spring-Boot-Framework/Spring-Boot-Application-Template)|
-|**Build/Quality**|[![Spring-Boot-Framework](https://circleci.com/gh/AnanthaRajuC/Spring-Boot-Application-Template.svg?style=svg)](https://circleci.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![BCH compliance](https://bettercodehub.com/edge/badge/Spring-Boot-Framework/Spring-Boot-Application-Template?branch=master)](https://bettercodehub.com/)|[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)|[![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)|
+|**Build/Quality**|[![Spring-Boot-Framework](https://circleci.com/gh/AnanthaRajuC/Spring-Boot-Application-Template.svg?style=svg)](https://circleci.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![Build](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/actions/workflows/build.yml/badge.svg)](https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/actions/workflows/build.yml)|[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4bc5385252064f0e908f445b1eba184b)](https://www.codacy.com/gh/Spring-Boot-Framework/Spring-Boot-Application-Template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Spring-Boot-Framework/Spring-Boot-Application-Template&amp;utm_campaign=Badge_Grade)|[![codecov](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template/branch/master/graph/badge.svg)](https://codecov.io/gh/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Spring-Boot-Framework_Spring-Boot-Application-Template&metric=alert_status)](https://sonarcloud.io/dashboard?id=Spring-Boot-Framework_Spring-Boot-Application-Template)|
 |  **Others**     |[![Open Source Helpers](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template/badges/users.svg)](https://www.codetriage.com/spring-boot-framework/spring-boot-application-template)|[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485bb945b088c6fd471e)|[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template)|[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_shield)|[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)|
 |    **Tech**     |![License](https://img.shields.io/badge/license-MIT-blue.svg)|![Material](https://img.shields.io/badge/Material%20Design-UI-orange.svg)|![Bootstrap](https://img.shields.io/badge/Bootstrap-v5.3-yellowgreen.svg)|![Java](https://img.shields.io/badge/Java-21-orange.svg) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1-brightgreen.svg)|[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Spring-Boot-Framework/Spring-Boot-Application-Template.svg)](http://isitmaintained.com/project/Spring-Boot-Framework/Spring-Boot-Application-Template "Average time to resolve an issue")|
-|    **lgtm**     |[![lgtm-languages](https://badgen.net/lgtm/langs/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-alerts](https://badgen.net/lgtm/alerts/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-lines-java](https://badgen.net/lgtm/lines/g/Spring-Boot-Framework/Spring-Boot-Application-Template/java)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|[![lgtm-grade](https://badgen.net/lgtm/grade/g/Spring-Boot-Framework/Spring-Boot-Application-Template)](https://lgtm.com/projects/g/Spring-Boot-Framework/Spring-Boot-Application-Template?mode=list)|
-| **Docker**      |![Docker](https://img.shields.io/badge/Docker-v19-yellowgreen.svg)|[![](https://images.microbadger.com/badges/image/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/version/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/anantha/spring-boot-application-template)|[![](https://images.microbadger.com/badges/commit/anantha/spring-boot-application-template.svg)](https://microbadger.com/images/anantha/spring-boot-application-template)|
-| **Security**    |[![DepShield Badge](https://depshield.sonatype.org/badges/Spring-Boot-Framework/Spring-Boot-Application-Template/depshield.svg)](https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/issues)|[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
+| **Docker**      |![Docker](https://img.shields.io/badge/Docker-multi--stage-blue.svg)|![Docker Compose](https://img.shields.io/badge/Compose-MySQL%208.4-blue.svg)|
+| **Security**    |[![Known Vulnerabilities](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template/badge.svg)](https://snyk.io/test/github/Spring-Boot-Framework/Spring-Boot-Application-Template)|
 
 ## Important Note: This project's new milestone is to release version 1, so stay tuned.
 
@@ -91,7 +94,7 @@ Change or remove them before exposing an instance.
 curl -s -X POST localhost:8080/api/v1/auth/login -H 'Content-Type: application/json' \
      -d '{"username":"Admin1","password":"password"}'
 
-# 2. Call the API with the access token (person endpoints are also rate limited per X-api-key)
+# 2. Call the API with the access token (the person APIs are also rate limited per X-api-key)
 curl -s localhost:8080/api/v1/person -H "Authorization: Bearer $ACCESS_TOKEN" -H 'X-api-key: FX001-demo'
 
 # 3. Exchange the refresh token for a new pair; the old refresh token stops working
@@ -123,6 +126,8 @@ keytool -genkeypair -alias sbat -keyalg RSA -keysize 2048 -validity 3650 \
         -storetype PKCS12 -keystore secrets/jwt.p12 -dname "CN=sbat"
 ```
 
+> **Security note:** earlier versions of this repository committed a JWT key store (`redditclone.jks`) and an SSL key store, with their passwords. Both have been removed, but they remain in the Git history: if you deployed an earlier version, generate new keys as shown above and never reuse those files.
+
 ### Docker
 
 ```bash
@@ -141,11 +146,14 @@ docker compose up --build     # MySQL 8.4 + the application in the production pr
 
 - [Technology stack & other Open-source libraries](documents/TECHNOLOGY_STACK.MD)  
 - [Technical Functionalities and To-Do](documents/TECHNICAL_FUNCTIONALITIES.MD)  
+- [Online documentation](https://anantharajuc.github.io/Spring_Boot_Starter_Template/)  
 - [Getting Started](documents/GETTING_STARTED.MD)  
 - [Architecture](documents/ARCHITECTURE.md) 
 - [Installation](documents/INSTALLATION.MD)  
 - [Deployment](documents/DEPLOYMENT.md)  
-- [Security](documents/API.md)  
+- [Authentication & Security](documents/AUTHENTICATION.MD)  
+- [User Roles](documents/USER_ROLES.MD)  
+- [Docker](documents/DOCKER.md)  
 - [Testing API](documents/TESTING.MD)  
 - [Changelog](documents/CHANGELOG.md) 
 - [Code Coverage](documents/CODE_COVERAGE.MD) 
