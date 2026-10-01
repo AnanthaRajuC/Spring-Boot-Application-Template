@@ -1,99 +1,56 @@
-## Testing API
+## Testing
 
 <details open="open">
 	<ul>
-		<li><a href="#testing-with-postman-runner">Testing with Postman Runner</a></li>
-		<li><a href="#testing-with-maven">Testing with Maven</a></li>
-		<li><a href="#basic-load-testing">Basic Load Testing</a></li>
+		<li><a href="#automated-tests">Automated tests</a></li>
+		<li><a href="#testing-with-postman">Testing with Postman</a></li>
+		<li><a href="#basic-load-testing">Basic load testing</a></li>
 	</ul>
 </details>
 
-### Testing with Postman 
+### Automated tests
 
-You can test out your application by using a third-party tool called [Postman](https://www.postman.com/), this is a free app that you can download and you can view all the endpoints on the left and the API data on the right.
+```shell
+./mvnw test      # run the tests
+./mvnw verify    # run the tests and write the coverage report, see CODE_COVERAGE.MD
+```
+
+`src/test/java/io/github/anantharajuc/sbat/TestSBtemplateApplication.java` contains integration tests that start the whole application (`@SpringBootTest`) on the in-memory H2 database and call it through `MockMvc`. They cover:
+
+*	**Web UI:** public pages, redirect to the login page, form login, rejection of a login without a CSRF token, admin-only pages.
+*	**REST API:** missing and invalid tokens (401), role checks (403), admin access to RBAC and actuator endpoints, creating a user with a new role through `/rbac/user`.
+*	**Tokens:** a refresh token cannot be used for another user, refresh tokens are rotated and single use.
+*	**Login throttling:** a client IP is blocked after 5 failed logins while other clients are not.
+*	**Account lifecycle:** sign-up validation, login only after e-mail verification, expired verification links remove only the unverified account.
+
+Outgoing e-mail is replaced by a mock (`@MockitoBean JavaMailSender`), so no SMTP server is needed.
+
+The same `./mvnw verify` runs in GitHub Actions on every push to `master` and every pull request (`.github/workflows/build.yml`), together with a Docker image build.
+
+### Testing with Postman
+
+You can try the API with [Postman](https://www.postman.com/). Import the collection from:
+
+`documents/Spring Boot Application Template.postman_collection.json`
 
 [![Postman](images/Postman.PNG)](images/Postman.PNG)
 
-In order to download the End Points for the application you can find this file located here:
+To call protected endpoints, first send the **login** request, copy `authenticationToken` from the response and set it as the collection's **Bearer Token** (Authorization tab). Requests to `/api/v1/person/**` also need an `X-api-key` header, see [API rate limiting](API.md#api-rate-limiting).
 
-`documents/Spring Boot Application Template.postman_collection`
+The [Swagger UI](http://localhost:8080/swagger-ui.html) offers the same, without installing anything: click **Authorize** and paste the token.
 
-### Testing with Postman Runner
+### Basic load testing
 
-Import the **Spring Boot Application Template API.postman_test_run** file into postman and run the API tests.
-
-### Testing with Maven
-
-*	Run only unit tests:
+Basic load testing for retrieving a `person` for a given `id` can be performed with ApacheBench. The endpoint needs a token and an API key, and is rate limited per API key (75 requests per 20 minutes at most), so measure against an endpoint without the rate limit, for example the management API with an admin token:
 
 ```shell
-$ mvn clean test
-```
-
-### Basic Load Testing
-
-Basic load testing for retrieving a `person` for a given `id` can be performed with the ApacheBench by executing the following command:
-
-```shell
-ab -n 10000 -c 100 -k http://localhost:8080/api/v1/person/1
+ab -n 10000 -c 100 -k -H "Authorization: Bearer $ACCESS_TOKEN" \
+   http://localhost:8080/api/v1/management/person/id/1
 ```
 
 * **-n 10000** is the number of requests to make
 * **-c 100** is the number of concurrent requests to make at a time
 * **-k** sends the **KeepAlive** header, which asks the web server to not shut down the connection after each request is done, but to instead keep reusing it
+* **-H** adds a request header, here the access token
 
-Result:
-
-```
-Benchmarking localhost (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
-
-
-Server Software:
-Server Hostname:        localhost
-Server Port:            8080
-
-Document Path:          /api/v1/person/1
-Document Length:        132 bytes
-
-Concurrency Level:      100
-Time taken for tests:   9.213 seconds
-Complete requests:      10000
-Failed requests:        0
-Non-2xx responses:      10000
-Keep-Alive requests:    0
-Total transferred:      5330000 bytes
-HTML transferred:       1320000 bytes
-Requests per second:    1085.38 [#/sec] (mean)
-Time per request:       92.133 [ms] (mean)
-Time per request:       0.921 [ms] (mean, across all concurrent requests)
-Transfer rate:          564.95 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    1   1.1      1      49
-Processing:    13   91  30.1     85     523
-Waiting:        0   68  29.3     65     472
-Total:         14   91  30.1     85     523
-
-Percentage of the requests served within a certain time (ms)
-  50%     85
-  66%     95
-  75%    101
-  80%    105
-  90%    119
-  95%    136
-  98%    176
-  99%    223
- 100%    523 (longest request)
-```
+Access tokens are valid for 5 minutes by default (the `jwtExpirationTime` application setting), so get a fresh one right before the run.

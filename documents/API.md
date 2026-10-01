@@ -1,122 +1,142 @@
 ## API
 
-This application comes with an out-of-the-box API, which will allow you to provide an API to your users or build a mobile app from your API.
+This application comes with an out-of-the-box REST API, which lets you offer an API to your users or build a mobile app on top of it.
 
-### Access Data from the API
+* [Access data from the API](#access-data-from-the-api)
+* [Errors](#errors)
+* [API rate limiting](#api-rate-limiting)
+* [Preventing brute force authentication attempts](#preventing-brute-force-authentication-attempts)
+* [Session timeout](#session-timeout)
+* [Explore REST APIs](#explore-rest-apis)
 
-In order to access data from the API a user or an application will need to pass an Access Token to the API. This access token along with the **ROLE** of the user will determine what kind of data can be accessed or returned.
+### Access data from the API
 
-- You can request an Access Token with a **username** and a **password**
+To access data a user or an application passes an **access token** with every request. The token identifies the user; the user's **roles and permissions**, read from the database on every request, decide what can be accessed.
 
-To get an Access Token from a User Login you can do a POST request to:
+1.	Get an access token with a username and password:
 
-|                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
-|---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
-|`http://localhost:8080/api/v1/auth/login`                            | POST   |Bearer Token, Refresh Token is generated       | [JSON](#login)            |
+	```shell
+	curl -s -X POST http://localhost:8080/api/v1/auth/login \
+	     -H 'Content-Type: application/json' \
+	     -d '{"username":"johndoe","password":"password"}'
+	```
 
-You will get a response similar to the one show below.
+	```json
+	{
+	    "authenticationToken": "eyJhbGciOiJSUzI1NiJ9...",
+	    "refreshToken": "3d0ca7a8-04c5-4bb2-8fe4-0e26b06c6ef1",
+	    "expiresAt": "2026-10-01T10:24:59Z",
+	    "username": "johndoe"
+	}
+	```
 
-~~~json
-{
-    "authenticationToken": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjIxMTYwOTk4fQ.TGDRUuBP25SE4bJU2jTpbNku2ZTqDF-cP0JEI0QdMEslvfH7e9J3cxy4aGe86hqTMCcgED7CwyGHDPqsSVQfCDIJPnhkTdrguZc-4m01blg3-SedCDIDg2Xq6oIsYIIDyY92ITiLKxTclzyj289DokwOfxwSQyrNxIkdCJZ8VoKZUeDjmalXM8uDpS7Cf7-dCgCYi7lFpZH0vma6qq62KNfuRV1zhWh9OT4jRoeaNMvbxn2kRA912yDQ0Y1M4EZFqAtS4m_6hiNw9MJ6KbfgpZ5y2oNlabtCOSlSeHtKyFhnFe0S5CX3Vl03hiALGOpxQPP2ayyy9samCG4qC8l11w",
-    "refreshToken": "3d0ca7a8-04c5-4bb2-8fe4-0e26b06c6ef1",
-    "expiresAt": "2021-05-16T10:24:59.722Z",
-    "username": "johndoe"
-}
-~~~
+2.	Send it in the `Authorization` header:
 
-You'll see that this response includes additional fields **refreshToken** and **expiresAt**. When your application detects the **authenticationToken** has expired it will need you to request a new **authenticationToken** with the following API request:
+	```shell
+	curl -s http://localhost:8080/api/v1/user/username/johndoe \
+	     -H "Authorization: Bearer $ACCESS_TOKEN"
+	```
 
-|                                          URL                        | Method |                    Remarks                    | Sample Valid Request Body |
-|---------------------------------------------------------------------|--------|-----------------------------------------------|---------------------------|
-|`http://localhost:8080/api/v1/auth/refresh/token`                    | POST   |Refresh Token from login should be passed      | [JSON](#refresh-token)    |
+3.	When the token has expired (see `expiresAt`), exchange the refresh token for a new pair. The old refresh token stops working.
 
+	```shell
+	curl -s -X POST http://localhost:8080/api/v1/auth/refresh/token \
+	     -H 'Content-Type: application/json' \
+	     -d "{\"token\":\"$REFRESH_TOKEN\"}"
+	```
 
-##### sample refresh token request body
+HTTP Basic (`-u Admin1:password`) is accepted as well, which is convenient for scripts and for scraping `/actuator/prometheus`.
+
+See [Authentication](AUTHENTICATION.MD) for sign-up, verification, logout and token lifetimes, and [User Roles](USER_ROLES.MD) for who may call which endpoint.
+
+### Errors
+
+| Status | Meaning |
+|--------|---------|
+| `400 Bad Request` | Invalid request body (validation), or a missing `X-api-key` header on rate limited endpoints |
+| `401 Unauthorized` | No token, an invalid or expired token, wrong credentials, a disabled account or a blocked client |
+| `403 Forbidden` | Authenticated, but the user's role or permissions don't allow the request |
+| `404 Not Found` | The requested resource doesn't exist |
+| `429 Too Many Requests` | Rate limit exhausted, see below |
+
+Errors raised by the REST controllers are returned as [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457) problem details:
 
 ```json
 {
-    "token":"1178cd43-21d2-45b4-8b5f-c79aa1d5b76e",
-    "username":"johndoe"
+    "title": "Unauthorized",
+    "status": 401,
+    "detail": "Invalid Refresh Token",
+    "instance": "/api/v1/auth/refresh/token"
 }
 ```
 
-And you will recieve a new **authenticationToken** for your application to be used. This expiration and refresh tokens are common for keeping your API secure.
+### API rate limiting
 
-### Request Data with an Access Token
+Requests to `/api/v1/person/**` must carry an `X-api-key` header. The key's prefix selects the tier; each key gets its own bucket that refills completely every 20 minutes.
 
-Now, that you have an **authenticationToken** you can request data from the application using that token. Based on the permission of the current user they will be able to **CREATE**, **READ**, **UPDATE**, and **DELETE** content in your application.
+|     Tier     | Requests per 20 minutes |  API key prefix   |
+|--------------|-------------------------|-------------------|
+| FREE         | 25                      | any other value   |
+| BASIC        | 50                      | `BX001-`          |
+| PROFESSIONAL | 75                      | `PX001-`          |
 
+Responses include `X-Rate-Limit-Remaining`. When the bucket is empty the API answers `429 Too Many Requests` with `X-Rate-Limit-Retry-After-Seconds`.
 
-### API Rate Limiting
+The keys are not validated against a list of customers: this is a demonstration of [Bucket4j](https://github.com/bucket4j/bucket4j) to adapt to your own API key handling. Refer to the `io.github.anantharajuc.sbat.core_backend.api.rate_limiting` package.
 
-|     Tier   | API Request Cap |  API Key Prefix  |
-|------------|-----------------|------------------|
-|FREE        |     25          |     `null`       |
-|BASIC       |     50          |     `PX001-`     |
-|PROFESSIONAL|     75          |     `BX001-`     |
+### Preventing brute force authentication attempts
 
-Rate Limiting header `X-api-key`
+The app counts failed login attempts per client IP address. After 5 failures the address is blocked for 15 minutes; both values are configurable. See [Login throttling](AUTHENTICATION.MD#login-throttling).
 
-[Bucket4j](https://github.com/vladimir-bukhtoyarov/bucket4j) - Rate limiting library based on token/leaky-bucket algorithm - Refer `io.github.anantharajuc.sbat.core_backend.api.rate_limiting` package
+### Session timeout
 
-### Preventing Brute Force Authentication Attempts
+Web UI sessions expire after 10 minutes of inactivity, after which the user has to log in again (unless "remember me" was ticked). Change it with `server.servlet.session.timeout` in `application.properties`. The REST API has no sessions; access tokens expire instead.
 
-A basic solution for preventing brute force authentication attempts using Spring Security is implemented. The app keeps a record of the number of failed attempts originating from a single IP address. If that particular IP goes over a set number of requests – it will be blocked for a set amount of time.
+## Explore REST APIs
 
-Refer `io.github.anantharajuc.sbat.core_backend.security.user.authentication.LoginAttemptService`
+The interactive [Swagger UI](http://localhost:8080/swagger-ui.html) lists every endpoint with its request and response models, and can call them. It is available in every profile except `production`. See [Documentation](DOCUMENTATION.MD).
 
-### Session Timeout
+### Authentication, Person, Person Management and RBAC URLs
 
-If the application remains inactive for a specified period of time, the session will expire. The session after this period of time is considered invalid and the user has to login to the application again.
+- [Authentication APIs](AUTHENTICATION.MD)
+- [Person, Person Management and RBAC user management APIs](USER_ROLES.MD)
 
-This value **server.servlet.session.timeout** can be configured in **application.properties** file
+### Web UI URLs
 
-## Explore Rest APIs
-
-The app defines following CRUD APIs. **If localhost doesn't work, use 192.168.99.102**
-
-To enable SSL, toggle **server.ssl.enabled** to **true** and use the **https://** protocol in the URL instead of **http://**
-
-Since the SSL certificate is self signed, turn off the **SSL certificate verification** option while interacting with the URLs via **Postman**
-
-<img src="images\tools\postman-ssl-certificate-verification.PNG"/>
-
-### Authentication, Person, Person Management URLs
-
-- [Authentication API's](documents/AUTHENTICATION.MD)  
-- [Person and Person Management API's](documents/USER_ROLES.MD)  
-
-### URLs
-
-|                   URL                  | Method |          Remarks       |
-|----------------------------------------|--------|------------------------|
-|`http://localhost:8080/index`           | GET    | Home Page              |
-|`http://localhost:8080/sbat/index`      | GET    | Home Page              |
-|`http://localhost:8080/sbat/about`      | GET    | About Page             |
-|`http://localhost:8080/sbat/tech-stack` | GET    | Technology Stack Table |
-|`http://localhost:8080/sbat/close`      | GET    | Close App via Actuator |
-|`http://localhost:8080/sbat/login`      | GET    | Login Page             |
-|`http://localhost:8080/sbat/error`      | GET    | Custom Error Page      |
+|                   URL                    | Method |          Remarks                        |
+|------------------------------------------|--------|-----------------------------------------|
+|`http://localhost:8080/`                  | GET    | Redirects to the home page              |
+|`http://localhost:8080/sbat/index`        | GET    | Home page (public)                      |
+|`http://localhost:8080/sbat/login`        | GET    | Login page (public)                     |
+|`http://localhost:8080/sbat/about`        | GET    | About page                              |
+|`http://localhost:8080/sbat/tech-stack`   | GET    | Technology stack table                  |
+|`http://localhost:8080/sbat/form`         | GET    | Sample form                             |
+|`http://localhost:8080/sbat/profile`      | GET    | Profile of the logged-in user           |
+|`http://localhost:8080/sbat/listPersons`  | GET    | Paginated person list                   |
+|`http://localhost:8080/sbat/settings`     | GET    | Logged-in users (ADMIN only)            |
+|`http://localhost:8080/sbat/close`        | POST   | Shut down the application (ADMIN only)  |
 
 ### Other URLs
 
-|                           URL                                  | Method |
-|----------------------------------------------------------------|--------|
-|`http://localhost:8080/api/generic-hello`                       |   GET  | 
-|`http://localhost:8080/api/personalized-hello/`                 |   GET  | 
-|`http://localhost:8080/api/personalized-hello?name=spring-boot` |   GET  | 
-|`http://localhost:8080/api/loggers`                             |   GET  | 
+|                           URL                                  | Method | Access |
+|----------------------------------------------------------------|--------|--------|
+|`http://localhost:8080/api/generic-hello`                       |   GET  | Public |
+|`http://localhost:8080/api/personalized-hello?name=spring-boot` |   GET  | Public |
+|`http://localhost:8080/api/loggers`                             |   GET  | Authenticated, writes a log line at every level |
+|`http://localhost:8080/api/postman-echo/GETrequest`             |   GET  | Authenticated, sample outbound call to postman-echo.com |
+|`http://localhost:8080/api/postman-echo/POSTrequest`            |   GET  | Authenticated, sample outbound form POST to postman-echo.com |
 
 ### Actuator
 
-To monitor and manage your application
+To monitor and manage your application.
 
-|              URL                          |Method|
-|-------------------------------------------|------|
-|`http://localhost:8080/actuator/`          |  GET |
-|`http://localhost:8080/actuator/health`    |  GET |
-|`http://localhost:8080/actuator/info`      |  GET |
-|`http://localhost:8080/actuator/prometheus`|  GET |
-|`http://localhost:8080/actuator/httptrace` |  GET |
-
+|              URL                                  |Method| Access |
+|---------------------------------------------------|------|--------|
+|`http://localhost:8080/actuator/health`            |  GET | Public (details only for ADMIN) |
+|`http://localhost:8080/actuator/health/liveness`   |  GET | Public |
+|`http://localhost:8080/actuator/health/readiness`  |  GET | Public |
+|`http://localhost:8080/actuator/info`              |  GET | Public |
+|`http://localhost:8080/actuator`                   |  GET | ADMIN  |
+|`http://localhost:8080/actuator/metrics`           |  GET | ADMIN  |
+|`http://localhost:8080/actuator/prometheus`        |  GET | ADMIN  |
+|`http://localhost:8080/actuator/customActuatorEndpoint` | GET | ADMIN |

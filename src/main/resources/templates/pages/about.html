@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" 
-			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 			   layout:decorate="~{layout}"
 			   th:with="title='About'">
 
@@ -8,1263 +8,160 @@
 
 <body data-bs-spy="scroll" data-bs-target="#toc">
 
-		<div class="row">	
+		<div class="row">
 			<!-- sidebar, which will move to the top on a small screen -->
 			<div class="col-sm-3">
-			
+
 			 </br>
 			 </br>
-			 
+
 			<nav id="toc" data-bs-toggle="toc" class="sticky-top"></nav>
 		</div>
-	
+
     <!-- main content area -->
     <div class="col-sm-9">
 
-	<!-- README.ms start -->
-
-  <div id="header" class="article">
-  </div>
   <div id="content">
-    <div class="sect1">
-      <h2 id="spring-boot-application-templatestarter-project-build-status">Spring Boot Application Template/Starter-Project
-        <a href="https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template"><span class="image"><img src="https://travis-ci.org/Spring-Boot-Framework/Spring-Boot-Application-Template.svg?branch=master" alt="Build Status"></span></a>
-      </h2>
-      <div class="sectionbody">
-        <div class="sect2">
-          <h3 id="important-note-this-projects-new-milestone-is-to-release-version-1-so-stay-tuned.">Important Note: This project&#8217;s new milestone is to release version
-            1, so stay tuned.</h3>
+    <h2 id="spring-boot-application-template">Spring Boot Application Template/Starter-Project</h2>
 
-        </div>
-        <div class="sect2">
-          <h3 id="purpose">Purpose</h3>
-          <div class="paragraph">
-            <p>The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.</p>
-          </div>
-          <div class="paragraph">
-            <p>This repository contains a recipe/scaffolding for bootstrapping a Web Application with the features &amp; Technology stack listed below. Delete the sample code (or keep it.) and add your own, you’re good to go.</p>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="table-of-contents">Table of Contents</h3>
-          <div class="ulist">
-            <ul>
-                <p><a href="#features-and-to-do">Features and To-Do</a></p>
-              </li>
-              <li>
-                <p><a href="#getting-started">Getting Started</a></p>
-              </li>
-              <li>
-                <p><a href="#prerequisites">Prerequisites</a></p>
-              </li>
-              <li>
-                <p><a href="#installing">Installing</a></p>
-                <div class="ulist">
-                  <ul>
-                    <li>
-                      <p><a href="#running-the-application-with-ide">Running the application with IDE</a></p>
-                    </li>
-                    <li>
-                      <p><a href="#running-the-application-with-maven">Running the application with Maven</a></p>
-                    </li>
-                    <li>
-                      <p><a href="#running-the-application-with-executable-jar">Running the application with Executable JAR</a></p>
-                    </li>
-                    <li>
-                      <p><a href="#accessing-data-in-h2-database">Accessing Data in H2 Database</a></p>
-                      <div class="ulist">
-                        <ul>
-                          <li>
-                            <p><a href="#h2-console">H2 Console</a></p>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <p><a href="#deployment">Deployment</a></p>
-              </li>
-              <li>
-                <p><a href="#deploying-to-heroku">Deploying to Heroku</a></p>
-              </li>
-              <li>
-                <p><a href="#code-coverage">Code Coverage</a></p>
-              </li>
-              <li>
-                <p><a href="#cobertura">Cobertura</a></p>
-              </li>
-              <li>
-                <p><a href="#testing-api">Testing API</a></p>
-              </li>
-              <li>
-                <p><a href="#testing-with-postman-runner">Testing with Postman Runner</a></p>
-              </li>
-              <li>
-                <p><a href="#testing-with-maven">Testing with Maven</a></p>
-              </li>
-              <li>
-                <p><a href="#basic-load-testing">Basic Load Testing</a></p>
-              </li>
-              <li>
-                <p><a href="#explore-rest-apis">Explore Rest APIs</a></p>
-              </li>
-              <li>
-                <p><a href="#urls">URLs</a></p>
-              </li>
-              <li>
-                <p><a href="#other-urls">Other URLs</a></p>
-              </li>
-              <li>
-                <p><a href="#actuator">Actuator</a></p>
-              </li>
-              <li>
-                <p><a href="#person-urls">Person URLs</a></p>
-                <div class="ulist">
-                  <ul>
-                    <li>
-                      <p><a href="#accessible-to---johndoe---user-only">Accessible to <strong>johndoe</strong> user only</a></p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <p><a href="#person-management-urls">Person Management URLs</a></p>
-                <div class="ulist">
-                  <ul>
-                    <li>
-                      <p><a href="#role-and-permission-based-secure-access-to---adminuser---and---admintrainee---users">Role and Permission based secure access to <strong>AdminUser</strong> and <strong>AdminTrainee</strong> users</a></p>
-                    </li>
-                    <li>
-                      <p><a href="#sample-valid-json-request-bodys-1">Sample Valid JSON Request Bodys</a></p>
-                    </li>
-                    <li>
-                      <p><a href="#-a-id&#8212;&#8203;personcreate&#8212;&#8203;create-person-----api-person&#8212;&#8203;a-">Create Person &#8594; /api/person</a></p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <p><a href="#documentation">Documentation</a></p>
-              </li>
-              <li>
-                <p><a href="#internationalization&#8212;&#8203;i18n-">Internationalization (i18n)</a></p>
-              </li>
-              <li>
-                <p><a href="#reporting-issues-suggest-improvements">Reporting Issues/Suggest Improvements</a></p>
-              </li>
-              <li>
-                <p><a href="#the-end">The End</a></p>
-              </li>
-              <li>
-                <p><a href="#fossa-third-party-code&#8212;&#8203;license-compliance-and-vulnerabilities">FOSSA third-party code, license compliance and vulnerabilities</a></p>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <h3 id="purpose">Purpose</h3>
+    <p>The only thing better than a Maven archetype is a repo you can fork with everything already setup to speed up the creation of new Spring Boot based Web applications, just fork-and-code.</p>
+    <p>This repository contains a recipe/scaffolding for bootstrapping a Web Application with the features &amp; technology stack listed below. Delete the sample code (or keep it) and add your own, you&#8217;re good to go.</p>
+    <p>The full documentation lives in the
+      <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/tree/master/documents">documents folder of the repository</a>.</p>
 
-        <div class="sect2">
-          <h3 id="features-and-to-do">Features and To-Do</h3>
-          <div class="ulist checklist">
-            <ul class="checklist">
+    <h3 id="features">Features</h3>
+    <ul>
+      <li>Spring Boot 4.1 on Java 21, Spring Security 7, Spring Data JPA, Thymeleaf with Bootstrap 5</li>
+      <li>Web UI with form login, remember-me, CSRF protection, dark mode and internationalization (English, Spanish)</li>
+      <li>REST API secured with RS256 signed JWT access tokens and rotating, single-use refresh tokens, or HTTP Basic</li>
+      <li>Sign-up with e-mail verification, login throttling per client IP</li>
+      <li>Role and permission based access control, RBAC user management API</li>
+      <li>API rate limiting with Bucket4j, HATEOAS links, RFC 9457 problem details for errors</li>
+      <li>Flyway migrations for H2 and MySQL, JPA auditing, caching</li>
+      <li>OpenAPI 3 / Swagger UI, Actuator with Prometheus metrics</li>
+      <li>Docker image and Docker Compose with MySQL, GitHub Actions CI, integration tests, JaCoCo coverage</li>
+    </ul>
 
-                <p>&#10003; Logger (Console, File)</p>
-                <p>&#10003; <a href="https://spring.io/blog/2013/05/11/content-negotiation-using-spring-mvc" class="bare">Content Negotiation</a></p>
-                <p>&#10003; <a href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme" class="bare">Dark Mode</a></p>
-                <p>&#10003; <a href="https://spring.io/projects/spring-security" class="bare">Spring Security</a> RBAC, Session Timeout</p>
-                <p>&#10003; API <a href="https://en.wikipedia.org/wiki/Rate_limiting">Rate Limiting</a></p> 
-                <p>&#10003; <a href="https://docs.spring.io/spring-data/jpa/docs/1.7.0.DATAJPA-580-SNAPSHOT/reference/html/auditing.html" class="bare">JPA Auditing via AuditorAware Interface</a></p>
-                <p>&#10003; <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles" class="bare">Spring Profiles</a> (dev, production, qa, staging, test)</p>
-                <p>&#10003; <a href="https://www.docker.com/" class="bare">Docker</a></p>
-                <p>&#10003; <a href="https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/boot-features-caching.html" class="bare">Caching</a></p>
-                <p>&#10003; <a href="https://en.wikipedia.org/wiki/HATEOAS" class="bare">HATEOS (Hypermedia as the Engine of Application State)</a></p>
-                <p>&#10003; Software documentation - <a href="https://swagger.io/">Swagger</a>, <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a>, <a href="https://www.postman.com/collection/">Postman Collection</a></p>
-                <p>&#10003; <a href="https://en.wikipedia.org/wiki/HTTPS" class="bare">HTTPS</a> with <a href="https://en.wikipedia.org/wiki/Self-signed_certificate" class="bare">self-signed certificate</a></p>                         
-                <p>&#10003; <a href="https://www.jsonwebtoken.io/" class="bare">JSON Web Token</a> based authentication</p>
-                <p>&#10063; Quartz Scheduler</p>
-                <p>&#10063; Replace Docker with <a href="https://github.com/GoogleContainerTools/jib">jib</a></p>
-                <p>&#10063; Unit Tests, Integration Tests</p>
-                <p>&#10063; Shut down app on button click via actuator url</p>
-                <p>&#10063; Spring Boot Admin</p>
-                <p>&#10063; NoSQL (MongoDB)</p>
-                <p>&#10063; Multitenancy</p>
-                <p>&#10063; Micrometer</p>
-                <p>&#10063; Grafna</p>
-                <p>&#10063; Spring Retry</p>
-              
-            </ul>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="getting-started">Getting Started</h3>
-          <div class="paragraph">
-            <p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
-          </div>
-          <div class="sect3">
-            <h4 id="prerequisites">Prerequisites</h4>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>To activate the accounts of registered users, an email with activation link is sent to the email provided during the user signup stage. An <strong>SMTP</strong> is required for the same.</p>
-                  <div class="paragraph">
-                    <p><a href="https://mailtrap.io/">Mailtrap</a> or any other service like <strong>Gmail</strong>, etc., can be used to create an SMTP.</p>
-                  </div>
-                  <div class="paragraph">
-                    <p>update the <strong>springMailHost</strong>, <strong>springMailPort</strong>, <strong>springMailProtocol</strong>, <strong>springMailUsername</strong> and <strong>springMailPassword</strong> details in the <strong>application_settings</strong> section of <strong>/resources/data/mysql/migrations/V0_0_4__populate_data.sql</strong></p>
-                  </div>
-                </li>
-                <li>
-                  <p>You need to have <strong>MySQL</strong> installed on your machine to run the application in <strong><code>dev</code></strong> profile. Using the <code>MySQL Workbench</code> or on any other MySQL client/console, create a database/schema named <code>sbat</code>.</p>
-                </li>
-              </ul>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-sql" data-lang="sql">-- create schema
-CREATE SCHEMA sbat;
+    <h3 id="getting-started">Getting Started</h3>
+    <p>Requirements: <strong>Java 21</strong>. Maven is provided through the wrapper.</p>
+    <pre><code>./mvnw spring-boot:run        # http://localhost:8080 , in-memory H2 database (default "test" profile)
+./mvnw verify                 # tests + coverage report in target/site/jacoco/index.html</code></pre>
+    <p>The <code>dev</code>, <code>qa</code>, <code>staging</code> and <code>production</code> profiles use MySQL. Everything environment specific is read from environment variables or a git-ignored <code>.env</code> file (see <code>.env.example</code>):</p>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th>Variable</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><code>SPRING_PROFILES_ACTIVE</code></td><td><code>test</code> (default, H2), <code>dev</code>, <code>qa</code>, <code>staging</code>, <code>production</code></td></tr>
+        <tr><td><code>DB_HOST</code>, <code>DB_PORT</code>, <code>DB_DATABASE</code>, <code>DB_USERNAME</code>, <code>DB_PASSWORD</code></td><td>MySQL connection</td></tr>
+        <tr><td><code>JWT_KEY_STORE</code>, <code>JWT_KEY_STORE_PASSWORD</code>, <code>JWT_KEY_ALIAS</code></td><td>RSA key used to sign access tokens. Required in production: without it a temporary key is generated at startup and tokens stop working on restart</td></tr>
+        <tr><td><code>REMEMBER_ME_KEY</code></td><td>Secret for remember-me cookies, random per start when unset</td></tr>
+        <tr><td><code>MAIL_HOST</code>, <code>MAIL_PORT</code>, <code>MAIL_USERNAME</code>, <code>MAIL_PASSWORD</code></td><td>SMTP server for sign-up verification e-mails</td></tr>
+        <tr><td><code>BASE_URL</code></td><td>Public URL used in verification links</td></tr>
+      </tbody>
+    </table>
+    <p>Create a JWT signing key store (keep it out of the repository):</p>
+    <pre><code>keytool -genkeypair -alias sbat -keyalg RSA -keysize 2048 -validity 3650 \
+        -storetype PKCS12 -keystore secrets/jwt.p12 -dname "CN=sbat"</code></pre>
 
--- use schema
-USE sbat;
+    <h3 id="default-accounts">Default Accounts</h3>
+    <p>Seeded by the Flyway migrations, all with the password <code>password</code>. Change or remove them before exposing an instance.</p>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th>Username</th><th>Role</th><th>Permissions</th></tr></thead>
+      <tbody>
+        <tr><td><code>johndoe</code>, <code>janedoe</code></td><td>PERSON</td><td>PERSON_CREATE, PERSON_READ, PERSON_UPDATE, PERSON_DELETE</td></tr>
+        <tr><td><code>Admin1</code>, <code>Admin2</code></td><td>ADMIN</td><td>PERSON_*, RBAC_USER_CREATE, RBAC_USER_READ</td></tr>
+        <tr><td><code>AdminTrainee1</code>, <code>AdminTrainee2</code></td><td>ADMINTRAINEE</td><td>PERSON_READ, RBAC_USER_CREATE</td></tr>
+      </tbody>
+    </table>
 
--- Create user
-create user 'sbat'@'localhost' identified by 'sbat';
+    <h3 id="security">Security</h3>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th></th><th>Web UI</th><th>REST API (<code>/api/**</code>, <code>/rbac/**</code>, <code>/actuator/**</code>)</th></tr></thead>
+      <tbody>
+        <tr><td>Login</td><td>Form login at <code>/sbat/login</code>, optional remember-me</td><td><code>POST /api/v1/auth/login</code> returns a JWT, or HTTP Basic</td></tr>
+        <tr><td>State</td><td>HTTP session, 10 minute timeout</td><td>Stateless, <code>Authorization: Bearer &lt;token&gt;</code> on every request</td></tr>
+        <tr><td>CSRF protection</td><td>On</td><td>Not needed (header based authentication)</td></tr>
+      </tbody>
+    </table>
+    <p>After 5 failed logins from the same IP address, that address is blocked for 15 minutes. Roles and permissions are read from the database on every request, also for token authenticated requests.</p>
 
--- Grant privileges to user
-grant all privileges on *.* to 'sbat'@'localhost' with grant option;</code></pre>
-              </div>
-            </div>
-            <div class="paragraph">
-              <p>After creating the database/schema, you need to add your <strong>MySQL</strong> <code>username</code> and <code>password</code> in the <code>application-dev.properties</code> file on <code>src/main/resource</code>. The lines that must be modified are as follows:</p>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-properties" data-lang="properties">spring.datasource.url=jdbc:mysql://localhost:3306/sbat?useSSL=false&amp;allowPublicKeyRetrieval=true
-spring.datasource.username=sbat
-spring.datasource.password=sbat</code></pre>
-              </div>
-            </div>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>A Java Keystore File is required to generate JSON Web Token.</p>
-                </li>
-              </ul>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-shell" data-lang="shell">keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048</code></pre>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="installing">Installing</h3>
-          <div class="ulist">
-            <ul>
-              <li>
-                <p>Default active profile is <strong><code>test</code></strong>. When the application is running, <strong>Flyway</strong> will create the necessary tables and system data along with sample data. In the <strong><code>test</code></strong> profile, the application uses <strong>H2</strong> database (data in memory).</p>
-              </li>
-              <li>
-                <p>URL to access application UI: <strong><a href="http://localhost:8080/sbat/index" class="bare">http://localhost:8080/sbat/index</a></strong>                  or <strong><a href="https://192.168.99.102:8080/sbat/index" class="bare">https://192.168.99.102:8080/sbat/index</a></strong>                  if <strong>SSL</strong> is enabled.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="sect4">
-            <h5 id="running-the-application-with-ide">Running the application with IDE</h5>
-            <div class="paragraph">
-              <p>There are several ways to run a Spring Boot application on your local
-                machine. One way is to execute the <code>main</code> method in the
-                <code>com.arc.sbtest.SBtemplateApplication</code> class from your
-                IDE.</p>
-            </div>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>Download the zip or clone the Git repository.</p>
-                </li>
-                <li>
-                  <p>Unzip the zip file (if you downloaded one)</p>
-                </li>
-                <li>
-                  <p>Open Command Prompt and Change directory (cd) to folder containing
-                    pom.xml</p>
-                </li>
-                <li>
-                  <p>Open Eclipse</p>
-                  <div class="ulist">
-                    <ul>
-                      <li>
-                        <p>File &#8594; Import &#8594; Existing Maven Project &#8594;
-                          Navigate to the folder where you unzipped the zip</p>
-                      </li>
-                      <li>
-                        <p>Select the project</p>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <p>Choose the Spring Boot Application file (search for @SpringBootApplication)</p>
-                </li>
-                <li>
-                  <p>Right Click on the file and Run as Java Application</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="sect4">
-            <h5 id="running-the-application-with-maven">Running the application with Maven</h5>
-            <div class="paragraph">
-              <p>Alternatively you can use the <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html">Spring Boot Maven plugin</a>                like so:</p>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-shell" data-lang="shell">$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
-$ mvn spring-boot:run</code></pre>
-              </div>
-            </div>
-          </div>
-          <div class="sect4">
-            <h5 id="running-the-application-with-executable-jar">Running the application with Executable JAR</h5>
-            <div class="paragraph">
-              <p>The code can also be built into a jar and then executed/run. Once the
-                jar is built, run the jar by double clicking on it or by using the
-                command</p>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-shell" data-lang="shell">$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
-$ mvn package -DskipTests
-$ java -jar target/SBtemplate-0.0.1-SNAPSHOT.jar --spring.profiles.active=test</code></pre>
-              </div>
-            </div>
-            <div class="paragraph">
-              <p>To shutdown the jar, follow the below mentioned steps on a Windows
-                machine.</p>
-            </div>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>In command prompt execute the <strong>jcmd</strong> command to
-                    print a list of all running Java processes</p>
-                </li>
-                <li>
-                  <p><strong>Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F</strong> execute
-                    this command by replacing the <strong>PROCESS_ID_OF_RUNNING_APP</strong>                    with the actual process id of the running jar found out from
-                    executing the previous command</p>
-                </li>
-              </ul>
-            </div>
-            <div id="accessing-data-in-h2-database" class="paragraph">
-              <p>Accessing Data in H2 Database</p>
-            </div>
-            <div id="h2-console" class="paragraph">
-              <p>H2 Console</p>
-            </div>
-            <div class="paragraph">
-              <p>URL to access H2 console: <strong><a href="http://localhost:8080/h2-console/login.jsp" class="bare">http://localhost:8080/h2-console/login.jsp</a></strong>                or <strong><a href="https://192.168.99.102:8080/h2-console/login.jsp" class="bare">https://192.168.99.102:8080/h2-console/login.jsp</a></strong>                if <strong>SSL</strong> is enabled.</p>
-            </div>
-            <div class="paragraph">
-              <p>Fill the login form as follows and click on Connect:</p>
-            </div>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>Saved Settings: <strong>Generic H2 (Embedded)</strong></p>
-                </li>
-                <li>
-                  <p>Setting Name: <strong>Generic H2 (Embedded)</strong></p>
-                </li>
-                <li>
-                  <p>Driver class: <strong>org.h2.Driver</strong></p>
-                </li>
-                <li>
-                  <p>JDBC URL: <strong>jdbc:h2:mem:sbat;MODE=MySQL</strong></p>
-                </li>
-                <li>
-                  <p>User Name: <strong>sa</strong></p>
-                </li>
-                <li>
-                  <p>Password:</p>
-                </li>
-              </ul>
-            </div>
-			
-			<img src="/images/h2db/h2-console-login.PNG"/>
-			<img src="/images/h2db/h2-console-main-view.PNG"/>			
-          </div>
-		  
-		  <h3 id="deployment">Deployment</h3>
-          <div class="sect3">
-            <h4 id="deploying-to-heroku">Deploying to Heroku</h4>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>Download and install the Heroku CLI</p>
-                </li>
-                <li>
-                  <p>log in to your Heroku account <strong><code>heroku login</code></strong></p>
-                </li>
-                <li>
-                  <p>set git remote heroku to the heroku app url, example <strong><code>heroku git:remote -a spring-boot-app-template</code></strong></p>
-                </li>
-                <li>
-                  <p><strong>Add</strong> and <strong>Commit</strong> any pending changes
-                    to git</p>
-                </li>
-                <li>
-                  <p>push the code to heroku to deploy the app, example <strong><code>git push heroku master</code></strong></p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="code-coverage">Code Coverage</h3>
-          <div class="sect3">
-            <h4 id="cobertura">Cobertura</h4>
-            <div class="paragraph">
-              <p>Generating code coverage reports</p>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-shell" data-lang="shell">$ mvn cobertura:cobertura</code></pre>
-              </div>
-            </div>
-            <div class="paragraph">
-              <p>This will create a detailed HTML style report showing code coverage
-                statistics gathered via code instrumentation.</p>
-            </div>
-            <div class="paragraph">
-              <p><strong>*Spring-Boot-Application-Template</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="testing-api">Testing API</h3>
-          <div class="sect3">
-            <h4 id="testing-with-postman-runner">Testing with Postman Runner</h4>
-            <div class="paragraph">
-              <p>Import the <strong>Spring Boot Application Template API.postman_test_run</strong>                file into postman and run the API tests.</p>
-            </div>
-          </div>
-          <div class="sect3">
-            <h4 id="testing-with-maven">Testing with Maven</h4>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>Run only unit tests:</p>
-                </li>
-              </ul>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-shell" data-lang="shell">$ mvn clean test</code></pre>
-              </div>
-            </div>
-          </div>
-          <div class="sect3">
-            <h4 id="basic-load-testing">Basic Load Testing</h4>
-            <div class="paragraph">
-              <p>Basic load testing for retrieving a <code>person</code> for a given
-                <code>id</code> can be performed with the ApacheBench by executing
-                the following command:</p>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-shell" data-lang="shell">ab -n 10000 -c 100 -k http://localhost:8080/api/v1/person/1</code></pre>
-              </div>
-            </div>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p><strong>-n 10000</strong> is the number of requests to make</p>
-                </li>
-                <li>
-                  <p><strong>-c 100</strong> is the number of concurrent requests to
-                    make at a time</p>
-                </li>
-                <li>
-                  <p><strong>-k</strong> sends the <strong>KeepAlive</strong> header,
-                    which asks the web server to not shut down the connection after
-                    each request is done, but to instead keep reusing it</p>
-                </li>
-              </ul>
-            </div>
-            <div class="paragraph">
-              <p>Result:</p>
-            </div>
-            <div class="literalblock">
-              <div class="content">
-                <pre>Benchmarking localhost (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
+    <h3 id="api">Using the API</h3>
+    <pre><code># 1. Login: returns a short lived access token and a single use refresh token
+curl -s -X POST localhost:8080/api/v1/auth/login -H 'Content-Type: application/json' \
+     -d '{"username":"Admin1","password":"password"}'
 
+# 2. Call the API with the access token (person endpoints also need an X-api-key header)
+curl -s localhost:8080/api/v1/person -H "Authorization: Bearer $ACCESS_TOKEN" -H 'X-api-key: FX001-demo'
 
-Server Software:
-Server Hostname:        localhost
-Server Port:            8080
+# 3. Exchange the refresh token for a new pair; the old refresh token stops working
+curl -s -X POST localhost:8080/api/v1/auth/refresh/token -H 'Content-Type: application/json' \
+     -d '{"token":"'"$REFRESH_TOKEN"'"}'</code></pre>
 
-Document Path:          /api/v1/person/1
-Document Length:        132 bytes
+    <h4 id="api-rate-limiting">API Rate Limiting</h4>
+    <p>Requests to <code>/api/v1/person/**</code> need an <code>X-api-key</code> header. The key's prefix selects the tier; buckets refill every 20 minutes. Responses carry <code>X-Rate-Limit-Remaining</code>; an empty bucket gives <code>429 Too Many Requests</code> with <code>X-Rate-Limit-Retry-After-Seconds</code>.</p>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th>Tier</th><th>Requests per 20 minutes</th><th>API key prefix</th></tr></thead>
+      <tbody>
+        <tr><td>FREE</td><td>25</td><td>any other value</td></tr>
+        <tr><td>BASIC</td><td>50</td><td><code>BX001-</code></td></tr>
+        <tr><td>PROFESSIONAL</td><td>75</td><td><code>PX001-</code></td></tr>
+      </tbody>
+    </table>
 
-Concurrency Level:      100
-Time taken for tests:   9.213 seconds
-Complete requests:      10000
-Failed requests:        0
-Non-2xx responses:      10000
-Keep-Alive requests:    0
-Total transferred:      5330000 bytes
-HTML transferred:       1320000 bytes
-Requests per second:    1085.38 [#/sec] (mean)
-Time per request:       92.133 [ms] (mean)
-Time per request:       0.921 [ms] (mean, across all concurrent requests)
-Transfer rate:          564.95 [Kbytes/sec] received
+    <h3 id="urls">URLs</h3>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th>URL</th><th>Method</th><th>Access</th></tr></thead>
+      <tbody>
+        <tr><td><code>/api/v1/auth/signup</code>, <code>/login</code>, <code>/refresh/token</code>, <code>/logout</code></td><td>POST</td><td>Public</td></tr>
+        <tr><td><code>/api/v1/auth/verification/{token}</code></td><td>GET</td><td>Public</td></tr>
+        <tr><td><code>/api/v1/person</code>, <code>/api/v1/person/id/{id}</code></td><td>GET, POST, PUT, DELETE</td><td>PERSON or ADMIN with the matching PERSON_* permission</td></tr>
+        <tr><td><code>/api/v1/management/person</code>, <code>/id/{id}</code>, <code>/pageable</code></td><td>GET</td><td>ADMIN or ADMINTRAINEE</td></tr>
+        <tr><td><code>/api/v1/management/person</code>, <code>/id/{id}</code></td><td>POST, PUT, DELETE</td><td>ADMIN or ADMINTRAINEE with the matching PERSON_* permission</td></tr>
+        <tr><td><code>/api/v1/user/username/{username}</code></td><td>GET</td><td>The user themselves</td></tr>
+        <tr><td><code>/rbac/user</code>, <code>/rbac/user/{username}</code></td><td>GET, POST, DELETE</td><td>ADMIN</td></tr>
+        <tr><td><code>/actuator/health</code>, <code>/actuator/info</code></td><td>GET</td><td>Public</td></tr>
+        <tr><td><code>/actuator/prometheus</code>, <code>/actuator/metrics</code></td><td>GET</td><td>ADMIN</td></tr>
+        <tr><td><code>/swagger-ui.html</code>, <code>/v3/api-docs</code></td><td>GET</td><td>Public, not available in production</td></tr>
+        <tr><td><code>/h2-console</code></td><td>GET</td><td>Test profile, localhost only</td></tr>
+      </tbody>
+    </table>
 
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    1   1.1      1      49
-Processing:    13   91  30.1     85     523
-Waiting:        0   68  29.3     65     472
-Total:         14   91  30.1     85     523
+    <h3 id="docker">Docker</h3>
+    <pre><code>export DB_PASSWORD=... DB_ROOT_PASSWORD=... JWT_KEY_STORE_PASSWORD=... REMEMBER_ME_KEY=$(openssl rand -base64 32)
+docker compose up --build     # MySQL 8.4 + the application in the production profile</code></pre>
+    <p>See the <a th:href="@{/sbat/docker}">Docker page</a> for more.</p>
 
-Percentage of the requests served within a certain time (ms)
-  50%     85
-  66%     95
-  75%    101
-  80%    105
-  90%    119
-  95%    136
-  98%    176
-  99%    223
- 100%    523 (longest request)</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-            <div class="sect4">
-              <h5 id="sample-valid-json-request-bodys">Sample Valid JSON Request Bodys</h5>
-              <div id="signup---apiauthsignup" class="paragraph">
-                <p>Signup &#8594; /api/auth/signup</p>
-              </div>
-              <div class="listingblock">
-                <div class="content">
-                  <pre class="highlight"><code class="language-json" data-lang="json">{
-    "username":"johndoe",
-    "email":"domain@example.com",
-    "password":"abcd1234"
-}</code></pre>
-                </div>
-              </div>
-              <div id="login---apiauthlogin" class="paragraph">
-                <p>Login &#8594; /api/auth/login</p>
-              </div>
-              <div class="listingblock">
-                <div class="content">
-                  <pre class="highlight"><code class="language-json" data-lang="json">{
-    "username":"johndoe",
-    "password":"abcd1234"
-}</code></pre>
-                </div>
-              </div>
-              <div id="subreddit---apisubreddit" class="paragraph">
-                <p>Subreddit &#8594; /api/subreddit</p>
-              </div>
-              <div class="listingblock">
-                <div class="content">
-                  <pre class="highlight"><code class="language-json" data-lang="json">{
-    "name":"my-cool-subreddit",
-    "description":"My subreddit for all thing cool."
-}</code></pre>
-                </div>
-              </div>
-              <div id="refresh-token---apiauthrefreshtoken" class="paragraph">
-                <p>Refresh Token &#8594; /api/auth/refresh/token</p>
-              </div>
-              <div class="listingblock">
-                <div class="content">
-                  <pre class="highlight"><code class="language-json" data-lang="json">{
-    "token":"1178cd43-21d2-45b4-8b5f-c79aa1d5b76e",
-    "username":"johndoe"
-}</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sect3">
-            <h4 id="api-rate-limiting">API Rate Limiting</h4>
-            <table class="tableblock frame-all grid-all spread">
-              <colgroup>
-                <col style="width: 33.3333%;">
-                <col style="width: 33.3333%;">
-                <col style="width: 33.3334%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th class="tableblock halign-left valign-top">Tier</th>
-                  <th class="tableblock halign-left valign-top">API Request Cap</th>
-                  <th class="tableblock halign-left valign-top">API Key Prefix</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">FREE</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">25</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>null</code></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">BASIC</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">50</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>PX001-</code></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">PROFESSIONAL</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">75</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>BX001-</code></p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="paragraph">
-              <p>Rate Limiting header <code>X-api-key</code></p>
-            </div>
-            <div class="paragraph">
-              <p><a href="https://github.com/vladimir-bukhtoyarov/bucket4j">Bucket4j</a>                - Rate limiting library based on token/leaky-bucket algorithm - Refer
-                <code>io.github.anantharajuc.sbat.core_backend.api.rate_limiting</code>                package</p>
-            </div>
-          </div>
-          <div class="sect3">
-            <h4 id="preventing-brute-force-authentication-attempts">Preventing Brute Force Authentication Attempts</h4>
-            <div class="paragraph">
-              <p>A basic solution for preventing brute force authentication attempts
-                using Spring Security is implemented. The app keeps a record of the
-                number of failed attempts originating from a single IP address. If
-                that particular IP goes over a set number of requests – it will be
-                blocked for a set amount of time.</p>
-            </div>
-            <div class="paragraph">
-              <p>Refer <code>io.github.anantharajuc.sbat.core_backend.security.user.authentication.LoginAttemptService</code></p>
-            </div>
-          </div>
-          <div class="sect3">
-            <h4 id="session-timeout">Session Timeout</h4>
-            <div class="paragraph">
-              <p>If the application remains inactive for a specified period of time,
-                the session will expire. The session after this period of time is
-                considered invalid and the user has to login to the application again.</p>
-            </div>
-            <div class="paragraph">
-              <p>This value <strong>server.servlet.session.timeout</strong> can be configured
-                in <strong>application.properties</strong> file</p>
-            </div>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="explore-rest-apis">Explore Rest APIs</h3>
-          <div class="paragraph">
-            <p>The app defines following CRUD APIs. <strong>If localhost doesn&#8217;t work, use 192.168.99.102</strong></p>
-          </div>
-          <div class="paragraph">
-            <p>To enable SSL, toggle <strong>server.ssl.enabled</strong> to <strong>true</strong>              and use the <strong>https://</strong> protocol in the URL instead of
-              <strong>http://</strong></p>
-          </div>
-          <div class="paragraph">
-            <p>Since the SSL certificate is self signed, turn off the <strong>SSL certificate verification</strong>              option while interacting with the URLs via <strong>Postman</strong></p>
-          </div>
-		  
-		  <img src="/images/tools/postman-ssl-certificate-verification.PNG"/>
-		  
-          <div class="sect3">
-            <h4 id="urls">URLs</h4>
-            <table class="tableblock frame-all grid-all spread">
-              <colgroup>
-                <col style="width: 33.3333%;">
-                <col style="width: 33.3333%;">
-                <col style="width: 33.3334%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th class="tableblock halign-left valign-top">URL</th>
-                  <th class="tableblock halign-left valign-top">Method</th>
-                  <th class="tableblock halign-left valign-top">Remarks</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/index" class="bare">http://localhost:8080/index</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Home Page</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/sbat/index" class="bare">http://localhost:8080/sbat/index</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Home Page</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/sbat/about" class="bare">http://localhost:8080/sbat/about</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">About Page</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/sbat/tech-stack" class="bare">http://localhost:8080/sbat/tech-stack</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Technology Stack Table</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/sbat/close" class="bare">http://localhost:8080/sbat/close</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Close App via Actuator</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/sbat/login" class="bare">http://localhost:8080/sbat/login</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Login Page</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/sbat/error" class="bare">http://localhost:8080/sbat/error</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Custom Error Page</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="sect3">
-            <h4 id="other-urls">Other URLs</h4>
-            <table class="tableblock frame-all grid-all spread">
-              <colgroup>
-                <col style="width: 50%;">
-                <col style="width: 50%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th class="tableblock halign-left valign-top">URL</th>
-                  <th class="tableblock halign-left valign-top">Method</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/generic-hello" class="bare">http://localhost:8080/api/generic-hello</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/personalized-hello/" class="bare">http://localhost:8080/api/personalized-hello/</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/personalized-hello?name=spring-boot" class="bare">http://localhost:8080/api/personalized-hello?name=spring-boot</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/loggers" class="bare">http://localhost:8080/api/loggers</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="sect3">
-            <h4 id="actuator">Actuator</h4>
-            <div class="paragraph">
-              <p>To monitor and manage your application</p>
-            </div>
-            <table class="tableblock frame-all grid-all spread">
-              <colgroup>
-                <col style="width: 50%;">
-                <col style="width: 50%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th class="tableblock halign-left valign-top">URL</th>
-                  <th class="tableblock halign-left valign-top">Method</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/actuator/" class="bare">http://localhost:8080/actuator/</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/actuator/health" class="bare">http://localhost:8080/actuator/health</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/actuator/info" class="bare">http://localhost:8080/actuator/info</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/actuator/prometheus" class="bare">http://localhost:8080/actuator/prometheus</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/actuator/httptrace" class="bare">http://localhost:8080/actuator/httptrace</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="sect3">
-            <h4 id="person-urls">Person URLs</h4>
-            <div class="sect4">
-              <h5 id="accessible-to-johndoe-user-only">Accessible to <strong>johndoe</strong> user only</h5>
-              <table class="tableblock frame-all grid-all spread">
-                <colgroup>
-                  <col style="width: 34%;">
-                  <col style="width: 5%;">
-                  <col style="width: 46%;">
-                  <col style="width: 15%;">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th class="tableblock halign-left valign-top">URL</th>
-                    <th class="tableblock halign-left valign-top">Method</th>
-                    <th class="tableblock halign-left valign-top">Remarks</th>
-                    <th class="tableblock halign-left valign-top">Sample Valid Request Body</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/api/v1/person" class="bare">http://localhost:8080/api/v1/person</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">GET</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Header <code>Accept:application/json</code> or <code>Accept:application/xml</code>                        for content negotiation</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top"></td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/api/v1/person" class="bare">http://localhost:8080/api/v1/person</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">POST</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Add a person</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><a href="#personcreate">JSON</a></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/api/v1/person/{id}" class="bare">http://localhost:8080/api/v1/person/{id}</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">GET</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Header <code>Accept:application/json</code> or <code>Accept:application/xml</code>                        for content negotiation</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top"></td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/management/api/v1/person/pageable" class="bare">http://localhost:8080/management/api/v1/person/pageable</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">GET</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Header <code>Accept:application/json</code> or <code>Accept:application/xml</code>                        for content negotiation</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Pageable API Endpoint</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/api/v1/person/{id}" class="bare">http://localhost:8080/api/v1/person/{id}</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">PUT</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Update a person</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><a href="#personcreate">JSON</a></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/api/v1/person/{id}" class="bare">http://localhost:8080/api/v1/person/{id}</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">DELETE</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Delete a person</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="sect3">
-            <h4 id="person-management-urls">Person Management URLs</h4>
-            <div class="sect4">
-              <h5 id="role-and-permission-based-secure-access-to-adminuser-and-admintrainee-users">Role and Permission based secure access to <strong>AdminUser</strong>                and <strong>AdminTrainee</strong> users</h5>
-              <table class="tableblock frame-all grid-all spread">
-                <colgroup>
-                  <col style="width: 34%;">
-                  <col style="width: 5%;">
-                  <col style="width: 46%;">
-                  <col style="width: 15%;">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th class="tableblock halign-left valign-top">URL</th>
-                    <th class="tableblock halign-left valign-top">Method</th>
-                    <th class="tableblock halign-left valign-top">Remarks</th>
-                    <th class="tableblock halign-left valign-top">Sample Valid Request Body</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/management/api/v1/person" class="bare">http://localhost:8080/management/api/v1/person</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">GET</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Header <code>Accept:application/json</code> or <code>Accept:application/xml</code>                        for content negotiation</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top"></td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/management/api/v1/person" class="bare">http://localhost:8080/management/api/v1/person</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">POST</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Add a person</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><a href="#personcreate">JSON</a></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/management/api/v1/person/{id}" class="bare">http://localhost:8080/management/api/v1/person/{id}</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">GET</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Header <code>Accept:application/json</code> or <code>Accept:application/xml</code>                        for content negotiation</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top"></td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/management/api/v1/person/pageable" class="bare">http://localhost:8080/management/api/v1/person/pageable</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">GET</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Header <code>Accept:application/json</code> or <code>Accept:application/xml</code>                        for content negotiation</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Pageable API Endpoint</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/management/api/v1/person/{id}" class="bare">http://localhost:8080/management/api/v1/person/{id}</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">PUT</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Update a person</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><a href="#personcreate">JSON</a></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock"><code><a href="http://localhost:8080/management/api/v1/person/{id}" class="bare">http://localhost:8080/management/api/v1/person/{id}</a></code></p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">DELETE</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top">
-                      <p class="tableblock">Delete a person</p>
-                    </td>
-                    <td class="tableblock halign-left valign-top"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="sect4">
-              <h5 id="sample-valid-json-request-bodys-1">Sample Valid JSON Request Bodys</h5>
-              <div id="create-person---apiperson" class="paragraph">
-                <p>Create Person &#8594; /api/person</p>
-              </div>
-              <div class="listingblock">
-                <div class="content">
-                  <pre class="highlight"><code class="language-json" data-lang="json">{
-    "name": "Jane",
-    "username": "janejane",
-    "emailPrimary": "jane1.howell@gmail.com",
-    "emailSecondary": "jane2.howell@gmail.com",
-    "phone":9191919191,
-    "gender": "FEMALE",
-    "age": 25,
-    "password": "password",
-    "dob":"25-12-2005",
-    "isAdult":true,
-    "address": {
-        "street": "Jane Plains",
-        "suite": "Suite 779",
-        "city": "Wisokyburghh",
-        "zipcode": "90565-7771",
-        "geo": {
-            "lat": "-43.9589",
-            "lng": "-34.4628"
-        }
-    }
-}</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="documentation">Documentation</h3>
-          <div class="ulist">
-            <ul>
-              <li>
-                <p><a href="https://documenter.getpostman.com/view/2449187/TVCe1UAk">Postman Collection</a>                  - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python
-                  Requests, Node, PHP and Go programming languages</p>
-              </li>
-              <li>
-                <p>Postman Collection for offline testing is available in the postman
-                  folder.</p>
-              </li>
-              <li>
-                <p><a href="http://localhost:8080/swagger-ui.html">Swagger</a> - <code><a href="http://localhost:8080/swagger-ui.html" class="bare">http://localhost:8080/swagger-ui.html</a></code>-
-                  Documentation &amp; Testing</p>
-              </li>
-              <li>
-                <p><a href="http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template">Swagger</a>                  - <code><a href="http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template" class="bare">http://localhost:8080/v2/api-docs?group=Spring%20Boot%20Application%20Template</a></code>-
-                  Documentation &amp; Testing</p>
-              </li>
-              <li>
-                <p>Find Java Doc in <strong>javadoc</strong> folder</p>
-              </li>
-              <li>
-                <p>Java Doc is generated in <code>Spring-Boot-Application-Template\target\site\apidocs</code>                  folder using the Maven command</p>
-              </li>
-            </ul>
-          </div>
-          <div class="listingblock">
-            <div class="content">
-              <pre class="highlight"><code class="language-text" data-lang="text">`mvn javadoc:javadoc`                   //Generate JavaDoc</code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="internationalization-i18n">Internationalization (i18n)</h3>
-          <div class="paragraph">
-            <p>This app can be adapted to various languages and regions without engineering
-              changes. Textual elements, such as status messages and the GUI component
-              labels, are not hardcoded in the program. Instead they are stored outside
-              the source code and retrieved dynamically.</p>
-          </div>
-          <div class="paragraph">
-            <p>Refer <code>io.github.anantharajuc.sbat.core_backend.config.I18Nconfiguration</code>.
-              The text elements are stored in <code>\src\main\resources\i18n</code>              folder.</p>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="reporting-issuessuggest-improvements">Reporting Issues/Suggest Improvements</h3>
-          <div class="paragraph">
-            <p>This Project uses GitHub&#8217;s integrated issue tracking system to
-              record bugs and feature requests. If you want to raise an issue, please
-              follow the recommendations below:</p>
-          </div>
-          <div class="ulist">
-            <ul>
-              <li>
-                <p>Before you log a bug, please <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/search?type=Issues">search the issue tracker</a>                  to see if someone has already reported the problem.</p>
-              </li>
-              <li>
-                <p>If the issue doesn&#8217;t already exist, <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new">create a new issue</a></p>
-              </li>
-              <li>
-                <p>Please provide as much information as possible with the issue report.</p>
-              </li>
-              <li>
-                <p>If you need to paste code, or include a stack trace use Markdown
-                  ``` escapes before and after your text.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="the-end">The End</h3>
-          <div class="paragraph">
-            <p>In the end, I hope you enjoyed the application and find it useful, as
-              I did when I was developing it to create a Spring Boot web application
-              template with good/convenient practices for rapid prototyping.</p>
-          </div>
-          <div class="paragraph">
-            <p>If you would like to enhance, please:</p>
-          </div>
-          <div class="ulist">
-            <ul>
-              <li>
-                <p><strong>Open PRs</strong>,</p>
-              </li>
-              <li>
-                <p>Give <strong>feedback</strong>,</p>
-              </li>
-              <li>
-                <p>Add <strong>new suggestions</strong>, and</p>
-              </li>
-              <li>
-                <p>Finally, give it a 🌟.</p>
-              </li>
-              <li>
-                <p>Happy Coding &#8230;&#8203;* 🙂</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="sect2">
-          <h3 id="fossa-third-party-code-license-compliance-and-vulnerabilities">FOSSA third-party code, license compliance and vulnerabilities</h3>
-          <div class="paragraph">
-            <p>
-              <a href="https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_large"><span class="image"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=large" alt="FOSSA Status"></span></a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h3 id="documentation">Documentation</h3>
+    <ul>
+      <li><a href="/swagger-ui.html">Swagger UI</a> and the <a href="/v3/api-docs">OpenAPI 3 document</a>: use <strong>Authorize</strong> with an access token from the login endpoint</li>
+      <li><a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/tree/master/documents">Project documentation</a>: getting started, installation, authentication, API, user roles, testing, deployment</li>
+      <li><a href="https://documenter.getpostman.com/view/2449187/TVCe1UAk">Postman collection</a>, also in <code>documents/</code> for offline use</li>
+    </ul>
+
+    <h3 id="internationalization-i18n">Internationalization (i18n)</h3>
+    <p>Texts are stored in <code>src/main/resources/i18n</code> (<code>messages.properties</code>, <code>messages_es.properties</code>) instead of the templates. Switch the language with the menu in the navigation bar or by adding <code>?lang=es</code> to a URL. Refer to <code>io.github.anantharajuc.sbat.core_backend.infra.config.I18Nconfiguration</code>.</p>
+
+    <h3 id="reporting-issuessuggest-improvements">Reporting Issues/Suggest Improvements</h3>
+    <p>This Project uses GitHub&#8217;s integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:</p>
+    <ul>
+      <li>Before you log a bug, please <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/search?type=Issues">search the issue tracker</a> to see if someone has already reported the problem.</li>
+      <li>If the issue doesn&#8217;t already exist, <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new">create a new issue</a>.</li>
+      <li>Please provide as much information as possible with the issue report.</li>
+      <li>If you need to paste code, or include a stack trace use Markdown ``` escapes before and after your text.</li>
+    </ul>
+
+    <h3 id="the-end">The End</h3>
+    <p>In the end, I hope you enjoyed the application and find it useful, as I did when I was developing it to create a Spring Boot web application template with good/convenient practices for rapid prototyping.</p>
+    <p>If you would like to enhance, please: <strong>Open PRs</strong>, give <strong>feedback</strong>, add <strong>new suggestions</strong>, and finally, give it a 🌟. Happy Coding &#8230; 🙂</p>
+
+    <h3 id="fossa-third-party-code-license-compliance-and-vulnerabilities">FOSSA third-party code, license compliance and vulnerabilities</h3>
+    <p>
+      <a href="https://app.fossa.io/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template?ref=badge_large"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FSpring-Boot-Framework%2FSpring-Boot-Application-Template.svg?type=large" alt="FOSSA Status"></a>
+    </p>
   </div>
-	<!-- README.md end   -->
-	  
+
 	</div>
     </div>
 </body>
-	
+
 </th:block>
-	
-</html>

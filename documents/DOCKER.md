@@ -1,184 +1,123 @@
-## Table of Contents
+## Docker
 
 <details open="open">
    <ul>
+      <li><a href="#the-image">The image</a></li>
+      <li><a href="#running-the-application-with-docker-compose">Running the application with Docker Compose</a></li>
       <li>
-		 <a href="#dockerfile-maven">Dockerfile Maven</a>
-         <a href="#installing">Installing</a>
+         <a href="#running-the-containers-manually">Running the containers manually</a>
          <ul>
-			<li>
-				<a href="#running-the-application-via-docker-compose">Running the application via docker compose</a>
-			</li>
-            <li>
-               <a href="#running-the-application-manually-via-docker-container">Running the application manually via docker container</a>
-               <ul>
-                  <li><a href="#basic-docker-commands-for-reference">Basic Docker commands for reference</a></li>
-                  <li><a href="#commands-to-run-the-mysql-docker-image">Commands to run the MySQL docker image</a></li>
-                  <li><a href="#commands-to-run-the-docker-image-of-app-with-mysql-docker-image">Commands to run the docker image of app with MySQL docker image</a></li>
-                  <li><a href="#connecting-to-the-mysql-docker-image-via-cli">Connecting to the MySQL docker image via CLI</a></li>
-                  <li><a href="#basic-mysql-commands-for-reference">Basic MySQL commands for reference</a></li>
-                  <li><a href="#docker-hub-commands-for-reference">Docker Hub Commands for Reference</a></li>
-               </ul>
-            </li>
+            <li><a href="#h2-profile-no-database-needed">H2 profile, no database needed</a></li>
+            <li><a href="#with-a-mysql-container">With a MySQL container</a></li>
          </ul>
       </li>
+      <li><a href="#publishing-the-image">Publishing the image</a></li>
+      <li><a href="#useful-commands">Useful commands</a></li>
    </ul>
 </details>
 
-## Dockerfile Maven
+## The image
 
-Here we build and push the application's docker image to DockerHub.
+The [Dockerfile](../Dockerfile) is a multi-stage build, so no local Java or Maven installation is needed to build it:
 
-This [Maven plugin](https://github.com/spotify/dockerfile-maven) integrates Maven with Docker. Update the **pom.xml** file with your **DockerHub username** and execute the maven install command **mvn install**. Execution of this command will result in the generation of the application jar file, building of the Docker image and pushing of this newly created image to DockerHub.
-
-```
-<!--  Plugin for building and pushing Docker image to Docker Hub. -->
-<plugin>
-	<groupId>com.spotify</groupId>
-	<artifactId>dockerfile-maven-plugin</artifactId>
-	<version>1.4.13</version>
-	<configuration>
-		<repository>DOCKER_HUB_USERNAME/${project.artifactId}</repository>
-		<tag>${project.version}</tag>
-		<buildArgs>
-			<JAR_FILE>target/${project.artifactId}-${project.version}.jar</JAR_FILE>
-		</buildArgs>
-	</configuration>
-	<executions>
-		<execution>
-			<id>default</id>
-			<phase>install</phase>
-			<goals>
-				<goal>build</goal>
-				<goal>push</goal>
-			</goals>
-		</execution>
-	</executions>
-</plugin>
-```
-
-## Installing
-
-#### Running the application via docker compose
-
-Check the **docker-compose.yml** file 
-
-|                  Command          |                                             Description                                     |
-|-----------------------------------|---------------------------------------------------------------------------------------------| 
-|`docker-compose config`            | Check the build-file for syntax-errors	                                                  |
-|`docker-compose up`                | Start the containers                                                                        |
-|`docker-compose --compatibility up`| Start the containers using compatibility mode to set Memory and CPU Limits. Using --compatibility mode will attempt to convert that API v3 way of setting resource limits back into v2 compatible properties.                  |
-|`docker-compose down`	            | Stop the containers, remove them from Docker and remove the connected networks from it.     |
-
-#### Running the application manually via docker container
-
-* 	[anantha/spring-boot-application-template](https://hub.docker.com/r/anantha/spring-boot-application-template/tags) - DockerHub Image
-
-DockerHub Pull Command if you want to directly pull the docker image of the application from Docker Hub.
+*	**Build stage** (`eclipse-temurin:21-jdk`): downloads the dependencies, packages the jar with the Maven wrapper and extracts it into layers.
+*	**Runtime stage** (`eclipse-temurin:21-jre`): copies the layers (dependencies first, application classes last, for better caching) and runs the application as a non-root user on port **8080**.
 
 ```shell
-docker pull anantha/spring-boot-application-template
+docker build -t spring-boot-application-template .
 ```
 
-**NOTE:** If you want to build a docker image from the source code, ensure you build a jar of the application before building a docker image.  
+As an alternative without a Dockerfile, Spring Boot can build an OCI image with Cloud Native Buildpacks: `./mvnw spring-boot:build-image`.
+
+## Running the application with Docker Compose
+
+[docker-compose.yml](../docker-compose.yml) starts **MySQL 8.4** and the application in the **`production`** profile. The application waits until the database passes its health check.
+
+1.	Create the JWT signing key store, see [JWT signing key](GETTING_STARTED.MD#jwt-signing-key). Compose mounts it from `./secrets/jwt.p12`.
+
+2.	Set the secrets. Compose refuses to start while any of them is missing:
+
+	```shell
+	export DB_PASSWORD=...            # password of the sbat database user
+	export DB_ROOT_PASSWORD=...       # MySQL root password
+	export JWT_KEY_STORE_PASSWORD=... # password chosen when creating secrets/jwt.p12
+	export REMEMBER_ME_KEY=$(openssl rand -base64 32)
+	```
+
+	They can also be placed in a `.env` file next to `docker-compose.yml`, which Compose reads automatically.
+
+3.	Start everything:
+
+	```shell
+	docker compose up --build
+	```
+
+The application is available at **http://localhost:8080/sbat/index**.
+
+Session cookies are marked `Secure` in production. Compose sets `SESSION_COOKIE_SECURE=false` because it serves plain HTTP on localhost; set it to `true` when the application runs behind TLS.
+
+|               Command               |                                Description                                |
+|-------------------------------------|---------------------------------------------------------------------------|
+|`docker compose config`              | Validate the file and show the resolved configuration                     |
+|`docker compose up --build`          | Build the application image and start the containers                      |
+|`docker compose up -d`               | Start the containers in the background                                    |
+|`docker compose logs -f app`         | Follow the application logs                                               |
+|`docker compose down`                | Stop and remove the containers and network (the database volume is kept)  |
+|`docker compose down -v`             | Also remove the database volume                                           |
+
+## Running the containers manually
+
+### H2 profile, no database needed
 
 ```shell
-$ mvn package -Dmaven.test.skip=true     //skip all tests and build. The build once completed is available in **target** folder
+docker run --rm -p 8080:8080 -e SPRING_PROFILES_ACTIVE=test spring-boot-application-template
 ```
+
+### With a MySQL container
 
 ```shell
-$ mvn clean package                      //run all tests and build
+docker network create sbat
+
+docker run -d --name sbat-db --network sbat \
+  -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=change-me -e MYSQL_ROOT_PASSWORD=change-me-too \
+  mysql:8.4
+
+docker run -d --name sbat-app --network sbat -p 8080:8080 \
+  -e SPRING_PROFILES_ACTIVE=production \
+  -e DB_HOST=sbat-db -e DB_DATABASE=sbat -e DB_USERNAME=sbat -e DB_PASSWORD=change-me \
+  -e JWT_KEY_STORE=file:/run/secrets/jwt.p12 -e JWT_KEY_STORE_PASSWORD=... -e REMEMBER_ME_KEY=... \
+  -e SESSION_COOKIE_SECURE=false \
+  -v "$PWD/secrets/jwt.p12:/run/secrets/jwt.p12:ro" \
+  spring-boot-application-template
 ```
 
-A runnable jar file gets built and is available in the **target** folder
+Connect to the database with the MySQL client inside the container:
 
-On Windows machine use **Docker Quickstart Terminal** or, use **Windows Powershell** and navigate to the project folder where Dockerfile is present.
+```shell
+docker exec -it sbat-db mysql -usbat -p sbat
+```
 
-##### Basic Docker commands for reference
+## Publishing the image
 
-Checkout additional Docker and DockerHub commands here, [https://github.com/AnanthaRajuC/Hacks-and-Code-Snippets/blob/master/Docker.md](https://github.com/AnanthaRajuC/Hacks-and-Code-Snippets/blob/master/Docker.md) 
+```shell
+docker login
+docker tag spring-boot-application-template <dockerhub-user>/spring-boot-application-template:<version>
+docker push <dockerhub-user>/spring-boot-application-template:<version>
+```
+
+The GitHub Actions workflow builds the image on every pull request to make sure the Dockerfile keeps working; it does not publish it.
+
+## Useful commands
+
+More Docker commands: [https://github.com/AnanthaRajuC/Hacks-and-Code-Snippets/blob/master/Docker.md](https://github.com/AnanthaRajuC/Hacks-and-Code-Snippets/blob/master/Docker.md)
 
 |                           Command                                  |                                     Description                               |
-|--------------------------------------------------------------------|-------------------------------------------------------------------------------| 
-|`docker-machine ip default`							             | check your docker IP default, usually it is **192.168.99.102**			     |
-|`docker images`                                                     | take a look at the container images.                                          |
-|`docker ps`                                                         | list all the running containers.                                              |
-|`docker ps -a`                                                      | list all the containers, including the ones that have finished executing.     |
-|`docker restart [container_name]`							         | restart the docker image			                             		         |
-|`docker stats`							                             | Show CPU and memory usage of all running containers                 	         |
-|`docker stats [container_name]`						             | Show CPU and memory usage of a particular running container                   |
-|`docker stats [container1_name] [container2_name]`			         | Show CPU and memory usage of container1, container2                           |
-|`docker top [container_name]`			                             | Show running processes in a container                                         |
-|`docker system df`			                                         | Show storage usage                                                            |
-|`docker logs [container_id]`			                             | list container logs                                                           |
-|`docker logs [container_id] --tail N`                               | list container logs, **`--tail`** flag will show the last **N** lines of logs |   
-|`docker logs [container_id] --since YYYY-MM-DD`                     | list container logs since a particular date                                   |
-|`docker logs [container_id] --since YYYY-MM-DDTHH:MM:SS.000000000Z` | list container logs since a particular timestamp                              |
-
-##### Commands to run the MySQL docker image
-
-|                                                   Command                                                                                        |                                 Description                              |
-|--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------| 
-|**`docker pull mysql:5.7`**							                                                                                           | pull a MySQL Docker Image                                 				  |
-|`docker images`                                                                                                                                   | take a look at the container images. See if MySQL image is present       |
-|**`docker run --name mysql-docker -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=sbat -e MYSQL_USER=sbat -e MYSQL_PASSWORD=sbat -d mysql:5.7`**| run the MySQL docker image                                               |
-
-##### Commands to run the docker image of app with MySQL docker image
-
-|                                                                  Command                                                                                                |                                                         Description                              |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
-|**`docker build -t spring-boot-application-template .`**                                                                                                                 | **Build docker image of the project**                                                            |
-|**`docker build -t anantha/spring-boot-application-template --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` .`** | **Build docker image of the project and also populate the labels mentioned in Dockerfile**       |
-|**`docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 --name spring-boot-application-template anantha/spring-boot-application-template:0.0.1-SNAPSHOT`**           | **DEV profile (H2DB)        : run the project's docker container by mapping docker to localhost**|	
-|**`docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 --name spring-boot-application-template --link mysql-docker:mysql spring-boot-application-template`**  | **PRODUCTION profile (MySQL): run the project's docker container by mapping docker to localhost**|
-|**`docker stop [container_id]`**                                                                                                                                         | **stop a container**                                                                             |
-|**`docker rm [container_name]`**                                                                                                                                         | **remove a container with a particular container name**                                          |
-|`docker rm $(docker ps -aq)`                                                                                                                                             | stop and remove all containers                                                                   |
-|`docker restart mysql-docker`																									                                          | restart the MySQL docker image																	 |
-
-##### Connecting to the MySQL docker image via CLI 
-
-|                                                           Command                                                              |                                                         Description                              |
-|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------| 
-|`docker exec mysql-docker mysql -usbat -psbat -e 'show databases;'`														     | connect to MySQL image without interactive CLI.													|
-|`docker exec -it mysql-docker mysql -usbat -psbat -e 'show databases;'`														 | connect to MySQL image without interactive CLI.													|
-|`docker exec -it mysql-docker mysql -usbat -psbat`																				 | connect to MySQL image via interactive CLI.														|
-
-##### Basic MySQL commands for reference
-
-|                Commands            |                   Description                  |
-|------------------------------------|------------------------------------------------| 
-|`show databases;`					 | lists the databases on the MySQL server host	  |
-|`show schemas;`					 | a synonym for **show databases;**		      |
-|`use [database_name];`				 | select any existing database in the SQL schema |
-|`show tables;`						 | list tables in a Database	         		  |
-
-**NOTE:** If you are facing any issues with accessing the application at **`localhost:8080`** while using **DockerToolBox** and **OracleVM VirtualBox**
-
-In the Oracle VM VirtualBox:
-
-*	Click the appropriate machine (probably the one labeled **default**)
-*	**Settings**
-*	**Network** > **Adapter 1** > **Advanced** > **Port Forwarding**
-*	Click on **+** to add a new Rule
-*	Set **Host Port** to **8080** and **Guest Port** to **8080**; be sure to leave **Host IP** and **Guest IP** empty
-
-<img src="images\tools\Oracle-VM-Virtualbox-Manager.PNG"/>
-
-Reference: https://stackoverflow.com/a/45822356/3711562
-
-##### Docker Hub Commands for Reference     
-
-|                               Command                              |                         Description                               |
-|--------------------------------------------------------------------|-------------------------------------------------------------------| 
-|`docker logout`							                         | logout of Docker Hub from the local machine.                      |
-|`docker login --username=YOUR_DOCKERHUB_USERNAME`	                 | login to Docker Hub from your machine.                            |
-|`docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]`        | re-tagging an existing local image					             |
-|`docker commit <existing-container> <hub-user>/<repo-name>[:<tag>]` | commit changes					                                 |
-|`docker push <hub-user>/<repo-name>:<tag>`                          | push this repository to the registry designated by its name or tag|
-
-**Examples:**
-
-*	re-tagging an existing local image : `docker tag spring-boot-application-template anantha/spring-boot-application-template:h2db-test-profile`
-*	commit changes                     : `docker commit pedantic_turing anantha/spring-boot-application-template:h2db-test-profile`
-*	docker push                        : `docker push anantha/spring-boot-application-template:h2db-test-profile`
+|--------------------------------------------------------------------|-------------------------------------------------------------------------------|
+|`docker images`                                                     | List local images                                                             |
+|`docker ps` / `docker ps -a`                                        | List running containers / all containers                                      |
+|`docker logs [container] --tail N`                                  | Show the last **N** lines of a container's logs                               |
+|`docker logs [container] --since YYYY-MM-DD`                        | Show a container's logs since a date                                          |
+|`docker stats [container]`                                          | Show CPU and memory usage                                                     |
+|`docker top [container]`                                            | Show the processes running in a container                                     |
+|`docker system df`                                                  | Show disk usage                                                               |
+|`docker stop [container]` / `docker rm [container]`                 | Stop / remove a container                                                     |
