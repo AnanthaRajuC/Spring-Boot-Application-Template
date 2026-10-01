@@ -3,20 +3,20 @@
    <!--<img th:src="@{${site_settings.SiteLogo}}" width="30" height="30" alt="" loading="lazy" th:text="${site_settings.SiteInitials}">-->
    <img src="/images/map.svg" width="30" height="30" alt="" loading="lazy" text="SBAT">
    </a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
    </button>
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav me-auto">
          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${#strings.toUpperCase(#locale)}"></a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${#strings.toUpperCase(#locale)}"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-               <a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=en)}"><img src="/images/us.jpg" alt="user-image" class="mr-1" height="12">English</a>
-               <a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=es)}"><img src="/images/spain.jpg" alt="user-image" class="mr-1" height="12">Spanish</a>
+               <a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=en)}"><img src="/images/us.jpg" alt="user-image" class="me-1" height="12">English</a>
+               <a class="dropdown-item notify-item" th:href="@{/sbat/index/(lang=es)}"><img src="/images/spain.jpg" alt="user-image" class="me-1" height="12">Spanish</a>
             </div>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="/sbat/index" th:text="#{navbar.home.text}"></i><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/sbat/index" th:text="#{navbar.home.text}"></i><span class="visually-hidden">(current)</span></a>
          </li>
          <li class="nav-item" sec:authorize="isAuthenticated()">
             <a class="nav-link" href="/sbat/form" th:text="#{navbar.form.text}"></span></a>
@@ -32,28 +32,28 @@
          </li>
 
 		<li class="nav-item dropdown" sec:authorize="isAuthenticated()">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="Help"></a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="Help"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			   <a class="dropdown-item notify-item" href="/sbat/tech-stack"><img src="/images/stack.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.tech-stack.text}"></a>
-               <a class="dropdown-item notify-item" href="/sbat/docker"><img src="/images/docker.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.docker.text}"></a>
-               <a class="dropdown-item notify-item" href="/sbat/architecture"><img src="/images/architecture.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.architecture.text}"></a>
-			   <a class="dropdown-item notify-item" href="/sbat/about"><img src="/images/about.jpg" alt="user-image" class="mr-1" height="12" th:text="#{navbar.about.text}"></a>
-			   <a class="dropdown-item notify-item" href="/sbat/status"><img src="/images/status.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.status.text}"></a>
-			   <a class="dropdown-item notify-item" href="/sbat/security"><img src="/images/security.PNG" alt="user-image" class="mr-1" height="12" th:text="#{navbar.security.text}"></a>
+			   <a class="dropdown-item notify-item" href="/sbat/tech-stack"><img src="/images/stack.PNG" alt="user-image" class="me-1" height="12" th:text="#{navbar.tech-stack.text}"></a>
+               <a class="dropdown-item notify-item" href="/sbat/docker"><img src="/images/docker.PNG" alt="user-image" class="me-1" height="12" th:text="#{navbar.docker.text}"></a>
+               <a class="dropdown-item notify-item" href="/sbat/architecture"><img src="/images/architecture.PNG" alt="user-image" class="me-1" height="12" th:text="#{navbar.architecture.text}"></a>
+			   <a class="dropdown-item notify-item" href="/sbat/about"><img src="/images/about.jpg" alt="user-image" class="me-1" height="12" th:text="#{navbar.about.text}"></a>
+			   <a class="dropdown-item notify-item" href="/sbat/status"><img src="/images/status.PNG" alt="user-image" class="me-1" height="12" th:text="#{navbar.status.text}"></a>
+			   <a class="dropdown-item notify-item" href="/sbat/security"><img src="/images/security.PNG" alt="user-image" class="me-1" height="12" th:text="#{navbar.security.text}"></a>
 			</div>
          </li> 
 
       </ul>
       </br>		    	
-      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      <ul class="navbar-nav flex-row ms-md-auto d-none d-md-flex">
          <a sec:authorize="!isAuthenticated()" class="btn btn-link btn-lg" type="submit" href="/sbat/login" role="button" th:text="#{navbar.login.text}"></a>	
-         <ul sec:authorize="isAuthenticated()" class="navbar-nav mr-1">
+         <ul sec:authorize="isAuthenticated()" class="navbar-nav me-1">
             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
                </a>
                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-header font-weight-bold" sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"/>
+                  <a class="dropdown-header fw-bold" sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"/>
                      <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Dashboard</a>	
                   <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" href="/sbat/settings" th:text="#{navbar.settings.text}"></a>			  
@@ -69,9 +69,9 @@
          </ul>
       </ul>
       </br>
-      <div class="custom-control custom-switch mr-1"> 
-         <input type="checkbox" class="custom-control-input" id="darkSwitch">
-         <label class="custom-control-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
+      <div class="form-check form-switch me-1"> 
+         <input type="checkbox" class="form-check-input" id="darkSwitch">
+         <label class="form-check-label" for="darkSwitch" th:text="#{navbar.dark-mode.text}"></label>
       </div>
    </div>
    </br>

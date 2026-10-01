@@ -1,0 +1,30 @@
+# GitHub Actions (.github/workflows/build.yml) is the primary CI. This mirrors its build for the
+# CircleCI integration connected to the repository; remove it together with that integration.
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/openjdk:21.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - maven-{{ checksum "pom.xml" }}
+            - maven-
+      - run:
+          name: Build and test
+          command: ./mvnw -B verify
+      - save_cache:
+          key: maven-{{ checksum "pom.xml" }}
+          paths:
+            - ~/.m2/repository
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/site/jacoco
+
+workflows:
+  build:
+    jobs:
+      - build
