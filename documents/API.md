@@ -72,7 +72,7 @@ Errors raised by the REST controllers are returned as [RFC 9457](https://www.rfc
 
 ### API rate limiting
 
-Requests to `/api/v1/person/**` must carry an `X-api-key` header. The key's prefix selects the tier; each key gets its own bucket that refills completely every 20 minutes.
+Requests to the person APIs, `/api/v1/person/**` and `/api/v1/management/person/**`, must carry an `X-api-key` header. The key's prefix selects the tier; each key gets its own bucket that refills completely every 20 minutes.
 
 |     Tier     | Requests per 20 minutes |  API key prefix   |
 |--------------|-------------------------|-------------------|

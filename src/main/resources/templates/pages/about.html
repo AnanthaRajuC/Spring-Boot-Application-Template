@@ -90,7 +90,7 @@
 curl -s -X POST localhost:8080/api/v1/auth/login -H 'Content-Type: application/json' \
      -d '{"username":"Admin1","password":"password"}'
 
-# 2. Call the API with the access token (person endpoints also need an X-api-key header)
+# 2. Call the API with the access token (the person APIs also need an X-api-key header)
 curl -s localhost:8080/api/v1/person -H "Authorization: Bearer $ACCESS_TOKEN" -H 'X-api-key: FX001-demo'
 
 # 3. Exchange the refresh token for a new pair; the old refresh token stops working
@@ -98,7 +98,7 @@ curl -s -X POST localhost:8080/api/v1/auth/refresh/token -H 'Content-Type: appli
      -d '{"token":"'"$REFRESH_TOKEN"'"}'</code></pre>
 
     <h4 id="api-rate-limiting">API Rate Limiting</h4>
-    <p>Requests to <code>/api/v1/person/**</code> need an <code>X-api-key</code> header. The key's prefix selects the tier; buckets refill every 20 minutes. Responses carry <code>X-Rate-Limit-Remaining</code>; an empty bucket gives <code>429 Too Many Requests</code> with <code>X-Rate-Limit-Retry-After-Seconds</code>.</p>
+    <p>Requests to <code>/api/v1/person/**</code> and <code>/api/v1/management/person/**</code> need an <code>X-api-key</code> header. The key's prefix selects the tier; buckets refill every 20 minutes. Responses carry <code>X-Rate-Limit-Remaining</code>; an empty bucket gives <code>429 Too Many Requests</code> with <code>X-Rate-Limit-Retry-After-Seconds</code>.</p>
     <table class="table table-sm table-bordered">
       <thead><tr><th>Tier</th><th>Requests per 20 minutes</th><th>API key prefix</th></tr></thead>
       <tbody>

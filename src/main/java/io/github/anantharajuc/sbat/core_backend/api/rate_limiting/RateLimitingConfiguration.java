@@ -20,6 +20,6 @@ public class RateLimitingConfiguration implements WebMvcConfigurer
 	@Override 
     public void addInterceptors(InterceptorRegistry registry) 
 	{
-        registry.addInterceptor(interceptor).addPathPatterns("/api/v1/person/**","/management/api/v1/person/**");
+        registry.addInterceptor(interceptor).addPathPatterns("/api/v1/person/**", "/api/v1/management/person/**");
     }
 }

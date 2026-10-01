@@ -8,6 +8,7 @@ import static org.springframework.security.test.web.servlet.response.SecurityMoc
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.unauthenticated;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -158,6 +159,39 @@ class TestSBtemplateApplication
 		mockMvc.perform(get("/api/v1/user/username/johndoe").header(HttpHeaders.AUTHORIZATION, "Bearer " + token))
 			.andExpect(status().isOk())
 			.andExpect(jsonPath("$.username").value("johndoe"));
+	}
+
+	@Test
+	void personApisAreRateLimitedPerApiKey() throws Exception
+	{
+		String token = JsonPath.read(login("Admin1", PASSWORD), "$.authenticationToken");
+
+		for (String path : new String[] {"/api/v1/person", "/api/v1/management/person"})
+		{
+			mockMvc.perform(get(path).header(HttpHeaders.AUTHORIZATION, "Bearer " + token))
+				.andExpect(status().isBadRequest());
+
+			mockMvc.perform(get(path).header(HttpHeaders.AUTHORIZATION, "Bearer " + token).header("X-api-key", "BX001-" + path))
+				.andExpect(status().isOk())
+				.andExpect(header().string("X-Rate-Limit-Remaining", "49"));
+		}
+	}
+
+	@Test
+	void exhaustedRateLimitIsRejected() throws Exception
+	{
+		String token = JsonPath.read(login("AdminTrainee1", PASSWORD), "$.authenticationToken");
+		String apiKey = "FREE-" + UUID.randomUUID();
+
+		for (int i = 0; i < 25; i++)
+		{
+			mockMvc.perform(get("/api/v1/management/person/id/1").header(HttpHeaders.AUTHORIZATION, "Bearer " + token).header("X-api-key", apiKey))
+				.andExpect(status().isOk());
+		}
+
+		mockMvc.perform(get("/api/v1/management/person/id/1").header(HttpHeaders.AUTHORIZATION, "Bearer " + token).header("X-api-key", apiKey))
+			.andExpect(status().isTooManyRequests())
+			.andExpect(header().exists("X-Rate-Limit-Retry-After-Seconds"));
 	}
 
 	@Test

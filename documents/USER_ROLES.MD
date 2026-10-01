@@ -34,7 +34,7 @@ Responses use [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) links (`self`, `p
 
 ### Person Management URLs
 
-For users with the **ADMIN** or **ADMINTRAINEE** role. Reading is open to both roles; changes need the matching permission, which only ADMIN has in the seed data.
+For users with the **ADMIN** or **ADMINTRAINEE** role. Reading is open to both roles; changes need the matching permission, which only ADMIN has in the seed data. Every request to `/api/v1/management/person/**` also needs an `X-api-key` header, see [API rate limiting](API.md#api-rate-limiting).
 
 |                          URL                                     |  Method |  Requires                              | Sample request body |
 |------------------------------------------------------------------|---------|----------------------------------------|---------------------|
