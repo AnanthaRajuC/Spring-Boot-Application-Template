@@ -1,90 +1,68 @@
 ## Installation
 
-*	Default active profile is **`test`**. When the application is running, **Flyway** will create the necessary tables and system data along with sample data. In the **`test`** profile, the application uses **H2** database (data in memory).
-
-* 	URL to access application UI: **http://localhost:8080/sbat/index** or **https://192.168.99.102:8080/sbat/index** if **SSL** is enabled.
-
-* 	Other sample profiles like **`dev`**, **`production`**, **`qa`**, and  **`staging`** are available. Change the **spring.profiles.active** property in the **application.properties** file to any of the aforementioned profiles to use it.
-
-*	To enable or disable **SSL** support, in the **application properties** file turn **server.ssl.enabled** to **true** or **false**
+*	The default profile is **`test`**. On startup **Flyway** creates the tables, the system data and the sample data in an in-memory **H2** database, so the application runs without any external service.
+*	Other profiles, **`dev`**, **`qa`**, **`staging`** and **`production`**, use MySQL. Select one with the `SPRING_PROFILES_ACTIVE` environment variable or `--spring.profiles.active=<profile>`. See [Getting Started](GETTING_STARTED.MD) for their configuration.
+*	Application UI: **http://localhost:8080/sbat/index** (`http://localhost:8080/` redirects there).
+*	Sample users, all with the password `password`: `Admin1`, `Admin2` (ADMIN), `AdminTrainee1`, `AdminTrainee2` (ADMINTRAINEE), `johndoe`, `janedoe` (PERSON). Change or remove them before exposing an instance.
 
 <details open="open">
 	<ul>
-		<li><a href="#running-the-application-with-ide">Running the application with IDE</a></li>
 		<li><a href="#running-the-application-with-maven">Running the application with Maven</a></li>
-		<li>
-			<a href="#running-the-application-with-executable-jar">Running the application with Executable JAR</a>
-			<ul>
-				<li>
-					<a href="#accessing-data-in-h2-database">Accessing Data in H2 Database</a>
-					<ul>
-						<li><a href="#h2-console">H2 Console</a></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<li><a href="#running-the-application-via-docker-container">Running the application via docker container</a></li>
+		<li><a href="#running-the-application-with-an-ide">Running the application with an IDE</a></li>
+		<li><a href="#running-the-application-as-an-executable-jar">Running the application as an executable JAR</a></li>
+		<li><a href="#accessing-data-in-the-h2-database">Accessing data in the H2 database</a></li>
+		<li><a href="#running-the-application-with-docker">Running the application with Docker</a></li>
 	</ul>
 </details>
 
-#### Running the application with IDE
-
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.arc.sbtest.SBtemplateApplication` class from your IDE.
-
-* 	Download the zip or clone the Git repository.
-* 	Unzip the zip file (if you downloaded one)
-* 	Open Command Prompt and Change directory (cd) to folder containing pom.xml
-* 	Open Eclipse
-	* File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
-	* Select the project
-* 	Choose the Spring Boot Application file (search for @SpringBootApplication)
-* 	Right Click on the file and Run as Java Application
-
 #### Running the application with Maven
 
-Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
+Use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/maven-plugin/index.html) through the Maven wrapper:
 
 ```shell
-$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
-$ mvn spring-boot:run
+git clone https://github.com/AnanthaRajuC/Spring-Boot-Application-Template.git
+cd Spring-Boot-Application-Template
+./mvnw spring-boot:run
 ```
 
-#### Running the application with Executable JAR
+On Windows use `mvnw.cmd` instead of `./mvnw`.
 
-The code can also be built into a jar and then executed/run. Once the jar is built, run the jar by double clicking on it or by using the command 
+To run with another profile:
 
 ```shell
-$ git clone https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template.git
-$ cd Spring-Boot-Application-Template
-$ mvn package -DskipTests
-$ java -jar target/SBtemplate-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
+./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
-To shutdown the jar, follow the below mentioned steps on a Windows machine.
+#### Running the application with an IDE
 
-*	In command prompt execute the **jcmd** command to print a list of all running Java processes
-*	**Taskkill /PID PROCESS_ID_OF_RUNNING_APP /F** execute this command by replacing the **PROCESS_ID_OF_RUNNING_APP** with the actual process id of the running jar found out from executing the previous command
+Import the project as an existing Maven project (IntelliJ IDEA, Eclipse or VS Code with the Java extensions), make sure the project SDK is **Java 21**, and run the `main` method of `io.github.anantharajuc.sbat.SBtemplateApplication`.
 
-##### Accessing Data in H2 Database
+The project uses [Lombok](https://projectlombok.org/): enable annotation processing in your IDE (IntelliJ IDEA does this when prompted; Eclipse needs the Lombok installer).
 
-###### H2 Console
+#### Running the application as an executable JAR
 
-URL to access H2 console: **http://localhost:8080/h2-console/login.jsp** or **https://192.168.99.102:8080/h2-console/login.jsp** if **SSL** is enabled.
+```shell
+./mvnw package -DskipTests
+java -jar target/spring-boot-application-template-latest.jar
+```
 
-Fill the login form as follows and click on Connect:
+Add `--spring.profiles.active=<profile>` to choose another profile. Stop the application with `Ctrl+C`.
 
-* 	Saved Settings: **Generic H2 (Embedded)**
-* 	Setting Name: **Generic H2 (Embedded)**
+#### Accessing data in the H2 database
+
+The H2 web console is enabled in the `test` profile and only reachable from the same machine: **http://localhost:8080/h2-console**
+
+Fill the login form as follows and click on **Connect**:
+
 * 	Driver class: **org.h2.Driver**
-* 	JDBC URL: **jdbc:h2:mem:sbat;MODE=MySQL**
+* 	JDBC URL: **jdbc:h2:mem:sbat**
 * 	User Name: **sa**
-* 	Password:
+* 	Password: *(empty)*
 
 <img src="images\h2db\h2-console-login.PNG"/>
 
 <img src="images\h2db\h2-console-main-view.PNG"/>
 
-#### Running the application via docker container
+#### Running the application with Docker
 
-* 	Refer to [DOCKER.md](./DOCKER.md) for details.
+Refer to [DOCKER.md](./DOCKER.md).

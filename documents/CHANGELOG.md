@@ -9,6 +9,36 @@ CHANGELOG
 ================================================================================
 This project is using [Semantic Versioning 2.0.0](http://semver.org/)
 
+## Unreleased
+
+Modernization to Spring Boot 4 (#396, #401).
+
+### Breaking changes
+ - Requires **Java 21** (was Java 8). Spring Boot 2.7 → **4.1**, `javax.*` → `jakarta.*`, Spring Security 7, Hibernate 7, Jackson 3.
+ - Configuration comes from environment variables or a git-ignored `.env` file, read as Spring properties; dotenv-java was removed. See `.env.example` and [Getting Started](GETTING_STARTED.MD).
+ - The JWT signing key is configured with `JWT_KEY_STORE`, `JWT_KEY_STORE_PASSWORD` and `JWT_KEY_ALIAS` instead of key store settings in the `sbat_settings` table (removed by migration `V0_0_9`). Without a key store a temporary key is generated at startup.
+ - The refresh token endpoint issues tokens for the owner of the refresh token; a `username` that doesn't match is rejected. Refresh tokens are single use and expire after 7 days.
+ - `/rbac/**`, and every actuator endpoint except `health` and `info`, require the ADMIN role. The actuator `shutdown` endpoint is no longer exposed; "close app" in the UI is an admin-only POST.
+ - The web UI has CSRF protection; custom forms need the CSRF token (Thymeleaf `th:action` forms include it automatically).
+ - Swagger 2 (Springfox) replaced by OpenAPI 3 (springdoc): `/swagger-ui.html` and `/v3/api-docs`; `/v2/api-docs` is gone. Not published in the `production` profile.
+ - XML responses (`Accept: application/xml`) are no longer offered.
+ - Bootstrap 4 → **5.3** in the templates.
+
+### New Features
+ - Two security filter chains: stateless JWT / HTTP Basic for `/api/**`, `/rbac/**` and `/actuator/**`; sessions, remember-me and CSRF for the web UI.
+ - REST errors as RFC 9457 problem details.
+ - Multi-stage, non-root Dockerfile; Docker Compose with MySQL 8.4 and health checks.
+ - GitHub Actions workflow (build, tests, coverage report, Docker image); JaCoCo replaces Cobertura.
+ - Integration test suite.
+
+### Fixes
+ - Unverified or disabled accounts could log in.
+ - `/rbac/**` was open to every authenticated user and returned password hashes; created users got unhashed passwords.
+ - Expired verification links deleted the wrong user.
+ - Login throttling could be bypassed or abused through the `X-Forwarded-For` header, and returned a server error when blocking.
+ - Sign-up created a duplicate `ROLE_PERSON` per user; deleting a user deleted shared roles.
+ - Broken webjar paths, missing `/403` page, invalid JWTs causing server errors, and other bugs listed in #396.
+
 ## v0.1.3
 
 ### New Features

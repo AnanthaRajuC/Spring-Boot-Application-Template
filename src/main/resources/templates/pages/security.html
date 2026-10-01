@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" 
 			    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
 			   layout:decorate="~{layout}"
-			   th:with="title='About'">
+			   th:with="title='Security'">
 
 <th:block layout:fragment="content">
 
@@ -21,205 +21,61 @@
     <!-- main content area -->
     <div class="col-sm-9">
 
-	<!-- README.ms start -->
-<div class="sect2">
-          <h3 id="security">Security</h3>
-          <div class="sect3">
-            <h4 id="looking-for-something-in-particular">Looking for something in particular?</h4>
-            <div class="paragraph">
-              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Role Based Authentication (In-memory Users)</a></p>
-            </div>
-            <div class="paragraph">
-              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Permission Based Authentication (In-memory Users)</a></p>
-            </div>
-            <div class="paragraph">
-              <p>[Spring Method-Security with @PreAuthorize (In-memory Users)](<a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags"
-                  class="bare">https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags</a>)</p>
-            </div>
-            <div class="paragraph">
-              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Database Authentication Authorization (In-memory Users)</a></p>
-            </div>
-            <div class="paragraph">
-              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Role, Permission based User Authentication via MySQL</a></p>
-            </div>
-            <div class="paragraph">
-              <p><a href="https://github.com/Spring-Boot-Framework/Spring-Boot-Application-Template/tags">Json Web Token - Role Based Access Controll via MySQL</a></p>
-            </div>
-            <div class="paragraph">
-              <p>Refer to the <code>ApplicationSecurityConfig</code> class in <code>io.github.anantharajuc.sbat.core_backend.security</code>.</p>
-            </div>
-            <div class="ulist">
-              <ul>
-                <li>
-                  <p>A Java Keystore File is required to generate JSON Web Token.</p>
-                </li>
-              </ul>
-            </div>
-            <div class="listingblock">
-              <div class="content">
-                <pre class="highlight"><code class="language-shell" data-lang="shell">keytool -genkey -alias redditclone -keyalg RSA -keystore redditclone.jks -keysize 2048</code></pre>
-              </div>
-			  
-			  <img src="/images/settings/reddit-clone-jks-generation.PNG"/>
-			  
-            </div>
-            <table class="tableblock frame-all grid-all spread">
-              <colgroup>
-                <col style="width: 17%;">
-                <col style="width: 8%;">
-                <col style="width: 11%;">
-                <col style="width: 43%;">
-                <col style="width: 21%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th class="tableblock halign-left valign-top">Username</th>
-                  <th class="tableblock halign-left valign-top">Password</th>
-                  <th class="tableblock halign-left valign-top">Role</th>
-                  <th class="tableblock halign-left valign-top">Permission</th>
-                  <th class="tableblock halign-left valign-top">Resource</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>johndoe</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>password</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>PERSON</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top"></td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>/api/v1/person</code></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>AdminUser</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>password</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>ADMIN</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>PERSON_CREATE,PERSON_READ,PERSON_UPDATE,PERSON_DELETE</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>/management/api/v1/person</code></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>AdminTraineeUser</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>password</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>ADMINTRAINEE</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>PERSON_READ</code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code>/management/api/v1/person</code></p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="tableblock frame-all grid-all spread">
-              <colgroup>
-                <col style="width: 47%;">
-                <col style="width: 5%;">
-                <col style="width: 30%;">
-                <col style="width: 18%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th class="tableblock halign-left valign-top">URL</th>
-                  <th class="tableblock halign-left valign-top">Method</th>
-                  <th class="tableblock halign-left valign-top">Remarks</th>
-                  <th class="tableblock halign-left valign-top">Sample Valid Request Body</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/signup" class="bare">http://localhost:8080/api/v1/auth/signup</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">POST</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top"></td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><a href="#signup">JSON</a></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/verification/{verification-token}" class="bare">http://localhost:8080/api/v1/auth/verification/{verification-token}</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">GET</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top"></td>
-                  <td class="tableblock halign-left valign-top"></td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/login" class="bare">http://localhost:8080/api/v1/auth/login</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">POST</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Bearer Token, Refresh Token is generated</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><a href="#login">JSON</a></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/subreddit" class="bare">http://localhost:8080/api/v1/subreddit</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">POST</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Bearer Token should be passed for authorization</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><a href="#subreddit">JSON</a></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><code><a href="http://localhost:8080/api/v1/auth/refresh/token" class="bare">http://localhost:8080/api/v1/auth/refresh/token</a></code></p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">POST</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock">Refresh Token from login should be passed</p>
-                  </td>
-                  <td class="tableblock halign-left valign-top">
-                    <p class="tableblock"><a href="#refresh-token">JSON</a></p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-	<!-- README.md end   -->
+  <div id="content">
+    <h2 id="security">Security</h2>
+    <p>Refer to <code>ApplicationSecurityConfiguration</code> in <code>io.github.anantharajuc.sbat.core_backend.security</code>.
+      Details: <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/documents/AUTHENTICATION.MD">Authentication</a>, <a href="https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/blob/master/documents/USER_ROLES.MD">User Roles</a>.</p>
+
+    <h3 id="filter-chains">Filter Chains</h3>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th>Chain</th><th>Paths</th><th>Authentication</th><th>Sessions</th><th>CSRF</th></tr></thead>
+      <tbody>
+        <tr><td>API</td><td><code>/api/**</code>, <code>/rbac/**</code>, <code>/actuator/**</code></td><td>JWT bearer token (RS256) or HTTP Basic</td><td>Stateless</td><td>Off</td></tr>
+        <tr><td>Web</td><td>Everything else</td><td>Form login at <code>/sbat/login</code>, remember-me</td><td>HTTP session, one per user, 10 minute timeout</td><td>On</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="users-roles-permissions">Users, Roles and Permissions</h3>
+    <p>Seeded by the Flyway migrations, all with the password <code>password</code>. Change or remove them before exposing an instance. Roles and permissions are read from the database on every request.</p>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th>Username</th><th>Role</th><th>Permissions</th></tr></thead>
+      <tbody>
+        <tr><td><code>johndoe</code>, <code>janedoe</code></td><td>ROLE_PERSON</td><td>PERSON_CREATE, PERSON_READ, PERSON_UPDATE, PERSON_DELETE</td></tr>
+        <tr><td><code>Admin1</code>, <code>Admin2</code></td><td>ROLE_ADMIN</td><td>PERSON_*, RBAC_USER_CREATE, RBAC_USER_READ</td></tr>
+        <tr><td><code>AdminTrainee1</code>, <code>AdminTrainee2</code></td><td>ROLE_ADMINTRAINEE</td><td>PERSON_READ, RBAC_USER_CREATE</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="authentication-api">Authentication API</h3>
+    <table class="table table-sm table-bordered">
+      <thead><tr><th>URL</th><th>Method</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td><code>/api/v1/auth/signup</code></td><td>POST</td><td>Creates a disabled account with ROLE_PERSON and sends a verification e-mail</td></tr>
+        <tr><td><code>/api/v1/auth/verification/{token}</code></td><td>GET</td><td>Enables the account; expired links remove the unverified account</td></tr>
+        <tr><td><code>/api/v1/auth/login</code></td><td>POST</td><td>Returns an access token (JWT) and a refresh token</td></tr>
+        <tr><td><code>/api/v1/auth/refresh/token</code></td><td>POST</td><td>Exchanges a refresh token for a new pair; refresh tokens are single use and expire after 7 days</td></tr>
+        <tr><td><code>/api/v1/auth/logout</code></td><td>POST</td><td>Deletes a refresh token</td></tr>
+      </tbody>
+    </table>
+    <pre><code>{
+    "username":"johndoe",
+    "password":"password"
+}</code></pre>
+
+    <h3 id="jwt-signing-key">JWT Signing Key</h3>
+    <p>Access tokens are signed with an RSA key pair. Without a configured key store a temporary key pair is generated at startup (fine for development; tokens stop working on restart). In production create a key store, keep it out of the repository, and set <code>JWT_KEY_STORE</code>, <code>JWT_KEY_STORE_PASSWORD</code> and <code>JWT_KEY_ALIAS</code>:</p>
+    <pre><code>keytool -genkeypair -alias sbat -keyalg RSA -keysize 2048 -validity 3650 \
+        -storetype PKCS12 -keystore secrets/jwt.p12 -dname "CN=sbat"</code></pre>
+
+    <h3 id="login-throttling">Login Throttling</h3>
+    <p>Failed logins are counted per client IP address (form login, HTTP Basic and the API login). After 5 failures the address is blocked for 15 minutes, configurable with <code>sbat.security.max-login-attempts</code> and <code>sbat.security.login-block-duration</code>. Behind a reverse proxy set <code>FORWARD_HEADERS_STRATEGY</code>, otherwise <code>X-Forwarded-For</code> is ignored.</p>
+
+    <h3 id="actuator-security">Actuator</h3>
+    <p><code>/actuator/health</code> and <code>/actuator/info</code> are public; every other endpoint, including <code>/actuator/prometheus</code>, requires ROLE_ADMIN.</p>
+  </div>
 	  
 	</div>
     </div>
 </body>
 	
 </th:block>
-	
-</html>

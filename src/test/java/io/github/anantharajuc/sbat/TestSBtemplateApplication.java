@@ -129,6 +129,25 @@ class TestSBtemplateApplication
 	}
 
 	@Test
+	void adminCanCreateUserWithNewRoleThatCanThenLogin() throws Exception
+	{
+		String token = JsonPath.read(login("Admin1", PASSWORD), "$.authenticationToken");
+		String username = "rbac-" + UUID.randomUUID().toString().substring(0, 8);
+
+		// Leaves out some account flags on purpose: missing primitive fields must not break deserialization.
+		mockMvc.perform(post("/rbac/user").header(HttpHeaders.AUTHORIZATION, "Bearer " + token).contentType(MediaType.APPLICATION_JSON)
+				.content("{\"username\":\"" + username + "\",\"email\":\"" + username + "@example.com\",\"password\":\"s3cret-password\","
+						+ "\"enabled\":true,\"accountNonExpired\":true,\"accountNonLocked\":true,\"credentialsNonExpired\":true,"
+						+ "\"roles\":[{\"name\":\"ROLE_PERSON\"},{\"name\":\"ROLE_COURSE\"}]}"))
+			.andExpect(status().isCreated())
+			.andExpect(jsonPath("$.username").value(username))
+			.andExpect(jsonPath("$.password").doesNotExist())
+			.andExpect(jsonPath("$.roles[1].permissions[0].name").value("COURSE_CREATE"));
+
+		login(username, "s3cret-password");
+	}
+
+	@Test
 	void nonAdminTokenIsForbiddenOnAdminEndpoints() throws Exception
 	{
 		String token = JsonPath.read(login("johndoe", PASSWORD), "$.authenticationToken");
