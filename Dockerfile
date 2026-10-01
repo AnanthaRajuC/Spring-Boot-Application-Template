@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ---- Build stage: compile and package the executable jar ----
-FROM eclipse-temurin:21-jdk AS build
+FROM eclipse-temurin:25-jdk AS build
 WORKDIR /workspace
 
 COPY .mvn/ .mvn/
@@ -13,7 +13,7 @@ RUN ./mvnw -B -q package -DskipTests \
  && java -Djarmode=tools -jar target/spring-boot-application-template-latest.jar extract --layers --launcher --destination target/extracted
 
 # ---- Runtime stage: JRE only, non-root user ----
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:25-jre
 
 LABEL org.opencontainers.image.title="Spring Boot Application Template" \
       org.opencontainers.image.description="Template for a typical Spring Boot web application with everything set up for rapid development." \
