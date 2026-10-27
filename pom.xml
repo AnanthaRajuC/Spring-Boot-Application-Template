@@ -51,7 +51,7 @@
 		<!--  Dependencies versions properties  -->
 		<bootstrap.version>5.3.8</bootstrap.version>
 		<jquery.version>3.7.1</jquery.version>
-		<springdoc.version>3.1.1</springdoc.version>
+		<springdoc.version>3.2.0</springdoc.version>
 		<bucket4j.version>8.20.0</bucket4j.version>
 		<modelmapper.version>3.2.6</modelmapper.version>
 		<jacoco.version>0.8.15</jacoco.version>
